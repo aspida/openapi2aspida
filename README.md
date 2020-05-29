@@ -100,4 +100,4 @@ $ npm run build
 
 ## License
 
-openapi2aspida is licensed under a [MIT License](https://github.com/aspidajs/openapi2aspida/LICENSE).
+openapi2aspida is licensed under a [MIT License](https://github.com/aspidajs/openapi2aspida/blob/master/LICENSE).
