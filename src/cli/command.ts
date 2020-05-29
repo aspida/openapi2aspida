@@ -1,5 +1,5 @@
 export type Command = {
-  exec(): void
+  exec(): Promise<void> | void
 }
 
 export const nullCommand: Command = {

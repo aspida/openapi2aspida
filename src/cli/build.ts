@@ -1,3 +1,4 @@
+import fs from 'fs'
 import { Config } from '../getConfig'
 import build, { Template } from '../buildTemplate'
 import { Command } from './command'
@@ -18,34 +19,34 @@ export class CommandToBuild implements Command {
     private readonly io: BuildIO
   ) {}
 
-  exec() {
-    this.configs.forEach(config => {
-      this.command.run(config, this.io)
-    })
+  async exec() {
+    await Promise.all(this.configs.map(config => this.command.run(config, this.io)))
   }
 }
 
 type BuildCommand = {
-  run(config: Config, io: BuildIO): void
+  run(config: Config, io: BuildIO): Promise<void>
 }
 
 export type BuildIO = {
-  write(template: Template): void
-  watch(input: string, callback: () => void): void
+  write(outputDir: string, trailingSlash: boolean, template: Template): void
 }
 
 export class Build implements BuildCommand {
-  run(config: Config, io: BuildIO) {
-    io.write(build(config))
-  }
-}
+  async run(config: Config, io: BuildIO) {
+    if (!fs.existsSync(config.output)) {
+      fs.mkdirSync(config.output)
+    } else if (fs.readdirSync(config.output).length) {
+      console.log(
+        `fatal: destination path '${config.output}' already exists and is not an empty directory.`
+      )
+      return
+    }
 
-export class Watch implements BuildCommand {
-  // eslint-disable-next-line no-useless-constructor
-  constructor(private readonly build = new Build()) {}
-
-  run(config: Config, io: BuildIO) {
-    this.build.run(config, io)
-    io.watch(config.input, () => this.build.run(config, io))
+    io.write(
+      config.output,
+      config.trailingSlash,
+      await build(config.input, config.isYaml, config.needsMock, config.needsMockType)
+    )
   }
 }

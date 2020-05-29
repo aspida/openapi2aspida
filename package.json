@@ -1,12 +1,12 @@
 {
-  "name": "typescript-oss-template",
-  "version": "0.0.1",
-  "description": "TypeScript OSS template",
+  "name": "openapi2aspida",
+  "version": "0.6.1",
+  "description": "Convert OpenAPI 3.0 or Swagger 2.0 definitions into aspida",
   "author": "m-mitsuhide <m.mitsuhide@amatelus.com>",
   "license": "MIT",
   "bin": "bin/index.js",
   "scripts": {
-    "dev": "npm run build && node bin/index.js --build",
+    "dev": "npm run build && node samples/rimraf.js && node bin/index.js --build",
     "build": "npm run rimraf && tsc",
     "rimraf": "node -e \"require('fs').rmdirSync('dist', { recursive: true })\"",
     "release": "standard-version --skip.tag",
@@ -18,23 +18,27 @@
     "test": "jest",
     "typecheck": "tsc --noEmit"
   },
-  "homepage": "https://github.com/foo/baz#readme",
+  "homepage": "https://github.com/aspidajs/openapi2aspida#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/foo/baz.git"
+    "url": "git+https://github.com/aspidajs/openapi2aspida.git"
   },
   "bugs": {
-    "url": "https://github.com/foo/baz/issues"
+    "url": "https://github.com/aspidajs/openapi2aspida/issues"
   },
   "files": [
     "dist"
   ],
   "keywords": [
-    "typescript"
+    "typescript",
+    "aspida",
+    "openapi",
+    "swagger"
   ],
   "dependencies": {
-    "chokidar": "^3.4.0",
-    "minimist": "^1.2.5"
+    "aspida": "^0.16.0",
+    "swagger-parser": "^9.0.1",
+    "swagger2openapi": "^6.0.3"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
