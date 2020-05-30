@@ -4,6 +4,7 @@
   "description": "Convert OpenAPI 3.0 or Swagger 2.0 definitions into aspida",
   "author": "m-mitsuhide <m.mitsuhide@amatelus.com>",
   "license": "MIT",
+  "main": "dist/index.js",
   "bin": "bin/index.js",
   "scripts": {
     "dev": "npm run build && node samples/rimraf.js && node bin/index.js --build",
