@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { OpenAPIV3 } from 'openapi-types'
 import { isRefObject, $ref2TypeName } from './converters'
 

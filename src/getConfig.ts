@@ -21,7 +21,6 @@ type ConfigFile = BaseConfig & {
 }
 
 const createConfig = (config: ConfigFile) => {
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const openapi = config.openapi!
 
   return {
