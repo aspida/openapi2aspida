@@ -1,6 +1,7 @@
 import { parse } from 'swagger-parser'
 import { OpenAPI, OpenAPIV3 } from 'openapi-types'
 import buildV3 from './buildV3'
+import resolveExternalRefs from './resolveExternalRefs'
 
 export type Template = {
   baseURL: string
@@ -20,11 +21,12 @@ export default async (
   needsMockType: boolean
 ): Promise<Template> => {
   const openapi = await parse(input, { parse: { json: !isYaml } })
+  const docs = isV3(openapi)
+    ? openapi
+    : await require('swagger2openapi').convertObj(openapi, { direct: true })
 
   return buildV3(
-    isV3(openapi)
-      ? openapi
-      : await require('swagger2openapi').convertObj(openapi, { direct: true }),
+    await resolveExternalRefs(docs, typeof input === 'string' ? input : ''),
     needsMock,
     needsMockType
   )
