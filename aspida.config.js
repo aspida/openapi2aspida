@@ -18,5 +18,9 @@ module.exports = [
   {
     input: 'samples/openapi',
     openapi: { inputFile: 'samples/openapi.json', mock: true, yaml: false }
+  },
+  {
+    input: 'samples/externals',
+    openapi: { inputFile: 'samples/externals.json', yaml: false }
   }
 ]

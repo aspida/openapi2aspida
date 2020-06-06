@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { OpenAPIV3 } from 'openapi-types'
 import { Template } from './buildTemplate'
 import { isRefObject, $ref2Type, getPropertyName, schema2value } from './builderUtils/converters'

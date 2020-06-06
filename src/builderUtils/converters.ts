@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion, @typescript-eslint/no-use-before-define */
+/* eslint-disable @typescript-eslint/no-use-before-define */
 import { OpenAPIV3 } from 'openapi-types'
 import { Prop, PropValue } from './props2String'
 

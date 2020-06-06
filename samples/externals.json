@@ -1,0 +1,3264 @@
+{
+  "openapi": "3.0.0",
+  "tags": [
+    {
+      "name": "orders",
+      "description": "Operations to order product subscription/unsubscription and to query the orders history of a user"
+    },
+    {
+      "name": "offers",
+      "description": "**DISCLAIMER**: These endpoints are deprecated. The functionality is available in Product Offers API"
+    },
+    {
+      "name": "subscribed-products",
+      "description": "**DISCLAIMER**: These endpoints are deprecated. The functionality is available in Subscribed Products API"
+    }
+  ],
+  "paths": {
+    "/users/{user_id}/orders/unsubscribe": {
+      "post": {
+        "security": [{ "three_legged": ["product-management-orders-user-write"] }],
+        "description": "Creates an unsubscribe order for a product_id",
+        "tags": ["orders"],
+        "operationId": "createUnsubscribeOrder",
+        "parameters": [{ "$ref": "#/components/parameters/UserId" }],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreateUnsubscribeOrder" }
+            }
+          },
+          "description": "Body to create a purchase order",
+          "required": true
+        },
+        "summary": "Create unsubscribe order for a product",
+        "responses": {
+          "201": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Order" },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "id": "order1",
+                      "creation_date": "2018-02-20T19:10:37.768Z",
+                      "type": "unsubscription",
+                      "offer_id": "offer123",
+                      "status": "pending"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Problem with the client request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "INVALID_ARGUMENT",
+                      "message": "Client specified an invalid argument, request body o query param"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Client does not have sufficient permission",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "PERMISSION_DENIED",
+                      "message": "Authenticated user has no permission to access the requested resource"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
+                },
+                "examples": {
+                  "response": {
+                    "value": { "code": "NOT_FOUND", "message": "A specified resource is not found" }
+                  }
+                }
+              }
+            }
+          },
+          "409": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "The resource already exists",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/AlreadyExists"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "ALREADY_EXISTS",
+                      "message": "A specified resource already exists"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
+                },
+                "examples": {
+                  "response": { "value": { "code": "INTERNAL", "message": "Server error" } }
+                }
+              }
+            }
+          },
+          "504": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Request timeout exceeded. If it happens repeatedly, consider reducing the request complexity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "TIMEOUT",
+                      "message": "Request timeout exceeded. Try it later"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{user_id}/phone-numbers/{phone_number}/orders": {
+      "get": {
+        "security": [{ "three_legged": ["product-management-orders-phone-number-read"] }],
+        "description": "List orders for a phone number",
+        "tags": ["orders"],
+        "operationId": "getOrdersByPhoneNumber",
+        "parameters": [
+          { "$ref": "#/components/parameters/UserId" },
+          { "$ref": "#/components/parameters/PhoneNumber" }
+        ],
+        "summary": "Retrieve orders for a phone number",
+        "responses": {
+          "200": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Orders" },
+                "examples": {
+                  "response": {
+                    "value": [
+                      {
+                        "id": "order1",
+                        "offer_id": "offer123",
+                        "creation_date": "2018-02-20T19:10:37.768Z",
+                        "identifier": "+34689452249",
+                        "status": "pending",
+                        "type": "purchase"
+                      },
+                      {
+                        "id": "order3",
+                        "product_id": "offer924",
+                        "creation_date": "2017-09-25T12:02:30.224Z",
+                        "identifier": "+34689452249",
+                        "status": "confirmed",
+                        "type": "unsubscription"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Problem with the client request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "INVALID_ARGUMENT",
+                      "message": "Client specified an invalid argument, request body o query param"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Client does not have sufficient permission",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "PERMISSION_DENIED",
+                      "message": "Authenticated user has no permission to access the requested resource"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
+                },
+                "examples": {
+                  "response": {
+                    "value": { "code": "NOT_FOUND", "message": "A specified resource is not found" }
+                  }
+                }
+              }
+            }
+          },
+          "409": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "The resource already exists",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/AlreadyExists"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "ALREADY_EXISTS",
+                      "message": "A specified resource already exists"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
+                },
+                "examples": {
+                  "response": { "value": { "code": "INTERNAL", "message": "Server error" } }
+                }
+              }
+            }
+          },
+          "504": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Request timeout exceeded. If it happens repeatedly, consider reducing the request complexity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "TIMEOUT",
+                      "message": "Request timeout exceeded. Try it later"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{user_id}/orders/update/renew": {
+      "post": {
+        "security": [{ "three_legged": ["product-management-orders-user-write"] }],
+        "description": "Creates an update order for a product_id",
+        "tags": ["orders"],
+        "operationId": "createUpdateOrder",
+        "parameters": [{ "$ref": "#/components/parameters/UserId" }],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreateUpdateRenewOrder" }
+            }
+          },
+          "description": "Body to create a update order",
+          "required": true
+        },
+        "summary": "Create update order for a product",
+        "responses": {
+          "201": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Order" },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "product_id": "2134-coolproduct",
+                      "id": "order1",
+                      "creation_date": "2018-02-20T19:10:37.768Z",
+                      "type": "update",
+                      "status": "pending"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Problem with the client request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "INVALID_ARGUMENT",
+                      "message": "Client specified an invalid argument, request body o query param"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Client does not have sufficient permission",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "PERMISSION_DENIED",
+                      "message": "Authenticated user has no permission to access the requested resource"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
+                },
+                "examples": {
+                  "response": {
+                    "value": { "code": "NOT_FOUND", "message": "A specified resource is not found" }
+                  }
+                }
+              }
+            }
+          },
+          "409": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "The resource already exists",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/AlreadyExists"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "ALREADY_EXISTS",
+                      "message": "A specified resource already exists"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
+                },
+                "examples": {
+                  "response": { "value": { "code": "INTERNAL", "message": "Server error" } }
+                }
+              }
+            }
+          },
+          "504": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Request timeout exceeded. If it happens repeatedly, consider reducing the request complexity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "TIMEOUT",
+                      "message": "Request timeout exceeded. Try it later"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{user_id}/orders": {
+      "get": {
+        "security": [{ "three_legged": ["product-management-orders-user-read"] }],
+        "description": "List orders for a user",
+        "tags": ["orders"],
+        "operationId": "getOrders",
+        "parameters": [
+          { "$ref": "#/components/parameters/UserId" },
+          { "$ref": "#/components/parameters/Identifier" }
+        ],
+        "summary": "Retrieve orders for a user",
+        "responses": {
+          "200": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Orders" },
+                "examples": {
+                  "response": {
+                    "value": [
+                      {
+                        "id": "order1",
+                        "offer_id": "offer123",
+                        "creation_date": "2018-02-20T19:10:37.768Z",
+                        "identifier": "+34689452249",
+                        "status": "pending",
+                        "type": "purchase"
+                      },
+                      {
+                        "id": "order2",
+                        "offer_id": "offer666",
+                        "identifiers": ["+34983456789"],
+                        "creation_date": "2018-01-02T09:00:55.192Z",
+                        "status": "rejected",
+                        "type": "purchase",
+                        "error": {
+                          "code": "1234",
+                          "description": "Purchase has been temporal disable due to bank account has rejected payments several times."
+                        }
+                      },
+                      {
+                        "id": "order3",
+                        "product_id": "offer924",
+                        "creation_date": "2017-09-25T12:02:30.224Z",
+                        "status": "confirmed",
+                        "type": "unsubscription"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Problem with the client request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "INVALID_ARGUMENT",
+                      "message": "Client specified an invalid argument, request body o query param"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Client does not have sufficient permission",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "PERMISSION_DENIED",
+                      "message": "Authenticated user has no permission to access the requested resource"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
+                },
+                "examples": {
+                  "response": {
+                    "value": { "code": "NOT_FOUND", "message": "A specified resource is not found" }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
+                },
+                "examples": {
+                  "response": { "value": { "code": "INTERNAL", "message": "Server error" } }
+                }
+              }
+            }
+          },
+          "504": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Request timeout exceeded. If it happens repeatedly, consider reducing the request complexity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "TIMEOUT",
+                      "message": "Request timeout exceeded. Try it later"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{user_id}/orders/purchase/wallet": {
+      "post": {
+        "security": [{ "three_legged": ["product-management-orders-user-write"] }],
+        "description": "Creates an purchase order for an offer by its offer_id using wallet as payment method",
+        "tags": ["orders"],
+        "operationId": "createPurchaseOrderWallet",
+        "parameters": [{ "$ref": "#/components/parameters/UserId" }],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreatePurchaseOrderWallet" }
+            }
+          },
+          "description": "Body to create a purchase order",
+          "required": true
+        },
+        "summary": "Create purchase order for a user using wallet as payment method",
+        "responses": {
+          "201": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Order" },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "id": "order1",
+                      "creation_date": "2018-02-20T19:10:37.768Z",
+                      "type": "purchase",
+                      "offer_id": "offer123",
+                      "status": "pending"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Problem with the client request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "INVALID_ARGUMENT",
+                      "message": "Client specified an invalid argument, request body o query param"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Client does not have sufficient permission",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "PERMISSION_DENIED",
+                      "message": "Authenticated user has no permission to access the requested resource"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
+                },
+                "examples": {
+                  "response": {
+                    "value": { "code": "NOT_FOUND", "message": "A specified resource is not found" }
+                  }
+                }
+              }
+            }
+          },
+          "409": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "The resource already exists",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/AlreadyExists"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "ALREADY_EXISTS",
+                      "message": "A specified resource already exists"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
+                },
+                "examples": {
+                  "response": { "value": { "code": "INTERNAL", "message": "Server error" } }
+                }
+              }
+            }
+          },
+          "504": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Request timeout exceeded. If it happens repeatedly, consider reducing the request complexity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "TIMEOUT",
+                      "message": "Request timeout exceeded. Try it later"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{user_id}/offers": {
+      "get": {
+        "security": [{ "three_legged": ["product-management-offers-user-read"] }],
+        "description": "List of offers for a user",
+        "tags": ["offers"],
+        "deprecated": true,
+        "operationId": "getOffers",
+        "parameters": [
+          { "$ref": "#/components/parameters/UserId" },
+          { "$ref": "#/components/parameters/Identifier" },
+          { "$ref": "#/components/parameters/CategoriesId" }
+        ],
+        "summary": "Retrieve offers for a user",
+        "responses": {
+          "200": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Offers" },
+                "examples": {
+                  "response": {
+                    "value": [
+                      {
+                        "id": "offer123",
+                        "name": "oferta1",
+                        "identifiers": ["+34689452249"],
+                        "categories": [{ "name": "promociones", "id": "promotion" }],
+                        "description": "descripción de la oferta",
+                        "start_date": "2018-02-20T19:10:37.768Z",
+                        "end_date": "2020-02-20T19:10:37.768Z",
+                        "product": {
+                          "display_name": "Teléfono Móvil +34689452249",
+                          "product_type": "mobile",
+                          "subscription_type": "postpaid",
+                          "descriptions": [{ "text": "tarifa tarde" }]
+                        },
+                        "prices": [
+                          {
+                            "description": "precio recurrente mensual",
+                            "type": "recurring",
+                            "recurring_period": "monthly",
+                            "amount": { "value": 5, "currency": "string", "tax_included": true },
+                            "tax": 0.21
+                          },
+                          {
+                            "description": "Precio por uso de minutos de voz",
+                            "type": "usage",
+                            "amount": { "value": 0.01, "currency": "EUR", "tax_included": true },
+                            "tax": 0.21
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Problem with the client request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "INVALID_ARGUMENT",
+                      "message": "Client specified an invalid argument, request body o query param"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Client does not have sufficient permission",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "PERMISSION_DENIED",
+                      "message": "Authenticated user has no permission to access the requested resource"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
+                },
+                "examples": {
+                  "response": {
+                    "value": { "code": "NOT_FOUND", "message": "A specified resource is not found" }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
+                },
+                "examples": {
+                  "response": { "value": { "code": "INTERNAL", "message": "Server error" } }
+                }
+              }
+            }
+          },
+          "504": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Request timeout exceeded. If it happens repeatedly, consider reducing the request complexity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "TIMEOUT",
+                      "message": "Request timeout exceeded. Try it later"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{user_id}/phone-numbers/{phone_number}/orders/purchase/invoice": {
+      "post": {
+        "security": [{ "three_legged": ["product-management-orders-phone-number-write"] }],
+        "description": "Creates an purchase order for an offer by its offer_id using invoice has payment method",
+        "tags": ["orders"],
+        "operationId": "createPurchaseOrderByPhoneNumberInvoice",
+        "parameters": [
+          { "$ref": "#/components/parameters/UserId" },
+          { "$ref": "#/components/parameters/PhoneNumber" }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreatePurchaseOrderByPhoneNumberInvoice" }
+            }
+          },
+          "description": "Body to create a purchase order",
+          "required": true
+        },
+        "summary": "Create purchase order for a phone number using invoice as payment method",
+        "responses": {
+          "201": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Order" },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "id": "order1",
+                      "creation_date": "2018-02-20T19:10:37.768Z",
+                      "type": "purchase",
+                      "offer_id": "offer123",
+                      "status": "pending"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Problem with the client request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "INVALID_ARGUMENT",
+                      "message": "Client specified an invalid argument, request body o query param"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Client does not have sufficient permission",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "PERMISSION_DENIED",
+                      "message": "Authenticated user has no permission to access the requested resource"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
+                },
+                "examples": {
+                  "response": {
+                    "value": { "code": "NOT_FOUND", "message": "A specified resource is not found" }
+                  }
+                }
+              }
+            }
+          },
+          "409": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "The resource already exists",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/AlreadyExists"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "ALREADY_EXISTS",
+                      "message": "A specified resource already exists"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
+                },
+                "examples": {
+                  "response": { "value": { "code": "INTERNAL", "message": "Server error" } }
+                }
+              }
+            }
+          },
+          "504": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Request timeout exceeded. If it happens repeatedly, consider reducing the request complexity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "TIMEOUT",
+                      "message": "Request timeout exceeded. Try it later"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{user_id}/products": {
+      "get": {
+        "security": [{ "three_legged": ["subscribed-products-user-read"] }],
+        "description": "List the products subscribed by a user",
+        "tags": ["subscribed-products"],
+        "deprecated": true,
+        "operationId": "listUserProducts",
+        "parameters": [
+          { "$ref": "#/components/parameters/UserId" },
+          { "$ref": "#/components/parameters/Identifier" },
+          { "$ref": "#/components/parameters/Status" }
+        ],
+        "summary": "Retrieve the products subscribed by a user",
+        "responses": {
+          "200": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/SubscribedProduct" }
+                },
+                "examples": {
+                  "response": {
+                    "value": [
+                      {
+                        "id": "24523asfgas",
+                        "status": "active",
+                        "display_name": "Teléfono Móvil Prepago 689452249",
+                        "identifiers": ["+34689452000"],
+                        "product_type": "mobile",
+                        "start_date": "2011-03-14T23:00:00+01:00",
+                        "subscription_type": "prepaid",
+                        "descriptions": [{ "text": "tarifa tarde" }]
+                      },
+                      {
+                        "id": "24522345245sfgas",
+                        "status": "activating",
+                        "display_name": "FUSION+ PREMIUM 300Mb",
+                        "product_type": "bundle",
+                        "identifiers": [
+                          "+34939791073",
+                          "+34666556098",
+                          "d620d943-9a32-478f-ba37-4f57bef7e751",
+                          "+34639791055"
+                        ],
+                        "start_date": "2011-03-14T23:00:00+01:00",
+                        "sub_products": [
+                          {
+                            "id": "24523asfgaswtrwetr",
+                            "status": "active",
+                            "display_name": "FUSION+ PREMIUM 300Mb",
+                            "identifiers": ["+34939791073"],
+                            "product_type": "landline",
+                            "start_date": "2011-03-14T23:00:00+01:00",
+                            "descriptions": [
+                              { "text": "Llamadas a fijos ilimitadas" },
+                              { "text": "Servicio contestador" },
+                              { "text": "Llamada en espera" },
+                              { "text": "Identificación de llamada" },
+                              { "text": "500 minutos/mes fijo a móvil sábados y domingos" },
+                              { "text": "50 minutos/mes fijo a móvil de lunes a domingo" }
+                            ]
+                          },
+                          {
+                            "id": "2452asfjdajfasfg",
+                            "status": "active",
+                            "display_name": "Fusión+",
+                            "identifiers": ["+34666556098"],
+                            "product_type": "mobile",
+                            "start_date": "2011-03-14T23:00:00+01:00",
+                            "quota": {
+                              "data": [{ "max": 17179869184, "unit": "message" }],
+                              "voice": [
+                                { "max": -1, "unit": "second", "destinations": ["telefonica"] },
+                                { "max": 36000, "unit": "second", "destinations": ["national"] }
+                              ],
+                              "sms": [{ "max": -1, "unit": "message" }]
+                            },
+                            "descriptions": [
+                              {
+                                "text": "8GB de Internet Móvil",
+                                "url": "https://movistar.com/static/23412h4"
+                              },
+                              { "text": "Llamadas ilimitadas desde el móvil a destinos Movistar" },
+                              { "text": "Roaming tarifa básica" },
+                              { "text": "SMS ilimitados" },
+                              {
+                                "text": "Te doblamos los datos gratis durante tres meses",
+                                "url": "https://movistar.com/static/23412h4",
+                                "category": "promotion"
+                              }
+                            ]
+                          },
+                          {
+                            "id": "2euei2asfjdajfasfg",
+                            "status": "active",
+                            "display_name": "Fusión Línea Adicional",
+                            "identifiers": ["+34639791055"],
+                            "product_type": "mobile",
+                            "start_date": "2011-03-14T23:00:00+01:00",
+                            "quota": {
+                              "data": [{ "max": 8589934592, "unit": "byte" }],
+                              "voice": [
+                                { "max": -1, "unit": "second", "destinations": ["telefonica"] },
+                                { "max": 36000, "unit": "second", "destinations": ["national"] }
+                              ],
+                              "sms": [{ "max": -1, "unit": "message" }]
+                            },
+                            "descriptions": [
+                              {
+                                "text": "8GB de Internet Móvil",
+                                "url": "https://movistar.com/static/23412h4"
+                              },
+                              { "text": "Llamadas ilimitadas desde el móvil a destinos Movistar" },
+                              { "text": "Roaming tarifa básica" },
+                              { "text": "SMS ilimitados" }
+                            ]
+                          },
+                          {
+                            "id": "2eieydwasfjjfa836sfg",
+                            "status": "active",
+                            "display_name": "Base Champions",
+                            "product_type": "iptv",
+                            "identifiers": ["d620d943-9a32-478f-ba37-4f57bef7e751"],
+                            "start_date": "2011-03-14T23:00:00+01:00",
+                            "packages": [
+                              { "name": "Familiar", "package_id": 101691 },
+                              { "name": "Fútbol", "package_id": 101679 },
+                              { "name": "Cine", "package_id": "00101671" },
+                              { "name": "Series", "package_id": 101691 },
+                              { "name": "Motor", "package_id": "00102060" },
+                              { "name": "Deportes", "package_id": "00102061" }
+                            ]
+                          },
+                          {
+                            "id": "c3581516868fb3b71746931cac66390e",
+                            "status": "active",
+                            "display_name": "FUSION+ PREMIUM 300Mb",
+                            "product_type": "internet",
+                            "start_date": "2011-03-14T23:00:00+01:00",
+                            "identifiers": ["+34939791073"],
+                            "connection": {
+                              "type": "fiber",
+                              "uplink_mbps": 30,
+                              "downlink_mbps": 300
+                            },
+                            "descriptions": [
+                              { "text": "Soporte: Fibra óptica" },
+                              {
+                                "text": "Velocidad: 300Mb",
+                                "url": "https://movistar.com/static/23412w234"
+                              },
+                              { "text": "Router" },
+                              { "text": "Servicio mantenimiento ADSL" },
+                              { "text": "300Mb" }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Problem with the client request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "INVALID_ARGUMENT",
+                      "message": "Client specified an invalid argument, request body o query param"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Client does not have sufficient permission",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "PERMISSION_DENIED",
+                      "message": "Authenticated user has no permission to access the requested resource"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
+                },
+                "examples": {
+                  "response": {
+                    "value": { "code": "NOT_FOUND", "message": "A specified resource is not found" }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
+                },
+                "examples": {
+                  "response": { "value": { "code": "INTERNAL", "message": "Server error" } }
+                }
+              }
+            }
+          },
+          "504": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Request timeout exceeded. If it happens repeatedly, consider reducing the request complexity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "TIMEOUT",
+                      "message": "Request timeout exceeded. Try it later"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{user_id}/orders/purchase/invoice": {
+      "post": {
+        "security": [{ "three_legged": ["product-management-orders-user-write"] }],
+        "description": "Creates an purchase order for an offer by its offer_id and using invoice as payment method",
+        "tags": ["orders"],
+        "operationId": "createPurchaseOrderInvoice",
+        "parameters": [{ "$ref": "#/components/parameters/UserId" }],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreatePurchaseOrderInvoice" }
+            }
+          },
+          "description": "Body to create a purchase order",
+          "required": true
+        },
+        "summary": "Create purchase order for a user using invoice as payment method",
+        "responses": {
+          "201": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Order" },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "id": "order1",
+                      "creation_date": "2018-02-20T19:10:37.768Z",
+                      "type": "purchase",
+                      "offer_id": "offer123",
+                      "status": "pending"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Problem with the client request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "INVALID_ARGUMENT",
+                      "message": "Client specified an invalid argument, request body o query param"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Client does not have sufficient permission",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "PERMISSION_DENIED",
+                      "message": "Authenticated user has no permission to access the requested resource"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
+                },
+                "examples": {
+                  "response": {
+                    "value": { "code": "NOT_FOUND", "message": "A specified resource is not found" }
+                  }
+                }
+              }
+            }
+          },
+          "409": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "The resource already exists",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/AlreadyExists"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "ALREADY_EXISTS",
+                      "message": "A specified resource already exists"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
+                },
+                "examples": {
+                  "response": { "value": { "code": "INTERNAL", "message": "Server error" } }
+                }
+              }
+            }
+          },
+          "504": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Request timeout exceeded. If it happens repeatedly, consider reducing the request complexity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "TIMEOUT",
+                      "message": "Request timeout exceeded. Try it later"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{user_id}/phone-numbers/{phone_number}/products": {
+      "get": {
+        "security": [{ "three_legged": ["subscribed-products-phone-number-read"] }],
+        "description": "List the products subscribed by a specific phone number",
+        "tags": ["subscribed-products"],
+        "deprecated": true,
+        "operationId": "listPhoneNumberProducts",
+        "parameters": [
+          { "$ref": "#/components/parameters/UserId" },
+          { "$ref": "#/components/parameters/PhoneNumber" },
+          { "$ref": "#/components/parameters/Status" }
+        ],
+        "summary": "Retrieve the products subscribed by a specific phone number",
+        "responses": {
+          "200": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/SubscribedProduct" }
+                },
+                "examples": {
+                  "response": {
+                    "value": [
+                      {
+                        "id": "24522345245sfgas",
+                        "status": "activating",
+                        "display_name": "FUSION+ PREMIUM 300Mb",
+                        "product_type": "bundle",
+                        "identifiers": [
+                          "+34939791073",
+                          "+34666556098",
+                          "d620d943-9a32-478f-ba37-4f57bef7e751",
+                          "+34639791055"
+                        ],
+                        "start_date": "2011-03-14T23:00:00+01:00",
+                        "sub_products": [
+                          {
+                            "id": "2452asfjdajfasfg",
+                            "status": "active",
+                            "display_name": "Fusión+",
+                            "identifiers": ["+34666556098"],
+                            "product_type": "mobile",
+                            "start_date": "2011-03-14T23:00:00+01:00",
+                            "quota": {
+                              "data": [{ "max": 8589934592, "unit": "message" }],
+                              "voice": [
+                                { "max": -1, "unit": "second", "destinations": ["telefonica"] },
+                                { "max": 36000, "unit": "second", "destinations": ["national"] }
+                              ],
+                              "sms": [{ "max": -1, "unit": "message" }]
+                            },
+                            "descriptions": [
+                              {
+                                "text": "8GB de Internet Móvil",
+                                "url": "https://movistar.com/static/23412h4"
+                              },
+                              { "text": "Llamadas ilimitadas desde el móvil a destinos Movistar" },
+                              { "text": "Roaming tarifa básica" },
+                              { "text": "SMS ilimitados" }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Problem with the client request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "INVALID_ARGUMENT",
+                      "message": "Client specified an invalid argument, request body o query param"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Client does not have sufficient permission",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "PERMISSION_DENIED",
+                      "message": "Authenticated user has no permission to access the requested resource"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
+                },
+                "examples": {
+                  "response": {
+                    "value": { "code": "NOT_FOUND", "message": "A specified resource is not found" }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
+                },
+                "examples": {
+                  "response": { "value": { "code": "INTERNAL", "message": "Server error" } }
+                }
+              }
+            }
+          },
+          "504": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Request timeout exceeded. If it happens repeatedly, consider reducing the request complexity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "TIMEOUT",
+                      "message": "Request timeout exceeded. Try it later"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{user_id}/phone-numbers/{phone_number}/orders/purchase/wallet": {
+      "post": {
+        "security": [{ "three_legged": ["product-management-orders-phone-number-write"] }],
+        "description": "Creates an purchase order for an offer by its offer_id using a wallet has payment method",
+        "tags": ["orders"],
+        "operationId": "createPurchaseOrderByPhoneNumberWallet",
+        "parameters": [
+          { "$ref": "#/components/parameters/UserId" },
+          { "$ref": "#/components/parameters/PhoneNumber" }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreatePurchaseOrderByPhoneNumberWallet" }
+            }
+          },
+          "description": "Body to create a purchase order",
+          "required": true
+        },
+        "summary": "Create purchase order for a phone number using wallet as payment method",
+        "responses": {
+          "201": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Order" },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "id": "order1",
+                      "creation_date": "2018-02-20T19:10:37.768Z",
+                      "type": "purchase",
+                      "offer_id": "offer123",
+                      "status": "pending"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Problem with the client request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "INVALID_ARGUMENT",
+                      "message": "Client specified an invalid argument, request body o query param"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Client does not have sufficient permission",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "PERMISSION_DENIED",
+                      "message": "Authenticated user has no permission to access the requested resource"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
+                },
+                "examples": {
+                  "response": {
+                    "value": { "code": "NOT_FOUND", "message": "A specified resource is not found" }
+                  }
+                }
+              }
+            }
+          },
+          "409": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "The resource already exists",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/AlreadyExists"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "ALREADY_EXISTS",
+                      "message": "A specified resource already exists"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
+                },
+                "examples": {
+                  "response": { "value": { "code": "INTERNAL", "message": "Server error" } }
+                }
+              }
+            }
+          },
+          "504": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Request timeout exceeded. If it happens repeatedly, consider reducing the request complexity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "TIMEOUT",
+                      "message": "Request timeout exceeded. Try it later"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{user_id}/orders/{order_id}": {
+      "get": {
+        "security": [{ "three_legged": ["product-management-orders-user-read"] }],
+        "description": "Get info of an order by order_id",
+        "tags": ["orders"],
+        "operationId": "getOrder",
+        "parameters": [
+          { "$ref": "#/components/parameters/UserId" },
+          { "$ref": "#/components/parameters/OrderId" }
+        ],
+        "summary": "Retrieve an order by order_id",
+        "responses": {
+          "200": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Order" },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "identifiers": ["+34983456789"],
+                      "id": "order2",
+                      "creation_date": "2018-01-02T09:00:55.192Z",
+                      "type": "purchase",
+                      "error": {
+                        "code": "1234",
+                        "description": "Purchase has been temporal disable due to bank account has rejected payments several times."
+                      },
+                      "offer_id": "offer666",
+                      "status": "rejected"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Problem with the client request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "INVALID_ARGUMENT",
+                      "message": "Client specified an invalid argument, request body o query param"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Client does not have sufficient permission",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "PERMISSION_DENIED",
+                      "message": "Authenticated user has no permission to access the requested resource"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
+                },
+                "examples": {
+                  "response": {
+                    "value": { "code": "NOT_FOUND", "message": "A specified resource is not found" }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
+                },
+                "examples": {
+                  "response": { "value": { "code": "INTERNAL", "message": "Server error" } }
+                }
+              }
+            }
+          },
+          "504": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Request timeout exceeded. If it happens repeatedly, consider reducing the request complexity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "TIMEOUT",
+                      "message": "Request timeout exceeded. Try it later"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{user_id}/offers/{offer_id}": {
+      "get": {
+        "security": [{ "three_legged": ["product-management-offers-user-read"] }],
+        "description": "Get an offer by its offer_id",
+        "tags": ["offers"],
+        "deprecated": true,
+        "operationId": "getOffer",
+        "parameters": [
+          { "$ref": "#/components/parameters/UserId" },
+          { "$ref": "#/components/parameters/OfferId" }
+        ],
+        "summary": "Retrieve an offer for a user",
+        "responses": {
+          "200": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Offer" },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "end_date": "2020-02-20T19:10:37.768Z",
+                      "product": {
+                        "product_type": "mobile",
+                        "subscription_type": "postpaid",
+                        "display_name": "Teléfono Móvil +34689452249",
+                        "descriptions": [{ "text": "tarifa tarde" }]
+                      },
+                      "identifiers": ["+34689452249"],
+                      "name": "oferta1",
+                      "description": "descripción de la oferta",
+                      "id": "offer123",
+                      "categories": [{ "name": "promociones", "id": "promotion" }],
+                      "prices": [
+                        {
+                          "description": "precio recurrente mensual",
+                          "type": "recurring",
+                          "recurring_period": "monthly",
+                          "amount": { "value": 5, "currency": "string", "tax_included": true },
+                          "tax": 0.21
+                        },
+                        {
+                          "description": "Precio por uso de minutos de voz",
+                          "type": "usage",
+                          "amount": { "value": 0.01, "currency": "EUR", "tax_included": true },
+                          "tax": 0.21
+                        }
+                      ],
+                      "start_date": "2018-02-20T19:10:37.768Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Problem with the client request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "INVALID_ARGUMENT",
+                      "message": "Client specified an invalid argument, request body o query param"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Client does not have sufficient permission",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "PERMISSION_DENIED",
+                      "message": "Authenticated user has no permission to access the requested resource"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
+                },
+                "examples": {
+                  "response": {
+                    "value": { "code": "NOT_FOUND", "message": "A specified resource is not found" }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
+                },
+                "examples": {
+                  "response": { "value": { "code": "INTERNAL", "message": "Server error" } }
+                }
+              }
+            }
+          },
+          "504": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Request timeout exceeded. If it happens repeatedly, consider reducing the request complexity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "TIMEOUT",
+                      "message": "Request timeout exceeded. Try it later"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{user_id}/phone-numbers/{phone_number}/offers": {
+      "get": {
+        "security": [{ "three_legged": ["product-management-offers-phone-number-read"] }],
+        "description": "List of offers for a phone number",
+        "tags": ["offers"],
+        "deprecated": true,
+        "operationId": "getOffersByPhoneNumber",
+        "parameters": [
+          { "$ref": "#/components/parameters/UserId" },
+          { "$ref": "#/components/parameters/PhoneNumber" },
+          { "$ref": "#/components/parameters/CategoriesId" }
+        ],
+        "summary": "Retrieve offers for a phone number",
+        "responses": {
+          "200": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Offers" },
+                "examples": {
+                  "response": {
+                    "value": [
+                      {
+                        "id": "offer123",
+                        "name": "oferta1",
+                        "identifiers": ["+34689452249"],
+                        "categories": [{ "name": "promociones", "id": "promotion" }],
+                        "description": "descripción de la oferta",
+                        "start_date": "2018-02-20T19:10:37.768Z",
+                        "end_date": "2020-02-20T19:10:37.768Z",
+                        "product": {
+                          "display_name": "Teléfono Móvil +34689452249",
+                          "product_type": "mobile",
+                          "subscription_type": "postpaid",
+                          "descriptions": [{ "text": "tarifa tarde" }]
+                        },
+                        "prices": [
+                          {
+                            "description": "precio recurrente mensual",
+                            "type": "recurring",
+                            "recurring_period": "monthly",
+                            "amount": { "value": 5, "currency": "string", "tax_included": true },
+                            "tax": 0.21
+                          },
+                          {
+                            "description": "Precio por uso de minutos de voz",
+                            "type": "usage",
+                            "amount": { "value": 0.01, "currency": "EUR", "tax_included": true },
+                            "tax": 0.21
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Problem with the client request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "INVALID_ARGUMENT",
+                      "message": "Client specified an invalid argument, request body o query param"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Client does not have sufficient permission",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "PERMISSION_DENIED",
+                      "message": "Authenticated user has no permission to access the requested resource"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
+                },
+                "examples": {
+                  "response": {
+                    "value": { "code": "NOT_FOUND", "message": "A specified resource is not found" }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
+                },
+                "examples": {
+                  "response": { "value": { "code": "INTERNAL", "message": "Server error" } }
+                }
+              }
+            }
+          },
+          "504": {
+            "headers": {
+              "x-correlator": {
+                "description": "Correlation id for the different services",
+                "schema": { "type": "string" }
+              }
+            },
+            "description": "Request timeout exceeded. If it happens repeatedly, consider reducing the request complexity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
+                },
+                "examples": {
+                  "response": {
+                    "value": {
+                      "code": "TIMEOUT",
+                      "message": "Request timeout exceeded. Try it later"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "info": {
+    "description": "Manage orders to purchase offers or to unsubscribe to subscribed user products.\n\n# Relevant Definitions and concepts\n\n- **Order**: Process in the OB to perform either an offer purchase or a product un-subscription. Orders may be complex and require several internal sub-processes. For example to purchase an offer of a Mobile Plan, the OB will previously un-subscribe the existing subscribed Mobile Plan.\n- **User Friendly Field**:  Some string params in the API are described as User Friendly, meaning that information should be an string directly understandable by a human. Params marked this way may be used for display purposes..\n\n# What is the API for? \n## API Functionality\n This API has the the functionality of managing orders, allowing to request purchase of an offer, as well as to request un-subscription of a subscribed product. For purchase orders, API allows to indicate payment method, either invoice (for postpaid or control users) or wallet (for prepaid or control users); To complete management, API allows to retrieve requested orders information.\n\n# Resources and Operations overview\n There are the following sets of endpoints:\n- Retrieve Orders: Endpoints to retrieve orders. List of orders can be requested, for a user or for a phone-number of a user. Also an individual order can be retrieved.\n- Purchase offer: A pair of endpoints to request a purchase order for a user to be charged against invoice or against wallet, and another pair to to the same for a phone-number of a user. Every order has an offer_id to indicate what offer to be purchased.\n- Un-subscribe product: an endpoint to request the un-subscription of a product subscribed by the user. The product is identified by its product_id.\n- Update Product: an endpoint to request the update of some config of a subscribed product. The product is identified by its product_id, and API currently allows to update the auto-renovation configuration with an specific endpoint to do so.\n\n# Further Info and Support\nFind answers to Frequently Asked Questions in **https://qna.baikalplatform.com/c/api-faq**.\n\nTopics with the **tag 'product-management'** are specific for Product Management API. Also topics with **tag 'product'** may apply to this API.",
+    "version": "1.2.2",
+    "title": "Product Management",
+    "termsOfService": "https://www.telefonica.es/es/",
+    "contact": { "name": "4th Platform Team", "email": "4pf@tid.es" }
+  },
+  "servers": [{ "url": "https://api.baikalplatform.com/product-management/v1" }],
+  "components": {
+    "parameters": {
+      "UserId": {
+        "name": "user_id",
+        "in": "path",
+        "required": true,
+        "description": "id of the user for which the methods apply.\nThis value should be changed to the special keyword 'me' to simplify calls when access using OAuth2 with three-legged authentication",
+        "x-fp-identifier": "user_id",
+        "schema": { "type": "string" }
+      },
+      "PhoneNumber": {
+        "name": "phone_number",
+        "description": "The phone number to which the order refers to. 'E164 with +'' format.",
+        "in": "path",
+        "required": true,
+        "x-fp-identifier": "phone_number",
+        "schema": { "type": "string" }
+      },
+      "Identifier": {
+        "name": "identifier",
+        "in": "query",
+        "description": "The user identifier (e.g. phone number) to filter the results",
+        "required": false,
+        "schema": { "type": "string" }
+      },
+      "OfferId": {
+        "name": "offer_id",
+        "in": "path",
+        "required": true,
+        "description": "Id of the offer",
+        "schema": { "type": "string" }
+      },
+      "OrderId": {
+        "name": "order_id",
+        "in": "path",
+        "required": true,
+        "description": "Id of the purchase order",
+        "schema": { "type": "string" }
+      },
+      "CategoriesId": {
+        "name": "categories.id",
+        "description": "List of wanted category ids separated by commas",
+        "in": "query",
+        "required": false,
+        "schema": { "type": "string" }
+      },
+      "Status": {
+        "name": "status",
+        "description": "The status of the subscribed product used to filter the results",
+        "in": "query",
+        "required": false,
+        "schema": { "type": "string" }
+      }
+    },
+    "securitySchemes": {
+      "three_legged": {
+        "type": "oauth2",
+        "flows": {
+          "authorizationCode": {
+            "authorizationUrl": "https://auth.baikalplatform.com/authorize",
+            "tokenUrl": "https://auth.baikalplatform.com/token",
+            "scopes": {
+              "product-management-orders-user-write": "No description available",
+              "subscribed-products-user-read": "No description available",
+              "product-management-orders-phone-number-read": "No description available",
+              "subscribed-products-phone-number-read": "No description available",
+              "product-management-offers-user-read": "No description available",
+              "product-management-offers-phone-number-read": "No description available",
+              "product-management-orders-user-read": "No description available",
+              "product-management-orders-phone-number-write": "No description available"
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "Offers": { "type": "array", "items": { "$ref": "#/components/schemas/Offer" } },
+      "Offer": {
+        "type": "object",
+        "description": "Offer object",
+        "required": ["id", "name", "description", "categories", "product", "prices"],
+        "properties": {
+          "id": { "type": "string", "description": "Unique id of the offer" },
+          "name": { "type": "string", "description": "Name of the offer. User Friendly field." },
+          "identifiers": {
+            "type": "array",
+            "description": "List of user identifiers (e.g. phone_numbers) that can be used to subscribe to the offer",
+            "items": { "type": "string" }
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the offer. User Friendly field."
+          },
+          "categories": {
+            "type": "array",
+            "description": "List of categories for which the offer applies",
+            "items": { "$ref": "#/components/schemas/OfferCategory" }
+          },
+          "start_date": {
+            "type": "string",
+            "description": "Time when the offer will be available to the user, in ISO-8601 extended local date format. Time-offset from UTC may be used to match local OB time.",
+            "format": "date-time"
+          },
+          "end_date": {
+            "type": "string",
+            "description": "Time when the offer will expire for the user, in ISO-8601 extended local date format. Time-offset from UTC may be used to match local OB time.",
+            "format": "date-time"
+          },
+          "prices": {
+            "type": "array",
+            "description": "List of prices for this offer",
+            "items": { "$ref": "#/components/schemas/Price" }
+          },
+          "product": { "$ref": "#/components/schemas/OfferedProduct" }
+        }
+      },
+      "OfferCategory": {
+        "type": "object",
+        "description": "category of offer",
+        "required": ["name", "id"],
+        "properties": {
+          "name": { "type": "string", "description": "Name of the category." },
+          "description": {
+            "type": "string",
+            "description": "short description of the category. User Friendly field."
+          },
+          "id": {
+            "type": "string",
+            "enum": [
+              "promotion",
+              "bundle",
+              "sms",
+              "voice",
+              "data",
+              "value_added_service",
+              "app",
+              "iptv",
+              "device",
+              "recurring",
+              "bolt-on",
+              "dth"
+            ]
+          }
+        }
+      },
+      "Product": {
+        "type": "object",
+        "description": "Object that model a product definition",
+        "required": ["display_name", "product_type"],
+        "properties": {
+          "display_name": {
+            "type": "string",
+            "description": "Name to be displayed when referring to this product. User Friendly field."
+          },
+          "product_type": { "$ref": "#/components/schemas/ProductType" },
+          "descriptions": { "$ref": "#/components/schemas/Descriptions" },
+          "subscription_type": { "$ref": "#/components/schemas/SubscriptionType" },
+          "quota": { "$ref": "#/components/schemas/Quotas" },
+          "connection": { "$ref": "#/components/schemas/Connection" },
+          "packages": { "$ref": "#/components/schemas/Packages" },
+          "tags": {
+            "type": "array",
+            "description": "list of freely defined strings that tag the product based on some criteria",
+            "items": { "type": "string" }
+          }
+        }
+      },
+      "SubscriptionType": {
+        "type": "string",
+        "description": "Specifies how the service is paid (prepaid, postpaid, etc)",
+        "default": "postpaid",
+        "enum": ["prepaid", "postpaid", "control"]
+      },
+      "ProductType": {
+        "type": "string",
+        "description": "The type of the product",
+        "enum": [
+          "mobile",
+          "landline",
+          "internet",
+          "iptv",
+          "bundle",
+          "device",
+          "voucher",
+          "value_added_service",
+          "bolt-on",
+          "dth"
+        ]
+      },
+      "OfferedProduct": {
+        "description": "Object that models an offered product",
+        "allOf": [
+          { "$ref": "#/components/schemas/Product" },
+          {
+            "type": "object",
+            "properties": {
+              "sub_products": {
+                "type": "array",
+                "description": "Array of products objects. Only applies for product bundle",
+                "items": { "$ref": "#/components/schemas/OfferedProduct" }
+              }
+            }
+          }
+        ]
+      },
+      "SubscribedProduct": {
+        "description": "Object that models a subscribed product",
+        "allOf": [
+          { "$ref": "#/components/schemas/Product" },
+          {
+            "type": "object",
+            "required": ["id", "start_date", "status", "identifiers"],
+            "properties": {
+              "id": { "type": "string", "description": "Unique identifier of the product" },
+              "status": {
+                "type": "string",
+                "description": "Process state of the product",
+                "enum": ["active", "activating", "suspended"]
+              },
+              "identifiers": {
+                "type": "array",
+                "description": "List of user identifiers (e.g. phone_numbers) associated to this specific product instance.",
+                "items": { "type": "string" }
+              },
+              "start_date": {
+                "type": "string",
+                "description": "Time when the product was subscribed, in ISO-8601 extended local date format. Time-offset from UTC may be used to match local OB time.",
+                "format": "date-time"
+              },
+              "end_date": {
+                "type": "string",
+                "description": "Time when the product will finalize, in ISO-8601 extended local date format. Time-offset from UTC may be used to match local OB time.",
+                "format": "date-time"
+              },
+              "prices": {
+                "type": "array",
+                "description": "List of prices for this subscribed product",
+                "items": { "$ref": "#/components/schemas/Price" }
+              },
+              "sub_products": {
+                "type": "array",
+                "description": "Array of products objects. Only applies for product bundle",
+                "items": { "$ref": "#/components/schemas/SubscribedProduct" }
+              }
+            }
+          }
+        ]
+      },
+      "Quotas": {
+        "type": "object",
+        "description": "It applies for product_type mobile, value_added_service and bolt-on, and provides information on available data, voice and sms quota",
+        "properties": {
+          "data": {
+            "type": "array",
+            "description": "list of data quotas associated to this product",
+            "items": { "$ref": "#/components/schemas/DataQuota" }
+          },
+          "voice": {
+            "type": "array",
+            "description": "list of voice quotas associated to this product",
+            "items": { "$ref": "#/components/schemas/VoiceQuota" }
+          },
+          "sms": {
+            "type": "array",
+            "description": "list of SMS quotas associated to this product",
+            "items": { "$ref": "#/components/schemas/SmsQuota" }
+          }
+        }
+      },
+      "CommonQuota": {
+        "type": "object",
+        "required": ["max"],
+        "properties": {
+          "max": {
+            "type": "integer",
+            "format": "int64",
+            "description": "max units allowed by current quota. -1 is interpreted as there is no limit"
+          },
+          "time_bands": { "type": "array", "items": { "$ref": "#/components/schemas/TimeBand" } },
+          "origins": { "type": "array", "items": { "$ref": "#/components/schemas/Origin" } }
+        }
+      },
+      "DataQuota": {
+        "type": "object",
+        "description": "Data quota information",
+        "allOf": [
+          { "$ref": "#/components/schemas/CommonQuota" },
+          {
+            "required": ["unit"],
+            "properties": {
+              "unit": {
+                "type": "string",
+                "description": "Unit used on the quota",
+                "enum": ["byte", "kilobyte", "megabyte", "gigabyte"]
+              }
+            }
+          }
+        ]
+      },
+      "VoiceQuota": {
+        "type": "object",
+        "description": "Voice quota information",
+        "allOf": [
+          { "$ref": "#/components/schemas/CommonQuota" },
+          {
+            "required": ["unit"],
+            "properties": {
+              "unit": {
+                "type": "string",
+                "description": "Unit used on the quota",
+                "enum": ["second", "minute", "hour"]
+              },
+              "destinations": {
+                "type": "array",
+                "items": { "$ref": "#/components/schemas/Destination" }
+              }
+            }
+          }
+        ]
+      },
+      "SmsQuota": {
+        "type": "object",
+        "description": "SMS quota information",
+        "allOf": [
+          { "$ref": "#/components/schemas/CommonQuota" },
+          {
+            "required": ["unit"],
+            "properties": {
+              "unit": {
+                "type": "string",
+                "description": "Unit used on the quota",
+                "enum": ["message"]
+              },
+              "destinations": {
+                "type": "array",
+                "items": { "$ref": "#/components/schemas/Destination" }
+              }
+            }
+          }
+        ]
+      },
+      "TimeBand": {
+        "type": "string",
+        "description": "Timebands when the quota applies",
+        "enum": ["day", "night", "morning", "evening", "weekends", "workdays", "all"],
+        "default": ["all"]
+      },
+      "Destination": {
+        "type": "string",
+        "description": "Destinations for which the quota applies",
+        "enum": [
+          "telefonica",
+          "non-telefonica",
+          "rural",
+          "local",
+          "regional",
+          "national",
+          "international",
+          "mobile",
+          "landline",
+          "any"
+        ],
+        "default": ["national"]
+      },
+      "Origin": {
+        "type": "string",
+        "description": "Origin for which the quota applies",
+        "enum": ["home", "roaming", "EU"],
+        "default": ["home"]
+      },
+      "Connection": {
+        "type": "object",
+        "description": "It applies only for product_type internet and provides information on connections characteristics",
+        "required": ["type", "uplink_mbps", "downlink_mbps"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Connection type",
+            "enum": ["fiber", "dsl", "unknown"]
+          },
+          "uplink_mbps": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Uplink speed in megabits per second"
+          },
+          "downlink_mbps": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Downlink speed in megabits per second"
+          }
+        }
+      },
+      "Package": {
+        "type": "object",
+        "description": "Package information",
+        "required": ["name", "package_id"],
+        "properties": {
+          "name": { "type": "string", "description": "Name of the package. User Friendly field." },
+          "package_id": { "type": "string", "description": "Unique package identifier" }
+        }
+      },
+      "Packages": {
+        "type": "array",
+        "description": "It applies only for product_type iptv and dth; provides information on available TV packages",
+        "items": { "$ref": "#/components/schemas/Package" }
+      },
+      "Description": {
+        "type": "object",
+        "description": "Information about the product for displaying purposes.",
+        "required": ["text"],
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "Text with information about the product. User Friendly field."
+          },
+          "url": { "type": "string", "pattern": "^https?://.+$", "description": "HTTPS URL" },
+          "category": {
+            "type": "string",
+            "description": "Category of the description. This field is used to provide further info about displaying of the description text:\n - 'general': Default value for any description without specific category.\n - 'dates': Information about dates, related with the life-cycle of the product (e.g: contractual information about renowation conditions)\n - 'promotion': Information about product acquisition conditions, such as if special price is being applied and for how long, or if data quota is duplicated during first three months.",
+            "enum": ["general", "dates", "promotion"]
+          }
+        }
+      },
+      "Descriptions": { "type": "array", "items": { "$ref": "#/components/schemas/Description" } },
+      "Price": {
+        "type": "object",
+        "description": "Price information",
+        "required": ["description", "type", "amount", "tax"],
+        "properties": {
+          "description": {
+            "type": "string",
+            "description": "Description of the price. User Friendly field."
+          },
+          "type": {
+            "type": "string",
+            "description": "Type of the price",
+            "enum": ["recurring", "usage", "one-off"],
+            "default": "recurring"
+          },
+          "recurring_period": {
+            "type": "string",
+            "description": "Period between charge of the price. Applies when type equals recurring.\n Additional to pre-defined values of daily, weekly, monthly, yearly, any indication of number of days or hours is possible, with format {x}-days or {x}-hours (e.g.: 7-days or 24-hours).",
+            "pattern": "^(daily|weekly|monthly|yearly|\\d{1,4}-(days|hours))$"
+          },
+          "period_duration": {
+            "type": "string",
+            "description": "Period for which the product will be subscribed. It does not mean that offer is available for indicated period, it means that the product will be acquired and will last for indicated period. Applies when type equals one-off or usage. For backwards compatibility, in case of recurring prices, recurring_period param is used instead.\n Additional to pre-defined values of day, week, month, year, any indication of number of days or hours is possible, with format {x}-days or {x}-hours (e.g.: 7-days or 24-hours).",
+            "pattern": "^(day|week|month|year|\\d{1,4}-(days|hours))$"
+          },
+          "amount": {
+            "$ref": "https://docs.baikalplatform.com/common/v2.2/common.json#/definitions/MoneyAmount"
+          },
+          "tax": {
+            "type": "number",
+            "format": "float",
+            "multipleOf": 0.001,
+            "description": "porcentage factor of the taxes applied"
+          }
+        }
+      },
+      "Orders": {
+        "type": "array",
+        "description": "List of orders",
+        "items": { "$ref": "#/components/schemas/Order" }
+      },
+      "Order": {
+        "type": "object",
+        "description": "Information related to an order",
+        "required": ["id", "creation_date", "status", "type"],
+        "properties": {
+          "id": { "type": "string", "description": "Unique id of the order" },
+          "offer_id": { "type": "string", "description": "Id of the purchased offer" },
+          "product_id": {
+            "type": "string",
+            "description": "Id of the subscribed product this order relates to"
+          },
+          "identifier": {
+            "type": "string",
+            "description": "user identifer (e.g. phone number) associated to the order"
+          },
+          "creation_date": {
+            "type": "string",
+            "description": "Time when the order was created, in ISO-8601 extended local date format. Time-offset from UTC may be used to match local OB time.",
+            "format": "date-time"
+          },
+          "type": {
+            "type": "string",
+            "description": "type of the order",
+            "enum": ["purchase", "unsubscription", "update"]
+          },
+          "status": { "$ref": "#/components/schemas/OrderStatus" },
+          "error": { "$ref": "#/components/schemas/OrderError" }
+        }
+      },
+      "OrderStatus": {
+        "type": "string",
+        "enum": ["pending", "confirmed", "rejected"],
+        "default": "pending"
+      },
+      "OrderError": {
+        "type": "object",
+        "description": "Information related to an error when trying to purchase an offer",
+        "required": ["code", "description"],
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "Error code produces when trying to purchase an offer"
+          },
+          "description": {
+            "type": "string",
+            "description": "Message information related to the error when trying to purchase an offer. User Friendly field."
+          }
+        }
+      },
+      "CreatePurchaseOrderInvoice": {
+        "type": "object",
+        "description": "Information of what offer has to be used to create the order",
+        "required": ["offer_id"],
+        "properties": {
+          "offer_id": {
+            "type": "string",
+            "description": "Id of the offer related to the new order"
+          },
+          "identifier": {
+            "type": "string",
+            "description": "user identifer (e.g. phone number) associated to the order"
+          }
+        },
+        "example": {
+          "offer_id": "aced5828-3836-45cc-8a08-4f38b6233833",
+          "identifier": "+34657893421"
+        }
+      },
+      "CreatePurchaseOrderWallet": {
+        "type": "object",
+        "description": "Information of what offer has to be used to create the order",
+        "required": ["offer_id", "wallet_type"],
+        "properties": {
+          "offer_id": {
+            "type": "string",
+            "description": "Id of the offer related to the new order"
+          },
+          "identifier": {
+            "type": "string",
+            "description": "user identifer (e.g. phone number) associated to the order"
+          },
+          "wallet_type": { "$ref": "#/components/schemas/WalletType" }
+        },
+        "example": {
+          "offer_id": "aced5828-3836-45cc-8a08-4f38b6233833",
+          "identifier": "+34657893421",
+          "wallet_type": "general"
+        }
+      },
+      "CreatePurchaseOrderByPhoneNumberInvoice": {
+        "type": "object",
+        "description": "Information of what offer has to be used to create the order using invoice has payment method",
+        "required": ["offer_id"],
+        "properties": {
+          "offer_id": {
+            "type": "string",
+            "description": "Id of the offer related to the new order"
+          }
+        },
+        "example": { "offer_id": "aced5828-3836-45cc-8a08-4f38b6233833" }
+      },
+      "CreatePurchaseOrderByPhoneNumberWallet": {
+        "type": "object",
+        "description": "Information of what offer has to be used to create the order using wallet as payment method",
+        "required": ["offer_id", "wallet_type"],
+        "properties": {
+          "offer_id": {
+            "type": "string",
+            "description": "Id of the offer related to the new order"
+          },
+          "wallet_type": { "$ref": "#/components/schemas/WalletType" }
+        },
+        "example": { "offer_id": "aced5828-3836-45cc-8a08-4f38b6233833", "wallet_type": "general" }
+      },
+      "WalletType": {
+        "type": "string",
+        "description": "type of the wallet",
+        "enum": ["general", "communications", "additional_services"]
+      },
+      "CreateUnsubscribeOrder": {
+        "type": "object",
+        "description": "Information to create a product unsubscribe order",
+        "required": ["product_id"],
+        "properties": {
+          "product_id": { "type": "string", "description": "Id of the product to be unsubscribed" }
+        },
+        "example": { "product_id": "2134-coolproduct" }
+      },
+      "CreateUpdateRenewOrder": {
+        "type": "object",
+        "description": "Information to create an order to set renew config of a product.",
+        "required": ["product_id", "renew"],
+        "properties": {
+          "product_id": { "type": "string", "description": "Id of the product to be updated" },
+          "renew": {
+            "type": "boolean",
+            "description": "True to indicate that product renovation config should be activated, false to do the opposite"
+          }
+        },
+        "example": { "product_id": "2134-coolproduct", "renew": true }
+      }
+    }
+  }
+}
