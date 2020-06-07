@@ -2,6 +2,7 @@ import https from 'https'
 import http from 'http'
 import fs from 'fs'
 import path from 'path'
+import yaml from 'js-yaml'
 import { OpenAPIV3 } from 'openapi-types'
 
 const getText = (url: string) =>
@@ -24,31 +25,32 @@ const getText = (url: string) =>
       })
   })
 
-type DocInfo = { url: string; doc: OpenAPIV3.Document }
+type DocType = Record<string, any>
+type DocInfo = { url: string; doc: DocType }
 const hasExternalRegExp = /"\$ref":"[^#].+?"/g
 
-const fetchExternalDocs = async (docs: OpenAPIV3.Document, inputDir: string) => {
+const fetchExternalDocs = async (docs: DocType, inputDir: string) => {
   const docList: DocInfo[] = []
   const fetchingUrls: string[] = []
 
-  const fetchDocs = (d: OpenAPIV3.Document, input: string) =>
+  const fetchDocs = (d: DocType, input: string) =>
     Promise.all(
       (JSON.stringify(d).match(hasExternalRegExp) ?? []).map(async ref => {
-        const [, url] = ref.match(/"\$ref":"(.+?)#/)!
+        const [, url] = ref.match(/"\$ref":"(.+?)[#"]/)!
 
         if (fetchingUrls.includes(url)) return
-
         fetchingUrls.push(url)
-        const doc: OpenAPIV3.Document = JSON.parse(
-          await (url.startsWith('http')
-            ? getText(url)
-            : input.startsWith('http')
-            ? getText(path.join(input, url))
-            : fs.promises.readFile(path.join(input, url), 'utf8'))
-        )
+
+        const filePath = url.startsWith('http')
+          ? url
+          : path.posix.join(input.split('/').slice(0, -1).join('/'), url)
+        const text = await (filePath.startsWith('http')
+          ? getText(filePath)
+          : fs.promises.readFile(filePath, 'utf8'))
+        const doc: DocType = filePath.endsWith('.json') ? JSON.parse(text) : yaml.safeLoad(text)
         docList[fetchingUrls.indexOf(url)] = { url, doc }
 
-        await fetchDocs(doc, url.startsWith('http') ? url : path.join(input, url))
+        await fetchDocs(doc, filePath)
       })
     )
 
@@ -58,10 +60,14 @@ const fetchExternalDocs = async (docs: OpenAPIV3.Document, inputDir: string) => 
 
 const getComponentInfo = (docList: DocInfo[], url: string, prop: string) => {
   const data = docList.find(d => d.url === url)!.doc
-  const target = prop.split('/').reduce((prev, current) => prev[current], data as any)
-  if (target.name) return { type: 'parameters' as const, data: target }
-  return { type: 'schemas' as const, data: target }
+  const target = prop ? prop.split('/').reduce((prev, current) => prev[current], data) : data
+
+  if (target.name) return { type: 'parameters', data: target }
+  return { type: 'schemas', data: target }
 }
+
+const genExternalTypeName = (docList: DocInfo[], url: string, prop: string) =>
+  `External${docList.findIndex(d => d.url === url)}${prop ? `_${prop.split('/').pop()}` : ''}`
 
 const resolveExternalDocs = async (docs: OpenAPIV3.Document, inputDir: string) => {
   const externalDocs = await fetchExternalDocs(docs, inputDir)
@@ -70,9 +76,11 @@ const resolveExternalDocs = async (docs: OpenAPIV3.Document, inputDir: string) =
     let docsString = JSON.stringify(selfDoc.doc)
     ;(docsString.match(/"\$ref":".+?"/g) ?? []).forEach(refs => {
       const targetText = refs.replace('"$ref":"', '').slice(0, -1)
-      const [, url = selfDoc.url, prop] = targetText.match(/(.+?)?#\/(.+)/)!
+      const [urlBase, propBase = '/'] = targetText.split('#')
+      const url = urlBase || selfDoc.url
+      const prop = propBase.slice(1)
       const info = getComponentInfo(externalDocs, url, prop)
-      const name = `External${externalDocs.findIndex(d => d.url === url)}_${prop.split('/').pop()}`
+      const name = genExternalTypeName(externalDocs, url, prop)
       docsString = docsString.replace(targetText, `#/components/${info.type}/${name}`)
       componentsInfoList.push({ url, prop, name })
     })
@@ -85,7 +93,7 @@ const resolveExternalDocs = async (docs: OpenAPIV3.Document, inputDir: string) =
     components: componentsInfoList.reduce((prev, { url, prop, name }) => {
       const info = getComponentInfo(replacedExternalDocs, url, prop)
       return { ...prev, [info.type]: { ...prev[info.type], [name]: info.data } }
-    }, {} as Record<string, any>)
+    }, {} as DocType)
   }
 }
 
@@ -95,11 +103,12 @@ export default async (docs: OpenAPIV3.Document, inputDir: string): Promise<OpenA
   let docsString = JSON.stringify(docs)
   ;(docsString.match(hasExternalRegExp) ?? []).forEach(refs => {
     const targetText = refs.replace('"$ref":"', '').slice(0, -1)
-    const [, url, prop] = targetText.match(/(.+?)#\/(.+)/)!
+    const [url, propBase = '/'] = targetText.split('#')
+    const prop = propBase.slice(1)
 
     const info = getComponentInfo(externalDocs, url, prop)
     components[info.type] = components[info.type] || {}
-    const name = `External${externalDocs.findIndex(d => d.url === url)}_${prop.split('/').pop()}`
+    const name = genExternalTypeName(externalDocs, url, prop)
     Object.assign(components[info.type], { [name]: info.data })
     docsString = docsString.replace(targetText, `#/components/${info.type}/${name}`)
   })
