@@ -18,29 +18,29 @@ const api = <T>(client: AspidaClient<T>) => {
           put: (option?: { config?: T }) =>
             client.fetch<Methods0['put']['resBody'], BasicHeaders, Methods0['put']['status']>(prefix, `/dummy/${val0}/content`, 'PUT', option).text(),
           $put: async (option?: { config?: T }) =>
-            (await client.fetch<Methods0['put']['resBody'], BasicHeaders, Methods0['put']['status']>(prefix, `/dummy/${val0}/content`, 'PUT', option).text()).data
+            (await client.fetch<Methods0['put']['resBody'], BasicHeaders, Methods0['put']['status']>(prefix, `/dummy/${val0}/content`, 'PUT', option).text()).body
         },
         query: {
           put: (option?: { query?: Methods1['put']['query'], config?: T }) =>
             client.fetch<void, BasicHeaders, Methods1['put']['status']>(prefix, `/dummy/${val0}/query`, 'PUT', option).send(),
           $put: async (option?: { query?: Methods1['put']['query'], config?: T }) =>
-            (await client.fetch<void, BasicHeaders, Methods1['put']['status']>(prefix, `/dummy/${val0}/query`, 'PUT', option).send()).data
+            (await client.fetch<void, BasicHeaders, Methods1['put']['status']>(prefix, `/dummy/${val0}/query`, 'PUT', option).send()).body
         },
         simple: {
           put: (option?: { config?: T }) =>
             client.fetch<void, BasicHeaders, Methods2['put']['status']>(prefix, `/dummy/${val0}/simple`, 'PUT', option).send(),
           $put: async (option?: { config?: T }) =>
-            (await client.fetch<void, BasicHeaders, Methods2['put']['status']>(prefix, `/dummy/${val0}/simple`, 'PUT', option).send()).data
+            (await client.fetch<void, BasicHeaders, Methods2['put']['status']>(prefix, `/dummy/${val0}/simple`, 'PUT', option).send()).body
         }
       })
     },
     file: {
       _id: (val1: number) => ({
         upload: {
-          post: (option?: { data?: Methods3['post']['reqBody'], query?: Methods3['post']['query'], config?: T }) =>
+          post: (option?: { body?: Methods3['post']['reqBody'], query?: Methods3['post']['query'], config?: T }) =>
             client.fetch<void, BasicHeaders, Methods3['post']['status']>(prefix, `/file/${val1}/upload`, 'POST', option, 'Blob').send(),
-          $post: async (option?: { data?: Methods3['post']['reqBody'], query?: Methods3['post']['query'], config?: T }) =>
-            (await client.fetch<void, BasicHeaders, Methods3['post']['status']>(prefix, `/file/${val1}/upload`, 'POST', option, 'Blob').send()).data
+          $post: async (option?: { body?: Methods3['post']['reqBody'], query?: Methods3['post']['query'], config?: T }) =>
+            (await client.fetch<void, BasicHeaders, Methods3['post']['status']>(prefix, `/file/${val1}/upload`, 'POST', option, 'Blob').send()).body
         }
       })
     },
@@ -50,30 +50,30 @@ const api = <T>(client: AspidaClient<T>) => {
           get: (option?: { query?: Methods5['get']['query'], config?: T }) =>
             client.fetch<void, BasicHeaders, Methods5['get']['status']>(prefix, `/user/${val2}/abc`, 'GET', option).send(),
           $get: async (option?: { query?: Methods5['get']['query'], config?: T }) =>
-            (await client.fetch<void, BasicHeaders, Methods5['get']['status']>(prefix, `/user/${val2}/abc`, 'GET', option).send()).data
+            (await client.fetch<void, BasicHeaders, Methods5['get']['status']>(prefix, `/user/${val2}/abc`, 'GET', option).send()).body
         },
         xyz: {
           get: (option?: { config?: T }) =>
             client.fetch<void, BasicHeaders, Methods6['get']['status']>(prefix, `/user/${val2}/xyz`, 'GET', option).send(),
           $get: async (option?: { config?: T }) =>
-            (await client.fetch<void, BasicHeaders, Methods6['get']['status']>(prefix, `/user/${val2}/xyz`, 'GET', option).send()).data,
+            (await client.fetch<void, BasicHeaders, Methods6['get']['status']>(prefix, `/user/${val2}/xyz`, 'GET', option).send()).body,
           put: (option?: { config?: T }) =>
             client.fetch<void, BasicHeaders, Methods6['put']['status']>(prefix, `/user/${val2}/xyz`, 'PUT', option).send(),
           $put: async (option?: { config?: T }) =>
-            (await client.fetch<void, BasicHeaders, Methods6['put']['status']>(prefix, `/user/${val2}/xyz`, 'PUT', option).send()).data
+            (await client.fetch<void, BasicHeaders, Methods6['put']['status']>(prefix, `/user/${val2}/xyz`, 'PUT', option).send()).body
         },
         get: (option?: { config?: T }) =>
           client.fetch<void, BasicHeaders, Methods4['get']['status']>(prefix, `/user/${val2}`, 'GET', option).send(),
         $get: async (option?: { config?: T }) =>
-          (await client.fetch<void, BasicHeaders, Methods4['get']['status']>(prefix, `/user/${val2}`, 'GET', option).send()).data,
+          (await client.fetch<void, BasicHeaders, Methods4['get']['status']>(prefix, `/user/${val2}`, 'GET', option).send()).body,
         patch: (option?: { config?: T }) =>
           client.fetch<void, BasicHeaders, Methods4['patch']['status']>(prefix, `/user/${val2}`, 'PATCH', option).send(),
         $patch: async (option?: { config?: T }) =>
-          (await client.fetch<void, BasicHeaders, Methods4['patch']['status']>(prefix, `/user/${val2}`, 'PATCH', option).send()).data,
+          (await client.fetch<void, BasicHeaders, Methods4['patch']['status']>(prefix, `/user/${val2}`, 'PATCH', option).send()).body,
         delete: (option?: { config?: T }) =>
           client.fetch<void, BasicHeaders, Methods4['delete']['status']>(prefix, `/user/${val2}`, 'DELETE', option).send(),
         $delete: async (option?: { config?: T }) =>
-          (await client.fetch<void, BasicHeaders, Methods4['delete']['status']>(prefix, `/user/${val2}`, 'DELETE', option).send()).data
+          (await client.fetch<void, BasicHeaders, Methods4['delete']['status']>(prefix, `/user/${val2}`, 'DELETE', option).send()).body
       })
     }
   }

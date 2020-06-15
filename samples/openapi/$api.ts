@@ -65,12 +65,12 @@ const api = <T>(client: AspidaClient<T>) => {
               get: (option: { query: Methods1['get']['query'], config?: T }) =>
                 client.fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, `/api/stream/v1/stories/${val0}`, 'GET', option).json(),
               $get: async (option: { query: Methods1['get']['query'], config?: T }) =>
-                (await client.fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, `/api/stream/v1/stories/${val0}`, 'GET', option).json()).data
+                (await client.fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, `/api/stream/v1/stories/${val0}`, 'GET', option).json()).body
             }),
             get: (option: { query: Methods0['get']['query'], config?: T }) =>
               client.fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, '/api/stream/v1/stories', 'GET', option).json(),
             $get: async (option: { query: Methods0['get']['query'], config?: T }) =>
-              (await client.fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, '/api/stream/v1/stories', 'GET', option).json()).data
+              (await client.fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, '/api/stream/v1/stories', 'GET', option).json()).body
           }
         }
       },
@@ -79,63 +79,63 @@ const api = <T>(client: AspidaClient<T>) => {
           get: (option?: { config?: T }) =>
             client.fetch<Methods2['get']['resBody'], BasicHeaders, Methods2['get']['status']>(prefix, '/api/v1/me', 'GET', option).json(),
           $get: async (option?: { config?: T }) =>
-            (await client.fetch<Methods2['get']['resBody'], BasicHeaders, Methods2['get']['status']>(prefix, '/api/v1/me', 'GET', option).json()).data
+            (await client.fetch<Methods2['get']['resBody'], BasicHeaders, Methods2['get']['status']>(prefix, '/api/v1/me', 'GET', option).json()).body
         },
         mixes: {
           _id: (val1: string) => ({
-            put: (option?: { data?: Methods4['put']['reqBody'], config?: T }) =>
+            put: (option?: { body?: Methods4['put']['reqBody'], config?: T }) =>
               client.fetch<void, BasicHeaders, Methods4['put']['status']>(prefix, `/api/v1/mixes/${val1}`, 'PUT', option).send(),
-            $put: async (option?: { data?: Methods4['put']['reqBody'], config?: T }) =>
-              (await client.fetch<void, BasicHeaders, Methods4['put']['status']>(prefix, `/api/v1/mixes/${val1}`, 'PUT', option).send()).data
+            $put: async (option?: { body?: Methods4['put']['reqBody'], config?: T }) =>
+              (await client.fetch<void, BasicHeaders, Methods4['put']['status']>(prefix, `/api/v1/mixes/${val1}`, 'PUT', option).send()).body
           }),
           _mixId: (val2: string) => ({
             cards: {
-              post: (option?: { data?: Methods5['post']['reqBody'], config?: T }) =>
+              post: (option?: { body?: Methods5['post']['reqBody'], config?: T }) =>
                 client.fetch<void, BasicHeaders, Methods5['post']['status']>(prefix, `/api/v1/mixes/${val2}/cards`, 'POST', option).send(),
-              $post: async (option?: { data?: Methods5['post']['reqBody'], config?: T }) =>
-                (await client.fetch<void, BasicHeaders, Methods5['post']['status']>(prefix, `/api/v1/mixes/${val2}/cards`, 'POST', option).send()).data
+              $post: async (option?: { body?: Methods5['post']['reqBody'], config?: T }) =>
+                (await client.fetch<void, BasicHeaders, Methods5['post']['status']>(prefix, `/api/v1/mixes/${val2}/cards`, 'POST', option).send()).body
             },
             url: {
-              post: (option?: { data?: Methods6['post']['reqBody'], config?: T }) =>
+              post: (option?: { body?: Methods6['post']['reqBody'], config?: T }) =>
                 client.fetch<void, BasicHeaders, Methods6['post']['status']>(prefix, `/api/v1/mixes/${val2}/url`, 'POST', option).send(),
-              $post: async (option?: { data?: Methods6['post']['reqBody'], config?: T }) =>
-                (await client.fetch<void, BasicHeaders, Methods6['post']['status']>(prefix, `/api/v1/mixes/${val2}/url`, 'POST', option).send()).data
+              $post: async (option?: { body?: Methods6['post']['reqBody'], config?: T }) =>
+                (await client.fetch<void, BasicHeaders, Methods6['post']['status']>(prefix, `/api/v1/mixes/${val2}/url`, 'POST', option).send()).body
             }
           }),
           get: (option?: { config?: T }) =>
             client.fetch<Methods3['get']['resBody'], BasicHeaders, Methods3['get']['status']>(prefix, '/api/v1/mixes', 'GET', option).json(),
           $get: async (option?: { config?: T }) =>
-            (await client.fetch<Methods3['get']['resBody'], BasicHeaders, Methods3['get']['status']>(prefix, '/api/v1/mixes', 'GET', option).json()).data,
-          post: (option?: { data?: Methods3['post']['reqBody'], config?: T }) =>
+            (await client.fetch<Methods3['get']['resBody'], BasicHeaders, Methods3['get']['status']>(prefix, '/api/v1/mixes', 'GET', option).json()).body,
+          post: (option?: { body?: Methods3['post']['reqBody'], config?: T }) =>
             client.fetch<Methods3['post']['resBody'], BasicHeaders, Methods3['post']['status']>(prefix, '/api/v1/mixes', 'POST', option).json(),
-          $post: async (option?: { data?: Methods3['post']['reqBody'], config?: T }) =>
-            (await client.fetch<Methods3['post']['resBody'], BasicHeaders, Methods3['post']['status']>(prefix, '/api/v1/mixes', 'POST', option).json()).data
+          $post: async (option?: { body?: Methods3['post']['reqBody'], config?: T }) =>
+            (await client.fetch<Methods3['post']['resBody'], BasicHeaders, Methods3['post']['status']>(prefix, '/api/v1/mixes', 'POST', option).json()).body
         },
         parse: {
           image: {
-            post: (option?: { data?: Methods8['post']['reqBody'], config?: T }) =>
+            post: (option?: { body?: Methods8['post']['reqBody'], config?: T }) =>
               client.fetch<Methods8['post']['resBody'], BasicHeaders, Methods8['post']['status']>(prefix, '/api/v1/parse/image', 'POST', option, 'FormData').json(),
-            $post: async (option?: { data?: Methods8['post']['reqBody'], config?: T }) =>
-              (await client.fetch<Methods8['post']['resBody'], BasicHeaders, Methods8['post']['status']>(prefix, '/api/v1/parse/image', 'POST', option, 'FormData').json()).data
+            $post: async (option?: { body?: Methods8['post']['reqBody'], config?: T }) =>
+              (await client.fetch<Methods8['post']['resBody'], BasicHeaders, Methods8['post']['status']>(prefix, '/api/v1/parse/image', 'POST', option, 'FormData').json()).body
           },
-          post: (option?: { data?: Methods7['post']['reqBody'], config?: T }) =>
+          post: (option?: { body?: Methods7['post']['reqBody'], config?: T }) =>
             client.fetch<Methods7['post']['resBody'], BasicHeaders, Methods7['post']['status']>(prefix, '/api/v1/parse', 'POST', option).json(),
-          $post: async (option?: { data?: Methods7['post']['reqBody'], config?: T }) =>
-            (await client.fetch<Methods7['post']['resBody'], BasicHeaders, Methods7['post']['status']>(prefix, '/api/v1/parse', 'POST', option).json()).data
+          $post: async (option?: { body?: Methods7['post']['reqBody'], config?: T }) =>
+            (await client.fetch<Methods7['post']['resBody'], BasicHeaders, Methods7['post']['status']>(prefix, '/api/v1/parse', 'POST', option).json()).body
         },
         token: {
-          post: (option?: { data?: Methods9['post']['reqBody'], config?: T }) =>
+          post: (option?: { body?: Methods9['post']['reqBody'], config?: T }) =>
             client.fetch<Methods9['post']['resBody'], BasicHeaders, Methods9['post']['status']>(prefix, '/api/v1/token', 'POST', option).json(),
-          $post: async (option?: { data?: Methods9['post']['reqBody'], config?: T }) =>
-            (await client.fetch<Methods9['post']['resBody'], BasicHeaders, Methods9['post']['status']>(prefix, '/api/v1/token', 'POST', option).json()).data
+          $post: async (option?: { body?: Methods9['post']['reqBody'], config?: T }) =>
+            (await client.fetch<Methods9['post']['resBody'], BasicHeaders, Methods9['post']['status']>(prefix, '/api/v1/token', 'POST', option).json()).body
         }
       },
       v3: {
         $2fa: {
-          post: (option: { data: Methods10['post']['reqBody'], headers?: Methods10['post']['reqHeaders'], config?: T }) =>
+          post: (option: { body: Methods10['post']['reqBody'], headers?: Methods10['post']['reqHeaders'], config?: T }) =>
             client.fetch<Methods10['post']['resBody'], BasicHeaders, Methods10['post']['status']>(prefix, '/api/v3/2fa', 'POST', option).json(),
-          $post: async (option: { data: Methods10['post']['reqBody'], headers?: Methods10['post']['reqHeaders'], config?: T }) =>
-            (await client.fetch<Methods10['post']['resBody'], BasicHeaders, Methods10['post']['status']>(prefix, '/api/v3/2fa', 'POST', option).json()).data
+          $post: async (option: { body: Methods10['post']['reqBody'], headers?: Methods10['post']['reqHeaders'], config?: T }) =>
+            (await client.fetch<Methods10['post']['resBody'], BasicHeaders, Methods10['post']['status']>(prefix, '/api/v3/2fa', 'POST', option).json()).body
         },
         channels: {
           _channelId_0: (val3: number) => ({
@@ -143,10 +143,10 @@ const api = <T>(client: AspidaClient<T>) => {
               _chatId: (val4: number) => ({
                 items: {
                   _itemId: (val5: number) => ({
-                    post: (option?: { data?: Methods12['post']['reqBody'], headers?: Methods12['post']['reqHeaders'], config?: T }) =>
+                    post: (option?: { body?: Methods12['post']['reqBody'], headers?: Methods12['post']['reqHeaders'], config?: T }) =>
                       client.fetch<Methods12['post']['resBody'], BasicHeaders, Methods12['post']['status']>(prefix, `/api/v3/channels/${val3}/chats/${val4}/items/${val5}`, 'POST', option).json(),
-                    $post: async (option?: { data?: Methods12['post']['reqBody'], headers?: Methods12['post']['reqHeaders'], config?: T }) =>
-                      (await client.fetch<Methods12['post']['resBody'], BasicHeaders, Methods12['post']['status']>(prefix, `/api/v3/channels/${val3}/chats/${val4}/items/${val5}`, 'POST', option).json()).data
+                    $post: async (option?: { body?: Methods12['post']['reqBody'], headers?: Methods12['post']['reqHeaders'], config?: T }) =>
+                      (await client.fetch<Methods12['post']['resBody'], BasicHeaders, Methods12['post']['status']>(prefix, `/api/v3/channels/${val3}/chats/${val4}/items/${val5}`, 'POST', option).json()).body
                   })
                 }
               })
@@ -155,7 +155,7 @@ const api = <T>(client: AspidaClient<T>) => {
               get: (option?: { query?: Methods13['get']['query'], headers?: Methods13['get']['reqHeaders'], config?: T }) =>
                 client.fetch<Methods13['get']['resBody'], BasicHeaders, Methods13['get']['status']>(prefix, `/api/v3/channels/${val3}/news-feed`, 'GET', option).json(),
               $get: async (option?: { query?: Methods13['get']['query'], headers?: Methods13['get']['reqHeaders'], config?: T }) =>
-                (await client.fetch<Methods13['get']['resBody'], BasicHeaders, Methods13['get']['status']>(prefix, `/api/v3/channels/${val3}/news-feed`, 'GET', option).json()).data
+                (await client.fetch<Methods13['get']['resBody'], BasicHeaders, Methods13['get']['status']>(prefix, `/api/v3/channels/${val3}/news-feed`, 'GET', option).json()).body
             }
           }),
           _channelId_1: (val6: string) => ({
@@ -163,261 +163,261 @@ const api = <T>(client: AspidaClient<T>) => {
               _chatId: (val7: string) => ({
                 items: {
                   audio: {
-                    post: (option?: { data?: Methods18['post']['reqBody'], headers?: Methods18['post']['reqHeaders'], config?: T }) =>
+                    post: (option?: { body?: Methods18['post']['reqBody'], headers?: Methods18['post']['reqHeaders'], config?: T }) =>
                       client.fetch<Methods18['post']['resBody'], BasicHeaders, Methods18['post']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}/items/audio`, 'POST', option, 'FormData').json(),
-                    $post: async (option?: { data?: Methods18['post']['reqBody'], headers?: Methods18['post']['reqHeaders'], config?: T }) =>
-                      (await client.fetch<Methods18['post']['resBody'], BasicHeaders, Methods18['post']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}/items/audio`, 'POST', option, 'FormData').json()).data
+                    $post: async (option?: { body?: Methods18['post']['reqBody'], headers?: Methods18['post']['reqHeaders'], config?: T }) =>
+                      (await client.fetch<Methods18['post']['resBody'], BasicHeaders, Methods18['post']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}/items/audio`, 'POST', option, 'FormData').json()).body
                   },
                   image: {
-                    post: (option?: { data?: Methods19['post']['reqBody'], headers?: Methods19['post']['reqHeaders'], config?: T }) =>
+                    post: (option?: { body?: Methods19['post']['reqBody'], headers?: Methods19['post']['reqHeaders'], config?: T }) =>
                       client.fetch<Methods19['post']['resBody'], BasicHeaders, Methods19['post']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}/items/image`, 'POST', option, 'FormData').json(),
-                    $post: async (option?: { data?: Methods19['post']['reqBody'], headers?: Methods19['post']['reqHeaders'], config?: T }) =>
-                      (await client.fetch<Methods19['post']['resBody'], BasicHeaders, Methods19['post']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}/items/image`, 'POST', option, 'FormData').json()).data
+                    $post: async (option?: { body?: Methods19['post']['reqBody'], headers?: Methods19['post']['reqHeaders'], config?: T }) =>
+                      (await client.fetch<Methods19['post']['resBody'], BasicHeaders, Methods19['post']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}/items/image`, 'POST', option, 'FormData').json()).body
                   },
                   video: {
-                    post: (option?: { data?: Methods20['post']['reqBody'], headers?: Methods20['post']['reqHeaders'], config?: T }) =>
+                    post: (option?: { body?: Methods20['post']['reqBody'], headers?: Methods20['post']['reqHeaders'], config?: T }) =>
                       client.fetch<Methods20['post']['resBody'], BasicHeaders, Methods20['post']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}/items/video`, 'POST', option, 'FormData').json(),
-                    $post: async (option?: { data?: Methods20['post']['reqBody'], headers?: Methods20['post']['reqHeaders'], config?: T }) =>
-                      (await client.fetch<Methods20['post']['resBody'], BasicHeaders, Methods20['post']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}/items/video`, 'POST', option, 'FormData').json()).data
+                    $post: async (option?: { body?: Methods20['post']['reqBody'], headers?: Methods20['post']['reqHeaders'], config?: T }) =>
+                      (await client.fetch<Methods20['post']['resBody'], BasicHeaders, Methods20['post']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}/items/video`, 'POST', option, 'FormData').json()).body
                   },
                   get: (option?: { query?: Methods17['get']['query'], headers?: Methods17['get']['reqHeaders'], config?: T }) =>
                     client.fetch<Methods17['get']['resBody'], BasicHeaders, Methods17['get']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}/items`, 'GET', option).json(),
                   $get: async (option?: { query?: Methods17['get']['query'], headers?: Methods17['get']['reqHeaders'], config?: T }) =>
-                    (await client.fetch<Methods17['get']['resBody'], BasicHeaders, Methods17['get']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}/items`, 'GET', option).json()).data,
-                  post: (option: { data: Methods17['post']['reqBody'], headers?: Methods17['post']['reqHeaders'], config?: T }) =>
+                    (await client.fetch<Methods17['get']['resBody'], BasicHeaders, Methods17['get']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}/items`, 'GET', option).json()).body,
+                  post: (option: { body: Methods17['post']['reqBody'], headers?: Methods17['post']['reqHeaders'], config?: T }) =>
                     client.fetch<Methods17['post']['resBody'], BasicHeaders, Methods17['post']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}/items`, 'POST', option).json(),
-                  $post: async (option: { data: Methods17['post']['reqBody'], headers?: Methods17['post']['reqHeaders'], config?: T }) =>
-                    (await client.fetch<Methods17['post']['resBody'], BasicHeaders, Methods17['post']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}/items`, 'POST', option).json()).data
+                  $post: async (option: { body: Methods17['post']['reqBody'], headers?: Methods17['post']['reqHeaders'], config?: T }) =>
+                    (await client.fetch<Methods17['post']['resBody'], BasicHeaders, Methods17['post']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}/items`, 'POST', option).json()).body
                 },
                 itemslist: {
                   get: (option: { query: Methods21['get']['query'], headers?: Methods21['get']['reqHeaders'], config?: T }) =>
                     client.fetch<Methods21['get']['resBody'], BasicHeaders, Methods21['get']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}/itemslist`, 'GET', option).json(),
                   $get: async (option: { query: Methods21['get']['query'], headers?: Methods21['get']['reqHeaders'], config?: T }) =>
-                    (await client.fetch<Methods21['get']['resBody'], BasicHeaders, Methods21['get']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}/itemslist`, 'GET', option).json()).data
+                    (await client.fetch<Methods21['get']['resBody'], BasicHeaders, Methods21['get']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}/itemslist`, 'GET', option).json()).body
                 },
                 users: {
                   remove: {
-                    post: (option: { data: Methods23['post']['reqBody'], headers?: Methods23['post']['reqHeaders'], config?: T }) =>
+                    post: (option: { body: Methods23['post']['reqBody'], headers?: Methods23['post']['reqHeaders'], config?: T }) =>
                       client.fetch<void, BasicHeaders, Methods23['post']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}/users/remove`, 'POST', option).send(),
-                    $post: async (option: { data: Methods23['post']['reqBody'], headers?: Methods23['post']['reqHeaders'], config?: T }) =>
-                      (await client.fetch<void, BasicHeaders, Methods23['post']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}/users/remove`, 'POST', option).send()).data
+                    $post: async (option: { body: Methods23['post']['reqBody'], headers?: Methods23['post']['reqHeaders'], config?: T }) =>
+                      (await client.fetch<void, BasicHeaders, Methods23['post']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}/users/remove`, 'POST', option).send()).body
                   },
                   get: (option?: { headers?: Methods22['get']['reqHeaders'], config?: T }) =>
                     client.fetch<Methods22['get']['resBody'], BasicHeaders, Methods22['get']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}/users`, 'GET', option).json(),
                   $get: async (option?: { headers?: Methods22['get']['reqHeaders'], config?: T }) =>
-                    (await client.fetch<Methods22['get']['resBody'], BasicHeaders, Methods22['get']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}/users`, 'GET', option).json()).data,
-                  post: (option: { data: Methods22['post']['reqBody'], headers?: Methods22['post']['reqHeaders'], config?: T }) =>
+                    (await client.fetch<Methods22['get']['resBody'], BasicHeaders, Methods22['get']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}/users`, 'GET', option).json()).body,
+                  post: (option: { body: Methods22['post']['reqBody'], headers?: Methods22['post']['reqHeaders'], config?: T }) =>
                     client.fetch<void, BasicHeaders, Methods22['post']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}/users`, 'POST', option).send(),
-                  $post: async (option: { data: Methods22['post']['reqBody'], headers?: Methods22['post']['reqHeaders'], config?: T }) =>
-                    (await client.fetch<void, BasicHeaders, Methods22['post']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}/users`, 'POST', option).send()).data,
-                  put: (option: { data: Methods22['put']['reqBody'], headers?: Methods22['put']['reqHeaders'], config?: T }) =>
+                  $post: async (option: { body: Methods22['post']['reqBody'], headers?: Methods22['post']['reqHeaders'], config?: T }) =>
+                    (await client.fetch<void, BasicHeaders, Methods22['post']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}/users`, 'POST', option).send()).body,
+                  put: (option: { body: Methods22['put']['reqBody'], headers?: Methods22['put']['reqHeaders'], config?: T }) =>
                     client.fetch<void, BasicHeaders, Methods22['put']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}/users`, 'PUT', option).send(),
-                  $put: async (option: { data: Methods22['put']['reqBody'], headers?: Methods22['put']['reqHeaders'], config?: T }) =>
-                    (await client.fetch<void, BasicHeaders, Methods22['put']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}/users`, 'PUT', option).send()).data
+                  $put: async (option: { body: Methods22['put']['reqBody'], headers?: Methods22['put']['reqHeaders'], config?: T }) =>
+                    (await client.fetch<void, BasicHeaders, Methods22['put']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}/users`, 'PUT', option).send()).body
                 },
                 get: (option?: { headers?: Methods16['get']['reqHeaders'], config?: T }) =>
                   client.fetch<Methods16['get']['resBody'], BasicHeaders, Methods16['get']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}`, 'GET', option).json(),
                 $get: async (option?: { headers?: Methods16['get']['reqHeaders'], config?: T }) =>
-                  (await client.fetch<Methods16['get']['resBody'], BasicHeaders, Methods16['get']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}`, 'GET', option).json()).data,
-                put: (option: { data: Methods16['put']['reqBody'], headers?: Methods16['put']['reqHeaders'], config?: T }) =>
+                  (await client.fetch<Methods16['get']['resBody'], BasicHeaders, Methods16['get']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}`, 'GET', option).json()).body,
+                put: (option: { body: Methods16['put']['reqBody'], headers?: Methods16['put']['reqHeaders'], config?: T }) =>
                   client.fetch<void, BasicHeaders, Methods16['put']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}`, 'PUT', option).send(),
-                $put: async (option: { data: Methods16['put']['reqBody'], headers?: Methods16['put']['reqHeaders'], config?: T }) =>
-                  (await client.fetch<void, BasicHeaders, Methods16['put']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}`, 'PUT', option).send()).data,
+                $put: async (option: { body: Methods16['put']['reqBody'], headers?: Methods16['put']['reqHeaders'], config?: T }) =>
+                  (await client.fetch<void, BasicHeaders, Methods16['put']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}`, 'PUT', option).send()).body,
                 delete: (option?: { headers?: Methods16['delete']['reqHeaders'], config?: T }) =>
                   client.fetch<void, BasicHeaders, Methods16['delete']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}`, 'DELETE', option).send(),
                 $delete: async (option?: { headers?: Methods16['delete']['reqHeaders'], config?: T }) =>
-                  (await client.fetch<void, BasicHeaders, Methods16['delete']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}`, 'DELETE', option).send()).data
+                  (await client.fetch<void, BasicHeaders, Methods16['delete']['status']>(prefix, `/api/v3/channels/${val6}/chats/${val7}`, 'DELETE', option).send()).body
               }),
               get: (option?: { headers?: Methods15['get']['reqHeaders'], config?: T }) =>
                 client.fetch<Methods15['get']['resBody'], BasicHeaders, Methods15['get']['status']>(prefix, `/api/v3/channels/${val6}/chats`, 'GET', option).json(),
               $get: async (option?: { headers?: Methods15['get']['reqHeaders'], config?: T }) =>
-                (await client.fetch<Methods15['get']['resBody'], BasicHeaders, Methods15['get']['status']>(prefix, `/api/v3/channels/${val6}/chats`, 'GET', option).json()).data,
-              post: (option: { data: Methods15['post']['reqBody'], headers?: Methods15['post']['reqHeaders'], config?: T }) =>
+                (await client.fetch<Methods15['get']['resBody'], BasicHeaders, Methods15['get']['status']>(prefix, `/api/v3/channels/${val6}/chats`, 'GET', option).json()).body,
+              post: (option: { body: Methods15['post']['reqBody'], headers?: Methods15['post']['reqHeaders'], config?: T }) =>
                 client.fetch<Methods15['post']['resBody'], BasicHeaders, Methods15['post']['status']>(prefix, `/api/v3/channels/${val6}/chats`, 'POST', option).json(),
-              $post: async (option: { data: Methods15['post']['reqBody'], headers?: Methods15['post']['reqHeaders'], config?: T }) =>
-                (await client.fetch<Methods15['post']['resBody'], BasicHeaders, Methods15['post']['status']>(prefix, `/api/v3/channels/${val6}/chats`, 'POST', option).json()).data
+              $post: async (option: { body: Methods15['post']['reqBody'], headers?: Methods15['post']['reqHeaders'], config?: T }) =>
+                (await client.fetch<Methods15['post']['resBody'], BasicHeaders, Methods15['post']['status']>(prefix, `/api/v3/channels/${val6}/chats`, 'POST', option).json()).body
             },
             notifications: {
               get: (option?: { query?: Methods24['get']['query'], headers?: Methods24['get']['reqHeaders'], config?: T }) =>
                 client.fetch<Methods24['get']['resBody'], BasicHeaders, Methods24['get']['status']>(prefix, `/api/v3/channels/${val6}/notifications`, 'GET', option).json(),
               $get: async (option?: { query?: Methods24['get']['query'], headers?: Methods24['get']['reqHeaders'], config?: T }) =>
-                (await client.fetch<Methods24['get']['resBody'], BasicHeaders, Methods24['get']['status']>(prefix, `/api/v3/channels/${val6}/notifications`, 'GET', option).json()).data
+                (await client.fetch<Methods24['get']['resBody'], BasicHeaders, Methods24['get']['status']>(prefix, `/api/v3/channels/${val6}/notifications`, 'GET', option).json()).body
             },
             get: (option?: { query?: Methods14['get']['query'], headers?: Methods14['get']['reqHeaders'], config?: T }) =>
               client.fetch<void, BasicHeaders, Methods14['get']['status']>(prefix, `/api/v3/channels/${val6}`, 'GET', option).send(),
             $get: async (option?: { query?: Methods14['get']['query'], headers?: Methods14['get']['reqHeaders'], config?: T }) =>
-              (await client.fetch<void, BasicHeaders, Methods14['get']['status']>(prefix, `/api/v3/channels/${val6}`, 'GET', option).send()).data
+              (await client.fetch<void, BasicHeaders, Methods14['get']['status']>(prefix, `/api/v3/channels/${val6}`, 'GET', option).send()).body
           }),
           get: (option?: { query?: Methods11['get']['query'], headers?: Methods11['get']['reqHeaders'], config?: T }) =>
             client.fetch<Methods11['get']['resBody'], BasicHeaders, Methods11['get']['status']>(prefix, '/api/v3/channels', 'GET', option).json(),
           $get: async (option?: { query?: Methods11['get']['query'], headers?: Methods11['get']['reqHeaders'], config?: T }) =>
-            (await client.fetch<Methods11['get']['resBody'], BasicHeaders, Methods11['get']['status']>(prefix, '/api/v3/channels', 'GET', option).json()).data
+            (await client.fetch<Methods11['get']['resBody'], BasicHeaders, Methods11['get']['status']>(prefix, '/api/v3/channels', 'GET', option).json()).body
         },
         chats: {
           _chatId_0: (val8: number) => ({
             items: {
               _itemId: (val9: number) => ({
-                post: (option?: { data?: Methods25['post']['reqBody'], headers?: Methods25['post']['reqHeaders'], config?: T }) =>
+                post: (option?: { body?: Methods25['post']['reqBody'], headers?: Methods25['post']['reqHeaders'], config?: T }) =>
                   client.fetch<Methods25['post']['resBody'], BasicHeaders, Methods25['post']['status']>(prefix, `/api/v3/chats/${val8}/items/${val9}`, 'POST', option).json(),
-                $post: async (option?: { data?: Methods25['post']['reqBody'], headers?: Methods25['post']['reqHeaders'], config?: T }) =>
-                  (await client.fetch<Methods25['post']['resBody'], BasicHeaders, Methods25['post']['status']>(prefix, `/api/v3/chats/${val8}/items/${val9}`, 'POST', option).json()).data,
+                $post: async (option?: { body?: Methods25['post']['reqBody'], headers?: Methods25['post']['reqHeaders'], config?: T }) =>
+                  (await client.fetch<Methods25['post']['resBody'], BasicHeaders, Methods25['post']['status']>(prefix, `/api/v3/chats/${val8}/items/${val9}`, 'POST', option).json()).body,
                 get: (option?: { headers?: Methods25['get']['reqHeaders'], config?: T }) =>
                   client.fetch<Methods25['get']['resBody'], BasicHeaders, Methods25['get']['status']>(prefix, `/api/v3/chats/${val8}/items/${val9}`, 'GET', option).json(),
                 $get: async (option?: { headers?: Methods25['get']['reqHeaders'], config?: T }) =>
-                  (await client.fetch<Methods25['get']['resBody'], BasicHeaders, Methods25['get']['status']>(prefix, `/api/v3/chats/${val8}/items/${val9}`, 'GET', option).json()).data
+                  (await client.fetch<Methods25['get']['resBody'], BasicHeaders, Methods25['get']['status']>(prefix, `/api/v3/chats/${val8}/items/${val9}`, 'GET', option).json()).body
               })
             }
           }),
           _chatId_1: (val10: string) => ({
             items: {
               audio: {
-                post: (option?: { data?: Methods27['post']['reqBody'], headers?: Methods27['post']['reqHeaders'], config?: T }) =>
+                post: (option?: { body?: Methods27['post']['reqBody'], headers?: Methods27['post']['reqHeaders'], config?: T }) =>
                   client.fetch<Methods27['post']['resBody'], BasicHeaders, Methods27['post']['status']>(prefix, `/api/v3/chats/${val10}/items/audio`, 'POST', option, 'FormData').json(),
-                $post: async (option?: { data?: Methods27['post']['reqBody'], headers?: Methods27['post']['reqHeaders'], config?: T }) =>
-                  (await client.fetch<Methods27['post']['resBody'], BasicHeaders, Methods27['post']['status']>(prefix, `/api/v3/chats/${val10}/items/audio`, 'POST', option, 'FormData').json()).data
+                $post: async (option?: { body?: Methods27['post']['reqBody'], headers?: Methods27['post']['reqHeaders'], config?: T }) =>
+                  (await client.fetch<Methods27['post']['resBody'], BasicHeaders, Methods27['post']['status']>(prefix, `/api/v3/chats/${val10}/items/audio`, 'POST', option, 'FormData').json()).body
               },
               image: {
-                post: (option?: { data?: Methods28['post']['reqBody'], headers?: Methods28['post']['reqHeaders'], config?: T }) =>
+                post: (option?: { body?: Methods28['post']['reqBody'], headers?: Methods28['post']['reqHeaders'], config?: T }) =>
                   client.fetch<Methods28['post']['resBody'], BasicHeaders, Methods28['post']['status']>(prefix, `/api/v3/chats/${val10}/items/image`, 'POST', option, 'FormData').json(),
-                $post: async (option?: { data?: Methods28['post']['reqBody'], headers?: Methods28['post']['reqHeaders'], config?: T }) =>
-                  (await client.fetch<Methods28['post']['resBody'], BasicHeaders, Methods28['post']['status']>(prefix, `/api/v3/chats/${val10}/items/image`, 'POST', option, 'FormData').json()).data
+                $post: async (option?: { body?: Methods28['post']['reqBody'], headers?: Methods28['post']['reqHeaders'], config?: T }) =>
+                  (await client.fetch<Methods28['post']['resBody'], BasicHeaders, Methods28['post']['status']>(prefix, `/api/v3/chats/${val10}/items/image`, 'POST', option, 'FormData').json()).body
               },
               video: {
-                post: (option?: { data?: Methods29['post']['reqBody'], headers?: Methods29['post']['reqHeaders'], config?: T }) =>
+                post: (option?: { body?: Methods29['post']['reqBody'], headers?: Methods29['post']['reqHeaders'], config?: T }) =>
                   client.fetch<Methods29['post']['resBody'], BasicHeaders, Methods29['post']['status']>(prefix, `/api/v3/chats/${val10}/items/video`, 'POST', option, 'FormData').json(),
-                $post: async (option?: { data?: Methods29['post']['reqBody'], headers?: Methods29['post']['reqHeaders'], config?: T }) =>
-                  (await client.fetch<Methods29['post']['resBody'], BasicHeaders, Methods29['post']['status']>(prefix, `/api/v3/chats/${val10}/items/video`, 'POST', option, 'FormData').json()).data
+                $post: async (option?: { body?: Methods29['post']['reqBody'], headers?: Methods29['post']['reqHeaders'], config?: T }) =>
+                  (await client.fetch<Methods29['post']['resBody'], BasicHeaders, Methods29['post']['status']>(prefix, `/api/v3/chats/${val10}/items/video`, 'POST', option, 'FormData').json()).body
               },
               get: (option?: { query?: Methods26['get']['query'], headers?: Methods26['get']['reqHeaders'], config?: T }) =>
                 client.fetch<Methods26['get']['resBody'], BasicHeaders, Methods26['get']['status']>(prefix, `/api/v3/chats/${val10}/items`, 'GET', option).json(),
               $get: async (option?: { query?: Methods26['get']['query'], headers?: Methods26['get']['reqHeaders'], config?: T }) =>
-                (await client.fetch<Methods26['get']['resBody'], BasicHeaders, Methods26['get']['status']>(prefix, `/api/v3/chats/${val10}/items`, 'GET', option).json()).data,
-              post: (option: { data: Methods26['post']['reqBody'], headers?: Methods26['post']['reqHeaders'], config?: T }) =>
+                (await client.fetch<Methods26['get']['resBody'], BasicHeaders, Methods26['get']['status']>(prefix, `/api/v3/chats/${val10}/items`, 'GET', option).json()).body,
+              post: (option: { body: Methods26['post']['reqBody'], headers?: Methods26['post']['reqHeaders'], config?: T }) =>
                 client.fetch<Methods26['post']['resBody'], BasicHeaders, Methods26['post']['status']>(prefix, `/api/v3/chats/${val10}/items`, 'POST', option).json(),
-              $post: async (option: { data: Methods26['post']['reqBody'], headers?: Methods26['post']['reqHeaders'], config?: T }) =>
-                (await client.fetch<Methods26['post']['resBody'], BasicHeaders, Methods26['post']['status']>(prefix, `/api/v3/chats/${val10}/items`, 'POST', option).json()).data
+              $post: async (option: { body: Methods26['post']['reqBody'], headers?: Methods26['post']['reqHeaders'], config?: T }) =>
+                (await client.fetch<Methods26['post']['resBody'], BasicHeaders, Methods26['post']['status']>(prefix, `/api/v3/chats/${val10}/items`, 'POST', option).json()).body
             }
           }),
           keys: {
             get: (option?: { headers?: Methods30['get']['reqHeaders'], config?: T }) =>
               client.fetch<Methods30['get']['resBody'], BasicHeaders, Methods30['get']['status']>(prefix, '/api/v3/chats/keys', 'GET', option).json(),
             $get: async (option?: { headers?: Methods30['get']['reqHeaders'], config?: T }) =>
-              (await client.fetch<Methods30['get']['resBody'], BasicHeaders, Methods30['get']['status']>(prefix, '/api/v3/chats/keys', 'GET', option).json()).data
+              (await client.fetch<Methods30['get']['resBody'], BasicHeaders, Methods30['get']['status']>(prefix, '/api/v3/chats/keys', 'GET', option).json()).body
           }
         },
         extension: {
           audio: {
-            post: (option?: { data?: Methods31['post']['reqBody'], headers?: Methods31['post']['reqHeaders'], config?: T }) =>
+            post: (option?: { body?: Methods31['post']['reqBody'], headers?: Methods31['post']['reqHeaders'], config?: T }) =>
               client.fetch<Methods31['post']['resBody'], BasicHeaders, Methods31['post']['status']>(prefix, '/api/v3/extension/audio', 'POST', option, 'FormData').json(),
-            $post: async (option?: { data?: Methods31['post']['reqBody'], headers?: Methods31['post']['reqHeaders'], config?: T }) =>
-              (await client.fetch<Methods31['post']['resBody'], BasicHeaders, Methods31['post']['status']>(prefix, '/api/v3/extension/audio', 'POST', option, 'FormData').json()).data
+            $post: async (option?: { body?: Methods31['post']['reqBody'], headers?: Methods31['post']['reqHeaders'], config?: T }) =>
+              (await client.fetch<Methods31['post']['resBody'], BasicHeaders, Methods31['post']['status']>(prefix, '/api/v3/extension/audio', 'POST', option, 'FormData').json()).body
           },
           image: {
-            post: (option?: { data?: Methods32['post']['reqBody'], headers?: Methods32['post']['reqHeaders'], config?: T }) =>
+            post: (option?: { body?: Methods32['post']['reqBody'], headers?: Methods32['post']['reqHeaders'], config?: T }) =>
               client.fetch<Methods32['post']['resBody'], BasicHeaders, Methods32['post']['status']>(prefix, '/api/v3/extension/image', 'POST', option, 'FormData').json(),
-            $post: async (option?: { data?: Methods32['post']['reqBody'], headers?: Methods32['post']['reqHeaders'], config?: T }) =>
-              (await client.fetch<Methods32['post']['resBody'], BasicHeaders, Methods32['post']['status']>(prefix, '/api/v3/extension/image', 'POST', option, 'FormData').json()).data
+            $post: async (option?: { body?: Methods32['post']['reqBody'], headers?: Methods32['post']['reqHeaders'], config?: T }) =>
+              (await client.fetch<Methods32['post']['resBody'], BasicHeaders, Methods32['post']['status']>(prefix, '/api/v3/extension/image', 'POST', option, 'FormData').json()).body
           },
           parse: {
-            post: (option: { data: Methods33['post']['reqBody'], headers?: Methods33['post']['reqHeaders'], config?: T }) =>
+            post: (option: { body: Methods33['post']['reqBody'], headers?: Methods33['post']['reqHeaders'], config?: T }) =>
               client.fetch<Methods33['post']['resBody'], BasicHeaders, Methods33['post']['status']>(prefix, '/api/v3/extension/parse', 'POST', option).json(),
-            $post: async (option: { data: Methods33['post']['reqBody'], headers?: Methods33['post']['reqHeaders'], config?: T }) =>
-              (await client.fetch<Methods33['post']['resBody'], BasicHeaders, Methods33['post']['status']>(prefix, '/api/v3/extension/parse', 'POST', option).json()).data
+            $post: async (option: { body: Methods33['post']['reqBody'], headers?: Methods33['post']['reqHeaders'], config?: T }) =>
+              (await client.fetch<Methods33['post']['resBody'], BasicHeaders, Methods33['post']['status']>(prefix, '/api/v3/extension/parse', 'POST', option).json()).body
           },
           story: {
             _storyId: (val11: string) => ({
               audio: {
-                post: (option?: { data?: Methods35['post']['reqBody'], headers?: Methods35['post']['reqHeaders'], config?: T }) =>
+                post: (option?: { body?: Methods35['post']['reqBody'], headers?: Methods35['post']['reqHeaders'], config?: T }) =>
                   client.fetch<Methods35['post']['resBody'], BasicHeaders, Methods35['post']['status']>(prefix, `/api/v3/extension/story/${val11}/audio`, 'POST', option, 'FormData').json(),
-                $post: async (option?: { data?: Methods35['post']['reqBody'], headers?: Methods35['post']['reqHeaders'], config?: T }) =>
-                  (await client.fetch<Methods35['post']['resBody'], BasicHeaders, Methods35['post']['status']>(prefix, `/api/v3/extension/story/${val11}/audio`, 'POST', option, 'FormData').json()).data
+                $post: async (option?: { body?: Methods35['post']['reqBody'], headers?: Methods35['post']['reqHeaders'], config?: T }) =>
+                  (await client.fetch<Methods35['post']['resBody'], BasicHeaders, Methods35['post']['status']>(prefix, `/api/v3/extension/story/${val11}/audio`, 'POST', option, 'FormData').json()).body
               },
               image: {
-                post: (option?: { data?: Methods36['post']['reqBody'], headers?: Methods36['post']['reqHeaders'], config?: T }) =>
+                post: (option?: { body?: Methods36['post']['reqBody'], headers?: Methods36['post']['reqHeaders'], config?: T }) =>
                   client.fetch<Methods36['post']['resBody'], BasicHeaders, Methods36['post']['status']>(prefix, `/api/v3/extension/story/${val11}/image`, 'POST', option, 'FormData').json(),
-                $post: async (option?: { data?: Methods36['post']['reqBody'], headers?: Methods36['post']['reqHeaders'], config?: T }) =>
-                  (await client.fetch<Methods36['post']['resBody'], BasicHeaders, Methods36['post']['status']>(prefix, `/api/v3/extension/story/${val11}/image`, 'POST', option, 'FormData').json()).data
+                $post: async (option?: { body?: Methods36['post']['reqBody'], headers?: Methods36['post']['reqHeaders'], config?: T }) =>
+                  (await client.fetch<Methods36['post']['resBody'], BasicHeaders, Methods36['post']['status']>(prefix, `/api/v3/extension/story/${val11}/image`, 'POST', option, 'FormData').json()).body
               },
               video: {
-                post: (option?: { data?: Methods37['post']['reqBody'], headers?: Methods37['post']['reqHeaders'], config?: T }) =>
+                post: (option?: { body?: Methods37['post']['reqBody'], headers?: Methods37['post']['reqHeaders'], config?: T }) =>
                   client.fetch<Methods37['post']['resBody'], BasicHeaders, Methods37['post']['status']>(prefix, `/api/v3/extension/story/${val11}/video`, 'POST', option, 'FormData').json(),
-                $post: async (option?: { data?: Methods37['post']['reqBody'], headers?: Methods37['post']['reqHeaders'], config?: T }) =>
-                  (await client.fetch<Methods37['post']['resBody'], BasicHeaders, Methods37['post']['status']>(prefix, `/api/v3/extension/story/${val11}/video`, 'POST', option, 'FormData').json()).data
+                $post: async (option?: { body?: Methods37['post']['reqBody'], headers?: Methods37['post']['reqHeaders'], config?: T }) =>
+                  (await client.fetch<Methods37['post']['resBody'], BasicHeaders, Methods37['post']['status']>(prefix, `/api/v3/extension/story/${val11}/video`, 'POST', option, 'FormData').json()).body
               },
-              post: (option: { data: Methods34['post']['reqBody'], headers?: Methods34['post']['reqHeaders'], config?: T }) =>
+              post: (option: { body: Methods34['post']['reqBody'], headers?: Methods34['post']['reqHeaders'], config?: T }) =>
                 client.fetch<Methods34['post']['resBody'], BasicHeaders, Methods34['post']['status']>(prefix, `/api/v3/extension/story/${val11}`, 'POST', option, 'FormData').json(),
-              $post: async (option: { data: Methods34['post']['reqBody'], headers?: Methods34['post']['reqHeaders'], config?: T }) =>
-                (await client.fetch<Methods34['post']['resBody'], BasicHeaders, Methods34['post']['status']>(prefix, `/api/v3/extension/story/${val11}`, 'POST', option, 'FormData').json()).data
+              $post: async (option: { body: Methods34['post']['reqBody'], headers?: Methods34['post']['reqHeaders'], config?: T }) =>
+                (await client.fetch<Methods34['post']['resBody'], BasicHeaders, Methods34['post']['status']>(prefix, `/api/v3/extension/story/${val11}`, 'POST', option, 'FormData').json()).body
             })
           },
           video: {
-            post: (option?: { data?: Methods38['post']['reqBody'], headers?: Methods38['post']['reqHeaders'], config?: T }) =>
+            post: (option?: { body?: Methods38['post']['reqBody'], headers?: Methods38['post']['reqHeaders'], config?: T }) =>
               client.fetch<Methods38['post']['resBody'], BasicHeaders, Methods38['post']['status']>(prefix, '/api/v3/extension/video', 'POST', option, 'FormData').json(),
-            $post: async (option?: { data?: Methods38['post']['reqBody'], headers?: Methods38['post']['reqHeaders'], config?: T }) =>
-              (await client.fetch<Methods38['post']['resBody'], BasicHeaders, Methods38['post']['status']>(prefix, '/api/v3/extension/video', 'POST', option, 'FormData').json()).data
+            $post: async (option?: { body?: Methods38['post']['reqBody'], headers?: Methods38['post']['reqHeaders'], config?: T }) =>
+              (await client.fetch<Methods38['post']['resBody'], BasicHeaders, Methods38['post']['status']>(prefix, '/api/v3/extension/video', 'POST', option, 'FormData').json()).body
           }
         },
         fcm_token: {
-          post: (option: { data: Methods39['post']['reqBody'], headers?: Methods39['post']['reqHeaders'], config?: T }) =>
+          post: (option: { body: Methods39['post']['reqBody'], headers?: Methods39['post']['reqHeaders'], config?: T }) =>
             client.fetch<void, BasicHeaders, Methods39['post']['status']>(prefix, '/api/v3/fcm_token', 'POST', option).send(),
-          $post: async (option: { data: Methods39['post']['reqBody'], headers?: Methods39['post']['reqHeaders'], config?: T }) =>
-            (await client.fetch<void, BasicHeaders, Methods39['post']['status']>(prefix, '/api/v3/fcm_token', 'POST', option).send()).data
+          $post: async (option: { body: Methods39['post']['reqBody'], headers?: Methods39['post']['reqHeaders'], config?: T }) =>
+            (await client.fetch<void, BasicHeaders, Methods39['post']['status']>(prefix, '/api/v3/fcm_token', 'POST', option).send()).body
         },
         info: {
           get: (option?: { headers?: Methods40['get']['reqHeaders'], config?: T }) =>
             client.fetch<Methods40['get']['resBody'], BasicHeaders, Methods40['get']['status']>(prefix, '/api/v3/info', 'GET', option).json(),
           $get: async (option?: { headers?: Methods40['get']['reqHeaders'], config?: T }) =>
-            (await client.fetch<Methods40['get']['resBody'], BasicHeaders, Methods40['get']['status']>(prefix, '/api/v3/info', 'GET', option).json()).data
+            (await client.fetch<Methods40['get']['resBody'], BasicHeaders, Methods40['get']['status']>(prefix, '/api/v3/info', 'GET', option).json()).body
         },
         login: {
-          post: (option: { data: Methods41['post']['reqBody'], headers?: Methods41['post']['reqHeaders'], config?: T }) =>
+          post: (option: { body: Methods41['post']['reqBody'], headers?: Methods41['post']['reqHeaders'], config?: T }) =>
             client.fetch<Methods41['post']['resBody'], BasicHeaders, Methods41['post']['status']>(prefix, '/api/v3/login', 'POST', option).json(),
-          $post: async (option: { data: Methods41['post']['reqBody'], headers?: Methods41['post']['reqHeaders'], config?: T }) =>
-            (await client.fetch<Methods41['post']['resBody'], BasicHeaders, Methods41['post']['status']>(prefix, '/api/v3/login', 'POST', option).json()).data
+          $post: async (option: { body: Methods41['post']['reqBody'], headers?: Methods41['post']['reqHeaders'], config?: T }) =>
+            (await client.fetch<Methods41['post']['resBody'], BasicHeaders, Methods41['post']['status']>(prefix, '/api/v3/login', 'POST', option).json()).body
         },
         logout: {
-          post: (option: { data: Methods42['post']['reqBody'], headers?: Methods42['post']['reqHeaders'], config?: T }) =>
+          post: (option: { body: Methods42['post']['reqBody'], headers?: Methods42['post']['reqHeaders'], config?: T }) =>
             client.fetch<void, BasicHeaders, Methods42['post']['status']>(prefix, '/api/v3/logout', 'POST', option).send(),
-          $post: async (option: { data: Methods42['post']['reqBody'], headers?: Methods42['post']['reqHeaders'], config?: T }) =>
-            (await client.fetch<void, BasicHeaders, Methods42['post']['status']>(prefix, '/api/v3/logout', 'POST', option).send()).data
+          $post: async (option: { body: Methods42['post']['reqBody'], headers?: Methods42['post']['reqHeaders'], config?: T }) =>
+            (await client.fetch<void, BasicHeaders, Methods42['post']['status']>(prefix, '/api/v3/logout', 'POST', option).send()).body
         },
         me: {
           get: (option?: { headers?: Methods43['get']['reqHeaders'], config?: T }) =>
             client.fetch<Methods43['get']['resBody'], BasicHeaders, Methods43['get']['status']>(prefix, '/api/v3/me', 'GET', option).json(),
           $get: async (option?: { headers?: Methods43['get']['reqHeaders'], config?: T }) =>
-            (await client.fetch<Methods43['get']['resBody'], BasicHeaders, Methods43['get']['status']>(prefix, '/api/v3/me', 'GET', option).json()).data
+            (await client.fetch<Methods43['get']['resBody'], BasicHeaders, Methods43['get']['status']>(prefix, '/api/v3/me', 'GET', option).json()).body
         },
         organisation: {
           users: {
             get: (option: { query: Methods45['get']['query'], headers?: Methods45['get']['reqHeaders'], config?: T }) =>
               client.fetch<Methods45['get']['resBody'], BasicHeaders, Methods45['get']['status']>(prefix, '/api/v3/organisation/users', 'GET', option).json(),
             $get: async (option: { query: Methods45['get']['query'], headers?: Methods45['get']['reqHeaders'], config?: T }) =>
-              (await client.fetch<Methods45['get']['resBody'], BasicHeaders, Methods45['get']['status']>(prefix, '/api/v3/organisation/users', 'GET', option).json()).data
+              (await client.fetch<Methods45['get']['resBody'], BasicHeaders, Methods45['get']['status']>(prefix, '/api/v3/organisation/users', 'GET', option).json()).body
           },
           get: (option?: { headers?: Methods44['get']['reqHeaders'], config?: T }) =>
             client.fetch<Methods44['get']['resBody'], BasicHeaders, Methods44['get']['status']>(prefix, '/api/v3/organisation', 'GET', option).json(),
           $get: async (option?: { headers?: Methods44['get']['reqHeaders'], config?: T }) =>
-            (await client.fetch<Methods44['get']['resBody'], BasicHeaders, Methods44['get']['status']>(prefix, '/api/v3/organisation', 'GET', option).json()).data
+            (await client.fetch<Methods44['get']['resBody'], BasicHeaders, Methods44['get']['status']>(prefix, '/api/v3/organisation', 'GET', option).json()).body
         },
         stories: {
           _storyId: (val12: number) => ({
             items: {
               _itemId: (val13: number) => ({
                 reaction: {
-                  post: (option: { data: Methods48['post']['reqBody'], headers?: Methods48['post']['reqHeaders'], config?: T }) =>
+                  post: (option: { body: Methods48['post']['reqBody'], headers?: Methods48['post']['reqHeaders'], config?: T }) =>
                     client.fetch<Methods48['post']['resBody'], BasicHeaders, Methods48['post']['status']>(prefix, `/api/v3/stories/${val12}/items/${val13}/reaction`, 'POST', option).json(),
-                  $post: async (option: { data: Methods48['post']['reqBody'], headers?: Methods48['post']['reqHeaders'], config?: T }) =>
-                    (await client.fetch<Methods48['post']['resBody'], BasicHeaders, Methods48['post']['status']>(prefix, `/api/v3/stories/${val12}/items/${val13}/reaction`, 'POST', option).json()).data
+                  $post: async (option: { body: Methods48['post']['reqBody'], headers?: Methods48['post']['reqHeaders'], config?: T }) =>
+                    (await client.fetch<Methods48['post']['resBody'], BasicHeaders, Methods48['post']['status']>(prefix, `/api/v3/stories/${val12}/items/${val13}/reaction`, 'POST', option).json()).body
                 },
                 get: (option?: { headers?: Methods47['get']['reqHeaders'], config?: T }) =>
                   client.fetch<Methods47['get']['resBody'], BasicHeaders, Methods47['get']['status']>(prefix, `/api/v3/stories/${val12}/items/${val13}`, 'GET', option).json(),
                 $get: async (option?: { headers?: Methods47['get']['reqHeaders'], config?: T }) =>
-                  (await client.fetch<Methods47['get']['resBody'], BasicHeaders, Methods47['get']['status']>(prefix, `/api/v3/stories/${val12}/items/${val13}`, 'GET', option).json()).data
+                  (await client.fetch<Methods47['get']['resBody'], BasicHeaders, Methods47['get']['status']>(prefix, `/api/v3/stories/${val12}/items/${val13}`, 'GET', option).json()).body
               }),
               get: (option?: { query?: Methods46['get']['query'], headers?: Methods46['get']['reqHeaders'], config?: T }) =>
                 client.fetch<Methods46['get']['resBody'], BasicHeaders, Methods46['get']['status']>(prefix, `/api/v3/stories/${val12}/items`, 'GET', option).json(),
               $get: async (option?: { query?: Methods46['get']['query'], headers?: Methods46['get']['reqHeaders'], config?: T }) =>
-                (await client.fetch<Methods46['get']['resBody'], BasicHeaders, Methods46['get']['status']>(prefix, `/api/v3/stories/${val12}/items`, 'GET', option).json()).data
+                (await client.fetch<Methods46['get']['resBody'], BasicHeaders, Methods46['get']['status']>(prefix, `/api/v3/stories/${val12}/items`, 'GET', option).json()).body
             }
           })
         },
@@ -426,18 +426,18 @@ const api = <T>(client: AspidaClient<T>) => {
             get: (option?: { headers?: Methods50['get']['reqHeaders'], config?: T }) =>
               client.fetch<Methods50['get']['resBody'], BasicHeaders, Methods50['get']['status']>(prefix, `/api/v3/user/${val14}`, 'GET', option).json(),
             $get: async (option?: { headers?: Methods50['get']['reqHeaders'], config?: T }) =>
-              (await client.fetch<Methods50['get']['resBody'], BasicHeaders, Methods50['get']['status']>(prefix, `/api/v3/user/${val14}`, 'GET', option).json()).data
+              (await client.fetch<Methods50['get']['resBody'], BasicHeaders, Methods50['get']['status']>(prefix, `/api/v3/user/${val14}`, 'GET', option).json()).body
           }),
           profile: {
-            put: (option?: { data?: Methods51['put']['reqBody'], headers?: Methods51['put']['reqHeaders'], config?: T }) =>
+            put: (option?: { body?: Methods51['put']['reqBody'], headers?: Methods51['put']['reqHeaders'], config?: T }) =>
               client.fetch<void, BasicHeaders, Methods51['put']['status']>(prefix, '/api/v3/user/profile', 'PUT', option, 'FormData').send(),
-            $put: async (option?: { data?: Methods51['put']['reqBody'], headers?: Methods51['put']['reqHeaders'], config?: T }) =>
-              (await client.fetch<void, BasicHeaders, Methods51['put']['status']>(prefix, '/api/v3/user/profile', 'PUT', option, 'FormData').send()).data
+            $put: async (option?: { body?: Methods51['put']['reqBody'], headers?: Methods51['put']['reqHeaders'], config?: T }) =>
+              (await client.fetch<void, BasicHeaders, Methods51['put']['status']>(prefix, '/api/v3/user/profile', 'PUT', option, 'FormData').send()).body
           },
           get: (option?: { headers?: Methods49['get']['reqHeaders'], config?: T }) =>
             client.fetch<Methods49['get']['resBody'], BasicHeaders, Methods49['get']['status']>(prefix, '/api/v3/user', 'GET', option).json(),
           $get: async (option?: { headers?: Methods49['get']['reqHeaders'], config?: T }) =>
-            (await client.fetch<Methods49['get']['resBody'], BasicHeaders, Methods49['get']['status']>(prefix, '/api/v3/user', 'GET', option).json()).data
+            (await client.fetch<Methods49['get']['resBody'], BasicHeaders, Methods49['get']['status']>(prefix, '/api/v3/user', 'GET', option).json()).body
         }
       }
     }

@@ -1027,10 +1027,10 @@ asn1@~0.2.3:
   dependencies:
     safer-buffer "~2.1.0"
 
-aspida@^0.16.0:
-  version "0.16.0"
-  resolved "https://registry.yarnpkg.com/aspida/-/aspida-0.16.0.tgz#da57ac244dc3294110fa9b21d55b34512751c911"
-  integrity sha512-YAXULxSbqiS5jP4iKX6+xIShyvE4csIWfAtHdaF7fIpoAebU07U9ic6oLpYoXrQKsjRWoj183/El+Wa+X6iU3Q==
+aspida@^0.18.0:
+  version "0.18.0"
+  resolved "https://registry.yarnpkg.com/aspida/-/aspida-0.18.0.tgz#7b8dcad290b6e24d9efe57e0a4a07f1ebd689d7d"
+  integrity sha512-xHdMjYHncV4oRi4BuM4ytx8FgehaPsCgeI9T5/PqHWX0TzuSl7y3QqEkN3Q7PTmtWD6uVLXUHdocg0ipwBNSag==
   dependencies:
     chokidar "^3.4.0"
     minimist "^1.2.5"
