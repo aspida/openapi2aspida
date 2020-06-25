@@ -27,8 +27,7 @@ export default (
   if (openapi.paths) {
     files.push(
       ...Object.keys(openapi.paths)
-        .map((path, _i, pathList) => {
-          const isParent = pathList.some(p => p.startsWith(`${path}/`))
+        .map(path => {
           const methodProps = Object.keys(
             openapi.paths[path]
           ).filter((method): method is typeof methodNames[number] =>
@@ -52,7 +51,7 @@ export default (
                   )
                 ])
               ),
-            ...(isParent ? ['index'] : [])
+            'index'
           ]
 
           const methods = methodProps

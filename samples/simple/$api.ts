@@ -1,12 +1,12 @@
 /* eslint-disable */
 import { AspidaClient, BasicHeaders } from 'aspida'
-import { Methods as Methods0 } from './dummy/_id@number/content'
-import { Methods as Methods1 } from './dummy/_id@number/query'
-import { Methods as Methods2 } from './dummy/_id@number/simple'
-import { Methods as Methods3 } from './file/_id@number/upload'
+import { Methods as Methods0 } from './dummy/_id@number/content/index'
+import { Methods as Methods1 } from './dummy/_id@number/query/index'
+import { Methods as Methods2 } from './dummy/_id@number/simple/index'
+import { Methods as Methods3 } from './file/_id@number/upload/index'
 import { Methods as Methods4 } from './user/_id@number/index'
-import { Methods as Methods5 } from './user/_id@number/abc'
-import { Methods as Methods6 } from './user/_id@number/xyz'
+import { Methods as Methods5 } from './user/_id@number/abc/index'
+import { Methods as Methods6 } from './user/_id@number/xyz/index'
 
 const api = <T>(client: AspidaClient<T>) => {
   const prefix = (client.baseURL === undefined ? '' : client.baseURL).replace(/\/$/, '')

@@ -1,14 +1,14 @@
 /* eslint-disable */
 import { AspidaClient } from 'aspida'
 import { Methods as Methods0 } from './users/_user_id@string/orders/index'
-import { Methods as Methods1 } from './users/_user_id@string/orders/_order_id@string'
-import { Methods as Methods2 } from './users/_user_id@string/orders/purchase/invoice'
-import { Methods as Methods3 } from './users/_user_id@string/orders/purchase/wallet'
-import { Methods as Methods4 } from './users/_user_id@string/orders/unsubscribe'
-import { Methods as Methods5 } from './users/_user_id@string/orders/update/renew'
+import { Methods as Methods1 } from './users/_user_id@string/orders/_order_id@string/index'
+import { Methods as Methods2 } from './users/_user_id@string/orders/purchase/invoice/index'
+import { Methods as Methods3 } from './users/_user_id@string/orders/purchase/wallet/index'
+import { Methods as Methods4 } from './users/_user_id@string/orders/unsubscribe/index'
+import { Methods as Methods5 } from './users/_user_id@string/orders/update/renew/index'
 import { Methods as Methods6 } from './users/_user_id@string/phone-numbers/_phone_number@string/orders/index'
-import { Methods as Methods7 } from './users/_user_id@string/phone-numbers/_phone_number@string/orders/purchase/invoice'
-import { Methods as Methods8 } from './users/_user_id@string/phone-numbers/_phone_number@string/orders/purchase/wallet'
+import { Methods as Methods7 } from './users/_user_id@string/phone-numbers/_phone_number@string/orders/purchase/invoice/index'
+import { Methods as Methods8 } from './users/_user_id@string/phone-numbers/_phone_number@string/orders/purchase/wallet/index'
 
 const api = <T>(client: AspidaClient<T>) => {
   const prefix = (client.baseURL === undefined ? 'https://api.baikalplatform.com/product-management/v1' : client.baseURL).replace(/\/$/, '')
