@@ -29,7 +29,7 @@ type BuildCommand = {
 }
 
 export type BuildIO = {
-  write(outputDir: string, trailingSlash: boolean, template: Template): void
+  write(outputDir: string, trailingSlash: boolean, outputEachDir: boolean, template: Template): void
 }
 
 export class Build implements BuildCommand {
@@ -46,6 +46,7 @@ export class Build implements BuildCommand {
     io.write(
       config.output,
       config.trailingSlash,
+      config.outputEachDir,
       await build(config.input, config.isYaml, config.needsMock, config.needsMockType)
     )
   }
