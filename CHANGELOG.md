@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.9.0](https://github.com/aspidajs/openapi2aspida/compare/v0.8.0...v0.9.0) (2020-06-26)
+
+
+### Features
+
+* rename hoge.ts to hoge/index.ts ([0cd3fec](https://github.com/aspidajs/openapi2aspida/commit/0cd3fecf3964aabe97769719290645328c2d07e5))
+* update aspida@0.19.2 ([817d128](https://github.com/aspidajs/openapi2aspida/commit/817d12867611e98c73df9d87bf3ae2d3abfb7039))
+
 ## [0.8.0](https://github.com/aspidajs/openapi2aspida/compare/v0.7.1...v0.8.0) (2020-06-15)
 
 

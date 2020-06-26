@@ -3,7 +3,12 @@ import aspidaBuild from 'aspida/dist/buildTemplate'
 import aspidaWrite from 'aspida/dist/writeRouteFile'
 import { Template } from './buildTemplate'
 
-export default (input: string, trailingSlash: boolean, { baseURL, types, files }: Template) => {
+export default (
+  input: string,
+  trailingSlash: boolean,
+  outputEachDir: boolean,
+  { baseURL, types, files }: Template
+) => {
   if (types) {
     fs.writeFileSync(`${input}/@types.ts`, types, 'utf8')
   }
@@ -20,6 +25,5 @@ export default (input: string, trailingSlash: boolean, { baseURL, types, files }
     fs.writeFileSync(`${input}/${p.file.join('/')}/${fileName}.ts`, p.methods, 'utf8')
   })
 
-  const config = { input, baseURL, trailingSlash }
-  aspidaWrite(aspidaBuild(config))
+  aspidaBuild({ input, baseURL, trailingSlash, outputEachDir }).forEach(aspidaWrite)
 }

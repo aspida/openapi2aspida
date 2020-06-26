@@ -6,6 +6,7 @@ export type Config = {
   input: string | OpenAPI.Document
   output: string
   trailingSlash: boolean
+  outputEachDir: boolean
   isYaml: boolean
   needsMock: boolean
   needsMockType: boolean
@@ -27,6 +28,7 @@ const createConfig = (config: ConfigFile) => {
     input: openapi.inputFile,
     output: config.input,
     trailingSlash: config.trailingSlash,
+    outputEachDir: config.outputEachDir,
     isYaml: openapi.yaml ?? path.extname(openapi.inputFile).slice(1) === 'yaml',
     needsMock: !!openapi.mock,
     needsMockType: !openapi.noMockType

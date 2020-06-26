@@ -42,6 +42,7 @@ Create config file in project root
 ```js
 module.exports = {
   input: "apis", // "input" of aspida is "output" for openapi2aspida
+  outputEachDir: true, // Generate $api.ts in each endpoint directory
   openapi: { inputFile: "https://petstore.swagger.io/v2/swagger.json" } // Compatible with yaml/json of OpenAPI3.0/Swagger2.0
 }
 ```
