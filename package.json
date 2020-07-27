@@ -37,7 +37,7 @@
     "swagger"
   ],
   "dependencies": {
-    "aspida": "^0.19.2",
+    "aspida": "^0.20.0",
     "swagger-parser": "^9.0.1",
     "swagger2openapi": "^6.0.3"
   },
