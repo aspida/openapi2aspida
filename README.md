@@ -6,7 +6,7 @@
 <br />
 <br />
 <div align="center">
-  <img src="https://aspidajs.github.io/aspida/logos/svg/black.svg" alt="aspida" title="aspida" width="600" />
+  <img src="https://aspida.github.io/aspida/logos/svg/black.svg" alt="aspida" title="aspida" width="600" />
 </div>
 <br />
 <br />
@@ -15,21 +15,21 @@
   <a href="https://www.npmjs.com/package/openapi2aspida">
     <img src="https://img.shields.io/npm/v/openapi2aspida" alt="npm version" />
   </a>
-  <a href="https://github.com/aspidajs/openapi2aspida/actions?query=workflow%3A%22Node.js+CI%22">
-    <img src="https://github.com/aspidajs/openapi2aspida/workflows/Node.js%20CI/badge.svg" alt="Node.js CI" />
+  <a href="https://github.com/aspida/openapi2aspida/actions?query=workflow%3A%22Node.js+CI%22">
+    <img src="https://github.com/aspida/openapi2aspida/workflows/Node.js%20CI/badge.svg" alt="Node.js CI" />
   </a>
-  <a href="https://codecov.io/gh/aspidajs/aspida">
-    <img src="https://img.shields.io/codecov/c/github/aspidajs/openapi2aspida.svg" alt="Codecov" />
+  <a href="https://codecov.io/gh/aspida/aspida">
+    <img src="https://img.shields.io/codecov/c/github/aspida/openapi2aspida.svg" alt="Codecov" />
   </a>
   <a href="https://dependabot.com">
-    <img src="https://api.dependabot.com/badges/status?host=github&repo=aspidajs/openapi2aspida" alt="Dependabot Status" />
+    <img src="https://api.dependabot.com/badges/status?host=github&repo=aspida/openapi2aspida" alt="Dependabot Status" />
   </a>
-  <a href="https://github.com/aspidajs/openapi2aspida/LICENSE">
+  <a href="https://github.com/aspida/openapi2aspida/LICENSE">
     <img src="https://img.shields.io/npm/l/openapi2aspida" alt="License" />
   </a>
 </div>
 <br />
-<p align="center">Convert OpenAPI 3.0 and Swagger 2.0 definitions into <a href="https://github.com/aspidajs/aspida/tree/master/packages/aspida">aspida</a>.</p>
+<p align="center">Convert OpenAPI 3.0 and Swagger 2.0 definitions into <a href="https://github.com/aspida/aspida/tree/master/packages/aspida">aspida</a>.</p>
 <br />
 <br />
 
@@ -56,7 +56,7 @@ $ npx openapi2aspida --build
 
 ## Getting Started with aspida-mock
 
-Installation ([@aspida/axios](https://github.com/aspidajs/aspida/tree/master/packages/aspida-axios) only mock compatible)
+Installation ([@aspida/axios](https://github.com/aspida/aspida/tree/master/packages/aspida-axios) only mock compatible)
 
 - Using [npm](https://www.npmjs.com/):
 
@@ -101,4 +101,4 @@ $ npm run build
 
 ## License
 
-openapi2aspida is licensed under a [MIT License](https://github.com/aspidajs/openapi2aspida/blob/master/LICENSE).
+openapi2aspida is licensed under a [MIT License](https://github.com/aspida/openapi2aspida/blob/master/LICENSE).

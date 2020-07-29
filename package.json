@@ -19,13 +19,13 @@
     "test": "jest",
     "typecheck": "tsc --noEmit"
   },
-  "homepage": "https://github.com/aspidajs/openapi2aspida#readme",
+  "homepage": "https://github.com/aspida/openapi2aspida#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aspidajs/openapi2aspida.git"
+    "url": "git+https://github.com/aspida/openapi2aspida.git"
   },
   "bugs": {
-    "url": "https://github.com/aspidajs/openapi2aspida/issues"
+    "url": "https://github.com/aspida/openapi2aspida/issues"
   },
   "files": [
     "dist"
