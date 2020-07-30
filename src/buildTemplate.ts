@@ -2,24 +2,11 @@ import { parse } from 'swagger-parser'
 import { OpenAPI, OpenAPIV3 } from 'openapi-types'
 import buildV3 from './buildV3'
 import resolveExternalRefs from './resolveExternalRefs'
-
-export type Template = {
-  baseURL: string
-  types: string | null
-  files: {
-    file: string[]
-    methods: string
-  }[]
-}
+import { Config } from './getConfig'
 
 const isV3 = (openapi: OpenAPI.Document): openapi is OpenAPIV3.Document => 'openapi' in openapi
 
-export default async (
-  input: string | OpenAPI.Document,
-  isYaml: boolean,
-  needsMock: boolean,
-  needsMockType: boolean
-): Promise<Template> => {
+export default async ({ input, isYaml, needsMock, needsMockType }: Config) => {
   const openapi = await parse(input, { parse: { json: !isYaml } })
   const docs = isV3(openapi)
     ? openapi

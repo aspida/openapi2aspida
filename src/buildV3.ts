@@ -1,5 +1,4 @@
 import { OpenAPIV3 } from 'openapi-types'
-import { Template } from './buildTemplate'
 import { isRefObject, $ref2Type, getPropertyName, schema2value } from './builderUtils/converters'
 import { props2String, Prop, PropValue, value2String } from './builderUtils/props2String'
 import { resolveParamsRef, resolveResRef, resolveReqRef } from './builderUtils/resolvers'
@@ -15,11 +14,7 @@ const getParamsList = (
   params?: (OpenAPIV3.ReferenceObject | OpenAPIV3.ParameterObject)[]
 ) => params?.map(p => (isRefObject(p) ? resolveParamsRef(openapi, p.$ref) : p)) || []
 
-export default (
-  openapi: OpenAPIV3.Document,
-  needsMock: boolean,
-  needsMockType: boolean
-): Template => {
+export default (openapi: OpenAPIV3.Document, needsMock: boolean, needsMockType: boolean) => {
   const files: { file: string[]; methods: string }[] = []
   const schemas = schemas2Props(openapi.components?.schemas, openapi) || []
   const parameters = parameters2Props(openapi.components?.parameters, openapi) || []
