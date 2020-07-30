@@ -1,25 +1,23 @@
 import fs from 'fs'
-import getConfig from '../src/getConfig'
-import buildFromScript from '../src'
+import { ConfigFile } from '../src/getConfig'
+import build from '../src'
 
 describe('cli test', () => {
   beforeAll(() => fs.mkdirSync('_samples'))
-  afterAll(fn => fs.rmdir('_samples', { recursive: true }, fn))
+  afterAll(() => fs.promises.rmdir('_samples', { recursive: true }))
 
   test('main', () => {
-    const configs = getConfig('aspida.config.js')
+    const configs: ConfigFile[] = require('../aspida.config.js')
 
     return Promise.all(
       configs.map(async config => {
-        const outputDir = `_${config.output}`
-        await buildFromScript({
+        await build({
           ...config,
-          input: config.input,
-          output: outputDir
-        })
+          input: `_${config.input}`
+        })[0]
 
-        expect(fs.readFileSync(`${outputDir}/$api.ts`, 'utf8')).toBe(
-          fs.readFileSync(`${config.output}/$api.ts`, 'utf8')
+        expect(fs.readFileSync(`_${config.input}/$api.ts`, 'utf8')).toBe(
+          fs.readFileSync(`${config.input}/$api.ts`, 'utf8').replace(/\r/g, '')
         )
       })
     )

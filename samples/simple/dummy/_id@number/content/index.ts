@@ -5,7 +5,3 @@ export type Methods = {
     resBody: string
   }
 }
-
-export default {
-  put: () => ({ status: 202, resBody: 'a' })
-}

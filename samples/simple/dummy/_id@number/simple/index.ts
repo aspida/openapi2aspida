@@ -4,7 +4,3 @@ export type Methods = {
     status: 202
   }
 }
-
-export default {
-  put: () => ({ status: 202 })
-}

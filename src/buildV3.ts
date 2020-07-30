@@ -1,12 +1,10 @@
 import { OpenAPIV3 } from 'openapi-types'
-import { Template } from './buildTemplate'
 import { isRefObject, $ref2Type, getPropertyName, schema2value } from './builderUtils/converters'
 import { props2String, Prop, PropValue, value2String } from './builderUtils/props2String'
 import { resolveParamsRef, resolveResRef, resolveReqRef } from './builderUtils/resolvers'
 import getDirName from './builderUtils/getDirName'
 import schemas2Props from './builderUtils/schemas2Props'
 import parameters2Props from './builderUtils/parameters2Props'
-import methods2MockString from './builderUtils/methods2MockString'
 
 const methodNames = ['get', 'post', 'put', 'delete', 'head', 'options', 'patch'] as const
 
@@ -15,11 +13,7 @@ const getParamsList = (
   params?: (OpenAPIV3.ReferenceObject | OpenAPIV3.ParameterObject)[]
 ) => params?.map(p => (isRefObject(p) ? resolveParamsRef(openapi, p.$ref) : p)) || []
 
-export default (
-  openapi: OpenAPIV3.Document,
-  needsMock: boolean,
-  needsMockType: boolean
-): Template => {
+export default (openapi: OpenAPIV3.Document) => {
   const files: { file: string[]; methods: string }[] = []
   const schemas = schemas2Props(openapi.components?.schemas, openapi) || []
   const parameters = parameters2Props(openapi.components?.parameters, openapi) || []
@@ -268,19 +262,14 @@ export default (
 
           if (methods.length) {
             const methodsText = props2String(methods, '')
-            const mockText = needsMock
-              ? methods2MockString(methods, needsMockType, parameters, schemas)
-              : ''
 
             return {
               file,
-              methods: `/* eslint-disable */${
-                needsMock && needsMockType ? "\nimport { mockMethods } from 'aspida-mock'" : ''
-              }\n${
+              methods: `/* eslint-disable */\n${
                 / Types\./.test(methodsText)
                   ? `import * as Types from '${file.map(() => '').join('../')}@types'\n\n`
                   : ''
-              }export type Methods = ${methodsText}\n${mockText}`
+              }export type Methods = ${methodsText}\n`
             }
           } else {
             return { file, methods: '' }

@@ -1,6 +1,6 @@
 import path from 'path'
 import { OpenAPI } from 'openapi-types'
-import getBaseConfig, { BaseConfig } from 'aspida/dist/getConfig'
+import { AspidaConfig, getConfigs } from 'aspida/dist/commands'
 
 export type Config = {
   input: string | OpenAPI.Document
@@ -8,16 +8,12 @@ export type Config = {
   trailingSlash: boolean
   outputEachDir: boolean
   isYaml: boolean
-  needsMock: boolean
-  needsMockType: boolean
 }
 
-type ConfigFile = BaseConfig & {
+export type ConfigFile = AspidaConfig & {
   openapi?: {
     inputFile: string
     yaml?: boolean
-    mock?: boolean
-    noMockType?: boolean
   }
 }
 
@@ -29,13 +25,13 @@ const createConfig = (config: ConfigFile) => {
     output: config.input,
     trailingSlash: config.trailingSlash,
     outputEachDir: config.outputEachDir,
-    isYaml: openapi.yaml ?? path.extname(openapi.inputFile).slice(1) === 'yaml',
-    needsMock: !!openapi.mock,
-    needsMockType: !openapi.noMockType
+    isYaml: openapi.yaml ?? path.extname(openapi.inputFile).slice(1) === 'yaml'
   }
 }
 
-export default (configPath?: string): Config[] =>
-  getBaseConfig(configPath)
+type PartialConfig = Partial<ConfigFile> | Partial<ConfigFile>[]
+
+export default (config?: PartialConfig | string): Config[] =>
+  getConfigs(config)
     .filter((c: ConfigFile) => c.openapi)
     .map(c => createConfig(c))
