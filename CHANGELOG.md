@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.10.0](https://github.com/aspida/openapi2aspida/compare/v0.9.0...v0.10.0) (2020-07-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove aspida-mock supporting
+
+### Features
+
+* remove aspida-mock supporting ([76dde8d](https://github.com/aspida/openapi2aspida/commit/76dde8d5eb2bfbe7ffe6dd57d66f42e0afb34de4))
+* update aspida ([5c2adf2](https://github.com/aspida/openapi2aspida/commit/5c2adf2c503820c21b2d1890133fc13efbb197b4))
+
+
+### Documentation
+
+* update README ([1906088](https://github.com/aspida/openapi2aspida/commit/19060884421f5647d1cb0a19088fc7ad6aa3db06))
+
 ## [0.9.0](https://github.com/aspida/openapi2aspida/compare/v0.8.0...v0.9.0) (2020-06-26)
 
 
