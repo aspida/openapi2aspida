@@ -1,5 +1,3 @@
 node_modules
 dist
-test2
-reference
-aspida.taichi.config.js
+external_refs_sample

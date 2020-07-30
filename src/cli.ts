@@ -10,6 +10,6 @@ export const run = (args: string[]) => {
   argv.version !== undefined
     ? console.log(`v${require('../package.json').version}`)
     : argv.input
-    ? build({ openapi: { inputFile: argv.input } })
+    ? build({ outputEachDir: true, openapi: { inputFile: argv.input } })
     : build(argv.config)
 }
