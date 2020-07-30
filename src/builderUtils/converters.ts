@@ -45,8 +45,6 @@ const of2Values = (obj: OpenAPIV3.SchemaObject): PropValue[] | null => {
   return values.length ? values : null
 }
 
-export const ADDITIONAL_NAME = '[key: string]'
-
 const object2value = (obj: OpenAPIV3.NonArraySchemaObject): Prop[] => {
   const properties = obj.properties ?? {}
 
@@ -82,7 +80,7 @@ const object2value = (obj: OpenAPIV3.NonArraySchemaObject): Prop[] => {
 
     if (val)
       value.push({
-        name: ADDITIONAL_NAME,
+        name: '[key: string]',
         required: true,
         isOneOf: false,
         values: [val]

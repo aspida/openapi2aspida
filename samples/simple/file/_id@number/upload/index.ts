@@ -9,7 +9,3 @@ export type Methods = {
     reqBody?: Blob
   }
 }
-
-export default {
-  post: () => ({ status: 204 })
-}

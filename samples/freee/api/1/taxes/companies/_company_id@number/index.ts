@@ -1,5 +1,4 @@
 /* eslint-disable */
-import { mockMethods } from 'aspida-mock'
 export type Methods = {
   get: {
     status: 200
@@ -15,7 +14,3 @@ export type Methods = {
     }
   }
 }
-
-export default mockMethods<Methods>({
-  get: () => ({ status: 200, resBody: { taxes: [{ code: 1, name: 'a', name_ja: 'a', display_category: 'tax_5', available: true }] } })
-})

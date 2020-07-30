@@ -8,7 +8,3 @@ export type Methods = {
     status: 202
   }
 }
-
-export default {
-  get: () => ({ status: 202 })
-}

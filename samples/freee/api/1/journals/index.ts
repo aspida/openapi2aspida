@@ -1,5 +1,4 @@
 /* eslint-disable */
-import { mockMethods } from 'aspida-mock'
 import * as Types from '../../../@types'
 
 export type Methods = {
@@ -16,7 +15,3 @@ export type Methods = {
     resBody: Types.journalsResponse
   }
 }
-
-export default mockMethods<Methods>({
-  get: () => ({ status: 202, resBody: { journals: { id: 1, messages: 'a', company_id: 1, download_type: 'csv', start_date: 'a', end_date: 'a', visible_tags: ['partner'], status_url: 'a' } } })
-})

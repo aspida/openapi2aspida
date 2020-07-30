@@ -1,6 +1,6 @@
 /* eslint-disable */
 import { AspidaClient, BasicHeaders } from 'aspida'
-import { Methods as Methods0 } from './index'
+import { Methods as Methods0 } from '.'
 import { Methods as Methods1 } from './files'
 import { Methods as Methods2 } from './files/_id@string'
 import { Methods as Methods3 } from './files/count'

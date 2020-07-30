@@ -1,5 +1,4 @@
 /* eslint-disable */
-import { mockMethods } from 'aspida-mock'
 import * as Types from '../../../../@types'
 
 export type Methods = {
@@ -14,7 +13,3 @@ export type Methods = {
     status: 200
   }
 }
-
-export default mockMethods<Methods>({
-  get: () => ({ status: 200 })
-})

@@ -1,6 +1,6 @@
 /* eslint-disable */
 import { AspidaClient, BasicHeaders } from 'aspida'
-import { Methods as Methods0 } from './index'
+import { Methods as Methods0 } from '.'
 
 const GET = 'GET'
 const PATH0 = '/api/v3/info'

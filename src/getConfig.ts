@@ -8,16 +8,12 @@ export type Config = {
   trailingSlash: boolean
   outputEachDir: boolean
   isYaml: boolean
-  needsMock: boolean
-  needsMockType: boolean
 }
 
 export type ConfigFile = AspidaConfig & {
   openapi?: {
     inputFile: string
     yaml?: boolean
-    mock?: boolean
-    noMockType?: boolean
   }
 }
 
@@ -29,9 +25,7 @@ const createConfig = (config: ConfigFile) => {
     output: config.input,
     trailingSlash: config.trailingSlash,
     outputEachDir: config.outputEachDir,
-    isYaml: openapi.yaml ?? path.extname(openapi.inputFile).slice(1) === 'yaml',
-    needsMock: !!openapi.mock,
-    needsMockType: !openapi.noMockType
+    isYaml: openapi.yaml ?? path.extname(openapi.inputFile).slice(1) === 'yaml'
   }
 }
 

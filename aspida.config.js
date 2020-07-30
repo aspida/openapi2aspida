@@ -2,12 +2,12 @@ module.exports = [
   {
     input: 'samples/swagger',
     outputEachDir: true,
-    openapi: { inputFile: 'samples/swagger.yaml', mock: true }
+    openapi: { inputFile: 'samples/swagger.yaml' }
   },
   {
     input: 'samples/simple',
     outputEachDir: true,
-    openapi: { inputFile: 'samples/simple.yaml', mock: true, noMockType: true }
+    openapi: { inputFile: 'samples/simple.yaml' }
   },
   {
     input: 'samples/strapi',
@@ -17,12 +17,12 @@ module.exports = [
   {
     input: 'samples/freee',
     outputEachDir: true,
-    openapi: { inputFile: 'samples/freee.json', mock: true }
+    openapi: { inputFile: 'samples/freee.json' }
   },
   {
     input: 'samples/openapi',
     outputEachDir: true,
-    openapi: { inputFile: 'samples/openapi.json', mock: true, yaml: false }
+    openapi: { inputFile: 'samples/openapi.json', yaml: false }
   },
   {
     input: 'samples/externals',

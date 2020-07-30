@@ -1,5 +1,4 @@
 /* eslint-disable */
-import { mockMethods } from 'aspida-mock'
 import * as Types from '../../../@types'
 
 export type Methods = {
@@ -31,8 +30,3 @@ export type Methods = {
     reqBody: Types.receiptCreateParams
   }
 }
-
-export default mockMethods<Methods>({
-  get: () => ({ status: 200, resBody: { receipts: [{ id: 1, status: 'unconfirmed', description: 'a', mime_type: 'a', issue_date: 'a', origin: 'unknown', created_at: 'a', file_src: 'a', user: { id: 1, email: 'a', display_name: 'a' } }] } }),
-  post: () => ({ status: 201, resBody: { receipt: { id: 1, status: 'unconfirmed', description: 'a', mime_type: 'a', issue_date: 'a', origin: 'unknown', created_at: 'a', file_src: 'a', user: { id: 1, email: 'a', display_name: 'a' } } } })
-})
