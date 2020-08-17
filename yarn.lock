@@ -945,11 +945,12 @@ asn1@~0.2.3:
     safer-buffer "~2.1.0"
 
 aspida@^0.20.2:
-  version "0.20.2"
-  resolved "https://registry.yarnpkg.com/aspida/-/aspida-0.20.2.tgz#766d9cb616674e8bebade9e7fccb180c09fcd37e"
-  integrity sha512-TXB75EVfOg8toIsnc+6HLjThkC+2MM8FDGIgf2xIzCgIHUfShQbvDF5Jtn2241JhJ5vBzZvgBl01Pj/74TFAWQ==
+  version "0.20.3"
+  resolved "https://registry.yarnpkg.com/aspida/-/aspida-0.20.3.tgz#86c8d88e38fa92973f1bddedb913508476dfe660"
+  integrity sha512-XOt8Udd86BE33ku/bVGLNxmVFhDN+IlV4i8tK1WIhaWtGdBalP0dC5c4PBDhuWraKPgjUzNNw+utwF9HLV0mgg==
   dependencies:
-    chokidar "^3.4.1"
+    "@types/minimist" "^1.2.0"
+    chokidar "^3.4.2"
     minimist "^1.2.5"
 
 assert-plus@1.0.0, assert-plus@^1.0.0:
@@ -1257,10 +1258,10 @@ char-regex@^1.0.2:
   resolved "https://registry.yarnpkg.com/char-regex/-/char-regex-1.0.2.tgz#d744358226217f981ed58f479b1d6bcc29545dcf"
   integrity sha512-kWWXztvZ5SBQV+eRgKFeh8q5sLuZY2+8WUIzlxWVTg+oGwY14qylx1KbKzHd8P6ZYkAg0xyIDU9JMHhyJMZ1jw==
 
-chokidar@^3.4.1:
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.4.1.tgz#e905bdecf10eaa0a0b1db0c664481cc4cbc22ba1"
-  integrity sha512-TQTJyr2stihpC4Sya9hs2Xh+O2wf+igjL36Y75xx2WdHuiICcn/XJza46Jwt0eT5hVpQOzo3FpY3cj3RVYLX0g==
+chokidar@^3.4.2:
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.4.2.tgz#38dc8e658dec3809741eb3ef7bb0a47fe424232d"
+  integrity sha512-IZHaDeBeI+sZJRX7lGcXsdzgvZqKv6sECqsbErJA4mHWfpRrD8B97kSFN4cQz6nGBGiuFia1MKR4d6c1o8Cv7A==
   dependencies:
     anymatch "~3.1.1"
     braces "~3.0.2"
