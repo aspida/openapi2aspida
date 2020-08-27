@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.10.1](https://github.com/aspida/openapi2aspida/compare/v0.10.0...v0.10.1) (2020-08-27)
+
+
+### Bug Fixes
+
+* improve of yaml discrimination ([d663ba4](https://github.com/aspida/openapi2aspida/commit/d663ba451d858aeab06b6c3e5c2bbf81844d7365))
+
+
+### Documentation
+
+* update README ([52becb9](https://github.com/aspida/openapi2aspida/commit/52becb9f5264f26b9db7a13da7eab1edd60f36a0))
+
 ## [0.10.0](https://github.com/aspida/openapi2aspida/compare/v0.9.0...v0.10.0) (2020-07-30)
 
 

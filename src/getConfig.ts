@@ -1,4 +1,3 @@
-import path from 'path'
 import { OpenAPI } from 'openapi-types'
 import { AspidaConfig, getConfigs } from 'aspida/dist/commands'
 
@@ -25,7 +24,7 @@ const createConfig = (config: ConfigFile) => {
     output: config.input,
     trailingSlash: config.trailingSlash,
     outputEachDir: config.outputEachDir,
-    isYaml: openapi.yaml ?? path.extname(openapi.inputFile).slice(1) === 'yaml'
+    isYaml: openapi.yaml ?? !openapi.inputFile.endsWith('.json')
   }
 }
 

@@ -35,8 +35,49 @@
 Compatible with yaml/json of OpenAPI3.0/Swagger2.0
 
 ```sh
-$ npx openapi2aspida -i https://petstore.swagger.io/v2/swagger.json
+$ mkdir petstore-api
+$ cd petstore-api
+$ npx openapi2aspida -i https://petstore.swagger.io/v2/swagger.json # or ../local-swagger.yaml
 # api/$api.ts was built successfully.
+
+$ npm init -y
+$ npm install @aspida/axios axios typescript ts-node @types/node
+```
+
+`index.ts`
+```ts
+import axiosClient from '@aspida/axios'
+import api from "./api/$api"
+import { Pet } from './api/@types'
+
+;(async () => {
+  const client = api(axiosClient())
+  const petId = 100
+  const body: Pet = {
+    id: petId,
+    name: 'hoge',
+    photoUrls: [],
+    status: 'available'
+  }
+
+  await client.pet.$post({ body })
+  const pet = await client.pet._petId(petId).$get()
+  console.log(pet)
+})()
+```
+
+`package.json`
+```json
+{
+  "scripts": {
+    "start": "ts-node index.ts"
+  }
+}
+```
+
+```sh
+$ npm start
+# { id: 100, name: 'hoge', photoUrls: [], tags: [], status: 'available' }
 ```
 
 ## Build from config file
