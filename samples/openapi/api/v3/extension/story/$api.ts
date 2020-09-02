@@ -5,13 +5,13 @@ import { Methods as Methods1 } from './_storyId@string/audio'
 import { Methods as Methods2 } from './_storyId@string/image'
 import { Methods as Methods3 } from './_storyId@string/video'
 
-const POST = 'POST'
-const PATH0 = '/api/v3/extension/story'
-const PATH1 = '/audio'
-const PATH2 = '/image'
-const PATH3 = '/video'
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? '' : baseURL).replace(/\/$/, '')
+  const PATH0 = '/api/v3/extension/story'
+  const PATH1 = '/audio'
+  const PATH2 = '/image'
+  const PATH3 = '/video'
+  const POST = 'POST'
 
   return {
     _storyId: (val0: string) => {
@@ -22,24 +22,28 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           post: (option?: { body?: Methods1['post']['reqBody'], headers?: Methods1['post']['reqHeaders'], config?: T }) =>
             fetch<Methods1['post']['resBody'], BasicHeaders, Methods1['post']['status']>(prefix, `${prefix0}${PATH1}`, POST, option, 'FormData').json(),
           $post: (option?: { body?: Methods1['post']['reqBody'], headers?: Methods1['post']['reqHeaders'], config?: T }) =>
-            fetch<Methods1['post']['resBody'], BasicHeaders, Methods1['post']['status']>(prefix, `${prefix0}${PATH1}`, POST, option, 'FormData').json().then(r => r.body)
+            fetch<Methods1['post']['resBody'], BasicHeaders, Methods1['post']['status']>(prefix, `${prefix0}${PATH1}`, POST, option, 'FormData').json().then(r => r.body),
+          $path: () => `${prefix}${prefix0}${PATH1}`
         },
         image: {
           post: (option?: { body?: Methods2['post']['reqBody'], headers?: Methods2['post']['reqHeaders'], config?: T }) =>
             fetch<Methods2['post']['resBody'], BasicHeaders, Methods2['post']['status']>(prefix, `${prefix0}${PATH2}`, POST, option, 'FormData').json(),
           $post: (option?: { body?: Methods2['post']['reqBody'], headers?: Methods2['post']['reqHeaders'], config?: T }) =>
-            fetch<Methods2['post']['resBody'], BasicHeaders, Methods2['post']['status']>(prefix, `${prefix0}${PATH2}`, POST, option, 'FormData').json().then(r => r.body)
+            fetch<Methods2['post']['resBody'], BasicHeaders, Methods2['post']['status']>(prefix, `${prefix0}${PATH2}`, POST, option, 'FormData').json().then(r => r.body),
+          $path: () => `${prefix}${prefix0}${PATH2}`
         },
         video: {
           post: (option?: { body?: Methods3['post']['reqBody'], headers?: Methods3['post']['reqHeaders'], config?: T }) =>
             fetch<Methods3['post']['resBody'], BasicHeaders, Methods3['post']['status']>(prefix, `${prefix0}${PATH3}`, POST, option, 'FormData').json(),
           $post: (option?: { body?: Methods3['post']['reqBody'], headers?: Methods3['post']['reqHeaders'], config?: T }) =>
-            fetch<Methods3['post']['resBody'], BasicHeaders, Methods3['post']['status']>(prefix, `${prefix0}${PATH3}`, POST, option, 'FormData').json().then(r => r.body)
+            fetch<Methods3['post']['resBody'], BasicHeaders, Methods3['post']['status']>(prefix, `${prefix0}${PATH3}`, POST, option, 'FormData').json().then(r => r.body),
+          $path: () => `${prefix}${prefix0}${PATH3}`
         },
         post: (option: { body: Methods0['post']['reqBody'], headers?: Methods0['post']['reqHeaders'], config?: T }) =>
           fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, prefix0, POST, option, 'FormData').json(),
         $post: (option: { body: Methods0['post']['reqBody'], headers?: Methods0['post']['reqHeaders'], config?: T }) =>
-          fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, prefix0, POST, option, 'FormData').json().then(r => r.body)
+          fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, prefix0, POST, option, 'FormData').json().then(r => r.body),
+        $path: () => `${prefix}${prefix0}`
       }
     }
   }

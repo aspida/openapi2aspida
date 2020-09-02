@@ -1,16 +1,16 @@
 /* eslint-disable */
-import { AspidaClient, BasicHeaders } from 'aspida'
+import { AspidaClient, BasicHeaders, dataToURLString } from 'aspida'
 import { Methods as Methods0 } from '.'
 import { Methods as Methods1 } from './_id@string'
 import { Methods as Methods2 } from './_role@string'
 
-const GET = 'GET'
-const POST = 'POST'
-const PUT = 'PUT'
-const DELETE = 'DELETE'
-const PATH0 = '/users-permissions/roles'
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? 'http://localhost:1337' : baseURL).replace(/\/$/, '')
+  const PATH0 = '/users-permissions/roles'
+  const GET = 'GET'
+  const POST = 'POST'
+  const PUT = 'PUT'
+  const DELETE = 'DELETE'
 
   return {
     _id: (val0: string) => {
@@ -20,7 +20,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         get: (option?: { config?: T }) =>
           fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix0, GET, option).json(),
         $get: (option?: { config?: T }) =>
-          fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix0, GET, option).json().then(r => r.body)
+          fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix0, GET, option).json().then(r => r.body),
+        $path: () => `${prefix}${prefix0}`
       }
     },
     _role: (val1: string) => {
@@ -34,7 +35,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         delete: (option?: { config?: T }) =>
           fetch<Methods2['delete']['resBody'], BasicHeaders, Methods2['delete']['status']>(prefix, prefix1, DELETE, option).json(),
         $delete: (option?: { config?: T }) =>
-          fetch<Methods2['delete']['resBody'], BasicHeaders, Methods2['delete']['status']>(prefix, prefix1, DELETE, option).json().then(r => r.body)
+          fetch<Methods2['delete']['resBody'], BasicHeaders, Methods2['delete']['status']>(prefix, prefix1, DELETE, option).json().then(r => r.body),
+        $path: () => `${prefix}${prefix1}`
       }
     },
     get: (option?: { query?: Methods0['get']['query'], config?: T }) =>
@@ -44,7 +46,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
     post: (option: { body: Methods0['post']['reqBody'], config?: T }) =>
       fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option).json(),
     $post: (option: { body: Methods0['post']['reqBody'], config?: T }) =>
-      fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option).json().then(r => r.body)
+      fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option).json().then(r => r.body),
+    $path: (option?: { method?: 'get'; query: Methods0['get']['query'] }) =>
+      `${prefix}${PATH0}${option?.query ? `?${dataToURLString(option.query)}` : ''}`
   }
 }
 

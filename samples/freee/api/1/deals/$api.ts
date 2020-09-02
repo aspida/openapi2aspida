@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { AspidaClient, BasicHeaders } from 'aspida'
+import { AspidaClient, BasicHeaders, dataToURLString } from 'aspida'
 import { Methods as Methods0 } from '.'
 import { Methods as Methods1 } from './_id@number'
 import { Methods as Methods2 } from './_id@number/payments'
@@ -7,15 +7,15 @@ import { Methods as Methods3 } from './_id@number/payments/_payment_id@number'
 import { Methods as Methods4 } from './_id@number/renews'
 import { Methods as Methods5 } from './_id@number/renews/_renew_id@number'
 
-const GET = 'GET'
-const POST = 'POST'
-const PUT = 'PUT'
-const DELETE = 'DELETE'
-const PATH0 = '/api/1/deals'
-const PATH1 = '/payments'
-const PATH2 = '/renews'
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? 'https://api.freee.co.jp' : baseURL).replace(/\/$/, '')
+  const PATH0 = '/api/1/deals'
+  const PATH1 = '/payments'
+  const PATH2 = '/renews'
+  const GET = 'GET'
+  const POST = 'POST'
+  const PUT = 'PUT'
+  const DELETE = 'DELETE'
 
   return {
     _id: (val0: number) => {
@@ -34,13 +34,16 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
               delete: (option: { query: Methods3['delete']['query'], config?: T }) =>
                 fetch<void, BasicHeaders, Methods3['delete']['status']>(prefix, prefix1, DELETE, option).send(),
               $delete: (option: { query: Methods3['delete']['query'], config?: T }) =>
-                fetch<void, BasicHeaders, Methods3['delete']['status']>(prefix, prefix1, DELETE, option).send().then(r => r.body)
+                fetch<void, BasicHeaders, Methods3['delete']['status']>(prefix, prefix1, DELETE, option).send().then(r => r.body),
+              $path: (option?: { method: 'delete'; query: Methods3['delete']['query'] }) =>
+                `${prefix}${prefix1}${option?.query ? `?${dataToURLString(option.query)}` : ''}`
             }
           },
           post: (option: { body: Methods2['post']['reqBody'], config?: T }) =>
             fetch<Methods2['post']['resBody'], BasicHeaders, Methods2['post']['status']>(prefix, `${prefix0}${PATH1}`, POST, option, 'URLSearchParams').json(),
           $post: (option: { body: Methods2['post']['reqBody'], config?: T }) =>
-            fetch<Methods2['post']['resBody'], BasicHeaders, Methods2['post']['status']>(prefix, `${prefix0}${PATH1}`, POST, option, 'URLSearchParams').json().then(r => r.body)
+            fetch<Methods2['post']['resBody'], BasicHeaders, Methods2['post']['status']>(prefix, `${prefix0}${PATH1}`, POST, option, 'URLSearchParams').json().then(r => r.body),
+          $path: () => `${prefix}${prefix0}${PATH1}`
         },
         renews: {
           _renew_id: (val2: number) => {
@@ -54,13 +57,16 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
               delete: (option: { query: Methods5['delete']['query'], config?: T }) =>
                 fetch<Methods5['delete']['resBody'], BasicHeaders, Methods5['delete']['status']>(prefix, prefix2, DELETE, option).json(),
               $delete: (option: { query: Methods5['delete']['query'], config?: T }) =>
-                fetch<Methods5['delete']['resBody'], BasicHeaders, Methods5['delete']['status']>(prefix, prefix2, DELETE, option).json().then(r => r.body)
+                fetch<Methods5['delete']['resBody'], BasicHeaders, Methods5['delete']['status']>(prefix, prefix2, DELETE, option).json().then(r => r.body),
+              $path: (option?: { method: 'delete'; query: Methods5['delete']['query'] }) =>
+                `${prefix}${prefix2}${option?.query ? `?${dataToURLString(option.query)}` : ''}`
             }
           },
           post: (option: { body: Methods4['post']['reqBody'], config?: T }) =>
             fetch<Methods4['post']['resBody'], BasicHeaders, Methods4['post']['status']>(prefix, `${prefix0}${PATH2}`, POST, option, 'URLSearchParams').json(),
           $post: (option: { body: Methods4['post']['reqBody'], config?: T }) =>
-            fetch<Methods4['post']['resBody'], BasicHeaders, Methods4['post']['status']>(prefix, `${prefix0}${PATH2}`, POST, option, 'URLSearchParams').json().then(r => r.body)
+            fetch<Methods4['post']['resBody'], BasicHeaders, Methods4['post']['status']>(prefix, `${prefix0}${PATH2}`, POST, option, 'URLSearchParams').json().then(r => r.body),
+          $path: () => `${prefix}${prefix0}${PATH2}`
         },
         get: (option: { query: Methods1['get']['query'], config?: T }) =>
           fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix0, GET, option).json(),
@@ -73,7 +79,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         delete: (option: { query: Methods1['delete']['query'], config?: T }) =>
           fetch<void, BasicHeaders, Methods1['delete']['status']>(prefix, prefix0, DELETE, option).send(),
         $delete: (option: { query: Methods1['delete']['query'], config?: T }) =>
-          fetch<void, BasicHeaders, Methods1['delete']['status']>(prefix, prefix0, DELETE, option).send().then(r => r.body)
+          fetch<void, BasicHeaders, Methods1['delete']['status']>(prefix, prefix0, DELETE, option).send().then(r => r.body),
+        $path: (option?: { method?: 'get'; query: Methods1['get']['query'] } | { method: 'delete'; query: Methods1['delete']['query'] }) =>
+          `${prefix}${prefix0}${option?.query ? `?${dataToURLString(option.query)}` : ''}`
       }
     },
     get: (option: { query: Methods0['get']['query'], config?: T }) =>
@@ -83,7 +91,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
     post: (option?: { body?: Methods0['post']['reqBody'], config?: T }) =>
       fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option, 'URLSearchParams').json(),
     $post: (option?: { body?: Methods0['post']['reqBody'], config?: T }) =>
-      fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option, 'URLSearchParams').json().then(r => r.body)
+      fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option, 'URLSearchParams').json().then(r => r.body),
+    $path: (option?: { method?: 'get'; query: Methods0['get']['query'] }) =>
+      `${prefix}${PATH0}${option?.query ? `?${dataToURLString(option.query)}` : ''}`
   }
 }
 
