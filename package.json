@@ -1,6 +1,6 @@
 {
   "name": "openapi2aspida",
-  "version": "0.10.1",
+  "version": "0.11.0",
   "description": "Convert OpenAPI 3.0 or Swagger 2.0 definitions into aspida",
   "author": "Solufa <solufa2020@gmail.com>",
   "license": "MIT",
@@ -37,9 +37,9 @@
     "swagger"
   ],
   "dependencies": {
-    "aspida": "^0.20.3",
+    "aspida": "^0.21.0",
     "swagger-parser": "^10.0.1",
-    "swagger2openapi": "^6.2.3"
+    "swagger2openapi": "^7.0.0"
   },
   "eslintConfig": {
     "env": {
@@ -90,12 +90,12 @@
     ]
   },
   "devDependencies": {
-    "@types/jest": "^26.0.10",
+    "@types/jest": "^26.0.13",
     "@types/js-yaml": "^3.12.5",
     "@types/minimist": "^1.2.0",
-    "@typescript-eslint/eslint-plugin": "^3.10.1",
-    "@typescript-eslint/parser": "^3.10.1",
-    "eslint": "^7.7.0",
+    "@typescript-eslint/eslint-plugin": "^4.0.1",
+    "@typescript-eslint/parser": "^4.0.1",
+    "eslint": "^7.8.1",
     "eslint-config-prettier": "^6.11.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-plugin-import": "^2.22.0",

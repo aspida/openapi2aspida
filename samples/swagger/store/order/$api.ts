@@ -3,12 +3,12 @@ import { AspidaClient, BasicHeaders } from 'aspida'
 import { Methods as Methods0 } from '.'
 import { Methods as Methods1 } from './_orderId@number'
 
-const GET = 'GET'
-const POST = 'POST'
-const DELETE = 'DELETE'
-const PATH0 = '/store/order'
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? 'https://petstore.swagger.io/v2' : baseURL).replace(/\/$/, '')
+  const PATH0 = '/store/order'
+  const GET = 'GET'
+  const POST = 'POST'
+  const DELETE = 'DELETE'
 
   return {
     _orderId: (val0: number) => {
@@ -22,13 +22,15 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         delete: (option?: { config?: T }) =>
           fetch<void>(prefix, prefix0, DELETE, option).send(),
         $delete: (option?: { config?: T }) =>
-          fetch<void>(prefix, prefix0, DELETE, option).send().then(r => r.body)
+          fetch<void>(prefix, prefix0, DELETE, option).send().then(r => r.body),
+        $path: () => `${prefix}${prefix0}`
       }
     },
     post: (option: { body: Methods0['post']['reqBody'], config?: T }) =>
       fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option).json(),
     $post: (option: { body: Methods0['post']['reqBody'], config?: T }) =>
-      fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option).json().then(r => r.body)
+      fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option).json().then(r => r.body),
+    $path: () => `${prefix}${PATH0}`
   }
 }
 

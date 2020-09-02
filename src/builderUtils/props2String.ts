@@ -2,6 +2,7 @@ export type PropValue = {
   isArray: boolean
   isEnum: boolean
   isOneOf?: boolean
+  // eslint-disable-next-line no-use-before-define
   value: Prop[] | string | string[] | PropValue | PropValue[]
 }
 
@@ -15,22 +16,19 @@ export type Prop = {
 const array2String = (val: PropValue, indent: string) => {
   const hasMulti =
     (val.isEnum || typeof val.isOneOf === 'boolean') && Array.isArray(val.value) && val.value.length
-  // eslint-disable-next-line @typescript-eslint/no-use-before-define
   return `${hasMulti ? '(' : ''}${value2String(val, indent)}${hasMulti ? ')' : ''}[]`
 }
 
 export const value2String = (v: PropValue, indent: string): string =>
   `${
     typeof v.isOneOf === 'boolean'
-      ? // eslint-disable-next-line @typescript-eslint/no-use-before-define
-        values2String(v.value as PropValue[], v.isOneOf, indent)
+      ? values2String(v.value as PropValue[], v.isOneOf, indent)
       : v.isArray
       ? array2String(v.value as PropValue, indent)
       : v.isEnum
       ? (v.value as string[]).join(' | ')
       : Array.isArray(v.value)
-      ? // eslint-disable-next-line @typescript-eslint/no-use-before-define
-        props2String(v.value as Prop[], `  ${indent}`)
+      ? props2String(v.value as Prop[], `  ${indent}`)
       : v.value
   }`
 
