@@ -121,7 +121,7 @@ export const schema2value = (
       null: 'null',
       string: 'string',
       boolean: 'boolean'
-    }[schema.type]
+    }[schema.type ?? 'string']
   }
 
   return value ? { isArray, isEnum, isOneOf, value } : null

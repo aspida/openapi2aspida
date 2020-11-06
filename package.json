@@ -86,6 +86,7 @@
   },
   "dependencies": {
     "aspida": "^0.22.2",
+    "openapi-types": "^7.0.1",
     "swagger-parser": "^10.0.2",
     "swagger2openapi": "^7.0.3"
   },
