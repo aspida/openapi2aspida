@@ -9,9 +9,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
 
   return {
     post: (option: { body: Methods0['post']['reqBody'], config?: T }) =>
-      fetch<void>(prefix, PATH0, POST, option).send(),
+      fetch(prefix, PATH0, POST, option).send(),
     $post: (option: { body: Methods0['post']['reqBody'], config?: T }) =>
-      fetch<void>(prefix, PATH0, POST, option).send().then(r => r.body),
+      fetch(prefix, PATH0, POST, option).send().then(r => r.body),
     $path: () => `${prefix}${PATH0}`
   }
 }

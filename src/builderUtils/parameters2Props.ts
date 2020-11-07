@@ -26,7 +26,6 @@ export default (params: OpenAPIV3.ComponentsObject['parameters'], openapi: OpenA
           {
             name: getPropertyName(target.name),
             required: !!target.required,
-            isOneOf: false,
             values: [value]
           }
         ]

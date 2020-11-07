@@ -26,7 +26,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       $get: (option: { query: Methods0['get']['query'], config?: T }) =>
         fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json().then(r => r.body),
       $path: (option?: { method?: 'get'; query: Methods0['get']['query'] }) =>
-        `${prefix}${PATH0}${option?.query ? `?${dataToURLString(option.query)}` : ''}`
+        `${prefix}${PATH0}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
     },
     trial_bs_three_years: {
       get: (option: { query: Methods1['get']['query'], config?: T }) =>
@@ -34,7 +34,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       $get: (option: { query: Methods1['get']['query'], config?: T }) =>
         fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, PATH1, GET, option).json().then(r => r.body),
       $path: (option?: { method?: 'get'; query: Methods1['get']['query'] }) =>
-        `${prefix}${PATH1}${option?.query ? `?${dataToURLString(option.query)}` : ''}`
+        `${prefix}${PATH1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
     },
     trial_bs_two_years: {
       get: (option: { query: Methods2['get']['query'], config?: T }) =>
@@ -42,7 +42,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       $get: (option: { query: Methods2['get']['query'], config?: T }) =>
         fetch<Methods2['get']['resBody'], BasicHeaders, Methods2['get']['status']>(prefix, PATH2, GET, option).json().then(r => r.body),
       $path: (option?: { method?: 'get'; query: Methods2['get']['query'] }) =>
-        `${prefix}${PATH2}${option?.query ? `?${dataToURLString(option.query)}` : ''}`
+        `${prefix}${PATH2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
     },
     trial_pl: {
       get: (option: { query: Methods3['get']['query'], config?: T }) =>
@@ -50,7 +50,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       $get: (option: { query: Methods3['get']['query'], config?: T }) =>
         fetch<Methods3['get']['resBody'], BasicHeaders, Methods3['get']['status']>(prefix, PATH3, GET, option).json().then(r => r.body),
       $path: (option?: { method?: 'get'; query: Methods3['get']['query'] }) =>
-        `${prefix}${PATH3}${option?.query ? `?${dataToURLString(option.query)}` : ''}`
+        `${prefix}${PATH3}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
     },
     trial_pl_sections: {
       get: (option: { query: Methods4['get']['query'], config?: T }) =>
@@ -58,7 +58,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       $get: (option: { query: Methods4['get']['query'], config?: T }) =>
         fetch<Methods4['get']['resBody'], BasicHeaders, Methods4['get']['status']>(prefix, PATH4, GET, option).json().then(r => r.body),
       $path: (option?: { method?: 'get'; query: Methods4['get']['query'] }) =>
-        `${prefix}${PATH4}${option?.query ? `?${dataToURLString(option.query)}` : ''}`
+        `${prefix}${PATH4}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
     },
     trial_pl_three_years: {
       get: (option: { query: Methods5['get']['query'], config?: T }) =>
@@ -66,7 +66,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       $get: (option: { query: Methods5['get']['query'], config?: T }) =>
         fetch<Methods5['get']['resBody'], BasicHeaders, Methods5['get']['status']>(prefix, PATH5, GET, option).json().then(r => r.body),
       $path: (option?: { method?: 'get'; query: Methods5['get']['query'] }) =>
-        `${prefix}${PATH5}${option?.query ? `?${dataToURLString(option.query)}` : ''}`
+        `${prefix}${PATH5}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
     },
     trial_pl_two_years: {
       get: (option: { query: Methods6['get']['query'], config?: T }) =>
@@ -74,7 +74,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       $get: (option: { query: Methods6['get']['query'], config?: T }) =>
         fetch<Methods6['get']['resBody'], BasicHeaders, Methods6['get']['status']>(prefix, PATH6, GET, option).json().then(r => r.body),
       $path: (option?: { method?: 'get'; query: Methods6['get']['query'] }) =>
-        `${prefix}${PATH6}${option?.query ? `?${dataToURLString(option.query)}` : ''}`
+        `${prefix}${PATH6}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
     }
   }
 }

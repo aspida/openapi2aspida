@@ -114,7 +114,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
               $get: (option: { query: Methods1['get']['query'], config?: T }) =>
                 fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix0, GET, option).json().then(r => r.body),
               $path: (option?: { method?: 'get'; query: Methods1['get']['query'] }) =>
-                `${prefix}${prefix0}${option?.query ? `?${dataToURLString(option.query)}` : ''}`
+                `${prefix}${prefix0}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
             }
           },
           get: (option: { query: Methods0['get']['query'], config?: T }) =>
@@ -122,7 +122,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           $get: (option: { query: Methods0['get']['query'], config?: T }) =>
             fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json().then(r => r.body),
           $path: (option?: { method?: 'get'; query: Methods0['get']['query'] }) =>
-            `${prefix}${PATH0}${option?.query ? `?${dataToURLString(option.query)}` : ''}`
+            `${prefix}${PATH0}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
         }
       }
     },
@@ -238,7 +238,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
               $get: (option?: { query?: Methods13['get']['query'], headers?: Methods13['get']['reqHeaders'], config?: T }) =>
                 fetch<Methods13['get']['resBody'], BasicHeaders, Methods13['get']['status']>(prefix, `${prefix3}${PATH12}`, GET, option).json().then(r => r.body),
               $path: (option?: { method?: 'get'; query: Methods13['get']['query'] }) =>
-                `${prefix}${prefix3}${PATH12}${option?.query ? `?${dataToURLString(option.query)}` : ''}`
+                `${prefix}${prefix3}${PATH12}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
             }
           }
         },
@@ -282,7 +282,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                     $post: (option: { body: Methods17['post']['reqBody'], headers?: Methods17['post']['reqHeaders'], config?: T }) =>
                       fetch<Methods17['post']['resBody'], BasicHeaders, Methods17['post']['status']>(prefix, `${prefix7}${PATH11}`, POST, option).json().then(r => r.body),
                     $path: (option?: { method?: 'get'; query: Methods17['get']['query'] }) =>
-                      `${prefix}${prefix7}${PATH11}${option?.query ? `?${dataToURLString(option.query)}` : ''}`
+                      `${prefix}${prefix7}${PATH11}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
                   },
                   itemslist: {
                     get: (option: { query: Methods21['get']['query'], headers?: Methods21['get']['reqHeaders'], config?: T }) =>
@@ -290,7 +290,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                     $get: (option: { query: Methods21['get']['query'], headers?: Methods21['get']['reqHeaders'], config?: T }) =>
                       fetch<Methods21['get']['resBody'], BasicHeaders, Methods21['get']['status']>(prefix, `${prefix7}${PATH16}`, GET, option).json().then(r => r.body),
                     $path: (option?: { method?: 'get'; query: Methods21['get']['query'] }) =>
-                      `${prefix}${prefix7}${PATH16}${option?.query ? `?${dataToURLString(option.query)}` : ''}`
+                      `${prefix}${prefix7}${PATH16}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
                   },
                   users: {
                     remove: {
@@ -345,14 +345,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
               $get: (option?: { query?: Methods24['get']['query'], headers?: Methods24['get']['reqHeaders'], config?: T }) =>
                 fetch<Methods24['get']['resBody'], BasicHeaders, Methods24['get']['status']>(prefix, `${prefix6}${PATH19}`, GET, option).json().then(r => r.body),
               $path: (option?: { method?: 'get'; query: Methods24['get']['query'] }) =>
-                `${prefix}${prefix6}${PATH19}${option?.query ? `?${dataToURLString(option.query)}` : ''}`
+                `${prefix}${prefix6}${PATH19}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
             },
             get: (option?: { query?: Methods14['get']['query'], headers?: Methods14['get']['reqHeaders'], config?: T }) =>
               fetch<void, BasicHeaders, Methods14['get']['status']>(prefix, prefix6, GET, option).send(),
             $get: (option?: { query?: Methods14['get']['query'], headers?: Methods14['get']['reqHeaders'], config?: T }) =>
               fetch<void, BasicHeaders, Methods14['get']['status']>(prefix, prefix6, GET, option).send().then(r => r.body),
             $path: (option?: { method?: 'get'; query: Methods14['get']['query'] }) =>
-              `${prefix}${prefix6}${option?.query ? `?${dataToURLString(option.query)}` : ''}`
+              `${prefix}${prefix6}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
           }
         },
         get: (option?: { query?: Methods11['get']['query'], headers?: Methods11['get']['reqHeaders'], config?: T }) =>
@@ -360,7 +360,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         $get: (option?: { query?: Methods11['get']['query'], headers?: Methods11['get']['reqHeaders'], config?: T }) =>
           fetch<Methods11['get']['resBody'], BasicHeaders, Methods11['get']['status']>(prefix, PATH9, GET, option).json().then(r => r.body),
         $path: (option?: { method?: 'get'; query: Methods11['get']['query'] }) =>
-          `${prefix}${PATH9}${option?.query ? `?${dataToURLString(option.query)}` : ''}`
+          `${prefix}${PATH9}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
       },
       chats: {
         _chatId_0: (val8: number) => {
@@ -421,7 +421,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
               $post: (option: { body: Methods26['post']['reqBody'], headers?: Methods26['post']['reqHeaders'], config?: T }) =>
                 fetch<Methods26['post']['resBody'], BasicHeaders, Methods26['post']['status']>(prefix, `${prefix10}${PATH11}`, POST, option).json().then(r => r.body),
               $path: (option?: { method?: 'get'; query: Methods26['get']['query'] }) =>
-                `${prefix}${prefix10}${PATH11}${option?.query ? `?${dataToURLString(option.query)}` : ''}`
+                `${prefix}${prefix10}${PATH11}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
             }
           }
         },
@@ -539,7 +539,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           $get: (option: { query: Methods45['get']['query'], headers?: Methods45['get']['reqHeaders'], config?: T }) =>
             fetch<Methods45['get']['resBody'], BasicHeaders, Methods45['get']['status']>(prefix, PATH36, GET, option).json().then(r => r.body),
           $path: (option?: { method?: 'get'; query: Methods45['get']['query'] }) =>
-            `${prefix}${PATH36}${option?.query ? `?${dataToURLString(option.query)}` : ''}`
+            `${prefix}${PATH36}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
         },
         get: (option?: { headers?: Methods44['get']['reqHeaders'], config?: T }) =>
           fetch<Methods44['get']['resBody'], BasicHeaders, Methods44['get']['status']>(prefix, PATH35, GET, option).json(),
@@ -576,7 +576,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
               $get: (option?: { query?: Methods46['get']['query'], headers?: Methods46['get']['reqHeaders'], config?: T }) =>
                 fetch<Methods46['get']['resBody'], BasicHeaders, Methods46['get']['status']>(prefix, `${prefix12}${PATH11}`, GET, option).json().then(r => r.body),
               $path: (option?: { method?: 'get'; query: Methods46['get']['query'] }) =>
-                `${prefix}${prefix12}${PATH11}${option?.query ? `?${dataToURLString(option.query)}` : ''}`
+                `${prefix}${prefix12}${PATH11}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
             }
           }
         }

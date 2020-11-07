@@ -60,7 +60,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       $post: (option: { body: Methods1['post']['reqBody'], config?: T }) =>
         fetch<Methods1['post']['resBody'], BasicHeaders, Methods1['post']['status']>(prefix, PATH1, POST, option).json().then(r => r.body),
       $path: (option?: { method?: 'get'; query: Methods1['get']['query'] }) =>
-        `${prefix}${PATH1}${option?.query ? `?${dataToURLString(option.query)}` : ''}`
+        `${prefix}${PATH1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
     },
     search: {
       _id: (val2: string) => {
@@ -72,7 +72,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           $get: (option?: { query?: Methods4['get']['query'], config?: T }) =>
             fetch<Methods4['get']['resBody'], BasicHeaders, Methods4['get']['status']>(prefix, prefix2, GET, option).json().then(r => r.body),
           $path: (option?: { method?: 'get'; query: Methods4['get']['query'] }) =>
-            `${prefix}${prefix2}${option?.query ? `?${dataToURLString(option.query)}` : ''}`
+            `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
         }
       }
     }

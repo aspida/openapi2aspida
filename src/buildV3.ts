@@ -87,7 +87,6 @@ export default (openapi: OpenAPIV3.Document) => {
                       const prop = {
                         name: getPropertyName(p.name),
                         required: !!p.required,
-                        isOneOf: false,
                         values: [value]
                       }
 
@@ -110,7 +109,6 @@ export default (openapi: OpenAPIV3.Document) => {
                   params.push({
                     name: 'reqHeaders',
                     required: false,
-                    isOneOf: false,
                     values: [
                       ...reqRefHeaders,
                       ...(reqHeaders.length
@@ -124,7 +122,6 @@ export default (openapi: OpenAPIV3.Document) => {
                   params.push({
                     name: 'query',
                     required: queryRequired,
-                    isOneOf: false,
                     values: [
                       ...refQuery,
                       ...(query.length ? [{ isArray: false, isEnum: false, value: query }] : [])
@@ -139,7 +136,6 @@ export default (openapi: OpenAPIV3.Document) => {
                   params.push({
                     name: 'status',
                     required: true,
-                    isOneOf: false,
                     values: [{ isArray: false, isEnum: false, value: code }]
                   })
 
@@ -152,7 +148,6 @@ export default (openapi: OpenAPIV3.Document) => {
                       params.push({
                         name: 'resBody',
                         required: true,
-                        isOneOf: false,
                         values: [val]
                       })
                   }
@@ -161,7 +156,6 @@ export default (openapi: OpenAPIV3.Document) => {
                     params.push({
                       name: 'resHeaders',
                       required: true,
-                      isOneOf: false,
                       values: [
                         {
                           isArray: false,
@@ -181,7 +175,6 @@ export default (openapi: OpenAPIV3.Document) => {
                                 val && {
                                   name: getPropertyName(header),
                                   required: true,
-                                  isOneOf: false,
                                   values: [val]
                                 }
                               )
@@ -236,7 +229,6 @@ export default (openapi: OpenAPIV3.Document) => {
                   params.push({
                     name: 'reqFormat',
                     required: true,
-                    isOneOf: false,
                     values: [{ isArray: false, isEnum: false, value: reqFormat }]
                   })
                 }
@@ -245,7 +237,6 @@ export default (openapi: OpenAPIV3.Document) => {
                   params.push({
                     name: 'reqBody',
                     required,
-                    isOneOf: false,
                     values: [reqBody]
                   })
                 }
@@ -254,7 +245,6 @@ export default (openapi: OpenAPIV3.Document) => {
               return {
                 name: method,
                 required: true,
-                isOneOf: false,
                 values: [{ isArray: false, isEnum: false, value: params }]
               }
             })

@@ -32,13 +32,13 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         $get: (option?: { config?: T }) =>
           fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix0, GET, option).json().then(r => r.body),
         post: (option?: { body?: Methods1['post']['reqBody'], config?: T }) =>
-          fetch<void>(prefix, prefix0, POST, option, 'URLSearchParams').send(),
+          fetch(prefix, prefix0, POST, option, 'URLSearchParams').send(),
         $post: (option?: { body?: Methods1['post']['reqBody'], config?: T }) =>
-          fetch<void>(prefix, prefix0, POST, option, 'URLSearchParams').send().then(r => r.body),
+          fetch(prefix, prefix0, POST, option, 'URLSearchParams').send().then(r => r.body),
         delete: (option?: { headers?: Methods1['delete']['reqHeaders'], config?: T }) =>
-          fetch<void>(prefix, prefix0, DELETE, option).send(),
+          fetch(prefix, prefix0, DELETE, option).send(),
         $delete: (option?: { headers?: Methods1['delete']['reqHeaders'], config?: T }) =>
-          fetch<void>(prefix, prefix0, DELETE, option).send().then(r => r.body),
+          fetch(prefix, prefix0, DELETE, option).send().then(r => r.body),
         $path: () => `${prefix}${prefix0}`
       }
     },
@@ -48,16 +48,16 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       $get: (option: { query: Methods3['get']['query'], config?: T }) =>
         fetch<Methods3['get']['resBody'], BasicHeaders, Methods3['get']['status']>(prefix, PATH2, GET, option).json().then(r => r.body),
       $path: (option?: { method?: 'get'; query: Methods3['get']['query'] }) =>
-        `${prefix}${PATH2}${option?.query ? `?${dataToURLString(option.query)}` : ''}`
+        `${prefix}${PATH2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
     },
     post: (option: { body: Methods0['post']['reqBody'], config?: T }) =>
-      fetch<void>(prefix, PATH0, POST, option).send(),
+      fetch(prefix, PATH0, POST, option).send(),
     $post: (option: { body: Methods0['post']['reqBody'], config?: T }) =>
-      fetch<void>(prefix, PATH0, POST, option).send().then(r => r.body),
+      fetch(prefix, PATH0, POST, option).send().then(r => r.body),
     put: (option: { body: Methods0['put']['reqBody'], config?: T }) =>
-      fetch<void>(prefix, PATH0, PUT, option).send(),
+      fetch(prefix, PATH0, PUT, option).send(),
     $put: (option: { body: Methods0['put']['reqBody'], config?: T }) =>
-      fetch<void>(prefix, PATH0, PUT, option).send().then(r => r.body),
+      fetch(prefix, PATH0, PUT, option).send().then(r => r.body),
     $path: () => `${prefix}${PATH0}`
   }
 }

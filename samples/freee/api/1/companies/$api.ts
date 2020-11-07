@@ -23,7 +23,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         $put: (option?: { body?: Methods1['put']['reqBody'], config?: T }) =>
           fetch<Methods1['put']['resBody'], BasicHeaders, Methods1['put']['status']>(prefix, prefix0, PUT, option, 'URLSearchParams').json().then(r => r.body),
         $path: (option?: { method?: 'get'; query: Methods1['get']['query'] }) =>
-          `${prefix}${prefix0}${option?.query ? `?${dataToURLString(option.query)}` : ''}`
+          `${prefix}${prefix0}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
       }
     },
     get: (option?: { config?: T }) =>

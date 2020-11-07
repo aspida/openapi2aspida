@@ -31,7 +31,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
               $delete: (option: { query: Methods1['delete']['query'], config?: T }) =>
                 fetch<void, BasicHeaders, Methods1['delete']['status']>(prefix, prefix1, DELETE, option).send().then(r => r.body),
               $path: (option?: { method: 'delete'; query: Methods1['delete']['query'] }) =>
-                `${prefix}${prefix1}${option?.query ? `?${dataToURLString(option.query)}` : ''}`
+                `${prefix}${prefix1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
             }
           },
           get: (option: { query: Methods0['get']['query'], config?: T }) =>
@@ -43,7 +43,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           $post: (option: { body: Methods0['post']['reqBody'], config?: T }) =>
             fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, `${prefix0}${PATH1}`, POST, option, 'URLSearchParams').json().then(r => r.body),
           $path: (option?: { method?: 'get'; query: Methods0['get']['query'] }) =>
-            `${prefix}${prefix0}${PATH1}${option?.query ? `?${dataToURLString(option.query)}` : ''}`
+            `${prefix}${prefix0}${PATH1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
         }
       }
     }
