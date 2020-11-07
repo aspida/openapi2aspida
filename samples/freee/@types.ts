@@ -1165,6 +1165,8 @@ export type forbiddenError = {
 export type badRequestError = {
   status_code?: number
   errors?: {
+    messages: Partial<string[] & string>
+
     type: 'status' | 'validation' | 'error'
   }[]
 }
@@ -1172,6 +1174,8 @@ export type badRequestError = {
 export type badRequestNotFoundError = {
   status_code?: number
   errors?: {
+    messages: Partial<string[] & string>
+
     type: 'status' | 'validation' | 'error'
   }[]
 }
@@ -1190,6 +1194,8 @@ export type tooManyRequestsError = {
 export type internalServerError = {
   status_code?: number
   errors?: {
+    messages: Partial<string[] & string>
+
     type: 'status' | 'validation' | 'error'
   }[]
 }

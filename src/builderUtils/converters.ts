@@ -38,7 +38,7 @@ export const getPropertyName = (name: string) =>
   /^[a-zA-Z_$][0-9a-zA-Z_$]*$/.test(name) ? name : `'${name}'`
 
 const of2Values = (obj: OpenAPIV3.SchemaObject): PropValue[] | null => {
-  const values = (obj.oneOf || obj.allOf || [])
+  const values = (obj.oneOf || obj.allOf || obj.anyOf || [])
     .map(p => schema2value(p))
     .filter(v => v) as PropValue[]
   return values.length ? values : null
@@ -59,7 +59,6 @@ const object2value = (obj: OpenAPIV3.NonArraySchemaObject): Prop[] => {
       return {
         name: getPropertyName(name),
         required: !!obj.required?.includes(name),
-        isOneOf: false,
         values: [val]
       }
     })
@@ -72,7 +71,6 @@ const object2value = (obj: OpenAPIV3.NonArraySchemaObject): Prop[] => {
         ? {
             isArray: false,
             isEnum: false,
-            isOneOf: false,
             value: 'any'
           }
         : schema2value(additionalProps)
@@ -81,7 +79,6 @@ const object2value = (obj: OpenAPIV3.NonArraySchemaObject): Prop[] => {
       value.push({
         name: '[key: string]',
         required: true,
-        isOneOf: false,
         values: [val]
       })
   }
@@ -96,13 +93,13 @@ export const schema2value = (
 
   let isArray = false
   let isEnum = false
-  let isOneOf
+  let hasOf: PropValue['hasOf']
   let value: PropValue['value'] | null = null
 
   if (isRefObject(schema)) {
     value = $ref2Type(schema.$ref)
-  } else if (schema.oneOf || schema.allOf) {
-    isOneOf = !!schema.oneOf
+  } else if (schema.oneOf || schema.allOf || schema.anyOf) {
+    hasOf = schema.oneOf ? 'oneOf' : schema.allOf ? 'allOf' : 'anyOf'
     value = of2Values(schema)
   } else if (schema.enum) {
     isEnum = true
@@ -121,8 +118,8 @@ export const schema2value = (
       null: 'null',
       string: 'string',
       boolean: 'boolean'
-    }[schema.type]
+    }[schema.type ?? 'string']
   }
 
-  return value ? { isArray, isEnum, isOneOf, value } : null
+  return value ? { isArray, isEnum, hasOf, value } : null
 }

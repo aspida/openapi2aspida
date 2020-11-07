@@ -27,28 +27,28 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         $get: (option?: { config?: T }) =>
           fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix0, GET, option).json().then(r => r.body),
         put: (option: { body: Methods1['put']['reqBody'], config?: T }) =>
-          fetch<void>(prefix, prefix0, PUT, option).send(),
+          fetch(prefix, prefix0, PUT, option).send(),
         $put: (option: { body: Methods1['put']['reqBody'], config?: T }) =>
-          fetch<void>(prefix, prefix0, PUT, option).send().then(r => r.body),
+          fetch(prefix, prefix0, PUT, option).send().then(r => r.body),
         delete: (option?: { config?: T }) =>
-          fetch<void>(prefix, prefix0, DELETE, option).send(),
+          fetch(prefix, prefix0, DELETE, option).send(),
         $delete: (option?: { config?: T }) =>
-          fetch<void>(prefix, prefix0, DELETE, option).send().then(r => r.body),
+          fetch(prefix, prefix0, DELETE, option).send().then(r => r.body),
         $path: () => `${prefix}${prefix0}`
       }
     },
     createWithArray: {
       post: (option: { body: Methods2['post']['reqBody'], config?: T }) =>
-        fetch<void>(prefix, PATH1, POST, option).send(),
+        fetch(prefix, PATH1, POST, option).send(),
       $post: (option: { body: Methods2['post']['reqBody'], config?: T }) =>
-        fetch<void>(prefix, PATH1, POST, option).send().then(r => r.body),
+        fetch(prefix, PATH1, POST, option).send().then(r => r.body),
       $path: () => `${prefix}${PATH1}`
     },
     createWithList: {
       post: (option: { body: Methods3['post']['reqBody'], config?: T }) =>
-        fetch<void>(prefix, PATH2, POST, option).send(),
+        fetch(prefix, PATH2, POST, option).send(),
       $post: (option: { body: Methods3['post']['reqBody'], config?: T }) =>
-        fetch<void>(prefix, PATH2, POST, option).send().then(r => r.body),
+        fetch(prefix, PATH2, POST, option).send().then(r => r.body),
       $path: () => `${prefix}${PATH2}`
     },
     login: {
@@ -57,12 +57,12 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       $get: (option: { query: Methods4['get']['query'], config?: T }) =>
         fetch<Methods4['get']['resBody'], Methods4['get']['resHeaders'], Methods4['get']['status']>(prefix, PATH3, GET, option).text().then(r => r.body),
       $path: (option?: { method?: 'get'; query: Methods4['get']['query'] }) =>
-        `${prefix}${PATH3}${option?.query ? `?${dataToURLString(option.query)}` : ''}`
+        `${prefix}${PATH3}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
     },
     post: (option: { body: Methods0['post']['reqBody'], config?: T }) =>
-      fetch<void>(prefix, PATH0, POST, option).send(),
+      fetch(prefix, PATH0, POST, option).send(),
     $post: (option: { body: Methods0['post']['reqBody'], config?: T }) =>
-      fetch<void>(prefix, PATH0, POST, option).send().then(r => r.body),
+      fetch(prefix, PATH0, POST, option).send().then(r => r.body),
     $path: () => `${prefix}${PATH0}`
   }
 }

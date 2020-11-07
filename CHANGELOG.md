@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.12.0](https://github.com/aspida/openapi2aspida/compare/v0.11.0...v0.12.0) (2020-11-07)
+
+
+### Features
+
+* update aspida@0.22.2 ([e95a13b](https://github.com/aspida/openapi2aspida/commit/e95a13bd720651a78dfbf42c7ceb1d1f14e297c9))
+
+
+### Bug Fixes
+
+* convert allOf/oneOf/anyOf ([7cccbfb](https://github.com/aspida/openapi2aspida/commit/7cccbfb6fd75c29ddc4e16067c359120f2fb8763))
+
 ## [0.11.0](https://github.com/aspida/openapi2aspida/compare/v0.10.1...v0.11.0) (2020-09-02)
 
 
