@@ -44,7 +44,6 @@ describe('cli test', () => {
           input: `_${config.input}`
         })[0]
 
-        console.log(readDirRecursive(config.input))
         for (const filePath of readDirRecursive(config.input)) {
           expect(fs.readFileSync(`_${filePath}`, 'utf8')).toBe(
             fs.readFileSync(`${filePath}`, 'utf8').replace(/\r/g, '')
