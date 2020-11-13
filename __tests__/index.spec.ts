@@ -4,8 +4,13 @@ import build from '../src'
 import path from 'path'
 
 function readDirRecursive(dirPath: string): string[] {
-  return fs.readdirSync(dirPath, { withFileTypes: true })
-    .map(file => file.isDirectory() ? readDirRecursive(path.join(dirPath, file.name)) : [path.join(dirPath, file.name)])
+  return fs
+    .readdirSync(dirPath, { withFileTypes: true })
+    .map(file =>
+      file.isDirectory()
+        ? readDirRecursive(path.join(dirPath, file.name))
+        : [path.join(dirPath, file.name)]
+    )
     .reduce((acc, x) => acc.concat(x), [])
 }
 
