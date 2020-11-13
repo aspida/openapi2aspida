@@ -13,7 +13,7 @@ describe('cli test', () => {
   beforeAll(() => fs.mkdirSync('_samples'))
   afterAll(() => fs.promises.rmdir('_samples', { recursive: true }))
 
-  test('inspection', () => {
+  test('main', () => {
     const configs: ConfigFile[] = require('../aspida.config.js')
 
     return Promise.all(
