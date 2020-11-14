@@ -5,7 +5,7 @@ export type Methods = {
   get: {
     query: {
       company_id: number
-      limit?: number
+      limit: number
     }
 
     status: 200

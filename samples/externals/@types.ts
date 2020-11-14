@@ -63,7 +63,7 @@ export type SubscriptionType = 'prepaid' | 'postpaid' | 'control'
 export type ProductType = 'mobile' | 'landline' | 'internet' | 'iptv' | 'bundle' | 'device' | 'voucher' | 'value_added_service' | 'bolt-on' | 'dth'
 
 export type OfferedProduct = Product & {
-  sub_products?: OfferedProduct[]
+  sub_products: OfferedProduct[]
 }
 
 export type SubscribedProduct = Product & {
@@ -77,9 +77,9 @@ export type SubscribedProduct = Product & {
 }
 
 export type Quotas = {
-  data?: DataQuota[]
-  voice?: VoiceQuota[]
-  sms?: SmsQuota[]
+  data: DataQuota[]
+  voice: VoiceQuota[]
+  sms: SmsQuota[]
 }
 
 export type CommonQuota = {

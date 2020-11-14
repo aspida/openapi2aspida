@@ -1,8 +1,8 @@
 /* eslint-disable */
 export type Methods = {
   put: {
-    query?: {
-      q?: string
+    query: {
+      q: string
     }
 
     status: 202

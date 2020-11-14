@@ -6,9 +6,9 @@ export type Methods = {
     query: {
       download_type: 'csv' | 'pdf' | 'yayoi' | 'generic'
       company_id: number
-      visible_tags?: ('partner' | 'item' | 'tag' | 'section' | 'description' | 'wallet_txn_description' | 'all')[]
-      start_date?: string
-      end_date?: string
+      visible_tags: ('partner' | 'item' | 'tag' | 'section' | 'description' | 'wallet_txn_description' | 'all')[]
+      start_date: string
+      end_date: string
     }
 
     status: 202

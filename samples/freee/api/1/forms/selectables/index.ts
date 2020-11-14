@@ -5,7 +5,7 @@ export type Methods = {
   get: {
     query: {
       company_id: number
-      includes?: 'account_item'
+      includes: 'account_item'
     }
 
     status: 200

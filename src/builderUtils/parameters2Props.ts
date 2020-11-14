@@ -25,7 +25,7 @@ export default (params: OpenAPIV3.ComponentsObject['parameters'], openapi: OpenA
         props = [
           {
             name: getPropertyName(target.name),
-            required: !!target.required,
+            required: target.required ?? true,
             values: [value]
           }
         ]

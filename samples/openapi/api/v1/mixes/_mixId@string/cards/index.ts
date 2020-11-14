@@ -5,7 +5,7 @@ export type Methods = {
   post: {
     status: 204
 
-    reqBody?: {
+    reqBody: {
       type: Types.CardEnumModel
       title?: string
       abstract?: string

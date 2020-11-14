@@ -12,7 +12,7 @@ export type Methods = {
     status: 200
 
     resBody: {
-      foo?: string
+      foo: string
     }
   }
 }

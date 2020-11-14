@@ -5,7 +5,7 @@ export type Methods = {
   get: {
     query: {
       company_id: number
-      base_date?: string
+      base_date: string
     }
 
     status: 200

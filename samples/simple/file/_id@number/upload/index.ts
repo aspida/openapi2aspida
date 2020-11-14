@@ -1,11 +1,11 @@
 /* eslint-disable */
 export type Methods = {
   post: {
-    query?: {
-      path?: string
+    query: {
+      path: string
     }
 
     status: 204
-    reqBody?: Blob
+    reqBody: Blob
   }
 }

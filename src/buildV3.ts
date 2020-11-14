@@ -61,7 +61,8 @@ export default (openapi: OpenAPIV3.Document) => {
                 const reqHeaders: Prop[] = []
                 const refQuery: PropValue[] = []
                 const query: Prop[] = []
-                let queryRequired = false
+                let headerRequired = true
+                let queryRequired = true
 
                 ;[...(openapi.paths[path].parameters || []), ...(target.parameters || [])].forEach(
                   p => {
@@ -72,10 +73,11 @@ export default (openapi: OpenAPIV3.Document) => {
                       switch (ref.in) {
                         case 'header':
                           reqRefHeaders.push(val)
+                          headerRequired = ref.required ?? true
                           break
                         case 'query':
                           refQuery.push(val)
-                          if (ref.required) queryRequired = true
+                          queryRequired = ref.required ?? true
                           break
                         default:
                           break
@@ -86,17 +88,18 @@ export default (openapi: OpenAPIV3.Document) => {
 
                       const prop = {
                         name: getPropertyName(p.name),
-                        required: !!p.required,
+                        required: p.required ?? true,
                         values: [value]
                       }
 
                       switch (p.in) {
                         case 'header':
                           reqHeaders.push(prop)
+                          headerRequired = p.required ?? true
                           break
                         case 'query':
                           query.push(prop)
-                          if (p.required) queryRequired = true
+                          queryRequired = p.required ?? true
                           break
                         default:
                           break
@@ -108,7 +111,7 @@ export default (openapi: OpenAPIV3.Document) => {
                 if (reqHeaders.length || reqRefHeaders.length) {
                   params.push({
                     name: 'reqHeaders',
-                    required: false,
+                    required: headerRequired,
                     values: [
                       ...reqRefHeaders,
                       ...(reqHeaders.length
@@ -174,7 +177,9 @@ export default (openapi: OpenAPIV3.Document) => {
                               return (
                                 val && {
                                   name: getPropertyName(header),
-                                  required: true,
+                                  required: isRefObject(headerData)
+                                    ? true
+                                    : headerData.required ?? true,
                                   values: [val]
                                 }
                               )
@@ -190,7 +195,7 @@ export default (openapi: OpenAPIV3.Document) => {
               if (target.requestBody) {
                 let reqFormat = ''
                 let reqBody: PropValue | null = null
-                let required = false
+                let required = true
 
                 if (isRefObject(target.requestBody)) {
                   const ref = resolveReqRef(openapi, target.requestBody.$ref)
@@ -205,7 +210,7 @@ export default (openapi: OpenAPIV3.Document) => {
                     isEnum: false,
                     value: $ref2Type(target.requestBody.$ref)
                   }
-                  required = !!ref.required
+                  required = ref.required ?? true
                 } else {
                   const typeSet = [
                     ['multipart/form-data', 'FormData'],
@@ -218,7 +223,7 @@ export default (openapi: OpenAPIV3.Document) => {
                     if (target.requestBody.content[typeSet[i][0]]?.schema) {
                       reqFormat = typeSet[i][1]
                       reqBody = schema2value(target.requestBody.content[typeSet[i][0]].schema!)
-                      required = !!target.requestBody.required
+                      required = target.requestBody.required ?? true
 
                       break
                     }

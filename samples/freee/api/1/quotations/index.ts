@@ -5,15 +5,15 @@ export type Methods = {
   get: {
     query: {
       company_id: number
-      partner_id?: number
-      partner_code?: string
-      start_issue_date?: string
-      end_issue_date?: string
-      quotation_number?: string
-      description?: string
-      quotation_status?: 'all' | 'unsubmitted' | 'submitted'
-      offset?: number
-      limit?: number
+      partner_id: number
+      partner_code: string
+      start_issue_date: string
+      end_issue_date: string
+      quotation_number: string
+      description: string
+      quotation_status: 'all' | 'unsubmitted' | 'submitted'
+      offset: number
+      limit: number
     }
 
     status: 200

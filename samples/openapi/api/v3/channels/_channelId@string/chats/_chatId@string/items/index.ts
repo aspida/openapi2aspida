@@ -3,10 +3,10 @@ import * as Types from '../../../../../../../@types'
 
 export type Methods = {
   get: {
-    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken & Types.UserInstanceIdHeader
+    reqHeaders: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken & Types.UserInstanceIdHeader
 
-    query?: {
-      offset?: number
+    query: {
+      offset: number
     }
 
     status: 200
@@ -18,7 +18,7 @@ export type Methods = {
   }
 
   post: {
-    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken
+    reqHeaders: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken
     status: 200
 
     resBody: {

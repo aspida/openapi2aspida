@@ -10,9 +10,9 @@ export type Methods = {
   post: {
     reqFormat: URLSearchParams
 
-    reqBody?: {
-      name?: string
-      status?: string
+    reqBody: {
+      name: string
+      status: string
     }
   }
 

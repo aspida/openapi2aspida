@@ -36,9 +36,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
 
         return {
           uploadImage: {
-            post: (option?: { body?: Methods2['post']['reqBody'], config?: T }) =>
+            post: (option: { body: Methods2['post']['reqBody'], config?: T }) =>
               fetch<Methods2['post']['resBody'], BasicHeaders, Methods2['post']['status']>(prefix, `${prefix0}${PATH1}`, POST, option, 'FormData').json(),
-            $post: (option?: { body?: Methods2['post']['reqBody'], config?: T }) =>
+            $post: (option: { body: Methods2['post']['reqBody'], config?: T }) =>
               fetch<Methods2['post']['resBody'], BasicHeaders, Methods2['post']['status']>(prefix, `${prefix0}${PATH1}`, POST, option, 'FormData').json().then(r => r.body),
             $path: () => `${prefix}${prefix0}${PATH1}`
           },
@@ -46,9 +46,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
             fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix0, GET, option).json(),
           $get: (option?: { config?: T }) =>
             fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix0, GET, option).json().then(r => r.body),
-          post: (option?: { body?: Methods1['post']['reqBody'], config?: T }) =>
+          post: (option: { body: Methods1['post']['reqBody'], config?: T }) =>
             fetch(prefix, prefix0, POST, option, 'URLSearchParams').send(),
-          $post: (option?: { body?: Methods1['post']['reqBody'], config?: T }) =>
+          $post: (option: { body: Methods1['post']['reqBody'], config?: T }) =>
             fetch(prefix, prefix0, POST, option, 'URLSearchParams').send().then(r => r.body),
           delete: (option?: { headers?: Methods1['delete']['reqHeaders'], config?: T }) =>
             fetch(prefix, prefix0, DELETE, option).send(),

@@ -3,13 +3,13 @@ import * as Types from '../../../@types'
 
 export type Methods = {
   post: {
-    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationTokenRequired
+    reqHeaders: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationTokenRequired
     status: 200
 
     resBody: {
-      dataUrl?: string
-      otpURL?: string
-      secret?: string
+      dataUrl: string
+      otpURL: string
+      secret: string
     }
 
     reqBody: {

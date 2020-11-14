@@ -3,77 +3,77 @@ import * as Types from '../../../../../@types'
 
 export type Methods = {
   get: {
-    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken & Types.UserPublicKey & Types.UserSignedChallenge
+    reqHeaders: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken & Types.UserPublicKey & Types.UserSignedChallenge
     status: 200
 
     resBody: {
-      chats?: {
-        access?: 'admin' | 'r' | 'w' | 'banned'
-        chatId?: number
-        chatDescriptor?: string
-        channelId?: number
-        organisationId?: number
-        name?: string
-        payload?: string
-        type?: 'group' | 'p2p'
-        accessType?: 'private' | 'publicWrite' | 'publicRead'
-        storyId?: number
-        itemId?: number
-        storyIdPinned?: number
-        storyPinnedEmpty?: boolean
-        usersCount?: number
-        publicToJoin?: boolean
-        thumbnails?: {
-          image?: string
-          initials?: string
+      chats: {
+        access: 'admin' | 'r' | 'w' | 'banned'
+        chatId: number
+        chatDescriptor: string
+        channelId: number
+        organisationId: number
+        name: string
+        payload: string
+        type: 'group' | 'p2p'
+        accessType: 'private' | 'publicWrite' | 'publicRead'
+        storyId: number
+        itemId: number
+        storyIdPinned: number
+        storyPinnedEmpty: boolean
+        usersCount: number
+        publicToJoin: boolean
+        thumbnails: {
+          image: string
+          initials: string
         }[]
-        level?: 'channel' | 'organisation'
-        recipientId?: number
-        created?: string
-        updated?: string
+        level: 'channel' | 'organisation'
+        recipientId: number
+        created: string
+        updated: string
       }[]
-      token?: string
-      publishKey?: string
-      subscribeKey?: string
-      cipherKey?: string
+      token: string
+      publishKey: string
+      subscribeKey: string
+      cipherKey: string
 
-      senderDevice?: {
-        ios?: string[]
-        android?: string[]
+      senderDevice: {
+        ios: string[]
+        android: string[]
       }
     }
   }
 
   post: {
-    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken
+    reqHeaders: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken
     status: 201
 
     resBody: {
-      chatId?: number
-      chatDescriptor?: string
-      channelId?: number
-      organisationId?: number
-      storyId?: number
-      itemId?: number
+      chatId: number
+      chatDescriptor: string
+      channelId: number
+      organisationId: number
+      storyId: number
+      itemId: number
 
-      pinnedContent?: {
-        pinType?: 'mix' | 'card'
+      pinnedContent: {
+        pinType: 'mix' | 'card'
       }
 
-      type?: 'group' | 'p2p'
-      accessType?: 'private' | 'publicRead' | 'publicWrite'
-      usersCount?: number
-      name?: string
-      payload?: string
-      access?: 'admin' | 'banned' | 'r' | 'rw'
-      thumbnails?: {
-        image?: string
-        initials?: string
+      type: 'group' | 'p2p'
+      accessType: 'private' | 'publicRead' | 'publicWrite'
+      usersCount: number
+      name: string
+      payload: string
+      access: 'admin' | 'banned' | 'r' | 'rw'
+      thumbnails: {
+        image: string
+        initials: string
       }[]
-      level?: 'channel' | 'organisation'
-      recipientId?: number
-      created?: string
-      updated?: string
+      level: 'channel' | 'organisation'
+      recipientId: number
+      created: string
+      updated: string
     }
 
     reqBody: {

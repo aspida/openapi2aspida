@@ -3,7 +3,7 @@ export type Methods = {
   put: {
     status: 200
 
-    reqBody?: {
+    reqBody: {
       name: string
       title?: string
     }

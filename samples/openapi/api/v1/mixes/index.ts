@@ -16,7 +16,7 @@ export type Methods = {
       id: number
     }
 
-    reqBody?: {
+    reqBody: {
       name: string
       title?: string
     }

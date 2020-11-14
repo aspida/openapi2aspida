@@ -7,7 +7,7 @@ export type Methods = {
 
     resBody: Types.ArticleModel | Types.QuoteModel
 
-    reqBody?: {
+    reqBody: {
       url: string
     }
   }

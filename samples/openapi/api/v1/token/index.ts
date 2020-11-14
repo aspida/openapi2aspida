@@ -7,7 +7,7 @@ export type Methods = {
       token: string
     }
 
-    reqBody?: {
+    reqBody: {
       organisationSubdomain: string
       channelSubdomain: string
       userId: number

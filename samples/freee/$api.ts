@@ -152,9 +152,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
               $path: () => `${prefix}${prefix1}`
             }
           },
-          get: (option?: { query?: Methods2['get']['query'], config?: T }) =>
+          get: (option: { query: Methods2['get']['query'], config?: T }) =>
             fetch<Methods2['get']['resBody'], BasicHeaders, Methods2['get']['status']>(prefix, PATH1, GET, option).json(),
-          $get: (option?: { query?: Methods2['get']['query'], config?: T }) =>
+          $get: (option: { query: Methods2['get']['query'], config?: T }) =>
             fetch<Methods2['get']['resBody'], BasicHeaders, Methods2['get']['status']>(prefix, PATH1, GET, option).json().then(r => r.body),
           $path: (option?: { method?: 'get'; query: Methods2['get']['query'] }) =>
             `${prefix}${PATH1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
@@ -164,9 +164,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
             const prefix2 = `${PATH2}/${val2}`
 
             return {
-              get: (option?: { query?: Methods5['get']['query'], config?: T }) =>
+              get: (option: { query: Methods5['get']['query'], config?: T }) =>
                 fetch<Methods5['get']['resBody'], BasicHeaders, Methods5['get']['status']>(prefix, prefix2, GET, option).json(),
-              $get: (option?: { query?: Methods5['get']['query'], config?: T }) =>
+              $get: (option: { query: Methods5['get']['query'], config?: T }) =>
                 fetch<Methods5['get']['resBody'], BasicHeaders, Methods5['get']['status']>(prefix, prefix2, GET, option).json().then(r => r.body),
               put: (option?: { body?: Methods5['put']['reqBody'], config?: T }) =>
                 fetch<Methods5['put']['resBody'], BasicHeaders, Methods5['put']['status']>(prefix, prefix2, PUT, option, 'URLSearchParams').json(),
@@ -804,9 +804,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
               `${prefix}${PATH35}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
           },
           me: {
-            get: (option?: { query?: Methods53['get']['query'], config?: T }) =>
+            get: (option: { query: Methods53['get']['query'], config?: T }) =>
               fetch<Methods53['get']['resBody'], BasicHeaders, Methods53['get']['status']>(prefix, PATH36, GET, option).json(),
-            $get: (option?: { query?: Methods53['get']['query'], config?: T }) =>
+            $get: (option: { query: Methods53['get']['query'], config?: T }) =>
               fetch<Methods53['get']['resBody'], BasicHeaders, Methods53['get']['status']>(prefix, PATH36, GET, option).json().then(r => r.body),
             put: (option?: { body?: Methods53['put']['reqBody'], config?: T }) =>
               fetch<Methods53['put']['resBody'], BasicHeaders, Methods53['put']['status']>(prefix, PATH36, PUT, option, 'URLSearchParams').json(),

@@ -5,13 +5,13 @@ export type Methods = {
   get: {
     query: {
       company_id: number
-      walletable_type?: 'bank_account' | 'credit_card' | 'wallet'
-      walletable_id?: number
-      start_date?: string
-      end_date?: string
-      entry_side?: 'income' | 'expense'
-      offset?: number
-      limit?: number
+      walletable_type: 'bank_account' | 'credit_card' | 'wallet'
+      walletable_id: number
+      start_date: string
+      end_date: string
+      entry_side: 'income' | 'expense'
+      offset: number
+      limit: number
     }
 
     status: 200
