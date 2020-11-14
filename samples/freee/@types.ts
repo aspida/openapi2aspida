@@ -110,49 +110,49 @@ export type manualJournalUpdateParams = {
 }
 
 export type companyParams = {
-  name?: string
-  name_kana?: string
-  contact_name?: string
+  name: string
+  name_kana: string
+  contact_name: string
 
-  address_attributes?: {
-    zipcode?: string
-    prefecture_code?: number
-    street_name1?: string
-    street_name2?: string
+  address_attributes: {
+    zipcode: string
+    prefecture_code: number
+    street_name1: string
+    street_name2: string
   }
 
-  phone1?: string
-  phone2?: string
-  fax?: string
+  phone1: string
+  phone2: string
+  fax: string
 
-  sales_information_attributes?: {
-    industry_class?: 'agriculture_forestry_fisheries_ore' | 'construction' | 'manufacturing_processing' | 'it' | 'transportation_logistics' | 'retail_wholesale' | 'finance_insurance' | 'real_estate_rental' | 'profession' | 'design_production' | 'food' | 'leisure_entertainment' | 'lifestyle' | 'education' | 'medical_welfare' | 'other_services' | 'other'
-    industry_code?: 'agriculture' | 'forestry' | 'fishing_industry' | 'mining' | 'civil_contractors' | 'pavement' | 'carpenter' | 'renovation' | 'electrical_plumbing' | 'grocery' | 'machinery_manufacturing' | 'printing' | 'other_manufacturing' | 'software_development' | 'system_development' | 'survey_analysis' | 'server_management' | 'website_production' | 'online_service_management' | 'online_advertising_agency' | 'online_advertising_planning_production' | 'online_media_management' | 'portal_site_management' | 'other_it_services' | 'transport_delivery' | 'delivery' | 'other_transportation_logistics' | 'other_wholesale' | 'clothing_wholesale_fiber' | 'food_wholesale' | 'entrusted_development_wholesale' | 'online_shop' | 'fashion_grocery_store' | 'food_store' | 'entrusted_store' | 'other_store' | 'financial_instruments_exchange' | 'commodity_futures_investment_advisor' | 'other_financial' | 'brokerage_insurance' | 'other_insurance' | 'real_estate_developer' | 'real_estate_brokerage' | 'rent_coin_parking_management' | 'rental_office_co_working_space' | 'rental_lease' | 'cpa_tax_accountant' | 'law_office' | 'judicial_and_administrative_scrivener' | 'labor_consultant' | 'other_profession' | 'business_consultant' | 'academic_research_development' | 'advertising_agency' | 'advertising_planning_production' | 'design_development' | 'apparel_industry_design' | 'website_design' | 'advertising_planning_design' | 'other_design' | 'restaurants_coffee_shops' | 'sale_of_lunch' | 'bread_confectionery_manufacture_sale' | 'delivery_catering_mobile_catering' | 'hotel_inn' | 'homestay' | 'travel_agency' | 'leisure_sports_facility_management' | 'show_event_management' | 'barber' | 'beauty_salon' | 'spa_sand_bath_sauna' | 'este_ail_salon' | 'bridal_planning_introduce_wedding' | 'memorial_ceremony_funeral' | 'moving' | 'courier_industry' | 'house_maid_cleaning_agency' | 're_tailoring_clothes' | 'training_institute_management' | 'tutoring_school' | 'music_calligraphy_abacus_classroom' | 'english_school' | 'tennis_yoga_judo_school' | 'culture_school' | 'seminar_planning_management' | 'hospital_clinic' | 'dental_clinic' | 'other_medical_services' | 'nursery' | 'nursing_home' | 'rehabilitation_support_services' | 'other_welfare' | 'visit_welfare_service' | 'recruitment_temporary_staffing' | 'life_related_recruitment_temporary_staffing' | 'car_maintenance_car_repair' | 'machinery_equipment_maintenance_repair' | 'cleaning_maintenance_building_management' | 'security' | 'other_services' | 'npo' | 'general_incorporated_association' | 'general_incorporated_foundation' | 'other_association'
+  sales_information_attributes: {
+    industry_class: 'agriculture_forestry_fisheries_ore' | 'construction' | 'manufacturing_processing' | 'it' | 'transportation_logistics' | 'retail_wholesale' | 'finance_insurance' | 'real_estate_rental' | 'profession' | 'design_production' | 'food' | 'leisure_entertainment' | 'lifestyle' | 'education' | 'medical_welfare' | 'other_services' | 'other'
+    industry_code: 'agriculture' | 'forestry' | 'fishing_industry' | 'mining' | 'civil_contractors' | 'pavement' | 'carpenter' | 'renovation' | 'electrical_plumbing' | 'grocery' | 'machinery_manufacturing' | 'printing' | 'other_manufacturing' | 'software_development' | 'system_development' | 'survey_analysis' | 'server_management' | 'website_production' | 'online_service_management' | 'online_advertising_agency' | 'online_advertising_planning_production' | 'online_media_management' | 'portal_site_management' | 'other_it_services' | 'transport_delivery' | 'delivery' | 'other_transportation_logistics' | 'other_wholesale' | 'clothing_wholesale_fiber' | 'food_wholesale' | 'entrusted_development_wholesale' | 'online_shop' | 'fashion_grocery_store' | 'food_store' | 'entrusted_store' | 'other_store' | 'financial_instruments_exchange' | 'commodity_futures_investment_advisor' | 'other_financial' | 'brokerage_insurance' | 'other_insurance' | 'real_estate_developer' | 'real_estate_brokerage' | 'rent_coin_parking_management' | 'rental_office_co_working_space' | 'rental_lease' | 'cpa_tax_accountant' | 'law_office' | 'judicial_and_administrative_scrivener' | 'labor_consultant' | 'other_profession' | 'business_consultant' | 'academic_research_development' | 'advertising_agency' | 'advertising_planning_production' | 'design_development' | 'apparel_industry_design' | 'website_design' | 'advertising_planning_design' | 'other_design' | 'restaurants_coffee_shops' | 'sale_of_lunch' | 'bread_confectionery_manufacture_sale' | 'delivery_catering_mobile_catering' | 'hotel_inn' | 'homestay' | 'travel_agency' | 'leisure_sports_facility_management' | 'show_event_management' | 'barber' | 'beauty_salon' | 'spa_sand_bath_sauna' | 'este_ail_salon' | 'bridal_planning_introduce_wedding' | 'memorial_ceremony_funeral' | 'moving' | 'courier_industry' | 'house_maid_cleaning_agency' | 're_tailoring_clothes' | 'training_institute_management' | 'tutoring_school' | 'music_calligraphy_abacus_classroom' | 'english_school' | 'tennis_yoga_judo_school' | 'culture_school' | 'seminar_planning_management' | 'hospital_clinic' | 'dental_clinic' | 'other_medical_services' | 'nursery' | 'nursing_home' | 'rehabilitation_support_services' | 'other_welfare' | 'visit_welfare_service' | 'recruitment_temporary_staffing' | 'life_related_recruitment_temporary_staffing' | 'car_maintenance_car_repair' | 'machinery_equipment_maintenance_repair' | 'cleaning_maintenance_building_management' | 'security' | 'other_services' | 'npo' | 'general_incorporated_association' | 'general_incorporated_foundation' | 'other_association'
   }
 
-  head_count?: 0 | 1 | 2 | 3 | 13 | 14 | 15 | 18 | 16 | 17
-  corporate_number?: string
+  head_count: 0 | 1 | 2 | 3 | 13 | 14 | 15 | 18 | 16 | 17
+  corporate_number: string
 
-  fiscal_years_attributes?: {
-    use_industry_template?: number
-    indirect_write_off_method?: number
-    indirect_write_off_method_type?: number
-    start_date?: string
-    end_date?: string
-    accounting_period?: number
-    depreciation_fraction?: number
-    return_code?: number
-    tax_fraction?: number
+  fiscal_years_attributes: {
+    use_industry_template: number
+    indirect_write_off_method: number
+    indirect_write_off_method_type: number
+    start_date: string
+    end_date: string
+    accounting_period: number
+    depreciation_fraction: number
+    return_code: number
+    tax_fraction: number
   }
 
-  doc_template?: {
-    invoice_layout?: number
-    invoice_style?: number
-    amount_fraction?: number
+  doc_template: {
+    invoice_layout: number
+    invoice_style: number
+    amount_fraction: number
   }
 
-  txn_number_format?: 'not_used' | 'digits' | 'alnum'
-  private_settlement?: number
+  txn_number_format: 'not_used' | 'digits' | 'alnum'
+  private_settlement: number
 }
 
 export type itemParams = {
@@ -206,11 +206,11 @@ export type expenseApplicationCreateParams = {
   section_id?: number
   tag_ids?: number[]
   expense_application_lines: {
-    transaction_date?: string
-    description?: string
-    amount?: number
-    expense_application_line_template_id?: number
-    receipt_id?: number
+    transaction_date: string
+    description: string
+    amount: number
+    expense_application_line_template_id: number
+    receipt_id: number
   }[]
 }
 
@@ -223,12 +223,12 @@ export type expenseApplicationUpdateParams = {
   section_id?: number
   tag_ids?: number[]
   expense_application_lines: {
-    id?: number
-    transaction_date?: string
-    description?: string
-    amount?: number
-    expense_application_line_template_id?: number
-    receipt_id?: number
+    id: number
+    transaction_date: string
+    description: string
+    amount: number
+    expense_application_line_template_id: number
+    receipt_id: number
   }[]
 }
 
@@ -248,39 +248,39 @@ export type partnerCreateParams = {
   transfer_fee_handling_side?: 'payer' | 'payee'
 
   address_attributes?: {
-    zipcode?: string
-    prefecture_code?: number
-    street_name1?: string
-    street_name2?: string
+    zipcode: string
+    prefecture_code: number
+    street_name1: string
+    street_name2: string
   }
 
   partner_doc_setting_attributes?: {
-    sending_method?: 'email' | 'posting' | 'email_and_posting'
+    sending_method: 'email' | 'posting' | 'email_and_posting'
   }
 
   partner_bank_account_attributes?: {
-    bank_name?: string
-    bank_name_kana?: string
-    bank_code?: string
-    branch_name?: string
-    branch_kana?: string
-    branch_code?: string
-    account_type?: string
-    account_number?: string
-    long_account_name?: string
-    account_name?: string
+    bank_name: string
+    bank_name_kana: string
+    bank_code: string
+    branch_name: string
+    branch_kana: string
+    branch_code: string
+    account_type: string
+    account_number: string
+    long_account_name: string
+    account_name: string
   }
 
   payment_term_attributes?: {
-    cutoff_day?: number
-    additional_months?: number
-    fixed_day?: number
+    cutoff_day: number
+    additional_months: number
+    fixed_day: number
   }
 
   invoice_payment_term_attributes?: {
-    cutoff_day?: number
-    additional_months?: number
-    fixed_day?: number
+    cutoff_day: number
+    additional_months: number
+    fixed_day: number
   }
 }
 
@@ -299,39 +299,39 @@ export type partnerUpdateParams = {
   transfer_fee_handling_side?: 'payer' | 'payee'
 
   address_attributes?: {
-    zipcode?: string
-    prefecture_code?: number
-    street_name1?: string
-    street_name2?: string
+    zipcode: string
+    prefecture_code: number
+    street_name1: string
+    street_name2: string
   }
 
   partner_doc_setting_attributes?: {
-    sending_method?: 'email' | 'posting' | 'email_and_posting'
+    sending_method: 'email' | 'posting' | 'email_and_posting'
   }
 
   partner_bank_account_attributes?: {
-    bank_name?: string
-    bank_name_kana?: string
-    bank_code?: string
-    branch_name?: string
-    branch_kana?: string
-    branch_code?: string
-    account_type?: string
-    account_number?: string
-    long_account_name?: string
-    account_name?: string
+    bank_name: string
+    bank_name_kana: string
+    bank_code: string
+    branch_name: string
+    branch_kana: string
+    branch_code: string
+    account_type: string
+    account_number: string
+    long_account_name: string
+    account_name: string
   }
 
   payment_term_attributes?: {
-    cutoff_day?: number
-    additional_months?: number
-    fixed_day?: number
+    cutoff_day: number
+    additional_months: number
+    fixed_day: number
   }
 
   invoice_payment_term_attributes?: {
-    cutoff_day?: number
-    additional_months?: number
-    fixed_day?: number
+    cutoff_day: number
+    additional_months: number
+    fixed_day: number
   }
 }
 
@@ -363,10 +363,10 @@ export type accountItemParams = {
     accumulated_dep_account_item_name?: string
     searchable?: number
     items?: {
-      id?: number
+      id: number
     }[]
     partners?: {
-      id?: number
+      id: number
     }[]
   }
 }
@@ -476,9 +476,9 @@ export type trialBsResponse = {
     adjustment?: 'only' | 'without'
     created_at?: string
     balances: {
-      account_item_id?: number
-      account_item_name?: string
-      partners?: {
+      account_item_id: number
+      account_item_name: string
+      partners: {
         id: number
         name?: string
         opening_balance?: number
@@ -487,7 +487,7 @@ export type trialBsResponse = {
         closing_balance?: number
         composition_ratio?: number
       }[]
-      items?: {
+      items: {
         id: number
         name?: string
         opening_balance?: number
@@ -496,17 +496,17 @@ export type trialBsResponse = {
         closing_balance?: number
         composition_ratio?: number
       }[]
-      account_category_id?: number
-      account_category_name?: string
-      total_line?: boolean
-      hierarchy_level?: number
-      parent_account_category_id?: number
-      parent_account_category_name?: string
-      opening_balance?: number
-      debit_amount?: number
-      credit_amount?: number
-      closing_balance?: number
-      composition_ratio?: number
+      account_category_id: number
+      account_category_name: string
+      total_line: boolean
+      hierarchy_level: number
+      parent_account_category_id: number
+      parent_account_category_name: string
+      opening_balance: number
+      debit_amount: number
+      credit_amount: number
+      closing_balance: number
+      composition_ratio: number
     }[]
   }
 }
@@ -528,31 +528,31 @@ export type trialBsTwoYearsResponse = {
     adjustment?: 'only' | 'without'
     created_at?: string
     balances: {
-      account_item_id?: number
-      account_item_name?: string
-      partners?: {
+      account_item_id: number
+      account_item_name: string
+      partners: {
         id: number
         name?: string
         last_year_closing_balance?: number
         closing_balance?: number
         year_on_year?: number
       }[]
-      items?: {
+      items: {
         id: number
         name?: string
         last_year_closing_balance?: number
         closing_balance?: number
         year_on_year?: number
       }[]
-      account_category_id?: number
-      account_category_name?: string
-      total_line?: boolean
-      hierarchy_level?: number
-      parent_account_category_id?: number
-      parent_account_category_name?: string
-      last_year_closing_balance?: number
-      closing_balance?: number
-      year_on_year?: number
+      account_category_id: number
+      account_category_name: string
+      total_line: boolean
+      hierarchy_level: number
+      parent_account_category_id: number
+      parent_account_category_name: string
+      last_year_closing_balance: number
+      closing_balance: number
+      year_on_year: number
     }[]
   }
 }
@@ -574,9 +574,9 @@ export type trialBsThreeYearsResponse = {
     adjustment?: 'only' | 'without'
     created_at?: string
     balances: {
-      account_item_id?: number
-      account_item_name?: string
-      partners?: {
+      account_item_id: number
+      account_item_name: string
+      partners: {
         id: number
         name?: string
         two_years_before_closing_balance?: number
@@ -584,7 +584,7 @@ export type trialBsThreeYearsResponse = {
         closing_balance?: number
         year_on_year?: number
       }[]
-      items?: {
+      items: {
         id: number
         name?: string
         two_years_before_closing_balance?: number
@@ -592,16 +592,16 @@ export type trialBsThreeYearsResponse = {
         closing_balance?: number
         year_on_year?: number
       }[]
-      account_category_id?: number
-      account_category_name?: string
-      total_line?: boolean
-      hierarchy_level?: number
-      parent_account_category_id?: number
-      parent_account_category_name?: string
-      two_years_before_closing_balance?: number
-      last_year_closing_balance?: number
-      closing_balance?: number
-      year_on_year?: number
+      account_category_id: number
+      account_category_name: string
+      total_line: boolean
+      hierarchy_level: number
+      parent_account_category_id: number
+      parent_account_category_name: string
+      two_years_before_closing_balance: number
+      last_year_closing_balance: number
+      closing_balance: number
+      year_on_year: number
     }[]
   }
 }
@@ -625,9 +625,9 @@ export type trialPlResponse = {
     cost_allocation?: 'only' | 'without'
     created_at?: string
     balances: {
-      account_item_id?: number
-      account_item_name?: string
-      partners?: {
+      account_item_id: number
+      account_item_name: string
+      partners: {
         id: number
         name?: string
         opening_balance?: number
@@ -636,7 +636,7 @@ export type trialPlResponse = {
         closing_balance?: number
         composition_ratio?: number
       }[]
-      items?: {
+      items: {
         id: number
         name?: string
         opening_balance?: number
@@ -645,7 +645,7 @@ export type trialPlResponse = {
         closing_balance?: number
         composition_ratio?: number
       }[]
-      sections?: {
+      sections: {
         id: number
         name?: string
         opening_balance?: number
@@ -654,17 +654,17 @@ export type trialPlResponse = {
         closing_balance?: number
         composition_ratio?: number
       }[]
-      account_category_id?: number
-      account_category_name?: string
-      total_line?: boolean
-      hierarchy_level?: number
-      parent_account_category_id?: number
-      parent_account_category_name?: string
-      opening_balance?: number
-      debit_amount?: number
-      credit_amount?: number
-      closing_balance?: number
-      composition_ratio?: number
+      account_category_id: number
+      account_category_name: string
+      total_line: boolean
+      hierarchy_level: number
+      parent_account_category_id: number
+      parent_account_category_name: string
+      opening_balance: number
+      debit_amount: number
+      credit_amount: number
+      closing_balance: number
+      composition_ratio: number
     }[]
   }
 }
@@ -688,38 +688,38 @@ export type trialPlTwoYearsResponse = {
     cost_allocation?: 'only' | 'without'
     created_at?: string
     balances: {
-      account_item_id?: number
-      account_item_name?: string
-      partners?: {
+      account_item_id: number
+      account_item_name: string
+      partners: {
         id: number
         name?: string
         last_year_closing_balance?: number
         closing_balance?: number
         year_on_year?: number
       }[]
-      items?: {
+      items: {
         id: number
         name?: string
         last_year_closing_balance?: number
         closing_balance?: number
         year_on_year?: number
       }[]
-      sections?: {
+      sections: {
         id: number
         name?: string
         last_year_closing_balance?: number
         closing_balance?: number
         year_on_year?: number
       }[]
-      account_category_id?: number
-      account_category_name?: string
-      total_line?: boolean
-      hierarchy_level?: number
-      parent_account_category_id?: number
-      parent_account_category_name?: string
-      last_year_closing_balance?: number
-      closing_balance?: number
-      year_on_year?: number
+      account_category_id: number
+      account_category_name: string
+      total_line: boolean
+      hierarchy_level: number
+      parent_account_category_id: number
+      parent_account_category_name: string
+      last_year_closing_balance: number
+      closing_balance: number
+      year_on_year: number
     }[]
   }
 }
@@ -743,9 +743,9 @@ export type trialPlThreeYearsResponse = {
     cost_allocation?: 'only' | 'without'
     created_at?: string
     balances: {
-      account_item_id?: number
-      account_item_name?: string
-      partners?: {
+      account_item_id: number
+      account_item_name: string
+      partners: {
         id: number
         name?: string
         two_years_before_closing_balance?: number
@@ -753,7 +753,7 @@ export type trialPlThreeYearsResponse = {
         closing_balance?: number
         year_on_year?: number
       }[]
-      items?: {
+      items: {
         id: number
         name?: string
         two_years_before_closing_balance?: number
@@ -761,7 +761,7 @@ export type trialPlThreeYearsResponse = {
         closing_balance?: number
         year_on_year?: number
       }[]
-      sections?: {
+      sections: {
         id: number
         name?: string
         two_years_before_closing_balance?: number
@@ -769,16 +769,16 @@ export type trialPlThreeYearsResponse = {
         closing_balance?: number
         year_on_year?: number
       }[]
-      account_category_id?: number
-      account_category_name?: string
-      total_line?: boolean
-      hierarchy_level?: number
-      parent_account_category_id?: number
-      parent_account_category_name?: string
-      two_years_before_closing_balance?: number
-      last_year_closing_balance?: number
-      closing_balance?: number
-      year_on_year?: number
+      account_category_id: number
+      account_category_name: string
+      total_line: boolean
+      hierarchy_level: number
+      parent_account_category_id: number
+      parent_account_category_name: string
+      two_years_before_closing_balance: number
+      last_year_closing_balance: number
+      closing_balance: number
+      year_on_year: number
     }[]
   }
 }
@@ -802,9 +802,9 @@ export type trialPlSectionsResponse = {
     cost_allocation?: 'only' | 'without'
     created_at?: string
     balances: {
-      account_item_id?: number
-      account_item_name?: string
-      sections?: {
+      account_item_id: number
+      account_item_name: string
+      sections: {
         id: number
         name?: string
         closing_balance?: number
@@ -819,13 +819,13 @@ export type trialPlSectionsResponse = {
           closing_balance?: number
         }[]
       }[]
-      account_category_id?: number
-      account_category_name?: string
-      total_line?: boolean
-      hierarchy_level?: number
-      parent_account_category_id?: number
-      parent_account_category_name?: string
-      closing_balance?: number
+      account_category_id: number
+      account_category_name: string
+      total_line: boolean
+      hierarchy_level: number
+      parent_account_category_id: number
+      parent_account_category_name: string
+      closing_balance: number
     }[]
   }
 }
@@ -966,7 +966,7 @@ export type dealResponse = {
 }
 
 export type selectablesIndexResponse = {
-  account_categories?: {
+  account_categories: {
     balance: 'expense' | 'income'
     org_code: 'personal' | 'corporate'
     role: string
@@ -980,19 +980,19 @@ export type selectablesIndexResponse = {
       shortcut?: string
 
       default_tax?: {
-        tax_rate_5?: {
-          id?: number
-          name?: string
+        tax_rate_5: {
+          id: number
+          name: string
         }
 
-        tax_rate_8?: {
-          id?: number
-          name?: string
+        tax_rate_8: {
+          id: number
+          name: string
         }
       }
     }[]
   }[]
-  account_groups?: {
+  account_groups: {
     id: number
     name: string
     account_structure_id: number
@@ -1153,18 +1153,18 @@ export type companyResponse = {
 }
 
 export type unauthorizedError = {
-  message?: string
-  messages?: string
+  message: string
+  messages: string
 }
 
 export type forbiddenError = {
-  message?: string
-  messages?: string
+  message: string
+  messages: string
 }
 
 export type badRequestError = {
-  status_code?: number
-  errors?: {
+  status_code: number
+  errors: {
     messages: Partial<string[] & string>
 
     type: 'status' | 'validation' | 'error'
@@ -1172,8 +1172,8 @@ export type badRequestError = {
 }
 
 export type badRequestNotFoundError = {
-  status_code?: number
-  errors?: {
+  status_code: number
+  errors: {
     messages: Partial<string[] & string>
 
     type: 'status' | 'validation' | 'error'
@@ -1192,8 +1192,8 @@ export type tooManyRequestsError = {
 }
 
 export type internalServerError = {
-  status_code?: number
-  errors?: {
+  status_code: number
+  errors: {
     messages: Partial<string[] & string>
 
     type: 'status' | 'validation' | 'error'
@@ -1300,7 +1300,7 @@ export type walletableResponse = {
     walletable_balance?: number
 
     meta?: {
-      up_to_date?: boolean
+      up_to_date: boolean
     }
   }
 }
@@ -1343,15 +1343,15 @@ export type transferResponse = {
 }
 
 export type userParams = {
-  display_name?: string
-  first_name?: string
-  last_name?: string
-  first_name_kana?: string
-  last_name_kana?: string
+  display_name: string
+  first_name: string
+  last_name: string
+  first_name_kana: string
+  last_name_kana: string
 }
 
 export type userResponse = {
-  user?: {
+  user: {
     id: number
     email: string
     display_name?: string
@@ -1381,10 +1381,10 @@ export type meResponse = {
 }
 
 export type userCapability = {
-  read?: boolean
-  create?: boolean
-  update?: boolean
-  destroy?: boolean
+  read: boolean
+  create: boolean
+  update: boolean
+  destroy: boolean
 }
 
 export type receiptResponse = {
@@ -1464,9 +1464,9 @@ export type approvalRequestParams = {
   approver_id?: number
   title: string
   request_items?: {
-    id?: number
-    type?: 'single_line' | 'multi_line' | 'select' | 'date' | 'amount' | 'receipt'
-    value?: string
+    id: number
+    type: 'single_line' | 'multi_line' | 'select' | 'date' | 'amount' | 'receipt'
+    value: string
   }[]
 }
 
@@ -1479,9 +1479,9 @@ export type generalApplicationCreateParams = {
   draft: boolean
   parent_id?: number
   request_items: {
-    id?: number
-    type?: 'title' | 'single_line' | 'multi_line' | 'select' | 'date' | 'amount' | 'receipt'
-    value?: string
+    id: number
+    type: 'title' | 'single_line' | 'multi_line' | 'select' | 'date' | 'amount' | 'receipt'
+    value: string
   }[]
 }
 
@@ -1492,9 +1492,9 @@ export type generalApplicationUpdateParams = {
   approver_id?: number
   draft: boolean
   request_items: {
-    id?: number
-    type?: 'title' | 'single_line' | 'multi_line' | 'select' | 'date' | 'amount' | 'receipt'
-    value?: string
+    id: number
+    type: 'title' | 'single_line' | 'multi_line' | 'select' | 'date' | 'amount' | 'receipt'
+    value: string
   }[]
 }
 

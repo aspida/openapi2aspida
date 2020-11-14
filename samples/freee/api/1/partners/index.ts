@@ -5,9 +5,9 @@ export type Methods = {
   get: {
     query: {
       company_id: number
-      offset?: number
-      limit?: number
-      keyword?: string
+      offset: number
+      limit: number
+      keyword: string
     }
 
     status: 200

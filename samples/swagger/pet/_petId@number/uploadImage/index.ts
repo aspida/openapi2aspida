@@ -7,9 +7,9 @@ export type Methods = {
     resBody: Types.ApiResponse
     reqFormat: FormData
 
-    reqBody?: {
-      additionalMetadata?: string
-      file?: Blob
+    reqBody: {
+      additionalMetadata: string
+      file: Blob
     }
   }
 }

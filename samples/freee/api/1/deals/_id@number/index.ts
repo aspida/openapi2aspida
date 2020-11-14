@@ -5,7 +5,7 @@ export type Methods = {
   get: {
     query: {
       company_id: number
-      accruals?: 'without' | 'with'
+      accruals: 'without' | 'with'
     }
 
     status: 200

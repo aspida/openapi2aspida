@@ -16,15 +16,15 @@ export type UserTokenHeader = {
 }
 
 export type AppOrganisationToken = {
-  'x-tchop-app-organisation-token'?: string
+  'x-tchop-app-organisation-token': string
 }
 
 export type UserPublicKey = {
-  'x-tchop-user-public-key'?: string
+  'x-tchop-user-public-key': string
 }
 
 export type UserSignedChallenge = {
-  'x-tchop-user-signed-challenge'?: string
+  'x-tchop-user-signed-challenge': string
 }
 
 export type AppOrganisationTokenRequired = {
@@ -32,7 +32,7 @@ export type AppOrganisationTokenRequired = {
 }
 
 export type UserInstanceIdHeader = {
-  'x-tchop-firebase-instance-id'?: string
+  'x-tchop-firebase-instance-id': string
 }
 
 export type ErrorModel = {
@@ -163,39 +163,39 @@ export type ReactionEnumModel = 'like' | 'love' | 'haha' | 'wow' | 'sad' | 'angr
 export type CardEnumModel = 'article' | 'image' | 'video' | 'quote' | 'editorial' | 'audio'
 
 export type ReactionCountModel = {
-  like?: number
-  love?: number
-  haha?: number
-  wow?: number
-  sad?: number
-  angry?: number
+  like: number
+  love: number
+  haha: number
+  wow: number
+  sad: number
+  angry: number
 }
 
 export type MediaEXIFModel = {
-  gps?: {
+  gps: {
     x: number
     y: number
   }
 }
 
 export type CardStyleModel = {
-  showAuthor?: boolean
-  teaserStyle?: 'standard' | 'small_with_text' | 'small_without_text' | 'big_without_text'
+  showAuthor: boolean
+  teaserStyle: 'standard' | 'small_with_text' | 'small_without_text' | 'big_without_text'
 }
 
 export type QuoteModel = {
-  quotePerson?: string
-  quotePersonHandle?: string
-  quote?: string
-  quoteSource?: string
-  image?: string
-  quotePersonImage?: string
-  quoteCreated?: string
+  quotePerson: string
+  quotePersonHandle: string
+  quote: string
+  quoteSource: string
+  image: string
+  quotePersonImage: string
+  quoteCreated: string
 }
 
 export type ArticleModel = {
-  title?: string
-  abstract?: string
-  sourceName?: string
-  image?: string
+  title: string
+  abstract: string
+  sourceName: string
+  image: string
 }

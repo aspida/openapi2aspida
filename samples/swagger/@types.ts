@@ -1,7 +1,7 @@
 /* eslint-disable */
 export type Category = {
-  id?: number
-  name?: string
+  id: number
+  name: string
 }
 
 export type Pet = {
@@ -14,32 +14,32 @@ export type Pet = {
 }
 
 export type Tag = {
-  id?: number
-  name?: string
+  id: number
+  name: string
 }
 
 export type ApiResponse = {
-  code?: number
-  type?: string
-  message?: string
+  code: number
+  type: string
+  message: string
 }
 
 export type Order = {
-  id?: number
-  petId?: number
-  quantity?: number
-  shipDate?: string
-  status?: 'placed' | 'approved' | 'delivered'
-  complete?: boolean
+  id: number
+  petId: number
+  quantity: number
+  shipDate: string
+  status: 'placed' | 'approved' | 'delivered'
+  complete: boolean
 }
 
 export type User = {
-  id?: number
-  username?: string
-  firstName?: string
-  lastName?: string
-  email?: string
-  password?: string
-  phone?: string
-  userStatus?: number
+  id: number
+  username: string
+  firstName: string
+  lastName: string
+  email: string
+  password: string
+  phone: string
+  userStatus: number
 }

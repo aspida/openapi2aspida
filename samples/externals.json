@@ -69,7 +69,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
                 },
                 "examples": {
                   "response": {
@@ -93,7 +93,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
                 },
                 "examples": {
                   "response": {
@@ -117,7 +117,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
                 },
                 "examples": {
                   "response": {
@@ -138,7 +138,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/AlreadyExists"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/AlreadyExists"
                 },
                 "examples": {
                   "response": {
@@ -162,7 +162,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
                 },
                 "examples": {
                   "response": { "value": { "code": "INTERNAL", "message": "Server error" } }
@@ -181,7 +181,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
                 },
                 "examples": {
                   "response": {
@@ -256,7 +256,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
                 },
                 "examples": {
                   "response": {
@@ -280,7 +280,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
                 },
                 "examples": {
                   "response": {
@@ -304,7 +304,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
                 },
                 "examples": {
                   "response": {
@@ -325,7 +325,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/AlreadyExists"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/AlreadyExists"
                 },
                 "examples": {
                   "response": {
@@ -349,7 +349,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
                 },
                 "examples": {
                   "response": { "value": { "code": "INTERNAL", "message": "Server error" } }
@@ -368,7 +368,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
                 },
                 "examples": {
                   "response": {
@@ -438,7 +438,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
                 },
                 "examples": {
                   "response": {
@@ -462,7 +462,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
                 },
                 "examples": {
                   "response": {
@@ -486,7 +486,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
                 },
                 "examples": {
                   "response": {
@@ -507,7 +507,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/AlreadyExists"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/AlreadyExists"
                 },
                 "examples": {
                   "response": {
@@ -531,7 +531,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
                 },
                 "examples": {
                   "response": { "value": { "code": "INTERNAL", "message": "Server error" } }
@@ -550,7 +550,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
                 },
                 "examples": {
                   "response": {
@@ -636,7 +636,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
                 },
                 "examples": {
                   "response": {
@@ -660,7 +660,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
                 },
                 "examples": {
                   "response": {
@@ -684,7 +684,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
                 },
                 "examples": {
                   "response": {
@@ -705,7 +705,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
                 },
                 "examples": {
                   "response": { "value": { "code": "INTERNAL", "message": "Server error" } }
@@ -724,7 +724,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
                 },
                 "examples": {
                   "response": {
@@ -794,7 +794,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
                 },
                 "examples": {
                   "response": {
@@ -818,7 +818,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
                 },
                 "examples": {
                   "response": {
@@ -842,7 +842,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
                 },
                 "examples": {
                   "response": {
@@ -863,7 +863,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/AlreadyExists"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/AlreadyExists"
                 },
                 "examples": {
                   "response": {
@@ -887,7 +887,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
                 },
                 "examples": {
                   "response": { "value": { "code": "INTERNAL", "message": "Server error" } }
@@ -906,7 +906,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
                 },
                 "examples": {
                   "response": {
@@ -997,7 +997,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
                 },
                 "examples": {
                   "response": {
@@ -1021,7 +1021,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
                 },
                 "examples": {
                   "response": {
@@ -1045,7 +1045,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
                 },
                 "examples": {
                   "response": {
@@ -1066,7 +1066,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
                 },
                 "examples": {
                   "response": { "value": { "code": "INTERNAL", "message": "Server error" } }
@@ -1085,7 +1085,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
                 },
                 "examples": {
                   "response": {
@@ -1158,7 +1158,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
                 },
                 "examples": {
                   "response": {
@@ -1182,7 +1182,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
                 },
                 "examples": {
                   "response": {
@@ -1206,7 +1206,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
                 },
                 "examples": {
                   "response": {
@@ -1227,7 +1227,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/AlreadyExists"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/AlreadyExists"
                 },
                 "examples": {
                   "response": {
@@ -1251,7 +1251,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
                 },
                 "examples": {
                   "response": { "value": { "code": "INTERNAL", "message": "Server error" } }
@@ -1270,7 +1270,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
                 },
                 "examples": {
                   "response": {
@@ -1469,7 +1469,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
                 },
                 "examples": {
                   "response": {
@@ -1493,7 +1493,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
                 },
                 "examples": {
                   "response": {
@@ -1517,7 +1517,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
                 },
                 "examples": {
                   "response": {
@@ -1538,7 +1538,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
                 },
                 "examples": {
                   "response": { "value": { "code": "INTERNAL", "message": "Server error" } }
@@ -1557,7 +1557,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
                 },
                 "examples": {
                   "response": {
@@ -1627,7 +1627,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
                 },
                 "examples": {
                   "response": {
@@ -1651,7 +1651,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
                 },
                 "examples": {
                   "response": {
@@ -1675,7 +1675,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
                 },
                 "examples": {
                   "response": {
@@ -1696,7 +1696,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/AlreadyExists"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/AlreadyExists"
                 },
                 "examples": {
                   "response": {
@@ -1720,7 +1720,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
                 },
                 "examples": {
                   "response": { "value": { "code": "INTERNAL", "message": "Server error" } }
@@ -1739,7 +1739,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
                 },
                 "examples": {
                   "response": {
@@ -1843,7 +1843,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
                 },
                 "examples": {
                   "response": {
@@ -1867,7 +1867,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
                 },
                 "examples": {
                   "response": {
@@ -1891,7 +1891,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
                 },
                 "examples": {
                   "response": {
@@ -1912,7 +1912,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
                 },
                 "examples": {
                   "response": { "value": { "code": "INTERNAL", "message": "Server error" } }
@@ -1931,7 +1931,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
                 },
                 "examples": {
                   "response": {
@@ -2004,7 +2004,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
                 },
                 "examples": {
                   "response": {
@@ -2028,7 +2028,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
                 },
                 "examples": {
                   "response": {
@@ -2052,7 +2052,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
                 },
                 "examples": {
                   "response": {
@@ -2073,7 +2073,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/AlreadyExists"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/AlreadyExists"
                 },
                 "examples": {
                   "response": {
@@ -2097,7 +2097,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
                 },
                 "examples": {
                   "response": { "value": { "code": "INTERNAL", "message": "Server error" } }
@@ -2116,7 +2116,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
                 },
                 "examples": {
                   "response": {
@@ -2185,7 +2185,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
                 },
                 "examples": {
                   "response": {
@@ -2209,7 +2209,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
                 },
                 "examples": {
                   "response": {
@@ -2233,7 +2233,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
                 },
                 "examples": {
                   "response": {
@@ -2254,7 +2254,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
                 },
                 "examples": {
                   "response": { "value": { "code": "INTERNAL", "message": "Server error" } }
@@ -2273,7 +2273,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
                 },
                 "examples": {
                   "response": {
@@ -2361,7 +2361,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
                 },
                 "examples": {
                   "response": {
@@ -2385,7 +2385,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
                 },
                 "examples": {
                   "response": {
@@ -2409,7 +2409,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
                 },
                 "examples": {
                   "response": {
@@ -2430,7 +2430,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
                 },
                 "examples": {
                   "response": { "value": { "code": "INTERNAL", "message": "Server error" } }
@@ -2449,7 +2449,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
                 },
                 "examples": {
                   "response": {
@@ -2540,7 +2540,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/InvalidArgument"
                 },
                 "examples": {
                   "response": {
@@ -2564,7 +2564,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/PermissionDenied"
                 },
                 "examples": {
                   "response": {
@@ -2588,7 +2588,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/NotFound"
                 },
                 "examples": {
                   "response": {
@@ -2609,7 +2609,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Internal"
                 },
                 "examples": {
                   "response": { "value": { "code": "INTERNAL", "message": "Server error" } }
@@ -2628,7 +2628,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
+                  "$ref": "docs.baikalplatform.com/errors/v2.0/errors.json#/definitions/Timeout"
                 },
                 "examples": {
                   "response": {
@@ -3103,7 +3103,7 @@
             "pattern": "^(day|week|month|year|\\d{1,4}-(days|hours))$"
           },
           "amount": {
-            "$ref": "https://docs.baikalplatform.com/common/v2.2/common.json#/definitions/MoneyAmount"
+            "$ref": "docs.baikalplatform.com/common/v2.2/common.json#/definitions/MoneyAmount"
           },
           "tax": {
             "type": "number",

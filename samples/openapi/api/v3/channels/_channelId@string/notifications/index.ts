@@ -3,19 +3,19 @@ import * as Types from '../../../../../@types'
 
 export type Methods = {
   get: {
-    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken
+    reqHeaders: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken
 
-    query?: {
-      published?: boolean
-      offset?: number
+    query: {
+      published: boolean
+      offset: number
     }
 
     status: 200
 
     resBody: {
-      count?: number
-      limit?: number
-      data?: {
+      count: number
+      limit: number
+      data: {
         id: number
         message: string
         title: string

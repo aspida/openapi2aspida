@@ -1,6 +1,18 @@
 import fs from 'fs'
 import { ConfigFile } from '../src/getConfig'
 import build from '../src'
+import path from 'path'
+
+function readDirRecursive(dirPath: string): string[] {
+  return fs
+    .readdirSync(dirPath, { withFileTypes: true })
+    .map(file =>
+      file.isDirectory()
+        ? readDirRecursive(path.join(dirPath, file.name))
+        : [path.join(dirPath, file.name)]
+    )
+    .reduce((acc, x) => acc.concat(x), [])
+}
 
 describe('cli test', () => {
   beforeAll(() => fs.mkdirSync('_samples'))
@@ -16,9 +28,11 @@ describe('cli test', () => {
           input: `_${config.input}`
         })[0]
 
-        expect(fs.readFileSync(`_${config.input}/$api.ts`, 'utf8')).toBe(
-          fs.readFileSync(`${config.input}/$api.ts`, 'utf8').replace(/\r/g, '')
-        )
+        for (const filePath of readDirRecursive(config.input)) {
+          expect(fs.readFileSync(`_${filePath}`, 'utf8')).toBe(
+            fs.readFileSync(filePath, 'utf8').replace(/\r/g, '')
+          )
+        }
       })
     )
   })

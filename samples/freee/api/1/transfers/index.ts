@@ -5,10 +5,10 @@ export type Methods = {
   get: {
     query: {
       company_id: number
-      start_date?: string
-      end_date?: string
-      offset?: number
-      limit?: number
+      start_date: string
+      end_date: string
+      offset: number
+      limit: number
     }
 
     status: 200

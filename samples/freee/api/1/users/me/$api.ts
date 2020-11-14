@@ -9,9 +9,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const PUT = 'PUT'
 
   return {
-    get: (option?: { query?: Methods0['get']['query'], config?: T }) =>
+    get: (option: { query: Methods0['get']['query'], config?: T }) =>
       fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json(),
-    $get: (option?: { query?: Methods0['get']['query'], config?: T }) =>
+    $get: (option: { query: Methods0['get']['query'], config?: T }) =>
       fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json().then(r => r.body),
     put: (option?: { body?: Methods0['put']['reqBody'], config?: T }) =>
       fetch<Methods0['put']['resBody'], BasicHeaders, Methods0['put']['status']>(prefix, PATH0, PUT, option, 'URLSearchParams').json(),

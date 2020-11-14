@@ -5,8 +5,8 @@ export type Methods = {
   get: {
     query: {
       company_id: number
-      with_balance?: boolean
-      type?: 'bank_account' | 'credit_card' | 'wallet'
+      with_balance: boolean
+      type: 'bank_account' | 'credit_card' | 'wallet'
     }
 
     status: 200
@@ -15,7 +15,7 @@ export type Methods = {
       walletables: Types.walletableResponse['walletable'][]
 
       meta?: {
-        up_to_date?: boolean
+        up_to_date: boolean
       }
     }
   }

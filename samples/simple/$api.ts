@@ -39,9 +39,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
             $path: () => `${prefix}${prefix0}${PATH1}`
           },
           query: {
-            put: (option?: { query?: Methods1['put']['query'], config?: T }) =>
+            put: (option: { query: Methods1['put']['query'], config?: T }) =>
               fetch<void, BasicHeaders, Methods1['put']['status']>(prefix, `${prefix0}${PATH2}`, PUT, option).send(),
-            $put: (option?: { query?: Methods1['put']['query'], config?: T }) =>
+            $put: (option: { query: Methods1['put']['query'], config?: T }) =>
               fetch<void, BasicHeaders, Methods1['put']['status']>(prefix, `${prefix0}${PATH2}`, PUT, option).send().then(r => r.body),
             $path: (option?: { method: 'put'; query: Methods1['put']['query'] }) =>
               `${prefix}${prefix0}${PATH2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
@@ -62,9 +62,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
 
         return {
           upload: {
-            post: (option?: { body?: Methods3['post']['reqBody'], query?: Methods3['post']['query'], config?: T }) =>
+            post: (option: { body: Methods3['post']['reqBody'], query: Methods3['post']['query'], config?: T }) =>
               fetch<void, BasicHeaders, Methods3['post']['status']>(prefix, `${prefix1}${PATH5}`, POST, option, 'Blob').send(),
-            $post: (option?: { body?: Methods3['post']['reqBody'], query?: Methods3['post']['query'], config?: T }) =>
+            $post: (option: { body: Methods3['post']['reqBody'], query: Methods3['post']['query'], config?: T }) =>
               fetch<void, BasicHeaders, Methods3['post']['status']>(prefix, `${prefix1}${PATH5}`, POST, option, 'Blob').send().then(r => r.body),
             $path: (option?: { method: 'post'; query: Methods3['post']['query'] }) =>
               `${prefix}${prefix1}${PATH5}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
@@ -78,9 +78,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
 
         return {
           abc: {
-            get: (option?: { query?: Methods5['get']['query'], config?: T }) =>
+            get: (option: { query: Methods5['get']['query'], config?: T }) =>
               fetch<void, BasicHeaders, Methods5['get']['status']>(prefix, `${prefix2}${PATH7}`, GET, option).send(),
-            $get: (option?: { query?: Methods5['get']['query'], config?: T }) =>
+            $get: (option: { query: Methods5['get']['query'], config?: T }) =>
               fetch<void, BasicHeaders, Methods5['get']['status']>(prefix, `${prefix2}${PATH7}`, GET, option).send().then(r => r.body),
             $path: (option?: { method?: 'get'; query: Methods5['get']['query'] }) =>
               `${prefix}${prefix2}${PATH7}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`

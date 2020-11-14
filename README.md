@@ -30,6 +30,10 @@
 <br />
 <br />
 
+## Breaking change (2020/11/14) :warning:
+
+Since openapi2aspida >= `0.13.0` , optional for aspida only if the 'required' property of OpenAPI is set to `false`.
+
 ## Getting Started
 
 Compatible with yaml/json of OpenAPI3.0/Swagger2.0
