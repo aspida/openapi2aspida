@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.13.0](https://github.com/aspida/openapi2aspida/compare/v0.12.0...v0.13.0) (2020-11-14)
+
+
+### ⚠ BREAKING CHANGES
+
+* change property without required to strict
+
+### Features
+
+* change property without required to strict ([8452b49](https://github.com/aspida/openapi2aspida/commit/8452b49aeb20a6c053990d70df8a9ea269faa84f))
+
 ## [0.12.0](https://github.com/aspida/openapi2aspida/compare/v0.11.0...v0.12.0) (2020-11-07)
 
 
