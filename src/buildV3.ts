@@ -61,7 +61,6 @@ export default (openapi: OpenAPIV3.Document) => {
                 const reqHeaders: Prop[] = []
                 const refQuery: PropValue[] = []
                 const query: Prop[] = []
-                let headerRequired = true
                 let queryRequired = true
 
                 ;[...(openapi.paths[path].parameters || []), ...(target.parameters || [])].forEach(
@@ -78,7 +77,6 @@ export default (openapi: OpenAPIV3.Document) => {
                       switch (ref.in) {
                         case 'header':
                           reqRefHeaders.push(val)
-                          headerRequired = ref.required ?? true
                           break
                         case 'query':
                           refQuery.push(val)
@@ -100,7 +98,6 @@ export default (openapi: OpenAPIV3.Document) => {
                       switch (p.in) {
                         case 'header':
                           reqHeaders.push(prop)
-                          headerRequired = p.required ?? true
                           break
                         case 'query':
                           query.push(prop)
@@ -116,7 +113,7 @@ export default (openapi: OpenAPIV3.Document) => {
                 if (reqHeaders.length || reqRefHeaders.length) {
                   params.push({
                     name: 'reqHeaders',
-                    required: headerRequired,
+                    required: false,
                     values: [
                       ...reqRefHeaders,
                       ...(reqHeaders.length
