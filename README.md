@@ -30,8 +30,12 @@
 <br />
 <br />
 
-## Breaking change (2020/11/14) :warning:
+## Breaking change :warning:
 
+### 2020/11/26
+Since openapi2aspida >= `0.14.0` , request headers are forced to be optional.
+
+### 2020/11/14
 Since openapi2aspida >= `0.13.0` , optional for aspida only if the 'required' property of OpenAPI is set to `false`.
 
 ## Getting Started
