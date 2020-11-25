@@ -71,6 +71,7 @@ const object2value = (obj: OpenAPIV3.NonArraySchemaObject): Prop[] => {
         ? {
             isArray: false,
             isEnum: false,
+            nullable: false,
             value: 'any'
           }
         : schema2value(additionalProps)
@@ -93,33 +94,38 @@ export const schema2value = (
 
   let isArray = false
   let isEnum = false
+  let nullable = false
   let hasOf: PropValue['hasOf']
   let value: PropValue['value'] | null = null
 
   if (isRefObject(schema)) {
     value = $ref2Type(schema.$ref)
-  } else if (schema.oneOf || schema.allOf || schema.anyOf) {
-    hasOf = schema.oneOf ? 'oneOf' : schema.allOf ? 'allOf' : 'anyOf'
-    value = of2Values(schema)
-  } else if (schema.enum) {
-    isEnum = true
-    value = schema.type === 'string' ? schema.enum.map(e => `'${e}'`) : schema.enum
-  } else if (isArraySchema(schema)) {
-    isArray = true
-    value = schema2value(schema.items)
-  } else if (schema.properties || schema.additionalProperties) {
-    value = object2value(schema)
-  } else if (schema.format === 'binary') {
-    value = 'Blob'
-  } else if (schema.type !== 'object') {
-    value = {
-      integer: 'number',
-      number: 'number',
-      null: 'null',
-      string: 'string',
-      boolean: 'boolean'
-    }[schema.type ?? 'string']
+  } else {
+    nullable = !!schema.nullable
+
+    if (schema.oneOf || schema.allOf || schema.anyOf) {
+      hasOf = schema.oneOf ? 'oneOf' : schema.allOf ? 'allOf' : 'anyOf'
+      value = of2Values(schema)
+    } else if (schema.enum) {
+      isEnum = true
+      value = schema.type === 'string' ? schema.enum.map(e => `'${e}'`) : schema.enum
+    } else if (isArraySchema(schema)) {
+      isArray = true
+      value = schema2value(schema.items)
+    } else if (schema.properties || schema.additionalProperties) {
+      value = object2value(schema)
+    } else if (schema.format === 'binary') {
+      value = 'Blob'
+    } else if (schema.type !== 'object') {
+      value = {
+        integer: 'number',
+        number: 'number',
+        null: 'null',
+        string: 'string',
+        boolean: 'boolean'
+      }[schema.type ?? 'string']
+    }
   }
 
-  return value ? { isArray, isEnum, hasOf, value } : null
+  return value ? { isArray, isEnum, nullable, hasOf, value } : null
 }

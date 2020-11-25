@@ -61,19 +61,22 @@ export default (openapi: OpenAPIV3.Document) => {
                 const reqHeaders: Prop[] = []
                 const refQuery: PropValue[] = []
                 const query: Prop[] = []
-                let headerRequired = true
                 let queryRequired = true
 
                 ;[...(openapi.paths[path].parameters || []), ...(target.parameters || [])].forEach(
                   p => {
                     if (isRefObject(p)) {
                       const ref = resolveParamsRef(openapi, p.$ref)
-                      const val = { isArray: false, isEnum: false, value: $ref2Type(p.$ref) }
+                      const val = {
+                        isArray: false,
+                        isEnum: false,
+                        nullable: false,
+                        value: $ref2Type(p.$ref)
+                      }
 
                       switch (ref.in) {
                         case 'header':
                           reqRefHeaders.push(val)
-                          headerRequired = ref.required ?? true
                           break
                         case 'query':
                           refQuery.push(val)
@@ -95,7 +98,6 @@ export default (openapi: OpenAPIV3.Document) => {
                       switch (p.in) {
                         case 'header':
                           reqHeaders.push(prop)
-                          headerRequired = p.required ?? true
                           break
                         case 'query':
                           query.push(prop)
@@ -111,11 +113,11 @@ export default (openapi: OpenAPIV3.Document) => {
                 if (reqHeaders.length || reqRefHeaders.length) {
                   params.push({
                     name: 'reqHeaders',
-                    required: headerRequired,
+                    required: false,
                     values: [
                       ...reqRefHeaders,
                       ...(reqHeaders.length
-                        ? [{ isArray: false, isEnum: false, value: reqHeaders }]
+                        ? [{ isArray: false, isEnum: false, nullable: false, value: reqHeaders }]
                         : [])
                     ]
                   })
@@ -127,7 +129,9 @@ export default (openapi: OpenAPIV3.Document) => {
                     required: queryRequired,
                     values: [
                       ...refQuery,
-                      ...(query.length ? [{ isArray: false, isEnum: false, value: query }] : [])
+                      ...(query.length
+                        ? [{ isArray: false, isEnum: false, nullable: false, value: query }]
+                        : [])
                     ]
                   })
                 }
@@ -139,7 +143,7 @@ export default (openapi: OpenAPIV3.Document) => {
                   params.push({
                     name: 'status',
                     required: true,
-                    values: [{ isArray: false, isEnum: false, value: code }]
+                    values: [{ isArray: false, isEnum: false, nullable: false, value: code }]
                   })
 
                   const res = target.responses[code]
@@ -163,6 +167,7 @@ export default (openapi: OpenAPIV3.Document) => {
                         {
                           isArray: false,
                           isEnum: false,
+                          nullable: false,
                           value: Object.keys(ref.headers)
                             .map(header => {
                               const headerData = ref.headers![header]
@@ -208,6 +213,7 @@ export default (openapi: OpenAPIV3.Document) => {
                   reqBody = {
                     isArray: false,
                     isEnum: false,
+                    nullable: false,
                     value: $ref2Type(target.requestBody.$ref)
                   }
                   required = ref.required ?? true
@@ -234,7 +240,7 @@ export default (openapi: OpenAPIV3.Document) => {
                   params.push({
                     name: 'reqFormat',
                     required: true,
-                    values: [{ isArray: false, isEnum: false, value: reqFormat }]
+                    values: [{ isArray: false, isEnum: false, nullable: false, value: reqFormat }]
                   })
                 }
 
@@ -250,7 +256,7 @@ export default (openapi: OpenAPIV3.Document) => {
               return {
                 name: method,
                 required: true,
-                values: [{ isArray: false, isEnum: false, value: params }]
+                values: [{ isArray: false, isEnum: false, nullable: false, value: params }]
               }
             })
             .filter((method): method is Prop => !!method)

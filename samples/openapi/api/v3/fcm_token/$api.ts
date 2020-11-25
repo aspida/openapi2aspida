@@ -8,9 +8,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const POST = 'POST'
 
   return {
-    post: (option: { body: Methods0['post']['reqBody'], headers: Methods0['post']['reqHeaders'], config?: T }) =>
+    post: (option: { body: Methods0['post']['reqBody'], headers?: Methods0['post']['reqHeaders'], config?: T }) =>
       fetch<void, BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option).send(),
-    $post: (option: { body: Methods0['post']['reqBody'], headers: Methods0['post']['reqHeaders'], config?: T }) =>
+    $post: (option: { body: Methods0['post']['reqBody'], headers?: Methods0['post']['reqHeaders'], config?: T }) =>
       fetch<void, BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option).send().then(r => r.body),
     $path: () => `${prefix}${PATH0}`
   }

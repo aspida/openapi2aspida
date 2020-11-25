@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.14.0](https://github.com/aspida/openapi2aspida/compare/v0.13.0...v0.14.0) (2020-11-25)
+
+
+### ⚠ BREAKING CHANGES
+
+* change reqHeaders to optional
+
+### Features
+
+* add nullable ([1ff57a0](https://github.com/aspida/openapi2aspida/commit/1ff57a006b49f98e3fca4b8323a5ba9235db87e2))
+* change reqHeaders to optional ([25c94f3](https://github.com/aspida/openapi2aspida/commit/25c94f3c65731c108592d1a2195fc35dd1def8b3))
+
 ## [0.13.0](https://github.com/aspida/openapi2aspida/compare/v0.12.0...v0.13.0) (2020-11-14)
 
 

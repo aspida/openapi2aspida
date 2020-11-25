@@ -3,7 +3,7 @@ import * as Types from '../../../../../../../@types'
 
 export type Methods = {
   get: {
-    reqHeaders: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken
+    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken
     status: 200
     resBody: {
       id: number
@@ -17,7 +17,7 @@ export type Methods = {
   }
 
   post: {
-    reqHeaders: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken
+    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken
     status: 201
 
     reqBody: {
@@ -28,7 +28,7 @@ export type Methods = {
   }
 
   put: {
-    reqHeaders: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken
+    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken
     status: 200
 
     reqBody: {

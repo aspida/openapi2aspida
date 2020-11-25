@@ -3,7 +3,7 @@ import * as Types from '../../../@types'
 
 export type Methods = {
   get: {
-    reqHeaders: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader
+    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader
     status: 200
 
     resBody: {
