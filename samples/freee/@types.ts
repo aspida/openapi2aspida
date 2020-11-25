@@ -61,7 +61,7 @@ export type dealUpdateParams = {
     description?: string
     vat?: number
   }[]
-  receipt_ids?: number[]
+  receipt_ids?: number[] | null
 }
 
 export type manualJournalCreateParams = {
@@ -244,7 +244,7 @@ export type partnerCreateParams = {
   phone?: string
   contact_name?: string
   email?: string
-  payer_walletable_id?: number
+  payer_walletable_id?: number | null
   transfer_fee_handling_side?: 'payer' | 'payee'
 
   address_attributes?: {
@@ -295,7 +295,7 @@ export type partnerUpdateParams = {
   phone?: string
   contact_name?: string
   email?: string
-  payer_walletable_id?: number
+  payer_walletable_id?: number | null
   transfer_fee_handling_side?: 'payer' | 'payee'
 
   address_attributes?: {
@@ -375,20 +375,20 @@ export type accountItemsResponse = {
   account_items: {
     id: number
     name: string
-    shortcut?: string
-    shortcut_num?: string
+    shortcut?: string | null
+    shortcut_num?: string | null
     default_tax_id?: number
     default_tax_code: number
     account_category: string
     account_category_id: number
     categories: string[]
     available: boolean
-    walletable_id: number
-    group_name?: string
-    corresponding_income_name?: string
-    corresponding_income_id?: number
-    corresponding_expense_name?: string
-    corresponding_expense_id?: number
+    walletable_id: number | null
+    group_name?: string | null
+    corresponding_income_name?: string | null
+    corresponding_income_id?: number | null
+    corresponding_expense_name?: string | null
+    corresponding_expense_id?: number | null
   }[]
 }
 
@@ -415,12 +415,12 @@ export type accountItemResponse = {
       name: string
     }[]
     available: boolean
-    walletable_id: number
-    group_name?: string
-    corresponding_income_name?: string
-    corresponding_income_id?: number
-    corresponding_expense_name?: string
-    corresponding_expense_id?: number
+    walletable_id: number | null
+    group_name?: string | null
+    corresponding_income_name?: string | null
+    corresponding_income_id?: number | null
+    corresponding_expense_name?: string | null
+    corresponding_expense_id?: number | null
   }
 }
 
@@ -429,7 +429,7 @@ export type bankResponse = {
     id: number
     name?: string
     type?: 'bank_account' | 'credit_card' | 'wallet'
-    name_kana?: string
+    name_kana?: string | null
   }
 }
 
@@ -843,10 +843,10 @@ export type sectionResponse = {
   section: {
     id: number
     name: string
-    long_name?: string
+    long_name?: string | null
     company_id: number
-    shortcut1?: string
-    shortcut2?: string
+    shortcut1?: string | null
+    shortcut2?: string | null
   }
 }
 
@@ -860,7 +860,7 @@ export type dealCreateResponse = {
     due_amount?: number
     type?: 'income' | 'expense'
     partner_id: number
-    partner_code?: string
+    partner_code?: string | null
     ref_number?: string
     status: 'unsettled' | 'settled'
     details?: {
@@ -868,12 +868,12 @@ export type dealCreateResponse = {
       account_item_id: number
       tax_id?: number
       tax_code: number
-      item_id?: number
-      section_id?: number
+      item_id?: number | null
+      section_id?: number | null
       tag_ids?: number[]
-      segment_1_tag_id?: number
-      segment_2_tag_id?: number
-      segment_3_tag_id?: number
+      segment_1_tag_id?: number | null
+      segment_2_tag_id?: number | null
+      segment_3_tag_id?: number | null
       amount: number
       vat: number
       description?: string
@@ -899,7 +899,7 @@ export type dealResponse = {
     due_amount?: number
     type?: 'income' | 'expense'
     partner_id: number
-    partner_code?: string
+    partner_code?: string | null
     ref_number?: string
     status: 'unsettled' | 'settled'
     details?: {
@@ -907,12 +907,12 @@ export type dealResponse = {
       account_item_id: number
       tax_id?: number
       tax_code: number
-      item_id?: number
-      section_id?: number
+      item_id?: number | null
+      section_id?: number | null
       tag_ids?: number[]
-      segment_1_tag_id?: number
-      segment_2_tag_id?: number
-      segment_3_tag_id?: number
+      segment_1_tag_id?: number | null
+      segment_2_tag_id?: number | null
+      segment_3_tag_id?: number | null
       amount: number
       vat: number
       description?: string
@@ -928,15 +928,15 @@ export type dealResponse = {
         entry_side: 'credit' | 'debit'
         account_item_id: number
         tax_code: number
-        item_id?: number
-        section_id?: number
+        item_id?: number | null
+        section_id?: number | null
         tag_ids: number[]
-        segment_1_tag_id?: number
-        segment_2_tag_id?: number
-        segment_3_tag_id?: number
+        segment_1_tag_id?: number | null
+        segment_2_tag_id?: number | null
+        segment_3_tag_id?: number | null
         amount: number
         vat: number
-        description?: string
+        description?: string | null
       }[]
     }[]
     payments?: {
@@ -959,7 +959,7 @@ export type dealResponse = {
       user: {
         id: number
         email: string
-        display_name?: string
+        display_name?: string | null
       }
     }[]
   }
@@ -1009,8 +1009,8 @@ export type itemResponse = {
     id: number
     company_id: number
     name: string
-    shortcut1?: string
-    shortcut2?: string
+    shortcut1?: string | null
+    shortcut2?: string | null
   }
 }
 
@@ -1020,20 +1020,20 @@ export type manualJournalResponse = {
     company_id: number
     issue_date: string
     adjustment: boolean
-    txn_number: string
+    txn_number: string | null
     details: {
       id: number
       entry_side: 'credit' | 'debit'
       account_item_id: number
       tax_code: number
-      partner_id: number
-      partner_name: string
-      partner_code?: string
-      partner_long_name: string
-      item_id: number
-      item_name: string
-      section_id: number
-      section_name: string
+      partner_id: number | null
+      partner_name: string | null
+      partner_code?: string | null
+      partner_long_name: string | null
+      item_id: number | null
+      item_name: string | null
+      section_id: number | null
+      section_name: string | null
       tag_ids: number[]
       tag_names: string[]
       segment_1_tag_id?: number
@@ -1060,21 +1060,21 @@ export type tagResponse = {
   tag: {
     id: number
     company_id: number
-    name: string
-    shortcut1?: string
-    shortcut2?: string
+    name: string | null
+    shortcut1?: string | null
+    shortcut2?: string | null
   }
 }
 
 export type companyUpdateResponse = {
   company: {
     id: number
-    name: string
-    name_kana: string
+    name: string | null
+    name_kana: string | null
     display_name: string
     tax_at_source_calc_type: number
-    contact_name: string
-    head_count: number
+    contact_name: string | null
+    head_count: number | null
     corporate_number: string
     txn_number_format: 'not_used' | 'digits' | 'alnum'
     default_wallet_account_id?: number
@@ -1082,8 +1082,8 @@ export type companyUpdateResponse = {
     minus_format: number
     role: 'admin' | 'simple_accounting' | 'self_only' | 'read_only'
     phone1: string
-    phone2: string
-    fax: string
+    phone2: string | null
+    fax: string | null
     zipcode: string
     prefecture_code: number
     street_name1: string
@@ -1112,9 +1112,9 @@ export type companyUpdateResponse = {
 export type companyIndexResponse = {
   companies: {
     id: number
-    name: string
-    name_kana: string
-    display_name: string
+    name: string | null
+    name_kana: string | null
+    display_name: string | null
     role: 'admin' | 'simple_accounting' | 'self_only' | 'read_only'
   }[]
 }
@@ -1122,12 +1122,12 @@ export type companyIndexResponse = {
 export type companyResponse = {
   company: {
     id: number
-    name: string
-    name_kana: string
+    name: string | null
+    name_kana: string | null
     display_name: string
     tax_at_source_calc_type: number
-    contact_name: string
-    head_count: number
+    contact_name: string | null
+    head_count: number | null
     corporate_number: string
     txn_number_format: 'not_used' | 'digits' | 'alnum'
     default_wallet_account_id?: number
@@ -1135,8 +1135,8 @@ export type companyResponse = {
     minus_format: number
     role: 'admin' | 'simple_accounting' | 'self_only' | 'read_only'
     phone1: string
-    phone2: string
-    fax: string
+    phone2: string | null
+    fax: string | null
     zipcode: string
     prefecture_code: number
     street_name1: string
@@ -1211,74 +1211,74 @@ export type serviceUnavailableError = {
 export type partnersResponse = {
   partners: {
     id: number
-    code: string
+    code: string | null
     company_id: number
     name: string
-    shortcut1?: string
-    shortcut2?: string
-    long_name?: string
-    name_kana?: string
-    default_title?: string
-    phone?: string
-    contact_name?: string
-    email?: string
-    payer_walletable_id?: number
+    shortcut1?: string | null
+    shortcut2?: string | null
+    long_name?: string | null
+    name_kana?: string | null
+    default_title?: string | null
+    phone?: string | null
+    contact_name?: string | null
+    email?: string | null
+    payer_walletable_id?: number | null
     transfer_fee_handling_side?: 'payer' | 'payee'
-    'address_attributes[zipcode]'?: string
+    'address_attributes[zipcode]'?: string | null
     'address_attributes[prefecture_code]'?: number
-    'address_attributes[street_name1]'?: string
-    'address_attributes[street_name2]'?: string
-    'partner_doc_setting_attributes[sending_method]'?: 'mail' | 'posting' | 'main_and_posting'
-    'partner_bank_account_attributes[bank_name]'?: string
-    'partner_bank_account_attributes[bank_name_kana]'?: string
-    'partner_bank_account_attributes[bank_code]'?: string
-    'partner_bank_account_attributes[branch_name]'?: string
-    'partner_bank_account_attributes[branch_kana]'?: string
-    'partner_bank_account_attributes[branch_code]'?: string
-    'partner_bank_account_attributes[account_type]'?: 'ordinary' | 'checking' | 'earmarked' | 'savings' | 'other'
-    'partner_bank_account_attributes[account_number]'?: string
-    'partner_bank_account_attributes[account_name]'?: string
-    'partner_bank_account_attributes[long_account_name]'?: string
+    'address_attributes[street_name1]'?: string | null
+    'address_attributes[street_name2]'?: string | null
+    'partner_doc_setting_attributes[sending_method]'?: 'mail' | 'posting' | 'main_and_posting' | null
+    'partner_bank_account_attributes[bank_name]'?: string | null
+    'partner_bank_account_attributes[bank_name_kana]'?: string | null
+    'partner_bank_account_attributes[bank_code]'?: string | null
+    'partner_bank_account_attributes[branch_name]'?: string | null
+    'partner_bank_account_attributes[branch_kana]'?: string | null
+    'partner_bank_account_attributes[branch_code]'?: string | null
+    'partner_bank_account_attributes[account_type]'?: 'ordinary' | 'checking' | 'earmarked' | 'savings' | 'other' | null
+    'partner_bank_account_attributes[account_number]'?: string | null
+    'partner_bank_account_attributes[account_name]'?: string | null
+    'partner_bank_account_attributes[long_account_name]'?: string | null
   }[]
 }
 
 export type partnerResponse = {
   partner: {
     id: number
-    code: string
+    code: string | null
     company_id: number
     name: string
-    shortcut1?: string
-    shortcut2?: string
-    long_name?: string
-    name_kana?: string
-    default_title?: string
-    phone?: string
-    contact_name?: string
-    email?: string
-    payer_walletable_id?: number
+    shortcut1?: string | null
+    shortcut2?: string | null
+    long_name?: string | null
+    name_kana?: string | null
+    default_title?: string | null
+    phone?: string | null
+    contact_name?: string | null
+    email?: string | null
+    payer_walletable_id?: number | null
     transfer_fee_handling_side?: 'payer' | 'payee'
-    'address_attributes[zipcode]'?: string
+    'address_attributes[zipcode]'?: string | null
     'address_attributes[prefecture_code]'?: number
-    'address_attributes[street_name1]'?: string
-    'address_attributes[street_name2]'?: string
-    'partner_doc_setting_attributes[sending_method]'?: 'email' | 'posting' | 'email_and_posting'
-    'partner_bank_account_attributes[bank_name]'?: string
-    'partner_bank_account_attributes[bank_name_kana]'?: string
-    'partner_bank_account_attributes[bank_code]'?: string
-    'partner_bank_account_attributes[branch_name]'?: string
-    'partner_bank_account_attributes[branch_kana]'?: string
-    'partner_bank_account_attributes[branch_code]'?: string
-    'partner_bank_account_attributes[account_type]'?: 'ordinary' | 'checking' | 'earmarked' | 'savings' | 'other'
-    'partner_bank_account_attributes[account_number]'?: string
-    'partner_bank_account_attributes[account_name]'?: string
-    'partner_bank_account_attributes[long_account_name]'?: string
-    'payment_term_attributes[cutoff_day]'?: number
-    'payment_term_attributes[additional_months]'?: number
-    'payment_term_attributes[fixed_day]'?: number
-    'invoice_payment_term_attributes[cutoff_day]'?: number
-    'invoice_payment_term_attributes[additional_months]'?: number
-    'invoice_payment_term_attributes[fixed_day]'?: number
+    'address_attributes[street_name1]'?: string | null
+    'address_attributes[street_name2]'?: string | null
+    'partner_doc_setting_attributes[sending_method]'?: 'email' | 'posting' | 'email_and_posting' | null
+    'partner_bank_account_attributes[bank_name]'?: string | null
+    'partner_bank_account_attributes[bank_name_kana]'?: string | null
+    'partner_bank_account_attributes[bank_code]'?: string | null
+    'partner_bank_account_attributes[branch_name]'?: string | null
+    'partner_bank_account_attributes[branch_kana]'?: string | null
+    'partner_bank_account_attributes[branch_code]'?: string | null
+    'partner_bank_account_attributes[account_type]'?: 'ordinary' | 'checking' | 'earmarked' | 'savings' | 'other' | null
+    'partner_bank_account_attributes[account_number]'?: string | null
+    'partner_bank_account_attributes[account_name]'?: string | null
+    'partner_bank_account_attributes[long_account_name]'?: string | null
+    'payment_term_attributes[cutoff_day]'?: number | null
+    'payment_term_attributes[additional_months]'?: number | null
+    'payment_term_attributes[fixed_day]'?: number | null
+    'invoice_payment_term_attributes[cutoff_day]'?: number | null
+    'invoice_payment_term_attributes[additional_months]'?: number | null
+    'invoice_payment_term_attributes[fixed_day]'?: number | null
   }
 }
 
@@ -1294,7 +1294,7 @@ export type walletableResponse = {
   walletable: {
     id: number
     name: string
-    bank_id: number
+    bank_id: number | null
     type: 'bank_account' | 'credit_card' | 'wallet'
     last_balance?: number
     walletable_balance?: number
@@ -1334,9 +1334,9 @@ export type transferResponse = {
     company_id: number
     amount: number
     date: string
-    from_walletable_type: 'bank_account' | 'wallet' | 'credit_card'
+    from_walletable_type: 'bank_account' | 'wallet' | 'credit_card' | null
     from_walletable_id: number
-    to_walletable_type: 'bank_account' | 'wallet' | 'credit_card'
+    to_walletable_type: 'bank_account' | 'wallet' | 'credit_card' | null
     to_walletable_id: number
     description: string
   }
@@ -1354,11 +1354,11 @@ export type userResponse = {
   user: {
     id: number
     email: string
-    display_name?: string
-    first_name?: string
-    last_name?: string
-    first_name_kana?: string
-    last_name_kana?: string
+    display_name?: string | null
+    first_name?: string | null
+    last_name?: string | null
+    first_name_kana?: string | null
+    last_name_kana?: string | null
   }
 }
 
@@ -1366,11 +1366,11 @@ export type meResponse = {
   user: {
     id: number
     email: string
-    display_name?: string
-    first_name?: string
-    last_name?: string
-    first_name_kana?: string
-    last_name_kana?: string
+    display_name?: string | null
+    first_name?: string | null
+    last_name?: string | null
+    first_name_kana?: string | null
+    last_name_kana?: string | null
     companies?: {
       id: number
       display_name: string
@@ -1401,7 +1401,7 @@ export type receiptResponse = {
     user: {
       id: number
       email: string
-      display_name?: string
+      display_name?: string | null
     }
   }
 }
@@ -1424,12 +1424,12 @@ export type expenseApplicationResponse = {
     id: number
     company_id: number
     title: string
-    issue_date: string
+    issue_date: string | null
     description?: string
     editable_on_web: boolean
     total_amount?: number
     status: 'draft' | 'in_progress' | 'approved' | 'rejected' | 'feedback'
-    section_id?: number
+    section_id?: number | null
     tag_ids?: number[]
     expense_application_lines: {
       id: number
@@ -1439,8 +1439,8 @@ export type expenseApplicationResponse = {
       expense_application_line_template_id?: number
       receipt_id?: number
     }[]
-    deal_id: number
-    deal_status: 'settled' | 'unsettled'
+    deal_id: number | null
+    deal_status: 'settled' | 'unsettled' | null
   }
 }
 
@@ -1501,7 +1501,7 @@ export type generalApplicationUpdateParams = {
 export type generalApplicationActionCreateParams = {
   company_id: number
   approval_action: 'approve' | 'force_approve' | 'cancel' | 'reject' | 'feedback' | 'force_feedback'
-  next_approver_id?: number
+  next_approver_id?: number | null
 }
 
 export type renewCreateParams = {
@@ -1558,7 +1558,7 @@ export type approvalRequestResponse = {
     application_date: string
     title: string
     applicant_id: number
-    approver_id: number
+    approver_id: number | null
     application_number: string
     status: 'draft'
     request_items: {
@@ -1576,7 +1576,7 @@ export type generalApplicationsIndexResponse = {
     application_date: string
     title: string
     applicant_id: number
-    approver_id: number
+    approver_id: number | null
     application_number: string
     status: 'draft' | 'in_progress' | 'approved' | 'rejected' | 'feedback'
     request_items: {
@@ -1596,7 +1596,7 @@ export type generalApplicationResponse = {
     application_date: string
     title: string
     applicant_id: number
-    approver_id: number
+    approver_id: number | null
     application_number: string
     status: 'draft' | 'in_progress' | 'approved' | 'rejected' | 'feedback'
     request_items: {
@@ -1606,8 +1606,8 @@ export type generalApplicationResponse = {
     }[]
     form_id: number
     approval_flow_route_id: number
-    last_approver_id: number
-    last_approved_at: string
+    last_approver_id: number | null
+    last_approved_at: string | null
     comments: {
       comment: string
       user_id: number
@@ -1629,20 +1629,20 @@ export type generalApplicationFormResponse = {
     description: string
     status: 'draft' | 'active' | 'deleted'
     created_date: string
-    form_order: number
+    form_order: number | null
     parts?: {
       id: number
       order?: number
       type?: 'title' | 'single_line' | 'multi_line' | 'select' | 'date' | 'amount' | 'receipt'
       label?: string
-      annotation?: string
-      required?: boolean
+      annotation?: string | null
+      required?: boolean | null
       values?: {
         name: string
         order: number
-      }[]
-      max_amount?: number
-      min_amount?: number
+      }[] | null
+      max_amount?: number | null
+      min_amount?: number | null
     }[]
     route_setting_count: number
   }
@@ -1653,7 +1653,7 @@ export type approvalFlowRouteResponse = {
     id: number
     name?: string
     description?: string
-    user_id?: number
+    user_id?: number | null
     definition_system?: boolean
     is_in_progress?: boolean
     first_step_id?: number
@@ -1665,9 +1665,9 @@ export type segmentTagResponse = {
   segment_tag: {
     id: number
     name: string
-    description: string
-    shortcut1: string
-    shortcut2: string
+    description: string | null
+    shortcut1: string | null
+    shortcut2: string | null
   }
 }
 
@@ -1684,73 +1684,73 @@ export type invoiceResponse = {
     id: number
     company_id: number
     issue_date: string
-    partner_id: number
-    partner_code?: string
+    partner_id: number | null
+    partner_code?: string | null
     invoice_number: string
-    title?: string
-    due_date?: string
+    title?: string | null
+    due_date?: string | null
     total_amount: number
     total_vat?: number
     sub_total?: number
-    booking_date?: string
-    description?: string
+    booking_date?: string | null
+    description?: string | null
     invoice_status: 'draft' | 'applying' | 'remanded' | 'rejected' | 'approved' | 'issued'
     payment_status?: '' | 'unsettled' | 'settled'
-    payment_date?: string
-    web_published_at?: string
-    web_downloaded_at?: string
-    web_confirmed_at?: string
-    mail_sent_at?: string
+    payment_date?: string | null
+    web_published_at?: string | null
+    web_downloaded_at?: string | null
+    web_confirmed_at?: string | null
+    mail_sent_at?: string | null
     posting_status: '' | 'unrequested' | 'preview_registered' | 'preview_failed' | 'ordered' | 'order_failed' | 'printing' | 'canceled' | 'posted'
-    partner_name?: string
-    partner_long_name?: string
-    partner_title?: string
-    partner_zipcode?: string
-    partner_prefecture_code?: number
-    partner_prefecture_name?: string
-    partner_address1?: string
-    partner_address2?: string
-    partner_contact_info?: string
+    partner_name?: string | null
+    partner_long_name?: string | null
+    partner_title?: string | null
+    partner_zipcode?: string | null
+    partner_prefecture_code?: number | null
+    partner_prefecture_name?: string | null
+    partner_address1?: string | null
+    partner_address2?: string | null
+    partner_contact_info?: string | null
     company_name: string
-    company_zipcode?: string
-    company_prefecture_code?: number
-    company_prefecture_name?: string
-    company_address1?: string
-    company_address2?: string
-    company_contact_info?: string
+    company_zipcode?: string | null
+    company_prefecture_code?: number | null
+    company_prefecture_name?: string | null
+    company_address1?: string | null
+    company_address2?: string | null
+    company_contact_info?: string | null
     payment_type: '' | 'transfer' | 'direct_debit'
-    payment_bank_info?: string
-    message?: string
-    notes?: string
+    payment_bank_info?: string | null
+    message?: string | null
+    notes?: string | null
     invoice_layout: 'default_classic' | 'standard_classic' | 'envelope_classic' | 'carried_forward_standard_classic' | 'carried_forward_envelope_classic' | 'default_modern' | 'standard_modern' | 'envelope_modern'
     tax_entry_method: '' | 'inclusive' | 'exclusive'
-    deal_id?: number
+    deal_id?: number | null
     invoice_contents?: {
       id: number
       order: number
       type: 'normal' | 'discount' | 'text'
       qty: number
-      unit: string
+      unit: string | null
       unit_price: number
       amount: number
       vat: number
       reduced_vat: boolean
-      description: string
-      account_item_id: number
-      account_item_name: string
-      tax_code: number
-      item_id: number
-      item_name: string
-      section_id: number
-      section_name: string
+      description: string | null
+      account_item_id: number | null
+      account_item_name: string | null
+      tax_code: number | null
+      item_id: number | null
+      item_name: string | null
+      section_id: number | null
+      section_name: string | null
       tag_ids: number[]
       tag_names: string[]
-      segment_1_tag_id?: number
-      segment_1_tag_name?: string
-      segment_2_tag_id?: number
-      segment_2_tag_name?: string
-      segment_3_tag_id?: number
-      segment_3_tag_name?: string
+      segment_1_tag_id?: number | null
+      segment_1_tag_name?: string | null
+      segment_2_tag_id?: number | null
+      segment_2_tag_name?: string | null
+      segment_3_tag_id?: number | null
+      segment_3_tag_name?: string | null
     }[]
 
     total_amount_per_vat_rate: {
@@ -1765,21 +1765,21 @@ export type invoiceResponse = {
 export type invoiceCreateParams = {
   company_id: number
   issue_date?: string
-  partner_id?: number
-  partner_code?: string
+  partner_id?: number | null
+  partner_code?: string | null
   invoice_number?: string
   title?: string
   due_date?: string
   booking_date?: string
   description?: string
   invoice_status?: 'draft' | 'issue'
-  partner_name?: string
-  partner_title?: string
-  partner_contact_info?: string
-  partner_zipcode?: string
-  partner_prefecture_code?: number
-  partner_address1?: string
-  partner_address2?: string
+  partner_name?: string | null
+  partner_title?: string | null
+  partner_contact_info?: string | null
+  partner_zipcode?: string | null
+  partner_prefecture_code?: number | null
+  partner_address1?: string | null
+  partner_address2?: string | null
   company_name?: string
   company_zipcode?: string
   company_prefecture_code?: number
@@ -1799,7 +1799,7 @@ export type invoiceCreateParams = {
     qty?: number
     unit?: string
     unit_price?: number
-    vat?: number
+    vat?: number | null
     description?: string
     account_item_id?: number
     tax_code?: number
@@ -1815,21 +1815,21 @@ export type invoiceCreateParams = {
 export type invoiceUpdateParams = {
   company_id: number
   issue_date?: string
-  partner_id?: number
-  partner_code?: string
+  partner_id?: number | null
+  partner_code?: string | null
   invoice_number?: string
   title?: string
   due_date?: string
   booking_date?: string
   description?: string
   invoice_status?: 'draft' | 'issue'
-  partner_name?: string
-  partner_title?: string
-  partner_contact_info?: string
-  partner_zipcode?: string
-  partner_prefecture_code?: number
-  partner_address1?: string
-  partner_address2?: string
+  partner_name?: string | null
+  partner_title?: string | null
+  partner_contact_info?: string | null
+  partner_zipcode?: string | null
+  partner_prefecture_code?: number | null
+  partner_address1?: string | null
+  partner_address2?: string | null
   company_name?: string
   company_zipcode?: string
   company_prefecture_code?: number
@@ -1850,7 +1850,7 @@ export type invoiceUpdateParams = {
     qty?: number
     unit?: string
     unit_price?: number
-    vat?: number
+    vat?: number | null
     description?: string
     account_item_id?: number
     tax_code?: number
@@ -1868,37 +1868,37 @@ export type quotationResponse = {
     id: number
     company_id: number
     issue_date: string
-    partner_id: number
-    partner_code?: string
+    partner_id: number | null
+    partner_code?: string | null
     quotation_number: string
-    title?: string
+    title?: string | null
     total_amount: number
     total_vat?: number
     sub_total?: number
-    description?: string
+    description?: string | null
     quotation_status: 'unsubmitted' | 'submitted' | 'all'
-    web_published_at?: string
-    web_downloaded_at?: string
-    web_confirmed_at?: string
-    mail_sent_at?: string
-    partner_name?: string
-    partner_display_name?: string
-    partner_title: '御中' | '様' | '(空白)'
-    partner_zipcode?: string
-    partner_prefecture_code?: number
-    partner_prefecture_name?: string
-    partner_address1?: string
-    partner_address2?: string
-    partner_contact_info?: string
+    web_published_at?: string | null
+    web_downloaded_at?: string | null
+    web_confirmed_at?: string | null
+    mail_sent_at?: string | null
+    partner_name?: string | null
+    partner_display_name?: string | null
+    partner_title: '御中' | '様' | '(空白)' | null
+    partner_zipcode?: string | null
+    partner_prefecture_code?: number | null
+    partner_prefecture_name?: string | null
+    partner_address1?: string | null
+    partner_address2?: string | null
+    partner_contact_info?: string | null
     company_name: string
-    company_zipcode?: string
-    company_prefecture_code?: number
-    company_prefecture_name?: string
-    company_address1?: string
-    company_address2?: string
-    company_contact_info?: string
-    message?: string
-    notes?: string
+    company_zipcode?: string | null
+    company_prefecture_code?: number | null
+    company_prefecture_name?: string | null
+    company_address1?: string | null
+    company_address2?: string | null
+    company_contact_info?: string | null
+    message?: string | null
+    notes?: string | null
     quotation_layout: 'default_classic' | 'standard_classic' | 'envelope_classic' | 'carried_forward_standard_classic' | 'carried_forward_envelope_classic' | 'default_modern' | 'standard_modern' | 'envelope_modern'
     tax_entry_method: '' | 'inclusive' | 'exclusive'
     quotation_contents?: {
@@ -1906,27 +1906,27 @@ export type quotationResponse = {
       order: number
       type: 'normal' | 'discount' | 'text'
       qty: number
-      unit: string
+      unit: string | null
       unit_price: number
       amount: number
       vat: number
       reduced_vat: boolean
-      description: string
-      account_item_id: number
-      account_item_name: string
-      tax_code: number
-      item_id: number
-      item_name: string
-      section_id: number
-      section_name: string
+      description: string | null
+      account_item_id: number | null
+      account_item_name: string | null
+      tax_code: number | null
+      item_id: number | null
+      item_name: string | null
+      section_id: number | null
+      section_name: string | null
       tag_ids: number[]
       tag_names: string[]
-      segment_1_tag_id?: number
-      segment_1_tag_name?: string
-      segment_2_tag_id?: number
-      segment_2_tag_name?: string
-      segment_3_tag_id?: number
-      segment_3_tag_name?: string
+      segment_1_tag_id?: number | null
+      segment_1_tag_name?: string | null
+      segment_2_tag_id?: number | null
+      segment_2_tag_name?: string | null
+      segment_3_tag_id?: number | null
+      segment_3_tag_name?: string | null
     }[]
 
     total_amount_per_vat_rate: {
@@ -1941,19 +1941,19 @@ export type quotationResponse = {
 export type quotationCreateParams = {
   company_id: number
   issue_date?: string
-  partner_id?: number
-  partner_code?: string
+  partner_id?: number | null
+  partner_code?: string | null
   quotation_number?: string
   title?: string
   description?: string
   quotation_status?: 'unsubmitted' | 'submitted'
   partner_display_name: string
   partner_title: string
-  partner_contact_info?: string
-  partner_zipcode?: string
-  partner_prefecture_code?: number
-  partner_address1?: string
-  partner_address2?: string
+  partner_contact_info?: string | null
+  partner_zipcode?: string | null
+  partner_prefecture_code?: number | null
+  partner_address1?: string | null
+  partner_address2?: string | null
   company_name?: string
   company_zipcode?: string
   company_prefecture_code?: number
@@ -1970,7 +1970,7 @@ export type quotationCreateParams = {
     qty?: number
     unit?: string
     unit_price?: number
-    vat?: number
+    vat?: number | null
     description?: string
     account_item_id?: number
     tax_code?: number
@@ -1986,19 +1986,19 @@ export type quotationCreateParams = {
 export type quotationUpdateParams = {
   company_id: number
   issue_date?: string
-  partner_id?: number
-  partner_code?: string
+  partner_id?: number | null
+  partner_code?: string | null
   quotation_number?: string
   title?: string
   description?: string
   quotation_status?: 'unsubmitted' | 'submitted'
   partner_display_name: string
   partner_title: string
-  partner_contact_info?: string
-  partner_zipcode?: string
-  partner_prefecture_code?: number
-  partner_address1?: string
-  partner_address2?: string
+  partner_contact_info?: string | null
+  partner_zipcode?: string | null
+  partner_prefecture_code?: number | null
+  partner_address1?: string | null
+  partner_address2?: string | null
   company_name?: string
   company_zipcode?: string
   company_prefecture_code?: number
@@ -2016,7 +2016,7 @@ export type quotationUpdateParams = {
     qty?: number
     unit?: string
     unit_price?: number
-    vat?: number
+    vat?: number | null
     description?: string
     account_item_id?: number
     tax_code?: number

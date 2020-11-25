@@ -1,6 +1,7 @@
 export type PropValue = {
   isArray: boolean
   isEnum: boolean
+  nullable: boolean
   hasOf?: 'oneOf' | 'allOf' | 'anyOf'
   // eslint-disable-next-line no-use-before-define
   value: Prop[] | string | string[] | PropValue | PropValue[]
@@ -28,7 +29,7 @@ export const value2String = (v: PropValue, indent: string): string =>
       : Array.isArray(v.value)
       ? props2String(v.value as Prop[], `  ${indent}`)
       : v.value
-  }`
+  }${v.nullable ? ' | null' : ''}`
 
 const values2String = (values: PropValue[], hasOf: PropValue['hasOf'], indent: string) =>
   `${hasOf === 'anyOf' ? 'Partial<' : ''}${values
