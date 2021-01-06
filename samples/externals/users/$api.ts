@@ -28,15 +28,15 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
 
       return {
         orders: {
-          _order_id: (val1: string) => {
-            const prefix1 = `${prefix0}${PATH1}/${val1}`
+          _order_id: (val2: string) => {
+            const prefix2 = `${prefix0}${PATH1}/${val2}`
 
             return {
               get: (option?: { config?: T }) =>
-                fetch<Methods1['get']['resBody'], Methods1['get']['resHeaders'], Methods1['get']['status']>(prefix, prefix1, GET, option).json(),
+                fetch<Methods1['get']['resBody'], Methods1['get']['resHeaders'], Methods1['get']['status']>(prefix, prefix2, GET, option).json(),
               $get: (option?: { config?: T }) =>
-                fetch<Methods1['get']['resBody'], Methods1['get']['resHeaders'], Methods1['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
-              $path: () => `${prefix}${prefix1}`
+                fetch<Methods1['get']['resBody'], Methods1['get']['resHeaders'], Methods1['get']['status']>(prefix, prefix2, GET, option).json().then(r => r.body),
+              $path: () => `${prefix}${prefix2}`
             }
           },
           purchase: {

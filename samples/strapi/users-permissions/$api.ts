@@ -25,15 +25,15 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       $path: () => `${prefix}${PATH0}`
     },
     roles: {
-      _id: (val0: string) => {
-        const prefix0 = `${PATH1}/${val0}`
+      _id: (val1: string) => {
+        const prefix1 = `${PATH1}/${val1}`
 
         return {
           get: (option?: { config?: T }) =>
-            fetch<Methods2['get']['resBody'], BasicHeaders, Methods2['get']['status']>(prefix, prefix0, GET, option).json(),
+            fetch<Methods2['get']['resBody'], BasicHeaders, Methods2['get']['status']>(prefix, prefix1, GET, option).json(),
           $get: (option?: { config?: T }) =>
-            fetch<Methods2['get']['resBody'], BasicHeaders, Methods2['get']['status']>(prefix, prefix0, GET, option).json().then(r => r.body),
-          $path: () => `${prefix}${prefix0}`
+            fetch<Methods2['get']['resBody'], BasicHeaders, Methods2['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
+          $path: () => `${prefix}${prefix1}`
         }
       },
       _role: (val1: string) => {
@@ -63,16 +63,16 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         `${prefix}${PATH1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
     },
     search: {
-      _id: (val2: string) => {
-        const prefix2 = `${PATH2}/${val2}`
+      _id: (val1: string) => {
+        const prefix1 = `${PATH2}/${val1}`
 
         return {
           get: (option?: { query?: Methods4['get']['query'], config?: T }) =>
-            fetch<Methods4['get']['resBody'], BasicHeaders, Methods4['get']['status']>(prefix, prefix2, GET, option).json(),
+            fetch<Methods4['get']['resBody'], BasicHeaders, Methods4['get']['status']>(prefix, prefix1, GET, option).json(),
           $get: (option?: { query?: Methods4['get']['query'], config?: T }) =>
-            fetch<Methods4['get']['resBody'], BasicHeaders, Methods4['get']['status']>(prefix, prefix2, GET, option).json().then(r => r.body),
+            fetch<Methods4['get']['resBody'], BasicHeaders, Methods4['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
           $path: (option?: { method?: 'get'; query: Methods4['get']['query'] }) =>
-            `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
+            `${prefix}${prefix1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
         }
       }
     }

@@ -21,19 +21,19 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       $path: () => `${prefix}${PATH0}`
     },
     order: {
-      _orderId: (val0: number) => {
-        const prefix0 = `${PATH1}/${val0}`
+      _orderId: (val1: number) => {
+        const prefix1 = `${PATH1}/${val1}`
 
         return {
           get: (option?: { config?: T }) =>
-            fetch<Methods2['get']['resBody'], BasicHeaders, Methods2['get']['status']>(prefix, prefix0, GET, option).json(),
+            fetch<Methods2['get']['resBody'], BasicHeaders, Methods2['get']['status']>(prefix, prefix1, GET, option).json(),
           $get: (option?: { config?: T }) =>
-            fetch<Methods2['get']['resBody'], BasicHeaders, Methods2['get']['status']>(prefix, prefix0, GET, option).json().then(r => r.body),
+            fetch<Methods2['get']['resBody'], BasicHeaders, Methods2['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
           delete: (option?: { config?: T }) =>
-            fetch(prefix, prefix0, DELETE, option).send(),
+            fetch(prefix, prefix1, DELETE, option).send(),
           $delete: (option?: { config?: T }) =>
-            fetch(prefix, prefix0, DELETE, option).send().then(r => r.body),
-          $path: () => `${prefix}${prefix0}`
+            fetch(prefix, prefix1, DELETE, option).send().then(r => r.body),
+          $path: () => `${prefix}${prefix1}`
         }
       },
       post: (option: { body: Methods1['post']['reqBody'], config?: T }) =>

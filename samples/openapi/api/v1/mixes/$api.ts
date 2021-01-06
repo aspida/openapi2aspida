@@ -26,23 +26,23 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         $path: () => `${prefix}${prefix0}`
       }
     },
-    _mixId: (val1: string) => {
-      const prefix1 = `${PATH0}/${val1}`
+    _mixId: (val0: string) => {
+      const prefix0 = `${PATH0}/${val0}`
 
       return {
         cards: {
           post: (option: { body: Methods2['post']['reqBody'], config?: T }) =>
-            fetch<void, BasicHeaders, Methods2['post']['status']>(prefix, `${prefix1}${PATH1}`, POST, option).send(),
+            fetch<void, BasicHeaders, Methods2['post']['status']>(prefix, `${prefix0}${PATH1}`, POST, option).send(),
           $post: (option: { body: Methods2['post']['reqBody'], config?: T }) =>
-            fetch<void, BasicHeaders, Methods2['post']['status']>(prefix, `${prefix1}${PATH1}`, POST, option).send().then(r => r.body),
-          $path: () => `${prefix}${prefix1}${PATH1}`
+            fetch<void, BasicHeaders, Methods2['post']['status']>(prefix, `${prefix0}${PATH1}`, POST, option).send().then(r => r.body),
+          $path: () => `${prefix}${prefix0}${PATH1}`
         },
         url: {
           post: (option: { body: Methods3['post']['reqBody'], config?: T }) =>
-            fetch<void, BasicHeaders, Methods3['post']['status']>(prefix, `${prefix1}${PATH2}`, POST, option).send(),
+            fetch<void, BasicHeaders, Methods3['post']['status']>(prefix, `${prefix0}${PATH2}`, POST, option).send(),
           $post: (option: { body: Methods3['post']['reqBody'], config?: T }) =>
-            fetch<void, BasicHeaders, Methods3['post']['status']>(prefix, `${prefix1}${PATH2}`, POST, option).send().then(r => r.body),
-          $path: () => `${prefix}${prefix1}${PATH2}`
+            fetch<void, BasicHeaders, Methods3['post']['status']>(prefix, `${prefix0}${PATH2}`, POST, option).send().then(r => r.body),
+          $path: () => `${prefix}${prefix0}${PATH2}`
         }
       }
     },

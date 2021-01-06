@@ -18,22 +18,22 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
 
       return {
         items: {
-          _itemId: (val1: number) => {
-            const prefix1 = `${prefix0}${PATH1}/${val1}`
+          _itemId: (val2: number) => {
+            const prefix2 = `${prefix0}${PATH1}/${val2}`
 
             return {
               reaction: {
                 post: (option: { body: Methods2['post']['reqBody'], headers?: Methods2['post']['reqHeaders'], config?: T }) =>
-                  fetch<Methods2['post']['resBody'], BasicHeaders, Methods2['post']['status']>(prefix, `${prefix1}${PATH2}`, POST, option).json(),
+                  fetch<Methods2['post']['resBody'], BasicHeaders, Methods2['post']['status']>(prefix, `${prefix2}${PATH2}`, POST, option).json(),
                 $post: (option: { body: Methods2['post']['reqBody'], headers?: Methods2['post']['reqHeaders'], config?: T }) =>
-                  fetch<Methods2['post']['resBody'], BasicHeaders, Methods2['post']['status']>(prefix, `${prefix1}${PATH2}`, POST, option).json().then(r => r.body),
-                $path: () => `${prefix}${prefix1}${PATH2}`
+                  fetch<Methods2['post']['resBody'], BasicHeaders, Methods2['post']['status']>(prefix, `${prefix2}${PATH2}`, POST, option).json().then(r => r.body),
+                $path: () => `${prefix}${prefix2}${PATH2}`
               },
               get: (option?: { headers?: Methods1['get']['reqHeaders'], config?: T }) =>
-                fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix1, GET, option).json(),
+                fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix2, GET, option).json(),
               $get: (option?: { headers?: Methods1['get']['reqHeaders'], config?: T }) =>
-                fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
-              $path: () => `${prefix}${prefix1}`
+                fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix2, GET, option).json().then(r => r.body),
+              $path: () => `${prefix}${prefix2}`
             }
           },
           get: (option: { query: Methods0['get']['query'], headers?: Methods0['get']['reqHeaders'], config?: T }) =>

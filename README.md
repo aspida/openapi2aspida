@@ -1,19 +1,12 @@
 # OpenAPI / Swagger to aspida
-
 <br />
-<br />
-<br />
-<br />
-<br />
-<div align="center">
-  <img src="https://aspida.github.io/aspida/logos/svg/black.svg" alt="aspida" title="aspida" width="600" />
-</div>
-<br />
-<br />
-<br />
+<img src="https://aspida.github.io/aspida/logos/png/logo.png" alt="aspida" title="aspida" />
 <div align="center">
   <a href="https://www.npmjs.com/package/openapi2aspida">
     <img src="https://img.shields.io/npm/v/openapi2aspida" alt="npm version" />
+  </a>
+  <a href="https://www.npmjs.com/package/openapi2aspida">
+    <img src="https://img.shields.io/npm/dm/openapi2aspida" alt="npm download" />
   </a>
   <a href="https://github.com/aspida/openapi2aspida/actions?query=workflow%3A%22Node.js+CI%22">
     <img src="https://github.com/aspida/openapi2aspida/workflows/Node.js%20CI/badge.svg" alt="Node.js CI" />
@@ -21,8 +14,8 @@
   <a href="https://codecov.io/gh/aspida/aspida">
     <img src="https://img.shields.io/codecov/c/github/aspida/openapi2aspida.svg" alt="Codecov" />
   </a>
-  <a href="https://github.com/aspida/openapi2aspida/LICENSE">
-    <img src="https://img.shields.io/npm/l/openapi2aspida" alt="License" />
+  <a href="https://lgtm.com/projects/g/aspida/openapi2aspida/context:javascript">
+    <img src="https://img.shields.io/lgtm/grade/javascript/g/aspida/openapi2aspida.svg" alt="Language grade: JavaScript" />
   </a>
 </div>
 <br />
