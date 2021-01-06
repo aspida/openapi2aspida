@@ -23,20 +23,20 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
 
       return {
         payments: {
-          _payment_id: (val1: number) => {
-            const prefix1 = `${prefix0}${PATH1}/${val1}`
+          _payment_id: (val2: number) => {
+            const prefix2 = `${prefix0}${PATH1}/${val2}`
 
             return {
               put: (option: { body: Methods3['put']['reqBody'], config?: T }) =>
-                fetch<Methods3['put']['resBody'], BasicHeaders, Methods3['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json(),
+                fetch<Methods3['put']['resBody'], BasicHeaders, Methods3['put']['status']>(prefix, prefix2, PUT, option, 'URLSearchParams').json(),
               $put: (option: { body: Methods3['put']['reqBody'], config?: T }) =>
-                fetch<Methods3['put']['resBody'], BasicHeaders, Methods3['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json().then(r => r.body),
+                fetch<Methods3['put']['resBody'], BasicHeaders, Methods3['put']['status']>(prefix, prefix2, PUT, option, 'URLSearchParams').json().then(r => r.body),
               delete: (option: { query: Methods3['delete']['query'], config?: T }) =>
-                fetch<void, BasicHeaders, Methods3['delete']['status']>(prefix, prefix1, DELETE, option).send(),
+                fetch<void, BasicHeaders, Methods3['delete']['status']>(prefix, prefix2, DELETE, option).send(),
               $delete: (option: { query: Methods3['delete']['query'], config?: T }) =>
-                fetch<void, BasicHeaders, Methods3['delete']['status']>(prefix, prefix1, DELETE, option).send().then(r => r.body),
+                fetch<void, BasicHeaders, Methods3['delete']['status']>(prefix, prefix2, DELETE, option).send().then(r => r.body),
               $path: (option?: { method: 'delete'; query: Methods3['delete']['query'] }) =>
-                `${prefix}${prefix1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
+                `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
             }
           },
           post: (option: { body: Methods2['post']['reqBody'], config?: T }) =>

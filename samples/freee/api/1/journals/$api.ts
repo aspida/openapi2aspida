@@ -14,25 +14,25 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
 
   return {
     reports: {
-      _id: (val0: number) => {
-        const prefix0 = `${PATH1}/${val0}`
+      _id: (val1: number) => {
+        const prefix1 = `${PATH1}/${val1}`
 
         return {
           download: {
             get: (option: { query: Methods1['get']['query'], config?: T }) =>
-              fetch<void, BasicHeaders, Methods1['get']['status']>(prefix, `${prefix0}${PATH2}`, GET, option).send(),
+              fetch<void, BasicHeaders, Methods1['get']['status']>(prefix, `${prefix1}${PATH2}`, GET, option).send(),
             $get: (option: { query: Methods1['get']['query'], config?: T }) =>
-              fetch<void, BasicHeaders, Methods1['get']['status']>(prefix, `${prefix0}${PATH2}`, GET, option).send().then(r => r.body),
+              fetch<void, BasicHeaders, Methods1['get']['status']>(prefix, `${prefix1}${PATH2}`, GET, option).send().then(r => r.body),
             $path: (option?: { method?: 'get'; query: Methods1['get']['query'] }) =>
-              `${prefix}${prefix0}${PATH2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
+              `${prefix}${prefix1}${PATH2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
           },
           status: {
             get: (option: { query: Methods2['get']['query'], config?: T }) =>
-              fetch<Methods2['get']['resBody'], BasicHeaders, Methods2['get']['status']>(prefix, `${prefix0}${PATH3}`, GET, option).json(),
+              fetch<Methods2['get']['resBody'], BasicHeaders, Methods2['get']['status']>(prefix, `${prefix1}${PATH3}`, GET, option).json(),
             $get: (option: { query: Methods2['get']['query'], config?: T }) =>
-              fetch<Methods2['get']['resBody'], BasicHeaders, Methods2['get']['status']>(prefix, `${prefix0}${PATH3}`, GET, option).json().then(r => r.body),
+              fetch<Methods2['get']['resBody'], BasicHeaders, Methods2['get']['status']>(prefix, `${prefix1}${PATH3}`, GET, option).json().then(r => r.body),
             $path: (option?: { method?: 'get'; query: Methods2['get']['query'] }) =>
-              `${prefix}${prefix0}${PATH3}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
+              `${prefix}${prefix1}${PATH3}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
           }
         }
       }

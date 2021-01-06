@@ -24,19 +24,19 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         $path: () => `${prefix}${prefix0}`
       }
     },
-    _role: (val1: string) => {
-      const prefix1 = `${PATH0}/${val1}`
+    _role: (val0: string) => {
+      const prefix0 = `${PATH0}/${val0}`
 
       return {
         put: (option: { body: Methods2['put']['reqBody'], config?: T }) =>
-          fetch<Methods2['put']['resBody'], BasicHeaders, Methods2['put']['status']>(prefix, prefix1, PUT, option).json(),
+          fetch<Methods2['put']['resBody'], BasicHeaders, Methods2['put']['status']>(prefix, prefix0, PUT, option).json(),
         $put: (option: { body: Methods2['put']['reqBody'], config?: T }) =>
-          fetch<Methods2['put']['resBody'], BasicHeaders, Methods2['put']['status']>(prefix, prefix1, PUT, option).json().then(r => r.body),
+          fetch<Methods2['put']['resBody'], BasicHeaders, Methods2['put']['status']>(prefix, prefix0, PUT, option).json().then(r => r.body),
         delete: (option?: { config?: T }) =>
-          fetch<Methods2['delete']['resBody'], BasicHeaders, Methods2['delete']['status']>(prefix, prefix1, DELETE, option).json(),
+          fetch<Methods2['delete']['resBody'], BasicHeaders, Methods2['delete']['status']>(prefix, prefix0, DELETE, option).json(),
         $delete: (option?: { config?: T }) =>
-          fetch<Methods2['delete']['resBody'], BasicHeaders, Methods2['delete']['status']>(prefix, prefix1, DELETE, option).json().then(r => r.body),
-        $path: () => `${prefix}${prefix1}`
+          fetch<Methods2['delete']['resBody'], BasicHeaders, Methods2['delete']['status']>(prefix, prefix0, DELETE, option).json().then(r => r.body),
+        $path: () => `${prefix}${prefix0}`
       }
     },
     get: (option?: { query?: Methods0['get']['query'], config?: T }) =>

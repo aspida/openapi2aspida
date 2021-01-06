@@ -18,20 +18,20 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
 
       return {
         tags: {
-          _id: (val1: number) => {
-            const prefix1 = `${prefix0}${PATH1}/${val1}`
+          _id: (val2: number) => {
+            const prefix2 = `${prefix0}${PATH1}/${val2}`
 
             return {
               put: (option: { body: Methods1['put']['reqBody'], config?: T }) =>
-                fetch<Methods1['put']['resBody'], BasicHeaders, Methods1['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json(),
+                fetch<Methods1['put']['resBody'], BasicHeaders, Methods1['put']['status']>(prefix, prefix2, PUT, option, 'URLSearchParams').json(),
               $put: (option: { body: Methods1['put']['reqBody'], config?: T }) =>
-                fetch<Methods1['put']['resBody'], BasicHeaders, Methods1['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json().then(r => r.body),
+                fetch<Methods1['put']['resBody'], BasicHeaders, Methods1['put']['status']>(prefix, prefix2, PUT, option, 'URLSearchParams').json().then(r => r.body),
               delete: (option: { query: Methods1['delete']['query'], config?: T }) =>
-                fetch<void, BasicHeaders, Methods1['delete']['status']>(prefix, prefix1, DELETE, option).send(),
+                fetch<void, BasicHeaders, Methods1['delete']['status']>(prefix, prefix2, DELETE, option).send(),
               $delete: (option: { query: Methods1['delete']['query'], config?: T }) =>
-                fetch<void, BasicHeaders, Methods1['delete']['status']>(prefix, prefix1, DELETE, option).send().then(r => r.body),
+                fetch<void, BasicHeaders, Methods1['delete']['status']>(prefix, prefix2, DELETE, option).send().then(r => r.body),
               $path: (option?: { method: 'delete'; query: Methods1['delete']['query'] }) =>
-                `${prefix}${prefix1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
+                `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
             }
           },
           get: (option: { query: Methods0['get']['query'], config?: T }) =>

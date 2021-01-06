@@ -11,16 +11,16 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   return {
     v1: {
       stories: {
-        _storyId: (val0: number) => {
-          const prefix0 = `${PATH0}/${val0}`
+        _storyId: (val2: number) => {
+          const prefix2 = `${PATH0}/${val2}`
 
           return {
             get: (option: { query: Methods1['get']['query'], config?: T }) =>
-              fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix0, GET, option).json(),
+              fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix2, GET, option).json(),
             $get: (option: { query: Methods1['get']['query'], config?: T }) =>
-              fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix0, GET, option).json().then(r => r.body),
+              fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix2, GET, option).json().then(r => r.body),
             $path: (option?: { method?: 'get'; query: Methods1['get']['query'] }) =>
-              `${prefix}${prefix0}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
+              `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
           }
         },
         get: (option: { query: Methods0['get']['query'], config?: T }) =>

@@ -12,15 +12,15 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
 
   return {
     codes: {
-      _code: (val0: number) => {
-        const prefix0 = `${PATH0}/${val0}`
+      _code: (val1: number) => {
+        const prefix1 = `${PATH0}/${val1}`
 
         return {
           get: (option?: { config?: T }) =>
-            fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix0, GET, option).json(),
+            fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix1, GET, option).json(),
           $get: (option?: { config?: T }) =>
-            fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix0, GET, option).json().then(r => r.body),
-          $path: () => `${prefix}${prefix0}`
+            fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
+          $path: () => `${prefix}${prefix1}`
         }
       },
       get: (option?: { config?: T }) =>

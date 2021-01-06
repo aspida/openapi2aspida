@@ -31,15 +31,15 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       $path: () => `${prefix}${PATH0}`
     },
     mixes: {
-      _id: (val0: string) => {
-        const prefix0 = `${PATH1}/${val0}`
+      _id: (val1: string) => {
+        const prefix1 = `${PATH1}/${val1}`
 
         return {
           put: (option: { body: Methods2['put']['reqBody'], config?: T }) =>
-            fetch<void, BasicHeaders, Methods2['put']['status']>(prefix, prefix0, PUT, option).send(),
+            fetch<void, BasicHeaders, Methods2['put']['status']>(prefix, prefix1, PUT, option).send(),
           $put: (option: { body: Methods2['put']['reqBody'], config?: T }) =>
-            fetch<void, BasicHeaders, Methods2['put']['status']>(prefix, prefix0, PUT, option).send().then(r => r.body),
-          $path: () => `${prefix}${prefix0}`
+            fetch<void, BasicHeaders, Methods2['put']['status']>(prefix, prefix1, PUT, option).send().then(r => r.body),
+          $path: () => `${prefix}${prefix1}`
         }
       },
       _mixId: (val1: string) => {

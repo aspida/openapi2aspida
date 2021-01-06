@@ -24,88 +24,88 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
 
   return {
     users: {
-      _user_id: (val0: string) => {
-        const prefix0 = `${PATH0}/${val0}`
+      _user_id: (val1: string) => {
+        const prefix1 = `${PATH0}/${val1}`
 
         return {
           orders: {
-            _order_id: (val1: string) => {
-              const prefix1 = `${prefix0}${PATH1}/${val1}`
+            _order_id: (val3: string) => {
+              const prefix3 = `${prefix1}${PATH1}/${val3}`
 
               return {
                 get: (option?: { config?: T }) =>
-                  fetch<Methods1['get']['resBody'], Methods1['get']['resHeaders'], Methods1['get']['status']>(prefix, prefix1, GET, option).json(),
+                  fetch<Methods1['get']['resBody'], Methods1['get']['resHeaders'], Methods1['get']['status']>(prefix, prefix3, GET, option).json(),
                 $get: (option?: { config?: T }) =>
-                  fetch<Methods1['get']['resBody'], Methods1['get']['resHeaders'], Methods1['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
-                $path: () => `${prefix}${prefix1}`
+                  fetch<Methods1['get']['resBody'], Methods1['get']['resHeaders'], Methods1['get']['status']>(prefix, prefix3, GET, option).json().then(r => r.body),
+                $path: () => `${prefix}${prefix3}`
               }
             },
             purchase: {
               invoice: {
                 post: (option: { body: Methods2['post']['reqBody'], config?: T }) =>
-                  fetch<Methods2['post']['resBody'], Methods2['post']['resHeaders'], Methods2['post']['status']>(prefix, `${prefix0}${PATH2}`, POST, option).json(),
+                  fetch<Methods2['post']['resBody'], Methods2['post']['resHeaders'], Methods2['post']['status']>(prefix, `${prefix1}${PATH2}`, POST, option).json(),
                 $post: (option: { body: Methods2['post']['reqBody'], config?: T }) =>
-                  fetch<Methods2['post']['resBody'], Methods2['post']['resHeaders'], Methods2['post']['status']>(prefix, `${prefix0}${PATH2}`, POST, option).json().then(r => r.body),
-                $path: () => `${prefix}${prefix0}${PATH2}`
+                  fetch<Methods2['post']['resBody'], Methods2['post']['resHeaders'], Methods2['post']['status']>(prefix, `${prefix1}${PATH2}`, POST, option).json().then(r => r.body),
+                $path: () => `${prefix}${prefix1}${PATH2}`
               },
               wallet: {
                 post: (option: { body: Methods3['post']['reqBody'], config?: T }) =>
-                  fetch<Methods3['post']['resBody'], Methods3['post']['resHeaders'], Methods3['post']['status']>(prefix, `${prefix0}${PATH3}`, POST, option).json(),
+                  fetch<Methods3['post']['resBody'], Methods3['post']['resHeaders'], Methods3['post']['status']>(prefix, `${prefix1}${PATH3}`, POST, option).json(),
                 $post: (option: { body: Methods3['post']['reqBody'], config?: T }) =>
-                  fetch<Methods3['post']['resBody'], Methods3['post']['resHeaders'], Methods3['post']['status']>(prefix, `${prefix0}${PATH3}`, POST, option).json().then(r => r.body),
-                $path: () => `${prefix}${prefix0}${PATH3}`
+                  fetch<Methods3['post']['resBody'], Methods3['post']['resHeaders'], Methods3['post']['status']>(prefix, `${prefix1}${PATH3}`, POST, option).json().then(r => r.body),
+                $path: () => `${prefix}${prefix1}${PATH3}`
               }
             },
             unsubscribe: {
               post: (option: { body: Methods4['post']['reqBody'], config?: T }) =>
-                fetch<Methods4['post']['resBody'], Methods4['post']['resHeaders'], Methods4['post']['status']>(prefix, `${prefix0}${PATH4}`, POST, option).json(),
+                fetch<Methods4['post']['resBody'], Methods4['post']['resHeaders'], Methods4['post']['status']>(prefix, `${prefix1}${PATH4}`, POST, option).json(),
               $post: (option: { body: Methods4['post']['reqBody'], config?: T }) =>
-                fetch<Methods4['post']['resBody'], Methods4['post']['resHeaders'], Methods4['post']['status']>(prefix, `${prefix0}${PATH4}`, POST, option).json().then(r => r.body),
-              $path: () => `${prefix}${prefix0}${PATH4}`
+                fetch<Methods4['post']['resBody'], Methods4['post']['resHeaders'], Methods4['post']['status']>(prefix, `${prefix1}${PATH4}`, POST, option).json().then(r => r.body),
+              $path: () => `${prefix}${prefix1}${PATH4}`
             },
             update: {
               renew: {
                 post: (option: { body: Methods5['post']['reqBody'], config?: T }) =>
-                  fetch<Methods5['post']['resBody'], Methods5['post']['resHeaders'], Methods5['post']['status']>(prefix, `${prefix0}${PATH5}`, POST, option).json(),
+                  fetch<Methods5['post']['resBody'], Methods5['post']['resHeaders'], Methods5['post']['status']>(prefix, `${prefix1}${PATH5}`, POST, option).json(),
                 $post: (option: { body: Methods5['post']['reqBody'], config?: T }) =>
-                  fetch<Methods5['post']['resBody'], Methods5['post']['resHeaders'], Methods5['post']['status']>(prefix, `${prefix0}${PATH5}`, POST, option).json().then(r => r.body),
-                $path: () => `${prefix}${prefix0}${PATH5}`
+                  fetch<Methods5['post']['resBody'], Methods5['post']['resHeaders'], Methods5['post']['status']>(prefix, `${prefix1}${PATH5}`, POST, option).json().then(r => r.body),
+                $path: () => `${prefix}${prefix1}${PATH5}`
               }
             },
             get: (option?: { query?: Methods0['get']['query'], config?: T }) =>
-              fetch<Methods0['get']['resBody'], Methods0['get']['resHeaders'], Methods0['get']['status']>(prefix, `${prefix0}${PATH1}`, GET, option).json(),
+              fetch<Methods0['get']['resBody'], Methods0['get']['resHeaders'], Methods0['get']['status']>(prefix, `${prefix1}${PATH1}`, GET, option).json(),
             $get: (option?: { query?: Methods0['get']['query'], config?: T }) =>
-              fetch<Methods0['get']['resBody'], Methods0['get']['resHeaders'], Methods0['get']['status']>(prefix, `${prefix0}${PATH1}`, GET, option).json().then(r => r.body),
+              fetch<Methods0['get']['resBody'], Methods0['get']['resHeaders'], Methods0['get']['status']>(prefix, `${prefix1}${PATH1}`, GET, option).json().then(r => r.body),
             $path: (option?: { method?: 'get'; query: Methods0['get']['query'] }) =>
-              `${prefix}${prefix0}${PATH1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
+              `${prefix}${prefix1}${PATH1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
           },
           phone_numbers: {
-            _phone_number: (val2: string) => {
-              const prefix2 = `${prefix0}${PATH6}/${val2}`
+            _phone_number: (val3: string) => {
+              const prefix3 = `${prefix1}${PATH6}/${val3}`
 
               return {
                 orders: {
                   purchase: {
                     invoice: {
                       post: (option: { body: Methods7['post']['reqBody'], config?: T }) =>
-                        fetch<Methods7['post']['resBody'], Methods7['post']['resHeaders'], Methods7['post']['status']>(prefix, `${prefix2}${PATH2}`, POST, option).json(),
+                        fetch<Methods7['post']['resBody'], Methods7['post']['resHeaders'], Methods7['post']['status']>(prefix, `${prefix3}${PATH2}`, POST, option).json(),
                       $post: (option: { body: Methods7['post']['reqBody'], config?: T }) =>
-                        fetch<Methods7['post']['resBody'], Methods7['post']['resHeaders'], Methods7['post']['status']>(prefix, `${prefix2}${PATH2}`, POST, option).json().then(r => r.body),
-                      $path: () => `${prefix}${prefix2}${PATH2}`
+                        fetch<Methods7['post']['resBody'], Methods7['post']['resHeaders'], Methods7['post']['status']>(prefix, `${prefix3}${PATH2}`, POST, option).json().then(r => r.body),
+                      $path: () => `${prefix}${prefix3}${PATH2}`
                     },
                     wallet: {
                       post: (option: { body: Methods8['post']['reqBody'], config?: T }) =>
-                        fetch<Methods8['post']['resBody'], Methods8['post']['resHeaders'], Methods8['post']['status']>(prefix, `${prefix2}${PATH3}`, POST, option).json(),
+                        fetch<Methods8['post']['resBody'], Methods8['post']['resHeaders'], Methods8['post']['status']>(prefix, `${prefix3}${PATH3}`, POST, option).json(),
                       $post: (option: { body: Methods8['post']['reqBody'], config?: T }) =>
-                        fetch<Methods8['post']['resBody'], Methods8['post']['resHeaders'], Methods8['post']['status']>(prefix, `${prefix2}${PATH3}`, POST, option).json().then(r => r.body),
-                      $path: () => `${prefix}${prefix2}${PATH3}`
+                        fetch<Methods8['post']['resBody'], Methods8['post']['resHeaders'], Methods8['post']['status']>(prefix, `${prefix3}${PATH3}`, POST, option).json().then(r => r.body),
+                      $path: () => `${prefix}${prefix3}${PATH3}`
                     }
                   },
                   get: (option?: { config?: T }) =>
-                    fetch<Methods6['get']['resBody'], Methods6['get']['resHeaders'], Methods6['get']['status']>(prefix, `${prefix2}${PATH1}`, GET, option).json(),
+                    fetch<Methods6['get']['resBody'], Methods6['get']['resHeaders'], Methods6['get']['status']>(prefix, `${prefix3}${PATH1}`, GET, option).json(),
                   $get: (option?: { config?: T }) =>
-                    fetch<Methods6['get']['resBody'], Methods6['get']['resHeaders'], Methods6['get']['status']>(prefix, `${prefix2}${PATH1}`, GET, option).json().then(r => r.body),
-                  $path: () => `${prefix}${prefix2}${PATH1}`
+                    fetch<Methods6['get']['resBody'], Methods6['get']['resHeaders'], Methods6['get']['status']>(prefix, `${prefix3}${PATH1}`, GET, option).json().then(r => r.body),
+                  $path: () => `${prefix}${prefix3}${PATH1}`
                 }
               }
             }
