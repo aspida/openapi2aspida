@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.15.1](https://github.com/aspida/openapi2aspida/compare/v0.15.0...v0.15.1) (2021-01-22)
+
+
+### Bug Fixes
+
+* update aspida and openapi-types ([a9cde95](https://github.com/aspida/openapi2aspida/commit/a9cde950cd2939418cf8779850a1a1529b0a9ab3))
+
 ## [0.15.0](https://github.com/aspida/openapi2aspida/compare/v0.14.0...v0.15.0) (2021-01-06)
 
 
