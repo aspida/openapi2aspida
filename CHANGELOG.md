@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.15.2](https://github.com/aspida/openapi2aspida/compare/v0.15.1...v0.15.2) (2021-02-04)
+
+
+### Bug Fixes
+
+* add js-yaml to dependencies ([cb2540f](https://github.com/aspida/openapi2aspida/commit/cb2540f79bd1f3652193f03109aead446a1727d3))
+* update swagger2openapi@7.0.5 ([10504ce](https://github.com/aspida/openapi2aspida/commit/10504ce6ae1f57de591b5518b4a3dfd742bb88f3))
+
 ### [0.15.1](https://github.com/aspida/openapi2aspida/compare/v0.15.0...v0.15.1) (2021-01-22)
 
 

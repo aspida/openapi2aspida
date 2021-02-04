@@ -266,7 +266,7 @@ export default (openapi: OpenAPIV3.Document) => {
           return {
             file,
             methods: `/* eslint-disable */\n${
-              / Types\./.test(methodsText)
+              /( |<)Types\./.test(methodsText)
                 ? `import * as Types from '${file.map(() => '').join('../')}@types'\n\n`
                 : ''
             }export type Methods = ${methodsText}\n`

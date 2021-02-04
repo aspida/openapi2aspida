@@ -28,5 +28,10 @@ module.exports = [
     input: 'samples/externals',
     outputEachDir: true,
     openapi: { inputFile: 'samples/externals.json', yaml: false }
+  },
+  {
+    input: 'samples/nullable-object',
+    outputEachDir: true,
+    openapi: { inputFile: 'samples/nullable-object.yml' }
   }
 ]

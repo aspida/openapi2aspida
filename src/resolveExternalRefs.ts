@@ -45,7 +45,7 @@ const fetchExternalDocs = async (docs: DocType, inputDir: string) => {
         const text = await (filePath.startsWith('http')
           ? getText(filePath)
           : fs.promises.readFile(filePath, 'utf8'))
-        const doc: DocType = filePath.endsWith('.json') ? JSON.parse(text) : yaml.safeLoad(text)
+        const doc: DocType = filePath.endsWith('.json') ? JSON.parse(text) : yaml.load(text)
         docList[fetchingUrls.indexOf(url)] = { url, doc }
 
         await fetchDocs(doc, filePath)
