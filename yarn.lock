@@ -694,12 +694,7 @@
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
   integrity sha1-7ihweulOEdK4J7y+UnC86n8+ce4=
 
-"@types/minimist@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@types/minimist/-/minimist-1.2.0.tgz#69a23a3ad29caf0097f06eda59b361ee2f0639f6"
-  integrity sha1-aaI6OtKcrwCX8G7aWbNh7i8GOfY=
-
-"@types/minimist@^1.2.1":
+"@types/minimist@^1.2.0", "@types/minimist@^1.2.1":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@types/minimist/-/minimist-1.2.1.tgz#283f669ff76d7b8260df8ab7a4262cc83d988256"
   integrity sha512-fZQQafSREFyuZcdWFAExYjBiCL7AUCdgsk80iO0q4yihYYdcIiH28CcuPTGFgLOCC8RlW49GSQxdHwZP+I7CNg==
@@ -1064,9 +1059,9 @@ asn1@~0.2.3:
     safer-buffer "~2.1.0"
 
 aspida@^1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/aspida/-/aspida-1.4.1.tgz#5b48c6427ddccf74eaefbc0e9534cd7fd7547295"
-  integrity sha512-/ZD4FE19asnCwET54Y6im9+me2FDkYZYh7Skj6Zn2t3vKDY/NaKvdCAsmeK1zdPRgZNdX9xxgha5oYmICNUGUQ==
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/aspida/-/aspida-1.5.0.tgz#19155d0bd09caa0f31065c5e3def1b3ddfbf0dcc"
+  integrity sha512-oec37DtPzR++4v89nRgvoDtKbU6d0Z9hHRbwep6c/93Kul6YHrCfZmbtTSGoxwm8rAmDe1KJuNb7VRw4bzyolA==
   dependencies:
     "@types/minimist" "^1.2.1"
     chokidar "^3.5.1"
