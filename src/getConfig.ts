@@ -1,11 +1,9 @@
 import { OpenAPI } from 'openapi-types'
 import { AspidaConfig, getConfigs } from 'aspida/dist/commands'
 
-export type Config = {
+export type Config = Pick<AspidaConfig, 'outputEachDir' | 'outputMode' | 'trailingSlash'> & {
   input: string | OpenAPI.Document
   output: string
-  trailingSlash: boolean
-  outputEachDir: boolean
   isYaml: boolean
 }
 
@@ -16,7 +14,7 @@ export type ConfigFile = AspidaConfig & {
   }
 }
 
-const createConfig = (config: ConfigFile) => {
+const createConfig = (config: ConfigFile): Config => {
   const openapi = config.openapi!
 
   return {
@@ -24,6 +22,7 @@ const createConfig = (config: ConfigFile) => {
     output: config.input,
     trailingSlash: config.trailingSlash,
     outputEachDir: config.outputEachDir,
+    outputMode: config.outputMode,
     isYaml: openapi.yaml ?? !openapi.inputFile.endsWith('.json')
   }
 }

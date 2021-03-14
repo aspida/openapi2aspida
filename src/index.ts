@@ -20,6 +20,7 @@ export default (configs?: Parameters<typeof getConfig>[0]) =>
       config: {
         input: config.output,
         baseURL,
+        outputMode: config.outputMode,
         outputEachDir: config.outputEachDir,
         trailingSlash: config.trailingSlash
       },
