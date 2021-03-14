@@ -1,4 +1,5 @@
 /* eslint-disable */
+import type { ReadStream } from 'fs'
 import * as Types from '../../../../../@types'
 
 export type Methods = {
@@ -28,9 +29,9 @@ export type Methods = {
       quoteSource?: string
       quotePersonHandle?: string
       videoId?: number
-      video?: Blob
+      video?: File | ReadStream
       audioId?: number
-      audio?: Blob
+      audio?: File | ReadStream
       text?: string
       headline?: string
       quoteCreated?: string

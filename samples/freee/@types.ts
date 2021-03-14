@@ -1,4 +1,6 @@
 /* eslint-disable */
+import type { ReadStream } from 'fs'
+
 export type paymentParams = {
   company_id: number
   date: string
@@ -339,7 +341,7 @@ export type receiptCreateParams = {
   company_id: number
   description?: string
   issue_date?: string
-  receipt: Blob
+  receipt: File | ReadStream
 }
 
 export type receiptUpdateParams = {

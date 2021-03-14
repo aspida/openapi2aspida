@@ -1,4 +1,5 @@
 /* eslint-disable */
+import type { ReadStream } from 'fs'
 import * as Types from '../../../../../../../../@types'
 
 export type Methods = {
@@ -13,7 +14,7 @@ export type Methods = {
     reqFormat: FormData
 
     reqBody: {
-      file: Blob
+      file: File | ReadStream
       caption?: string
       headline?: string
       published?: boolean

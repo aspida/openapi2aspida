@@ -1,4 +1,5 @@
 /* eslint-disable */
+import type { ReadStream } from 'fs'
 import * as Types from '../../../../@types'
 
 export type Methods = {
@@ -10,7 +11,7 @@ export type Methods = {
     reqBody: {
       screenName: string
       url: string
-      image: Blob
+      image: File | ReadStream
       imageId: string
     }
   }

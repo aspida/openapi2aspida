@@ -1,4 +1,6 @@
 /* eslint-disable */
+import type { ReadStream } from 'fs'
+
 export type Methods = {
   post: {
     query: {
@@ -6,6 +8,6 @@ export type Methods = {
     }
 
     status: 204
-    reqBody: Blob
+    reqBody: File | ReadStream
   }
 }

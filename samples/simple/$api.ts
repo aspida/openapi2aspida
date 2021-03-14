@@ -63,9 +63,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         return {
           upload: {
             post: (option: { body: Methods3['post']['reqBody'], query: Methods3['post']['query'], config?: T }) =>
-              fetch<void, BasicHeaders, Methods3['post']['status']>(prefix, `${prefix1}${PATH5}`, POST, option, 'Blob').send(),
+              fetch<void, BasicHeaders, Methods3['post']['status']>(prefix, `${prefix1}${PATH5}`, POST, option).send(),
             $post: (option: { body: Methods3['post']['reqBody'], query: Methods3['post']['query'], config?: T }) =>
-              fetch<void, BasicHeaders, Methods3['post']['status']>(prefix, `${prefix1}${PATH5}`, POST, option, 'Blob').send().then(r => r.body),
+              fetch<void, BasicHeaders, Methods3['post']['status']>(prefix, `${prefix1}${PATH5}`, POST, option).send().then(r => r.body),
             $path: (option?: { method: 'post'; query: Methods3['post']['query'] }) =>
               `${prefix}${prefix1}${PATH5}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
           }

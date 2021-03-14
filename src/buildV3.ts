@@ -262,13 +262,15 @@ export default (openapi: OpenAPIV3.Document) => {
 
         if (methods.length) {
           const methodsText = props2String(methods, '')
+          const hasBinary = methodsText.includes('File | ReadStream')
+          const hasTypes = /( |<)Types\./.test(methodsText)
 
           return {
             file,
             methods: `/* eslint-disable */\n${
-              /( |<)Types\./.test(methodsText)
-                ? `import * as Types from '${file.map(() => '').join('../')}@types'\n\n`
-                : ''
+              hasBinary ? "import type { ReadStream } from 'fs'\n" : ''
+            }${hasBinary && !hasTypes ? '\n' : ''}${
+              hasTypes ? `import * as Types from '${file.map(() => '').join('../')}@types'\n\n` : ''
             }export type Methods = ${methodsText}\n`
           }
         } else {
@@ -278,23 +280,30 @@ export default (openapi: OpenAPIV3.Document) => {
       .filter(file => file.methods)
   )
 
+  const typesText =
+    parameters.length + schemas.length
+      ? [
+          ...parameters.map(p => ({
+            name: p.name,
+            text: typeof p.props === 'string' ? p.props : props2String(p.props, '')
+          })),
+          ...schemas.map(s => ({
+            name: s.name,
+            text: value2String(s.value, '').replace(/\n {2}/g, '\n')
+          }))
+        ]
+          .map(p => `\nexport type ${p.name} = ${p.text}\n`)
+          .join('')
+          .replace(/ Types\./g, ' ')
+      : null
+
   return {
     baseURL: openapi.servers?.[0]?.url || '',
     types:
-      parameters.length + schemas.length
-        ? `/* eslint-disable */${[
-            ...parameters.map(p => ({
-              name: p.name,
-              text: typeof p.props === 'string' ? p.props : props2String(p.props, '')
-            })),
-            ...schemas.map(s => ({
-              name: s.name,
-              text: value2String(s.value, '').replace(/\n {2}/g, '\n')
-            }))
-          ]
-            .map(p => `\nexport type ${p.name} = ${p.text}\n`)
-            .join('')}`.replace(/ Types\./g, ' ')
-        : null,
+      typesText &&
+      `/* eslint-disable */${
+        typesText.includes('File | ReadStream') ? "\nimport type { ReadStream } from 'fs'\n" : ''
+      }${typesText}`,
     files
   }
 }

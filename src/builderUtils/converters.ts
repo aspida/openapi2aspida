@@ -115,7 +115,7 @@ export const schema2value = (
     } else if (schema.properties || schema.additionalProperties) {
       value = object2value(schema)
     } else if (schema.format === 'binary') {
-      value = 'Blob'
+      value = 'File | ReadStream'
     } else if (schema.type !== 'object') {
       value = {
         integer: 'number',
