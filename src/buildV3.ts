@@ -1,5 +1,11 @@
 import { OpenAPIV3 } from 'openapi-types'
-import { isRefObject, $ref2Type, getPropertyName, schema2value } from './builderUtils/converters'
+import {
+  isRefObject,
+  $ref2Type,
+  getPropertyName,
+  schema2value,
+  BINARY_TYPE
+} from './builderUtils/converters'
 import { props2String, Prop, PropValue, value2String } from './builderUtils/props2String'
 import { resolveParamsRef, resolveResRef, resolveReqRef } from './builderUtils/resolvers'
 import getDirName from './builderUtils/getDirName'
@@ -262,7 +268,7 @@ export default (openapi: OpenAPIV3.Document) => {
 
         if (methods.length) {
           const methodsText = props2String(methods, '')
-          const hasBinary = methodsText.includes('File | ReadStream')
+          const hasBinary = methodsText.includes(BINARY_TYPE)
           const hasTypes = /( |<)Types\./.test(methodsText)
 
           return {
@@ -270,7 +276,9 @@ export default (openapi: OpenAPIV3.Document) => {
             methods: `/* eslint-disable */\n${
               hasBinary ? "import type { ReadStream } from 'fs'\n" : ''
             }${hasBinary && !hasTypes ? '\n' : ''}${
-              hasTypes ? `import * as Types from '${file.map(() => '').join('../')}@types'\n\n` : ''
+              hasTypes
+                ? `import type * as Types from '${file.map(() => '').join('../')}@types'\n\n`
+                : ''
             }export type Methods = ${methodsText}\n`
           }
         } else {
@@ -302,7 +310,7 @@ export default (openapi: OpenAPIV3.Document) => {
     types:
       typesText &&
       `/* eslint-disable */${
-        typesText.includes('File | ReadStream') ? "\nimport type { ReadStream } from 'fs'\n" : ''
+        typesText.includes(BINARY_TYPE) ? "\nimport type { ReadStream } from 'fs'\n" : ''
       }${typesText}`,
     files
   }

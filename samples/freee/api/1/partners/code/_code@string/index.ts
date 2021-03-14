@@ -1,5 +1,5 @@
 /* eslint-disable */
-import * as Types from '../../../../../@types'
+import type * as Types from '../../../../../@types'
 
 export type Methods = {
   put: {

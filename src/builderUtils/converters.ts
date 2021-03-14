@@ -87,6 +87,8 @@ const object2value = (obj: OpenAPIV3.NonArraySchemaObject): Prop[] => {
   return value
 }
 
+export const BINARY_TYPE = 'File | ReadStream'
+
 export const schema2value = (
   schema: OpenAPIV3.ReferenceObject | OpenAPIV3.SchemaObject | undefined
 ): PropValue | null => {
@@ -115,7 +117,7 @@ export const schema2value = (
     } else if (schema.properties || schema.additionalProperties) {
       value = object2value(schema)
     } else if (schema.format === 'binary') {
-      value = 'File | ReadStream'
+      value = BINARY_TYPE
     } else if (schema.type !== 'object') {
       value = {
         integer: 'number',
