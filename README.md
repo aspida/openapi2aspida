@@ -25,6 +25,9 @@
 
 ## Breaking change :warning:
 
+### 2021/03/15
+Since openapi2aspida >= `0.16.0` , requires TypeSciprt 3.8 or higher for Type-Only Imports.
+
 ### 2020/11/26
 Since openapi2aspida >= `0.14.0` , request headers are forced to be optional.
 
@@ -49,7 +52,7 @@ $ npm install @aspida/axios axios typescript ts-node @types/node
 ```ts
 import axiosClient from '@aspida/axios'
 import api from "./api/$api"
-import { Pet } from './api/@types'
+import type { Pet } from './api/@types'
 
 ;(async () => {
   const client = api(axiosClient())

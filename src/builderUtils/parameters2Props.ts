@@ -3,7 +3,7 @@ import { isRefObject, defKey2defName, $ref2Type, getPropertyName, schema2value }
 import { Prop } from './props2String'
 import { resolveParamsRef } from './resolvers'
 
-export type Parameter = { name: string; props: string | Prop[] }
+export type Parameter = { name: string; prop: string | Prop }
 
 export default (params: OpenAPIV3.ComponentsObject['parameters'], openapi: OpenAPIV3.Document) =>
   params &&
@@ -14,23 +14,22 @@ export default (params: OpenAPIV3.ComponentsObject['parameters'], openapi: OpenA
     })
     .map(defKey => {
       const target = params[defKey]
-      let props: Parameter['props']
+      let prop: Parameter['prop']
 
       if (isRefObject(target)) {
-        props = $ref2Type(target.$ref)
+        prop = $ref2Type(target.$ref)
       } else {
         const value = schema2value(target.schema)
         if (!value) return null
 
-        props = [
-          {
-            name: getPropertyName(target.name),
-            required: target.required ?? true,
-            values: [value]
-          }
-        ]
+        prop = {
+          name: getPropertyName(target.name),
+          required: target.required ?? true,
+          description: target.description ?? null,
+          values: [value]
+        }
       }
 
-      return { name: defKey2defName(defKey), props }
+      return { name: defKey2defName(defKey), prop }
     })
     .filter((v): v is Parameter => !!v)

@@ -1,9 +1,10 @@
 /* eslint-disable */
-import * as Types from '../../../../@types'
+import type * as Types from '../../../../@types'
 
 export type Methods = {
   get: {
     query: {
+      /** 事業所ID */
       company_id: number
     }
 
@@ -15,11 +16,13 @@ export type Methods = {
     status: 200
     resBody: Types.expenseApplicationLineTemplateResponse
     reqFormat: URLSearchParams
+    /** 経費科目の更新 */
     reqBody: Types.expenseApplicationLineTemplateParams
   }
 
   delete: {
     query: {
+      /** 事業所ID */
       company_id: number
     }
 

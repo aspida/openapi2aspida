@@ -8,8 +8,16 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const POST = 'POST'
 
   return {
+    /**
+     * Send the reset password email link
+     * @returns response
+     */
     post: (option: { body: Methods0['post']['reqBody'], config?: T }) =>
       fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option).json(),
+    /**
+     * Send the reset password email link
+     * @returns response
+     */
     $post: (option: { body: Methods0['post']['reqBody'], config?: T }) =>
       fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option).json().then(r => r.body),
     $path: () => `${prefix}${PATH0}`

@@ -1,7 +1,8 @@
 /* eslint-disable */
-import * as Types from '../../../../../@types'
+import type * as Types from '../../../../../@types'
 
 export type Methods = {
+  /** Returns a story content with support pagination */
   get: {
     reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken & Types.UserInstanceIdHeader
 
@@ -11,6 +12,7 @@ export type Methods = {
 
     status: 200
 
+    /** OK */
     resBody: {
       limit: number
       offset: number

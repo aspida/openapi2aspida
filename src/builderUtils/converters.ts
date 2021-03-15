@@ -59,6 +59,7 @@ const object2value = (obj: OpenAPIV3.NonArraySchemaObject): Prop[] => {
       return {
         name: getPropertyName(name),
         required: obj.required?.includes(name) ?? true,
+        description: val.description,
         values: [val]
       }
     })
@@ -72,6 +73,7 @@ const object2value = (obj: OpenAPIV3.NonArraySchemaObject): Prop[] => {
             isArray: false,
             isEnum: false,
             nullable: false,
+            description: null,
             value: 'any'
           }
         : schema2value(additionalProps)
@@ -80,12 +82,15 @@ const object2value = (obj: OpenAPIV3.NonArraySchemaObject): Prop[] => {
       value.push({
         name: '[key: string]',
         required: true,
+        description: val.description,
         values: [val]
       })
   }
 
   return value
 }
+
+export const BINARY_TYPE = 'File | ReadStream'
 
 export const schema2value = (
   schema: OpenAPIV3.ReferenceObject | OpenAPIV3.SchemaObject | undefined
@@ -97,11 +102,13 @@ export const schema2value = (
   let nullable = false
   let hasOf: PropValue['hasOf']
   let value: PropValue['value'] | null = null
+  let description: PropValue['description'] = null
 
   if (isRefObject(schema)) {
     value = $ref2Type(schema.$ref)
   } else {
     nullable = !!schema.nullable
+    description = schema.description ?? null
 
     if (schema.oneOf || schema.allOf || schema.anyOf) {
       hasOf = schema.oneOf ? 'oneOf' : schema.allOf ? 'allOf' : 'anyOf'
@@ -115,7 +122,7 @@ export const schema2value = (
     } else if (schema.properties || schema.additionalProperties) {
       value = object2value(schema)
     } else if (schema.format === 'binary') {
-      value = 'Blob'
+      value = BINARY_TYPE
     } else if (schema.type !== 'object') {
       value = {
         integer: 'number',
@@ -127,5 +134,5 @@ export const schema2value = (
     }
   }
 
-  return value ? { isArray, isEnum, nullable, hasOf, value } : null
+  return value ? { isArray, isEnum, nullable, hasOf, value, description } : null
 }

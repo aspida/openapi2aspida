@@ -1,8 +1,11 @@
 /* eslint-disable */
+import type { ReadStream } from 'fs'
+
 export type Methods = {
   post: {
     status: 200
 
+    /** OK */
     resBody: {
       imageId: number
     }
@@ -10,7 +13,8 @@ export type Methods = {
     reqFormat: FormData
 
     reqBody: {
-      file: Blob
+      /** Image to upload. */
+      file: File | ReadStream
       rightholder?: string
       statusCopyright?: 'unknown' | 'cc' | 'licensed' | 'sublicensed'
     }

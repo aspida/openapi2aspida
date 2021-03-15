@@ -2,6 +2,7 @@
 export type Methods = {
   get: {
     status: 200
+    /** OK */
     resBody: {
       id: number
       title: number
@@ -12,6 +13,7 @@ export type Methods = {
   post: {
     status: 200
 
+    /** OK */
     resBody: {
       id: number
     }

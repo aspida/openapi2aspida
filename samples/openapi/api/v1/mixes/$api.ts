@@ -46,12 +46,24 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         }
       }
     },
+    /**
+     * @returns OK
+     */
     get: (option?: { config?: T }) =>
       fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json(),
+    /**
+     * @returns OK
+     */
     $get: (option?: { config?: T }) =>
       fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json().then(r => r.body),
+    /**
+     * @returns OK
+     */
     post: (option: { body: Methods0['post']['reqBody'], config?: T }) =>
       fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option).json(),
+    /**
+     * @returns OK
+     */
     $post: (option: { body: Methods0['post']['reqBody'], config?: T }) =>
       fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option).json().then(r => r.body),
     $path: () => `${prefix}${PATH0}`

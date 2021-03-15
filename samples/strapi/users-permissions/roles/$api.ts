@@ -8,7 +8,6 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? 'http://localhost:1337' : baseURL).replace(/\/$/, '')
   const PATH0 = '/users-permissions/roles'
   const GET = 'GET'
-  const POST = 'POST'
   const PUT = 'PUT'
   const DELETE = 'DELETE'
 
@@ -17,8 +16,16 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       const prefix0 = `${PATH0}/${val0}`
 
       return {
+        /**
+         * Retrieve a role depending on its id
+         * @returns response
+         */
         get: (option?: { config?: T }) =>
           fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix0, GET, option).json(),
+        /**
+         * Retrieve a role depending on its id
+         * @returns response
+         */
         $get: (option?: { config?: T }) =>
           fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix0, GET, option).json().then(r => r.body),
         $path: () => `${prefix}${prefix0}`
@@ -28,25 +35,43 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       const prefix0 = `${PATH0}/${val0}`
 
       return {
+        /**
+         * Update a role
+         * @returns response
+         */
         put: (option: { body: Methods2['put']['reqBody'], config?: T }) =>
           fetch<Methods2['put']['resBody'], BasicHeaders, Methods2['put']['status']>(prefix, prefix0, PUT, option).json(),
+        /**
+         * Update a role
+         * @returns response
+         */
         $put: (option: { body: Methods2['put']['reqBody'], config?: T }) =>
           fetch<Methods2['put']['resBody'], BasicHeaders, Methods2['put']['status']>(prefix, prefix0, PUT, option).json().then(r => r.body),
+        /**
+         * Delete a role
+         * @returns response
+         */
         delete: (option?: { config?: T }) =>
           fetch<Methods2['delete']['resBody'], BasicHeaders, Methods2['delete']['status']>(prefix, prefix0, DELETE, option).json(),
+        /**
+         * Delete a role
+         * @returns response
+         */
         $delete: (option?: { config?: T }) =>
           fetch<Methods2['delete']['resBody'], BasicHeaders, Methods2['delete']['status']>(prefix, prefix0, DELETE, option).json().then(r => r.body),
         $path: () => `${prefix}${prefix0}`
       }
     },
+    /**
+     * Retrieve all role documents
+     */
     get: (option?: { query?: Methods0['get']['query'], config?: T }) =>
-      fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json(),
+      fetch(prefix, PATH0, GET, option).send(),
+    /**
+     * Retrieve all role documents
+     */
     $get: (option?: { query?: Methods0['get']['query'], config?: T }) =>
-      fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json().then(r => r.body),
-    post: (option: { body: Methods0['post']['reqBody'], config?: T }) =>
-      fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option).json(),
-    $post: (option: { body: Methods0['post']['reqBody'], config?: T }) =>
-      fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option).json().then(r => r.body),
+      fetch(prefix, PATH0, GET, option).send().then(r => r.body),
     $path: (option?: { method?: 'get'; query: Methods0['get']['query'] }) =>
       `${prefix}${PATH0}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
   }

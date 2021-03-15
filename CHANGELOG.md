@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.16.0](https://github.com/aspida/openapi2aspida/compare/v0.15.3...v0.16.0) (2021-03-15)
+
+
+### Features
+
+* change Blob to File | ReadStream ([990a31a](https://github.com/aspida/openapi2aspida/commit/990a31a29763afd653dbd87d559de35da6d2c48e))
+* convert description to tsdoc ([1e5aef7](https://github.com/aspida/openapi2aspida/commit/1e5aef774e4f69c74a705d9ad0fb2c1aae1658d4))
+
+
+### Bug Fixes
+
+* rename [@types](https://github.com/types).ts to @types/index.ts ([e6cba05](https://github.com/aspida/openapi2aspida/commit/e6cba05d62c3320ca3c51fb6f6d2f634a349bb62))
+* support type only import ([defe3c5](https://github.com/aspida/openapi2aspida/commit/defe3c5c0621d09f036f43929d880b51c3586282))
+* update aspida@1.6.3 ([9d730c9](https://github.com/aspida/openapi2aspida/commit/9d730c9b483176a0d2e0838d3327a4c51ebd79c2))
+
 ### [0.15.3](https://github.com/aspida/openapi2aspida/compare/v0.15.2...v0.15.3) (2021-02-09)
 
 

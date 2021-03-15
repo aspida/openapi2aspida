@@ -1,11 +1,12 @@
 /* eslint-disable */
-import * as Types from '../../../../../../../@types'
+import type * as Types from '../../../../../../../@types'
 
 export type Methods = {
   post: {
     reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken & Types.UserInstanceIdHeader
     status: 200
 
+    /** OK */
     resBody: {
       action: 'add' | 'remove' | 'replace'
 

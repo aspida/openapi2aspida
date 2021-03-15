@@ -1,9 +1,15 @@
 /* eslint-disable */
-import * as Types from '../../../../@types'
+import type * as Types from '../../../../@types'
 
 export type Methods = {
+  /**
+   * <h2 id="">概要</h2>
+   * 
+   * <p>ユーザの権限情報を取得する</p>
+   */
   get: {
     query: {
+      /** 事業所ID */
       company_id: number
     }
 

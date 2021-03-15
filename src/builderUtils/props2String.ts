@@ -3,6 +3,7 @@ export type PropValue = {
   isEnum: boolean
   nullable: boolean
   hasOf?: 'oneOf' | 'allOf' | 'anyOf'
+  description: string | null
   // eslint-disable-next-line no-use-before-define
   value: Prop[] | string | string[] | PropValue | PropValue[]
 }
@@ -11,6 +12,7 @@ export type Prop = {
   name: string
   required: boolean
   values: PropValue[]
+  description: string | null
 }
 
 const array2String = (val: PropValue, indent: string) => {
@@ -38,15 +40,22 @@ const values2String = (values: PropValue[], hasOf: PropValue['hasOf'], indent: s
 
 const isMultiLine = (values: PropValue[]) => values.find(v => !v.isEnum && Array.isArray(v.value))
 
+export const description2Doc = (desc: string | null, indent: string) => {
+  if (!desc) return ''
+
+  const rows = desc.trim().split('\n')
+  return rows.length === 1
+    ? `${indent}/** ${rows[0]} */\n`
+    : `${indent}/**\n${indent} * ${rows.join(`\n${indent} * `)}\n${indent} */\n`
+}
+
 export const props2String = (props: Prop[], indent: string) =>
   `{\n${props
     .map(
       (p, i) =>
-        `  ${indent}${p.name}${p.required ? '' : '?'}: ${values2String(
-          p.values,
-          undefined,
-          indent
-        )}${
+        `${description2Doc(p.description, `  ${indent}`)}  ${indent}${p.name}${
+          p.required ? '' : '?'
+        }: ${values2String(p.values, undefined, indent)}${
           props.length - 1 === i || isMultiLine(p.values) || isMultiLine(props[i + 1].values)
             ? '\n'
             : ''

@@ -1,10 +1,11 @@
 /* eslint-disable */
-import * as Types from '../../../@types'
+import type * as Types from '../../../@types'
 
 export type Methods = {
   post: {
     status: 200
 
+    /** OK */
     resBody: Types.ArticleModel | Types.QuoteModel
 
     reqBody: {

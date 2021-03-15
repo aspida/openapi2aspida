@@ -1,11 +1,19 @@
 /* eslint-disable */
-import * as Types from '../../../@types'
+import type * as Types from '../../../@types'
 
 export type Methods = {
+  /**
+   * <h2 id="">概要</h2>
+   * 
+   * <p>指定した事業所の経費科目一覧を取得する</p>
+   */
   get: {
     query: {
+      /** 事業所ID */
       company_id: number
+      /** 取得レコードのオフセット (デフォルト: 0) */
       offset: number
+      /** 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100) */
       limit: number
     }
 
@@ -20,6 +28,7 @@ export type Methods = {
     status: 201
     resBody: Types.expenseApplicationLineTemplateResponse
     reqFormat: URLSearchParams
+    /** 経費科目の作成 */
     reqBody: Types.expenseApplicationLineTemplateParams
   }
 }

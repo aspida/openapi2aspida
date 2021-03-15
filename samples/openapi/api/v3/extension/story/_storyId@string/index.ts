@@ -1,11 +1,13 @@
 /* eslint-disable */
-import * as Types from '../../../../../@types'
+import type { ReadStream } from 'fs'
+import type * as Types from '../../../../../@types'
 
 export type Methods = {
   post: {
     reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken
     status: 200
 
+    /** OK */
     resBody: {
       id: string
     }
@@ -28,9 +30,9 @@ export type Methods = {
       quoteSource?: string
       quotePersonHandle?: string
       videoId?: number
-      video?: Blob
+      video?: File | ReadStream
       audioId?: number
-      audio?: Blob
+      audio?: File | ReadStream
       text?: string
       headline?: string
       quoteCreated?: string

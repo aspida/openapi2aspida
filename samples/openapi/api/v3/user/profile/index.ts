@@ -1,5 +1,6 @@
 /* eslint-disable */
-import * as Types from '../../../../@types'
+import type { ReadStream } from 'fs'
+import type * as Types from '../../../../@types'
 
 export type Methods = {
   put: {
@@ -10,7 +11,8 @@ export type Methods = {
     reqBody: {
       screenName: string
       url: string
-      image: Blob
+      /** Profile picture to upload. */
+      image: File | ReadStream
       imageId: string
     }
   }

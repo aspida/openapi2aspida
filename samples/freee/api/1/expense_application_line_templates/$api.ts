@@ -20,8 +20,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix0, GET, option).json(),
         $get: (option: { query: Methods1['get']['query'], config?: T }) =>
           fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix0, GET, option).json().then(r => r.body),
+        /**
+         * @param option.body - 経費科目の更新
+         */
         put: (option: { body: Methods1['put']['reqBody'], config?: T }) =>
           fetch<Methods1['put']['resBody'], BasicHeaders, Methods1['put']['status']>(prefix, prefix0, PUT, option, 'URLSearchParams').json(),
+        /**
+         * @param option.body - 経費科目の更新
+         */
         $put: (option: { body: Methods1['put']['reqBody'], config?: T }) =>
           fetch<Methods1['put']['resBody'], BasicHeaders, Methods1['put']['status']>(prefix, prefix0, PUT, option, 'URLSearchParams').json().then(r => r.body),
         delete: (option: { query: Methods1['delete']['query'], config?: T }) =>
@@ -32,12 +38,28 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           `${prefix}${prefix0}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
       }
     },
+    /**
+     * <h2 id="">概要</h2>
+     * 
+     * <p>指定した事業所の経費科目一覧を取得する</p>
+     */
     get: (option: { query: Methods0['get']['query'], config?: T }) =>
       fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json(),
+    /**
+     * <h2 id="">概要</h2>
+     * 
+     * <p>指定した事業所の経費科目一覧を取得する</p>
+     */
     $get: (option: { query: Methods0['get']['query'], config?: T }) =>
       fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json().then(r => r.body),
+    /**
+     * @param option.body - 経費科目の作成
+     */
     post: (option: { body: Methods0['post']['reqBody'], config?: T }) =>
       fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option, 'URLSearchParams').json(),
+    /**
+     * @param option.body - 経費科目の作成
+     */
     $post: (option: { body: Methods0['post']['reqBody'], config?: T }) =>
       fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option, 'URLSearchParams').json().then(r => r.body),
     $path: (option?: { method?: 'get'; query: Methods0['get']['query'] }) =>

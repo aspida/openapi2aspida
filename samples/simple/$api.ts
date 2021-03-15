@@ -32,8 +32,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
 
         return {
           content: {
+            /**
+             * @returns accept
+             */
             put: (option?: { config?: T }) =>
               fetch<Methods0['put']['resBody'], BasicHeaders, Methods0['put']['status']>(prefix, `${prefix1}${PATH1}`, PUT, option).text(),
+            /**
+             * @returns accept
+             */
             $put: (option?: { config?: T }) =>
               fetch<Methods0['put']['resBody'], BasicHeaders, Methods0['put']['status']>(prefix, `${prefix1}${PATH1}`, PUT, option).text().then(r => r.body),
             $path: () => `${prefix}${prefix1}${PATH1}`
@@ -63,9 +69,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         return {
           upload: {
             post: (option: { body: Methods3['post']['reqBody'], query: Methods3['post']['query'], config?: T }) =>
-              fetch<void, BasicHeaders, Methods3['post']['status']>(prefix, `${prefix1}${PATH5}`, POST, option, 'Blob').send(),
+              fetch<void, BasicHeaders, Methods3['post']['status']>(prefix, `${prefix1}${PATH5}`, POST, option).send(),
             $post: (option: { body: Methods3['post']['reqBody'], query: Methods3['post']['query'], config?: T }) =>
-              fetch<void, BasicHeaders, Methods3['post']['status']>(prefix, `${prefix1}${PATH5}`, POST, option, 'Blob').send().then(r => r.body),
+              fetch<void, BasicHeaders, Methods3['post']['status']>(prefix, `${prefix1}${PATH5}`, POST, option).send().then(r => r.body),
             $path: (option?: { method: 'post'; query: Methods3['post']['query'] }) =>
               `${prefix}${prefix1}${PATH5}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
           }
