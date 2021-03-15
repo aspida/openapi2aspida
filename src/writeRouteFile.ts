@@ -14,7 +14,8 @@ export default ({
   }[]
 }) => {
   if (types) {
-    fs.writeFileSync(`${config.input}/@types.ts`, types, 'utf8')
+    fs.mkdirSync(`${config.input}/@types`)
+    fs.writeFileSync(`${config.input}/@types/index.ts`, types, 'utf8')
   }
 
   files.forEach(p => {
