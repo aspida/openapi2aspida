@@ -6,6 +6,7 @@ export type Methods = {
     reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken & Types.UserInstanceIdHeader
 
     query: {
+      /** date string or number of milliseconds */
       timestamp: number
       offset: number
       limit: number
@@ -14,6 +15,7 @@ export type Methods = {
 
     status: 200
 
+    /** OK */
     resBody: {
       count: number
       data: (Types.ModelCard & {

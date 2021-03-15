@@ -36,14 +36,28 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
 
         return {
           uploadImage: {
+            /**
+             * @returns successful operation
+             */
             post: (option: { body: Methods2['post']['reqBody'], config?: T }) =>
               fetch<Methods2['post']['resBody'], BasicHeaders, Methods2['post']['status']>(prefix, `${prefix1}${PATH1}`, POST, option, 'FormData').json(),
+            /**
+             * @returns successful operation
+             */
             $post: (option: { body: Methods2['post']['reqBody'], config?: T }) =>
               fetch<Methods2['post']['resBody'], BasicHeaders, Methods2['post']['status']>(prefix, `${prefix1}${PATH1}`, POST, option, 'FormData').json().then(r => r.body),
             $path: () => `${prefix}${prefix1}${PATH1}`
           },
+          /**
+           * Returns a single pet
+           * @returns successful operation
+           */
           get: (option?: { config?: T }) =>
             fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix1, GET, option).json(),
+          /**
+           * Returns a single pet
+           * @returns successful operation
+           */
           $get: (option?: { config?: T }) =>
             fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
           post: (option: { body: Methods1['post']['reqBody'], config?: T }) =>
@@ -58,27 +72,55 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         }
       },
       findByStatus: {
+        /**
+         * Multiple status values can be provided with comma separated strings
+         * @returns successful operation
+         */
         get: (option: { query: Methods3['get']['query'], config?: T }) =>
           fetch<Methods3['get']['resBody'], BasicHeaders, Methods3['get']['status']>(prefix, PATH2, GET, option).json(),
+        /**
+         * Multiple status values can be provided with comma separated strings
+         * @returns successful operation
+         */
         $get: (option: { query: Methods3['get']['query'], config?: T }) =>
           fetch<Methods3['get']['resBody'], BasicHeaders, Methods3['get']['status']>(prefix, PATH2, GET, option).json().then(r => r.body),
         $path: (option?: { method?: 'get'; query: Methods3['get']['query'] }) =>
           `${prefix}${PATH2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
       },
+      /**
+       * @param option.body - Pet object that needs to be added to the store
+       */
       post: (option: { body: Methods0['post']['reqBody'], config?: T }) =>
         fetch(prefix, PATH0, POST, option).send(),
+      /**
+       * @param option.body - Pet object that needs to be added to the store
+       */
       $post: (option: { body: Methods0['post']['reqBody'], config?: T }) =>
         fetch(prefix, PATH0, POST, option).send().then(r => r.body),
+      /**
+       * @param option.body - Pet object that needs to be added to the store
+       */
       put: (option: { body: Methods0['put']['reqBody'], config?: T }) =>
         fetch(prefix, PATH0, PUT, option).send(),
+      /**
+       * @param option.body - Pet object that needs to be added to the store
+       */
       $put: (option: { body: Methods0['put']['reqBody'], config?: T }) =>
         fetch(prefix, PATH0, PUT, option).send().then(r => r.body),
       $path: () => `${prefix}${PATH0}`
     },
     store: {
       inventory: {
+        /**
+         * Returns a map of status codes to quantities
+         * @returns successful operation
+         */
         get: (option?: { config?: T }) =>
           fetch<Methods4['get']['resBody'], BasicHeaders, Methods4['get']['status']>(prefix, PATH3, GET, option).json(),
+        /**
+         * Returns a map of status codes to quantities
+         * @returns successful operation
+         */
         $get: (option?: { config?: T }) =>
           fetch<Methods4['get']['resBody'], BasicHeaders, Methods4['get']['status']>(prefix, PATH3, GET, option).json().then(r => r.body),
         $path: () => `${prefix}${PATH3}`
@@ -88,19 +130,41 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           const prefix2 = `${PATH4}/${val2}`
 
           return {
+            /**
+             * For valid response try integer IDs with value >= 1 and <= 10. Other values will generated exceptions
+             * @returns successful operation
+             */
             get: (option?: { config?: T }) =>
               fetch<Methods6['get']['resBody'], BasicHeaders, Methods6['get']['status']>(prefix, prefix2, GET, option).json(),
+            /**
+             * For valid response try integer IDs with value >= 1 and <= 10. Other values will generated exceptions
+             * @returns successful operation
+             */
             $get: (option?: { config?: T }) =>
               fetch<Methods6['get']['resBody'], BasicHeaders, Methods6['get']['status']>(prefix, prefix2, GET, option).json().then(r => r.body),
+            /**
+             * For valid response try integer IDs with positive integer value. Negative or non-integer values will generate API errors
+             */
             delete: (option?: { config?: T }) =>
               fetch(prefix, prefix2, DELETE, option).send(),
+            /**
+             * For valid response try integer IDs with positive integer value. Negative or non-integer values will generate API errors
+             */
             $delete: (option?: { config?: T }) =>
               fetch(prefix, prefix2, DELETE, option).send().then(r => r.body),
             $path: () => `${prefix}${prefix2}`
           }
         },
+        /**
+         * @param option.body - order placed for purchasing the pet
+         * @returns successful operation
+         */
         post: (option: { body: Methods5['post']['reqBody'], config?: T }) =>
           fetch<Methods5['post']['resBody'], BasicHeaders, Methods5['post']['status']>(prefix, PATH4, POST, option).json(),
+        /**
+         * @param option.body - order placed for purchasing the pet
+         * @returns successful operation
+         */
         $post: (option: { body: Methods5['post']['reqBody'], config?: T }) =>
           fetch<Methods5['post']['resBody'], BasicHeaders, Methods5['post']['status']>(prefix, PATH4, POST, option).json().then(r => r.body),
         $path: () => `${prefix}${PATH4}`
@@ -111,45 +175,91 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         const prefix1 = `${PATH5}/${val1}`
 
         return {
+          /**
+           * @returns successful operation
+           */
           get: (option?: { config?: T }) =>
             fetch<Methods8['get']['resBody'], BasicHeaders, Methods8['get']['status']>(prefix, prefix1, GET, option).json(),
+          /**
+           * @returns successful operation
+           */
           $get: (option?: { config?: T }) =>
             fetch<Methods8['get']['resBody'], BasicHeaders, Methods8['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
+          /**
+           * This can only be done by the logged in user.
+           * @param option.body - Updated user object
+           */
           put: (option: { body: Methods8['put']['reqBody'], config?: T }) =>
             fetch(prefix, prefix1, PUT, option).send(),
+          /**
+           * This can only be done by the logged in user.
+           * @param option.body - Updated user object
+           */
           $put: (option: { body: Methods8['put']['reqBody'], config?: T }) =>
             fetch(prefix, prefix1, PUT, option).send().then(r => r.body),
+          /**
+           * This can only be done by the logged in user.
+           */
           delete: (option?: { config?: T }) =>
             fetch(prefix, prefix1, DELETE, option).send(),
+          /**
+           * This can only be done by the logged in user.
+           */
           $delete: (option?: { config?: T }) =>
             fetch(prefix, prefix1, DELETE, option).send().then(r => r.body),
           $path: () => `${prefix}${prefix1}`
         }
       },
       createWithArray: {
+        /**
+         * @param option.body - List of user object
+         */
         post: (option: { body: Methods9['post']['reqBody'], config?: T }) =>
           fetch(prefix, PATH6, POST, option).send(),
+        /**
+         * @param option.body - List of user object
+         */
         $post: (option: { body: Methods9['post']['reqBody'], config?: T }) =>
           fetch(prefix, PATH6, POST, option).send().then(r => r.body),
         $path: () => `${prefix}${PATH6}`
       },
       createWithList: {
+        /**
+         * @param option.body - List of user object
+         */
         post: (option: { body: Methods10['post']['reqBody'], config?: T }) =>
           fetch(prefix, PATH7, POST, option).send(),
+        /**
+         * @param option.body - List of user object
+         */
         $post: (option: { body: Methods10['post']['reqBody'], config?: T }) =>
           fetch(prefix, PATH7, POST, option).send().then(r => r.body),
         $path: () => `${prefix}${PATH7}`
       },
       login: {
+        /**
+         * @returns successful operation
+         */
         get: (option: { query: Methods11['get']['query'], config?: T }) =>
           fetch<Methods11['get']['resBody'], Methods11['get']['resHeaders'], Methods11['get']['status']>(prefix, PATH8, GET, option).text(),
+        /**
+         * @returns successful operation
+         */
         $get: (option: { query: Methods11['get']['query'], config?: T }) =>
           fetch<Methods11['get']['resBody'], Methods11['get']['resHeaders'], Methods11['get']['status']>(prefix, PATH8, GET, option).text().then(r => r.body),
         $path: (option?: { method?: 'get'; query: Methods11['get']['query'] }) =>
           `${prefix}${PATH8}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
       },
+      /**
+       * This can only be done by the logged in user.
+       * @param option.body - Created user object
+       */
       post: (option: { body: Methods7['post']['reqBody'], config?: T }) =>
         fetch(prefix, PATH5, POST, option).send(),
+      /**
+       * This can only be done by the logged in user.
+       * @param option.body - Created user object
+       */
       $post: (option: { body: Methods7['post']['reqBody'], config?: T }) =>
         fetch(prefix, PATH5, POST, option).send().then(r => r.body),
       $path: () => `${prefix}${PATH5}`

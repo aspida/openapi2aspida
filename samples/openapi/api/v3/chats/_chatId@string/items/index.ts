@@ -2,30 +2,36 @@
 import type * as Types from '../../../../../@types'
 
 export type Methods = {
+  /** Returns a list of items of chat shared content */
   get: {
     reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken & Types.UserInstanceIdHeader
 
     query?: {
       offset?: number
+      /** coma separated ids of requested cards */
       ids?: string
     }
 
     status: 200
 
+    /** OK */
     resBody: {
       limit: number
       offset: number
     }
   }
 
+  /** Create shared item in chat */
   post: {
     reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken
     status: 200
 
+    /** OK */
     resBody: {
       id: string
     }
 
+    /** item to create */
     reqBody: {
       type: Types.CardEnumModel
       title?: string
@@ -45,6 +51,7 @@ export type Methods = {
       headline?: string
       quoteCreated?: string
       published?: boolean
+      /** text message to send to pubnub */
       formattedText?: string
     }
   }

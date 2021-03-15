@@ -8,8 +8,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const POST = 'POST'
 
   return {
+    /**
+     * @param option.body - List of user object
+     */
     post: (option: { body: Methods0['post']['reqBody'], config?: T }) =>
       fetch(prefix, PATH0, POST, option).send(),
+    /**
+     * @param option.body - List of user object
+     */
     $post: (option: { body: Methods0['post']['reqBody'], config?: T }) =>
       fetch(prefix, PATH0, POST, option).send().then(r => r.body),
     $path: () => `${prefix}${PATH0}`

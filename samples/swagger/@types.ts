@@ -10,6 +10,7 @@ export type Pet = {
   name: string
   photoUrls: string[]
   tags?: Tag[]
+  /** pet status in the store */
   status?: 'available' | 'pending' | 'sold'
 }
 
@@ -29,6 +30,7 @@ export type Order = {
   petId: number
   quantity: number
   shipDate: string
+  /** Order Status */
   status: 'placed' | 'approved' | 'delivered'
   complete: boolean
 }
@@ -41,5 +43,6 @@ export type User = {
   email: string
   password: string
   phone: string
+  /** User Status */
   userStatus: number
 }

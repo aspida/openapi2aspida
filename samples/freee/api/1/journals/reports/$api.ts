@@ -16,16 +16,96 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
 
       return {
         download: {
+          /**
+           * <h2 id="">概要</h2>
+           * 
+           * <p>ダウンロードを実行する</p>
+           * 
+           * <p>＊このAPIは無料プランのアカウントではご利用になれません</p>
+           * 
+           * <h2 id="_2">定義</h2>
+           * 
+           * <ul>
+           * <li>id : 受け付けID</li>
+           * </ul>
+           */
           get: (option: { query: Methods0['get']['query'], config?: T }) =>
             fetch<void, BasicHeaders, Methods0['get']['status']>(prefix, `${prefix0}${PATH1}`, GET, option).send(),
+          /**
+           * <h2 id="">概要</h2>
+           * 
+           * <p>ダウンロードを実行する</p>
+           * 
+           * <p>＊このAPIは無料プランのアカウントではご利用になれません</p>
+           * 
+           * <h2 id="_2">定義</h2>
+           * 
+           * <ul>
+           * <li>id : 受け付けID</li>
+           * </ul>
+           */
           $get: (option: { query: Methods0['get']['query'], config?: T }) =>
             fetch<void, BasicHeaders, Methods0['get']['status']>(prefix, `${prefix0}${PATH1}`, GET, option).send().then(r => r.body),
           $path: (option?: { method?: 'get'; query: Methods0['get']['query'] }) =>
             `${prefix}${prefix0}${PATH1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
         },
         status: {
+          /**
+           * <h2 id="">概要</h2>
+           * 
+           * <p>ダウンロードリクエストのステータスを確認する</p>
+           * 
+           * <p>＊このAPIは無料プランのアカウントではご利用になれません</p>
+           * 
+           * <h2 id="_2">定義</h2>
+           * 
+           * <ul>
+           * <li>
+           * <p>status</p>
+           * 
+           * <ul>
+           * <li>enqueued : 実行待ち</li>
+           * 
+           * <li>working : 実行中</li>
+           * 
+           * <li>uploaded : 準備完了</li>
+           * </ul>
+           * </li>
+           * 
+           * <li>
+           * <p>id : 受け付けID</p>
+           * </li>
+           * </ul>
+           */
           get: (option: { query: Methods1['get']['query'], config?: T }) =>
             fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, `${prefix0}${PATH2}`, GET, option).json(),
+          /**
+           * <h2 id="">概要</h2>
+           * 
+           * <p>ダウンロードリクエストのステータスを確認する</p>
+           * 
+           * <p>＊このAPIは無料プランのアカウントではご利用になれません</p>
+           * 
+           * <h2 id="_2">定義</h2>
+           * 
+           * <ul>
+           * <li>
+           * <p>status</p>
+           * 
+           * <ul>
+           * <li>enqueued : 実行待ち</li>
+           * 
+           * <li>working : 実行中</li>
+           * 
+           * <li>uploaded : 準備完了</li>
+           * </ul>
+           * </li>
+           * 
+           * <li>
+           * <p>id : 受け付けID</p>
+           * </li>
+           * </ul>
+           */
           $get: (option: { query: Methods1['get']['query'], config?: T }) =>
             fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, `${prefix0}${PATH2}`, GET, option).json().then(r => r.body),
           $path: (option?: { method?: 'get'; query: Methods1['get']['query'] }) =>

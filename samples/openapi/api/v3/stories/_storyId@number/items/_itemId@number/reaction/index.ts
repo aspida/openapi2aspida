@@ -6,6 +6,7 @@ export type Methods = {
     reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken & Types.UserInstanceIdHeader
     status: 200
 
+    /** OK */
     resBody: {
       action: 'add' | 'remove' | 'replace'
 

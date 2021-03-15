@@ -7,6 +7,7 @@ export type Methods = {
     reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken
     status: 200
 
+    /** OK */
     resBody: {
       id: string
     }
@@ -14,6 +15,7 @@ export type Methods = {
     reqFormat: FormData
 
     reqBody: {
+      /** Audio to upload. */
       file: File | ReadStream
       caption?: string
       headline?: string

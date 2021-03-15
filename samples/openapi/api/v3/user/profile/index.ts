@@ -11,6 +11,7 @@ export type Methods = {
     reqBody: {
       screenName: string
       url: string
+      /** Profile picture to upload. */
       image: File | ReadStream
       imageId: string
     }

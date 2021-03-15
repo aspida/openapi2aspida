@@ -6,6 +6,7 @@ export type Methods = {
     reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationTokenRequired
     status: 200
 
+    /** OK */
     resBody: {
       dataUrl: string
       otpURL: string

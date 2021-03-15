@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { AspidaClient, BasicHeaders, dataToURLString } from 'aspida'
+import { AspidaClient, dataToURLString } from 'aspida'
 import { Methods as Methods0 } from './_id@string'
 
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
@@ -12,10 +12,16 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       const prefix0 = `${PATH0}/${val0}`
 
       return {
+        /**
+         * Search for users
+         */
         get: (option?: { query?: Methods0['get']['query'], config?: T }) =>
-          fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, prefix0, GET, option).json(),
+          fetch(prefix, prefix0, GET, option).send(),
+        /**
+         * Search for users
+         */
         $get: (option?: { query?: Methods0['get']['query'], config?: T }) =>
-          fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, prefix0, GET, option).json().then(r => r.body),
+          fetch(prefix, prefix0, GET, option).send().then(r => r.body),
         $path: (option?: { method?: 'get'; query: Methods0['get']['query'] }) =>
           `${prefix}${prefix0}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
       }

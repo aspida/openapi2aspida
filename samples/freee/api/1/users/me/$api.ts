@@ -9,12 +9,34 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const PUT = 'PUT'
 
   return {
+    /**
+     * <h2 id="">概要</h2>
+     * 
+     * <p>ユーザの情報を取得する</p>
+     */
     get: (option: { query: Methods0['get']['query'], config?: T }) =>
       fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json(),
+    /**
+     * <h2 id="">概要</h2>
+     * 
+     * <p>ユーザの情報を取得する</p>
+     */
     $get: (option: { query: Methods0['get']['query'], config?: T }) =>
       fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json().then(r => r.body),
+    /**
+     * <h2 id="">概要</h2>
+     * 
+     * <p>ユーザー情報を更新する</p>
+     * @param option.body - ユーザー情報の更新
+     */
     put: (option?: { body?: Methods0['put']['reqBody'], config?: T }) =>
       fetch<Methods0['put']['resBody'], BasicHeaders, Methods0['put']['status']>(prefix, PATH0, PUT, option, 'URLSearchParams').json(),
+    /**
+     * <h2 id="">概要</h2>
+     * 
+     * <p>ユーザー情報を更新する</p>
+     * @param option.body - ユーザー情報の更新
+     */
     $put: (option?: { body?: Methods0['put']['reqBody'], config?: T }) =>
       fetch<Methods0['put']['resBody'], BasicHeaders, Methods0['put']['status']>(prefix, PATH0, PUT, option, 'URLSearchParams').json().then(r => r.body),
     $path: (option?: { method?: 'get'; query: Methods0['get']['query'] }) =>

@@ -12,8 +12,16 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       const prefix0 = `${PATH0}/${val0}`
 
       return {
+        /**
+         * Connect a provider
+         * @returns response
+         */
         get: (option?: { config?: T }) =>
           fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, prefix0, GET, option).json(),
+        /**
+         * Connect a provider
+         * @returns response
+         */
         $get: (option?: { config?: T }) =>
           fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, prefix0, GET, option).json().then(r => r.body),
         $path: () => `${prefix}${prefix0}`

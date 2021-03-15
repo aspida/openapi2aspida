@@ -9,8 +9,18 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
 
   return {
     selectables: {
+      /**
+       * <h2 id="">概要</h2>
+       * 
+       * <p>指定した事業所のフォーム用選択項目情報を取得する</p>
+       */
       get: (option: { query: Methods0['get']['query'], config?: T }) =>
         fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json(),
+      /**
+       * <h2 id="">概要</h2>
+       * 
+       * <p>指定した事業所のフォーム用選択項目情報を取得する</p>
+       */
       $get: (option: { query: Methods0['get']['query'], config?: T }) =>
         fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json().then(r => r.body),
       $path: (option?: { method?: 'get'; query: Methods0['get']['query'] }) =>

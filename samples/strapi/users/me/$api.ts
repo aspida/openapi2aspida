@@ -8,8 +8,16 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const GET = 'GET'
 
   return {
+    /**
+     * Retrieve the logged in user information
+     * @returns response
+     */
     get: (option?: { config?: T }) =>
       fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json(),
+    /**
+     * Retrieve the logged in user information
+     * @returns response
+     */
     $get: (option?: { config?: T }) =>
       fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json().then(r => r.body),
     $path: () => `${prefix}${PATH0}`

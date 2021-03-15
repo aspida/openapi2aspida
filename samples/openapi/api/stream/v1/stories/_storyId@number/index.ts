@@ -11,6 +11,7 @@ export type Methods = {
 
     status: 200
 
+    /** OK */
     resBody: {
       count: number
       data: Types.ModelCard[]

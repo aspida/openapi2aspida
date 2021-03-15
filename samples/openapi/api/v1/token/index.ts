@@ -3,6 +3,7 @@ export type Methods = {
   post: {
     status: 200
 
+    /** OK */
     resBody: {
       token: string
     }

@@ -27,8 +27,16 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
 
       return {
         callback: {
+          /**
+           * Successfull redirection after approving a provider
+           * @returns response
+           */
           get: (option?: { config?: T }) =>
             fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, `${prefix0}${PATH1}`, GET, option).json(),
+          /**
+           * Successfull redirection after approving a provider
+           * @returns response
+           */
           $get: (option?: { config?: T }) =>
             fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, `${prefix0}${PATH1}`, GET, option).json().then(r => r.body),
           $path: () => `${prefix}${prefix0}${PATH1}`
@@ -36,43 +44,91 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       }
     },
     email_confirmation: {
+      /**
+       * Validate a user account
+       * @returns response
+       */
       get: (option?: { config?: T }) =>
         fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, PATH2, GET, option).json(),
+      /**
+       * Validate a user account
+       * @returns response
+       */
       $get: (option?: { config?: T }) =>
         fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, PATH2, GET, option).json().then(r => r.body),
       $path: () => `${prefix}${PATH2}`
     },
     forgot_password: {
+      /**
+       * Send the reset password email link
+       * @returns response
+       */
       post: (option: { body: Methods2['post']['reqBody'], config?: T }) =>
         fetch<Methods2['post']['resBody'], BasicHeaders, Methods2['post']['status']>(prefix, PATH3, POST, option).json(),
+      /**
+       * Send the reset password email link
+       * @returns response
+       */
       $post: (option: { body: Methods2['post']['reqBody'], config?: T }) =>
         fetch<Methods2['post']['resBody'], BasicHeaders, Methods2['post']['status']>(prefix, PATH3, POST, option).json().then(r => r.body),
       $path: () => `${prefix}${PATH3}`
     },
     local: {
       register: {
+        /**
+         * Register a new user with the default role
+         * @returns response
+         */
         post: (option: { body: Methods4['post']['reqBody'], config?: T }) =>
           fetch<Methods4['post']['resBody'], BasicHeaders, Methods4['post']['status']>(prefix, PATH5, POST, option).json(),
+        /**
+         * Register a new user with the default role
+         * @returns response
+         */
         $post: (option: { body: Methods4['post']['reqBody'], config?: T }) =>
           fetch<Methods4['post']['resBody'], BasicHeaders, Methods4['post']['status']>(prefix, PATH5, POST, option).json().then(r => r.body),
         $path: () => `${prefix}${PATH5}`
       },
+      /**
+       * Login a user using the identifiers email and password
+       * @returns response
+       */
       post: (option: { body: Methods3['post']['reqBody'], config?: T }) =>
         fetch<Methods3['post']['resBody'], BasicHeaders, Methods3['post']['status']>(prefix, PATH4, POST, option).json(),
+      /**
+       * Login a user using the identifiers email and password
+       * @returns response
+       */
       $post: (option: { body: Methods3['post']['reqBody'], config?: T }) =>
         fetch<Methods3['post']['resBody'], BasicHeaders, Methods3['post']['status']>(prefix, PATH4, POST, option).json().then(r => r.body),
       $path: () => `${prefix}${PATH4}`
     },
     reset_password: {
+      /**
+       * Change a user's password
+       * @returns response
+       */
       post: (option: { body: Methods5['post']['reqBody'], config?: T }) =>
         fetch<Methods5['post']['resBody'], BasicHeaders, Methods5['post']['status']>(prefix, PATH6, POST, option).json(),
+      /**
+       * Change a user's password
+       * @returns response
+       */
       $post: (option: { body: Methods5['post']['reqBody'], config?: T }) =>
         fetch<Methods5['post']['resBody'], BasicHeaders, Methods5['post']['status']>(prefix, PATH6, POST, option).json().then(r => r.body),
       $path: () => `${prefix}${PATH6}`
     },
     send_email_confirmation: {
+      /**
+       * Send a confirmation email to user
+       * @returns response
+       */
       post: (option: { body: Methods6['post']['reqBody'], config?: T }) =>
         fetch<Methods6['post']['resBody'], BasicHeaders, Methods6['post']['status']>(prefix, PATH7, POST, option).json(),
+      /**
+       * Send a confirmation email to user
+       * @returns response
+       */
       $post: (option: { body: Methods6['post']['reqBody'], config?: T }) =>
         fetch<Methods6['post']['resBody'], BasicHeaders, Methods6['post']['status']>(prefix, PATH7, POST, option).json().then(r => r.body),
       $path: () => `${prefix}${PATH7}`

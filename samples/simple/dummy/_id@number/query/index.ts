@@ -2,6 +2,7 @@
 export type Methods = {
   put: {
     query: {
+      /** query */
       q: string
     }
 

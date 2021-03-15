@@ -7,6 +7,7 @@ export type Methods = {
     reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken
     status: 200
 
+    /** OK */
     resBody: {
       id: string
       width?: number
@@ -16,6 +17,7 @@ export type Methods = {
     reqFormat: FormData
 
     reqBody: {
+      /** video to upload. */
       file: File | ReadStream
     }
   }

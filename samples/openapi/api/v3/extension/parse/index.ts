@@ -6,6 +6,7 @@ export type Methods = {
     reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader
     status: 200
 
+    /** OK */
     resBody: {
       type: Types.CardEnumModel
       url: string

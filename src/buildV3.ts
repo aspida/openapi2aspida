@@ -6,7 +6,13 @@ import {
   schema2value,
   BINARY_TYPE
 } from './builderUtils/converters'
-import { props2String, Prop, PropValue, value2String } from './builderUtils/props2String'
+import {
+  props2String,
+  Prop,
+  PropValue,
+  value2String,
+  description2Doc
+} from './builderUtils/props2String'
 import { resolveParamsRef, resolveResRef, resolveReqRef } from './builderUtils/resolvers'
 import getDirName from './builderUtils/getDirName'
 import schemas2Props from './builderUtils/schemas2Props'
@@ -76,6 +82,7 @@ export default (openapi: OpenAPIV3.Document) => {
                       isArray: false,
                       isEnum: false,
                       nullable: false,
+                      description: ref.description ?? null,
                       value: $ref2Type(p.$ref)
                     }
 
@@ -97,6 +104,7 @@ export default (openapi: OpenAPIV3.Document) => {
                     const prop = {
                       name: getPropertyName(p.name),
                       required: p.required ?? true,
+                      description: p.description ?? null,
                       values: [value]
                     }
 
@@ -119,10 +127,19 @@ export default (openapi: OpenAPIV3.Document) => {
                 params.push({
                   name: 'reqHeaders',
                   required: false,
+                  description: null,
                   values: [
                     ...reqRefHeaders,
                     ...(reqHeaders.length
-                      ? [{ isArray: false, isEnum: false, nullable: false, value: reqHeaders }]
+                      ? [
+                          {
+                            isArray: false,
+                            isEnum: false,
+                            nullable: false,
+                            description: null,
+                            value: reqHeaders
+                          }
+                        ]
                       : [])
                   ]
                 })
@@ -132,10 +149,19 @@ export default (openapi: OpenAPIV3.Document) => {
                 params.push({
                   name: 'query',
                   required: queryRequired,
+                  description: null,
                   values: [
                     ...refQuery,
                     ...(query.length
-                      ? [{ isArray: false, isEnum: false, nullable: false, value: query }]
+                      ? [
+                          {
+                            isArray: false,
+                            isEnum: false,
+                            nullable: false,
+                            description: null,
+                            value: query
+                          }
+                        ]
                       : [])
                   ]
                 })
@@ -148,7 +174,16 @@ export default (openapi: OpenAPIV3.Document) => {
                 params.push({
                   name: 'status',
                   required: true,
-                  values: [{ isArray: false, isEnum: false, nullable: false, value: code }]
+                  description: null,
+                  values: [
+                    {
+                      isArray: false,
+                      isEnum: false,
+                      nullable: false,
+                      description: null,
+                      value: code
+                    }
+                  ]
                 })
 
                 const res = target.responses[code]
@@ -160,6 +195,7 @@ export default (openapi: OpenAPIV3.Document) => {
                     params.push({
                       name: 'resBody',
                       required: true,
+                      description: ref.description,
                       values: [val]
                     })
                 }
@@ -168,11 +204,13 @@ export default (openapi: OpenAPIV3.Document) => {
                   params.push({
                     name: 'resHeaders',
                     required: true,
+                    description: null,
                     values: [
                       {
                         isArray: false,
                         isEnum: false,
                         nullable: false,
+                        description: null,
                         value: Object.keys(ref.headers)
                           .map(header => {
                             const headerData = ref.headers![header]
@@ -180,6 +218,7 @@ export default (openapi: OpenAPIV3.Document) => {
                               ? {
                                   isArray: false,
                                   isEnum: false,
+                                  description: null,
                                   value: $ref2Type(headerData.$ref)
                                 }
                               : schema2value(headerData.schema)
@@ -190,6 +229,9 @@ export default (openapi: OpenAPIV3.Document) => {
                                 required: isRefObject(headerData)
                                   ? true
                                   : headerData.required ?? true,
+                                description: isRefObject(headerData)
+                                  ? null
+                                  : headerData.description,
                                 values: [val]
                               }
                             )
@@ -206,6 +248,7 @@ export default (openapi: OpenAPIV3.Document) => {
               let reqFormat = ''
               let reqBody: PropValue | null = null
               let required = true
+              let description: string | null = null
 
               if (isRefObject(target.requestBody)) {
                 const ref = resolveReqRef(openapi, target.requestBody.$ref)
@@ -219,9 +262,11 @@ export default (openapi: OpenAPIV3.Document) => {
                   isArray: false,
                   isEnum: false,
                   nullable: false,
+                  description: null,
                   value: $ref2Type(target.requestBody.$ref)
                 }
                 required = ref.required ?? true
+                description = ref.description ?? null
               } else {
                 const typeSet = [
                   ['multipart/form-data', 'FormData'],
@@ -235,6 +280,7 @@ export default (openapi: OpenAPIV3.Document) => {
                     reqFormat = typeSet[i][1]
                     reqBody = schema2value(target.requestBody.content[typeSet[i][0]].schema!)
                     required = target.requestBody.required ?? true
+                    description = target.requestBody.description ?? null
 
                     break
                   }
@@ -245,7 +291,16 @@ export default (openapi: OpenAPIV3.Document) => {
                 params.push({
                   name: 'reqFormat',
                   required: true,
-                  values: [{ isArray: false, isEnum: false, nullable: false, value: reqFormat }]
+                  description: null,
+                  values: [
+                    {
+                      isArray: false,
+                      isEnum: false,
+                      nullable: false,
+                      description: null,
+                      value: reqFormat
+                    }
+                  ]
                 })
               }
 
@@ -253,6 +308,7 @@ export default (openapi: OpenAPIV3.Document) => {
                 params.push({
                   name: 'reqBody',
                   required,
+                  description,
                   values: [reqBody]
                 })
               }
@@ -261,7 +317,10 @@ export default (openapi: OpenAPIV3.Document) => {
             return {
               name: method,
               required: true,
-              values: [{ isArray: false, isEnum: false, nullable: false, value: params }]
+              description: target.description ?? null,
+              values: [
+                { isArray: false, isEnum: false, nullable: false, description: null, value: params }
+              ]
             }
           })
           .filter((method): method is Prop => !!method)
@@ -293,19 +352,22 @@ export default (openapi: OpenAPIV3.Document) => {
       ? [
           ...parameters.map(p => ({
             name: p.name,
-            text: typeof p.props === 'string' ? p.props : props2String(p.props, '')
+            description: null,
+            text: typeof p.prop === 'string' ? p.prop : props2String([p.prop], '')
           })),
           ...schemas.map(s => ({
             name: s.name,
+            description: s.value.description,
             text: value2String(s.value, '').replace(/\n {2}/g, '\n')
           }))
         ]
-          .map(p => `\nexport type ${p.name} = ${p.text}\n`)
+          .map(p => `\n${description2Doc(p.description, '')}export type ${p.name} = ${p.text}\n`)
           .join('')
           .replace(/ Types\./g, ' ')
       : null
 
   return {
+    openapi, // for api-types
     baseURL: openapi.servers?.[0]?.url || '',
     types:
       typesText &&

@@ -12,6 +12,7 @@ export type AppVersionHeader = {
 }
 
 export type UserTokenHeader = {
+  /** User token */
   'x-tchop-token': string
 }
 
@@ -32,6 +33,7 @@ export type AppOrganisationTokenRequired = {
 }
 
 export type UserInstanceIdHeader = {
+  /** Firebase Instance ID provides a unique identifier for each app instance and a mechanism to authenticate and authorize actions (example: sending FCM messages) */
   'x-tchop-firebase-instance-id': string
 }
 
@@ -162,6 +164,7 @@ export type ReactionEnumModel = 'like' | 'love' | 'haha' | 'wow' | 'sad' | 'angr
 
 export type CardEnumModel = 'article' | 'image' | 'video' | 'quote' | 'editorial' | 'audio'
 
+/** The number of reactions to each type */
 export type ReactionCountModel = {
   like: number
   love: number
@@ -180,6 +183,7 @@ export type MediaEXIFModel = {
 
 export type CardStyleModel = {
   showAuthor: boolean
+  /** Alternative UI Templates for article cards */
   teaserStyle: 'standard' | 'small_with_text' | 'small_without_text' | 'big_without_text'
 }
 

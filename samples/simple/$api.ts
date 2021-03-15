@@ -32,8 +32,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
 
         return {
           content: {
+            /**
+             * @returns accept
+             */
             put: (option?: { config?: T }) =>
               fetch<Methods0['put']['resBody'], BasicHeaders, Methods0['put']['status']>(prefix, `${prefix1}${PATH1}`, PUT, option).text(),
+            /**
+             * @returns accept
+             */
             $put: (option?: { config?: T }) =>
               fetch<Methods0['put']['resBody'], BasicHeaders, Methods0['put']['status']>(prefix, `${prefix1}${PATH1}`, PUT, option).text().then(r => r.body),
             $path: () => `${prefix}${prefix1}${PATH1}`
