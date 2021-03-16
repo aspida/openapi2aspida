@@ -96,7 +96,7 @@ export type Methods = {
     status: 200
 
     resBody: {
-      manual_journals: Types.manualJournalResponse['manual_journal'][]
+      manual_journals: Types.ManualJournalResponse['manual_journal'][]
     }
   }
 
@@ -150,9 +150,9 @@ export type Methods = {
    */
   post: {
     status: 201
-    resBody: Types.manualJournalResponse
+    resBody: Types.ManualJournalResponse
     reqFormat: URLSearchParams
     /** 振替伝票の作成 */
-    reqBody?: Types.manualJournalCreateParams
+    reqBody?: Types.ManualJournalCreateParams
   }
 }

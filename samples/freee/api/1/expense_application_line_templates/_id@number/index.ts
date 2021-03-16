@@ -9,15 +9,15 @@ export type Methods = {
     }
 
     status: 200
-    resBody: Types.expenseApplicationLineTemplateResponse
+    resBody: Types.ExpenseApplicationLineTemplateResponse
   }
 
   put: {
     status: 200
-    resBody: Types.expenseApplicationLineTemplateResponse
+    resBody: Types.ExpenseApplicationLineTemplateResponse
     reqFormat: URLSearchParams
     /** 経費科目の更新 */
-    reqBody: Types.expenseApplicationLineTemplateParams
+    reqBody: Types.ExpenseApplicationLineTemplateParams
   }
 
   delete: {

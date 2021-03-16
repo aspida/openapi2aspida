@@ -44,7 +44,7 @@ export type Methods = {
     status: 200
 
     resBody: {
-      transfers: Types.transferResponse['transfer'][]
+      transfers: Types.TransferResponse['transfer'][]
     }
   }
 
@@ -75,9 +75,9 @@ export type Methods = {
    */
   post: {
     status: 201
-    resBody: Types.transferResponse
+    resBody: Types.TransferResponse
     reqFormat: URLSearchParams
     /** 取引（振替）の作成 */
-    reqBody?: Types.transferParams
+    reqBody?: Types.TransferParams
   }
 }

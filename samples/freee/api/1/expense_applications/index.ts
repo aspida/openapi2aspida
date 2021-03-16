@@ -15,7 +15,7 @@ export type Methods = {
     status: 200
 
     resBody: {
-      expense_applications: Types.expenseApplicationResponse['expense_application'][]
+      expense_applications: Types.ExpenseApplicationResponse['expense_application'][]
     }
   }
 
@@ -35,9 +35,9 @@ export type Methods = {
    */
   post: {
     status: 201
-    resBody: Types.expenseApplicationResponse
+    resBody: Types.ExpenseApplicationResponse
     reqFormat: URLSearchParams
     /** 経費申請の作成 */
-    reqBody?: Types.expenseApplicationCreateParams
+    reqBody?: Types.ExpenseApplicationCreateParams
   }
 }

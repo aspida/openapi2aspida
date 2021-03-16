@@ -14,7 +14,7 @@ export type Methods = {
     }
 
     status: 200
-    resBody: Types.tagResponse
+    resBody: Types.TagResponse
   }
 
   /**
@@ -24,10 +24,10 @@ export type Methods = {
    */
   put: {
     status: 200
-    resBody: Types.tagResponse
+    resBody: Types.TagResponse
     reqFormat: URLSearchParams
     /** メモタグの更新 */
-    reqBody?: Types.tagParams
+    reqBody?: Types.TagParams
   }
 
   /**

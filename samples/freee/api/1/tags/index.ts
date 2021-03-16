@@ -16,7 +16,7 @@ export type Methods = {
     status: 200
 
     resBody: {
-      tags: Types.tagResponse['tag'][]
+      tags: Types.TagResponse['tag'][]
     }
   }
 
@@ -27,9 +27,9 @@ export type Methods = {
    */
   post: {
     status: 201
-    resBody: Types.tagResponse
+    resBody: Types.TagResponse
     reqFormat: URLSearchParams
     /** メモタグの作成 */
-    reqBody: Types.tagParams
+    reqBody: Types.TagParams
   }
 }

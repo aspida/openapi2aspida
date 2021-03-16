@@ -42,9 +42,9 @@ export type Methods = {
    */
   post: {
     status: 201
-    resBody: Types.dealResponse
+    resBody: Types.DealResponse
     reqFormat: URLSearchParams
     /** 取引（収入／支出）の支払行作成 */
-    reqBody: Types.paymentParams
+    reqBody: Types.PaymentParams
   }
 }

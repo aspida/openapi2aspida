@@ -17,10 +17,10 @@ export type Methods = {
    */
   put: {
     status: 200
-    resBody: Types.segmentTagResponse
+    resBody: Types.SegmentTagResponse
     reqFormat: URLSearchParams
     /** セグメントタグの作成 */
-    reqBody: Types.segmentTagParams
+    reqBody: Types.SegmentTagParams
   }
 
   /**

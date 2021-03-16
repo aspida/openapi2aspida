@@ -29,10 +29,10 @@ export type Methods = {
    */
   put: {
     status: 200
-    resBody: Types.dealResponse
+    resBody: Types.DealResponse
     reqFormat: URLSearchParams
     /** +更新の更新情報 */
-    reqBody: Types.renewUpdateParams
+    reqBody: Types.RenewUpdateParams
   }
 
   /**
@@ -50,6 +50,6 @@ export type Methods = {
     }
 
     status: 200
-    resBody: Types.dealResponse
+    resBody: Types.DealResponse
   }
 }

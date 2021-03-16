@@ -39,7 +39,7 @@ export type Methods = {
     }
 
     status: 200
-    resBody: Types.sectionResponse
+    resBody: Types.SectionResponse
   }
 
   /**
@@ -74,10 +74,10 @@ export type Methods = {
    */
   put: {
     status: 200
-    resBody: Types.sectionResponse
+    resBody: Types.SectionResponse
     reqFormat: URLSearchParams
     /** 部門の更新 */
-    reqBody?: Types.sectionParams
+    reqBody?: Types.SectionParams
   }
 
   /**

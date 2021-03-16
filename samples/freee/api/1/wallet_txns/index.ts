@@ -68,7 +68,7 @@ export type Methods = {
     status: 200
 
     resBody: {
-      wallet_txns: Types.walletTxnResponse['wallet_txn'][]
+      wallet_txns: Types.WalletTxnResponse['wallet_txn'][]
     }
   }
 
@@ -117,9 +117,9 @@ export type Methods = {
    */
   post: {
     status: 201
-    resBody: Types.walletTxnResponse
+    resBody: Types.WalletTxnResponse
     reqFormat: URLSearchParams
     /** 明細の作成 */
-    reqBody?: Types.walletTxnParams
+    reqBody?: Types.WalletTxnParams
   }
 }

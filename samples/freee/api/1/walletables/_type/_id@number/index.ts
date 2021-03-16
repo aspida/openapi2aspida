@@ -32,7 +32,7 @@ export type Methods = {
     }
 
     status: 200
-    resBody: Types.walletableResponse
+    resBody: Types.WalletableResponse
   }
 
   /**
@@ -47,10 +47,10 @@ export type Methods = {
     }
 
     status: 200
-    resBody: Types.walletableResponse
+    resBody: Types.WalletableResponse
     reqFormat: URLSearchParams
     /** 口座の作成 */
-    reqBody?: Types.walletableUpdateParams
+    reqBody?: Types.WalletableUpdateParams
   }
 
   /**

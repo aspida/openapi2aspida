@@ -34,7 +34,7 @@ export type Methods = {
     }
 
     status: 200
-    resBody: Types.transferResponse
+    resBody: Types.TransferResponse
   }
 
   /**
@@ -64,10 +64,10 @@ export type Methods = {
    */
   put: {
     status: 200
-    resBody: Types.transferResponse
+    resBody: Types.TransferResponse
     reqFormat: URLSearchParams
     /** 取引（振替）の更新 */
-    reqBody: Types.transferParams
+    reqBody: Types.TransferParams
   }
 
   /**

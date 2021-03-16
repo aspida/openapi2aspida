@@ -14,7 +14,7 @@ export type Methods = {
     }
 
     status: 200
-    resBody: Types.receiptResponse
+    resBody: Types.ReceiptResponse
   }
 
   /**
@@ -28,10 +28,10 @@ export type Methods = {
    */
   put: {
     status: 200
-    resBody: Types.receiptResponse
+    resBody: Types.ReceiptResponse
     reqFormat: URLSearchParams
     /** 経費申請の更新 */
-    reqBody: Types.receiptUpdateParams
+    reqBody: Types.ReceiptUpdateParams
   }
 
   /**

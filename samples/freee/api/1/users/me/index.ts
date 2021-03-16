@@ -14,7 +14,7 @@ export type Methods = {
     }
 
     status: 200
-    resBody: Types.meResponse
+    resBody: Types.MeResponse
   }
 
   /**
@@ -24,9 +24,9 @@ export type Methods = {
    */
   put: {
     status: 200
-    resBody: Types.userResponse
+    resBody: Types.UserResponse
     reqFormat: URLSearchParams
     /** ユーザー情報の更新 */
-    reqBody?: Types.userParams
+    reqBody?: Types.UserParams
   }
 }

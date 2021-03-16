@@ -101,7 +101,7 @@ export type Methods = {
     status: 200
 
     resBody: {
-      deals: Types.dealResponse['deal'][]
+      deals: Types.DealResponse['deal'][]
 
       meta: {
         /** 検索条件に合致する取引の総数 */
@@ -172,9 +172,9 @@ export type Methods = {
    */
   post: {
     status: 201
-    resBody: Types.dealCreateResponse
+    resBody: Types.DealCreateResponse
     reqFormat: URLSearchParams
     /** 取引（収入／支出）の作成 */
-    reqBody?: Types.dealCreateParams
+    reqBody?: Types.DealCreateParams
   }
 }

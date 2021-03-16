@@ -40,7 +40,7 @@ export type Methods = {
     status: 200
 
     resBody: {
-      invoices: Types.invoiceResponse['invoice'][]
+      invoices: Types.InvoiceResponse['invoice'][]
     }
   }
 
@@ -58,9 +58,9 @@ export type Methods = {
    */
   post: {
     status: 201
-    resBody: Types.invoiceResponse
+    resBody: Types.InvoiceResponse
     reqFormat: URLSearchParams
     /** 請求書の作成 */
-    reqBody?: Types.invoiceCreateParams
+    reqBody?: Types.InvoiceCreateParams
   }
 }

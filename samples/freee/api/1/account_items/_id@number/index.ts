@@ -14,7 +14,7 @@ export type Methods = {
     }
 
     status: 200
-    resBody: Types.accountItemResponse
+    resBody: Types.AccountItemResponse
   }
 
   /**
@@ -24,10 +24,10 @@ export type Methods = {
    */
   put: {
     status: 200
-    resBody: Types.accountItemResponse
+    resBody: Types.AccountItemResponse
     reqFormat: URLSearchParams
     /** 勘定科目の更新 */
-    reqBody: Types.accountItemParams
+    reqBody: Types.AccountItemParams
   }
 
   /**

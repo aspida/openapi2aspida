@@ -34,7 +34,7 @@ export type Methods = {
     status: 200
 
     resBody: {
-      quotations: Types.quotationResponse['quotation'][]
+      quotations: Types.QuotationResponse['quotation'][]
     }
   }
 
@@ -51,9 +51,9 @@ export type Methods = {
    */
   post: {
     status: 201
-    resBody: Types.quotationResponse
+    resBody: Types.QuotationResponse
     reqFormat: URLSearchParams
     /** 見積書の作成 */
-    reqBody?: Types.quotationCreateParams
+    reqBody?: Types.QuotationCreateParams
   }
 }
