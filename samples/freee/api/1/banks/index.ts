@@ -34,7 +34,7 @@ export type Methods = {
     status: 200
 
     resBody: {
-      banks: Types.bankResponse['bank'][]
+      banks: Types.BankResponse['bank'][]
     }
   }
 }

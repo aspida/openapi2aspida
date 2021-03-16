@@ -58,6 +58,6 @@ export type Methods = {
     }
 
     status: 202
-    resBody: Types.journalsResponse
+    resBody: Types.JournalsResponse
   }
 }

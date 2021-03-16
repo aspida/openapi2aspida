@@ -70,7 +70,7 @@ export type Methods = {
     }
 
     status: 200
-    resBody: Types.dealResponse
+    resBody: Types.DealResponse
   }
 
   /**
@@ -130,10 +130,10 @@ export type Methods = {
    */
   put: {
     status: 200
-    resBody: Types.dealResponse
+    resBody: Types.DealResponse
     reqFormat: URLSearchParams
     /** 取引（収入／支出）の更新 */
-    reqBody?: Types.dealUpdateParams
+    reqBody?: Types.DealUpdateParams
   }
 
   delete: {

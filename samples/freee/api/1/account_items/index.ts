@@ -24,7 +24,7 @@ export type Methods = {
     }
 
     status: 200
-    resBody: Types.accountItemsResponse
+    resBody: Types.AccountItemsResponse
   }
 
   /**
@@ -34,9 +34,9 @@ export type Methods = {
    */
   post: {
     status: 201
-    resBody: Types.accountItemResponse
+    resBody: Types.AccountItemResponse
     reqFormat: URLSearchParams
     /** 勘定科目の作成 */
-    reqBody: Types.accountItemParams
+    reqBody: Types.AccountItemParams
   }
 }

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.16.1](https://github.com/aspida/openapi2aspida/compare/v0.16.0...v0.16.1) (2021-03-16)
+
+
+### Bug Fixes
+
+* change type name rule to UpperCamelCase ([5665b3d](https://github.com/aspida/openapi2aspida/commit/5665b3d38111b44800ce36bde6356de60ba80b10))
+
 ## [0.16.0](https://github.com/aspida/openapi2aspida/compare/v0.15.3...v0.16.0) (2021-03-15)
 
 

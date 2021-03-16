@@ -23,6 +23,6 @@ export type Methods = {
    */
   get: {
     status: 200
-    resBody: Types.bankResponse
+    resBody: Types.BankResponse
   }
 }

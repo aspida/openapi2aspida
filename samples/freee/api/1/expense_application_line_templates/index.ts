@@ -20,15 +20,15 @@ export type Methods = {
     status: 200
 
     resBody: {
-      expense_application_line_templates: Types.expenseApplicationLineTemplateResponse['expense_application_line_template'][]
+      expense_application_line_templates: Types.ExpenseApplicationLineTemplateResponse['expense_application_line_template'][]
     }
   }
 
   post: {
     status: 201
-    resBody: Types.expenseApplicationLineTemplateResponse
+    resBody: Types.ExpenseApplicationLineTemplateResponse
     reqFormat: URLSearchParams
     /** 経費科目の作成 */
-    reqBody: Types.expenseApplicationLineTemplateParams
+    reqBody: Types.ExpenseApplicationLineTemplateParams
   }
 }

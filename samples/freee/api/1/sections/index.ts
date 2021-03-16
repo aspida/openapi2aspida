@@ -53,7 +53,7 @@ export type Methods = {
     status: 200
 
     resBody: {
-      sections: Types.sectionResponse['section'][]
+      sections: Types.SectionResponse['section'][]
     }
   }
 
@@ -89,9 +89,9 @@ export type Methods = {
    */
   post: {
     status: 201
-    resBody: Types.sectionResponse
+    resBody: Types.SectionResponse
     reqFormat: URLSearchParams
     /** 部門の作成 */
-    reqBody?: Types.sectionParams
+    reqBody?: Types.SectionParams
   }
 }

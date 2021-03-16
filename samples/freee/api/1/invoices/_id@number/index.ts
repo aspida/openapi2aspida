@@ -14,7 +14,7 @@ export type Methods = {
     }
 
     status: 200
-    resBody: Types.invoiceResponse
+    resBody: Types.InvoiceResponse
   }
 
   /**
@@ -34,10 +34,10 @@ export type Methods = {
    */
   put: {
     status: 200
-    resBody: Types.invoiceResponse
+    resBody: Types.InvoiceResponse
     reqFormat: URLSearchParams
     /** 請求書の更新 */
-    reqBody?: Types.invoiceUpdateParams
+    reqBody?: Types.InvoiceUpdateParams
   }
 
   /**

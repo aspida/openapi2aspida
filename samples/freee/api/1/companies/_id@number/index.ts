@@ -46,7 +46,7 @@ export type Methods = {
     }
 
     status: 200
-    resBody: Types.companyResponse
+    resBody: Types.CompanyResponse
   }
 
   /**
@@ -58,8 +58,8 @@ export type Methods = {
    */
   put: {
     status: 200
-    resBody: Types.companyUpdateResponse
+    resBody: Types.CompanyUpdateResponse
     reqFormat: URLSearchParams
-    reqBody?: Types.companyParams
+    reqBody?: Types.CompanyParams
   }
 }

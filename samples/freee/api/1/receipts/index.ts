@@ -34,7 +34,7 @@ export type Methods = {
     status: 200
 
     resBody: {
-      receipts: Types.receiptResponse['receipt'][]
+      receipts: Types.ReceiptResponse['receipt'][]
     }
   }
 
@@ -45,8 +45,8 @@ export type Methods = {
    */
   post: {
     status: 201
-    resBody: Types.receiptResponse
+    resBody: Types.ReceiptResponse
     reqFormat: FormData
-    reqBody: Types.receiptCreateParams
+    reqBody: Types.ReceiptCreateParams
   }
 }

@@ -18,7 +18,7 @@ export type Methods = {
     status: 200
 
     resBody: {
-      users: Types.userResponse['user'][]
+      users: Types.UserResponse['user'][]
     }
   }
 }

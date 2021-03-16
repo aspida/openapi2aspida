@@ -115,6 +115,6 @@ export type Methods = {
     }
 
     status: 200
-    resBody: Types.trialBsResponse
+    resBody: Types.TrialBsResponse
   }
 }

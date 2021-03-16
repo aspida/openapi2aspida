@@ -16,6 +16,6 @@ export type Methods = {
     }
 
     status: 200
-    resBody: Types.selectablesIndexResponse
+    resBody: Types.SelectablesIndexResponse
   }
 }

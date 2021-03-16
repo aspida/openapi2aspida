@@ -38,7 +38,7 @@ export type Methods = {
     status: 200
 
     resBody: {
-      walletables: Types.walletableResponse['walletable'][]
+      walletables: Types.WalletableResponse['walletable'][]
 
       meta?: {
         /** 集計結果が最新かどうか */
@@ -85,9 +85,9 @@ export type Methods = {
    */
   post: {
     status: 201
-    resBody: Types.walletableCreateResponse
+    resBody: Types.WalletableCreateResponse
     reqFormat: URLSearchParams
     /** 口座の作成 */
-    reqBody?: Types.walletableCreateParams
+    reqBody?: Types.WalletableCreateParams
   }
 }

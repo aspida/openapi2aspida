@@ -28,7 +28,7 @@ export type Methods = {
     status: 200
 
     resBody: {
-      segment_tags: Types.segmentTagResponse['segment_tag'][]
+      segment_tags: Types.SegmentTagResponse['segment_tag'][]
     }
   }
 
@@ -47,9 +47,9 @@ export type Methods = {
    */
   post: {
     status: 201
-    resBody: Types.segmentTagResponse
+    resBody: Types.SegmentTagResponse
     reqFormat: URLSearchParams
     /** セグメントタグの作成 */
-    reqBody: Types.segmentTagParams
+    reqBody: Types.SegmentTagParams
   }
 }

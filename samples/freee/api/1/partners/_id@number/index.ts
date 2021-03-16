@@ -16,7 +16,7 @@ export type Methods = {
     }
 
     status: 200
-    resBody: Types.partnerResponse
+    resBody: Types.PartnerResponse
   }
 
   /**
@@ -29,10 +29,10 @@ export type Methods = {
    */
   put: {
     status: 200
-    resBody: Types.partnerResponse
+    resBody: Types.PartnerResponse
     reqFormat: URLSearchParams
     /** 取引先の更新 */
-    reqBody: Types.partnerUpdateParams
+    reqBody: Types.PartnerUpdateParams
   }
 
   /**

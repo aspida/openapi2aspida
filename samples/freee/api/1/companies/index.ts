@@ -25,6 +25,6 @@ export type Methods = {
    */
   get: {
     status: 200
-    resBody: Types.companyIndexResponse
+    resBody: Types.CompanyIndexResponse
   }
 }

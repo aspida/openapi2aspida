@@ -14,7 +14,7 @@ export type Methods = {
     }
 
     status: 200
-    resBody: Types.quotationResponse
+    resBody: Types.QuotationResponse
   }
 
   /**
@@ -30,10 +30,10 @@ export type Methods = {
    */
   put: {
     status: 200
-    resBody: Types.quotationResponse
+    resBody: Types.QuotationResponse
     reqFormat: URLSearchParams
     /** 見積書の更新 */
-    reqBody?: Types.quotationUpdateParams
+    reqBody?: Types.QuotationUpdateParams
   }
 
   /**

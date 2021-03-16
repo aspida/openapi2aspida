@@ -1,7 +1,7 @@
 /* eslint-disable */
 import type { ReadStream } from 'fs'
 
-export type paymentParams = {
+export type PaymentParams = {
   /** 事業所ID */
   company_id: number
   /** 支払日 */
@@ -14,7 +14,7 @@ export type paymentParams = {
   amount: number
 }
 
-export type dealCreateParams = {
+export type DealCreateParams = {
   /** 発生日 (yyyy-mm-dd) */
   issue_date: string
   /** 収支区分 (収入: income, 支出: expense) */
@@ -70,7 +70,7 @@ export type dealCreateParams = {
   receipt_ids?: number[]
 }
 
-export type dealUpdateParams = {
+export type DealUpdateParams = {
   /** 発生日 (yyyy-mm-dd) */
   issue_date: string
   /** 収支区分 (収入: income, 支出: expense) */
@@ -117,7 +117,7 @@ export type dealUpdateParams = {
   receipt_ids?: number[] | null
 }
 
-export type manualJournalCreateParams = {
+export type ManualJournalCreateParams = {
   /** 事業所ID */
   company_id: number
   /** 発生日 (yyyy-mm-dd) */
@@ -156,7 +156,7 @@ export type manualJournalCreateParams = {
   }[]
 }
 
-export type manualJournalUpdateParams = {
+export type ManualJournalUpdateParams = {
   /** 事業所ID */
   company_id: number
   /** 発生日 (yyyy-mm-dd) */
@@ -197,7 +197,7 @@ export type manualJournalUpdateParams = {
   }[]
 }
 
-export type companyParams = {
+export type CompanyParams = {
   /** 事業所の正式名称 (100文字以内) */
   name: string
   /** 正式名称フリガナ (100文字以内) */
@@ -271,7 +271,7 @@ export type companyParams = {
   private_settlement: number
 }
 
-export type itemParams = {
+export type ItemParams = {
   /** 事業所ID */
   company_id: number
   /** 品目名 (30文字以内) */
@@ -282,7 +282,7 @@ export type itemParams = {
   shortcut2?: string
 }
 
-export type walletableCreateParams = {
+export type WalletableCreateParams = {
   /** 口座名 (255文字以内) */
   name: string
   /** 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） */
@@ -295,14 +295,14 @@ export type walletableCreateParams = {
   group_name?: string
 }
 
-export type walletableUpdateParams = {
+export type WalletableUpdateParams = {
   /** 口座名 (255文字以内) */
   name: string
   /** 事業所ID */
   company_id: number
 }
 
-export type transferParams = {
+export type TransferParams = {
   /** 振替先口座ID */
   to_walletable_id: number
   /** 振替先口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet) */
@@ -321,7 +321,7 @@ export type transferParams = {
   description?: string
 }
 
-export type walletTxnParams = {
+export type WalletTxnParams = {
   /** 入金／出金 (入金: income, 出金: expense) */
   entry_side: 'income' | 'expense'
   /** 取引内容 */
@@ -340,7 +340,7 @@ export type walletTxnParams = {
   balance?: number
 }
 
-export type expenseApplicationCreateParams = {
+export type ExpenseApplicationCreateParams = {
   /** 事業所ID */
   company_id: number
   /** 申請タイトル (250文字以内) */
@@ -369,7 +369,7 @@ export type expenseApplicationCreateParams = {
   }[]
 }
 
-export type expenseApplicationUpdateParams = {
+export type ExpenseApplicationUpdateParams = {
   /** 事業所ID */
   company_id: number
   /** 申請タイトル (250文字以内) */
@@ -400,7 +400,7 @@ export type expenseApplicationUpdateParams = {
   }[]
 }
 
-export type partnerCreateParams = {
+export type PartnerCreateParams = {
   /** 事業所ID */
   company_id: number
   /** 取引先名 (255文字以内) */
@@ -486,7 +486,7 @@ export type partnerCreateParams = {
   }
 }
 
-export type partnerUpdateParams = {
+export type PartnerUpdateParams = {
   /** 事業所ID */
   company_id: number
   /** 取引先名 (255文字以内) */
@@ -570,7 +570,7 @@ export type partnerUpdateParams = {
   }
 }
 
-export type receiptCreateParams = {
+export type ReceiptCreateParams = {
   /** 事業所ID */
   company_id: number
   /** メモ (255文字以内) */
@@ -581,7 +581,7 @@ export type receiptCreateParams = {
   receipt: File | ReadStream
 }
 
-export type receiptUpdateParams = {
+export type ReceiptUpdateParams = {
   /** 事業所ID */
   company_id: number
   /** メモ (255文字以内) */
@@ -590,7 +590,7 @@ export type receiptUpdateParams = {
   issue_date: string
 }
 
-export type accountItemParams = {
+export type AccountItemParams = {
   /** 事業所ID */
   company_id: number
 
@@ -626,7 +626,7 @@ export type accountItemParams = {
   }
 }
 
-export type accountItemsResponse = {
+export type AccountItemsResponse = {
   account_items: {
     /** 勘定科目ID */
     id: number
@@ -662,7 +662,7 @@ export type accountItemsResponse = {
   }[]
 }
 
-export type accountItemResponse = {
+export type AccountItemResponse = {
   account_item: {
     /** 勘定科目ID */
     id: number
@@ -717,7 +717,7 @@ export type accountItemResponse = {
   }
 }
 
-export type bankResponse = {
+export type BankResponse = {
   bank: {
     /** 連携サービスID */
     id: number
@@ -730,7 +730,7 @@ export type bankResponse = {
   }
 }
 
-export type journalsResponse = {
+export type JournalsResponse = {
   journals: {
     /** 受け付けID */
     id: number
@@ -750,7 +750,7 @@ export type journalsResponse = {
   }
 }
 
-export type journalStatusResponse = {
+export type JournalStatusResponse = {
   journals: {
     /** 受け付けID */
     id: number
@@ -770,7 +770,7 @@ export type journalStatusResponse = {
   }
 }
 
-export type trialBsResponse = {
+export type TrialBsResponse = {
   trial_bs: {
     /** 事業所ID */
     company_id: number
@@ -865,7 +865,7 @@ export type trialBsResponse = {
   }
 }
 
-export type trialBsTwoYearsResponse = {
+export type TrialBsTwoYearsResponse = {
   trial_bs_two_years: {
     /** 事業所ID */
     company_id: number
@@ -948,7 +948,7 @@ export type trialBsTwoYearsResponse = {
   }
 }
 
-export type trialBsThreeYearsResponse = {
+export type TrialBsThreeYearsResponse = {
   trial_bs_three_years: {
     /** 事業所ID */
     company_id: number
@@ -1037,7 +1037,7 @@ export type trialBsThreeYearsResponse = {
   }
 }
 
-export type trialPlResponse = {
+export type TrialPlResponse = {
   trial_pl: {
     /** 事業所ID */
     company_id: number
@@ -1153,7 +1153,7 @@ export type trialPlResponse = {
   }
 }
 
-export type trialPlTwoYearsResponse = {
+export type TrialPlTwoYearsResponse = {
   trial_pl_two_years: {
     /** 事業所ID */
     company_id: number
@@ -1253,7 +1253,7 @@ export type trialPlTwoYearsResponse = {
   }
 }
 
-export type trialPlThreeYearsResponse = {
+export type TrialPlThreeYearsResponse = {
   trial_pl_three_years: {
     /** 事業所ID */
     company_id: number
@@ -1361,7 +1361,7 @@ export type trialPlThreeYearsResponse = {
   }
 }
 
-export type trialPlSectionsResponse = {
+export type TrialPlSectionsResponse = {
   trial_pl_sections: {
     /** 事業所ID */
     company_id: number
@@ -1445,7 +1445,7 @@ export type trialPlSectionsResponse = {
   }
 }
 
-export type sectionParams = {
+export type SectionParams = {
   /** 事業所ID */
   company_id: number
   /** 部門名 (30文字以内) */
@@ -1460,7 +1460,7 @@ export type sectionParams = {
   parent_id?: number
 }
 
-export type sectionResponse = {
+export type SectionResponse = {
   section: {
     /** 部門ID */
     id: number
@@ -1477,7 +1477,7 @@ export type sectionResponse = {
   }
 }
 
-export type dealCreateResponse = {
+export type DealCreateResponse = {
   deal: {
     /** 取引ID */
     id: number
@@ -1548,7 +1548,7 @@ export type dealCreateResponse = {
   }
 }
 
-export type dealResponse = {
+export type DealResponse = {
   deal: {
     /** 取引ID */
     id: number
@@ -1686,7 +1686,7 @@ export type dealResponse = {
   }
 }
 
-export type selectablesIndexResponse = {
+export type SelectablesIndexResponse = {
   account_categories: {
     /** 収支 */
     balance: 'expense' | 'income'
@@ -1749,7 +1749,7 @@ export type selectablesIndexResponse = {
   }[]
 }
 
-export type itemResponse = {
+export type ItemResponse = {
   item: {
     /** 品目ID */
     id: number
@@ -1764,7 +1764,7 @@ export type itemResponse = {
   }
 }
 
-export type manualJournalResponse = {
+export type ManualJournalResponse = {
   manual_journal: {
     /** 振替伝票ID */
     id: number
@@ -1826,7 +1826,7 @@ export type manualJournalResponse = {
   }
 }
 
-export type tagParams = {
+export type TagParams = {
   /** 事業所ID */
   company_id: number
   /** メモタグ名 (30文字以内) */
@@ -1837,7 +1837,7 @@ export type tagParams = {
   shortcut2?: string
 }
 
-export type tagResponse = {
+export type TagResponse = {
   tag: {
     /** タグID */
     id: number
@@ -1852,7 +1852,7 @@ export type tagResponse = {
   }
 }
 
-export type companyUpdateResponse = {
+export type CompanyUpdateResponse = {
   company: {
     /** 事業所ID */
     id: number
@@ -1931,7 +1931,7 @@ export type companyUpdateResponse = {
   }
 }
 
-export type companyIndexResponse = {
+export type CompanyIndexResponse = {
   companies: {
     /** 事業所ID */
     id: number
@@ -1946,7 +1946,7 @@ export type companyIndexResponse = {
   }[]
 }
 
-export type companyResponse = {
+export type CompanyResponse = {
   company: {
     /** 事業所ID */
     id: number
@@ -2002,21 +2002,21 @@ export type companyResponse = {
     workflow_setting: 'enable' | 'disable'
     /** 取引先コードの利用設定（true: 有効、 false: 無効） */
     use_partner_code: boolean
-    fiscal_years: fiscal_years[]
+    fiscal_years: Fiscal_years[]
   }
 }
 
-export type unauthorizedError = {
+export type UnauthorizedError = {
   message: string
   messages: string
 }
 
-export type forbiddenError = {
+export type ForbiddenError = {
   message: string
   messages: string
 }
 
-export type badRequestError = {
+export type BadRequestError = {
   status_code: number
   errors: {
     messages: Partial<string[] & string>
@@ -2025,7 +2025,7 @@ export type badRequestError = {
   }[]
 }
 
-export type badRequestNotFoundError = {
+export type BadRequestNotFoundError = {
   status_code: number
   errors: {
     messages: Partial<string[] & string>
@@ -2034,7 +2034,7 @@ export type badRequestNotFoundError = {
   }[]
 }
 
-export type tooManyRequestsError = {
+export type TooManyRequestsError = {
   status_code: number
 
   meta: {
@@ -2049,7 +2049,7 @@ export type tooManyRequestsError = {
   }
 }
 
-export type internalServerError = {
+export type InternalServerError = {
   status_code: number
   errors: {
     messages: Partial<string[] & string>
@@ -2058,7 +2058,7 @@ export type internalServerError = {
   }[]
 }
 
-export type serviceUnavailableError = {
+export type ServiceUnavailableError = {
   status_code: number
   errors: {
     messages: string[]
@@ -2066,7 +2066,7 @@ export type serviceUnavailableError = {
   }[]
 }
 
-export type partnersResponse = {
+export type PartnersResponse = {
   partners: {
     /** 取引先ID */
     id: number
@@ -2129,7 +2129,7 @@ export type partnersResponse = {
   }[]
 }
 
-export type partnerResponse = {
+export type PartnerResponse = {
   partner: {
     /** 取引先ID */
     id: number
@@ -2204,7 +2204,7 @@ export type partnerResponse = {
   }
 }
 
-export type taxResponse = {
+export type TaxResponse = {
   tax: {
     /** 税区分コード */
     code: number
@@ -2215,7 +2215,7 @@ export type taxResponse = {
   }
 }
 
-export type walletableResponse = {
+export type WalletableResponse = {
   walletable: {
     /** 口座ID */
     id: number
@@ -2237,7 +2237,7 @@ export type walletableResponse = {
   }
 }
 
-export type walletableCreateResponse = {
+export type WalletableCreateResponse = {
   /** 口座ID */
   id: number
   /** 口座名, 最大255文字 */
@@ -2248,7 +2248,7 @@ export type walletableCreateResponse = {
   type: 'bank_account' | 'credit_card' | 'wallet'
 }
 
-export type walletTxnResponse = {
+export type WalletTxnResponse = {
   wallet_txn: {
     /** 明細ID */
     id: number
@@ -2275,7 +2275,7 @@ export type walletTxnResponse = {
   }
 }
 
-export type transferResponse = {
+export type TransferResponse = {
   transfer: {
     /** 取引(振替)ID */
     id: number
@@ -2298,7 +2298,7 @@ export type transferResponse = {
   }
 }
 
-export type userParams = {
+export type UserParams = {
   /** 表示名 (20文字以内) */
   display_name: string
   /** 氏名（名） (20文字以内) */
@@ -2311,7 +2311,7 @@ export type userParams = {
   last_name_kana: string
 }
 
-export type userResponse = {
+export type UserResponse = {
   user: {
     /** ユーザーID */
     id: number
@@ -2330,7 +2330,7 @@ export type userResponse = {
   }
 }
 
-export type meResponse = {
+export type MeResponse = {
   user: {
     /** ユーザーID */
     id: number
@@ -2359,7 +2359,7 @@ export type meResponse = {
   }
 }
 
-export type userCapability = {
+export type UserCapability = {
   /** 閲覧 */
   read: boolean
   /** 作成 */
@@ -2370,7 +2370,7 @@ export type userCapability = {
   destroy: boolean
 }
 
-export type receiptResponse = {
+export type ReceiptResponse = {
   receipt: {
     /** 証憑ID */
     id: number
@@ -2400,7 +2400,7 @@ export type receiptResponse = {
   }
 }
 
-export type fiscal_years = {
+export type Fiscal_years = {
   /** 製造業向け機能（true: 使用する、false: 使用しない） */
   use_industry_template: boolean
   /** 固定資産の控除法(false: 減価償却累計額でまとめる、true: 独立間接控除方式) */
@@ -2423,7 +2423,7 @@ export type fiscal_years = {
   return_code: number
 }
 
-export type expenseApplicationResponse = {
+export type ExpenseApplicationResponse = {
   expense_application: {
     /** 経費申請ID */
     id: number
@@ -2467,7 +2467,7 @@ export type expenseApplicationResponse = {
   }
 }
 
-export type expenseApplicationLineTemplateResponse = {
+export type ExpenseApplicationLineTemplateResponse = {
   expense_application_line_template: {
     /** 経費科目ID */
     id: number
@@ -2488,7 +2488,7 @@ export type expenseApplicationLineTemplateResponse = {
   }
 }
 
-export type approvalRequestParams = {
+export type ApprovalRequestParams = {
   /** 事業所ID */
   company_id: number
   /** 申請フォームID */
@@ -2509,7 +2509,7 @@ export type approvalRequestParams = {
   }[]
 }
 
-export type generalApplicationCreateParams = {
+export type GeneralApplicationCreateParams = {
   /** 事業所ID */
   company_id: number
   /** 申請日 (yyyy-mm-dd) */
@@ -2534,7 +2534,7 @@ export type generalApplicationCreateParams = {
   }[]
 }
 
-export type generalApplicationUpdateParams = {
+export type GeneralApplicationUpdateParams = {
   /** 事業所ID */
   company_id: number
   /** 申請日 (yyyy-mm-dd) */
@@ -2555,7 +2555,7 @@ export type generalApplicationUpdateParams = {
   }[]
 }
 
-export type generalApplicationActionCreateParams = {
+export type GeneralApplicationActionCreateParams = {
   /** 事業所ID */
   company_id: number
   /** 操作(approve: 承認する、force_approve: 代理承認する、cancel: 申請を取り消す、reject: 却下する、feedback: 申請者へ差し戻す、force_feedback: 承認済み・却下済みを取り消す) */
@@ -2564,7 +2564,7 @@ export type generalApplicationActionCreateParams = {
   next_approver_id?: number | null
 }
 
-export type renewCreateParams = {
+export type RenewCreateParams = {
   /** 事業所ID */
   company_id: number
   /** 更新日 (yyyy-mm-dd) */
@@ -2598,7 +2598,7 @@ export type renewCreateParams = {
   }[]
 }
 
-export type renewUpdateParams = {
+export type RenewUpdateParams = {
   /** 事業所ID */
   company_id: number
   /** 更新日 (yyyy-mm-dd) */
@@ -2630,7 +2630,7 @@ export type renewUpdateParams = {
   }[]
 }
 
-export type expenseApplicationLineTemplateParams = {
+export type ExpenseApplicationLineTemplateParams = {
   /** 事業所ID */
   company_id: number
   /** 経費科目名 (100文字以内) */
@@ -2647,7 +2647,7 @@ export type expenseApplicationLineTemplateParams = {
   line_description?: string
 }
 
-export type approvalRequestResponse = {
+export type ApprovalRequestResponse = {
   approval_request: {
     /** 各種申請ID */
     id: number
@@ -2677,7 +2677,7 @@ export type approvalRequestResponse = {
   }
 }
 
-export type generalApplicationsIndexResponse = {
+export type GeneralApplicationsIndexResponse = {
   general_applications: {
     /** 各種申請ID */
     id: number
@@ -2711,7 +2711,7 @@ export type generalApplicationsIndexResponse = {
   }[]
 }
 
-export type generalApplicationResponse = {
+export type GeneralApplicationResponse = {
   general_application: {
     /** 各種申請ID */
     id: number
@@ -2767,7 +2767,7 @@ export type generalApplicationResponse = {
   }
 }
 
-export type generalApplicationFormResponse = {
+export type GeneralApplicationFormResponse = {
   general_application_form: {
     /** 申請フォームID */
     id: number
@@ -2814,7 +2814,7 @@ export type generalApplicationFormResponse = {
   }
 }
 
-export type approvalFlowRouteResponse = {
+export type ApprovalFlowRouteResponse = {
   approval_flow_route: {
     /** 申請経路ID */
     id: number
@@ -2835,7 +2835,7 @@ export type approvalFlowRouteResponse = {
   }
 }
 
-export type segmentTagResponse = {
+export type SegmentTagResponse = {
   segment_tag: {
     /** セグメントタグID */
     id: number
@@ -2850,7 +2850,7 @@ export type segmentTagResponse = {
   }
 }
 
-export type segmentTagParams = {
+export type SegmentTagParams = {
   /** 事業所ID */
   company_id: number
   /** セグメントタグ名 (30文字以内) */
@@ -2863,7 +2863,7 @@ export type segmentTagParams = {
   shortcut2?: string
 }
 
-export type invoiceResponse = {
+export type InvoiceResponse = {
   invoice: {
     /** 請求書ID */
     id: number
@@ -3018,7 +3018,7 @@ export type invoiceResponse = {
   }
 }
 
-export type invoiceCreateParams = {
+export type InvoiceCreateParams = {
   /** 事業所ID */
   company_id: number
   /** 請求日 (yyyy-mm-dd) */
@@ -3113,7 +3113,7 @@ export type invoiceCreateParams = {
   }[]
 }
 
-export type invoiceUpdateParams = {
+export type InvoiceUpdateParams = {
   /** 事業所ID */
   company_id: number
   /** 請求日 (yyyy-mm-dd) */
@@ -3210,7 +3210,7 @@ export type invoiceUpdateParams = {
   }[]
 }
 
-export type quotationResponse = {
+export type QuotationResponse = {
   quotation: {
     /** 見積書ID */
     id: number
@@ -3349,7 +3349,7 @@ export type quotationResponse = {
   }
 }
 
-export type quotationCreateParams = {
+export type QuotationCreateParams = {
   /** 事業所ID */
   company_id: number
   /** 見積日 (yyyy-mm-dd) */
@@ -3434,7 +3434,7 @@ export type quotationCreateParams = {
   }[]
 }
 
-export type quotationUpdateParams = {
+export type QuotationUpdateParams = {
   /** 事業所ID */
   company_id: number
   /** 見積日 (yyyy-mm-dd) */
@@ -3521,7 +3521,7 @@ export type quotationUpdateParams = {
   }[]
 }
 
-export type companiesPlanResponse = {
+export type CompaniesPlanResponse = {
   /** 事業所ID */
   id: number
   /** 会計プラン 個人用(non_charged: 無料プラン、starter: スターター、standard: スタンダード、premium: プレミアム) 法人用(non_charged: 無料プラン、minimum: ミニマム、basic: ベーシック、professional: プロフェッショナル、enterprise: エンタープライズ) */

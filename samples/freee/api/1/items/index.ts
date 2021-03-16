@@ -16,7 +16,7 @@ export type Methods = {
     status: 200
 
     resBody: {
-      items: Types.itemResponse['item'][]
+      items: Types.ItemResponse['item'][]
     }
   }
 
@@ -27,9 +27,9 @@ export type Methods = {
    */
   post: {
     status: 201
-    resBody: Types.itemResponse
+    resBody: Types.ItemResponse
     reqFormat: URLSearchParams
     /** 品目の作成 */
-    reqBody?: Types.itemParams
+    reqBody?: Types.ItemParams
   }
 }

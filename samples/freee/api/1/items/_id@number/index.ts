@@ -14,7 +14,7 @@ export type Methods = {
     }
 
     status: 200
-    resBody: Types.itemResponse
+    resBody: Types.ItemResponse
   }
 
   /**
@@ -24,10 +24,10 @@ export type Methods = {
    */
   put: {
     status: 200
-    resBody: Types.itemResponse
+    resBody: Types.ItemResponse
     reqFormat: URLSearchParams
     /** 品目の更新 */
-    reqBody?: Types.itemParams
+    reqBody?: Types.ItemParams
   }
 
   /**

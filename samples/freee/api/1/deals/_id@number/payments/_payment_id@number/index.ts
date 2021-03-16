@@ -48,10 +48,10 @@ export type Methods = {
    */
   put: {
     status: 200
-    resBody: Types.dealResponse
+    resBody: Types.DealResponse
     reqFormat: URLSearchParams
     /** 取引（収入／支出）の支払行更新 */
-    reqBody: Types.paymentParams
+    reqBody: Types.PaymentParams
   }
 
   /**

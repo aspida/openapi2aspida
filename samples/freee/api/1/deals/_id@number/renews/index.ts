@@ -29,9 +29,9 @@ export type Methods = {
    */
   post: {
     status: 201
-    resBody: Types.dealResponse
+    resBody: Types.DealResponse
     reqFormat: URLSearchParams
     /** 取引（収入／支出）に対する+更新の情報 */
-    reqBody: Types.renewCreateParams
+    reqBody: Types.RenewCreateParams
   }
 }

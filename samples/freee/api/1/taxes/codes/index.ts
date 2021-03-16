@@ -11,7 +11,7 @@ export type Methods = {
     status: 200
 
     resBody: {
-      taxes: Types.taxResponse['tax'][]
+      taxes: Types.TaxResponse['tax'][]
     }
   }
 }

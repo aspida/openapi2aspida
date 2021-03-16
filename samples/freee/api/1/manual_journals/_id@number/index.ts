@@ -33,7 +33,7 @@ export type Methods = {
     }
 
     status: 200
-    resBody: Types.manualJournalResponse
+    resBody: Types.ManualJournalResponse
   }
 
   /**
@@ -93,10 +93,10 @@ export type Methods = {
    */
   put: {
     status: 200
-    resBody: Types.manualJournalResponse
+    resBody: Types.ManualJournalResponse
     reqFormat: URLSearchParams
     /** 振替伝票の更新 */
-    reqBody?: Types.manualJournalUpdateParams
+    reqBody?: Types.ManualJournalUpdateParams
   }
 
   /**
