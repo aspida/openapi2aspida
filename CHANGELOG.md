@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.16.2](https://github.com/aspida/openapi2aspida/compare/v0.16.1...v0.16.2) (2021-04-16)
+
+
+### Bug Fixes
+
+* support binary format of response ([22ccc37](https://github.com/aspida/openapi2aspida/commit/22ccc377ce24f5227036bcee6807b2ba78bf6a95))
+
 ### [0.16.1](https://github.com/aspida/openapi2aspida/compare/v0.16.0...v0.16.1) (2021-03-16)
 
 
