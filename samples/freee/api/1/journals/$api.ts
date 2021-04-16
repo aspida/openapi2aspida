@@ -33,7 +33,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
              * </ul>
              */
             get: (option: { query: Methods1['get']['query'], config?: T }) =>
-              fetch<void, BasicHeaders, Methods1['get']['status']>(prefix, `${prefix1}${PATH2}`, GET, option).send(),
+              fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, `${prefix1}${PATH2}`, GET, option).blob(),
             /**
              * <h2 id="">概要</h2>
              * 
@@ -48,7 +48,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
              * </ul>
              */
             $get: (option: { query: Methods1['get']['query'], config?: T }) =>
-              fetch<void, BasicHeaders, Methods1['get']['status']>(prefix, `${prefix1}${PATH2}`, GET, option).send().then(r => r.body),
+              fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, `${prefix1}${PATH2}`, GET, option).blob().then(r => r.body),
             $path: (option?: { method?: 'get'; query: Methods1['get']['query'] }) =>
               `${prefix}${prefix1}${PATH2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
           },
