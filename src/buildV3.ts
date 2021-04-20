@@ -271,22 +271,27 @@ export default (openapi: OpenAPIV3.Document) => {
                 required = ref.required ?? true
                 description = ref.description ?? null
               } else {
-                const typeSet = [
-                  ['multipart/form-data', 'FormData'],
-                  ['application/x-www-form-urlencoded', 'URLSearchParams'],
-                  ['application/octet-stream', ''],
-                  ['application/json', '']
-                ]
+                required = target.requestBody.required ?? true
+                description = target.requestBody.description ?? null
 
-                for (let i = 0; i < typeSet.length; i += 1) {
-                  if (target.requestBody.content[typeSet[i][0]]?.schema) {
-                    reqFormat = typeSet[i][1]
-                    reqBody = schema2value(target.requestBody.content[typeSet[i][0]].schema!)
-                    required = target.requestBody.required ?? true
-                    description = target.requestBody.description ?? null
+                if (target.requestBody.content['multipart/form-data']?.schema) {
+                  reqFormat = 'FormData'
+                  reqBody = schema2value(target.requestBody.content['multipart/form-data'].schema)
+                } else if (
+                  target.requestBody.content['application/x-www-form-urlencoded']?.schema
+                ) {
+                  reqFormat = 'URLSearchParams'
+                  reqBody = schema2value(
+                    target.requestBody.content['application/x-www-form-urlencoded'].schema
+                  )
+                } else {
+                  const content =
+                    target.requestBody.content &&
+                    Object.entries(target.requestBody.content).find(([key]) =>
+                      key.startsWith('application/')
+                    )?.[1]
 
-                    break
-                  }
+                  if (content?.schema) reqBody = schema2value(content.schema)
                 }
               }
 

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.16.3](https://github.com/aspida/openapi2aspida/compare/v0.16.2...v0.16.3) (2021-04-20)
+
+
+### Bug Fixes
+
+* support application/* content of reqBody ([71bb213](https://github.com/aspida/openapi2aspida/commit/71bb213d9f4e86fba1acc8ddc464456d23dd6d7b))
+
 ### [0.16.2](https://github.com/aspida/openapi2aspida/compare/v0.16.1...v0.16.2) (2021-04-16)
 
 
