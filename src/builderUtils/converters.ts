@@ -59,7 +59,7 @@ const object2value = (obj: OpenAPIV3.NonArraySchemaObject): Prop[] => {
 
       return {
         name: getPropertyName(name),
-        required: obj.required?.includes(name) ?? true,
+        required: obj.required?.includes(name) ?? false,
         description: val.description,
         values: [val]
       }
@@ -82,7 +82,7 @@ const object2value = (obj: OpenAPIV3.NonArraySchemaObject): Prop[] => {
     if (val)
       value.push({
         name: '[key: string]',
-        required: true,
+        required: false,
         description: val.description,
         values: [val]
       })

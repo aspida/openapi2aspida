@@ -72,7 +72,7 @@ export default (openapi: OpenAPIV3.Document) => {
               const reqHeaders: Prop[] = []
               const refQuery: PropValue[] = []
               const query: Prop[] = []
-              let queryRequired = true
+              let queryRequired = false
 
               ;[...(openapi.paths[path]!.parameters || []), ...(target.parameters || [])].forEach(
                 p => {
@@ -92,7 +92,7 @@ export default (openapi: OpenAPIV3.Document) => {
                         break
                       case 'query':
                         refQuery.push(val)
-                        queryRequired = ref.required ?? true
+                        queryRequired = ref.required ?? false
                         break
                       default:
                         break
@@ -103,7 +103,7 @@ export default (openapi: OpenAPIV3.Document) => {
 
                     const prop = {
                       name: getPropertyName(p.name),
-                      required: p.required ?? true,
+                      required: p.required ?? false,
                       description: p.description ?? null,
                       values: [value]
                     }
@@ -114,7 +114,7 @@ export default (openapi: OpenAPIV3.Document) => {
                         break
                       case 'query':
                         query.push(prop)
-                        queryRequired = p.required ?? true
+                        queryRequired = p.required ?? false
                         break
                       default:
                         break
@@ -173,7 +173,7 @@ export default (openapi: OpenAPIV3.Document) => {
               if (code) {
                 params.push({
                   name: 'status',
-                  required: true,
+                  required: false,
                   description: null,
                   values: [
                     {
@@ -197,7 +197,7 @@ export default (openapi: OpenAPIV3.Document) => {
                   val &&
                     params.push({
                       name: 'resBody',
-                      required: true,
+                      required: false,
                       description: ref.description,
                       values: [val]
                     })
@@ -206,7 +206,7 @@ export default (openapi: OpenAPIV3.Document) => {
                 if (ref.headers) {
                   params.push({
                     name: 'resHeaders',
-                    required: true,
+                    required: false,
                     description: null,
                     values: [
                       {
@@ -231,7 +231,7 @@ export default (openapi: OpenAPIV3.Document) => {
                                 name: getPropertyName(header),
                                 required: isRefObject(headerData)
                                   ? true
-                                  : headerData.required ?? true,
+                                  : headerData.required ?? false,
                                 description: isRefObject(headerData)
                                   ? null
                                   : headerData.description,
@@ -250,7 +250,7 @@ export default (openapi: OpenAPIV3.Document) => {
             if (target.requestBody) {
               let reqFormat = ''
               let reqBody: PropValue | null = null
-              let required = true
+              let required = false
               let description: string | null = null
 
               if (isRefObject(target.requestBody)) {
@@ -268,10 +268,10 @@ export default (openapi: OpenAPIV3.Document) => {
                   description: null,
                   value: $ref2Type(target.requestBody.$ref)
                 }
-                required = ref.required ?? true
+                required = ref.required ?? false
                 description = ref.description ?? null
               } else {
-                required = target.requestBody.required ?? true
+                required = target.requestBody.required ?? false
                 description = target.requestBody.description ?? null
 
                 if (target.requestBody.content['multipart/form-data']?.schema) {
@@ -298,7 +298,7 @@ export default (openapi: OpenAPIV3.Document) => {
               if (reqFormat) {
                 params.push({
                   name: 'reqFormat',
-                  required: true,
+                  required: false,
                   description: null,
                   values: [
                     {
@@ -324,7 +324,7 @@ export default (openapi: OpenAPIV3.Document) => {
 
             return {
               name: method,
-              required: true,
+              required: false,
               description: target.description ?? null,
               values: [
                 { isArray: false, isEnum: false, nullable: false, description: null, value: params }
