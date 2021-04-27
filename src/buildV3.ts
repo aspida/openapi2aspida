@@ -169,7 +169,7 @@ export default (openapi: OpenAPIV3.Document) => {
             }
 
             if (target.responses) {
-              const code = Object.keys(target.responses).find(code => code.startsWith('20'))
+              const code = Object.keys(target.responses).find(code => code.match(/^(20\d|30\d)$/))
               if (code) {
                 params.push({
                   name: 'status',
