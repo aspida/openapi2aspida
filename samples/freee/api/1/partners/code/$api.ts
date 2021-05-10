@@ -1,7 +1,10 @@
 /* eslint-disable */
+// prettier-ignore
 import { AspidaClient, BasicHeaders } from 'aspida'
+// prettier-ignore
 import { Methods as Methods0 } from './_code@string'
 
+// prettier-ignore
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? 'https://api.freee.co.jp' : baseURL).replace(/\/$/, '')
   const PATH0 = '/api/1/partners/code'
@@ -14,7 +17,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       return {
         /**
          * <h2 id="">概要</h2>
-         * 
+         *
          * <p>取引先コードをキーに、指定した取引先の情報を更新する</p>
          * <ul>
          * <li>このAPIを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。</li>
@@ -26,7 +29,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           fetch<Methods0['put']['resBody'], BasicHeaders, Methods0['put']['status']>(prefix, prefix0, PUT, option, 'URLSearchParams').json(),
         /**
          * <h2 id="">概要</h2>
-         * 
+         *
          * <p>取引先コードをキーに、指定した取引先の情報を更新する</p>
          * <ul>
          * <li>このAPIを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。</li>
@@ -42,5 +45,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   }
 }
 
+// prettier-ignore
 export type ApiInstance = ReturnType<typeof api>
+// prettier-ignore
 export default api

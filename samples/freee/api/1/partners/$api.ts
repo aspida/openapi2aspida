@@ -1,9 +1,14 @@
 /* eslint-disable */
+// prettier-ignore
 import { AspidaClient, BasicHeaders, dataToURLString } from 'aspida'
+// prettier-ignore
 import { Methods as Methods0 } from '.'
+// prettier-ignore
 import { Methods as Methods1 } from './_id@number'
+// prettier-ignore
 import { Methods as Methods2 } from './code/_code@string'
 
+// prettier-ignore
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? 'https://api.freee.co.jp' : baseURL).replace(/\/$/, '')
   const PATH0 = '/api/1/partners'
@@ -20,7 +25,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       return {
         /**
          * <h2 id="">概要</h2>
-         * 
+         *
          * <p>指定した事業所の取引先を取得する</p>
          * <ul>
          * <li>振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）, 支払期日設定（payment_term_attributes, 請求の入金期日設定（invoice_payment_term_attributes）は法人向けのプロフェッショナルプラン以上で利用可能です。</li></ul>
@@ -29,7 +34,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix0, GET, option).json(),
         /**
          * <h2 id="">概要</h2>
-         * 
+         *
          * <p>指定した事業所の取引先を取得する</p>
          * <ul>
          * <li>振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）, 支払期日設定（payment_term_attributes, 請求の入金期日設定（invoice_payment_term_attributes）は法人向けのプロフェッショナルプラン以上で利用可能です。</li></ul>
@@ -38,7 +43,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix0, GET, option).json().then(r => r.body),
         /**
          * <h2 id="">概要</h2>
-         * 
+         *
          * <p>指定した取引先の情報を更新する</p>
          * <ul>
          * <li>codeを指定、更新することはできません。</li>
@@ -49,7 +54,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           fetch<Methods1['put']['resBody'], BasicHeaders, Methods1['put']['status']>(prefix, prefix0, PUT, option, 'URLSearchParams').json(),
         /**
          * <h2 id="">概要</h2>
-         * 
+         *
          * <p>指定した取引先の情報を更新する</p>
          * <ul>
          * <li>codeを指定、更新することはできません。</li>
@@ -60,14 +65,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           fetch<Methods1['put']['resBody'], BasicHeaders, Methods1['put']['status']>(prefix, prefix0, PUT, option, 'URLSearchParams').json().then(r => r.body),
         /**
          * <h2 id="">概要</h2>
-         * 
+         *
          * <p>指定した事業所の取引先を削除する</p>
          */
         delete: (option: { query: Methods1['delete']['query'], config?: T }) =>
           fetch<void, BasicHeaders, Methods1['delete']['status']>(prefix, prefix0, DELETE, option).send(),
         /**
          * <h2 id="">概要</h2>
-         * 
+         *
          * <p>指定した事業所の取引先を削除する</p>
          */
         $delete: (option: { query: Methods1['delete']['query'], config?: T }) =>
@@ -83,7 +88,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         return {
           /**
            * <h2 id="">概要</h2>
-           * 
+           *
            * <p>取引先コードをキーに、指定した取引先の情報を更新する</p>
            * <ul>
            * <li>このAPIを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。</li>
@@ -95,7 +100,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
             fetch<Methods2['put']['resBody'], BasicHeaders, Methods2['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json(),
           /**
            * <h2 id="">概要</h2>
-           * 
+           *
            * <p>取引先コードをキーに、指定した取引先の情報を更新する</p>
            * <ul>
            * <li>このAPIを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。</li>
@@ -111,7 +116,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
     },
     /**
      * <h2 id="">概要</h2>
-     * 
+     *
      * <p>指定した事業所の取引先一覧を取得する</p>
      * <ul>
      * <li>振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）は法人向けのプロフェッショナルプラン以上で利用可能です。</li></ul>
@@ -120,7 +125,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json(),
     /**
      * <h2 id="">概要</h2>
-     * 
+     *
      * <p>指定した事業所の取引先一覧を取得する</p>
      * <ul>
      * <li>振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）は法人向けのプロフェッショナルプラン以上で利用可能です。</li></ul>
@@ -129,7 +134,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json().then(r => r.body),
     /**
      * <h2 id="">概要</h2>
-     * 
+     *
      * <p>指定した事業所の取引先を作成する</p>
      * <ul>
      * <li>codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。</li>
@@ -141,7 +146,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option, 'URLSearchParams').json(),
     /**
      * <h2 id="">概要</h2>
-     * 
+     *
      * <p>指定した事業所の取引先を作成する</p>
      * <ul>
      * <li>codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。</li>
@@ -156,5 +161,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   }
 }
 
+// prettier-ignore
 export type ApiInstance = ReturnType<typeof api>
+// prettier-ignore
 export default api

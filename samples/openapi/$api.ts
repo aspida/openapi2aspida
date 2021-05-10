@@ -1,58 +1,112 @@
 /* eslint-disable */
+// prettier-ignore
 import { AspidaClient, BasicHeaders, dataToURLString } from 'aspida'
+// prettier-ignore
 import { Methods as Methods0 } from './api/stream/v1/stories'
+// prettier-ignore
 import { Methods as Methods1 } from './api/stream/v1/stories/_storyId@number'
+// prettier-ignore
 import { Methods as Methods2 } from './api/v1/me'
+// prettier-ignore
 import { Methods as Methods3 } from './api/v1/mixes'
+// prettier-ignore
 import { Methods as Methods4 } from './api/v1/mixes/_id@string'
+// prettier-ignore
 import { Methods as Methods5 } from './api/v1/mixes/_mixId@string/cards'
+// prettier-ignore
 import { Methods as Methods6 } from './api/v1/mixes/_mixId@string/url'
+// prettier-ignore
 import { Methods as Methods7 } from './api/v1/parse'
+// prettier-ignore
 import { Methods as Methods8 } from './api/v1/parse/image'
+// prettier-ignore
 import { Methods as Methods9 } from './api/v1/token'
+// prettier-ignore
 import { Methods as Methods10 } from './api/v3/2fa'
+// prettier-ignore
 import { Methods as Methods11 } from './api/v3/channels'
+// prettier-ignore
 import { Methods as Methods12 } from './api/v3/channels/_channelId@number/chats/_chatId@number/items/_itemId@number'
+// prettier-ignore
 import { Methods as Methods13 } from './api/v3/channels/_channelId@number/news-feed'
+// prettier-ignore
 import { Methods as Methods14 } from './api/v3/channels/_channelId@string'
+// prettier-ignore
 import { Methods as Methods15 } from './api/v3/channels/_channelId@string/chats'
+// prettier-ignore
 import { Methods as Methods16 } from './api/v3/channels/_channelId@string/chats/_chatId@string'
+// prettier-ignore
 import { Methods as Methods17 } from './api/v3/channels/_channelId@string/chats/_chatId@string/items'
+// prettier-ignore
 import { Methods as Methods18 } from './api/v3/channels/_channelId@string/chats/_chatId@string/items/audio'
+// prettier-ignore
 import { Methods as Methods19 } from './api/v3/channels/_channelId@string/chats/_chatId@string/items/image'
+// prettier-ignore
 import { Methods as Methods20 } from './api/v3/channels/_channelId@string/chats/_chatId@string/items/video'
+// prettier-ignore
 import { Methods as Methods21 } from './api/v3/channels/_channelId@string/chats/_chatId@string/itemslist'
+// prettier-ignore
 import { Methods as Methods22 } from './api/v3/channels/_channelId@string/chats/_chatId@string/users'
+// prettier-ignore
 import { Methods as Methods23 } from './api/v3/channels/_channelId@string/chats/_chatId@string/users/remove'
+// prettier-ignore
 import { Methods as Methods24 } from './api/v3/channels/_channelId@string/notifications'
+// prettier-ignore
 import { Methods as Methods25 } from './api/v3/chats/_chatId@number/items/_itemId@number'
+// prettier-ignore
 import { Methods as Methods26 } from './api/v3/chats/_chatId@string/items'
+// prettier-ignore
 import { Methods as Methods27 } from './api/v3/chats/_chatId@string/items/audio'
+// prettier-ignore
 import { Methods as Methods28 } from './api/v3/chats/_chatId@string/items/image'
+// prettier-ignore
 import { Methods as Methods29 } from './api/v3/chats/_chatId@string/items/video'
+// prettier-ignore
 import { Methods as Methods30 } from './api/v3/chats/keys'
+// prettier-ignore
 import { Methods as Methods31 } from './api/v3/extension/audio'
+// prettier-ignore
 import { Methods as Methods32 } from './api/v3/extension/image'
+// prettier-ignore
 import { Methods as Methods33 } from './api/v3/extension/parse'
+// prettier-ignore
 import { Methods as Methods34 } from './api/v3/extension/story/_storyId@string'
+// prettier-ignore
 import { Methods as Methods35 } from './api/v3/extension/story/_storyId@string/audio'
+// prettier-ignore
 import { Methods as Methods36 } from './api/v3/extension/story/_storyId@string/image'
+// prettier-ignore
 import { Methods as Methods37 } from './api/v3/extension/story/_storyId@string/video'
+// prettier-ignore
 import { Methods as Methods38 } from './api/v3/extension/video'
+// prettier-ignore
 import { Methods as Methods39 } from './api/v3/fcm_token'
+// prettier-ignore
 import { Methods as Methods40 } from './api/v3/info'
+// prettier-ignore
 import { Methods as Methods41 } from './api/v3/login'
+// prettier-ignore
 import { Methods as Methods42 } from './api/v3/logout'
+// prettier-ignore
 import { Methods as Methods43 } from './api/v3/me'
+// prettier-ignore
 import { Methods as Methods44 } from './api/v3/organisation'
+// prettier-ignore
 import { Methods as Methods45 } from './api/v3/organisation/users'
+// prettier-ignore
 import { Methods as Methods46 } from './api/v3/stories/_storyId@number/items'
+// prettier-ignore
 import { Methods as Methods47 } from './api/v3/stories/_storyId@number/items/_itemId@number'
+// prettier-ignore
 import { Methods as Methods48 } from './api/v3/stories/_storyId@number/items/_itemId@number/reaction'
+// prettier-ignore
 import { Methods as Methods49 } from './api/v3/user'
+// prettier-ignore
 import { Methods as Methods50 } from './api/v3/user/_userId@string'
+// prettier-ignore
 import { Methods as Methods51 } from './api/v3/user/profile'
 
+// prettier-ignore
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? '' : baseURL).replace(/\/$/, '')
   const PATH0 = '/api/stream/v1/stories'
@@ -990,5 +1044,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   }
 }
 
+// prettier-ignore
 export type ApiInstance = ReturnType<typeof api>
+// prettier-ignore
 export default api

@@ -1,10 +1,16 @@
 /* eslint-disable */
+// prettier-ignore
 import { AspidaClient, BasicHeaders, dataToURLString } from 'aspida'
+// prettier-ignore
 import { Methods as Methods0 } from '.'
+// prettier-ignore
 import { Methods as Methods1 } from './_petId@number'
+// prettier-ignore
 import { Methods as Methods2 } from './_petId@number/uploadImage'
+// prettier-ignore
 import { Methods as Methods3 } from './findByStatus'
 
+// prettier-ignore
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? 'https://petstore.swagger.io/v2' : baseURL).replace(/\/$/, '')
   const PATH0 = '/pet'
@@ -96,5 +102,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   }
 }
 
+// prettier-ignore
 export type ApiInstance = ReturnType<typeof api>
+// prettier-ignore
 export default api

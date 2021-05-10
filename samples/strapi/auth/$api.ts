@@ -1,13 +1,22 @@
 /* eslint-disable */
+// prettier-ignore
 import { AspidaClient, BasicHeaders } from 'aspida'
+// prettier-ignore
 import { Methods as Methods0 } from './_provider@string/callback'
+// prettier-ignore
 import { Methods as Methods1 } from './email-confirmation'
+// prettier-ignore
 import { Methods as Methods2 } from './forgot-password'
+// prettier-ignore
 import { Methods as Methods3 } from './local'
+// prettier-ignore
 import { Methods as Methods4 } from './local/register'
+// prettier-ignore
 import { Methods as Methods5 } from './reset-password'
+// prettier-ignore
 import { Methods as Methods6 } from './send-email-confirmation'
 
+// prettier-ignore
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? 'http://localhost:1337' : baseURL).replace(/\/$/, '')
   const PATH0 = '/auth'
@@ -136,5 +145,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   }
 }
 
+// prettier-ignore
 export type ApiInstance = ReturnType<typeof api>
+// prettier-ignore
 export default api
