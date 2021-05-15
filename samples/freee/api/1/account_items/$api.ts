@@ -1,8 +1,12 @@
 /* eslint-disable */
+// prettier-ignore
 import { AspidaClient, BasicHeaders, dataToURLString } from 'aspida'
+// prettier-ignore
 import { Methods as Methods0 } from '.'
+// prettier-ignore
 import { Methods as Methods1 } from './_id@number'
 
+// prettier-ignore
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? 'https://api.freee.co.jp' : baseURL).replace(/\/$/, '')
   const PATH0 = '/api/1/account_items'
@@ -18,21 +22,21 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       return {
         /**
          * <h2 id="">概要</h2>
-         * 
+         *
          * <p>指定した勘定科目の詳細を取得する</p>
          */
         get: (option: { query: Methods1['get']['query'], config?: T }) =>
           fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix0, GET, option).json(),
         /**
          * <h2 id="">概要</h2>
-         * 
+         *
          * <p>指定した勘定科目の詳細を取得する</p>
          */
         $get: (option: { query: Methods1['get']['query'], config?: T }) =>
           fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix0, GET, option).json().then(r => r.body),
         /**
          * <h2 id="">概要</h2>
-         * 
+         *
          * <p>勘定科目を更新する</p>
          * @param option.body - 勘定科目の更新
          */
@@ -40,7 +44,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           fetch<Methods1['put']['resBody'], BasicHeaders, Methods1['put']['status']>(prefix, prefix0, PUT, option, 'URLSearchParams').json(),
         /**
          * <h2 id="">概要</h2>
-         * 
+         *
          * <p>勘定科目を更新する</p>
          * @param option.body - 勘定科目の更新
          */
@@ -48,7 +52,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           fetch<Methods1['put']['resBody'], BasicHeaders, Methods1['put']['status']>(prefix, prefix0, PUT, option, 'URLSearchParams').json().then(r => r.body),
         /**
          * <h2 id="">概要</h2>
-         * 
+         *
          * <p>指定した勘定科目を削除する</p>
          * <h2 id="">注意点</h2>
          * <ul>
@@ -59,7 +63,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           fetch<void, BasicHeaders, Methods1['delete']['status']>(prefix, prefix0, DELETE, option).send(),
         /**
          * <h2 id="">概要</h2>
-         * 
+         *
          * <p>指定した勘定科目を削除する</p>
          * <h2 id="">注意点</h2>
          * <ul>
@@ -74,14 +78,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
     },
     /**
      * <h2 id="">概要</h2>
-     * 
+     *
      * <p>指定した事業所の勘定科目一覧を取得する</p>
-     * 
+     *
      * <h2 id="_2">定義</h2>
-     * 
+     *
      * <ul>
      * <li>default_tax_id : デフォルト設定がされている税区分ID</li>
-     * 
+     *
      * <li>default_tax_code : リクエストした日時を基準とした税区分コード</li>
      * </ul>
      */
@@ -89,14 +93,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json(),
     /**
      * <h2 id="">概要</h2>
-     * 
+     *
      * <p>指定した事業所の勘定科目一覧を取得する</p>
-     * 
+     *
      * <h2 id="_2">定義</h2>
-     * 
+     *
      * <ul>
      * <li>default_tax_id : デフォルト設定がされている税区分ID</li>
-     * 
+     *
      * <li>default_tax_code : リクエストした日時を基準とした税区分コード</li>
      * </ul>
      */
@@ -104,7 +108,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json().then(r => r.body),
     /**
      * <h2 id="">概要</h2>
-     * 
+     *
      * <p>指定した事業所の勘定科目を作成する</p>
      * @param option.body - 勘定科目の作成
      */
@@ -112,7 +116,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option, 'URLSearchParams').json(),
     /**
      * <h2 id="">概要</h2>
-     * 
+     *
      * <p>指定した事業所の勘定科目を作成する</p>
      * @param option.body - 勘定科目の作成
      */
@@ -123,5 +127,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   }
 }
 
+// prettier-ignore
 export type ApiInstance = ReturnType<typeof api>
+// prettier-ignore
 export default api

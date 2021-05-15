@@ -1,7 +1,10 @@
 /* eslint-disable */
+// prettier-ignore
 import { AspidaClient, BasicHeaders, dataToURLString } from 'aspida'
+// prettier-ignore
 import { Methods as Methods0 } from '.'
 
+// prettier-ignore
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? 'https://api.freee.co.jp' : baseURL).replace(/\/$/, '')
   const PATH0 = '/api/1/reports/trial_pl_three_years'
@@ -10,25 +13,25 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   return {
     /**
      * <h2 id="">概要</h2>
-     * 
+     *
      * <p>指定した事業所の損益計算書(３期間比較)を取得する</p>
-     * 
+     *
      * <h2 id="_2">定義</h2>
-     * 
+     *
      * <ul>
-     * 
+     *
      * <li>
      * <p>created_at : 作成日時</p>
      * </li>
-     * 
+     *
      * <li>
      * <p>account_item_name : 勘定科目名</p>
      * </li>
-     * 
+     *
      * <li>
      * <p>hierarchy_level: 階層レベル</p>
      * </li>
-     * 
+     *
      * <li>
      * <p>parent_account_category_name: 上位勘定科目カテゴリー名(上層が存在する場合含まれる)</p>
      * </li>
@@ -47,11 +50,11 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
      * <h2 id="_3">注意点</h2>
      * <ul> <li>会計年度が指定されない場合、現在の会計年度がデフォルトとなります。</li> <li>絞り込み条件の日付と、月または年度は同時に指定することはできません。</li> <li>up_to_dateがfalseの場合、残高の集計が完了していません。最新の集計結果を確認したい場合は、時間を空けて再度取得する必要があります。</li> <li>配賦仕訳の絞り込み（cost_allocation）は法人向けのベーシックプラン以上で利用可能です。</li> </ul>
      * <h2 id="_4">レスポンスの例</h2>
-     * 
+     *
      * <blockquote>
      * <p>GET https://api.freee.co.jp/api/1/reports/trial_pl_three_years?company_id=1&fiscal_year=2017</p>
      * </blockquote>
-     * 
+     *
      * <pre><code>{
      *   &quot;trial_pl_three_years&quot; :
      *     {
@@ -78,25 +81,25 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json(),
     /**
      * <h2 id="">概要</h2>
-     * 
+     *
      * <p>指定した事業所の損益計算書(３期間比較)を取得する</p>
-     * 
+     *
      * <h2 id="_2">定義</h2>
-     * 
+     *
      * <ul>
-     * 
+     *
      * <li>
      * <p>created_at : 作成日時</p>
      * </li>
-     * 
+     *
      * <li>
      * <p>account_item_name : 勘定科目名</p>
      * </li>
-     * 
+     *
      * <li>
      * <p>hierarchy_level: 階層レベル</p>
      * </li>
-     * 
+     *
      * <li>
      * <p>parent_account_category_name: 上位勘定科目カテゴリー名(上層が存在する場合含まれる)</p>
      * </li>
@@ -115,11 +118,11 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
      * <h2 id="_3">注意点</h2>
      * <ul> <li>会計年度が指定されない場合、現在の会計年度がデフォルトとなります。</li> <li>絞り込み条件の日付と、月または年度は同時に指定することはできません。</li> <li>up_to_dateがfalseの場合、残高の集計が完了していません。最新の集計結果を確認したい場合は、時間を空けて再度取得する必要があります。</li> <li>配賦仕訳の絞り込み（cost_allocation）は法人向けのベーシックプラン以上で利用可能です。</li> </ul>
      * <h2 id="_4">レスポンスの例</h2>
-     * 
+     *
      * <blockquote>
      * <p>GET https://api.freee.co.jp/api/1/reports/trial_pl_three_years?company_id=1&fiscal_year=2017</p>
      * </blockquote>
-     * 
+     *
      * <pre><code>{
      *   &quot;trial_pl_three_years&quot; :
      *     {
@@ -149,5 +152,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   }
 }
 
+// prettier-ignore
 export type ApiInstance = ReturnType<typeof api>
+// prettier-ignore
 export default api

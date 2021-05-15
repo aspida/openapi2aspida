@@ -2149,7 +2149,7 @@
                     {
                       "type": "object",
                       "required": ["token"],
-                      "properties": { "settings": { "$ref": "#/components/schemas/UserSettings" } }
+                      "properties": { "settings": { "$ref": "#/components/schemas/200-UserSettings" } }
                     }
                   ]
                 }
@@ -2381,7 +2381,7 @@
                           "type": "string",
                           "example": "bc402f28c60255f6af5057434587e5a41e71afb0"
                         },
-                        "settings": { "$ref": "#/components/schemas/UserSettings" }
+                        "settings": { "$ref": "#/components/schemas/200-UserSettings" }
                       }
                     }
                   ]
@@ -3247,7 +3247,7 @@
           "url": { "type": "string", "format": "url" }
         }
       },
-      "UserSettings": {
+      "200-UserSettings": {
         "required": ["isAppLocked"],
         "properties": { "isAppLocked": { "type": "boolean" } }
       },

@@ -8,7 +8,7 @@ export type Methods = {
 
     /** OK */
     resBody: Types.UserInfo & {
-      settings?: Types.UserSettings
+      settings?: Types.$200_UserSettings
     }
   }
 }

@@ -1,28 +1,52 @@
 /* eslint-disable */
+// prettier-ignore
 import { AspidaClient, BasicHeaders, dataToURLString } from 'aspida'
+// prettier-ignore
 import { Methods as Methods0 } from './auth/_provider@string/callback'
+// prettier-ignore
 import { Methods as Methods1 } from './auth/email-confirmation'
+// prettier-ignore
 import { Methods as Methods2 } from './auth/forgot-password'
+// prettier-ignore
 import { Methods as Methods3 } from './auth/local'
+// prettier-ignore
 import { Methods as Methods4 } from './auth/local/register'
+// prettier-ignore
 import { Methods as Methods5 } from './auth/reset-password'
+// prettier-ignore
 import { Methods as Methods6 } from './auth/send-email-confirmation'
+// prettier-ignore
 import { Methods as Methods7 } from './connect/_any'
+// prettier-ignore
 import { Methods as Methods8 } from './email'
+// prettier-ignore
 import { Methods as Methods9 } from './upload'
+// prettier-ignore
 import { Methods as Methods10 } from './upload/files'
+// prettier-ignore
 import { Methods as Methods11 } from './upload/files/_id@string'
+// prettier-ignore
 import { Methods as Methods12 } from './upload/files/count'
+// prettier-ignore
 import { Methods as Methods13 } from './upload/search/_id@string'
+// prettier-ignore
 import { Methods as Methods14 } from './users'
+// prettier-ignore
 import { Methods as Methods15 } from './users/_id@string'
+// prettier-ignore
 import { Methods as Methods16 } from './users/me'
+// prettier-ignore
 import { Methods as Methods17 } from './users-permissions/init'
+// prettier-ignore
 import { Methods as Methods18 } from './users-permissions/roles'
+// prettier-ignore
 import { Methods as Methods19 } from './users-permissions/roles/_id@string'
+// prettier-ignore
 import { Methods as Methods20 } from './users-permissions/roles/_role@string'
+// prettier-ignore
 import { Methods as Methods21 } from './users-permissions/search/_id@string'
 
+// prettier-ignore
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? 'http://localhost:1337' : baseURL).replace(/\/$/, '')
   const PATH0 = '/auth'
@@ -472,5 +496,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   }
 }
 
+// prettier-ignore
 export type ApiInstance = ReturnType<typeof api>
+// prettier-ignore
 export default api

@@ -33,10 +33,9 @@ export default (openapi: OpenAPIV3.Document) => {
   files.push(
     ...Object.keys(openapi.paths)
       .map(path => {
-        const methodProps = Object.keys(
-          openapi.paths[path]!
-        ).filter((method): method is typeof methodNames[number] =>
-          methodNames.includes(method as typeof methodNames[number])
+        const methodProps = Object.keys(openapi.paths[path]!).filter(
+          (method): method is typeof methodNames[number] =>
+            methodNames.includes(method as typeof methodNames[number])
         )
 
         const file = [

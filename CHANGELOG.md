@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.16.4](https://github.com/aspida/openapi2aspida/compare/v0.16.3...v0.16.4) (2021-05-15)
+
+
+### Bug Fixes
+
+* convert names that begin with a number ([9b2dcfa](https://github.com/aspida/openapi2aspida/commit/9b2dcfa63f821bf106acbc82cbfaf474707c5731))
+* update aspida@1.7.0 ([89e28db](https://github.com/aspida/openapi2aspida/commit/89e28dbb562213cd0872f99bbc2ecfa1b383d0b7))
+
 ### [0.16.3](https://github.com/aspida/openapi2aspida/compare/v0.16.2...v0.16.3) (2021-04-20)
 
 

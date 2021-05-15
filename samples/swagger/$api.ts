@@ -1,18 +1,32 @@
 /* eslint-disable */
+// prettier-ignore
 import { AspidaClient, BasicHeaders, dataToURLString } from 'aspida'
+// prettier-ignore
 import { Methods as Methods0 } from './pet'
+// prettier-ignore
 import { Methods as Methods1 } from './pet/_petId@number'
+// prettier-ignore
 import { Methods as Methods2 } from './pet/_petId@number/uploadImage'
+// prettier-ignore
 import { Methods as Methods3 } from './pet/findByStatus'
+// prettier-ignore
 import { Methods as Methods4 } from './store/inventory'
+// prettier-ignore
 import { Methods as Methods5 } from './store/order'
+// prettier-ignore
 import { Methods as Methods6 } from './store/order/_orderId@number'
+// prettier-ignore
 import { Methods as Methods7 } from './user'
+// prettier-ignore
 import { Methods as Methods8 } from './user/_username@string'
+// prettier-ignore
 import { Methods as Methods9 } from './user/createWithArray'
+// prettier-ignore
 import { Methods as Methods10 } from './user/createWithList'
+// prettier-ignore
 import { Methods as Methods11 } from './user/login'
 
+// prettier-ignore
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? 'https://petstore.swagger.io/v2' : baseURL).replace(/\/$/, '')
   const PATH0 = '/pet'
@@ -267,5 +281,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   }
 }
 
+// prettier-ignore
 export type ApiInstance = ReturnType<typeof api>
+// prettier-ignore
 export default api

@@ -1,15 +1,26 @@
 /* eslint-disable */
+// prettier-ignore
 import { AspidaClient, dataToURLString } from 'aspida'
+// prettier-ignore
 import { Methods as Methods0 } from './users/_user_id@string/orders'
+// prettier-ignore
 import { Methods as Methods1 } from './users/_user_id@string/orders/_order_id@string'
+// prettier-ignore
 import { Methods as Methods2 } from './users/_user_id@string/orders/purchase/invoice'
+// prettier-ignore
 import { Methods as Methods3 } from './users/_user_id@string/orders/purchase/wallet'
+// prettier-ignore
 import { Methods as Methods4 } from './users/_user_id@string/orders/unsubscribe'
+// prettier-ignore
 import { Methods as Methods5 } from './users/_user_id@string/orders/update/renew'
+// prettier-ignore
 import { Methods as Methods6 } from './users/_user_id@string/phone-numbers/_phone_number@string/orders'
+// prettier-ignore
 import { Methods as Methods7 } from './users/_user_id@string/phone-numbers/_phone_number@string/orders/purchase/invoice'
+// prettier-ignore
 import { Methods as Methods8 } from './users/_user_id@string/phone-numbers/_phone_number@string/orders/purchase/wallet'
 
+// prettier-ignore
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? 'https://api.baikalplatform.com/product-management/v1' : baseURL).replace(/\/$/, '')
   const PATH0 = '/users'
@@ -200,5 +211,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   }
 }
 
+// prettier-ignore
 export type ApiInstance = ReturnType<typeof api>
+// prettier-ignore
 export default api
