@@ -61,7 +61,7 @@ export type UserInfo = {
   url: string
 }
 
-export type UserSettings = {
+export type $200_UserSettings = {
   isAppLocked: boolean
 }
 

@@ -2,7 +2,9 @@ import { OpenAPIV3 } from 'openapi-types'
 import { Prop, PropValue } from './props2String'
 
 export const defKey2defName = (key: string) =>
-  `${key[0].toUpperCase()}${key.slice(1).replace(/[^a-zA-Z0-9$_]/g, '_')}`
+  `${key[0].replace(/^([^a-zA-Z$_])$/, '$$$1').toUpperCase()}${key
+    .slice(1)
+    .replace(/[^a-zA-Z0-9$_]/g, '_')}`
 
 export const $ref2TypeName = (ref: string) => {
   const [, , , typeName, , propName] = ref.split('/')
