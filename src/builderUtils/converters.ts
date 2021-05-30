@@ -40,14 +40,14 @@ export const isObjectSchema = (
 export const getPropertyName = (name: string) =>
   /^[a-zA-Z_$][0-9a-zA-Z_$]*$/.test(name) ? name : `'${name}'`
 
-const of2Values = (obj: OpenAPIV3.SchemaObject): PropValue[] | null => {
+const of2Values = (obj: OpenAPIV3.SchemaObject, required: boolean): PropValue[] | null => {
   const values = (obj.oneOf || obj.allOf || obj.anyOf || [])
-    .map(p => schema2value(p))
+    .map(p => schema2value(p, required))
     .filter(v => v) as PropValue[]
   return values.length ? values : null
 }
 
-const object2value = (obj: OpenAPIV3.NonArraySchemaObject): Prop[] => {
+const object2value = (obj: OpenAPIV3.NonArraySchemaObject, required: boolean): Prop[] => {
   const properties = obj.properties ?? {}
 
   const value = Object.keys(properties)
@@ -56,12 +56,12 @@ const object2value = (obj: OpenAPIV3.NonArraySchemaObject): Prop[] => {
       return isRefObject(target) || !target.deprecated
     })
     .map<Prop | null>(name => {
-      const val = schema2value(properties[name])
+      const val = schema2value(properties[name], required)
       if (!val) return null
 
       return {
         name: getPropertyName(name),
-        required: obj.required?.includes(name) ?? true,
+        required: obj.required?.includes(name) ?? required,
         description: val.description,
         values: [val]
       }
@@ -79,12 +79,12 @@ const object2value = (obj: OpenAPIV3.NonArraySchemaObject): Prop[] => {
             description: null,
             value: 'any'
           }
-        : schema2value(additionalProps)
+        : schema2value(additionalProps, required)
 
     if (val)
       value.push({
         name: '[key: string]',
-        required: true,
+        required,
         description: val.description,
         values: [val]
       })
@@ -97,6 +97,7 @@ export const BINARY_TYPE = 'File | ReadStream'
 
 export const schema2value = (
   schema: OpenAPIV3.ReferenceObject | OpenAPIV3.SchemaObject | undefined,
+  required: boolean,
   isResponse?: true
 ): PropValue | null => {
   if (!schema) return null
@@ -116,15 +117,15 @@ export const schema2value = (
 
     if (schema.oneOf || schema.allOf || schema.anyOf) {
       hasOf = schema.oneOf ? 'oneOf' : schema.allOf ? 'allOf' : 'anyOf'
-      value = of2Values(schema)
+      value = of2Values(schema, required)
     } else if (schema.enum) {
       isEnum = true
       value = schema.type === 'string' ? schema.enum.map(e => `'${e}'`) : schema.enum
     } else if (isArraySchema(schema)) {
       isArray = true
-      value = schema2value(schema.items)
+      value = schema2value(schema.items, required)
     } else if (schema.properties || schema.additionalProperties) {
-      value = object2value(schema)
+      value = object2value(schema, required)
     } else if (schema.format === 'binary') {
       value = isResponse ? 'Blob' : BINARY_TYPE
     } else if (schema.type !== 'object') {
