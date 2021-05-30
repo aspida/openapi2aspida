@@ -25,7 +25,7 @@ const getParamsList = (
   params?: (OpenAPIV3.ReferenceObject | OpenAPIV3.ParameterObject)[]
 ) => params?.map(p => (isRefObject(p) ? resolveParamsRef(openapi, p.$ref) : p)) || []
 
-export default (openapi: OpenAPIV3.Document) => {
+export default (openapi: OpenAPIV3.Document, replaceLeadingAtMark: string) => {
   const files: { file: string[]; methods: string }[] = []
   const schemas = schemas2Props(openapi.components?.schemas, openapi) || []
   const parameters = parameters2Props(openapi.components?.parameters, openapi) || []
@@ -44,16 +44,20 @@ export default (openapi: OpenAPIV3.Document) => {
             .split('/')
             .slice(1)
             .map(p =>
-              getDirName(p, [
-                ...getParamsList(openapi, openapi.paths[path]!.parameters),
-                ...methodProps.reduce(
-                  (prev, c) => [
-                    ...prev,
-                    ...getParamsList(openapi, openapi.paths[path]![c]?.parameters)
-                  ],
-                  [] as OpenAPIV3.ParameterObject[]
-                )
-              ])
+              getDirName(
+                p,
+                [
+                  ...getParamsList(openapi, openapi.paths[path]!.parameters),
+                  ...methodProps.reduce(
+                    (prev, c) => [
+                      ...prev,
+                      ...getParamsList(openapi, openapi.paths[path]![c]?.parameters)
+                    ],
+                    [] as OpenAPIV3.ParameterObject[]
+                  )
+                ],
+                replaceLeadingAtMark
+              )
             ),
           'index'
         ]
