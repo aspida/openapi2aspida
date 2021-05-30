@@ -370,7 +370,7 @@ export default (openapi: OpenAPIV3.Document) => {
         ]
           .map(p => `\n${description2Doc(p.description, '')}export type ${p.name} = ${p.text}\n`)
           .join('')
-          .replace(/ Types\./g, ' ')
+          .replace(/(\W)Types\./g, '$1')
       : null
 
   return {

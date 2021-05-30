@@ -33,5 +33,10 @@ module.exports = [
     input: 'samples/nullable-object',
     outputEachDir: true,
     openapi: { inputFile: 'samples/nullable-object.yml' }
+  },
+  {
+    input: 'samples/array-one-of',
+    outputEachDir: true,
+    openapi: { inputFile: 'samples/array-one-of.yml' }
   }
 ]
