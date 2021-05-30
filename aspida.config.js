@@ -33,5 +33,10 @@ module.exports = [
     input: 'samples/nullable-object',
     outputEachDir: true,
     openapi: { inputFile: 'samples/nullable-object.yml' }
+  },
+  {
+    input: 'samples/path-at-mark',
+    outputEachDir: true,
+    openapi: { inputFile: 'samples/path-at-mark.yml', replaceLeadingAtMark: '' }
   }
 ]
