@@ -5,7 +5,11 @@ import { resolveParamsRef } from './resolvers'
 
 export type Parameter = { name: string; prop: string | Prop }
 
-export default (params: OpenAPIV3.ComponentsObject['parameters'], openapi: OpenAPIV3.Document) =>
+export default (
+  params: OpenAPIV3.ComponentsObject['parameters'],
+  openapi: OpenAPIV3.Document,
+  required: boolean
+) =>
   params &&
   Object.keys(params)
     .filter(defKey => {
@@ -19,12 +23,12 @@ export default (params: OpenAPIV3.ComponentsObject['parameters'], openapi: OpenA
       if (isRefObject(target)) {
         prop = $ref2Type(target.$ref)
       } else {
-        const value = schema2value(target.schema)
+        const value = schema2value(target.schema, required)
         if (!value) return null
 
         prop = {
           name: getPropertyName(target.name),
-          required: target.required ?? true,
+          required: target.required ?? required,
           description: target.description ?? null,
           values: [value]
         }
