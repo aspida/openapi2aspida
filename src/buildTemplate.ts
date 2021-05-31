@@ -6,7 +6,7 @@ import { Config } from './getConfig'
 
 const isV3 = (openapi: OpenAPI.Document): openapi is OpenAPIV3.Document => 'openapi' in openapi
 
-export default async ({ input, isYaml, requiredConfig }: Config) => {
+export default async ({ input, isYaml, requiredConfig, replaceLeadingAtMark }: Config) => {
   const openapi = await parse(input, { parse: { json: !isYaml } })
   const docs = isV3(openapi)
     ? openapi
@@ -14,6 +14,7 @@ export default async ({ input, isYaml, requiredConfig }: Config) => {
 
   return buildV3(
     await resolveExternalRefs(docs, typeof input === 'string' ? input : ''),
-    requiredConfig
+    requiredConfig,
+    replaceLeadingAtMark
   )
 }
