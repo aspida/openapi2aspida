@@ -17,7 +17,8 @@
     "lint": "eslint --ext .js,.ts .",
     "lint:fix": "npm run lint -- --fix",
     "test": "jest",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "postinstall": "npm run build"
   },
   "homepage": "https://github.com/aspida/openapi2aspida#readme",
   "repository": {
