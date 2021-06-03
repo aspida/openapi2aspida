@@ -1,0 +1,1 @@
+{"version":3,"file":"schemas2Props.d.ts","sourceRoot":"","sources":["../../src/builderUtils/schemas2Props.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,SAAS,EAAE,MAAM,eAAe,CAAA;AAEzC,OAAO,EAAE,SAAS,EAAE,MAAM,gBAAgB,CAAA;AAG1C,oBAAY,MAAM,GAAG;IAAE,IAAI,EAAE,MAAM,CAAC;IAAC,KAAK,EAAE,SAAS,CAAA;CAAE,CAAA;kCAG5C,UAAU,gBAAgB,CAAC,SAAS,CAAC,WACrC,kBAAkB,YACjB,OAAO;AAHnB,wBAeoC"}
