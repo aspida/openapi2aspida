@@ -332,6 +332,7 @@ exports.default = (function (openapi, requiredConfig, replaceLeadingAtMark) {
         }); }))).map(function (p) { return "\n" + props2String_1.description2Doc(p.description, '') + "export type " + p.name + " = " + p.text + "\n"; })
             .join('')
             .replace(/(\W)Types\./g, '$1')
+            .replace(/\]\?:/g, ']:')
         : null;
     return {
         openapi: openapi,

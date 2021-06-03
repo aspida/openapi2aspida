@@ -145,3 +145,11 @@ components:
             - 1
             - 2
             - 3
+        parameters:
+          type: object
+          additionalProperties:
+            oneOf:
+              - type: string
+              - type: number
+              - type: boolean
+              - type: object

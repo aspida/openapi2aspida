@@ -387,6 +387,7 @@ export default (
           .map(p => `\n${description2Doc(p.description, '')}export type ${p.name} = ${p.text}\n`)
           .join('')
           .replace(/(\W)Types\./g, '$1')
+          .replace(/\]\?:/g, ']:')
       : null
 
   return {
