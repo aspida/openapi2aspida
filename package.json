@@ -14,8 +14,8 @@
     "release:major": "npm run release -- --release-as major",
     "release:minor": "npm run release -- --release-as minor",
     "release:patch": "npm run release -- --release-as patch",
-    "lint": "eslint --ext .js,.ts .",
-    "lint:fix": "npm run lint -- --fix",
+    "lint": "eslint --ext .ts . && prettier --check \"./**/*.ts\"",
+    "lint:fix": "eslint --ext .ts . --fix && prettier --write \"./**/*.ts\"",
     "test": "jest",
     "typecheck": "tsc --noEmit"
   },
@@ -46,7 +46,6 @@
       "standard",
       "plugin:@typescript-eslint/recommended",
       "plugin:jest/recommended",
-      "plugin:prettier/recommended",
       "prettier"
     ],
     "parserOptions": {
