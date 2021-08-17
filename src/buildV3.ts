@@ -188,8 +188,7 @@ export default (openapi: OpenAPIV3.Document) => {
                 const res = target.responses[code]
                 const ref = isRefObject(res) ? resolveResRef(openapi, res.$ref) : res
                 const content =
-                  ref.content &&
-                  Object.entries(ref.content).find(([key]) => key.startsWith('application/'))?.[1]
+                  (ref.content && Object.entries(ref.content).find(([key]) => key.startsWith('application/'))?.[1]) ?? ref.content?.[Object.keys(ref.content)[0]]
 
                 if (content?.schema) {
                   const val = schema2value(content.schema, true)
