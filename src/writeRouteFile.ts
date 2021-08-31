@@ -4,7 +4,8 @@ import { build, AspidaConfig } from 'aspida/dist/commands'
 export default ({
   config,
   types,
-  files
+  files,
+  outputDir
 }: {
   config: AspidaConfig
   types: string | null
@@ -12,7 +13,18 @@ export default ({
     file: string[]
     methods: string
   }[]
+  outputDir?: string
 }) => {
+  console.log(
+    `🚀 ~ file: writeRouteFile.ts ~ line 18 ~ { config,
+  types,
+  files,
+  outputDir }`,
+    config,
+    types,
+    files,
+    outputDir
+  )
   if (types) {
     fs.mkdirSync(`${config.input}/@types`)
     fs.writeFileSync(`${config.input}/@types/index.ts`, types, 'utf8')

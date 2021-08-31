@@ -11,6 +11,7 @@ export type ConfigFile = AspidaConfig & {
   openapi?: {
     inputFile: string
     yaml?: boolean
+    outputDir?: string
   }
 }
 
@@ -29,7 +30,10 @@ const createConfig = (config: ConfigFile): Config => {
 
 type PartialConfig = Partial<ConfigFile> | Partial<ConfigFile>[]
 
-export default (config?: PartialConfig | string): Config[] =>
-  getConfigs(config)
+export default (config?: PartialConfig): Config[] => {
+  const ReturnValue = getConfigs(config)
     .filter((c: ConfigFile) => c.openapi)
     .map(c => createConfig(c))
+
+  return ReturnValue
+}

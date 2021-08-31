@@ -42,6 +42,7 @@ const fetchExternalDocs = async (docs: DocType, inputDir: string) => {
         fetchingUrls.push(url)
 
         const filePath = url.startsWith('http') ? url : path.posix.join(path.dirname(input), url)
+    
         const text = await (filePath.startsWith('http')
           ? getText(filePath)
           : fs.promises.readFile(filePath, 'utf8'))
