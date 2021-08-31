@@ -16,7 +16,10 @@ export default (configs?: Parameters<typeof getConfig>[0], outputdir?: string) =
       InputFilepath: config.output
     })
     console.log('config.output', outputdir, config.output)
-    console.log(`🚀 ~ file: index.ts ~ line 20 ~ returngetConfig ~ fs.existsSync(oustPutFilePath)`, fs.existsSync(oustPutFilePath))
+    console.log(
+      `🚀 ~ file: index.ts ~ line 20 ~ returngetConfig ~ fs.existsSync(oustPutFilePath)`,
+      fs.existsSync(oustPutFilePath)
+    )
     if (!fs.existsSync(oustPutFilePath)) {
       // フォルダが存在しない
       fs.mkdirSync(oustPutFilePath)

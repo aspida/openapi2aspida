@@ -373,7 +373,6 @@ export default (openapi: OpenAPIV3.Document) => {
           .replace(/(\W)Types\./g, '$1')
       : null
 
-
   return {
     openapi, // for api-types
     baseURL: openapi.servers?.[0]?.url || '',
