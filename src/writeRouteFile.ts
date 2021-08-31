@@ -15,16 +15,6 @@ export default ({
   }[]
   outputDir?: string
 }) => {
-  console.log(
-    `🚀 ~ file: writeRouteFile.ts ~ line 18 ~ { config,
-  types,
-  files,
-  outputDir }`,
-    config,
-    types,
-
-    outputDir
-  )
   if (types) {
     fs.mkdirSync(`${outputDir}/@types`)
     fs.writeFileSync(`${outputDir}/@types/index.ts`, types, 'utf8')
@@ -43,6 +33,6 @@ export default ({
   })
   const buildConfig = config
   buildConfig.input = outputDir || config.input
-  console.log(`🚀 ~ file: writeRouteFile.ts ~ line 46 ~ config`, config)
+
   build(buildConfig)
 }

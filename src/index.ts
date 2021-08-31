@@ -1,4 +1,5 @@
 import fs from 'fs'
+import fse from 'fs-extra'
 import getConfig from './getConfig'
 import buildTemplate from './buildTemplate'
 import writeRouteFile from './writeRouteFile'
@@ -10,19 +11,15 @@ import outputFilePath from './outputFilePath'
  * */
 export default (configs?: Parameters<typeof getConfig>[0], outputdir?: string) => {
   return getConfig(configs).map(async config => {
-    console.log(`🚀 ~ file: index.ts ~ line 8 ~ returngetConfig ~ configs`, configs)
     const oustPutFilePath = outputFilePath({
       cliOutputPath: outputdir,
       InputFilepath: config.output
     })
-    console.log('config.output', outputdir, config.output)
-    console.log(
-      `🚀 ~ file: index.ts ~ line 20 ~ returngetConfig ~ fs.existsSync(oustPutFilePath)`,
-      fs.existsSync(oustPutFilePath)
-    )
+
     if (!fs.existsSync(oustPutFilePath)) {
       // フォルダが存在しない
-      fs.mkdirSync(oustPutFilePath)
+
+      fse.ensureDirSync(oustPutFilePath)
     } else if (fs.readdirSync(config.output).length) {
       // フォルダが存在する
       console.log(
