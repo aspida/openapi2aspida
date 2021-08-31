@@ -6,7 +6,6 @@ export const run = (args: string[]) => {
     string: ['version', 'input', 'config'],
     alias: { v: 'version', i: 'input', c: 'config', o: 'outputdir' }
   })
-  console.log(argv)
 
   argv.version !== undefined
     ? console.log(`v${require('../package.json').version}`)
