@@ -46,3 +46,7 @@ export type User = {
   /** User Status */
   userStatus?: number | undefined
 }
+
+export type UserArray = User[]
+
+export type Pet = Pet
