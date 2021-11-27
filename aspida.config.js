@@ -38,6 +38,11 @@ module.exports = [
     input: 'samples/array-one-of',
     outputEachDir: true,
     openapi: { inputFile: 'samples/array-one-of.yml' }
+  },
+  {
+    input: 'samples/request-bodies',
+    outputEachDir: true,
+    openapi: { inputFile: 'samples/request-bodies.yml' }
   }
   // {
   //   input: 'samples/path-at-mark',
