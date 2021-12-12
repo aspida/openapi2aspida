@@ -29,7 +29,8 @@
     "url": "https://github.com/aspida/openapi2aspida/issues"
   },
   "files": [
-    "dist"
+    "dist",
+    "bin"
   ],
   "keywords": [
     "typescript",
