@@ -18,7 +18,7 @@
     "lint:fix": "eslint --ext .ts . --fix && prettier --write \"./**/*.ts\"",
     "test": "jest",
     "typecheck": "tsc --noEmit",
-    "prepare": "npm run build"
+    "prepare": "mkdir -p dist && npm run build"
   },
   "homepage": "https://github.com/aspida/openapi2aspida#readme",
   "repository": {
