@@ -15,7 +15,7 @@ describe('ファイルパスの検査', () => {
         InputFilepath: 'apiapi',
         cliOutputPath: undefined
       })
-    ).toBe('apiapi/apiapi/apiapi')
+    ).toBe('apiapi')
   })
   test('cli の -oが指定されていない', () => {
     expect(
