@@ -13,7 +13,7 @@ export default (configs?: Parameters<typeof getConfig>[0], outputdir?: string) =
   return getConfig(configs).map(async config => {
     const oustPutFilePath = outputFilePath({
       cliOutputPath: outputdir,
-      InputFilepath: config.output
+      InputFilePath: config.output
     })
 
     if (!fs.existsSync(oustPutFilePath)) {

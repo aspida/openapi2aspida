@@ -1,12 +1,12 @@
 type config = {
   cliOutputPath?: string
-  InputFilepath: string
+  InputFilePath: string
 }
 
 export default function (config: config) {
   if (config.cliOutputPath) {
     return config.cliOutputPath
   } else {
-    return config.InputFilepath
+    return config.InputFilePath
   }
 }
