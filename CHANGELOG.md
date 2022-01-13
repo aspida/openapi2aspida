@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.17.0](https://github.com/aspida/openapi2aspida/compare/v0.16.5...v0.17.0) (2022-01-13)
+
+
+### Features
+
+* add gitignore ([45ea965](https://github.com/aspida/openapi2aspida/commit/45ea965c1c646b4be9ed965b55e2135d2f100160))
+
+
+### Bug Fixes
+
+* include response schemas that has no application/ prefixed content-typent-type ([#154](https://github.com/aspida/openapi2aspida/issues/154)) ([3692baf](https://github.com/aspida/openapi2aspida/commit/3692baff8e98a036f8427a8fc41c74f7ef1f8034))
+
+
+### Documentation
+
+* add Description about outuput dir option ([4bbac97](https://github.com/aspida/openapi2aspida/commit/4bbac97fd280819ee1fbc947d5a3ebf566b2a743))
+
 ### [0.16.5](https://github.com/aspida/openapi2aspida/compare/v0.16.4...v0.16.5) (2021-07-22)
 
 

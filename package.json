@@ -1,6 +1,6 @@
 {
   "name": "openapi2aspida",
-  "version": "0.16.5",
+  "version": "0.17.0",
   "description": "Convert OpenAPI 3.0 or Swagger 2.0 definitions into aspida",
   "author": "Solufa <solufa2020@gmail.com>",
   "license": "MIT",
