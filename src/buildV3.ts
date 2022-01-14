@@ -17,6 +17,7 @@ import { resolveParamsRef, resolveResRef, resolveReqRef } from './builderUtils/r
 import getDirName from './builderUtils/getDirName'
 import schemas2Props from './builderUtils/schemas2Props'
 import parameters2Props from './builderUtils/parameters2Props'
+import { RequiredConfig } from './getConfig'
 
 const methodNames = ['get', 'post', 'put', 'delete', 'head', 'options', 'patch'] as const
 
@@ -25,10 +26,15 @@ const getParamsList = (
   params?: (OpenAPIV3.ReferenceObject | OpenAPIV3.ParameterObject)[]
 ) => params?.map(p => (isRefObject(p) ? resolveParamsRef(openapi, p.$ref) : p)) || []
 
-export default (openapi: OpenAPIV3.Document) => {
+export default (
+  openapi: OpenAPIV3.Document,
+  requiredConfig: RequiredConfig,
+  replaceLeadingAtMark: string
+) => {
   const files: { file: string[]; methods: string }[] = []
-  const schemas = schemas2Props(openapi.components?.schemas, openapi) || []
-  const parameters = parameters2Props(openapi.components?.parameters, openapi) || []
+  const schemas = schemas2Props(openapi.components?.schemas, openapi, requiredConfig.schema) || []
+  const parameters =
+    parameters2Props(openapi.components?.parameters, openapi, requiredConfig.parameter) || []
 
   files.push(
     ...Object.keys(openapi.paths)
@@ -44,16 +50,21 @@ export default (openapi: OpenAPIV3.Document) => {
             .split('/')
             .slice(1)
             .map(p =>
-              getDirName(p, [
-                ...getParamsList(openapi, openapi.paths[path]!.parameters),
-                ...methodProps.reduce(
-                  (prev, c) => [
-                    ...prev,
-                    ...getParamsList(openapi, openapi.paths[path]![c]?.parameters)
-                  ],
-                  [] as OpenAPIV3.ParameterObject[]
-                )
-              ])
+              getDirName(
+                p,
+                [
+                  ...getParamsList(openapi, openapi.paths[path]!.parameters),
+                  ...methodProps.reduce(
+                    (prev, c) => [
+                      ...prev,
+                      ...getParamsList(openapi, openapi.paths[path]![c]?.parameters)
+                    ],
+                    [] as OpenAPIV3.ParameterObject[]
+                  )
+                ],
+                requiredConfig.parameter,
+                replaceLeadingAtMark
+              )
             ),
           'index'
         ]
@@ -71,7 +82,7 @@ export default (openapi: OpenAPIV3.Document) => {
               const reqHeaders: Prop[] = []
               const refQuery: PropValue[] = []
               const query: Prop[] = []
-              let queryRequired = true
+              let queryRequired = requiredConfig.query
 
               ;[...(openapi.paths[path]!.parameters || []), ...(target.parameters || [])].forEach(
                 p => {
@@ -91,18 +102,18 @@ export default (openapi: OpenAPIV3.Document) => {
                         break
                       case 'query':
                         refQuery.push(val)
-                        queryRequired = ref.required ?? true
+                        queryRequired = ref.required ?? requiredConfig.query
                         break
                       default:
                         break
                     }
                   } else {
-                    const value = schema2value(p.schema)
+                    const value = schema2value(p.schema, requiredConfig.query)
                     if (!value) return
 
                     const prop = {
                       name: getPropertyName(p.name),
-                      required: p.required ?? true,
+                      required: p.required ?? requiredConfig.query,
                       description: p.description ?? null,
                       values: [value]
                     }
@@ -113,7 +124,7 @@ export default (openapi: OpenAPIV3.Document) => {
                         break
                       case 'query':
                         query.push(prop)
-                        queryRequired = p.required ?? true
+                        queryRequired = p.required ?? requiredConfig.query
                         break
                       default:
                         break
@@ -172,7 +183,7 @@ export default (openapi: OpenAPIV3.Document) => {
               if (code) {
                 params.push({
                   name: 'status',
-                  required: true,
+                  required: requiredConfig.status,
                   description: null,
                   values: [
                     {
@@ -195,11 +206,11 @@ export default (openapi: OpenAPIV3.Document) => {
                   ref.content?.[Object.keys(ref.content)[0]]
 
                 if (content?.schema) {
-                  const val = schema2value(content.schema, true)
+                  const val = schema2value(content.schema, requiredConfig.resBody, true)
                   val &&
                     params.push({
                       name: 'resBody',
-                      required: true,
+                      required: requiredConfig.resBody,
                       description: ref.description,
                       values: [val]
                     })
@@ -208,7 +219,7 @@ export default (openapi: OpenAPIV3.Document) => {
                 if (ref.headers) {
                   params.push({
                     name: 'resHeaders',
-                    required: true,
+                    required: requiredConfig.resHeader,
                     description: null,
                     values: [
                       {
@@ -226,14 +237,14 @@ export default (openapi: OpenAPIV3.Document) => {
                                   description: null,
                                   value: $ref2Type(headerData.$ref)
                                 }
-                              : schema2value(headerData.schema)
+                              : schema2value(headerData.schema, requiredConfig.resHeader)
 
                             return (
                               val && {
                                 name: getPropertyName(header),
                                 required: isRefObject(headerData)
                                   ? true
-                                  : headerData.required ?? true,
+                                  : headerData.required ?? requiredConfig.resHeader,
                                 description: isRefObject(headerData)
                                   ? null
                                   : headerData.description,
@@ -252,7 +263,7 @@ export default (openapi: OpenAPIV3.Document) => {
             if (target.requestBody) {
               let reqFormat = ''
               let reqBody: PropValue | null = null
-              let required = true
+              let required = requiredConfig.reqBody
               let description: string | null = null
 
               if (isRefObject(target.requestBody)) {
@@ -270,21 +281,25 @@ export default (openapi: OpenAPIV3.Document) => {
                   description: null,
                   value: $ref2Type(target.requestBody.$ref)
                 }
-                required = ref.required ?? true
+                required = ref.required ?? requiredConfig.reqBody
                 description = ref.description ?? null
               } else {
-                required = target.requestBody.required ?? true
+                required = target.requestBody.required ?? requiredConfig.reqBody
                 description = target.requestBody.description ?? null
 
                 if (target.requestBody.content['multipart/form-data']?.schema) {
                   reqFormat = 'FormData'
-                  reqBody = schema2value(target.requestBody.content['multipart/form-data'].schema)
+                  reqBody = schema2value(
+                    target.requestBody.content['multipart/form-data'].schema,
+                    requiredConfig.reqBody
+                  )
                 } else if (
                   target.requestBody.content['application/x-www-form-urlencoded']?.schema
                 ) {
                   reqFormat = 'URLSearchParams'
                   reqBody = schema2value(
-                    target.requestBody.content['application/x-www-form-urlencoded'].schema
+                    target.requestBody.content['application/x-www-form-urlencoded'].schema,
+                    requiredConfig.reqBody
                   )
                 } else {
                   const content =
@@ -293,14 +308,15 @@ export default (openapi: OpenAPIV3.Document) => {
                       key.startsWith('application/')
                     )?.[1]
 
-                  if (content?.schema) reqBody = schema2value(content.schema)
+                  if (content?.schema)
+                    reqBody = schema2value(content.schema, requiredConfig.reqBody)
                 }
               }
 
               if (reqFormat) {
                 params.push({
                   name: 'reqFormat',
-                  required: true,
+                  required: requiredConfig.reqFormat,
                   description: null,
                   values: [
                     {
@@ -326,7 +342,7 @@ export default (openapi: OpenAPIV3.Document) => {
 
             return {
               name: method,
-              required: true,
+              required: requiredConfig.method,
               description: target.description ?? null,
               values: [
                 { isArray: false, isEnum: false, nullable: false, description: null, value: params }
@@ -374,6 +390,7 @@ export default (openapi: OpenAPIV3.Document) => {
           .map(p => `\n${description2Doc(p.description, '')}export type ${p.name} = ${p.text}\n`)
           .join('')
           .replace(/(\W)Types\./g, '$1')
+          .replace(/\]\?:/g, ']:')
       : null
 
   return {

@@ -38,5 +38,15 @@ module.exports = [
     input: 'samples/array-one-of',
     outputEachDir: true,
     openapi: { inputFile: 'samples/array-one-of.yml' }
+  },
+  {
+    input: 'samples/default-required',
+    outputEachDir: true,
+    openapi: { inputFile: 'samples/default-required.yml', requiredConfig: { schema: false } }
+  },
+  {
+    input: 'samples/path-at-mark',
+    outputEachDir: true,
+    openapi: { inputFile: 'samples/path-at-mark.yml', replaceLeadingAtMark: '' }
   }
 ]
