@@ -16,7 +16,8 @@ export type Prop = {
 }
 
 const array2String = (val: PropValue, indent: string) => {
-  const hasMulti = (val.isEnum || val.hasOf) && Array.isArray(val.value) && val.value.length
+  const hasMulti =
+    ((val.isEnum || val.hasOf) && Array.isArray(val.value) && val.value.length) || val.nullable
   return `${hasMulti ? '(' : ''}${value2String(val, indent)}${hasMulti ? ')' : ''}[]`
 }
 

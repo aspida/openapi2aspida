@@ -1,15 +1,29 @@
 import fs from 'fs'
+import fse from 'fs-extra'
 import getConfig from './getConfig'
 import buildTemplate from './buildTemplate'
 import writeRouteFile from './writeRouteFile'
+import outputFilePath from './outputFilePath'
 
-export default (configs?: Parameters<typeof getConfig>[0]) =>
-  getConfig(configs).map(async config => {
-    if (!fs.existsSync(config.output)) {
-      fs.mkdirSync(config.output)
+/**
+ * @param {string} outputdir 出力するディレクトリー
+ * @param {Array<Object>} configs コンフィグ
+ * */
+export default (configs?: Parameters<typeof getConfig>[0], outputdir?: string) => {
+  return getConfig(configs).map(async config => {
+    const oustPutFilePath = outputFilePath({
+      cliOutputPath: outputdir,
+      InputFilePath: config.output
+    })
+
+    if (!fs.existsSync(oustPutFilePath)) {
+      // フォルダが存在しない
+
+      fse.ensureDirSync(oustPutFilePath)
     } else if (fs.readdirSync(config.output).length) {
+      // フォルダが存在する
       console.log(
-        `fatal: destination path '${config.output}' already exists and is not an empty directory.`
+        `fatal: destination path '${oustPutFilePath}' already exists and is not an empty directory.`
       )
       return
     }
@@ -25,6 +39,8 @@ export default (configs?: Parameters<typeof getConfig>[0]) =>
         trailingSlash: config.trailingSlash
       },
       types,
-      files
+      files,
+      outputDir: oustPutFilePath
     })
   })
+}

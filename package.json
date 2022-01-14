@@ -1,6 +1,6 @@
 {
   "name": "openapi2aspida",
-  "version": "0.16.5",
+  "version": "0.17.0",
   "description": "Convert OpenAPI 3.0 or Swagger 2.0 definitions into aspida",
   "author": "Solufa <solufa2020@gmail.com>",
   "license": "MIT",
@@ -84,12 +84,14 @@
   },
   "dependencies": {
     "aspida": "^1.7.1",
+    "fs-extra": "^10.0.0",
     "js-yaml": "^4.1.0",
     "openapi-types": "^9.1.0",
     "swagger-parser": "^10.0.2",
     "swagger2openapi": "^7.0.8"
   },
   "devDependencies": {
+    "@types/fs-extra": "^9.0.12",
     "@types/jest": "^26.0.24",
     "@types/js-yaml": "^4.0.2",
     "@types/minimist": "^1.2.2",

@@ -101,6 +101,17 @@ module.exports = {
 ```sh
 $ npx openapi2aspida
 ```
+## Cli options
+
+### outputDit
+
+can chenge aspida output directory
+
+#### example
+
+```bash
+npx openapi2aspida -i=openApi/sample.yaml -o=lib/api/sample
+```
 
 ## License
 
