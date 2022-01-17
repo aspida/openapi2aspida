@@ -1,5 +1,3 @@
 node_modules
-#dist
-external_refs_sample
 dist
 package-lock.json
