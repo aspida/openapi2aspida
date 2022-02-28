@@ -12,7 +12,7 @@ export type Methods = {
       screenName: string
       url: string
       /** Profile picture to upload. */
-      image: File | ReadStream
+      image: (File | ReadStream)
       imageId: string
     }
   }

@@ -30,9 +30,9 @@ export type Methods = {
       quoteSource?: string
       quotePersonHandle?: string
       videoId?: number
-      video?: File | ReadStream
+      video?: (File | ReadStream)
       audioId?: number
-      audio?: File | ReadStream
+      audio?: (File | ReadStream)
       text?: string
       headline?: string
       quoteCreated?: string

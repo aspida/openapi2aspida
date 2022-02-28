@@ -578,7 +578,7 @@ export type ReceiptCreateParams = {
   /** 取引日 (yyyy-mm-dd) */
   issue_date?: string
   /** 証憑ファイル */
-  receipt: File | ReadStream
+  receipt: (File | ReadStream)
 }
 
 export type ReceiptUpdateParams = {
