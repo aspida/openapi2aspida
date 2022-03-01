@@ -17,7 +17,7 @@ export type Methods = {
 
     reqBody: {
       /** Video to upload. */
-      file: File | ReadStream
+      file: (File | ReadStream)
       caption?: string
       headline?: string
       published?: boolean

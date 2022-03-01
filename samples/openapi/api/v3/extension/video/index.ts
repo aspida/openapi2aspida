@@ -18,7 +18,7 @@ export type Methods = {
 
     reqBody: {
       /** video to upload. */
-      file: File | ReadStream
+      file: (File | ReadStream)
     }
   }
 }

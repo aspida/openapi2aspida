@@ -16,7 +16,7 @@ export type Methods = {
 
     reqBody: {
       /** audio to upload. */
-      file: File | ReadStream
+      file: (File | ReadStream)
     }
   }
 }

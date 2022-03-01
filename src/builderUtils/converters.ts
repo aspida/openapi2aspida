@@ -93,7 +93,7 @@ const object2value = (obj: OpenAPIV3.NonArraySchemaObject, required: boolean): P
   return value
 }
 
-export const BINARY_TYPE = 'File | ReadStream'
+export const BINARY_TYPE = '(File | ReadStream)'
 
 export const schema2value = (
   schema: OpenAPIV3.ReferenceObject | OpenAPIV3.SchemaObject | undefined,

@@ -8,6 +8,6 @@ export type Methods = {
     }
 
     status: 204
-    reqBody: File | ReadStream
+    reqBody: (File | ReadStream)
   }
 }
