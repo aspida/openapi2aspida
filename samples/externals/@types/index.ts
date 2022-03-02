@@ -92,7 +92,7 @@ export type ProductType = 'mobile' | 'landline' | 'internet' | 'iptv' | 'bundle'
 /** Object that models an offered product */
 export type OfferedProduct = Product & {
   /** Array of products objects. Only applies for product bundle */
-  sub_products: OfferedProduct[]
+  sub_products?: OfferedProduct[]
 }
 
 /** Object that models a subscribed product */
@@ -116,11 +116,11 @@ export type SubscribedProduct = Product & {
 /** It applies for product_type mobile, value_added_service and bolt-on, and provides information on available data, voice and sms quota */
 export type Quotas = {
   /** list of data quotas associated to this product */
-  data: DataQuota[]
+  data?: DataQuota[]
   /** list of voice quotas associated to this product */
-  voice: VoiceQuota[]
+  voice?: VoiceQuota[]
   /** list of SMS quotas associated to this product */
-  sms: SmsQuota[]
+  sms?: SmsQuota[]
 }
 
 export type CommonQuota = {

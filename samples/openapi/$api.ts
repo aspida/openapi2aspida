@@ -353,12 +353,12 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                 /**
                  * @returns OK
                  */
-                get: (option: { query: Methods13['get']['query'], headers?: Methods13['get']['reqHeaders'], config?: T }) =>
+                get: (option?: { query?: Methods13['get']['query'], headers?: Methods13['get']['reqHeaders'], config?: T }) =>
                   fetch<Methods13['get']['resBody'], BasicHeaders, Methods13['get']['status']>(prefix, `${prefix3}${PATH12}`, GET, option).json(),
                 /**
                  * @returns OK
                  */
-                $get: (option: { query: Methods13['get']['query'], headers?: Methods13['get']['reqHeaders'], config?: T }) =>
+                $get: (option?: { query?: Methods13['get']['query'], headers?: Methods13['get']['reqHeaders'], config?: T }) =>
                   fetch<Methods13['get']['resBody'], BasicHeaders, Methods13['get']['status']>(prefix, `${prefix3}${PATH12}`, GET, option).json().then(r => r.body),
                 $path: (option?: { method?: 'get'; query: Methods13['get']['query'] }) =>
                   `${prefix}${prefix3}${PATH12}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
@@ -424,13 +424,13 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                        * Returns a list of items of chat shared content
                        * @returns OK
                        */
-                      get: (option: { query: Methods17['get']['query'], headers?: Methods17['get']['reqHeaders'], config?: T }) =>
+                      get: (option?: { query?: Methods17['get']['query'], headers?: Methods17['get']['reqHeaders'], config?: T }) =>
                         fetch<Methods17['get']['resBody'], BasicHeaders, Methods17['get']['status']>(prefix, `${prefix5}${PATH11}`, GET, option).json(),
                       /**
                        * Returns a list of items of chat shared content
                        * @returns OK
                        */
-                      $get: (option: { query: Methods17['get']['query'], headers?: Methods17['get']['reqHeaders'], config?: T }) =>
+                      $get: (option?: { query?: Methods17['get']['query'], headers?: Methods17['get']['reqHeaders'], config?: T }) =>
                         fetch<Methods17['get']['resBody'], BasicHeaders, Methods17['get']['status']>(prefix, `${prefix5}${PATH11}`, GET, option).json().then(r => r.body),
                       /**
                        * Create shared item in chat
@@ -578,12 +578,12 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                 /**
                  * @returns OK
                  */
-                get: (option: { query: Methods24['get']['query'], headers?: Methods24['get']['reqHeaders'], config?: T }) =>
+                get: (option?: { query?: Methods24['get']['query'], headers?: Methods24['get']['reqHeaders'], config?: T }) =>
                   fetch<Methods24['get']['resBody'], BasicHeaders, Methods24['get']['status']>(prefix, `${prefix3}${PATH19}`, GET, option).json(),
                 /**
                  * @returns OK
                  */
-                $get: (option: { query: Methods24['get']['query'], headers?: Methods24['get']['reqHeaders'], config?: T }) =>
+                $get: (option?: { query?: Methods24['get']['query'], headers?: Methods24['get']['reqHeaders'], config?: T }) =>
                   fetch<Methods24['get']['resBody'], BasicHeaders, Methods24['get']['status']>(prefix, `${prefix3}${PATH19}`, GET, option).json().then(r => r.body),
                 $path: (option?: { method?: 'get'; query: Methods24['get']['query'] }) =>
                   `${prefix}${prefix3}${PATH19}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
@@ -591,12 +591,12 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
               /**
                * Returns a list of channel mixes with pre-fetching their contents
                */
-              get: (option: { query: Methods14['get']['query'], headers?: Methods14['get']['reqHeaders'], config?: T }) =>
+              get: (option?: { query?: Methods14['get']['query'], headers?: Methods14['get']['reqHeaders'], config?: T }) =>
                 fetch<void, BasicHeaders, Methods14['get']['status']>(prefix, prefix3, GET, option).send(),
               /**
                * Returns a list of channel mixes with pre-fetching their contents
                */
-              $get: (option: { query: Methods14['get']['query'], headers?: Methods14['get']['reqHeaders'], config?: T }) =>
+              $get: (option?: { query?: Methods14['get']['query'], headers?: Methods14['get']['reqHeaders'], config?: T }) =>
                 fetch<void, BasicHeaders, Methods14['get']['status']>(prefix, prefix3, GET, option).send().then(r => r.body),
               $path: (option?: { method?: 'get'; query: Methods14['get']['query'] }) =>
                 `${prefix}${prefix3}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
@@ -605,12 +605,12 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           /**
            * @returns OK
            */
-          get: (option: { query: Methods11['get']['query'], headers?: Methods11['get']['reqHeaders'], config?: T }) =>
+          get: (option?: { query?: Methods11['get']['query'], headers?: Methods11['get']['reqHeaders'], config?: T }) =>
             fetch<Methods11['get']['resBody'], BasicHeaders, Methods11['get']['status']>(prefix, PATH9, GET, option).json(),
           /**
            * @returns OK
            */
-          $get: (option: { query: Methods11['get']['query'], headers?: Methods11['get']['reqHeaders'], config?: T }) =>
+          $get: (option?: { query?: Methods11['get']['query'], headers?: Methods11['get']['reqHeaders'], config?: T }) =>
             fetch<Methods11['get']['resBody'], BasicHeaders, Methods11['get']['status']>(prefix, PATH9, GET, option).json().then(r => r.body),
           $path: (option?: { method?: 'get'; query: Methods11['get']['query'] }) =>
             `${prefix}${PATH9}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
@@ -988,13 +988,13 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                  * Returns a story content with support pagination
                  * @returns OK
                  */
-                get: (option: { query: Methods46['get']['query'], headers?: Methods46['get']['reqHeaders'], config?: T }) =>
+                get: (option?: { query?: Methods46['get']['query'], headers?: Methods46['get']['reqHeaders'], config?: T }) =>
                   fetch<Methods46['get']['resBody'], BasicHeaders, Methods46['get']['status']>(prefix, `${prefix3}${PATH11}`, GET, option).json(),
                 /**
                  * Returns a story content with support pagination
                  * @returns OK
                  */
-                $get: (option: { query: Methods46['get']['query'], headers?: Methods46['get']['reqHeaders'], config?: T }) =>
+                $get: (option?: { query?: Methods46['get']['query'], headers?: Methods46['get']['reqHeaders'], config?: T }) =>
                   fetch<Methods46['get']['resBody'], BasicHeaders, Methods46['get']['status']>(prefix, `${prefix3}${PATH11}`, GET, option).json().then(r => r.body),
                 $path: (option?: { method?: 'get'; query: Methods46['get']['query'] }) =>
                   `${prefix}${prefix3}${PATH11}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`

@@ -30,9 +30,9 @@ export type Methods = {
       /** 事業所ID */
       company_id: number
       /** 残高情報を含める */
-      with_balance: boolean
+      with_balance?: boolean
       /** 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） */
-      type: 'bank_account' | 'credit_card' | 'wallet'
+      type?: 'bank_account' | 'credit_card' | 'wallet'
     }
 
     status: 200

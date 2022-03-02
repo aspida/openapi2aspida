@@ -14,11 +14,11 @@ export type Methods = {
       /** 事業所ID */
       company_id: number
       /** 取得レコードのオフセット (デフォルト: 0) */
-      offset: number
+      offset?: number
       /** 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) */
-      limit: number
+      limit?: number
       /** 検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致 */
-      keyword: string
+      keyword?: string
     }
 
     status: 200

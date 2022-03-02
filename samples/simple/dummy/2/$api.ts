@@ -7,20 +7,14 @@ import { Methods as Methods0 } from '.'
 // prettier-ignore
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? '' : baseURL).replace(/\/$/, '')
-  const PATH0 = '/Files'
-  const POST = 'POST'
+  const PATH0 = '/dummy/2'
+  const PUT = 'PUT'
 
   return {
-    /**
-     * @returns sample
-     */
-    post: (option?: { config?: T }) =>
-      fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option).json(),
-    /**
-     * @returns sample
-     */
-    $post: (option?: { config?: T }) =>
-      fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option).json().then(r => r.body),
+    put: (option?: { config?: T }) =>
+      fetch<void, BasicHeaders, Methods0['put']['status']>(prefix, PATH0, PUT, option).send(),
+    $put: (option?: { config?: T }) =>
+      fetch<void, BasicHeaders, Methods0['put']['status']>(prefix, PATH0, PUT, option).send().then(r => r.body),
     $path: () => `${prefix}${PATH0}`
   }
 }

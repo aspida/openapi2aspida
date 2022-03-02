@@ -17,14 +17,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
      *
      * <p>ユーザの情報を取得する</p>
      */
-    get: (option: { query: Methods0['get']['query'], config?: T }) =>
+    get: (option?: { query?: Methods0['get']['query'], config?: T }) =>
       fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json(),
     /**
      * <h2 id="">概要</h2>
      *
      * <p>ユーザの情報を取得する</p>
      */
-    $get: (option: { query: Methods0['get']['query'], config?: T }) =>
+    $get: (option?: { query?: Methods0['get']['query'], config?: T }) =>
       fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json().then(r => r.body),
     /**
      * <h2 id="">概要</h2>

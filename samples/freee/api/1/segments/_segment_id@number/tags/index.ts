@@ -20,9 +20,9 @@ export type Methods = {
       /** 事業所ID */
       company_id: number
       /** 取得レコードのオフセット (デフォルト: 0) */
-      offset: number
+      offset?: number
       /** 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500) */
-      limit: number
+      limit?: number
     }
 
     status: 200

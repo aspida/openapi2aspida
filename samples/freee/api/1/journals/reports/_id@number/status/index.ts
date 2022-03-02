@@ -34,11 +34,11 @@ export type Methods = {
       /** 事業所ID */
       company_id: number
       /** 補助科目やコメントとして出力する項目 */
-      visible_tags: ('partner' | 'item' | 'tag' | 'section' | 'description' | 'wallet_txn_description' | 'all')[]
+      visible_tags?: ('partner' | 'item' | 'tag' | 'section' | 'description' | 'wallet_txn_description' | 'all')[]
       /** 取得開始日 (yyyy-mm-dd) */
-      start_date: string
+      start_date?: string
       /** 取得終了日 (yyyy-mm-dd) */
-      end_date: string
+      end_date?: string
     }
 
     status: 200

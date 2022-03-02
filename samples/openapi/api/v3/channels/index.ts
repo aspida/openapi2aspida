@@ -5,9 +5,9 @@ export type Methods = {
   get: {
     reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken
 
-    query: {
-      unpublished: boolean
-      'read-only': boolean
+    query?: {
+      unpublished?: boolean
+      'read-only'?: boolean
     }
 
     status: 200

@@ -66,7 +66,7 @@ export type Methods = {
       /** 事業所ID */
       company_id: number
       /** 取引の債権債務行の表示（without: 表示しない(デフォルト), with: 表示する） */
-      accruals: 'without' | 'with'
+      accruals?: 'without' | 'with'
     }
 
     status: 200

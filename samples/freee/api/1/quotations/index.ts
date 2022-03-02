@@ -12,23 +12,23 @@ export type Methods = {
       /** 事業所ID */
       company_id: number
       /** 取引先IDで絞込 */
-      partner_id: number
+      partner_id?: number
       /** 取引先コードで絞込 */
-      partner_code: string
+      partner_code?: string
       /** 見積日の開始日(yyyy-mm-dd) */
-      start_issue_date: string
+      start_issue_date?: string
       /** 見積日の終了日(yyyy-mm-dd) */
-      end_issue_date: string
+      end_issue_date?: string
       /** 見積書番号 */
-      quotation_number: string
+      quotation_number?: string
       /** 概要 */
-      description: string
+      description?: string
       /** 見積書ステータス  (unsubmitted: 送付待ち, submitted: 送付済み, all: 全て) */
-      quotation_status: 'all' | 'unsubmitted' | 'submitted'
+      quotation_status?: 'all' | 'unsubmitted' | 'submitted'
       /** 取得レコードのオフセット (デフォルト: 0) */
-      offset: number
+      offset?: number
       /** 取得レコードの件数 (デフォルト: 20, 最大: 100) */
-      limit: number
+      limit?: number
     }
 
     status: 200

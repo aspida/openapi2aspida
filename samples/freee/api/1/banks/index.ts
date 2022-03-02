@@ -22,13 +22,13 @@ export type Methods = {
    * </ul>
    */
   get: {
-    query: {
+    query?: {
       /** 取得レコードのオフセット (デフォルト: 0) */
-      offset: number
+      offset?: number
       /** 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500) */
-      limit: number
+      limit?: number
       /** サービス種別 */
-      type: 'bank' | 'credit_card' | 'wallet'
+      type?: 'bank' | 'credit_card' | 'wallet'
     }
 
     status: 200

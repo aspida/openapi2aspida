@@ -5,7 +5,7 @@ info:
 paths:
   /file/{id}/upload:
     post:
-      parameters: 
+      parameters:
         - in: path
           name: id
           schema:
@@ -49,7 +49,7 @@ paths:
           description: "accept"
   /user/{id}/abc:
     get:
-      parameters: 
+      parameters:
         - in: path
           name: id
           schema:
@@ -76,6 +76,141 @@ paths:
         202:
           description: "accept"
     put:
+      responses:
+        202:
+          description: "accept"
+  /user/{id}/2:
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+        description: The user ID
+      - in: query
+        name: path
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: '123456789123456789123456789123456789'
+        schema:
+          type: string
+    get:
+      responses:
+        200:
+          description: "accept"
+          content:
+            application/json:
+              schema:
+                required: ["id", "name"]
+                properties:
+                  id:
+                    description: ID
+                    type: integer
+                  name:
+                    description: NAME
+                    type: string
+    post:
+      responses:
+        200:
+          description: "accept"
+          content:
+            application/json:
+              schema:
+                required: ["id"]
+                properties:
+                  id:
+                    description: ID
+                    type: integer
+                  name:
+                    description: NAME
+                    type: string
+  # /patho/{throw}/{var.const.let.for.if.package.while}/123456789123456789123456789123456789:
+  #   parameters:
+  #     - in: path
+  #       name: throw
+  #       schema:
+  #         type: string
+  #       required: true
+  #       description: |
+  #         multiple line
+  #         description
+  #     - in: path
+  #       name: var.const.let.for.if.package.while
+  #       schema:
+  #         type: integer
+  #       required: true
+  #       description: |
+  #         // usage: "/* */"
+  #     - in: query
+  #       name: path
+  #       required: true
+  #       schema:
+  #         type: string
+  #     - in: query
+  #       name: 'a  b'
+  #       schema:
+  #         type: string
+  #   post:
+  #     responses:
+  #       200:
+  #         description: |
+  #           This post method is
+  #           described in
+  #           multiple lines.
+  #         content:
+  #           application/json:
+  #             schema:
+  #               required: ["id"]
+  #               properties:
+  #                 id:
+  #                   description: |
+  #                     hello
+  #                     multline
+  #                   type: integer
+  #                 name:
+  #                   description: |
+  #                     usage:
+  #                       /* declare value */
+  #                       const foo = api.....();
+  #                       console.log("foo");
+  #                   type: string
+  /dummy/2:
+    put:
+      summary: "simple"
+      responses:
+        202:
+          description: "accept"
+  # /dummy/$2:
+  #   put:
+  #     summary: "simple"
+  #     responses:
+  #       202:
+  #         description: "accept"
+  # /dummy/{a.1}/simple:
+  #   put:
+  #     summary: "simple"
+  #     parameters:
+  #       - name: "a.1"
+  #         in: "path"
+  #         description: "id"
+  #         required: true
+  #         schema:
+  #           type: "integer"
+  #     responses:
+  #       202:
+  #         description: "accept"
+  /dummy/{a_1}/simple:
+    put:
+      summary: "simple"
+      parameters:
+        - name: "a_1"
+          in: "path"
+          description: "id"
+          required: true
+          schema:
+            type: "integer"
       responses:
         202:
           description: "accept"
@@ -131,6 +266,40 @@ components:
   schemas:
     Customer:
       description: Customer
+      properties:
+        id:
+          description: ID
+          type: integer
+        name:
+          description: NAME
+          type: string
+        pet:
+          description: 'Type of pet 1:dog 2:cat 3:other'
+          type: number
+          enum:
+            - 1
+            - 2
+            - 3
+    Customer2:
+      description: Customer
+      required: ["id", "name"]
+      properties:
+        id:
+          description: ID
+          type: integer
+        name:
+          description: NAME
+          type: string
+        pet:
+          description: 'Type of pet 1:dog 2:cat 3:other'
+          type: number
+          enum:
+            - 1
+            - 2
+            - 3
+    Customer3:
+      description: Customer
+      required: ["id", "name", "pet"]
       properties:
         id:
           description: ID

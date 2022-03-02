@@ -12,29 +12,29 @@ export type Methods = {
       /** 事業所ID */
       company_id: number
       /** 取引先IDで絞込 */
-      partner_id: number
+      partner_id?: number
       /** 取引先コードで絞込 */
-      partner_code: string
+      partner_code?: string
       /** 請求日の開始日(yyyy-mm-dd) */
-      issue_date_start: string
+      issue_date_start?: string
       /** 請求日の終了日(yyyy-mm-dd) */
-      issue_date_end: string
+      issue_date_end?: string
       /** 期日の開始日(yyyy-mm-dd) */
-      due_date_start: string
+      due_date_start?: string
       /** 期日の終了日(yyyy-mm-dd) */
-      due_date_end: string
+      due_date_end?: string
       /** 請求書番号 */
-      invoice_number: string
+      invoice_number?: string
       /** 概要 */
-      description: string
+      description?: string
       /** 請求書ステータス  (draft: 下書き, applying: 申請中, remanded: 差し戻し, rejected: 却下, approved: 承認済み, issued: 発行済み, unsubmitted: 送付待ち) */
-      invoice_status: 'draft' | 'applying' | 'remanded' | 'rejected' | 'approved' | 'issued' | 'unsubmitted'
+      invoice_status?: 'draft' | 'applying' | 'remanded' | 'rejected' | 'approved' | 'issued' | 'unsubmitted'
       /** 入金ステータス  (unsettled: 入金待ち, settled: 入金済み) */
-      payment_status: 'unsettled' | 'settled'
+      payment_status?: 'unsettled' | 'settled'
       /** 取得レコードのオフセット (デフォルト: 0) */
-      offset: number
+      offset?: number
       /** 取得レコードの件数 (デフォルト: 20, 最大: 100) */
-      limit: number
+      limit?: number
     }
 
     status: 200
