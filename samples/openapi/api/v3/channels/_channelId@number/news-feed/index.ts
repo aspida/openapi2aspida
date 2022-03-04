@@ -5,12 +5,12 @@ export type Methods = {
   get: {
     reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken & Types.UserInstanceIdHeader
 
-    query: {
+    query?: {
       /** date string or number of milliseconds */
-      timestamp: number
-      offset: number
-      limit: number
-      reverse: boolean
+      timestamp?: number
+      offset?: number
+      limit?: number
+      reverse?: boolean
     }
 
     status: 200

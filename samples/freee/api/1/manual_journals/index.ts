@@ -54,43 +54,43 @@ export type Methods = {
       /** 事業所ID */
       company_id: number
       /** 発生日で絞込：開始日(yyyy-mm-dd) */
-      start_issue_date: string
+      start_issue_date?: string
       /** 発生日で絞込：終了日(yyyy-mm-dd) */
-      end_issue_date: string
+      end_issue_date?: string
       /** 貸借で絞込 (貸方: credit, 借方: debit) */
-      entry_side: 'credit' | 'debit'
+      entry_side?: 'credit' | 'debit'
       /** 勘定科目IDで絞込 */
-      account_item_id: number
+      account_item_id?: number
       /** 金額で絞込：下限 */
-      min_amount: number
+      min_amount?: number
       /** 金額で絞込：上限 */
-      max_amount: number
+      max_amount?: number
       /** 取引先IDで絞込（0を指定すると、取引先が未選択の貸借行を絞り込めます） */
-      partner_id: number
+      partner_id?: number
       /** 取引先コードで絞込 */
-      partner_code: string
+      partner_code?: string
       /** 品目IDで絞込（0を指定すると、品目が未選択の貸借行を絞り込めます） */
-      item_id: number
+      item_id?: number
       /** 部門IDで絞込（0を指定すると、部門が未選択の貸借行を絞り込めます） */
-      section_id: number
+      section_id?: number
       /** セグメント１IDで絞り込み（0を指定すると、セグメント１が未選択の貸借行を絞り込めます） */
-      segment_1_tag_id: number
+      segment_1_tag_id?: number
       /** セグメント２IDで絞り込み（0を指定すると、セグメント２が未選択の貸借行を絞り込めます） */
-      segment_2_tag_id: number
+      segment_2_tag_id?: number
       /** セグメント３IDで絞り込み（0を指定すると、セグメント３が未選択の貸借行を絞り込めます） */
-      segment_3_tag_id: number
+      segment_3_tag_id?: number
       /** コメント状態で絞込（自分宛のコメント: posted_with_mention, 自分宛のコメント-未解決: raised_with_mention, 自分宛のコメント-解決済: resolved_with_mention, コメントあり: posted, 未解決: raised, 解決済: resolved, コメントなし: none） */
-      comment_status: 'posted_with_mention' | 'raised_with_mention' | 'resolved_with_mention' | 'posted' | 'raised' | 'resolved' | 'none'
+      comment_status?: 'posted_with_mention' | 'raised_with_mention' | 'resolved_with_mention' | 'posted' | 'raised' | 'resolved' | 'none'
       /** 重要コメント付きの振替伝票を絞込 */
-      comment_important: boolean
+      comment_important?: boolean
       /** 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） */
-      adjustment: 'only' | 'without'
+      adjustment?: 'only' | 'without'
       /** 仕訳番号で絞込（事業所の仕訳番号形式が有効な場合のみ） */
-      txn_number: string
+      txn_number?: string
       /** 取得レコードのオフセット (デフォルト: 0) */
-      offset: number
+      offset?: number
       /** 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500) */
-      limit: number
+      limit?: number
     }
 
     status: 200

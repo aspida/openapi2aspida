@@ -17,7 +17,6 @@ import { resolveParamsRef, resolveResRef, resolveReqRef } from './builderUtils/r
 import getDirName from './builderUtils/getDirName'
 import schemas2Props from './builderUtils/schemas2Props'
 import parameters2Props from './builderUtils/parameters2Props'
-import { RequiredConfig } from './getConfig'
 
 const methodNames = ['get', 'post', 'put', 'delete', 'head', 'options', 'patch'] as const
 
@@ -26,15 +25,10 @@ const getParamsList = (
   params?: (OpenAPIV3.ReferenceObject | OpenAPIV3.ParameterObject)[]
 ) => params?.map(p => (isRefObject(p) ? resolveParamsRef(openapi, p.$ref) : p)) || []
 
-export default (
-  openapi: OpenAPIV3.Document,
-  requiredConfig: RequiredConfig,
-  replaceLeadingAtMark: string
-) => {
+export default (openapi: OpenAPIV3.Document, replaceLeadingAtMark: string) => {
   const files: { file: string[]; methods: string }[] = []
-  const schemas = schemas2Props(openapi.components?.schemas, openapi, requiredConfig.schema) || []
-  const parameters =
-    parameters2Props(openapi.components?.parameters, openapi, requiredConfig.parameter) || []
+  const schemas = schemas2Props(openapi.components?.schemas, openapi) || []
+  const parameters = parameters2Props(openapi.components?.parameters, openapi, false) || []
 
   files.push(
     ...Object.keys(openapi.paths)
@@ -62,7 +56,7 @@ export default (
                     [] as OpenAPIV3.ParameterObject[]
                   )
                 ],
-                requiredConfig.parameter,
+                false,
                 replaceLeadingAtMark
               )
             ),
@@ -82,7 +76,7 @@ export default (
               const reqHeaders: Prop[] = []
               const refQuery: PropValue[] = []
               const query: Prop[] = []
-              let queryRequired = requiredConfig.query
+              let queryRequired = false
 
               ;[...(openapi.paths[path]!.parameters || []), ...(target.parameters || [])].forEach(
                 p => {
@@ -102,18 +96,18 @@ export default (
                         break
                       case 'query':
                         refQuery.push(val)
-                        queryRequired = ref.required ?? requiredConfig.query
+                        queryRequired = queryRequired || (ref.required ?? false)
                         break
                       default:
                         break
                     }
                   } else {
-                    const value = schema2value(p.schema, requiredConfig.query)
+                    const value = schema2value(p.schema, false)
                     if (!value) return
 
                     const prop = {
                       name: getPropertyName(p.name),
-                      required: p.required ?? requiredConfig.query,
+                      required: p.required ?? false,
                       description: p.description ?? null,
                       values: [value]
                     }
@@ -124,7 +118,7 @@ export default (
                         break
                       case 'query':
                         query.push(prop)
-                        queryRequired = p.required ?? requiredConfig.query
+                        queryRequired = queryRequired || (p.required ?? false)
                         break
                       default:
                         break
@@ -183,7 +177,7 @@ export default (
               if (code) {
                 params.push({
                   name: 'status',
-                  required: requiredConfig.status,
+                  required: true,
                   description: null,
                   values: [
                     {
@@ -206,11 +200,11 @@ export default (
                   ref.content?.[Object.keys(ref.content)[0]]
 
                 if (content?.schema) {
-                  const val = schema2value(content.schema, requiredConfig.resBody, true)
+                  const val = schema2value(content.schema, true, true)
                   val &&
                     params.push({
                       name: 'resBody',
-                      required: requiredConfig.resBody,
+                      required: true,
                       description: ref.description,
                       values: [val]
                     })
@@ -219,7 +213,7 @@ export default (
                 if (ref.headers) {
                   params.push({
                     name: 'resHeaders',
-                    required: requiredConfig.resHeader,
+                    required: true,
                     description: null,
                     values: [
                       {
@@ -237,14 +231,14 @@ export default (
                                   description: null,
                                   value: $ref2Type(headerData.$ref)
                                 }
-                              : schema2value(headerData.schema, requiredConfig.resHeader)
+                              : schema2value(headerData.schema, true)
 
                             return (
                               val && {
                                 name: getPropertyName(header),
                                 required: isRefObject(headerData)
                                   ? true
-                                  : headerData.required ?? requiredConfig.resHeader,
+                                  : headerData.required ?? true,
                                 description: isRefObject(headerData)
                                   ? null
                                   : headerData.description,
@@ -263,7 +257,7 @@ export default (
             if (target.requestBody) {
               let reqFormat = ''
               let reqBody: PropValue | null = null
-              let required = requiredConfig.reqBody
+              let required = true
               let description: string | null = null
 
               if (isRefObject(target.requestBody)) {
@@ -281,17 +275,17 @@ export default (
                   description: null,
                   value: $ref2Type(target.requestBody.$ref)
                 }
-                required = ref.required ?? requiredConfig.reqBody
+                required = ref.required ?? true
                 description = ref.description ?? null
               } else {
-                required = target.requestBody.required ?? requiredConfig.reqBody
+                required = target.requestBody.required ?? true
                 description = target.requestBody.description ?? null
 
                 if (target.requestBody.content['multipart/form-data']?.schema) {
                   reqFormat = 'FormData'
                   reqBody = schema2value(
                     target.requestBody.content['multipart/form-data'].schema,
-                    requiredConfig.reqBody
+                    true
                   )
                 } else if (
                   target.requestBody.content['application/x-www-form-urlencoded']?.schema
@@ -299,7 +293,7 @@ export default (
                   reqFormat = 'URLSearchParams'
                   reqBody = schema2value(
                     target.requestBody.content['application/x-www-form-urlencoded'].schema,
-                    requiredConfig.reqBody
+                    true
                   )
                 } else {
                   const content =
@@ -308,15 +302,14 @@ export default (
                       key.startsWith('application/')
                     )?.[1]
 
-                  if (content?.schema)
-                    reqBody = schema2value(content.schema, requiredConfig.reqBody)
+                  if (content?.schema) reqBody = schema2value(content.schema, true)
                 }
               }
 
               if (reqFormat) {
                 params.push({
                   name: 'reqFormat',
-                  required: requiredConfig.reqFormat,
+                  required: true,
                   description: null,
                   values: [
                     {
@@ -342,7 +335,7 @@ export default (
 
             return {
               name: method,
-              required: requiredConfig.method,
+              required: true,
               description: target.description ?? null,
               values: [
                 { isArray: false, isEnum: false, nullable: false, description: null, value: params }

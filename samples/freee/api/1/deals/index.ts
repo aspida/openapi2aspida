@@ -67,35 +67,35 @@ export type Methods = {
       /** 事業所ID */
       company_id: number
       /** 取引先IDで絞込 */
-      partner_id: number
+      partner_id?: number
       /** 勘定科目IDで絞込 */
-      account_item_id: number
+      account_item_id?: number
       /** 取引先コードで絞込 */
-      partner_code: string
+      partner_code?: string
       /** 決済状況で絞込 (未決済: unsettled, 完了: settled) */
-      status: 'unsettled' | 'settled'
+      status?: 'unsettled' | 'settled'
       /** 収支区分 (収入: income, 支出: expense) */
-      type: 'income' | 'expense'
+      type?: 'income' | 'expense'
       /** 発生日で絞込：開始日(yyyy-mm-dd) */
-      start_issue_date: string
+      start_issue_date?: string
       /** 発生日で絞込：終了日(yyyy-mm-dd) */
-      end_issue_date: string
+      end_issue_date?: string
       /** 支払期日で絞込：開始日(yyyy-mm-dd) */
-      start_due_date: string
+      start_due_date?: string
       /** 支払期日で絞込：終了日(yyyy-mm-dd) */
-      end_due_date: string
+      end_due_date?: string
       /** +更新日で絞込：開始日(yyyy-mm-dd) */
-      start_renew_date: string
+      start_renew_date?: string
       /** +更新日で絞込：終了日(yyyy-mm-dd) */
-      end_renew_date: string
+      end_renew_date?: string
       /** 取得レコードのオフセット (デフォルト: 0) */
-      offset: number
+      offset?: number
       /** 取得レコードの件数 (デフォルト: 20, 最大: 100) */
-      limit: number
+      limit?: number
       /** 取引登録元アプリで絞込（me: 本APIを叩くアプリ自身から登録した取引のみ） */
-      registered_from: 'me'
+      registered_from?: 'me'
       /** 取引の債権債務行の表示（without: 表示しない(デフォルト), with: 表示する） */
-      accruals: 'without' | 'with'
+      accruals?: 'without' | 'with'
     }
 
     status: 200

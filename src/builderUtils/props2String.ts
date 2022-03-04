@@ -41,10 +41,14 @@ const values2String = (values: PropValue[], hasOf: PropValue['hasOf'], indent: s
 
 const isMultiLine = (values: PropValue[]) => values.find(v => !v.isEnum && Array.isArray(v.value))
 
+const escapeDecription = (desc: string): string => {
+  return desc.replace(/\*\//g, '* /')
+}
+
 export const description2Doc = (desc: string | null, indent: string) => {
   if (!desc) return ''
 
-  const rows = desc.trim().split('\n')
+  const rows = desc.trim().split('\n').map(escapeDecription)
   return rows.length === 1
     ? `${indent}/** ${rows[0]} */\n`
     : `${indent}/**\n${indent} * ${rows.join(`\n${indent} * `)}\n${indent} */\n`

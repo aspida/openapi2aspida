@@ -41,7 +41,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          *
          * <h2 id="_3">
          */
-        get: (option: { query: Methods1['get']['query'], config?: T }) =>
+        get: (option?: { query?: Methods1['get']['query'], config?: T }) =>
           fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix0, GET, option).json(),
         /**
          * <h2 id="">概要</h2>
@@ -66,7 +66,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          *
          * <h2 id="_3">
          */
-        $get: (option: { query: Methods1['get']['query'], config?: T }) =>
+        $get: (option?: { query?: Methods1['get']['query'], config?: T }) =>
           fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix0, GET, option).json().then(r => r.body),
         /**
          * <h2 id="">概要</h2>

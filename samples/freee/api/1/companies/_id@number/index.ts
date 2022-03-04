@@ -26,23 +26,23 @@ export type Methods = {
    * <h2 id="_3">
    */
   get: {
-    query: {
+    query?: {
       /** 取得情報に勘定科目・税区分コード・税区分・品目・取引先・部門・メモタグ・口座の一覧を含める */
-      details: true
+      details?: true
       /** 取得情報に勘定科目一覧を含める */
-      account_items: true
+      account_items?: true
       /** 取得情報に税区分コード・税区分一覧を含める */
-      taxes: true
+      taxes?: true
       /** 取得情報に品目一覧を含める */
-      items: true
+      items?: true
       /** 取得情報に取引先一覧を含める */
-      partners: true
+      partners?: true
       /** 取得情報に部門一覧を含める */
-      sections: true
+      sections?: true
       /** 取得情報にメモタグ一覧を含める */
-      tags: true
+      tags?: true
       /** 取得情報に口座一覧を含める */
-      walletables: true
+      walletables?: true
     }
 
     status: 200

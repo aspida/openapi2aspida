@@ -199,76 +199,76 @@ export type ManualJournalUpdateParams = {
 
 export type CompanyParams = {
   /** 事業所の正式名称 (100文字以内) */
-  name: string
+  name?: string
   /** 正式名称フリガナ (100文字以内) */
-  name_kana: string
+  name_kana?: string
   /** 担当者名 (50文字以内) */
-  contact_name: string
+  contact_name?: string
 
-  address_attributes: {
+  address_attributes?: {
     /** 郵便番号 */
-    zipcode: string
+    zipcode?: string
     /** 都道府県コード（0: 北海道、1:青森、2:岩手、3:宮城、4:秋田、5:山形、6:福島、7:茨城、8:栃木、9:群馬、10:埼玉、11:千葉、12:東京、13:神奈川、14:新潟、15:富山、16:石川、17:福井、18:山梨、19:長野、20:岐阜、21:静岡、22:愛知、23:三重、24:滋賀、25:京都、26:大阪、27:兵庫、28:奈良、29:和歌山、30:鳥取、31:島根、32:岡山、33:広島、34:山口、35:徳島、36:香川、37:愛媛、38:高知、39:福岡、40:佐賀、41:長崎、42:熊本、43:大分、44:宮崎、45:鹿児島、46:沖縄 */
-    prefecture_code: number
+    prefecture_code?: number
     /** 市区町村・番地 */
-    street_name1: string
+    street_name1?: string
     /** 建物名・部屋番号など */
-    street_name2: string
+    street_name2?: string
   }
 
   /** 電話番号１ */
-  phone1: string
+  phone1?: string
   /** 電話番号２ */
-  phone2: string
+  phone2?: string
   /** FAX */
-  fax: string
+  fax?: string
 
-  sales_information_attributes: {
+  sales_information_attributes?: {
     /** 種別（agriculture_forestry_fisheries_ore: 農林水産業/鉱業、construction: 建設、manufacturing_processing: 製造/加工、it: IT、transportation_logistics: 運輸/物流、retail_wholesale: 小売/卸売、finance_insurance: 金融/保険、real_estate_rental: 不動産/レンタル、profession: 士業/学術/専門技術サービス、design_production: デザイン/制作、food: 飲食、leisure_entertainment: レジャー/娯楽、lifestyle: 生活関連サービス、education: 教育/学習支援、medical_welfare: 医療/福祉、other_services: その他サービス、other: その他）Available values : agriculture_forestry_fisheries_ore, construction, manufacturing_processing, it, transportation_logistics, retail_wholesale, finance_insurance, real_estate_rental, profession, design_production, food, leisure_entertainment, lifestyle, education, medical_welfare, other_services, other */
-    industry_class: 'agriculture_forestry_fisheries_ore' | 'construction' | 'manufacturing_processing' | 'it' | 'transportation_logistics' | 'retail_wholesale' | 'finance_insurance' | 'real_estate_rental' | 'profession' | 'design_production' | 'food' | 'leisure_entertainment' | 'lifestyle' | 'education' | 'medical_welfare' | 'other_services' | 'other'
+    industry_class?: 'agriculture_forestry_fisheries_ore' | 'construction' | 'manufacturing_processing' | 'it' | 'transportation_logistics' | 'retail_wholesale' | 'finance_insurance' | 'real_estate_rental' | 'profession' | 'design_production' | 'food' | 'leisure_entertainment' | 'lifestyle' | 'education' | 'medical_welfare' | 'other_services' | 'other'
     /** 業種（agriculture: 農業, forestry: 林業, fishing_industry: 漁業、水産養殖業, mining: 鉱業、採石業、砂利採取業, civil_contractors: 土木工事業, pavement: 舗装工事業, carpenter: とび、大工、左官等の建設工事業, renovation: リフォーム工事業, electrical_plumbing: 電気、管工事等の設備工事業, grocery: 食料品の製造加工業, machinery_manufacturing: 機械器具の製造加工業, printing: 印刷業, other_manufacturing: その他の製造加工業, software_development: 受託：ソフトウェア、アプリ開発業, system_development: 受託：システム開発業, survey_analysis: 受託：調査、分析等の情報処理業, server_management: 受託：サーバー運営管理, website_production: 受託：ウェブサイト制作, online_service_management: オンラインサービス運営業, online_advertising_agency: オンライン広告代理店業, online_advertising_planning_production: オンライン広告企画・制作業, online_media_management: オンラインメディア運営業, portal_site_management: ポータルサイト運営業, other_it_services: その他、IT サービス業, transport_delivery: 輸送業、配送業, delivery: バイク便等の配達業, other_transportation_logistics: その他の運輸業、物流業, other_wholesale: 卸売業：その他, clothing_wholesale_fiber: 卸売業：衣類卸売／繊維, food_wholesale: 卸売業：飲食料品, entrusted_development_wholesale: 卸売業：機械器具, online_shop: 小売業：無店舗　オンラインショップ, fashion_grocery_store: 小売業：店舗あり　ファッション、雑貨, food_store: 小売業：店舗あり　生鮮食品、飲食料品, entrusted_store: 小売業：店舗あり　機械、器具, other_store: 小売業：店舗あり　その他, financial_instruments_exchange: 金融業：金融商品取引, commodity_futures_investment_advisor: 金融業：商品先物取引、商品投資顧問, other_financial: 金融業：その他, brokerage_insurance: 保険業：仲介、代理, other_insurance: 保険業：その他, real_estate_developer: 不動産業：ディベロッパー, real_estate_brokerage: 不動産業：売買、仲介, rent_coin_parking_management: 不動産業：賃貸、コインパーキング、管理, rental_office_co_working_space: 不動産業：レンタルオフィス、コワーキングスペース, rental_lease: レンタル業、リース業, cpa_tax_accountant: 士業：公認会計士事務所、税理士事務所, law_office: 士業：法律事務所, judicial_and_administrative_scrivener: 士業：司法書士事務所／行政書士事務所, labor_consultant: 士業：社会保険労務士事務所, other_profession: 士業：その他, business_consultant: 経営コンサルタント, academic_research_development: 学術・開発研究機関, advertising_agency: 広告代理店, advertising_planning_production: 広告企画／制作, design_development: ソフトウェア、アプリ開発業（受託）, apparel_industry_design: 服飾デザイン業、工業デザイン業, website_design: ウェブサイト制作（受託）, advertising_planning_design: 広告企画／制作業, other_design: その他、デザイン／制作, restaurants_coffee_shops: レストラン、喫茶店等の飲食店業, sale_of_lunch: 弁当の販売業, bread_confectionery_manufacture_sale: パン、菓子等の製造販売業, delivery_catering_mobile_catering: デリバリー業、ケータリング業、移動販売業, hotel_inn: 宿泊業：ホテル、旅館, homestay: 宿泊業：民泊, travel_agency: 旅行代理店業, leisure_sports_facility_management: レジャー、スポーツ等の施設運営業, show_event_management: ショー、イベント等の興行、イベント運営業, barber: ビューティ、ヘルスケア業：床屋、理容室, beauty_salon: ビューティ、ヘルスケア業：美容室, spa_sand_bath_sauna: ビューティ、ヘルスケア業：スパ、砂風呂、サウナ等, este_ail_salon: ビューティ、ヘルスケア業：その他、エステサロン、ネイルサロン等, bridal_planning_introduce_wedding: 冠婚葬祭業：ブライダルプランニング、結婚式場紹介等, memorial_ceremony_funeral: 冠婚葬祭業：メモリアルセレモニー、葬儀等, moving: 引っ越し業, courier_industry: 宅配業, house_maid_cleaning_agency: 家事代行サービス業：無店舗　ハウスメイド、掃除代行等, re_tailoring_clothes: 家事代行サービス業：店舗あり　衣類修理、衣類仕立て直し等, training_institute_management: 研修所等の施設運営業, tutoring_school: 学習塾、進学塾等の教育・学習支援業, music_calligraphy_abacus_classroom: 音楽教室、書道教室、そろばん教室等のの教育・学習支援業, english_school: 英会話スクール等の語学学習支援業, tennis_yoga_judo_school: テニススクール、ヨガ教室、柔道場等のスポーツ指導、支援業, culture_school: その他、カルチャースクール等の教育・学習支援業, seminar_planning_management: セミナー等の企画、運営業, hospital_clinic: 医療業：病院、一般診療所、クリニック等, dental_clinic: 医療業：歯科診療所, other_medical_services: 医療業：その他、医療サービス等, nursery: 福祉業：保育所等、児童向け施設型サービス, nursing_home: 福祉業：老人ホーム等、老人向け施設型サービス, rehabilitation_support_services: 福祉業：療育支援サービス等、障害者等向け施設型サービス, other_welfare: 福祉業：その他、施設型福祉サービス, visit_welfare_service: 福祉業：訪問型福祉サービス, recruitment_temporary_staffing: 人材紹介業、人材派遣業, life_related_recruitment_temporary_staffing: 生活関連サービスの人材紹介業、人材派遣業, car_maintenance_car_repair: 自動車整備業、自動車修理業, machinery_equipment_maintenance_repair: 機械機器類の整備業、修理業, cleaning_maintenance_building_management: 清掃業、メンテナンス業、建物管理業, security: 警備業, other_services: その他のサービス業, npo: NPO, general_incorporated_association: 一般社団法人, general_incorporated_foundation: 一般財団法人, other_association: その他組織) */
-    industry_code: 'agriculture' | 'forestry' | 'fishing_industry' | 'mining' | 'civil_contractors' | 'pavement' | 'carpenter' | 'renovation' | 'electrical_plumbing' | 'grocery' | 'machinery_manufacturing' | 'printing' | 'other_manufacturing' | 'software_development' | 'system_development' | 'survey_analysis' | 'server_management' | 'website_production' | 'online_service_management' | 'online_advertising_agency' | 'online_advertising_planning_production' | 'online_media_management' | 'portal_site_management' | 'other_it_services' | 'transport_delivery' | 'delivery' | 'other_transportation_logistics' | 'other_wholesale' | 'clothing_wholesale_fiber' | 'food_wholesale' | 'entrusted_development_wholesale' | 'online_shop' | 'fashion_grocery_store' | 'food_store' | 'entrusted_store' | 'other_store' | 'financial_instruments_exchange' | 'commodity_futures_investment_advisor' | 'other_financial' | 'brokerage_insurance' | 'other_insurance' | 'real_estate_developer' | 'real_estate_brokerage' | 'rent_coin_parking_management' | 'rental_office_co_working_space' | 'rental_lease' | 'cpa_tax_accountant' | 'law_office' | 'judicial_and_administrative_scrivener' | 'labor_consultant' | 'other_profession' | 'business_consultant' | 'academic_research_development' | 'advertising_agency' | 'advertising_planning_production' | 'design_development' | 'apparel_industry_design' | 'website_design' | 'advertising_planning_design' | 'other_design' | 'restaurants_coffee_shops' | 'sale_of_lunch' | 'bread_confectionery_manufacture_sale' | 'delivery_catering_mobile_catering' | 'hotel_inn' | 'homestay' | 'travel_agency' | 'leisure_sports_facility_management' | 'show_event_management' | 'barber' | 'beauty_salon' | 'spa_sand_bath_sauna' | 'este_ail_salon' | 'bridal_planning_introduce_wedding' | 'memorial_ceremony_funeral' | 'moving' | 'courier_industry' | 'house_maid_cleaning_agency' | 're_tailoring_clothes' | 'training_institute_management' | 'tutoring_school' | 'music_calligraphy_abacus_classroom' | 'english_school' | 'tennis_yoga_judo_school' | 'culture_school' | 'seminar_planning_management' | 'hospital_clinic' | 'dental_clinic' | 'other_medical_services' | 'nursery' | 'nursing_home' | 'rehabilitation_support_services' | 'other_welfare' | 'visit_welfare_service' | 'recruitment_temporary_staffing' | 'life_related_recruitment_temporary_staffing' | 'car_maintenance_car_repair' | 'machinery_equipment_maintenance_repair' | 'cleaning_maintenance_building_management' | 'security' | 'other_services' | 'npo' | 'general_incorporated_association' | 'general_incorporated_foundation' | 'other_association'
+    industry_code?: 'agriculture' | 'forestry' | 'fishing_industry' | 'mining' | 'civil_contractors' | 'pavement' | 'carpenter' | 'renovation' | 'electrical_plumbing' | 'grocery' | 'machinery_manufacturing' | 'printing' | 'other_manufacturing' | 'software_development' | 'system_development' | 'survey_analysis' | 'server_management' | 'website_production' | 'online_service_management' | 'online_advertising_agency' | 'online_advertising_planning_production' | 'online_media_management' | 'portal_site_management' | 'other_it_services' | 'transport_delivery' | 'delivery' | 'other_transportation_logistics' | 'other_wholesale' | 'clothing_wholesale_fiber' | 'food_wholesale' | 'entrusted_development_wholesale' | 'online_shop' | 'fashion_grocery_store' | 'food_store' | 'entrusted_store' | 'other_store' | 'financial_instruments_exchange' | 'commodity_futures_investment_advisor' | 'other_financial' | 'brokerage_insurance' | 'other_insurance' | 'real_estate_developer' | 'real_estate_brokerage' | 'rent_coin_parking_management' | 'rental_office_co_working_space' | 'rental_lease' | 'cpa_tax_accountant' | 'law_office' | 'judicial_and_administrative_scrivener' | 'labor_consultant' | 'other_profession' | 'business_consultant' | 'academic_research_development' | 'advertising_agency' | 'advertising_planning_production' | 'design_development' | 'apparel_industry_design' | 'website_design' | 'advertising_planning_design' | 'other_design' | 'restaurants_coffee_shops' | 'sale_of_lunch' | 'bread_confectionery_manufacture_sale' | 'delivery_catering_mobile_catering' | 'hotel_inn' | 'homestay' | 'travel_agency' | 'leisure_sports_facility_management' | 'show_event_management' | 'barber' | 'beauty_salon' | 'spa_sand_bath_sauna' | 'este_ail_salon' | 'bridal_planning_introduce_wedding' | 'memorial_ceremony_funeral' | 'moving' | 'courier_industry' | 'house_maid_cleaning_agency' | 're_tailoring_clothes' | 'training_institute_management' | 'tutoring_school' | 'music_calligraphy_abacus_classroom' | 'english_school' | 'tennis_yoga_judo_school' | 'culture_school' | 'seminar_planning_management' | 'hospital_clinic' | 'dental_clinic' | 'other_medical_services' | 'nursery' | 'nursing_home' | 'rehabilitation_support_services' | 'other_welfare' | 'visit_welfare_service' | 'recruitment_temporary_staffing' | 'life_related_recruitment_temporary_staffing' | 'car_maintenance_car_repair' | 'machinery_equipment_maintenance_repair' | 'cleaning_maintenance_building_management' | 'security' | 'other_services' | 'npo' | 'general_incorporated_association' | 'general_incorporated_foundation' | 'other_association'
   }
 
   /** 従業員数（0: 経営者のみ、1: 2~5人、2: 6~10人、3: 11~20人、13: 21~50人、14: 51~100人、15: 101~300人、18: 301~500人、16: 501~1,000人、17: 1,001人以上 */
-  head_count: 0 | 1 | 2 | 3 | 13 | 14 | 15 | 18 | 16 | 17
+  head_count?: 0 | 1 | 2 | 3 | 13 | 14 | 15 | 18 | 16 | 17
   /** 法人番号 (半角数字13桁、法人のみ) */
-  corporate_number: string
+  corporate_number?: string
 
-  fiscal_years_attributes: {
+  fiscal_years_attributes?: {
     /** 製造業向け機能（0: 使用しない、1: 使用する） */
-    use_industry_template: number
+    use_industry_template?: number
     /** 固定資産の控除法（0: 直接控除法、1: 間接控除法） */
-    indirect_write_off_method: number
+    indirect_write_off_method?: number
     /** 間接控除時の累計額（0: 共通、1: 資産分類別） */
-    indirect_write_off_method_type: number
+    indirect_write_off_method_type?: number
     /** 期首日 */
-    start_date: string
+    start_date?: string
     /** 期末日（決算日�� */
-    end_date: string
+    end_date?: string
     /** 期 */
-    accounting_period: number
+    accounting_period?: number
     /** 減価償却端数処理法(法人のみ)(0: 切り捨て、1: 切り上げ) */
-    depreciation_fraction: number
+    depreciation_fraction?: number
     /** 不動産所得使用区分(個人事業主のみ)（0: 使用しない、3: 使用する） */
-    return_code: number
+    return_code?: number
     /** 消費税端数処理方法（0: 切り上げ、1: 切り捨て, 2: 四捨五入） */
-    tax_fraction: number
+    tax_fraction?: number
   }
 
-  doc_template: {
+  doc_template?: {
     /** レイアウト(0: レイアウト1, 1:レイアウト2, 3:封筒1, 4:レイアウト3(繰越金額欄あり), 5: 封筒2(繰越金額欄あり)) */
-    invoice_layout: number
+    invoice_layout?: number
     /** スタイル(0: クラシック, 1: モダン) */
-    invoice_style: number
+    invoice_style?: number
     /** 金額端数処理方法（0: 切り上げ、1: 切り捨て, 2: 四捨五入） */
-    amount_fraction: number
+    amount_fraction?: number
   }
 
   /** 仕訳番号形式（not_used: 使用しない、digits: 数字（例：5091824）、alnum: 英数字（例：59J0P））Available values : not_used, digits, alnum */
-  txn_number_format: 'not_used' | 'digits' | 'alnum'
+  txn_number_format?: 'not_used' | 'digits' | 'alnum'
   /** プライベート資金/役員資金（0: 使用しない、1: 使用する） */
-  private_settlement: number
+  private_settlement?: number
 }
 
 export type ItemParams = {
@@ -357,15 +357,15 @@ export type ExpenseApplicationCreateParams = {
   tag_ids?: number[]
   expense_application_lines: {
     /** 日付 (yyyy-mm-dd) */
-    transaction_date: string
+    transaction_date?: string
     /** 内容 (250文字以内) */
-    description: string
+    description?: string
     /** 金額 */
-    amount: number
+    amount?: number
     /** 経費科目ID */
-    expense_application_line_template_id: number
+    expense_application_line_template_id?: number
     /** 証憑ID */
-    receipt_id: number
+    receipt_id?: number
   }[]
 }
 
@@ -386,17 +386,17 @@ export type ExpenseApplicationUpdateParams = {
   tag_ids?: number[]
   expense_application_lines: {
     /** 経費申請の項目行ID: 既存項目行を更新する場合に指定します。IDを指定しない項目行は、新規行として扱われ追加されます。また、expense_application_linesに含まれない既存の項目行は削除されます。更新後も残したい行は、必ず経費申請の項目行IDを指定してexpense_application_linesに含めてください。 */
-    id: number
+    id?: number
     /** 日付 (yyyy-mm-dd) */
-    transaction_date: string
+    transaction_date?: string
     /** 内容 (250文字以内) */
-    description: string
+    description?: string
     /** 金額 */
-    amount: number
+    amount?: number
     /** 経費科目ID */
-    expense_application_line_template_id: number
+    expense_application_line_template_id?: number
     /** 証憑ID */
-    receipt_id: number
+    receipt_id?: number
   }[]
 }
 
@@ -430,59 +430,59 @@ export type PartnerCreateParams = {
 
   address_attributes?: {
     /** 郵便番号（8文字以内） */
-    zipcode: string
+    zipcode?: string
     /** 都道府県コード（0: 北海道、1:青森、2:岩手、3:宮城、4:秋田、5:山形、6:福島、7:茨城、8:栃木、9:群馬、10:埼玉、11:千葉、12:東京、13:神奈川、14:新潟、15:富山、16:石川、17:福井、18:山梨、19:長野、20:岐阜、21:静岡、22:愛知、23:三重、24:滋賀、25:京都、26:大阪、27:兵庫、28:奈良、29:和歌山、30:鳥取、31:島根、32:岡山、33:広島、34:山口、35:徳島、36:香川、37:愛媛、38:高知、39:福岡、40:佐賀、41:長崎、42:熊本、43:大分、44:宮崎、45:鹿児島、46:沖縄 */
-    prefecture_code: number
+    prefecture_code?: number
     /** 市区町村・番地（255文字以内） */
-    street_name1: string
+    street_name1?: string
     /** 建物名・部屋番号など（255文字以内） */
-    street_name2: string
+    street_name2?: string
   }
 
   partner_doc_setting_attributes?: {
     /** 請求書送付方法(email:メール、posting:郵送、email_and_posting:メールと郵送) */
-    sending_method: 'email' | 'posting' | 'email_and_posting'
+    sending_method?: 'email' | 'posting' | 'email_and_posting'
   }
 
   partner_bank_account_attributes?: {
     /** 銀行名 */
-    bank_name: string
+    bank_name?: string
     /** 銀行名（カナ） */
-    bank_name_kana: string
+    bank_name_kana?: string
     /** 銀行番号 */
-    bank_code: string
+    bank_code?: string
     /** 支店名 */
-    branch_name: string
+    branch_name?: string
     /** 支店名（カナ） */
-    branch_kana: string
+    branch_kana?: string
     /** 支店番号 */
-    branch_code: string
+    branch_code?: string
     /** 口座種別(ordinary:普通、checking：当座、earmarked：納税準備預金、savings：貯蓄、other:その他) */
-    account_type: string
+    account_type?: string
     /** 口座番号 */
-    account_number: string
+    account_number?: string
     /** 受取人名 */
-    long_account_name: string
+    long_account_name?: string
     /** 受取人名（カナ） */
-    account_name: string
+    account_name?: string
   }
 
   payment_term_attributes?: {
     /** 締め日（29, 30, 31日の末日を指定する場合は、32を指定してください。） */
-    cutoff_day: number
+    cutoff_day?: number
     /** 支払月 */
-    additional_months: number
+    additional_months?: number
     /** 支払日（29, 30, 31日の末日を指定する場合は、32を指定してください。） */
-    fixed_day: number
+    fixed_day?: number
   }
 
   invoice_payment_term_attributes?: {
     /** 締め日（29, 30, 31日の末日を指定する場合は、32を指定してください。） */
-    cutoff_day: number
+    cutoff_day?: number
     /** 支払月 */
-    additional_months: number
+    additional_months?: number
     /** 支払日（29, 30, 31日の末日を指定する場合は、32を指定してください。） */
-    fixed_day: number
+    fixed_day?: number
   }
 }
 
@@ -514,59 +514,59 @@ export type PartnerUpdateParams = {
 
   address_attributes?: {
     /** 郵便番号（8文字以内） */
-    zipcode: string
+    zipcode?: string
     /** 都道府県コード（0: 北海道、1:青森、2:岩手、3:宮城、4:秋田、5:山形、6:福島、7:茨城、8:栃木、9:群馬、10:埼玉、11:千葉、12:東京、13:神奈川、14:新潟、15:富山、16:石川、17:福井、18:山梨、19:長野、20:岐阜、21:静岡、22:愛知、23:三重、24:滋賀、25:京都、26:大阪、27:兵庫、28:奈良、29:和歌山、30:鳥取、31:島根、32:岡山、33:広島、34:山口、35:徳島、36:香川、37:愛媛、38:高知、39:福岡、40:佐賀、41:長崎、42:熊本、43:大分、44:宮崎、45:鹿児島、46:沖縄 */
-    prefecture_code: number
+    prefecture_code?: number
     /** 市区町村・番地（255文字以内） */
-    street_name1: string
+    street_name1?: string
     /** 建物名・部屋番号など（255文字以内） */
-    street_name2: string
+    street_name2?: string
   }
 
   partner_doc_setting_attributes?: {
     /** 請求書送付方法(email:メール、posting:郵送、email_and_posting:メールと郵送) */
-    sending_method: 'email' | 'posting' | 'email_and_posting'
+    sending_method?: 'email' | 'posting' | 'email_and_posting'
   }
 
   partner_bank_account_attributes?: {
     /** 銀行名 */
-    bank_name: string
+    bank_name?: string
     /** 銀行名（カナ） */
-    bank_name_kana: string
+    bank_name_kana?: string
     /** 銀行番号 */
-    bank_code: string
+    bank_code?: string
     /** 支店名 */
-    branch_name: string
+    branch_name?: string
     /** 支店名（カナ） */
-    branch_kana: string
+    branch_kana?: string
     /** 支店番号 */
-    branch_code: string
+    branch_code?: string
     /** 口座種別(ordinary:普通、checking：当座、earmarked：納税準備預金、savings：貯蓄、other:その他) */
-    account_type: string
+    account_type?: string
     /** 口座番号 */
-    account_number: string
+    account_number?: string
     /** 受取人名 */
-    long_account_name: string
+    long_account_name?: string
     /** 受取人名（カナ） */
-    account_name: string
+    account_name?: string
   }
 
   payment_term_attributes?: {
     /** 締め日（29, 30, 31日の末日を指定する場合は、32を指定してください。） */
-    cutoff_day: number
+    cutoff_day?: number
     /** 支払月 */
-    additional_months: number
+    additional_months?: number
     /** 支払日（29, 30, 31日の末日を指定する場合は、32を指定してください。） */
-    fixed_day: number
+    fixed_day?: number
   }
 
   invoice_payment_term_attributes?: {
     /** 締め日（29, 30, 31日の末日を指定する場合は、32を指定してください。） */
-    cutoff_day: number
+    cutoff_day?: number
     /** 支払月 */
-    additional_months: number
+    additional_months?: number
     /** 支払日（29, 30, 31日の末日を指定する場合は、32を指定してください。） */
-    fixed_day: number
+    fixed_day?: number
   }
 }
 
@@ -617,11 +617,11 @@ export type AccountItemParams = {
     searchable?: number
     /** 品目 */
     items?: {
-      id: number
+      id?: number
     }[]
     /** 取引先 */
     partners?: {
-      id: number
+      id?: number
     }[]
   }
 }
@@ -802,11 +802,11 @@ export type TrialBsResponse = {
     created_at?: string
     balances: {
       /** 勘定科目ID(勘定科目の時のみ含まれる) */
-      account_item_id: number
+      account_item_id?: number
       /** 勘定科目名(勘定科目の時のみ含まれる) */
-      account_item_name: string
+      account_item_name?: string
       /** breakdown_display_type:partner, account_item_display_type:account_item指定時のみ含まれる */
-      partners: {
+      partners?: {
         /** 取引先ID */
         id: number
         /** 取引先名 */
@@ -823,7 +823,7 @@ export type TrialBsResponse = {
         composition_ratio?: number
       }[]
       /** breakdown_display_type:item, account_item_display_type:account_item指定時のみ含まれる */
-      items: {
+      items?: {
         /** 品目ID */
         id: number
         /** 品目 */
@@ -840,27 +840,27 @@ export type TrialBsResponse = {
         composition_ratio?: number
       }[]
       /** 勘定科目カテゴリーID(勘定科目カテゴリーの時のみ含まれる) */
-      account_category_id: number
+      account_category_id?: number
       /** 勘定科目カテゴリー名(勘定科目カテゴリーの時のみ含まれる) */
-      account_category_name: string
+      account_category_name?: string
       /** 合計行(勘定科目カテゴリー名の時のみ含まれる) */
-      total_line: boolean
+      total_line?: boolean
       /** 階層レベル */
-      hierarchy_level: number
+      hierarchy_level?: number
       /** 上位科目カテゴリーID(上層が存在する場合含まれる) */
-      parent_account_category_id: number
+      parent_account_category_id?: number
       /** 上位勘定科目カテゴリー名(上層が存在する場合含まれる) */
-      parent_account_category_name: string
+      parent_account_category_name?: string
       /** 期首残高 */
-      opening_balance: number
+      opening_balance?: number
       /** 借方金額 */
-      debit_amount: number
+      debit_amount?: number
       /** 貸方金額 */
-      credit_amount: number
+      credit_amount?: number
       /** 期末残高 */
-      closing_balance: number
+      closing_balance?: number
       /** 構成比 */
-      composition_ratio: number
+      composition_ratio?: number
     }[]
   }
 }
@@ -897,11 +897,11 @@ export type TrialBsTwoYearsResponse = {
     created_at?: string
     balances: {
       /** 勘定科目ID(勘定科目の時のみ含まれる) */
-      account_item_id: number
+      account_item_id?: number
       /** 勘定科目名(勘定科目の時のみ含まれる) */
-      account_item_name: string
+      account_item_name?: string
       /** breakdown_display_type:partner, account_item_display_type:account_item指定時のみ含まれる */
-      partners: {
+      partners?: {
         /** 取引先ID */
         id: number
         /** 取引先名 */
@@ -914,7 +914,7 @@ export type TrialBsTwoYearsResponse = {
         year_on_year?: number
       }[]
       /** breakdown_display_type:item, account_item_display_type:account_item指定時のみ含まれる */
-      items: {
+      items?: {
         /** 品目ID */
         id: number
         /** 品目 */
@@ -927,23 +927,23 @@ export type TrialBsTwoYearsResponse = {
         year_on_year?: number
       }[]
       /** 勘定科目カテゴリーID(勘定科目カテゴリーの時のみ含まれる) */
-      account_category_id: number
+      account_category_id?: number
       /** 勘定科目カテゴリー名(勘定科目カテゴリーの時のみ含まれる) */
-      account_category_name: string
+      account_category_name?: string
       /** 合計行(勘定科目カテゴリー名の時のみ含まれる) */
-      total_line: boolean
+      total_line?: boolean
       /** 階層レベル */
-      hierarchy_level: number
+      hierarchy_level?: number
       /** 上位科目カテゴリーID(上層が存在する場合含まれる) */
-      parent_account_category_id: number
+      parent_account_category_id?: number
       /** 上位勘定科目カテゴリー名(上層が存在する場合含まれる) */
-      parent_account_category_name: string
+      parent_account_category_name?: string
       /** 前年度期末残高 */
-      last_year_closing_balance: number
+      last_year_closing_balance?: number
       /** 期末残高 */
-      closing_balance: number
+      closing_balance?: number
       /** 前年比 */
-      year_on_year: number
+      year_on_year?: number
     }[]
   }
 }
@@ -980,11 +980,11 @@ export type TrialBsThreeYearsResponse = {
     created_at?: string
     balances: {
       /** 勘定科目ID(勘定科目の時のみ含まれる) */
-      account_item_id: number
+      account_item_id?: number
       /** 勘定科目名(勘定科目の時のみ含まれる) */
-      account_item_name: string
+      account_item_name?: string
       /** breakdown_display_type:partner, account_item_display_type:account_item指定時のみ含まれる */
-      partners: {
+      partners?: {
         /** 取引先ID */
         id: number
         /** 取引先名 */
@@ -999,7 +999,7 @@ export type TrialBsThreeYearsResponse = {
         year_on_year?: number
       }[]
       /** breakdown_display_type:item, account_item_display_type:account_item指定時のみ含まれる */
-      items: {
+      items?: {
         /** 品目ID */
         id: number
         /** 品目 */
@@ -1014,25 +1014,25 @@ export type TrialBsThreeYearsResponse = {
         year_on_year?: number
       }[]
       /** 勘定科目カテゴリーID(勘定科目カテゴリーの時のみ含まれる) */
-      account_category_id: number
+      account_category_id?: number
       /** 勘定科目カテゴリー名(勘定科目カテゴリーの時のみ含まれる) */
-      account_category_name: string
+      account_category_name?: string
       /** 合計行(勘定科目カテゴリー名の時のみ含まれる) */
-      total_line: boolean
+      total_line?: boolean
       /** 階層レベル */
-      hierarchy_level: number
+      hierarchy_level?: number
       /** 上位科目カテゴリーID(上層が存在する場合含まれる) */
-      parent_account_category_id: number
+      parent_account_category_id?: number
       /** 上位勘定科目カテゴリー名(上層が存在する場合含まれる) */
-      parent_account_category_name: string
+      parent_account_category_name?: string
       /** 前々年度期末残高 */
-      two_years_before_closing_balance: number
+      two_years_before_closing_balance?: number
       /** 前年度期末残高 */
-      last_year_closing_balance: number
+      last_year_closing_balance?: number
       /** 期末残高 */
-      closing_balance: number
+      closing_balance?: number
       /** 前年比 */
-      year_on_year: number
+      year_on_year?: number
     }[]
   }
 }
@@ -1073,11 +1073,11 @@ export type TrialPlResponse = {
     created_at?: string
     balances: {
       /** 勘定科目ID(勘定科目の時のみ含まれる) */
-      account_item_id: number
+      account_item_id?: number
       /** 勘定科目名(勘定科目の時のみ含まれる) */
-      account_item_name: string
+      account_item_name?: string
       /** breakdown_display_type:partner, account_item_display_type:account_item指定時のみ含まれる */
-      partners: {
+      partners?: {
         /** 取引先ID */
         id: number
         /** 取引先名 */
@@ -1094,7 +1094,7 @@ export type TrialPlResponse = {
         composition_ratio?: number
       }[]
       /** breakdown_display_type:item, account_item_display_type:account_item指定時のみ含まれる */
-      items: {
+      items?: {
         /** 品目ID */
         id: number
         /** 品目 */
@@ -1111,7 +1111,7 @@ export type TrialPlResponse = {
         composition_ratio?: number
       }[]
       /** breakdown_display_type:section, account_item_display_type:account_item指定時のみ含まれる */
-      sections: {
+      sections?: {
         /** 部門ID */
         id: number
         /** 部門名 */
@@ -1128,27 +1128,27 @@ export type TrialPlResponse = {
         composition_ratio?: number
       }[]
       /** 勘定科目カテゴリーID(勘定科目カテゴリーの時のみ含まれる) */
-      account_category_id: number
+      account_category_id?: number
       /** 勘定科目カテゴリー名(勘定科目カテゴリーの時のみ含まれる) */
-      account_category_name: string
+      account_category_name?: string
       /** 合計行(勘定科目カテゴリー名の時のみ含まれる) */
-      total_line: boolean
+      total_line?: boolean
       /** 階層レベル */
-      hierarchy_level: number
+      hierarchy_level?: number
       /** 上位科目カテゴリーID(上層が存在する場合含まれる) */
-      parent_account_category_id: number
+      parent_account_category_id?: number
       /** 上位勘定科目カテゴリー名(上層が存在する場合含まれる) */
-      parent_account_category_name: string
+      parent_account_category_name?: string
       /** 期首残高 */
-      opening_balance: number
+      opening_balance?: number
       /** 借方金額 */
-      debit_amount: number
+      debit_amount?: number
       /** 貸方金額 */
-      credit_amount: number
+      credit_amount?: number
       /** 期末残高 */
-      closing_balance: number
+      closing_balance?: number
       /** 構成比 */
-      composition_ratio: number
+      composition_ratio?: number
     }[]
   }
 }
@@ -1189,11 +1189,11 @@ export type TrialPlTwoYearsResponse = {
     created_at?: string
     balances: {
       /** 勘定科目ID(勘定科目の時のみ含まれる) */
-      account_item_id: number
+      account_item_id?: number
       /** 勘定科目名(勘定科目の時のみ含まれる) */
-      account_item_name: string
+      account_item_name?: string
       /** breakdown_display_type:partner, account_item_display_type:account_item指定時のみ含まれる */
-      partners: {
+      partners?: {
         /** 取引先ID */
         id: number
         /** 取引先名 */
@@ -1206,7 +1206,7 @@ export type TrialPlTwoYearsResponse = {
         year_on_year?: number
       }[]
       /** breakdown_display_type:item, account_item_display_type:account_item指定時のみ含まれる */
-      items: {
+      items?: {
         /** 品目ID */
         id: number
         /** 品目 */
@@ -1219,7 +1219,7 @@ export type TrialPlTwoYearsResponse = {
         year_on_year?: number
       }[]
       /** breakdown_display_type:section, account_item_display_type:account_item指定時のみ含まれる */
-      sections: {
+      sections?: {
         /** 部門ID */
         id: number
         /** 部門名 */
@@ -1232,23 +1232,23 @@ export type TrialPlTwoYearsResponse = {
         year_on_year?: number
       }[]
       /** 勘定科目カテゴリーID(勘定科目カテゴリーの時のみ含まれる) */
-      account_category_id: number
+      account_category_id?: number
       /** 勘定科目カテゴリー名(勘定科目カテゴリーの時のみ含まれる) */
-      account_category_name: string
+      account_category_name?: string
       /** 合計行(勘定科目カテゴリー名の時のみ含まれる) */
-      total_line: boolean
+      total_line?: boolean
       /** 階層レベル */
-      hierarchy_level: number
+      hierarchy_level?: number
       /** 上位科目カテゴリーID(上層が存在する場合含まれる) */
-      parent_account_category_id: number
+      parent_account_category_id?: number
       /** 上位勘定科目カテゴリー名(上層が存在する場合含まれる) */
-      parent_account_category_name: string
+      parent_account_category_name?: string
       /** 前年度期末残高 */
-      last_year_closing_balance: number
+      last_year_closing_balance?: number
       /** 期末残高 */
-      closing_balance: number
+      closing_balance?: number
       /** 前年比 */
-      year_on_year: number
+      year_on_year?: number
     }[]
   }
 }
@@ -1289,11 +1289,11 @@ export type TrialPlThreeYearsResponse = {
     created_at?: string
     balances: {
       /** 勘定科目ID(勘定科目の時のみ含まれる) */
-      account_item_id: number
+      account_item_id?: number
       /** 勘定科目名(勘定科目の時のみ含まれる) */
-      account_item_name: string
+      account_item_name?: string
       /** breakdown_display_type:partner, account_item_display_type:account_item指定時のみ含まれる */
-      partners: {
+      partners?: {
         /** 取引先ID */
         id: number
         /** 取引先名 */
@@ -1308,7 +1308,7 @@ export type TrialPlThreeYearsResponse = {
         year_on_year?: number
       }[]
       /** breakdown_display_type:item, account_item_display_type:account_item指定時のみ含まれる */
-      items: {
+      items?: {
         /** 品目ID */
         id: number
         /** 品目 */
@@ -1323,7 +1323,7 @@ export type TrialPlThreeYearsResponse = {
         year_on_year?: number
       }[]
       /** breakdown_display_type:section, account_item_display_type:account_item指定時のみ含まれる */
-      sections: {
+      sections?: {
         /** 部門ID */
         id: number
         /** 部門名 */
@@ -1338,25 +1338,25 @@ export type TrialPlThreeYearsResponse = {
         year_on_year?: number
       }[]
       /** 勘定科目カテゴリーID(勘定科目カテゴリーの時のみ含まれる) */
-      account_category_id: number
+      account_category_id?: number
       /** 勘定科目カテゴリー名(勘定科目カテゴリーの時のみ含まれる) */
-      account_category_name: string
+      account_category_name?: string
       /** 合計行(勘定科目カテゴリー名の時のみ含まれる) */
-      total_line: boolean
+      total_line?: boolean
       /** 階層レベル */
-      hierarchy_level: number
+      hierarchy_level?: number
       /** 上位科目カテゴリーID(上層が存在する場合含まれる) */
-      parent_account_category_id: number
+      parent_account_category_id?: number
       /** 上位勘定科目カテゴリー名(上層が存在する場合含まれる) */
-      parent_account_category_name: string
+      parent_account_category_name?: string
       /** 前々年度期末残高 */
-      two_years_before_closing_balance: number
+      two_years_before_closing_balance?: number
       /** 前年度期末残高 */
-      last_year_closing_balance: number
+      last_year_closing_balance?: number
       /** 期末残高 */
-      closing_balance: number
+      closing_balance?: number
       /** 前年比 */
-      year_on_year: number
+      year_on_year?: number
     }[]
   }
 }
@@ -1397,11 +1397,11 @@ export type TrialPlSectionsResponse = {
     created_at?: string
     balances: {
       /** 勘定科目ID(勘定科目の時のみ含まれる) */
-      account_item_id: number
+      account_item_id?: number
       /** 勘定科目名(勘定科目の時のみ含まれる) */
-      account_item_name: string
+      account_item_name?: string
       /** 部門(勘定科目の時のみ含まれる) */
-      sections: {
+      sections?: {
         /** 部門ID */
         id: number
         /** 部門名 */
@@ -1428,19 +1428,19 @@ export type TrialPlSectionsResponse = {
         }[]
       }[]
       /** 勘定科目カテゴリーID(勘定科目カテゴリーの時のみ含まれる) */
-      account_category_id: number
+      account_category_id?: number
       /** 勘定科目カテゴリー名(勘定科目カテゴリーの時のみ含まれる) */
-      account_category_name: string
+      account_category_name?: string
       /** 合計行(勘定科目カテゴリー名の時のみ含まれる) */
-      total_line: boolean
+      total_line?: boolean
       /** 階層レベル */
-      hierarchy_level: number
+      hierarchy_level?: number
       /** 上位科目カテゴリーID(上層が存在する場合含まれる) */
-      parent_account_category_id: number
+      parent_account_category_id?: number
       /** 上位勘定科目カテゴリー名(上層が存在する場合含まれる) */
-      parent_account_category_name: string
+      parent_account_category_name?: string
       /** 期末残高 */
-      closing_balance: number
+      closing_balance?: number
     }[]
   }
 }
@@ -1687,7 +1687,7 @@ export type DealResponse = {
 }
 
 export type SelectablesIndexResponse = {
-  account_categories: {
+  account_categories?: {
     /** 収支 */
     balance: 'expense' | 'income'
     /** 事業形態（個人事業主: personal、法人: corporate） */
@@ -1712,24 +1712,24 @@ export type SelectablesIndexResponse = {
       shortcut?: string
 
       default_tax?: {
-        tax_rate_5: {
+        tax_rate_5?: {
           /** 税区分ID */
-          id: number
+          id?: number
           /** 税区分 */
-          name: string
+          name?: string
         }
 
-        tax_rate_8: {
+        tax_rate_8?: {
           /** 税区分ID */
-          id: number
+          id?: number
           /** 税区分 */
-          name: string
+          name?: string
         }
       }
     }[]
   }[]
   /** 決算書表示名（小カテゴリー） */
-  account_groups: {
+  account_groups?: {
     /** 決算書表示名（小カテゴリー）ID */
     id: number
     /** 決算書表示名 */
@@ -2007,18 +2007,18 @@ export type CompanyResponse = {
 }
 
 export type UnauthorizedError = {
-  message: string
-  messages: string
+  message?: string
+  messages?: string
 }
 
 export type ForbiddenError = {
-  message: string
-  messages: string
+  message?: string
+  messages?: string
 }
 
 export type BadRequestError = {
-  status_code: number
-  errors: {
+  status_code?: number
+  errors?: {
     messages: Partial<string[] & string>
 
     type: 'status' | 'validation' | 'error'
@@ -2026,8 +2026,8 @@ export type BadRequestError = {
 }
 
 export type BadRequestNotFoundError = {
-  status_code: number
-  errors: {
+  status_code?: number
+  errors?: {
     messages: Partial<string[] & string>
 
     type: 'status' | 'validation' | 'error'
@@ -2050,8 +2050,8 @@ export type TooManyRequestsError = {
 }
 
 export type InternalServerError = {
-  status_code: number
-  errors: {
+  status_code?: number
+  errors?: {
     messages: Partial<string[] & string>
 
     type: 'status' | 'validation' | 'error'
@@ -2232,7 +2232,7 @@ export type WalletableResponse = {
 
     meta?: {
       /** 集計結果が最新かどうか */
-      up_to_date: boolean
+      up_to_date?: boolean
     }
   }
 }
@@ -2300,19 +2300,19 @@ export type TransferResponse = {
 
 export type UserParams = {
   /** 表示名 (20文字以内) */
-  display_name: string
+  display_name?: string
   /** 氏名（名） (20文字以内) */
-  first_name: string
+  first_name?: string
   /** 氏名（姓） (20文字以内) */
-  last_name: string
+  last_name?: string
   /** 氏名（カナ・名） (20文字以内) */
-  first_name_kana: string
+  first_name_kana?: string
   /** 氏名（カナ・姓） (20文字以内) */
-  last_name_kana: string
+  last_name_kana?: string
 }
 
 export type UserResponse = {
-  user: {
+  user?: {
     /** ユーザーID */
     id: number
     /** メールアドレス */
@@ -2361,13 +2361,13 @@ export type MeResponse = {
 
 export type UserCapability = {
   /** 閲覧 */
-  read: boolean
+  read?: boolean
   /** 作成 */
-  create: boolean
+  create?: boolean
   /** 更新 */
-  update: boolean
+  update?: boolean
   /** 削除 */
-  destroy: boolean
+  destroy?: boolean
 }
 
 export type ReceiptResponse = {
@@ -2501,11 +2501,11 @@ export type ApprovalRequestParams = {
   title: string
   request_items?: {
     /** 項目ID */
-    id: number
+    id?: number
     /** 項目タイプ(single_line: 自由記述形式 1行, multi_line: 自由記述形式 複数行, select: プルダウン, date: 日付, amount: 金額, receipt: 添付ファイル) */
-    type: 'single_line' | 'multi_line' | 'select' | 'date' | 'amount' | 'receipt'
+    type?: 'single_line' | 'multi_line' | 'select' | 'date' | 'amount' | 'receipt'
     /** 項目の値 (項目タイプによって入力可能な値が異なります。詳細は注意点をご確認ください） */
-    value: string
+    value?: string
   }[]
 }
 
@@ -2526,11 +2526,11 @@ export type GeneralApplicationCreateParams = {
   parent_id?: number
   request_items: {
     /** 項目ID */
-    id: number
+    id?: number
     /** 項目タイプ(title: 申請タイトル, single_line: 自由記述形式 1行, multi_line: 自由記述形式 複数行, select: プルダウン, date: 日付, amount: 金額, receipt: 添付ファイル) */
-    type: 'title' | 'single_line' | 'multi_line' | 'select' | 'date' | 'amount' | 'receipt'
+    type?: 'title' | 'single_line' | 'multi_line' | 'select' | 'date' | 'amount' | 'receipt'
     /** 項目の値 */
-    value: string
+    value?: string
   }[]
 }
 
@@ -2547,11 +2547,11 @@ export type GeneralApplicationUpdateParams = {
   draft: boolean
   request_items: {
     /** 項目ID */
-    id: number
+    id?: number
     /** 項目タイプ(title: 申請タイトル, single_line: 自由記述形式 1行, multi_line: 自由記述形式 複数行, select: プルダウン, date: 日付, amount: 金額, receipt: 添付ファイル) */
-    type: 'title' | 'single_line' | 'multi_line' | 'select' | 'date' | 'amount' | 'receipt'
+    type?: 'title' | 'single_line' | 'multi_line' | 'select' | 'date' | 'amount' | 'receipt'
     /** 項目の値 */
-    value: string
+    value?: string
   }[]
 }
 

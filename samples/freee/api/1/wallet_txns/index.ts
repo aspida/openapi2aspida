@@ -50,19 +50,19 @@ export type Methods = {
       /** 事業所ID */
       company_id: number
       /** 口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet) */
-      walletable_type: 'bank_account' | 'credit_card' | 'wallet'
+      walletable_type?: 'bank_account' | 'credit_card' | 'wallet'
       /** 口座ID */
-      walletable_id: number
+      walletable_id?: number
       /** 取引日で絞込：開始日 (yyyy-mm-dd) */
-      start_date: string
+      start_date?: string
       /** 取引日で絞込：終了日 (yyyy-mm-dd) */
-      end_date: string
+      end_date?: string
       /** 入金／出金 (入金: income, 出金: expense) */
-      entry_side: 'income' | 'expense'
+      entry_side?: 'income' | 'expense'
       /** 取得レコードのオフセット (デフォルト: 0) */
-      offset: number
+      offset?: number
       /** 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100) */
-      limit: number
+      limit?: number
     }
 
     status: 200

@@ -17,15 +17,15 @@ export type UserTokenHeader = {
 }
 
 export type AppOrganisationToken = {
-  'x-tchop-app-organisation-token': string
+  'x-tchop-app-organisation-token'?: string
 }
 
 export type UserPublicKey = {
-  'x-tchop-user-public-key': string
+  'x-tchop-user-public-key'?: string
 }
 
 export type UserSignedChallenge = {
-  'x-tchop-user-signed-challenge': string
+  'x-tchop-user-signed-challenge'?: string
 }
 
 export type AppOrganisationTokenRequired = {
@@ -34,7 +34,7 @@ export type AppOrganisationTokenRequired = {
 
 export type UserInstanceIdHeader = {
   /** Firebase Instance ID provides a unique identifier for each app instance and a mechanism to authenticate and authorize actions (example: sending FCM messages) */
-  'x-tchop-firebase-instance-id': string
+  'x-tchop-firebase-instance-id'?: string
 }
 
 export type ErrorModel = {
@@ -166,40 +166,40 @@ export type CardEnumModel = 'article' | 'image' | 'video' | 'quote' | 'editorial
 
 /** The number of reactions to each type */
 export type ReactionCountModel = {
-  like: number
-  love: number
-  haha: number
-  wow: number
-  sad: number
-  angry: number
+  like?: number
+  love?: number
+  haha?: number
+  wow?: number
+  sad?: number
+  angry?: number
 }
 
 export type MediaEXIFModel = {
-  gps: {
+  gps?: {
     x: number
     y: number
   }
 }
 
 export type CardStyleModel = {
-  showAuthor: boolean
+  showAuthor?: boolean
   /** Alternative UI Templates for article cards */
-  teaserStyle: 'standard' | 'small_with_text' | 'small_without_text' | 'big_without_text'
+  teaserStyle?: 'standard' | 'small_with_text' | 'small_without_text' | 'big_without_text'
 }
 
 export type QuoteModel = {
-  quotePerson: string
-  quotePersonHandle: string
-  quote: string
-  quoteSource: string
-  image: string
-  quotePersonImage: string
-  quoteCreated: string
+  quotePerson?: string
+  quotePersonHandle?: string
+  quote?: string
+  quoteSource?: string
+  image?: string
+  quotePersonImage?: string
+  quoteCreated?: string
 }
 
 export type ArticleModel = {
-  title: string
-  abstract: string
-  sourceName: string
-  image: string
+  title?: string
+  abstract?: string
+  sourceName?: string
+  image?: string
 }

@@ -6,8 +6,8 @@ export type Methods = {
   get: {
     reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken & Types.UserInstanceIdHeader
 
-    query: {
-      offset: number
+    query?: {
+      offset?: number
     }
 
     status: 200

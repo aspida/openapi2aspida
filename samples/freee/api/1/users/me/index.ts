@@ -8,9 +8,9 @@ export type Methods = {
    * <p>ユーザの情報を取得する</p>
    */
   get: {
-    query: {
+    query?: {
       /** 取得情報にユーザが所属する事業所一覧を含める */
-      companies: true
+      companies?: true
     }
 
     status: 200

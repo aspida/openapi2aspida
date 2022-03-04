@@ -7,7 +7,7 @@ export type Methods = {
 
     query: {
       search: string
-      offset: number
+      offset?: number
     }
 
     status: 200

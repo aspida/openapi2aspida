@@ -5,9 +5,9 @@ export type Methods = {
   get: {
     reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken
 
-    query: {
-      published: boolean
-      offset: number
+    query?: {
+      published?: boolean
+      offset?: number
     }
 
     status: 200

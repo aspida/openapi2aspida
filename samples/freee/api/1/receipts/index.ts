@@ -16,19 +16,19 @@ export type Methods = {
       /** アップロード日 (yyyy-mm-dd) */
       end_date: string
       /** アップロードしたユーザー名、メールアドレス */
-      user_name: string
+      user_name?: string
       /** アップロードファイルNo */
-      number: number
+      number?: number
       /** posted:コメントあり, raised:未解決, resolved:解決済 */
-      comment_type: 'posted' | 'raised' | 'resolved'
+      comment_type?: 'posted' | 'raised' | 'resolved'
       /** trueの時、重要コメント付きが対象 */
-      comment_important: boolean
+      comment_important?: boolean
       /** all:すべて、without_deal:未登録、with_expense_application_line:経費申請中, with_deal:登録済み、ignored:無視 */
-      category: 'all' | 'without_deal' | 'with_expense_application_line' | 'with_deal' | 'ignored'
+      category?: 'all' | 'without_deal' | 'with_expense_application_line' | 'with_deal' | 'ignored'
       /** 取得レコードのオフセット (デフォルト: 0) */
-      offset: number
+      offset?: number
       /** 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) */
-      limit: number
+      limit?: number
     }
 
     status: 200
