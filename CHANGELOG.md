@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.18.0](https://github.com/aspida/openapi2aspida/compare/v0.17.0...v0.18.0) (2022-03-07)
+
+
+### Bug Fixes
+
+* drop support for current required behavior and just provide the conversion follow specs (https://github.com/aspida/openapi2aspida/pull/179)
+* escape description comment (https://github.com/aspida/openapi2aspida/pull/179)
+* fix when query param to be required (https://github.com/aspida/openapi2aspida/pull/179#r817536624)
+
 ## [0.17.0](https://github.com/aspida/openapi2aspida/compare/v0.16.5...v0.17.0) (2022-01-13)
 
 

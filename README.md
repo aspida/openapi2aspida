@@ -25,6 +25,9 @@
 
 ## Breaking change :warning:
 
+### 2022/03/07
+Since openapi2aspida >= `0.18.0` , decision whether to be required follows the OpenAPI spec correctly. Dropping the support for original implementation, that was defaulting to required.
+
 ### 2021/03/15
 Since openapi2aspida >= `0.16.0` , requires TypeSciprt 3.8 or higher for Type-Only Imports.
 
