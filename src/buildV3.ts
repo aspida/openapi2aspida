@@ -25,7 +25,7 @@ const getParamsList = (
   params?: (OpenAPIV3.ReferenceObject | OpenAPIV3.ParameterObject)[]
 ) => params?.map(p => (isRefObject(p) ? resolveParamsRef(openapi, p.$ref) : p)) || []
 
-export default (openapi: OpenAPIV3.Document, replaceLeadingAtMark: string) => {
+export default (openapi: OpenAPIV3.Document) => {
   const files: { file: string[]; methods: string }[] = []
   const schemas = schemas2Props(openapi.components?.schemas, openapi) || []
   const parameters = parameters2Props(openapi.components?.parameters, openapi, false) || []
@@ -56,8 +56,7 @@ export default (openapi: OpenAPIV3.Document, replaceLeadingAtMark: string) => {
                     [] as OpenAPIV3.ParameterObject[]
                   )
                 ],
-                false,
-                replaceLeadingAtMark
+                false
               )
             ),
           'index'
