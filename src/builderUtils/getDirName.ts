@@ -1,16 +1,9 @@
 import { OpenAPIV3 } from 'openapi-types'
 import { getPropertyName, schema2value } from './converters'
 
-export default (
-  text: string,
-  params: OpenAPIV3.ParameterObject[],
-  required: boolean,
-  replaceLeadingAtMark: string
-) => {
+export default (text: string, params: OpenAPIV3.ParameterObject[], required: boolean) => {
   if (text === '*') return '_any'
   if (!/^{/.test(text)) {
-    if (replaceLeadingAtMark !== '@' && text.startsWith('@'))
-      return text.replace('@', replaceLeadingAtMark)
     return text
   }
 
