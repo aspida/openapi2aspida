@@ -3,8 +3,8 @@ export type Methods = {
   put: {
     query?: {
       /** query */
-      q?: string
-    }
+      q?: string | undefined
+    } | undefined
 
     status: 202
   }

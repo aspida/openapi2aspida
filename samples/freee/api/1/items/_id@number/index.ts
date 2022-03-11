@@ -27,7 +27,7 @@ export type Methods = {
     resBody: Types.ItemResponse
     reqFormat: URLSearchParams
     /** 品目の更新 */
-    reqBody?: Types.ItemParams
+    reqBody?: Types.ItemParams | undefined
   }
 
   /**

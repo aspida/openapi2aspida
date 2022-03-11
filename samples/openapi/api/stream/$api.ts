@@ -1,10 +1,12 @@
 /* eslint-disable */
 // prettier-ignore
-import { AspidaClient, BasicHeaders, dataToURLString } from 'aspida'
+import type { AspidaClient, BasicHeaders } from 'aspida'
 // prettier-ignore
-import { Methods as Methods0 } from './v1/stories'
+import { dataToURLString } from 'aspida'
 // prettier-ignore
-import { Methods as Methods1 } from './v1/stories/_storyId@number'
+import type { Methods as Methods0 } from './v1/stories'
+// prettier-ignore
+import type { Methods as Methods1 } from './v1/stories/_storyId@number'
 
 // prettier-ignore
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
@@ -22,14 +24,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
             /**
              * @returns OK
              */
-            get: (option: { query: Methods1['get']['query'], config?: T }) =>
+            get: (option: { query: Methods1['get']['query'], config?: T | undefined }) =>
               fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix2, GET, option).json(),
             /**
              * @returns OK
              */
-            $get: (option: { query: Methods1['get']['query'], config?: T }) =>
+            $get: (option: { query: Methods1['get']['query'], config?: T | undefined }) =>
               fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix2, GET, option).json().then(r => r.body),
-            $path: (option?: { method?: 'get'; query: Methods1['get']['query'] }) =>
+            $path: (option?: { method?: 'get' | undefined; query: Methods1['get']['query'] } | undefined) =>
               `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
           }
         },
@@ -37,15 +39,15 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          * It returns all stories with first 75 cards
          * @returns OK
          */
-        get: (option: { query: Methods0['get']['query'], config?: T }) =>
+        get: (option: { query: Methods0['get']['query'], config?: T | undefined }) =>
           fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json(),
         /**
          * It returns all stories with first 75 cards
          * @returns OK
          */
-        $get: (option: { query: Methods0['get']['query'], config?: T }) =>
+        $get: (option: { query: Methods0['get']['query'], config?: T | undefined }) =>
           fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json().then(r => r.body),
-        $path: (option?: { method?: 'get'; query: Methods0['get']['query'] }) =>
+        $path: (option?: { method?: 'get' | undefined; query: Methods0['get']['query'] } | undefined) =>
           `${prefix}${PATH0}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
       }
     }

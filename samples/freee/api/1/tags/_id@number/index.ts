@@ -27,7 +27,7 @@ export type Methods = {
     resBody: Types.TagResponse
     reqFormat: URLSearchParams
     /** メモタグの更新 */
-    reqBody?: Types.TagParams
+    reqBody?: Types.TagParams | undefined
   }
 
   /**

@@ -1,10 +1,12 @@
 /* eslint-disable */
 // prettier-ignore
-import { AspidaClient, BasicHeaders, dataToURLString } from 'aspida'
+import type { AspidaClient, BasicHeaders } from 'aspida'
 // prettier-ignore
-import { Methods as Methods0 } from './_segment_id@number/tags'
+import { dataToURLString } from 'aspida'
 // prettier-ignore
-import { Methods as Methods1 } from './_segment_id@number/tags/_id@number'
+import type { Methods as Methods0 } from './_segment_id@number/tags'
+// prettier-ignore
+import type { Methods as Methods1 } from './_segment_id@number/tags/_id@number'
 
 // prettier-ignore
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
@@ -40,7 +42,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                * </ul>
                * @param option.body - セグメントタグの作成
                */
-              put: (option: { body: Methods1['put']['reqBody'], config?: T }) =>
+              put: (option: { body: Methods1['put']['reqBody'], config?: T | undefined }) =>
                 fetch<Methods1['put']['resBody'], BasicHeaders, Methods1['put']['status']>(prefix, prefix2, PUT, option, 'URLSearchParams').json(),
               /**
                * <h2 id="">概要</h2>
@@ -56,7 +58,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                * </ul>
                * @param option.body - セグメントタグの作成
                */
-              $put: (option: { body: Methods1['put']['reqBody'], config?: T }) =>
+              $put: (option: { body: Methods1['put']['reqBody'], config?: T | undefined }) =>
                 fetch<Methods1['put']['resBody'], BasicHeaders, Methods1['put']['status']>(prefix, prefix2, PUT, option, 'URLSearchParams').json().then(r => r.body),
               /**
                * <h2 id="">概要</h2>
@@ -71,7 +73,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                *
                * </ul>
                */
-              delete: (option: { query: Methods1['delete']['query'], config?: T }) =>
+              delete: (option: { query: Methods1['delete']['query'], config?: T | undefined }) =>
                 fetch<void, BasicHeaders, Methods1['delete']['status']>(prefix, prefix2, DELETE, option).send(),
               /**
                * <h2 id="">概要</h2>
@@ -86,9 +88,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                *
                * </ul>
                */
-              $delete: (option: { query: Methods1['delete']['query'], config?: T }) =>
+              $delete: (option: { query: Methods1['delete']['query'], config?: T | undefined }) =>
                 fetch<void, BasicHeaders, Methods1['delete']['status']>(prefix, prefix2, DELETE, option).send().then(r => r.body),
-              $path: (option?: { method: 'delete'; query: Methods1['delete']['query'] }) =>
+              $path: (option?: { method: 'delete'; query: Methods1['delete']['query'] } | undefined) =>
                 `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
             }
           },
@@ -105,7 +107,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            *
            * </ul>
            */
-          get: (option: { query: Methods0['get']['query'], config?: T }) =>
+          get: (option: { query: Methods0['get']['query'], config?: T | undefined }) =>
             fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, `${prefix0}${PATH1}`, GET, option).json(),
           /**
            * <h2 id="">概要</h2>
@@ -120,7 +122,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            *
            * </ul>
            */
-          $get: (option: { query: Methods0['get']['query'], config?: T }) =>
+          $get: (option: { query: Methods0['get']['query'], config?: T | undefined }) =>
             fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, `${prefix0}${PATH1}`, GET, option).json().then(r => r.body),
           /**
            * <h2 id="">概要</h2>
@@ -136,7 +138,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * </ul>
            * @param option.body - セグメントタグの作成
            */
-          post: (option: { body: Methods0['post']['reqBody'], config?: T }) =>
+          post: (option: { body: Methods0['post']['reqBody'], config?: T | undefined }) =>
             fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, `${prefix0}${PATH1}`, POST, option, 'URLSearchParams').json(),
           /**
            * <h2 id="">概要</h2>
@@ -152,9 +154,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * </ul>
            * @param option.body - セグメントタグの作成
            */
-          $post: (option: { body: Methods0['post']['reqBody'], config?: T }) =>
+          $post: (option: { body: Methods0['post']['reqBody'], config?: T | undefined }) =>
             fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, `${prefix0}${PATH1}`, POST, option, 'URLSearchParams').json().then(r => r.body),
-          $path: (option?: { method?: 'get'; query: Methods0['get']['query'] }) =>
+          $path: (option?: { method?: 'get' | undefined; query: Methods0['get']['query'] } | undefined) =>
             `${prefix}${prefix0}${PATH1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
         }
       }

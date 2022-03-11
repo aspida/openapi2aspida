@@ -20,7 +20,7 @@ export type Methods = {
 
     reqBody: {
       name: string
-      title?: string
+      title?: string | undefined
     }
   }
 }

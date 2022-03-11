@@ -14,7 +14,7 @@ export type PhoneNumber = {
 
 export type Identifier = {
   /** The user identifier (e.g. phone number) to filter the results */
-  identifier?: string
+  identifier?: string | undefined
 }
 
 export type OfferId = {
@@ -29,12 +29,12 @@ export type OrderId = {
 
 export type CategoriesId = {
   /** List of wanted category ids separated by commas */
-  'categories.id'?: string
+  'categories.id'?: string | undefined
 }
 
 export type Status = {
   /** The status of the subscribed product used to filter the results */
-  status?: string
+  status?: string | undefined
 }
 
 export type Offers = Offer[]
@@ -46,15 +46,15 @@ export type Offer = {
   /** Name of the offer. User Friendly field. */
   name: string
   /** List of user identifiers (e.g. phone_numbers) that can be used to subscribe to the offer */
-  identifiers?: string[]
+  identifiers?: string[] | undefined
   /** Description of the offer. User Friendly field. */
   description: string
   /** List of categories for which the offer applies */
   categories: OfferCategory[]
   /** Time when the offer will be available to the user, in ISO-8601 extended local date format. Time-offset from UTC may be used to match local OB time. */
-  start_date?: string
+  start_date?: string | undefined
   /** Time when the offer will expire for the user, in ISO-8601 extended local date format. Time-offset from UTC may be used to match local OB time. */
-  end_date?: string
+  end_date?: string | undefined
   /** List of prices for this offer */
   prices: Price[]
   product: OfferedProduct
@@ -65,7 +65,7 @@ export type OfferCategory = {
   /** Name of the category. */
   name: string
   /** short description of the category. User Friendly field. */
-  description?: string
+  description?: string | undefined
   id: 'promotion' | 'bundle' | 'sms' | 'voice' | 'data' | 'value_added_service' | 'app' | 'iptv' | 'device' | 'recurring' | 'bolt-on' | 'dth'
 }
 
@@ -74,13 +74,13 @@ export type Product = {
   /** Name to be displayed when referring to this product. User Friendly field. */
   display_name: string
   product_type: ProductType
-  descriptions?: Descriptions
-  subscription_type?: SubscriptionType
-  quota?: Quotas
-  connection?: Connection
-  packages?: Packages
+  descriptions?: Descriptions | undefined
+  subscription_type?: SubscriptionType | undefined
+  quota?: Quotas | undefined
+  connection?: Connection | undefined
+  packages?: Packages | undefined
   /** list of freely defined strings that tag the product based on some criteria */
-  tags?: string[]
+  tags?: string[] | undefined
 }
 
 /** Specifies how the service is paid (prepaid, postpaid, etc) */
@@ -92,7 +92,7 @@ export type ProductType = 'mobile' | 'landline' | 'internet' | 'iptv' | 'bundle'
 /** Object that models an offered product */
 export type OfferedProduct = Product & {
   /** Array of products objects. Only applies for product bundle */
-  sub_products?: OfferedProduct[]
+  sub_products?: OfferedProduct[] | undefined
 }
 
 /** Object that models a subscribed product */
@@ -106,28 +106,28 @@ export type SubscribedProduct = Product & {
   /** Time when the product was subscribed, in ISO-8601 extended local date format. Time-offset from UTC may be used to match local OB time. */
   start_date: string
   /** Time when the product will finalize, in ISO-8601 extended local date format. Time-offset from UTC may be used to match local OB time. */
-  end_date?: string
+  end_date?: string | undefined
   /** List of prices for this subscribed product */
-  prices?: Price[]
+  prices?: Price[] | undefined
   /** Array of products objects. Only applies for product bundle */
-  sub_products?: SubscribedProduct[]
+  sub_products?: SubscribedProduct[] | undefined
 }
 
 /** It applies for product_type mobile, value_added_service and bolt-on, and provides information on available data, voice and sms quota */
 export type Quotas = {
   /** list of data quotas associated to this product */
-  data?: DataQuota[]
+  data?: DataQuota[] | undefined
   /** list of voice quotas associated to this product */
-  voice?: VoiceQuota[]
+  voice?: VoiceQuota[] | undefined
   /** list of SMS quotas associated to this product */
-  sms?: SmsQuota[]
+  sms?: SmsQuota[] | undefined
 }
 
 export type CommonQuota = {
   /** max units allowed by current quota. -1 is interpreted as there is no limit */
   max: number
-  time_bands?: TimeBand[]
-  origins?: Origin[]
+  time_bands?: TimeBand[] | undefined
+  origins?: Origin[] | undefined
 }
 
 /** Data quota information */
@@ -140,14 +140,14 @@ export type DataQuota = CommonQuota & {
 export type VoiceQuota = CommonQuota & {
   /** Unit used on the quota */
   unit: 'second' | 'minute' | 'hour'
-  destinations?: Destination[]
+  destinations?: Destination[] | undefined
 }
 
 /** SMS quota information */
 export type SmsQuota = CommonQuota & {
   /** Unit used on the quota */
   unit: 'message'
-  destinations?: Destination[]
+  destinations?: Destination[] | undefined
 }
 
 /** Timebands when the quota applies */
@@ -185,14 +185,14 @@ export type Description = {
   /** Text with information about the product. User Friendly field. */
   text: string
   /** HTTPS URL */
-  url?: string
+  url?: string | undefined
   /**
    * Category of the description. This field is used to provide further info about displaying of the description text:
    *  - 'general': Default value for any description without specific category.
    *  - 'dates': Information about dates, related with the life-cycle of the product (e.g: contractual information about renowation conditions)
    *  - 'promotion': Information about product acquisition conditions, such as if special price is being applied and for how long, or if data quota is duplicated during first three months.
    */
-  category?: 'general' | 'dates' | 'promotion'
+  category?: 'general' | 'dates' | 'promotion' | undefined
 }
 
 export type Descriptions = Description[]
@@ -207,12 +207,12 @@ export type Price = {
    * Period between charge of the price. Applies when type equals recurring.
    *  Additional to pre-defined values of daily, weekly, monthly, yearly, any indication of number of days or hours is possible, with format {x}-days or {x}-hours (e.g.: 7-days or 24-hours).
    */
-  recurring_period?: string
+  recurring_period?: string | undefined
   /**
    * Period for which the product will be subscribed. It does not mean that offer is available for indicated period, it means that the product will be acquired and will last for indicated period. Applies when type equals one-off or usage. For backwards compatibility, in case of recurring prices, recurring_period param is used instead.
    *  Additional to pre-defined values of day, week, month, year, any indication of number of days or hours is possible, with format {x}-days or {x}-hours (e.g.: 7-days or 24-hours).
    */
-  period_duration?: string
+  period_duration?: string | undefined
   amount: External1_MoneyAmount
   /** porcentage factor of the taxes applied */
   tax: number
@@ -226,17 +226,17 @@ export type Order = {
   /** Unique id of the order */
   id: string
   /** Id of the purchased offer */
-  offer_id?: string
+  offer_id?: string | undefined
   /** Id of the subscribed product this order relates to */
-  product_id?: string
+  product_id?: string | undefined
   /** user identifer (e.g. phone number) associated to the order */
-  identifier?: string
+  identifier?: string | undefined
   /** Time when the order was created, in ISO-8601 extended local date format. Time-offset from UTC may be used to match local OB time. */
   creation_date: string
   /** type of the order */
   type: 'purchase' | 'unsubscription' | 'update'
   status: OrderStatus
-  error?: OrderError
+  error?: OrderError | undefined
 }
 
 export type OrderStatus = 'pending' | 'confirmed' | 'rejected'
@@ -254,7 +254,7 @@ export type CreatePurchaseOrderInvoice = {
   /** Id of the offer related to the new order */
   offer_id: string
   /** user identifer (e.g. phone number) associated to the order */
-  identifier?: string
+  identifier?: string | undefined
 }
 
 /** Information of what offer has to be used to create the order */
@@ -262,7 +262,7 @@ export type CreatePurchaseOrderWallet = {
   /** Id of the offer related to the new order */
   offer_id: string
   /** user identifer (e.g. phone number) associated to the order */
-  identifier?: string
+  identifier?: string | undefined
   wallet_type: WalletType
 }
 
@@ -340,5 +340,5 @@ export type External1_MoneyAmount = {
   /** Currency code in which the amount is expressed. ISO 4217 */
   currency: string
   /** true if the amount includes government taxes */
-  tax_included?: boolean
+  tax_included?: boolean | undefined
 }

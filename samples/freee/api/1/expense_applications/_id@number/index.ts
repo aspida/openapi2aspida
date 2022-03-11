@@ -31,7 +31,7 @@ export type Methods = {
     resBody: Types.ExpenseApplicationResponse
     reqFormat: URLSearchParams
     /** 経費申請の更新 */
-    reqBody?: Types.ExpenseApplicationUpdateParams
+    reqBody?: Types.ExpenseApplicationUpdateParams | undefined
   }
 
   /**

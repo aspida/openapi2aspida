@@ -2,8 +2,8 @@
 export type Methods = {
   get: {
     query?: {
-      q?: string
-    }
+      q?: string | undefined
+    } | undefined
 
     status: 202
   }

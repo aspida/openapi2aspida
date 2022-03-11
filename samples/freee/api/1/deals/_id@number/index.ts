@@ -66,7 +66,7 @@ export type Methods = {
       /** 事業所ID */
       company_id: number
       /** 取引の債権債務行の表示（without: 表示しない(デフォルト), with: 表示する） */
-      accruals?: 'without' | 'with'
+      accruals?: 'without' | 'with' | undefined
     }
 
     status: 200
@@ -133,7 +133,7 @@ export type Methods = {
     resBody: Types.DealResponse
     reqFormat: URLSearchParams
     /** 取引（収入／支出）の更新 */
-    reqBody?: Types.DealUpdateParams
+    reqBody?: Types.DealUpdateParams | undefined
   }
 
   delete: {

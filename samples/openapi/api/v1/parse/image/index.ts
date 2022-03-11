@@ -15,8 +15,8 @@ export type Methods = {
     reqBody: {
       /** Image to upload. */
       file: (File | ReadStream)
-      rightholder?: string
-      statusCopyright?: 'unknown' | 'cc' | 'licensed' | 'sublicensed'
+      rightholder?: string | undefined
+      statusCopyright?: 'unknown' | 'cc' | 'licensed' | 'sublicensed' | undefined
     }
   }
 }

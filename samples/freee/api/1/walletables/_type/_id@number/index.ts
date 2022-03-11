@@ -50,7 +50,7 @@ export type Methods = {
     resBody: Types.WalletableResponse
     reqFormat: URLSearchParams
     /** 口座の作成 */
-    reqBody?: Types.WalletableUpdateParams
+    reqBody?: Types.WalletableUpdateParams | undefined
   }
 
   /**

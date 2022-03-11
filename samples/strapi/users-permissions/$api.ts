@@ -1,16 +1,18 @@
 /* eslint-disable */
 // prettier-ignore
-import { AspidaClient, BasicHeaders, dataToURLString } from 'aspida'
+import type { AspidaClient, BasicHeaders } from 'aspida'
 // prettier-ignore
-import { Methods as Methods0 } from './init'
+import { dataToURLString } from 'aspida'
 // prettier-ignore
-import { Methods as Methods1 } from './roles'
+import type { Methods as Methods0 } from './init'
 // prettier-ignore
-import { Methods as Methods2 } from './roles/_id@string'
+import type { Methods as Methods1 } from './roles'
 // prettier-ignore
-import { Methods as Methods3 } from './roles/_role@string'
+import type { Methods as Methods2 } from './roles/_id@string'
 // prettier-ignore
-import { Methods as Methods4 } from './search/_id@string'
+import type { Methods as Methods3 } from './roles/_role@string'
+// prettier-ignore
+import type { Methods as Methods4 } from './search/_id@string'
 
 // prettier-ignore
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
@@ -28,13 +30,13 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * Check if the first admin user has already been registered
        * @returns response
        */
-      get: (option?: { config?: T }) =>
+      get: (option?: { config?: T | undefined } | undefined) =>
         fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json(),
       /**
        * Check if the first admin user has already been registered
        * @returns response
        */
-      $get: (option?: { config?: T }) =>
+      $get: (option?: { config?: T | undefined } | undefined) =>
         fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json().then(r => r.body),
       $path: () => `${prefix}${PATH0}`
     },
@@ -47,13 +49,13 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * Retrieve a role depending on its id
            * @returns response
            */
-          get: (option?: { config?: T }) =>
+          get: (option?: { config?: T | undefined } | undefined) =>
             fetch<Methods2['get']['resBody'], BasicHeaders, Methods2['get']['status']>(prefix, prefix1, GET, option).json(),
           /**
            * Retrieve a role depending on its id
            * @returns response
            */
-          $get: (option?: { config?: T }) =>
+          $get: (option?: { config?: T | undefined } | undefined) =>
             fetch<Methods2['get']['resBody'], BasicHeaders, Methods2['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
           $path: () => `${prefix}${prefix1}`
         }
@@ -66,25 +68,25 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * Update a role
            * @returns response
            */
-          put: (option: { body: Methods3['put']['reqBody'], config?: T }) =>
+          put: (option: { body: Methods3['put']['reqBody'], config?: T | undefined }) =>
             fetch<Methods3['put']['resBody'], BasicHeaders, Methods3['put']['status']>(prefix, prefix1, PUT, option).json(),
           /**
            * Update a role
            * @returns response
            */
-          $put: (option: { body: Methods3['put']['reqBody'], config?: T }) =>
+          $put: (option: { body: Methods3['put']['reqBody'], config?: T | undefined }) =>
             fetch<Methods3['put']['resBody'], BasicHeaders, Methods3['put']['status']>(prefix, prefix1, PUT, option).json().then(r => r.body),
           /**
            * Delete a role
            * @returns response
            */
-          delete: (option?: { config?: T }) =>
+          delete: (option?: { config?: T | undefined } | undefined) =>
             fetch<Methods3['delete']['resBody'], BasicHeaders, Methods3['delete']['status']>(prefix, prefix1, DELETE, option).json(),
           /**
            * Delete a role
            * @returns response
            */
-          $delete: (option?: { config?: T }) =>
+          $delete: (option?: { config?: T | undefined } | undefined) =>
             fetch<Methods3['delete']['resBody'], BasicHeaders, Methods3['delete']['status']>(prefix, prefix1, DELETE, option).json().then(r => r.body),
           $path: () => `${prefix}${prefix1}`
         }
@@ -92,14 +94,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       /**
        * Retrieve all role documents
        */
-      get: (option?: { query?: Methods1['get']['query'], config?: T }) =>
+      get: (option?: { query?: Methods1['get']['query'] | undefined, config?: T | undefined } | undefined) =>
         fetch(prefix, PATH1, GET, option).send(),
       /**
        * Retrieve all role documents
        */
-      $get: (option?: { query?: Methods1['get']['query'], config?: T }) =>
+      $get: (option?: { query?: Methods1['get']['query'] | undefined, config?: T | undefined } | undefined) =>
         fetch(prefix, PATH1, GET, option).send().then(r => r.body),
-      $path: (option?: { method?: 'get'; query: Methods1['get']['query'] }) =>
+      $path: (option?: { method?: 'get' | undefined; query: Methods1['get']['query'] } | undefined) =>
         `${prefix}${PATH1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
     },
     search: {
@@ -110,14 +112,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           /**
            * Search for users
            */
-          get: (option?: { query?: Methods4['get']['query'], config?: T }) =>
+          get: (option?: { query?: Methods4['get']['query'] | undefined, config?: T | undefined } | undefined) =>
             fetch(prefix, prefix1, GET, option).send(),
           /**
            * Search for users
            */
-          $get: (option?: { query?: Methods4['get']['query'], config?: T }) =>
+          $get: (option?: { query?: Methods4['get']['query'] | undefined, config?: T | undefined } | undefined) =>
             fetch(prefix, prefix1, GET, option).send().then(r => r.body),
-          $path: (option?: { method?: 'get'; query: Methods4['get']['query'] }) =>
+          $path: (option?: { method?: 'get' | undefined; query: Methods4['get']['query'] } | undefined) =>
             `${prefix}${prefix1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
         }
       }

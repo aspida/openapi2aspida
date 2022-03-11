@@ -1,16 +1,16 @@
 /* eslint-disable */
 // prettier-ignore
-import { AspidaClient, BasicHeaders } from 'aspida'
+import type { AspidaClient, BasicHeaders } from 'aspida'
 // prettier-ignore
-import { Methods as Methods0 } from '.'
+import type { Methods as Methods0 } from '.'
 // prettier-ignore
-import { Methods as Methods1 } from './files'
+import type { Methods as Methods1 } from './files'
 // prettier-ignore
-import { Methods as Methods2 } from './files/_id@string'
+import type { Methods as Methods2 } from './files/_id@string'
 // prettier-ignore
-import { Methods as Methods3 } from './files/count'
+import type { Methods as Methods3 } from './files/count'
 // prettier-ignore
-import { Methods as Methods4 } from './search/_id@string'
+import type { Methods as Methods4 } from './search/_id@string'
 
 // prettier-ignore
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
@@ -33,25 +33,25 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * Retrieve a single file depending on its id
            * @returns response
            */
-          get: (option?: { config?: T }) =>
+          get: (option?: { config?: T | undefined } | undefined) =>
             fetch<Methods2['get']['resBody'], BasicHeaders, Methods2['get']['status']>(prefix, prefix1, GET, option).json(),
           /**
            * Retrieve a single file depending on its id
            * @returns response
            */
-          $get: (option?: { config?: T }) =>
+          $get: (option?: { config?: T | undefined } | undefined) =>
             fetch<Methods2['get']['resBody'], BasicHeaders, Methods2['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
           /**
            * Delete an uploaded file
            * @returns response
            */
-          delete: (option?: { config?: T }) =>
+          delete: (option?: { config?: T | undefined } | undefined) =>
             fetch<Methods2['delete']['resBody'], BasicHeaders, Methods2['delete']['status']>(prefix, prefix1, DELETE, option).json(),
           /**
            * Delete an uploaded file
            * @returns response
            */
-          $delete: (option?: { config?: T }) =>
+          $delete: (option?: { config?: T | undefined } | undefined) =>
             fetch<Methods2['delete']['resBody'], BasicHeaders, Methods2['delete']['status']>(prefix, prefix1, DELETE, option).json().then(r => r.body),
           $path: () => `${prefix}${prefix1}`
         }
@@ -61,13 +61,13 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          * Retrieve the total number of uploaded files
          * @returns response
          */
-        get: (option?: { config?: T }) =>
+        get: (option?: { config?: T | undefined } | undefined) =>
           fetch<Methods3['get']['resBody'], BasicHeaders, Methods3['get']['status']>(prefix, PATH2, GET, option).json(),
         /**
          * Retrieve the total number of uploaded files
          * @returns response
          */
-        $get: (option?: { config?: T }) =>
+        $get: (option?: { config?: T | undefined } | undefined) =>
           fetch<Methods3['get']['resBody'], BasicHeaders, Methods3['get']['status']>(prefix, PATH2, GET, option).json().then(r => r.body),
         $path: () => `${prefix}${PATH2}`
       },
@@ -75,13 +75,13 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * Retrieve all file documents
        * @returns response
        */
-      get: (option?: { config?: T }) =>
+      get: (option?: { config?: T | undefined } | undefined) =>
         fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, PATH1, GET, option).json(),
       /**
        * Retrieve all file documents
        * @returns response
        */
-      $get: (option?: { config?: T }) =>
+      $get: (option?: { config?: T | undefined } | undefined) =>
         fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, PATH1, GET, option).json().then(r => r.body),
       $path: () => `${prefix}${PATH1}`
     },
@@ -94,13 +94,13 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * Search for an uploaded file
            * @returns response
            */
-          get: (option?: { config?: T }) =>
+          get: (option?: { config?: T | undefined } | undefined) =>
             fetch<Methods4['get']['resBody'], BasicHeaders, Methods4['get']['status']>(prefix, prefix1, GET, option).json(),
           /**
            * Search for an uploaded file
            * @returns response
            */
-          $get: (option?: { config?: T }) =>
+          $get: (option?: { config?: T | undefined } | undefined) =>
             fetch<Methods4['get']['resBody'], BasicHeaders, Methods4['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
           $path: () => `${prefix}${prefix1}`
         }
@@ -110,13 +110,13 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
      * Upload a file
      * @returns response
      */
-    post: (option: { body: Methods0['post']['reqBody'], config?: T }) =>
+    post: (option: { body: Methods0['post']['reqBody'], config?: T | undefined }) =>
       fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option).json(),
     /**
      * Upload a file
      * @returns response
      */
-    $post: (option: { body: Methods0['post']['reqBody'], config?: T }) =>
+    $post: (option: { body: Methods0['post']['reqBody'], config?: T | undefined }) =>
       fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option).json().then(r => r.body),
     $path: () => `${prefix}${PATH0}`
   }

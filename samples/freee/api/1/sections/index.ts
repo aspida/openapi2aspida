@@ -92,6 +92,6 @@ export type Methods = {
     resBody: Types.SectionResponse
     reqFormat: URLSearchParams
     /** 部門の作成 */
-    reqBody?: Types.SectionParams
+    reqBody?: Types.SectionParams | undefined
   }
 }

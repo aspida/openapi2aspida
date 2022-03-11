@@ -4,7 +4,7 @@ import type * as Types from '../../../../@types'
 export type Methods = {
   /** Returns valid pubnub keys and auth token, refreshes tokens and access if needed */
   get: {
-    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken & Types.UserPublicKey & Types.UserSignedChallenge
+    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken & Types.UserPublicKey & Types.UserSignedChallenge | undefined
     status: 200
 
     /** OK */

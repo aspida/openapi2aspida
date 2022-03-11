@@ -3,7 +3,7 @@ export type Methods = {
   get: {
     query: {
       path: string
-      '123456789123456789123456789123456789'?: string
+      '123456789123456789123456789123456789'?: string | undefined
     }
 
     status: 200
@@ -20,7 +20,7 @@ export type Methods = {
   post: {
     query: {
       path: string
-      '123456789123456789123456789123456789'?: string
+      '123456789123456789123456789123456789'?: string | undefined
     }
 
     status: 200
@@ -30,7 +30,7 @@ export type Methods = {
       /** ID */
       id: number
       /** NAME */
-      name?: string
+      name?: string | undefined
     }
   }
 }

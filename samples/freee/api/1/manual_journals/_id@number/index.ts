@@ -96,7 +96,7 @@ export type Methods = {
     resBody: Types.ManualJournalResponse
     reqFormat: URLSearchParams
     /** 振替伝票の更新 */
-    reqBody?: Types.ManualJournalUpdateParams
+    reqBody?: Types.ManualJournalUpdateParams | undefined
   }
 
   /**

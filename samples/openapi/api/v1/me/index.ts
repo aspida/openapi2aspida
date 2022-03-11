@@ -9,9 +9,9 @@ export type Methods = {
       screenName: string
       email: string
       isStaff: boolean
-      channelName?: string
-      channelId?: number
-      url?: string
+      channelName?: string | undefined
+      channelId?: number | undefined
+      url?: string | undefined
     }
   }
 }

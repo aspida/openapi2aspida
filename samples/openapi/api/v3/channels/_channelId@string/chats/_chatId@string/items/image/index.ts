@@ -5,7 +5,7 @@ import type * as Types from '../../../../../../../../@types'
 export type Methods = {
   /** Create shared image item in chat */
   post: {
-    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken
+    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken | undefined
     status: 200
 
     /** OK */
@@ -18,11 +18,11 @@ export type Methods = {
     reqBody: {
       /** Image to upload. */
       file: (File | ReadStream)
-      caption?: string
-      headline?: string
-      published?: boolean
+      caption?: string | undefined
+      headline?: string | undefined
+      published?: boolean | undefined
       /** text message to send to pubnub */
-      formattedText?: string
+      formattedText?: string | undefined
     }
   }
 }

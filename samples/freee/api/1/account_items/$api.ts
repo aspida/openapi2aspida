@@ -1,10 +1,12 @@
 /* eslint-disable */
 // prettier-ignore
-import { AspidaClient, BasicHeaders, dataToURLString } from 'aspida'
+import type { AspidaClient, BasicHeaders } from 'aspida'
 // prettier-ignore
-import { Methods as Methods0 } from '.'
+import { dataToURLString } from 'aspida'
 // prettier-ignore
-import { Methods as Methods1 } from './_id@number'
+import type { Methods as Methods0 } from '.'
+// prettier-ignore
+import type { Methods as Methods1 } from './_id@number'
 
 // prettier-ignore
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
@@ -25,14 +27,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          *
          * <p>指定した勘定科目の詳細を取得する</p>
          */
-        get: (option: { query: Methods1['get']['query'], config?: T }) =>
+        get: (option: { query: Methods1['get']['query'], config?: T | undefined }) =>
           fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix0, GET, option).json(),
         /**
          * <h2 id="">概要</h2>
          *
          * <p>指定した勘定科目の詳細を取得する</p>
          */
-        $get: (option: { query: Methods1['get']['query'], config?: T }) =>
+        $get: (option: { query: Methods1['get']['query'], config?: T | undefined }) =>
           fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix0, GET, option).json().then(r => r.body),
         /**
          * <h2 id="">概要</h2>
@@ -40,7 +42,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          * <p>勘定科目を更新する</p>
          * @param option.body - 勘定科目の更新
          */
-        put: (option: { body: Methods1['put']['reqBody'], config?: T }) =>
+        put: (option: { body: Methods1['put']['reqBody'], config?: T | undefined }) =>
           fetch<Methods1['put']['resBody'], BasicHeaders, Methods1['put']['status']>(prefix, prefix0, PUT, option, 'URLSearchParams').json(),
         /**
          * <h2 id="">概要</h2>
@@ -48,7 +50,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          * <p>勘定科目を更新する</p>
          * @param option.body - 勘定科目の更新
          */
-        $put: (option: { body: Methods1['put']['reqBody'], config?: T }) =>
+        $put: (option: { body: Methods1['put']['reqBody'], config?: T | undefined }) =>
           fetch<Methods1['put']['resBody'], BasicHeaders, Methods1['put']['status']>(prefix, prefix0, PUT, option, 'URLSearchParams').json().then(r => r.body),
         /**
          * <h2 id="">概要</h2>
@@ -59,7 +61,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          * <li>削除できる勘定科目は、追加で作成したカスタム勘定項目のみです。</li>
          * <li>デフォルトで存在する勘定科目や口座の勘定科目は削除できません。</li></ul>
          */
-        delete: (option: { query: Methods1['delete']['query'], config?: T }) =>
+        delete: (option: { query: Methods1['delete']['query'], config?: T | undefined }) =>
           fetch<void, BasicHeaders, Methods1['delete']['status']>(prefix, prefix0, DELETE, option).send(),
         /**
          * <h2 id="">概要</h2>
@@ -70,9 +72,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          * <li>削除できる勘定科目は、追加で作成したカスタム勘定項目のみです。</li>
          * <li>デフォルトで存在する勘定科目や口座の勘定科目は削除できません。</li></ul>
          */
-        $delete: (option: { query: Methods1['delete']['query'], config?: T }) =>
+        $delete: (option: { query: Methods1['delete']['query'], config?: T | undefined }) =>
           fetch<void, BasicHeaders, Methods1['delete']['status']>(prefix, prefix0, DELETE, option).send().then(r => r.body),
-        $path: (option?: { method?: 'get'; query: Methods1['get']['query'] } | { method: 'delete'; query: Methods1['delete']['query'] }) =>
+        $path: (option?: { method?: 'get' | undefined; query: Methods1['get']['query'] } | { method: 'delete'; query: Methods1['delete']['query'] } | undefined) =>
           `${prefix}${prefix0}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
       }
     },
@@ -89,7 +91,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
      * <li>default_tax_code : リクエストした日時を基準とした税区分コード</li>
      * </ul>
      */
-    get: (option: { query: Methods0['get']['query'], config?: T }) =>
+    get: (option: { query: Methods0['get']['query'], config?: T | undefined }) =>
       fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json(),
     /**
      * <h2 id="">概要</h2>
@@ -104,7 +106,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
      * <li>default_tax_code : リクエストした日時を基準とした税区分コード</li>
      * </ul>
      */
-    $get: (option: { query: Methods0['get']['query'], config?: T }) =>
+    $get: (option: { query: Methods0['get']['query'], config?: T | undefined }) =>
       fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json().then(r => r.body),
     /**
      * <h2 id="">概要</h2>
@@ -112,7 +114,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
      * <p>指定した事業所の勘定科目を作成する</p>
      * @param option.body - 勘定科目の作成
      */
-    post: (option: { body: Methods0['post']['reqBody'], config?: T }) =>
+    post: (option: { body: Methods0['post']['reqBody'], config?: T | undefined }) =>
       fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option, 'URLSearchParams').json(),
     /**
      * <h2 id="">概要</h2>
@@ -120,9 +122,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
      * <p>指定した事業所の勘定科目を作成する</p>
      * @param option.body - 勘定科目の作成
      */
-    $post: (option: { body: Methods0['post']['reqBody'], config?: T }) =>
+    $post: (option: { body: Methods0['post']['reqBody'], config?: T | undefined }) =>
       fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option, 'URLSearchParams').json().then(r => r.body),
-    $path: (option?: { method?: 'get'; query: Methods0['get']['query'] }) =>
+    $path: (option?: { method?: 'get' | undefined; query: Methods0['get']['query'] } | undefined) =>
       `${prefix}${PATH0}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
   }
 }

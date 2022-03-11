@@ -3,15 +3,15 @@ import type * as Types from '../../../../../@types'
 
 export type Methods = {
   get: {
-    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken & Types.UserInstanceIdHeader
+    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken & Types.UserInstanceIdHeader | undefined
 
     query?: {
       /** date string or number of milliseconds */
-      timestamp?: number
-      offset?: number
-      limit?: number
-      reverse?: boolean
-    }
+      timestamp?: number | undefined
+      offset?: number | undefined
+      limit?: number | undefined
+      reverse?: boolean | undefined
+    } | undefined
 
     status: 200
 

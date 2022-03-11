@@ -30,9 +30,9 @@ export type Methods = {
       /** 事業所ID */
       company_id: number
       /** 残高情報を含める */
-      with_balance?: boolean
+      with_balance?: boolean | undefined
       /** 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） */
-      type?: 'bank_account' | 'credit_card' | 'wallet'
+      type?: 'bank_account' | 'credit_card' | 'wallet' | undefined
     }
 
     status: 200
@@ -43,7 +43,7 @@ export type Methods = {
       meta?: {
         /** 集計結果が最新かどうか */
         up_to_date: boolean
-      }
+      } | undefined
     }
   }
 
@@ -88,6 +88,6 @@ export type Methods = {
     resBody: Types.WalletableCreateResponse
     reqFormat: URLSearchParams
     /** 口座の作成 */
-    reqBody?: Types.WalletableCreateParams
+    reqBody?: Types.WalletableCreateParams | undefined
   }
 }

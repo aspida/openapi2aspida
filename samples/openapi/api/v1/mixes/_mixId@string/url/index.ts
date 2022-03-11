@@ -5,8 +5,8 @@ export type Methods = {
 
     reqBody: {
       url: string
-      published?: boolean
-      enableImage?: boolean
+      published?: boolean | undefined
+      enableImage?: boolean | undefined
     }
   }
 }

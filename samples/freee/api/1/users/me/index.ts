@@ -10,8 +10,8 @@ export type Methods = {
   get: {
     query?: {
       /** 取得情報にユーザが所属する事業所一覧を含める */
-      companies?: true
-    }
+      companies?: true | undefined
+    } | undefined
 
     status: 200
     resBody: Types.MeResponse
@@ -27,6 +27,6 @@ export type Methods = {
     resBody: Types.UserResponse
     reqFormat: URLSearchParams
     /** ユーザー情報の更新 */
-    reqBody?: Types.UserParams
+    reqBody?: Types.UserParams | undefined
   }
 }

@@ -4,14 +4,14 @@ import type * as Types from '../../../../@types'
 
 export type Methods = {
   post: {
-    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken
+    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken | undefined
     status: 200
 
     /** OK */
     resBody: {
       id: string
-      width?: number
-      height?: number
+      width?: number | undefined
+      height?: number | undefined
     }
 
     reqFormat: FormData
