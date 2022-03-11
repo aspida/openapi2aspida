@@ -24,12 +24,12 @@ export type Methods = {
   get: {
     query?: {
       /** 取得レコードのオフセット (デフォルト: 0) */
-      offset?: number
+      offset?: number | undefined
       /** 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500) */
-      limit?: number
+      limit?: number | undefined
       /** サービス種別 */
-      type?: 'bank' | 'credit_card' | 'wallet'
-    }
+      type?: 'bank' | 'credit_card' | 'wallet' | undefined
+    } | undefined
 
     status: 200
 

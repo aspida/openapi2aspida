@@ -1,48 +1,48 @@
 /* eslint-disable */
 export type Category = {
-  id?: number
-  name?: string
+  id?: number | undefined
+  name?: string | undefined
 }
 
 export type Pet = {
-  id?: number
-  category?: Category
+  id?: number | undefined
+  category?: Category | undefined
   name: string
   photoUrls: string[]
-  tags?: Tag[]
+  tags?: Tag[] | undefined
   /** pet status in the store */
-  status?: 'available' | 'pending' | 'sold'
+  status?: 'available' | 'pending' | 'sold' | undefined
 }
 
 export type Tag = {
-  id?: number
-  name?: string
+  id?: number | undefined
+  name?: string | undefined
 }
 
 export type ApiResponse = {
-  code?: number
-  type?: string
-  message?: string
+  code?: number | undefined
+  type?: string | undefined
+  message?: string | undefined
 }
 
 export type Order = {
-  id?: number
-  petId?: number
-  quantity?: number
-  shipDate?: string
+  id?: number | undefined
+  petId?: number | undefined
+  quantity?: number | undefined
+  shipDate?: string | undefined
   /** Order Status */
-  status?: 'placed' | 'approved' | 'delivered'
-  complete?: boolean
+  status?: 'placed' | 'approved' | 'delivered' | undefined
+  complete?: boolean | undefined
 }
 
 export type User = {
-  id?: number
-  username?: string
-  firstName?: string
-  lastName?: string
-  email?: string
-  password?: string
-  phone?: string
+  id?: number | undefined
+  username?: string | undefined
+  firstName?: string | undefined
+  lastName?: string | undefined
+  email?: string | undefined
+  password?: string | undefined
+  phone?: string | undefined
   /** User Status */
-  userStatus?: number
+  userStatus?: number | undefined
 }

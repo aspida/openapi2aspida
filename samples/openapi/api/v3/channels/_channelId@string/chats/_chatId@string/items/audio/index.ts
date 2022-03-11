@@ -5,7 +5,7 @@ import type * as Types from '../../../../../../../../@types'
 export type Methods = {
   /** Create shared audio item in chat */
   post: {
-    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.UserTokenHeader & Types.AppOrganisationToken
+    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.UserTokenHeader & Types.AppOrganisationToken | undefined
     status: 200
 
     /** OK */
@@ -18,12 +18,12 @@ export type Methods = {
     reqBody: {
       /** Audio to upload. */
       file: (File | ReadStream)
-      caption?: string
-      headline?: string
-      imageId?: string
-      published?: boolean
+      caption?: string | undefined
+      headline?: string | undefined
+      imageId?: string | undefined
+      published?: boolean | undefined
       /** text message to send to pubnub */
-      formattedText?: string
+      formattedText?: string | undefined
     }
   }
 }

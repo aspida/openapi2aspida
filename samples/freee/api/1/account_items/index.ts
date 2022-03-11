@@ -20,7 +20,7 @@ export type Methods = {
       /** 事業所ID */
       company_id: number
       /** 基準日:指定した場合、勘定科目に紐づく税区分(default_tax_code)が、基準日の税率に基づいて返ります。 */
-      base_date?: string
+      base_date?: string | undefined
     }
 
     status: 200

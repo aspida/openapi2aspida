@@ -3,12 +3,12 @@ import type * as Types from '../../../@types'
 
 export type Methods = {
   get: {
-    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken
+    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken | undefined
 
     query?: {
-      unpublished?: boolean
-      'read-only'?: boolean
-    }
+      unpublished?: boolean | undefined
+      'read-only'?: boolean | undefined
+    } | undefined
 
     status: 200
     /** OK */
@@ -21,10 +21,10 @@ export type Methods = {
       url: string
       ownerEmail: string
       ownerName: string
-      organisationName?: string
+      organisationName?: string | undefined
       ownerId: number
       organisationId: number
-      pinnedStoryId?: number
+      pinnedStoryId?: number | undefined
       stories: {
         id: number
         title: number

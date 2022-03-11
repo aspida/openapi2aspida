@@ -39,4 +39,9 @@ module.exports = [
     outputEachDir: true,
     openapi: { inputFile: 'samples/array-one-of.yml' }
   }
+  // {
+  //   input: 'samples/path-at-mark',
+  //   outputEachDir: true,
+  //   openapi: { inputFile: 'samples/path-at-mark.yml' }
+  // }
 ]

@@ -3,12 +3,12 @@ import type * as Types from '../../../../../@types'
 
 export type Methods = {
   get: {
-    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken
+    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken | undefined
 
     query?: {
-      published?: boolean
-      offset?: number
-    }
+      published?: boolean | undefined
+      offset?: number | undefined
+    } | undefined
 
     status: 200
 

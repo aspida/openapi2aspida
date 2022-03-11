@@ -1,6 +1,6 @@
 /* eslint-disable */
 // prettier-ignore
-import { AspidaClient } from 'aspida'
+import type { AspidaClient } from 'aspida'
 
 
 // prettier-ignore

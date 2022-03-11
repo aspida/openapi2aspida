@@ -7,23 +7,23 @@ export type Methods = {
 
     reqBody: {
       type: Types.CardEnumModel
-      title?: string
-      abstract?: string
-      sourceName?: string
-      image?: string
-      imageId?: string
-      quotePerson?: string
-      quote?: string
-      url?: string
-      quotePersonImageId?: string
-      quotePersonImage?: string
-      quoteSource?: string
-      quotePersonHandle?: string
-      videoId?: string
-      text?: string
-      headline?: string
-      quoteCreated?: string
-      published?: boolean
+      title?: string | undefined
+      abstract?: string | undefined
+      sourceName?: string | undefined
+      image?: string | undefined
+      imageId?: string | undefined
+      quotePerson?: string | undefined
+      quote?: string | undefined
+      url?: string | undefined
+      quotePersonImageId?: string | undefined
+      quotePersonImage?: string | undefined
+      quoteSource?: string | undefined
+      quotePersonHandle?: string | undefined
+      videoId?: string | undefined
+      text?: string | undefined
+      headline?: string | undefined
+      quoteCreated?: string | undefined
+      published?: boolean | undefined
     }
   }
 }

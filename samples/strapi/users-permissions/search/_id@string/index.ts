@@ -6,32 +6,32 @@ export type Methods = {
   get: {
     query?: {
       /** Maximum number of results possible */
-      _limit?: number
+      _limit?: number | undefined
       /** Sort according to a specific field. */
-      _sort?: string
+      _sort?: string | undefined
       /** Skip a specific number of entries (especially useful for pagination) */
-      _start?: number
+      _start?: number | undefined
       /** Get entries that matches exactly your input */
-      '='?: string
+      '='?: string | undefined
       /** Get records that are not equals to something */
-      _ne?: string
+      _ne?: string | undefined
       /** Get record that are lower than a value */
-      _lt?: string
+      _lt?: string | undefined
       /** Get records that are lower than or equal to a value */
-      _lte?: string
+      _lte?: string | undefined
       /** Get records that are greater than a value */
-      _gt?: string
+      _gt?: string | undefined
       /** Get records that are greater than  or equal a value */
-      _gte?: string
+      _gte?: string | undefined
       /** Get records that contains a value */
-      _contains?: string
+      _contains?: string | undefined
       /** Get records that contains (case sensitive) a value */
-      _containss?: string
+      _containss?: string | undefined
       /** Get records that matches any value in the array of values */
-      _in?: string[]
+      _in?: string[] | undefined
       /** Get records that doesn't match any value in the array of values */
-      _nin?: string[]
-    }
+      _nin?: string[] | undefined
+    } | undefined
 
     status: 200
     /** response */

@@ -1,18 +1,20 @@
 /* eslint-disable */
 // prettier-ignore
-import { AspidaClient, BasicHeaders, dataToURLString } from 'aspida'
+import type { AspidaClient, BasicHeaders } from 'aspida'
 // prettier-ignore
-import { Methods as Methods0 } from '.'
+import { dataToURLString } from 'aspida'
 // prettier-ignore
-import { Methods as Methods1 } from './_id@number'
+import type { Methods as Methods0 } from '.'
 // prettier-ignore
-import { Methods as Methods2 } from './_id@number/payments'
+import type { Methods as Methods1 } from './_id@number'
 // prettier-ignore
-import { Methods as Methods3 } from './_id@number/payments/_payment_id@number'
+import type { Methods as Methods2 } from './_id@number/payments'
 // prettier-ignore
-import { Methods as Methods4 } from './_id@number/renews'
+import type { Methods as Methods3 } from './_id@number/payments/_payment_id@number'
 // prettier-ignore
-import { Methods as Methods5 } from './_id@number/renews/_renew_id@number'
+import type { Methods as Methods4 } from './_id@number/renews'
+// prettier-ignore
+import type { Methods as Methods5 } from './_id@number/renews/_renew_id@number'
 
 // prettier-ignore
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
@@ -80,7 +82,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                * </ul>
                * @param option.body - 取引（収入／支出）の支払行更新
                */
-              put: (option: { body: Methods3['put']['reqBody'], config?: T }) =>
+              put: (option: { body: Methods3['put']['reqBody'], config?: T | undefined }) =>
                 fetch<Methods3['put']['resBody'], BasicHeaders, Methods3['put']['status']>(prefix, prefix2, PUT, option, 'URLSearchParams').json(),
               /**
                * <h2 id="">概要</h2>
@@ -127,7 +129,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                * </ul>
                * @param option.body - 取引（収入／支出）の支払行更新
                */
-              $put: (option: { body: Methods3['put']['reqBody'], config?: T }) =>
+              $put: (option: { body: Methods3['put']['reqBody'], config?: T | undefined }) =>
                 fetch<Methods3['put']['resBody'], BasicHeaders, Methods3['put']['status']>(prefix, prefix2, PUT, option, 'URLSearchParams').json().then(r => r.body),
               /**
                * <h2 id="">概要</h2>
@@ -158,7 +160,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                * </li>
                * </ul>
                */
-              delete: (option: { query: Methods3['delete']['query'], config?: T }) =>
+              delete: (option: { query: Methods3['delete']['query'], config?: T | undefined }) =>
                 fetch<void, BasicHeaders, Methods3['delete']['status']>(prefix, prefix2, DELETE, option).send(),
               /**
                * <h2 id="">概要</h2>
@@ -189,9 +191,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                * </li>
                * </ul>
                */
-              $delete: (option: { query: Methods3['delete']['query'], config?: T }) =>
+              $delete: (option: { query: Methods3['delete']['query'], config?: T | undefined }) =>
                 fetch<void, BasicHeaders, Methods3['delete']['status']>(prefix, prefix2, DELETE, option).send().then(r => r.body),
-              $path: (option?: { method: 'delete'; query: Methods3['delete']['query'] }) =>
+              $path: (option?: { method: 'delete'; query: Methods3['delete']['query'] } | undefined) =>
                 `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
             }
           },
@@ -234,7 +236,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * </ul>
            * @param option.body - 取引（収入／支出）の支払行作成
            */
-          post: (option: { body: Methods2['post']['reqBody'], config?: T }) =>
+          post: (option: { body: Methods2['post']['reqBody'], config?: T | undefined }) =>
             fetch<Methods2['post']['resBody'], BasicHeaders, Methods2['post']['status']>(prefix, `${prefix0}${PATH1}`, POST, option, 'URLSearchParams').json(),
           /**
            * <h2 id="">概要</h2>
@@ -275,7 +277,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * </ul>
            * @param option.body - 取引（収入／支出）の支払行作成
            */
-          $post: (option: { body: Methods2['post']['reqBody'], config?: T }) =>
+          $post: (option: { body: Methods2['post']['reqBody'], config?: T | undefined }) =>
             fetch<Methods2['post']['resBody'], BasicHeaders, Methods2['post']['status']>(prefix, `${prefix0}${PATH1}`, POST, option, 'URLSearchParams').json().then(r => r.body),
           $path: () => `${prefix}${prefix0}${PATH1}`
         },
@@ -310,7 +312,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                * <li>本APIで取引を更新すると、消費税の計算方法は必ず内税方式が選択されます。</li> </ul>
                * @param option.body - +更新の更新情報
                */
-              put: (option: { body: Methods5['put']['reqBody'], config?: T }) =>
+              put: (option: { body: Methods5['put']['reqBody'], config?: T | undefined }) =>
                 fetch<Methods5['put']['resBody'], BasicHeaders, Methods5['put']['status']>(prefix, prefix2, PUT, option, 'URLSearchParams').json(),
               /**
                * <h2 id="">概要</h2>
@@ -338,7 +340,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                * <li>本APIで取引を更新すると、消費税の計算方法は必ず内税方式が選択されます。</li> </ul>
                * @param option.body - +更新の更新情報
                */
-              $put: (option: { body: Methods5['put']['reqBody'], config?: T }) =>
+              $put: (option: { body: Methods5['put']['reqBody'], config?: T | undefined }) =>
                 fetch<Methods5['put']['resBody'], BasicHeaders, Methods5['put']['status']>(prefix, prefix2, PUT, option, 'URLSearchParams').json().then(r => r.body),
               /**
                * <h2 id="">概要</h2>
@@ -348,7 +350,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                * <li>月締めされている仕訳に紐づく＋更新行の編集・削除はできません。</li> <li>承認済み仕訳に紐づく＋更新行の編集・削除は管理者権限のユーザーのみ可能です。</li>
                * <li>本APIで取引を更新すると、消費税の計算方法は必ず内税方式が選択されます。</li> </ul>
                */
-              delete: (option: { query: Methods5['delete']['query'], config?: T }) =>
+              delete: (option: { query: Methods5['delete']['query'], config?: T | undefined }) =>
                 fetch<Methods5['delete']['resBody'], BasicHeaders, Methods5['delete']['status']>(prefix, prefix2, DELETE, option).json(),
               /**
                * <h2 id="">概要</h2>
@@ -358,9 +360,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                * <li>月締めされている仕訳に紐づく＋更新行の編集・削除はできません。</li> <li>承認済み仕訳に紐づく＋更新行の編集・削除は管理者権限のユーザーのみ可能です。</li>
                * <li>本APIで取引を更新すると、消費税の計算方法は必ず内税方式が選択されます。</li> </ul>
                */
-              $delete: (option: { query: Methods5['delete']['query'], config?: T }) =>
+              $delete: (option: { query: Methods5['delete']['query'], config?: T | undefined }) =>
                 fetch<Methods5['delete']['resBody'], BasicHeaders, Methods5['delete']['status']>(prefix, prefix2, DELETE, option).json().then(r => r.body),
-              $path: (option?: { method: 'delete'; query: Methods5['delete']['query'] }) =>
+              $path: (option?: { method: 'delete'; query: Methods5['delete']['query'] } | undefined) =>
                 `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
             }
           },
@@ -390,7 +392,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * <li>本APIで取引を更新すると、消費税の計算方法は必ず内税方式が選択されます。</li> </ul>
            * @param option.body - 取引（収入／支出）に対する+更新の情報
            */
-          post: (option: { body: Methods4['post']['reqBody'], config?: T }) =>
+          post: (option: { body: Methods4['post']['reqBody'], config?: T | undefined }) =>
             fetch<Methods4['post']['resBody'], BasicHeaders, Methods4['post']['status']>(prefix, `${prefix0}${PATH2}`, POST, option, 'URLSearchParams').json(),
           /**
            * <h2 id="">概要</h2>
@@ -418,7 +420,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * <li>本APIで取引を更新すると、消費税の計算方法は必ず内税方式が選択されます。</li> </ul>
            * @param option.body - 取引（収入／支出）に対する+更新の情報
            */
-          $post: (option: { body: Methods4['post']['reqBody'], config?: T }) =>
+          $post: (option: { body: Methods4['post']['reqBody'], config?: T | undefined }) =>
             fetch<Methods4['post']['resBody'], BasicHeaders, Methods4['post']['status']>(prefix, `${prefix0}${PATH2}`, POST, option, 'URLSearchParams').json().then(r => r.body),
           $path: () => `${prefix}${prefix0}${PATH2}`
         },
@@ -481,7 +483,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          * <li>セグメントタグ情報は法人向けのプロフェッショナルプラン以上で利用可能です。利用可能なセグメントの数は、法人向けのプロフェッショナルプランの場合は1つ、エンタープライズプランの場合は3つです。</li>
          * </ul>
          */
-        get: (option: { query: Methods1['get']['query'], config?: T }) =>
+        get: (option: { query: Methods1['get']['query'], config?: T | undefined }) =>
           fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix0, GET, option).json(),
         /**
          * <h2 id="">概要</h2>
@@ -542,7 +544,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          * <li>セグメントタグ情報は法人向けのプロフェッショナルプラン以上で利用可能です。利用可能なセグメントの数は、法人向けのプロフェッショナルプランの場合は1つ、エンタープライズプランの場合は3つです。</li>
          * </ul>
          */
-        $get: (option: { query: Methods1['get']['query'], config?: T }) =>
+        $get: (option: { query: Methods1['get']['query'], config?: T | undefined }) =>
           fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix0, GET, option).json().then(r => r.body),
         /**
          * <h2 id="">概要</h2>
@@ -600,7 +602,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          * <li>partner_codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。またpartner_codeとpartner_idは同時に指定することはできません。</ul>
          * @param option.body - 取引（収入／支出）の更新
          */
-        put: (option?: { body?: Methods1['put']['reqBody'], config?: T }) =>
+        put: (option?: { body?: Methods1['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
           fetch<Methods1['put']['resBody'], BasicHeaders, Methods1['put']['status']>(prefix, prefix0, PUT, option, 'URLSearchParams').json(),
         /**
          * <h2 id="">概要</h2>
@@ -658,13 +660,13 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          * <li>partner_codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。またpartner_codeとpartner_idは同時に指定することはできません。</ul>
          * @param option.body - 取引（収入／支出）の更新
          */
-        $put: (option?: { body?: Methods1['put']['reqBody'], config?: T }) =>
+        $put: (option?: { body?: Methods1['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
           fetch<Methods1['put']['resBody'], BasicHeaders, Methods1['put']['status']>(prefix, prefix0, PUT, option, 'URLSearchParams').json().then(r => r.body),
-        delete: (option: { query: Methods1['delete']['query'], config?: T }) =>
+        delete: (option: { query: Methods1['delete']['query'], config?: T | undefined }) =>
           fetch<void, BasicHeaders, Methods1['delete']['status']>(prefix, prefix0, DELETE, option).send(),
-        $delete: (option: { query: Methods1['delete']['query'], config?: T }) =>
+        $delete: (option: { query: Methods1['delete']['query'], config?: T | undefined }) =>
           fetch<void, BasicHeaders, Methods1['delete']['status']>(prefix, prefix0, DELETE, option).send().then(r => r.body),
-        $path: (option?: { method?: 'get'; query: Methods1['get']['query'] } | { method: 'delete'; query: Methods1['delete']['query'] }) =>
+        $path: (option?: { method?: 'get' | undefined; query: Methods1['get']['query'] } | { method: 'delete'; query: Methods1['delete']['query'] } | undefined) =>
           `${prefix}${prefix0}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
       }
     },
@@ -728,7 +730,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
      * <li>partner_codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。またpartner_codeとpartner_idは同時に指定することはできません。</li>
      * </ul>
      */
-    get: (option: { query: Methods0['get']['query'], config?: T }) =>
+    get: (option: { query: Methods0['get']['query'], config?: T | undefined }) =>
       fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json(),
     /**
      * <h2 id="">概要</h2>
@@ -790,7 +792,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
      * <li>partner_codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。またpartner_codeとpartner_idは同時に指定することはできません。</li>
      * </ul>
      */
-    $get: (option: { query: Methods0['get']['query'], config?: T }) =>
+    $get: (option: { query: Methods0['get']['query'], config?: T | undefined }) =>
       fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json().then(r => r.body),
     /**
      * <h2 id="">概要</h2>
@@ -853,7 +855,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
      * </ul>
      * @param option.body - 取引（収入／支出）の作成
      */
-    post: (option?: { body?: Methods0['post']['reqBody'], config?: T }) =>
+    post: (option?: { body?: Methods0['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
       fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option, 'URLSearchParams').json(),
     /**
      * <h2 id="">概要</h2>
@@ -916,9 +918,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
      * </ul>
      * @param option.body - 取引（収入／支出）の作成
      */
-    $post: (option?: { body?: Methods0['post']['reqBody'], config?: T }) =>
+    $post: (option?: { body?: Methods0['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
       fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option, 'URLSearchParams').json().then(r => r.body),
-    $path: (option?: { method?: 'get'; query: Methods0['get']['query'] }) =>
+    $path: (option?: { method?: 'get' | undefined; query: Methods0['get']['query'] } | undefined) =>
       `${prefix}${PATH0}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
   }
 }

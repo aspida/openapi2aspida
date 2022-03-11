@@ -4,7 +4,7 @@ import type * as Types from '../../../../../../@types'
 
 export type Methods = {
   post: {
-    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken
+    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken | undefined
     status: 200
 
     /** OK */
@@ -17,10 +17,10 @@ export type Methods = {
     reqBody: {
       /** Image to upload. */
       file: (File | ReadStream)
-      caption?: string
-      headline?: string
-      text?: string
-      published?: boolean
+      caption?: string | undefined
+      headline?: string | undefined
+      text?: string | undefined
+      published?: boolean | undefined
     }
   }
 }

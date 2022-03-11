@@ -37,7 +37,7 @@ export type Methods = {
     resBody: Types.InvoiceResponse
     reqFormat: URLSearchParams
     /** 請求書の更新 */
-    reqBody?: Types.InvoiceUpdateParams
+    reqBody?: Types.InvoiceUpdateParams | undefined
   }
 
   /**

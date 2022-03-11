@@ -4,7 +4,7 @@ import type * as Types from '../../../../../../../@types'
 export type Methods = {
   /** Returns chat members with deleted */
   get: {
-    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken
+    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken | undefined
     status: 200
     /** OK */
     resBody: {
@@ -20,7 +20,7 @@ export type Methods = {
 
   /** Adds members to chat */
   post: {
-    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken
+    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken | undefined
     status: 201
 
     reqBody: {
@@ -35,7 +35,7 @@ export type Methods = {
 
   /** Updates chat members */
   put: {
-    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken
+    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken | undefined
     status: 200
 
     reqBody: {
@@ -44,9 +44,9 @@ export type Methods = {
         /** User ID */
         id: number
         /** It is only allowed to change self chatHidden property */
-        chatHidden?: boolean
+        chatHidden?: boolean | undefined
         /** It is only allowed to change other members access (if current user has chat admin access) */
-        access?: 'r' | 'rw' | 'admin' | 'banned'
+        access?: 'r' | 'rw' | 'admin' | 'banned' | undefined
       }[]
     }
   }

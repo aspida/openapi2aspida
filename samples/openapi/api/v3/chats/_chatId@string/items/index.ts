@@ -4,13 +4,13 @@ import type * as Types from '../../../../../@types'
 export type Methods = {
   /** Returns a list of items of chat shared content */
   get: {
-    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken & Types.UserInstanceIdHeader
+    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken & Types.UserInstanceIdHeader | undefined
 
     query?: {
-      offset?: number
+      offset?: number | undefined
       /** coma separated ids of requested cards */
-      ids?: string
-    }
+      ids?: string | undefined
+    } | undefined
 
     status: 200
 
@@ -23,7 +23,7 @@ export type Methods = {
 
   /** Create shared item in chat */
   post: {
-    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken
+    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken | undefined
     status: 200
 
     /** OK */
@@ -34,25 +34,25 @@ export type Methods = {
     /** item to create */
     reqBody: {
       type: Types.CardEnumModel
-      title?: string
-      abstract?: string
-      sourceName?: string
-      image?: string
-      imageId?: string
-      quotePerson?: string
-      quote?: string
-      url?: string
-      quotePersonImageId?: string
-      quotePersonImage?: string
-      quoteSource?: string
-      quotePersonHandle?: string
-      videoId?: string
-      text?: string
-      headline?: string
-      quoteCreated?: string
-      published?: boolean
+      title?: string | undefined
+      abstract?: string | undefined
+      sourceName?: string | undefined
+      image?: string | undefined
+      imageId?: string | undefined
+      quotePerson?: string | undefined
+      quote?: string | undefined
+      url?: string | undefined
+      quotePersonImageId?: string | undefined
+      quotePersonImage?: string | undefined
+      quoteSource?: string | undefined
+      quotePersonHandle?: string | undefined
+      videoId?: string | undefined
+      text?: string | undefined
+      headline?: string | undefined
+      quoteCreated?: string | undefined
+      published?: boolean | undefined
       /** text message to send to pubnub */
-      formattedText?: string
+      formattedText?: string | undefined
     }
   }
 }

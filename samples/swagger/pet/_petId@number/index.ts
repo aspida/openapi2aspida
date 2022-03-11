@@ -22,7 +22,7 @@ export type Methods = {
 
   delete: {
     reqHeaders?: {
-      api_key?: string
-    }
+      api_key?: string | undefined
+    } | undefined
   }
 }

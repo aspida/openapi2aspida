@@ -1,10 +1,10 @@
 /* eslint-disable */
 // prettier-ignore
-import { AspidaClient, BasicHeaders } from 'aspida'
+import type { AspidaClient, BasicHeaders } from 'aspida'
 // prettier-ignore
-import { Methods as Methods0 } from '.'
+import type { Methods as Methods0 } from '.'
 // prettier-ignore
-import { Methods as Methods1 } from './_orderId@number'
+import type { Methods as Methods1 } from './_orderId@number'
 
 // prettier-ignore
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
@@ -23,23 +23,23 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          * For valid response try integer IDs with value >= 1 and <= 10. Other values will generated exceptions
          * @returns successful operation
          */
-        get: (option?: { config?: T }) =>
+        get: (option?: { config?: T | undefined } | undefined) =>
           fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix0, GET, option).json(),
         /**
          * For valid response try integer IDs with value >= 1 and <= 10. Other values will generated exceptions
          * @returns successful operation
          */
-        $get: (option?: { config?: T }) =>
+        $get: (option?: { config?: T | undefined } | undefined) =>
           fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix0, GET, option).json().then(r => r.body),
         /**
          * For valid response try integer IDs with positive integer value. Negative or non-integer values will generate API errors
          */
-        delete: (option?: { config?: T }) =>
+        delete: (option?: { config?: T | undefined } | undefined) =>
           fetch(prefix, prefix0, DELETE, option).send(),
         /**
          * For valid response try integer IDs with positive integer value. Negative or non-integer values will generate API errors
          */
-        $delete: (option?: { config?: T }) =>
+        $delete: (option?: { config?: T | undefined } | undefined) =>
           fetch(prefix, prefix0, DELETE, option).send().then(r => r.body),
         $path: () => `${prefix}${prefix0}`
       }
@@ -48,13 +48,13 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
      * @param option.body - order placed for purchasing the pet
      * @returns successful operation
      */
-    post: (option: { body: Methods0['post']['reqBody'], config?: T }) =>
+    post: (option: { body: Methods0['post']['reqBody'], config?: T | undefined }) =>
       fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option).json(),
     /**
      * @param option.body - order placed for purchasing the pet
      * @returns successful operation
      */
-    $post: (option: { body: Methods0['post']['reqBody'], config?: T }) =>
+    $post: (option: { body: Methods0['post']['reqBody'], config?: T | undefined }) =>
       fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option).json().then(r => r.body),
     $path: () => `${prefix}${PATH0}`
   }

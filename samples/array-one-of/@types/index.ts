@@ -1,14 +1,14 @@
 /* eslint-disable */
 export type User = {
-  id?: string
-  roles?: (RoleA | RoleB)[]
+  id?: string | undefined
+  roles?: (RoleA | RoleB)[] | undefined
 }
 
 export type RoleA = {
-  name?: string
+  name?: string | undefined
 }
 
 export type RoleB = {
-  name?: string
-  authority?: string
+  name?: string | undefined
+  authority?: string | undefined
 }

@@ -50,19 +50,19 @@ export type Methods = {
       /** 事業所ID */
       company_id: number
       /** 口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet) */
-      walletable_type?: 'bank_account' | 'credit_card' | 'wallet'
+      walletable_type?: 'bank_account' | 'credit_card' | 'wallet' | undefined
       /** 口座ID */
-      walletable_id?: number
+      walletable_id?: number | undefined
       /** 取引日で絞込：開始日 (yyyy-mm-dd) */
-      start_date?: string
+      start_date?: string | undefined
       /** 取引日で絞込：終了日 (yyyy-mm-dd) */
-      end_date?: string
+      end_date?: string | undefined
       /** 入金／出金 (入金: income, 出金: expense) */
-      entry_side?: 'income' | 'expense'
+      entry_side?: 'income' | 'expense' | undefined
       /** 取得レコードのオフセット (デフォルト: 0) */
-      offset?: number
+      offset?: number | undefined
       /** 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100) */
-      limit?: number
+      limit?: number | undefined
     }
 
     status: 200
@@ -120,6 +120,6 @@ export type Methods = {
     resBody: Types.WalletTxnResponse
     reqFormat: URLSearchParams
     /** 明細の作成 */
-    reqBody?: Types.WalletTxnParams
+    reqBody?: Types.WalletTxnParams | undefined
   }
 }

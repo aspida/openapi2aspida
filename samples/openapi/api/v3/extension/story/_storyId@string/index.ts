@@ -4,7 +4,7 @@ import type * as Types from '../../../../../@types'
 
 export type Methods = {
   post: {
-    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken
+    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken | undefined
     status: 200
 
     /** OK */
@@ -16,27 +16,27 @@ export type Methods = {
 
     reqBody: {
       type: Types.CardEnumModel
-      caption?: string
-      title?: string
-      abstract?: string
-      sourceName?: string
-      image?: string
-      imageId?: number
-      quotePerson?: string
-      quote?: string
-      url?: string
-      quotePersonImageId?: number
-      quotePersonImage?: string
-      quoteSource?: string
-      quotePersonHandle?: string
-      videoId?: number
-      video?: (File | ReadStream)
-      audioId?: number
-      audio?: (File | ReadStream)
-      text?: string
-      headline?: string
-      quoteCreated?: string
-      published?: boolean
+      caption?: string | undefined
+      title?: string | undefined
+      abstract?: string | undefined
+      sourceName?: string | undefined
+      image?: string | undefined
+      imageId?: number | undefined
+      quotePerson?: string | undefined
+      quote?: string | undefined
+      url?: string | undefined
+      quotePersonImageId?: number | undefined
+      quotePersonImage?: string | undefined
+      quoteSource?: string | undefined
+      quotePersonHandle?: string | undefined
+      videoId?: number | undefined
+      video?: (File | ReadStream) | undefined
+      audioId?: number | undefined
+      audio?: (File | ReadStream) | undefined
+      text?: string | undefined
+      headline?: string | undefined
+      quoteCreated?: string | undefined
+      published?: boolean | undefined
     }
   }
 }

@@ -30,6 +30,6 @@ export type Methods = {
     resBody: Types.ItemResponse
     reqFormat: URLSearchParams
     /** 品目の作成 */
-    reqBody?: Types.ItemParams
+    reqBody?: Types.ItemParams | undefined
   }
 }

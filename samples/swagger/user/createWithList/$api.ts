@@ -1,8 +1,8 @@
 /* eslint-disable */
 // prettier-ignore
-import { AspidaClient } from 'aspida'
+import type { AspidaClient } from 'aspida'
 // prettier-ignore
-import { Methods as Methods0 } from '.'
+import type { Methods as Methods0 } from '.'
 
 // prettier-ignore
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
@@ -14,12 +14,12 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
     /**
      * @param option.body - List of user object
      */
-    post: (option: { body: Methods0['post']['reqBody'], config?: T }) =>
+    post: (option: { body: Methods0['post']['reqBody'], config?: T | undefined }) =>
       fetch(prefix, PATH0, POST, option).send(),
     /**
      * @param option.body - List of user object
      */
-    $post: (option: { body: Methods0['post']['reqBody'], config?: T }) =>
+    $post: (option: { body: Methods0['post']['reqBody'], config?: T | undefined }) =>
       fetch(prefix, PATH0, POST, option).send().then(r => r.body),
     $path: () => `${prefix}${PATH0}`
   }

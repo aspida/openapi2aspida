@@ -3,7 +3,7 @@ import type * as Types from '../../../../../../../../@types'
 
 export type Methods = {
   post: {
-    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader
+    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader | undefined
     status: 200
 
     /** OK */

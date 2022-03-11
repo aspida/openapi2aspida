@@ -1,8 +1,10 @@
 /* eslint-disable */
 // prettier-ignore
-import { AspidaClient, BasicHeaders, dataToURLString } from 'aspida'
+import type { AspidaClient, BasicHeaders } from 'aspida'
 // prettier-ignore
-import { Methods as Methods0 } from './_id@number/upload'
+import { dataToURLString } from 'aspida'
+// prettier-ignore
+import type { Methods as Methods0 } from './_id@number/upload'
 
 // prettier-ignore
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
@@ -17,11 +19,11 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
 
       return {
         upload: {
-          post: (option: { body: Methods0['post']['reqBody'], query?: Methods0['post']['query'], config?: T }) =>
+          post: (option: { body: Methods0['post']['reqBody'], query?: Methods0['post']['query'] | undefined, config?: T | undefined }) =>
             fetch<void, BasicHeaders, Methods0['post']['status']>(prefix, `${prefix0}${PATH1}`, POST, option).send(),
-          $post: (option: { body: Methods0['post']['reqBody'], query?: Methods0['post']['query'], config?: T }) =>
+          $post: (option: { body: Methods0['post']['reqBody'], query?: Methods0['post']['query'] | undefined, config?: T | undefined }) =>
             fetch<void, BasicHeaders, Methods0['post']['status']>(prefix, `${prefix0}${PATH1}`, POST, option).send().then(r => r.body),
-          $path: (option?: { method: 'post'; query: Methods0['post']['query'] }) =>
+          $path: (option?: { method: 'post'; query: Methods0['post']['query'] } | undefined) =>
             `${prefix}${prefix0}${PATH1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
         }
       }

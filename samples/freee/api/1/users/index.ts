@@ -12,7 +12,7 @@ export type Methods = {
       /** 事業所ID */
       company_id: number
       /** 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) */
-      limit?: number
+      limit?: number | undefined
     }
 
     status: 200

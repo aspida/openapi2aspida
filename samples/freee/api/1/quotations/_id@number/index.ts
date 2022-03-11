@@ -33,7 +33,7 @@ export type Methods = {
     resBody: Types.QuotationResponse
     reqFormat: URLSearchParams
     /** 見積書の更新 */
-    reqBody?: Types.QuotationUpdateParams
+    reqBody?: Types.QuotationUpdateParams | undefined
   }
 
   /**

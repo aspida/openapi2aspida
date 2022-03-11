@@ -4,7 +4,7 @@ import type * as Types from '../../../../../@types'
 export type Methods = {
   /** Returns users chats in channel */
   get: {
-    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken & Types.UserPublicKey & Types.UserSignedChallenge
+    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken & Types.UserPublicKey & Types.UserSignedChallenge | undefined
     status: 200
 
     /** OK */
@@ -58,7 +58,7 @@ export type Methods = {
 
   /** Creates chat */
   post: {
-    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken
+    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken | undefined
     status: 201
 
     /** OK */
@@ -100,13 +100,13 @@ export type Methods = {
       type: 'p2p' | 'group'
       level: 'channel' | 'organisation'
       accessType: 'private' | 'publicRead' | 'publicWrite'
-      payload?: string
+      payload?: string | undefined
       /** Mix to pin */
-      storyId?: number
+      storyId?: number | undefined
       /** Card to pin */
-      itemId?: number
+      itemId?: number | undefined
       /** Array of users to add with 'rw' rights (without you). If type = 'p2p' should contain only one item */
-      users?: number[]
+      users?: number[] | undefined
     }
   }
 }

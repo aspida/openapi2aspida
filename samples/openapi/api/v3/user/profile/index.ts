@@ -4,7 +4,7 @@ import type * as Types from '../../../../@types'
 
 export type Methods = {
   put: {
-    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader
+    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader | undefined
     status: 204
     reqFormat: FormData
 

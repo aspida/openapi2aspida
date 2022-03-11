@@ -945,11 +945,6 @@
   resolved "https://registry.yarnpkg.com/@types/minimist/-/minimist-1.2.0.tgz#69a23a3ad29caf0097f06eda59b361ee2f0639f6"
   integrity sha1-aaI6OtKcrwCX8G7aWbNh7i8GOfY=
 
-"@types/minimist@^1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@types/minimist/-/minimist-1.2.1.tgz#283f669ff76d7b8260df8ab7a4262cc83d988256"
-  integrity sha512-fZQQafSREFyuZcdWFAExYjBiCL7AUCdgsk80iO0q4yihYYdcIiH28CcuPTGFgLOCC8RlW49GSQxdHwZP+I7CNg==
-
 "@types/minimist@^1.2.2":
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/@types/minimist/-/minimist-1.2.2.tgz#ee771e2ba4b3dc5b372935d549fd9617bf345b8c"
@@ -1203,12 +1198,7 @@ ansi-escapes@^4.2.1:
   dependencies:
     type-fest "^0.11.0"
 
-ansi-regex@^5.0.0:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-5.0.1.tgz#082cb2c89c9fe8659a311a53bd6a4dc5301db304"
-  integrity sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ==
-
-ansi-regex@^5.0.1:
+ansi-regex@^5.0.0, ansi-regex@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-5.0.1.tgz#082cb2c89c9fe8659a311a53bd6a4dc5301db304"
   integrity sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ==
@@ -1303,12 +1293,12 @@ arrify@^2.0.1:
   resolved "https://registry.yarnpkg.com/arrify/-/arrify-2.0.1.tgz#c9655e9331e0abcd588d2a7cad7e9956f66701fa"
   integrity sha512-3duEwti880xqi4eAMN8AyR4a0ByT90zoYdLlevfrvU43vb0YZwZVfxOgxWrLXXXpyugL0hNZc9G6BiB5B3nUug==
 
-aspida@^1.7.1:
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/aspida/-/aspida-1.7.1.tgz#b021e1766991b3b9a7b85f297f5ac05af4b42b60"
-  integrity sha512-YIfSeLHPAtIkWnu8QFfKvlPB0/S6sRjD2WgmHuiTbhvTdINqK0KMPNK8WepUORXmUcraSaeHN1xO5MMKTREiTA==
+aspida@^1.9.0:
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/aspida/-/aspida-1.9.0.tgz#af74dd2b3d57b42ea42794fe3713317ada0e7795"
+  integrity sha512-R5NAejLGVwnoGTfiY0VQfkoHjPvI+3QRP+kYsGDVTu1epy07cryB/QKaaiWyc/ILh6AaIBQroafBTO371r6K2g==
   dependencies:
-    "@types/minimist" "^1.2.1"
+    "@types/minimist" "^1.2.2"
     chokidar "^3.5.1"
     form-data "^4.0.0"
     minimist "^1.2.5"

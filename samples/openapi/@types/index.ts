@@ -17,15 +17,15 @@ export type UserTokenHeader = {
 }
 
 export type AppOrganisationToken = {
-  'x-tchop-app-organisation-token'?: string
+  'x-tchop-app-organisation-token'?: string | undefined
 }
 
 export type UserPublicKey = {
-  'x-tchop-user-public-key'?: string
+  'x-tchop-user-public-key'?: string | undefined
 }
 
 export type UserSignedChallenge = {
-  'x-tchop-user-signed-challenge'?: string
+  'x-tchop-user-signed-challenge'?: string | undefined
 }
 
 export type AppOrganisationTokenRequired = {
@@ -34,13 +34,13 @@ export type AppOrganisationTokenRequired = {
 
 export type UserInstanceIdHeader = {
   /** Firebase Instance ID provides a unique identifier for each app instance and a mechanism to authenticate and authorize actions (example: sending FCM messages) */
-  'x-tchop-firebase-instance-id'?: string
+  'x-tchop-firebase-instance-id'?: string | undefined
 }
 
 export type ErrorModel = {
   code: string
   message: string
-  messageCode?: string
+  messageCode?: string | undefined
 }
 
 export type ErrorValidationModel = {
@@ -57,7 +57,7 @@ export type UserInfo = {
   id: number
   username: string
   email: string
-  avatar?: string
+  avatar?: string | undefined
   url: string
 }
 
@@ -69,15 +69,15 @@ export type OrganisationModel = {
   name: string
   subdomain: string
   locale: string
-  androidStoreLink?: string
-  androidAppId?: string
-  androidHokeyStoreLink?: string
-  androidAppHokeyId?: string
-  iosStoreLink?: string
-  iosAppId?: string
-  iosHokeyStoreLink?: string
-  iosAppHokeyId?: string
-  fcmServerKeyId?: number
+  androidStoreLink?: string | undefined
+  androidAppId?: string | undefined
+  androidHokeyStoreLink?: string | undefined
+  androidAppHokeyId?: string | undefined
+  iosStoreLink?: string | undefined
+  iosAppId?: string | undefined
+  iosHokeyStoreLink?: string | undefined
+  iosAppHokeyId?: string | undefined
+  fcmServerKeyId?: number | undefined
   allowToStoreOriginalImageFile: string
   twoFactorForce: string
   sessionExpirationTime: string
@@ -101,8 +101,8 @@ export type BaseMixModel = {
   shareUrl: string
   previewUrl: string
   includeInNewsFeed: boolean
-  displayItemUpdatedTime?: string
-  image?: ImageModel
+  displayItemUpdatedTime?: string | undefined
+  image?: ImageModel | undefined
 }
 
 export type ModelMixV3 = BaseMixModel & {
@@ -116,48 +116,48 @@ export type ImageModel = {
   rightholder: string
   thumb: string
   status: 'ok' | 'processing' | 'error'
-  url?: string
+  url?: string | undefined
 }
 
 export type AudioModel = {
   id: number
-  url?: string
+  url?: string | undefined
   thumb: string
-  originalThumb?: string
+  originalThumb?: string | undefined
   status: string
-  duration?: number
-  width?: number
-  height?: number
+  duration?: number | undefined
+  width?: number | undefined
+  height?: number | undefined
 }
 
 export type ModelCard = {
   id: number
   type: CardEnumModel
-  createdByLabel?: string
+  createdByLabel?: string | undefined
   created: string
   postedTime: string
   updated: string
   published: boolean
-  position?: number
-  headline?: string
-  quotePerson?: string
-  quotePersonHandle?: string
-  quote?: string
-  title?: string
-  sourceName?: string
-  url?: string
-  abstract?: string
-  image?: ImageModel
-  audio?: AudioModel
-  styles?: CardStyleModel
-  author?: CardAuthorModel
+  position?: number | undefined
+  headline?: string | undefined
+  quotePerson?: string | undefined
+  quotePersonHandle?: string | undefined
+  quote?: string | undefined
+  title?: string | undefined
+  sourceName?: string | undefined
+  url?: string | undefined
+  abstract?: string | undefined
+  image?: ImageModel | undefined
+  audio?: AudioModel | undefined
+  styles?: CardStyleModel | undefined
+  author?: CardAuthorModel | undefined
 }
 
 export type CardAuthorModel = {
   type: 'curate-backend' | 'api'
   name: string
-  email?: string
-  image?: ImageModel
+  email?: string | undefined
+  image?: ImageModel | undefined
 }
 
 export type ReactionEnumModel = 'like' | 'love' | 'haha' | 'wow' | 'sad' | 'angry'
@@ -166,40 +166,40 @@ export type CardEnumModel = 'article' | 'image' | 'video' | 'quote' | 'editorial
 
 /** The number of reactions to each type */
 export type ReactionCountModel = {
-  like?: number
-  love?: number
-  haha?: number
-  wow?: number
-  sad?: number
-  angry?: number
+  like?: number | undefined
+  love?: number | undefined
+  haha?: number | undefined
+  wow?: number | undefined
+  sad?: number | undefined
+  angry?: number | undefined
 }
 
 export type MediaEXIFModel = {
   gps?: {
     x: number
     y: number
-  }
+  } | undefined
 }
 
 export type CardStyleModel = {
-  showAuthor?: boolean
+  showAuthor?: boolean | undefined
   /** Alternative UI Templates for article cards */
-  teaserStyle?: 'standard' | 'small_with_text' | 'small_without_text' | 'big_without_text'
+  teaserStyle?: 'standard' | 'small_with_text' | 'small_without_text' | 'big_without_text' | undefined
 }
 
 export type QuoteModel = {
-  quotePerson?: string
-  quotePersonHandle?: string
-  quote?: string
-  quoteSource?: string
-  image?: string
-  quotePersonImage?: string
-  quoteCreated?: string
+  quotePerson?: string | undefined
+  quotePersonHandle?: string | undefined
+  quote?: string | undefined
+  quoteSource?: string | undefined
+  image?: string | undefined
+  quotePersonImage?: string | undefined
+  quoteCreated?: string | undefined
 }
 
 export type ArticleModel = {
-  title?: string
-  abstract?: string
-  sourceName?: string
-  image?: string
+  title?: string | undefined
+  abstract?: string | undefined
+  sourceName?: string | undefined
+  image?: string | undefined
 }

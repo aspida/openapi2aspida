@@ -4,7 +4,7 @@ import type * as Types from '../../../@types'
 export type Methods = {
   /** List orders for a user */
   get: {
-    query?: Types.Identifier
+    query?: Types.Identifier | undefined
     status: 200
     /** Ok */
     resBody: Types.Orders

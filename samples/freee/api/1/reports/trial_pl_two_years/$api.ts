@@ -1,8 +1,10 @@
 /* eslint-disable */
 // prettier-ignore
-import { AspidaClient, BasicHeaders, dataToURLString } from 'aspida'
+import type { AspidaClient, BasicHeaders } from 'aspida'
 // prettier-ignore
-import { Methods as Methods0 } from '.'
+import { dataToURLString } from 'aspida'
+// prettier-ignore
+import type { Methods as Methods0 } from '.'
 
 // prettier-ignore
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
@@ -75,7 +77,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
      *     }
      * }</code></pre>
      */
-    get: (option: { query: Methods0['get']['query'], config?: T }) =>
+    get: (option: { query: Methods0['get']['query'], config?: T | undefined }) =>
       fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json(),
     /**
      * <h2 id="">概要</h2>
@@ -141,9 +143,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
      *     }
      * }</code></pre>
      */
-    $get: (option: { query: Methods0['get']['query'], config?: T }) =>
+    $get: (option: { query: Methods0['get']['query'], config?: T | undefined }) =>
       fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json().then(r => r.body),
-    $path: (option?: { method?: 'get'; query: Methods0['get']['query'] }) =>
+    $path: (option?: { method?: 'get' | undefined; query: Methods0['get']['query'] } | undefined) =>
       `${prefix}${PATH0}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
   }
 }

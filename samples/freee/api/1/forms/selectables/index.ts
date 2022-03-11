@@ -12,7 +12,7 @@ export type Methods = {
       /** 事業所ID */
       company_id: number
       /** 取得する項目(項目: account_item) */
-      includes?: 'account_item'
+      includes?: 'account_item' | undefined
     }
 
     status: 200

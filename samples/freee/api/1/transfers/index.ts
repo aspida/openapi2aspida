@@ -32,13 +32,13 @@ export type Methods = {
       /** 事業所ID */
       company_id: number
       /** 振替日で絞込：開始日 (yyyy-mm-dd) */
-      start_date?: string
+      start_date?: string | undefined
       /** 振替日で絞込：終了日 (yyyy-mm-dd) */
-      end_date?: string
+      end_date?: string | undefined
       /** 取得レコードのオフセット (デフォルト: 0) */
-      offset?: number
+      offset?: number | undefined
       /** 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100) */
-      limit?: number
+      limit?: number | undefined
     }
 
     status: 200
@@ -78,6 +78,6 @@ export type Methods = {
     resBody: Types.TransferResponse
     reqFormat: URLSearchParams
     /** 取引（振替）の作成 */
-    reqBody?: Types.TransferParams
+    reqBody?: Types.TransferParams | undefined
   }
 }
