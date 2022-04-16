@@ -106,9 +106,9 @@ $ npx openapi2aspida
 ```
 ## Cli options
 
-### outputDit
+### outputdir
 
-can chenge aspida output directory
+can change aspida output directory
 
 #### example
 
