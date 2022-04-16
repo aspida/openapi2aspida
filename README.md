@@ -106,11 +106,23 @@ $ npx openapi2aspida
 ```
 ## Cli options
 
-### outputdir
+### `-i`, `--input`
+
+path to an OpenAPI spec file for input
+
+### `-o`, `--outputdir`
 
 can change aspida output directory
 
-#### example
+### `-c`, `--config`
+
+path to an aspida config file
+
+### `--version`
+
+displays version of openapi2aspida
+
+### example
 
 ```bash
 npx openapi2aspida -i=openApi/sample.yaml -o=lib/api/sample
