@@ -86,7 +86,7 @@
     "aspida": "^1.9.0",
     "fs-extra": "^10.0.0",
     "js-yaml": "^4.1.0",
-    "openapi-types": "^9.1.0",
+    "openapi-types": "^11.0.0",
     "swagger-parser": "^10.0.3",
     "swagger2openapi": "^7.0.8"
   },

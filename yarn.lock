@@ -4148,10 +4148,10 @@ onetime@^5.1.2:
   dependencies:
     mimic-fn "^2.1.0"
 
-openapi-types@^9.1.0:
-  version "9.1.0"
-  resolved "https://registry.yarnpkg.com/openapi-types/-/openapi-types-9.1.0.tgz#a2ab0acc5198c1725f83d7cbe063efd1bcd0479e"
-  integrity sha512-mhXh8QN8sbErlxfxBeZ/pzgvmDn443p8CXlxwGSi2bWANZAFvjLPI0PoGjqHW+JdBbXg6uvmvM81WXaweh/SVA==
+openapi-types@^11.0.0:
+  version "11.0.0"
+  resolved "https://registry.yarnpkg.com/openapi-types/-/openapi-types-11.0.0.tgz#766f1ee2de3fa701947e993564e3d0a362fc2026"
+  integrity sha512-GB+QO6o1hAtKsb8tP3/FTD5jpkdKrf42L4Gel9UySngMurzr+Q9pO+dtnmySQCzoCEfJr39IH6bveEn71xNcVg==
 
 optionator@^0.8.1:
   version "0.8.3"
