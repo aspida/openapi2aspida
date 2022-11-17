@@ -1,0 +1,34 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Sample
+paths:
+  /users:
+    get:
+      summary: get users
+      operationId: post-users
+      responses:
+        '200':
+          $ref: '#/components/responses/UserResponseBody'
+          description: OK
+      description: ''
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+      required:
+        - id
+        - name
+  responses:
+    UserResponseBody:
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/User'
