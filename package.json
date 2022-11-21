@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "npm run build && node samples/rimraf.js && node bin/index.js --build",
     "build": "npm run rimraf && tsc",
-    "rimraf": "node -e \"require('fs').existsSync(process.argv[1]) && require('fs').rmdirSync('dist', { recursive: true })\"",
+    "rimraf": "node -e \"require('fs').existsSync('dist') && require('fs').rmdirSync('dist', { recursive: true })\"",
     "lint": "eslint --ext .ts . && prettier --check \"./**/*.ts\"",
     "lint:fix": "eslint --ext .ts . --fix && prettier --write \"./**/*.ts\"",
     "test": "jest",
