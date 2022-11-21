@@ -1,126 +1,64 @@
-/* eslint-disable */
-// prettier-ignore
 import type { AspidaClient, BasicHeaders } from 'aspida'
-// prettier-ignore
 import { dataToURLString } from 'aspida'
-// prettier-ignore
 import type { Methods as Methods0 } from './1/account_items'
-// prettier-ignore
 import type { Methods as Methods1 } from './1/account_items/_id@number'
-// prettier-ignore
 import type { Methods as Methods2 } from './1/banks'
-// prettier-ignore
 import type { Methods as Methods3 } from './1/banks/_id@number'
-// prettier-ignore
 import type { Methods as Methods4 } from './1/companies'
-// prettier-ignore
 import type { Methods as Methods5 } from './1/companies/_id@number'
-// prettier-ignore
 import type { Methods as Methods6 } from './1/deals'
-// prettier-ignore
 import type { Methods as Methods7 } from './1/deals/_id@number'
-// prettier-ignore
 import type { Methods as Methods8 } from './1/deals/_id@number/payments'
-// prettier-ignore
 import type { Methods as Methods9 } from './1/deals/_id@number/payments/_payment_id@number'
-// prettier-ignore
 import type { Methods as Methods10 } from './1/deals/_id@number/renews'
-// prettier-ignore
 import type { Methods as Methods11 } from './1/deals/_id@number/renews/_renew_id@number'
-// prettier-ignore
 import type { Methods as Methods12 } from './1/expense_application_line_templates'
-// prettier-ignore
 import type { Methods as Methods13 } from './1/expense_application_line_templates/_id@number'
-// prettier-ignore
 import type { Methods as Methods14 } from './1/expense_applications'
-// prettier-ignore
 import type { Methods as Methods15 } from './1/expense_applications/_id@number'
-// prettier-ignore
 import type { Methods as Methods16 } from './1/forms/selectables'
-// prettier-ignore
 import type { Methods as Methods17 } from './1/invoices'
-// prettier-ignore
 import type { Methods as Methods18 } from './1/invoices/_id@number'
-// prettier-ignore
 import type { Methods as Methods19 } from './1/items'
-// prettier-ignore
 import type { Methods as Methods20 } from './1/items/_id@number'
-// prettier-ignore
 import type { Methods as Methods21 } from './1/journals'
-// prettier-ignore
 import type { Methods as Methods22 } from './1/journals/reports/_id@number/download'
-// prettier-ignore
 import type { Methods as Methods23 } from './1/journals/reports/_id@number/status'
-// prettier-ignore
 import type { Methods as Methods24 } from './1/manual_journals'
-// prettier-ignore
 import type { Methods as Methods25 } from './1/manual_journals/_id@number'
-// prettier-ignore
 import type { Methods as Methods26 } from './1/partners'
-// prettier-ignore
 import type { Methods as Methods27 } from './1/partners/_id@number'
-// prettier-ignore
 import type { Methods as Methods28 } from './1/partners/code/_code@string'
-// prettier-ignore
 import type { Methods as Methods29 } from './1/quotations'
-// prettier-ignore
 import type { Methods as Methods30 } from './1/quotations/_id@number'
-// prettier-ignore
 import type { Methods as Methods31 } from './1/receipts'
-// prettier-ignore
 import type { Methods as Methods32 } from './1/receipts/_id@number'
-// prettier-ignore
 import type { Methods as Methods33 } from './1/reports/trial_bs'
-// prettier-ignore
 import type { Methods as Methods34 } from './1/reports/trial_bs_three_years'
-// prettier-ignore
 import type { Methods as Methods35 } from './1/reports/trial_bs_two_years'
-// prettier-ignore
 import type { Methods as Methods36 } from './1/reports/trial_pl'
-// prettier-ignore
 import type { Methods as Methods37 } from './1/reports/trial_pl_sections'
-// prettier-ignore
 import type { Methods as Methods38 } from './1/reports/trial_pl_three_years'
-// prettier-ignore
 import type { Methods as Methods39 } from './1/reports/trial_pl_two_years'
-// prettier-ignore
 import type { Methods as Methods40 } from './1/sections'
-// prettier-ignore
 import type { Methods as Methods41 } from './1/sections/_id@number'
-// prettier-ignore
 import type { Methods as Methods42 } from './1/segments/_segment_id@number/tags'
-// prettier-ignore
 import type { Methods as Methods43 } from './1/segments/_segment_id@number/tags/_id@number'
-// prettier-ignore
 import type { Methods as Methods44 } from './1/tags'
-// prettier-ignore
 import type { Methods as Methods45 } from './1/tags/_id@number'
-// prettier-ignore
 import type { Methods as Methods46 } from './1/taxes/codes'
-// prettier-ignore
 import type { Methods as Methods47 } from './1/taxes/codes/_code@number'
-// prettier-ignore
 import type { Methods as Methods48 } from './1/taxes/companies/_company_id@number'
-// prettier-ignore
 import type { Methods as Methods49 } from './1/transfers'
-// prettier-ignore
 import type { Methods as Methods50 } from './1/transfers/_id@number'
-// prettier-ignore
 import type { Methods as Methods51 } from './1/users'
-// prettier-ignore
 import type { Methods as Methods52 } from './1/users/capabilities'
-// prettier-ignore
 import type { Methods as Methods53 } from './1/users/me'
-// prettier-ignore
 import type { Methods as Methods54 } from './1/wallet_txns'
-// prettier-ignore
 import type { Methods as Methods55 } from './1/wallet_txns/_id@number'
-// prettier-ignore
 import type { Methods as Methods56 } from './1/walletables'
-// prettier-ignore
 import type { Methods as Methods57 } from './1/walletables/_type/_id@number'
 
-// prettier-ignore
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? 'https://api.freee.co.jp' : baseURL).replace(/\/$/, '')
   const PATH0 = '/api/1/account_items'
@@ -5223,7 +5161,5 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   }
 }
 
-// prettier-ignore
 export type ApiInstance = ReturnType<typeof api>
-// prettier-ignore
 export default api

@@ -1,30 +1,16 @@
-/* eslint-disable */
-// prettier-ignore
 import type { AspidaClient, BasicHeaders } from 'aspida'
-// prettier-ignore
 import { dataToURLString } from 'aspida'
-// prettier-ignore
 import type { Methods as Methods0 } from './dummy/2'
-// prettier-ignore
 import type { Methods as Methods1 } from './dummy/_a_1@number/simple'
-// prettier-ignore
 import type { Methods as Methods2 } from './dummy/_id@number/content'
-// prettier-ignore
 import type { Methods as Methods3 } from './dummy/_id@number/query'
-// prettier-ignore
 import type { Methods as Methods4 } from './dummy/_id@number/simple'
-// prettier-ignore
 import type { Methods as Methods5 } from './file/_id@number/upload'
-// prettier-ignore
 import type { Methods as Methods6 } from './user/_id@number'
-// prettier-ignore
 import type { Methods as Methods7 } from './user/_id@number/2'
-// prettier-ignore
 import type { Methods as Methods8 } from './user/_id@number/abc'
-// prettier-ignore
 import type { Methods as Methods9 } from './user/_id@number/xyz'
 
-// prettier-ignore
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? '' : baseURL).replace(/\/$/, '')
   const PATH0 = '/dummy/2'
@@ -184,7 +170,5 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   }
 }
 
-// prettier-ignore
 export type ApiInstance = ReturnType<typeof api>
-// prettier-ignore
 export default api

@@ -1,38 +1,20 @@
-/* eslint-disable */
-// prettier-ignore
 import type { AspidaClient, BasicHeaders } from 'aspida'
-// prettier-ignore
 import { dataToURLString } from 'aspida'
-// prettier-ignore
 import type { Methods as Methods0 } from '.'
-// prettier-ignore
 import type { Methods as Methods1 } from './_channelId@number/chats/_chatId@number/items/_itemId@number'
-// prettier-ignore
 import type { Methods as Methods2 } from './_channelId@number/news-feed'
-// prettier-ignore
 import type { Methods as Methods3 } from './_channelId@string'
-// prettier-ignore
 import type { Methods as Methods4 } from './_channelId@string/chats'
-// prettier-ignore
 import type { Methods as Methods5 } from './_channelId@string/chats/_chatId@string'
-// prettier-ignore
 import type { Methods as Methods6 } from './_channelId@string/chats/_chatId@string/items'
-// prettier-ignore
 import type { Methods as Methods7 } from './_channelId@string/chats/_chatId@string/items/audio'
-// prettier-ignore
 import type { Methods as Methods8 } from './_channelId@string/chats/_chatId@string/items/image'
-// prettier-ignore
 import type { Methods as Methods9 } from './_channelId@string/chats/_chatId@string/items/video'
-// prettier-ignore
 import type { Methods as Methods10 } from './_channelId@string/chats/_chatId@string/itemslist'
-// prettier-ignore
 import type { Methods as Methods11 } from './_channelId@string/chats/_chatId@string/users'
-// prettier-ignore
 import type { Methods as Methods12 } from './_channelId@string/chats/_chatId@string/users/remove'
-// prettier-ignore
 import type { Methods as Methods13 } from './_channelId@string/notifications'
 
-// prettier-ignore
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? '' : baseURL).replace(/\/$/, '')
   const PATH0 = '/api/v3/channels'
@@ -351,7 +333,5 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   }
 }
 
-// prettier-ignore
 export type ApiInstance = ReturnType<typeof api>
-// prettier-ignore
 export default api

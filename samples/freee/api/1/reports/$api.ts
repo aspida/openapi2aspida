@@ -1,24 +1,13 @@
-/* eslint-disable */
-// prettier-ignore
 import type { AspidaClient, BasicHeaders } from 'aspida'
-// prettier-ignore
 import { dataToURLString } from 'aspida'
-// prettier-ignore
 import type { Methods as Methods0 } from './trial_bs'
-// prettier-ignore
 import type { Methods as Methods1 } from './trial_bs_three_years'
-// prettier-ignore
 import type { Methods as Methods2 } from './trial_bs_two_years'
-// prettier-ignore
 import type { Methods as Methods3 } from './trial_pl'
-// prettier-ignore
 import type { Methods as Methods4 } from './trial_pl_sections'
-// prettier-ignore
 import type { Methods as Methods5 } from './trial_pl_three_years'
-// prettier-ignore
 import type { Methods as Methods6 } from './trial_pl_two_years'
 
-// prettier-ignore
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? 'https://api.freee.co.jp' : baseURL).replace(/\/$/, '')
   const PATH0 = '/api/1/reports/trial_bs'
@@ -1084,7 +1073,5 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   }
 }
 
-// prettier-ignore
 export type ApiInstance = ReturnType<typeof api>
-// prettier-ignore
 export default api

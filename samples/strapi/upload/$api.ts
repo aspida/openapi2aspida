@@ -1,18 +1,10 @@
-/* eslint-disable */
-// prettier-ignore
 import type { AspidaClient, BasicHeaders } from 'aspida'
-// prettier-ignore
 import type { Methods as Methods0 } from '.'
-// prettier-ignore
 import type { Methods as Methods1 } from './files'
-// prettier-ignore
 import type { Methods as Methods2 } from './files/_id@string'
-// prettier-ignore
 import type { Methods as Methods3 } from './files/count'
-// prettier-ignore
 import type { Methods as Methods4 } from './search/_id@string'
 
-// prettier-ignore
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? 'http://localhost:1337' : baseURL).replace(/\/$/, '')
   const PATH0 = '/upload'
@@ -122,7 +114,5 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   }
 }
 
-// prettier-ignore
 export type ApiInstance = ReturnType<typeof api>
-// prettier-ignore
 export default api
