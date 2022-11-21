@@ -1,24 +1,13 @@
-/* eslint-disable */
-// prettier-ignore
 import type { AspidaClient, BasicHeaders } from 'aspida'
-// prettier-ignore
 import type { Methods as Methods0 } from './audio'
-// prettier-ignore
 import type { Methods as Methods1 } from './image'
-// prettier-ignore
 import type { Methods as Methods2 } from './parse'
-// prettier-ignore
 import type { Methods as Methods3 } from './story/_storyId@string'
-// prettier-ignore
 import type { Methods as Methods4 } from './story/_storyId@string/audio'
-// prettier-ignore
 import type { Methods as Methods5 } from './story/_storyId@string/image'
-// prettier-ignore
 import type { Methods as Methods6 } from './story/_storyId@string/video'
-// prettier-ignore
 import type { Methods as Methods7 } from './video'
 
-// prettier-ignore
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? '' : baseURL).replace(/\/$/, '')
   const PATH0 = '/api/v3/extension/audio'
@@ -145,7 +134,5 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   }
 }
 
-// prettier-ignore
 export type ApiInstance = ReturnType<typeof api>
-// prettier-ignore
 export default api

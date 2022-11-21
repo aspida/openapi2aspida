@@ -1,10 +1,6 @@
-/* eslint-disable */
-// prettier-ignore
 import type { AspidaClient } from 'aspida'
-// prettier-ignore
 import type { Methods as Methods0 } from '.'
 
-// prettier-ignore
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? 'https://petstore.swagger.io/v2' : baseURL).replace(/\/$/, '')
   const PATH0 = '/user/createWithList'
@@ -25,7 +21,5 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   }
 }
 
-// prettier-ignore
 export type ApiInstance = ReturnType<typeof api>
-// prettier-ignore
 export default api

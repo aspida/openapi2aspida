@@ -1,24 +1,13 @@
-/* eslint-disable */
-// prettier-ignore
 import type { AspidaClient, BasicHeaders } from 'aspida'
-// prettier-ignore
 import type { Methods as Methods0 } from './me'
-// prettier-ignore
 import type { Methods as Methods1 } from './mixes'
-// prettier-ignore
 import type { Methods as Methods2 } from './mixes/_id@string'
-// prettier-ignore
 import type { Methods as Methods3 } from './mixes/_mixId@string/cards'
-// prettier-ignore
 import type { Methods as Methods4 } from './mixes/_mixId@string/url'
-// prettier-ignore
 import type { Methods as Methods5 } from './parse'
-// prettier-ignore
 import type { Methods as Methods6 } from './parse/image'
-// prettier-ignore
 import type { Methods as Methods7 } from './token'
 
-// prettier-ignore
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? '' : baseURL).replace(/\/$/, '')
   const PATH0 = '/api/v1/me'
@@ -142,7 +131,5 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   }
 }
 
-// prettier-ignore
 export type ApiInstance = ReturnType<typeof api>
-// prettier-ignore
 export default api
