@@ -17,7 +17,8 @@
     "lint": "eslint --ext .ts . && prettier --check \"./**/*.ts\"",
     "lint:fix": "eslint --ext .ts . --fix && prettier --write \"./**/*.ts\"",
     "test": "jest",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepare": "mkdir -p dist && npm run build"
   },
   "homepage": "https://github.com/aspida/openapi2aspida#readme",
   "repository": {
@@ -28,7 +29,8 @@
     "url": "https://github.com/aspida/openapi2aspida/issues"
   },
   "files": [
-    "dist"
+    "dist",
+    "bin"
   ],
   "keywords": [
     "typescript",
@@ -87,7 +89,7 @@
     "fs-extra": "^10.0.0",
     "js-yaml": "^4.1.0",
     "openapi-types": "^9.1.0",
-    "swagger-parser": "^10.0.3",
+    "@apidevtools/swagger-parser": "^10.1.0",
     "swagger2openapi": "^7.0.8"
   },
   "devDependencies": {
