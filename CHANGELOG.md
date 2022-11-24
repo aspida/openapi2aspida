@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.21.0](https://github.com/aspida/openapi2aspida/compare/v0.19.0...v0.20.0) (2022-11-22)
+
+### Features
+
+- feat: generate type of responses (https://github.com/aspida/openapi2aspida/pull/218)
+
 ## [0.20.0](https://github.com/aspida/openapi2aspida/compare/v0.19.0...v0.20.0) (2022-11-22)
 
 ### Features
