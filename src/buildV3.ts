@@ -18,6 +18,7 @@ import getDirName from './builderUtils/getDirName'
 import schemas2Props from './builderUtils/schemas2Props'
 import parameters2Props from './builderUtils/parameters2Props'
 import requestBodies2Props from './builderUtils/requestBodies2Props'
+import responses2Props from './builderUtils/responses2Props'
 
 const methodNames = ['get', 'post', 'put', 'delete', 'head', 'options', 'patch'] as const
 
@@ -31,6 +32,7 @@ export default (openapi: OpenAPIV3.Document) => {
   const schemas = schemas2Props(openapi.components?.schemas, openapi) || []
   const parameters = parameters2Props(openapi.components?.parameters, openapi, false) || []
   const requestBodies = requestBodies2Props(openapi.components?.requestBodies) || []
+  const responses = responses2Props(openapi.components?.responses) || []
 
   files.push(
     ...Object.keys(openapi.paths)
@@ -368,7 +370,7 @@ export default (openapi: OpenAPIV3.Document) => {
   )
 
   const typesText =
-    parameters.length + schemas.length + requestBodies.length
+    parameters.length + schemas.length + requestBodies.length + responses.length
       ? [
           ...parameters.map(p => ({
             name: p.name,
@@ -381,6 +383,14 @@ export default (openapi: OpenAPIV3.Document) => {
             text: value2String(s.value, '').replace(/\n {2}/g, '\n')
           })),
           ...requestBodies.map(r => ({
+            name: r.name,
+            description: null,
+            text:
+              typeof r.value === 'string'
+                ? r.value
+                : value2String(r.value, '').replace(/\n {2}/g, '\n')
+          })),
+          ...responses.map(r => ({
             name: r.name,
             description: null,
             text:

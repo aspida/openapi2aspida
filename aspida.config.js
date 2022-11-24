@@ -43,6 +43,11 @@ module.exports = [
     input: 'samples/request-bodies',
     outputEachDir: true,
     openapi: { inputFile: 'samples/request-bodies.yml' }
+  },
+  {
+    input: 'samples/responses',
+    outputEachDir: true,
+    openapi: { inputFile: 'samples/responses.yml' }
   }
   // {
   //   input: 'samples/path-at-mark',
