@@ -402,7 +402,7 @@ export default (openapi: OpenAPIV3.Document) => {
           })),
           ...headers.map(h => ({
             name: h.name,
-            description: null,
+            description: typeof h.value === 'string' ? null : h.value.description,
             text:
               typeof h.value === 'string'
                 ? h.value

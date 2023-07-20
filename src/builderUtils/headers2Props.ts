@@ -16,7 +16,7 @@ export default (headers: OpenAPIV3.ComponentsObject['headers']) =>
       } else {
         const result = schema2value(target.schema, false)
         if (!result) return null
-        value = result
+        value = { ...result, description: target.description ?? null }
       }
 
       return { name: defKey2defName(defKey), value }
