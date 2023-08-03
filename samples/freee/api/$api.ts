@@ -1,115 +1,115 @@
-import type { AspidaClient, BasicHeaders } from 'aspida'
-import { dataToURLString } from 'aspida'
-import type { Methods as Methods0 } from './1/account_items'
-import type { Methods as Methods1 } from './1/account_items/_id@number'
-import type { Methods as Methods2 } from './1/banks'
-import type { Methods as Methods3 } from './1/banks/_id@number'
-import type { Methods as Methods4 } from './1/companies'
-import type { Methods as Methods5 } from './1/companies/_id@number'
-import type { Methods as Methods6 } from './1/deals'
-import type { Methods as Methods7 } from './1/deals/_id@number'
-import type { Methods as Methods8 } from './1/deals/_id@number/payments'
-import type { Methods as Methods9 } from './1/deals/_id@number/payments/_payment_id@number'
-import type { Methods as Methods10 } from './1/deals/_id@number/renews'
-import type { Methods as Methods11 } from './1/deals/_id@number/renews/_renew_id@number'
-import type { Methods as Methods12 } from './1/expense_application_line_templates'
-import type { Methods as Methods13 } from './1/expense_application_line_templates/_id@number'
-import type { Methods as Methods14 } from './1/expense_applications'
-import type { Methods as Methods15 } from './1/expense_applications/_id@number'
-import type { Methods as Methods16 } from './1/forms/selectables'
-import type { Methods as Methods17 } from './1/invoices'
-import type { Methods as Methods18 } from './1/invoices/_id@number'
-import type { Methods as Methods19 } from './1/items'
-import type { Methods as Methods20 } from './1/items/_id@number'
-import type { Methods as Methods21 } from './1/journals'
-import type { Methods as Methods22 } from './1/journals/reports/_id@number/download'
-import type { Methods as Methods23 } from './1/journals/reports/_id@number/status'
-import type { Methods as Methods24 } from './1/manual_journals'
-import type { Methods as Methods25 } from './1/manual_journals/_id@number'
-import type { Methods as Methods26 } from './1/partners'
-import type { Methods as Methods27 } from './1/partners/_id@number'
-import type { Methods as Methods28 } from './1/partners/code/_code@string'
-import type { Methods as Methods29 } from './1/quotations'
-import type { Methods as Methods30 } from './1/quotations/_id@number'
-import type { Methods as Methods31 } from './1/receipts'
-import type { Methods as Methods32 } from './1/receipts/_id@number'
-import type { Methods as Methods33 } from './1/reports/trial_bs'
-import type { Methods as Methods34 } from './1/reports/trial_bs_three_years'
-import type { Methods as Methods35 } from './1/reports/trial_bs_two_years'
-import type { Methods as Methods36 } from './1/reports/trial_pl'
-import type { Methods as Methods37 } from './1/reports/trial_pl_sections'
-import type { Methods as Methods38 } from './1/reports/trial_pl_three_years'
-import type { Methods as Methods39 } from './1/reports/trial_pl_two_years'
-import type { Methods as Methods40 } from './1/sections'
-import type { Methods as Methods41 } from './1/sections/_id@number'
-import type { Methods as Methods42 } from './1/segments/_segment_id@number/tags'
-import type { Methods as Methods43 } from './1/segments/_segment_id@number/tags/_id@number'
-import type { Methods as Methods44 } from './1/tags'
-import type { Methods as Methods45 } from './1/tags/_id@number'
-import type { Methods as Methods46 } from './1/taxes/codes'
-import type { Methods as Methods47 } from './1/taxes/codes/_code@number'
-import type { Methods as Methods48 } from './1/taxes/companies/_company_id@number'
-import type { Methods as Methods49 } from './1/transfers'
-import type { Methods as Methods50 } from './1/transfers/_id@number'
-import type { Methods as Methods51 } from './1/users'
-import type { Methods as Methods52 } from './1/users/capabilities'
-import type { Methods as Methods53 } from './1/users/me'
-import type { Methods as Methods54 } from './1/wallet_txns'
-import type { Methods as Methods55 } from './1/wallet_txns/_id@number'
-import type { Methods as Methods56 } from './1/walletables'
-import type { Methods as Methods57 } from './1/walletables/_type/_id@number'
+import type { AspidaClient, BasicHeaders } from 'aspida';
+import { dataToURLString } from 'aspida';
+import type { Methods as Methods0 } from './1/account_items';
+import type { Methods as Methods1 } from './1/account_items/_id@number';
+import type { Methods as Methods2 } from './1/banks';
+import type { Methods as Methods3 } from './1/banks/_id@number';
+import type { Methods as Methods4 } from './1/companies';
+import type { Methods as Methods5 } from './1/companies/_id@number';
+import type { Methods as Methods6 } from './1/deals';
+import type { Methods as Methods7 } from './1/deals/_id@number';
+import type { Methods as Methods8 } from './1/deals/_id@number/payments';
+import type { Methods as Methods9 } from './1/deals/_id@number/payments/_payment_id@number';
+import type { Methods as Methods10 } from './1/deals/_id@number/renews';
+import type { Methods as Methods11 } from './1/deals/_id@number/renews/_renew_id@number';
+import type { Methods as Methods12 } from './1/expense_application_line_templates';
+import type { Methods as Methods13 } from './1/expense_application_line_templates/_id@number';
+import type { Methods as Methods14 } from './1/expense_applications';
+import type { Methods as Methods15 } from './1/expense_applications/_id@number';
+import type { Methods as Methods16 } from './1/forms/selectables';
+import type { Methods as Methods17 } from './1/invoices';
+import type { Methods as Methods18 } from './1/invoices/_id@number';
+import type { Methods as Methods19 } from './1/items';
+import type { Methods as Methods20 } from './1/items/_id@number';
+import type { Methods as Methods21 } from './1/journals';
+import type { Methods as Methods22 } from './1/journals/reports/_id@number/download';
+import type { Methods as Methods23 } from './1/journals/reports/_id@number/status';
+import type { Methods as Methods24 } from './1/manual_journals';
+import type { Methods as Methods25 } from './1/manual_journals/_id@number';
+import type { Methods as Methods26 } from './1/partners';
+import type { Methods as Methods27 } from './1/partners/_id@number';
+import type { Methods as Methods28 } from './1/partners/code/_code@string';
+import type { Methods as Methods29 } from './1/quotations';
+import type { Methods as Methods30 } from './1/quotations/_id@number';
+import type { Methods as Methods31 } from './1/receipts';
+import type { Methods as Methods32 } from './1/receipts/_id@number';
+import type { Methods as Methods33 } from './1/reports/trial_bs';
+import type { Methods as Methods34 } from './1/reports/trial_bs_three_years';
+import type { Methods as Methods35 } from './1/reports/trial_bs_two_years';
+import type { Methods as Methods36 } from './1/reports/trial_pl';
+import type { Methods as Methods37 } from './1/reports/trial_pl_sections';
+import type { Methods as Methods38 } from './1/reports/trial_pl_three_years';
+import type { Methods as Methods39 } from './1/reports/trial_pl_two_years';
+import type { Methods as Methods40 } from './1/sections';
+import type { Methods as Methods41 } from './1/sections/_id@number';
+import type { Methods as Methods42 } from './1/segments/_segment_id@number/tags';
+import type { Methods as Methods43 } from './1/segments/_segment_id@number/tags/_id@number';
+import type { Methods as Methods44 } from './1/tags';
+import type { Methods as Methods45 } from './1/tags/_id@number';
+import type { Methods as Methods46 } from './1/taxes/codes';
+import type { Methods as Methods47 } from './1/taxes/codes/_code@number';
+import type { Methods as Methods48 } from './1/taxes/companies/_company_id@number';
+import type { Methods as Methods49 } from './1/transfers';
+import type { Methods as Methods50 } from './1/transfers/_id@number';
+import type { Methods as Methods51 } from './1/users';
+import type { Methods as Methods52 } from './1/users/capabilities';
+import type { Methods as Methods53 } from './1/users/me';
+import type { Methods as Methods54 } from './1/wallet_txns';
+import type { Methods as Methods55 } from './1/wallet_txns/_id@number';
+import type { Methods as Methods56 } from './1/walletables';
+import type { Methods as Methods57 } from './1/walletables/_type/_id@number';
 
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
-  const prefix = (baseURL === undefined ? 'https://api.freee.co.jp' : baseURL).replace(/\/$/, '')
-  const PATH0 = '/api/1/account_items'
-  const PATH1 = '/api/1/banks'
-  const PATH2 = '/api/1/companies'
-  const PATH3 = '/api/1/deals'
-  const PATH4 = '/payments'
-  const PATH5 = '/renews'
-  const PATH6 = '/api/1/expense_application_line_templates'
-  const PATH7 = '/api/1/expense_applications'
-  const PATH8 = '/api/1/forms/selectables'
-  const PATH9 = '/api/1/invoices'
-  const PATH10 = '/api/1/items'
-  const PATH11 = '/api/1/journals'
-  const PATH12 = '/api/1/journals/reports'
-  const PATH13 = '/download'
-  const PATH14 = '/status'
-  const PATH15 = '/api/1/manual_journals'
-  const PATH16 = '/api/1/partners'
-  const PATH17 = '/api/1/partners/code'
-  const PATH18 = '/api/1/quotations'
-  const PATH19 = '/api/1/receipts'
-  const PATH20 = '/api/1/reports/trial_bs'
-  const PATH21 = '/api/1/reports/trial_bs_three_years'
-  const PATH22 = '/api/1/reports/trial_bs_two_years'
-  const PATH23 = '/api/1/reports/trial_pl'
-  const PATH24 = '/api/1/reports/trial_pl_sections'
-  const PATH25 = '/api/1/reports/trial_pl_three_years'
-  const PATH26 = '/api/1/reports/trial_pl_two_years'
-  const PATH27 = '/api/1/sections'
-  const PATH28 = '/api/1/segments'
-  const PATH29 = '/tags'
-  const PATH30 = '/api/1/tags'
-  const PATH31 = '/api/1/taxes/codes'
-  const PATH32 = '/api/1/taxes/companies'
-  const PATH33 = '/api/1/transfers'
-  const PATH34 = '/api/1/users'
-  const PATH35 = '/api/1/users/capabilities'
-  const PATH36 = '/api/1/users/me'
-  const PATH37 = '/api/1/wallet_txns'
-  const PATH38 = '/api/1/walletables'
-  const GET = 'GET'
-  const POST = 'POST'
-  const PUT = 'PUT'
-  const DELETE = 'DELETE'
+  const prefix = (baseURL === undefined ? 'https://api.freee.co.jp' : baseURL).replace(/\/$/, '');
+  const PATH0 = '/api/1/account_items';
+  const PATH1 = '/api/1/banks';
+  const PATH2 = '/api/1/companies';
+  const PATH3 = '/api/1/deals';
+  const PATH4 = '/payments';
+  const PATH5 = '/renews';
+  const PATH6 = '/api/1/expense_application_line_templates';
+  const PATH7 = '/api/1/expense_applications';
+  const PATH8 = '/api/1/forms/selectables';
+  const PATH9 = '/api/1/invoices';
+  const PATH10 = '/api/1/items';
+  const PATH11 = '/api/1/journals';
+  const PATH12 = '/api/1/journals/reports';
+  const PATH13 = '/download';
+  const PATH14 = '/status';
+  const PATH15 = '/api/1/manual_journals';
+  const PATH16 = '/api/1/partners';
+  const PATH17 = '/api/1/partners/code';
+  const PATH18 = '/api/1/quotations';
+  const PATH19 = '/api/1/receipts';
+  const PATH20 = '/api/1/reports/trial_bs';
+  const PATH21 = '/api/1/reports/trial_bs_three_years';
+  const PATH22 = '/api/1/reports/trial_bs_two_years';
+  const PATH23 = '/api/1/reports/trial_pl';
+  const PATH24 = '/api/1/reports/trial_pl_sections';
+  const PATH25 = '/api/1/reports/trial_pl_three_years';
+  const PATH26 = '/api/1/reports/trial_pl_two_years';
+  const PATH27 = '/api/1/sections';
+  const PATH28 = '/api/1/segments';
+  const PATH29 = '/tags';
+  const PATH30 = '/api/1/tags';
+  const PATH31 = '/api/1/taxes/codes';
+  const PATH32 = '/api/1/taxes/companies';
+  const PATH33 = '/api/1/transfers';
+  const PATH34 = '/api/1/users';
+  const PATH35 = '/api/1/users/capabilities';
+  const PATH36 = '/api/1/users/me';
+  const PATH37 = '/api/1/wallet_txns';
+  const PATH38 = '/api/1/walletables';
+  const GET = 'GET';
+  const POST = 'POST';
+  const PUT = 'PUT';
+  const DELETE = 'DELETE';
 
   return {
     $1: {
       account_items: {
         _id: (val2: number) => {
-          const prefix2 = `${PATH0}/${val2}`
+          const prefix2 = `${PATH0}/${val2}`;
 
           return {
             /**
@@ -165,8 +165,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
             $delete: (option: { query: Methods1['delete']['query'], config?: T | undefined }) =>
               fetch<void, BasicHeaders, Methods1['delete']['status']>(prefix, prefix2, DELETE, option).send().then(r => r.body),
             $path: (option?: { method?: 'get' | undefined; query: Methods1['get']['query'] } | { method: 'delete'; query: Methods1['delete']['query'] } | undefined) =>
-              `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
-          }
+              `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
+          };
         },
         /**
          * <h2 id="">概要</h2>
@@ -215,11 +215,11 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         $post: (option: { body: Methods0['post']['reqBody'], config?: T | undefined }) =>
           fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option, 'URLSearchParams').json().then(r => r.body),
         $path: (option?: { method?: 'get' | undefined; query: Methods0['get']['query'] } | undefined) =>
-          `${prefix}${PATH0}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
+          `${prefix}${PATH0}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
       },
       banks: {
         _id: (val2: number) => {
-          const prefix2 = `${PATH1}/${val2}`
+          const prefix2 = `${PATH1}/${val2}`;
 
           return {
             /**
@@ -264,8 +264,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
              */
             $get: (option?: { config?: T | undefined } | undefined) =>
               fetch<Methods3['get']['resBody'], BasicHeaders, Methods3['get']['status']>(prefix, prefix2, GET, option).json().then(r => r.body),
-            $path: () => `${prefix}${prefix2}`
-          }
+            $path: () => `${prefix}${prefix2}`,
+          };
         },
         /**
          * <h2 id="">概要</h2>
@@ -310,11 +310,11 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         $get: (option?: { query?: Methods2['get']['query'] | undefined, config?: T | undefined } | undefined) =>
           fetch<Methods2['get']['resBody'], BasicHeaders, Methods2['get']['status']>(prefix, PATH1, GET, option).json().then(r => r.body),
         $path: (option?: { method?: 'get' | undefined; query: Methods2['get']['query'] } | undefined) =>
-          `${prefix}${PATH1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
+          `${prefix}${PATH1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
       },
       companies: {
         _id: (val2: number) => {
-          const prefix2 = `${PATH2}/${val2}`
+          const prefix2 = `${PATH2}/${val2}`;
 
           return {
             /**
@@ -386,8 +386,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
             $put: (option?: { body?: Methods5['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
               fetch<Methods5['put']['resBody'], BasicHeaders, Methods5['put']['status']>(prefix, prefix2, PUT, option, 'URLSearchParams').json().then(r => r.body),
             $path: (option?: { method?: 'get' | undefined; query: Methods5['get']['query'] } | undefined) =>
-              `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
-          }
+              `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
+          };
         },
         /**
          * <h2 id="">概要</h2>
@@ -435,16 +435,16 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          */
         $get: (option?: { config?: T | undefined } | undefined) =>
           fetch<Methods4['get']['resBody'], BasicHeaders, Methods4['get']['status']>(prefix, PATH2, GET, option).json().then(r => r.body),
-        $path: () => `${prefix}${PATH2}`
+        $path: () => `${prefix}${PATH2}`,
       },
       deals: {
         _id: (val2: number) => {
-          const prefix2 = `${PATH3}/${val2}`
+          const prefix2 = `${PATH3}/${val2}`;
 
           return {
             payments: {
               _payment_id: (val4: number) => {
-                const prefix4 = `${prefix2}${PATH4}/${val4}`
+                const prefix4 = `${prefix2}${PATH4}/${val4}`;
 
                 return {
                   /**
@@ -604,8 +604,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                   $delete: (option: { query: Methods9['delete']['query'], config?: T | undefined }) =>
                     fetch<void, BasicHeaders, Methods9['delete']['status']>(prefix, prefix4, DELETE, option).send().then(r => r.body),
                   $path: (option?: { method: 'delete'; query: Methods9['delete']['query'] } | undefined) =>
-                    `${prefix}${prefix4}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
-                }
+                    `${prefix}${prefix4}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
+                };
               },
               /**
                * <h2 id="">概要</h2>
@@ -689,11 +689,11 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                */
               $post: (option: { body: Methods8['post']['reqBody'], config?: T | undefined }) =>
                 fetch<Methods8['post']['resBody'], BasicHeaders, Methods8['post']['status']>(prefix, `${prefix2}${PATH4}`, POST, option, 'URLSearchParams').json().then(r => r.body),
-              $path: () => `${prefix}${prefix2}${PATH4}`
+              $path: () => `${prefix}${prefix2}${PATH4}`,
             },
             renews: {
               _renew_id: (val4: number) => {
-                const prefix4 = `${prefix2}${PATH5}/${val4}`
+                const prefix4 = `${prefix2}${PATH5}/${val4}`;
 
                 return {
                   /**
@@ -773,8 +773,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                   $delete: (option: { query: Methods11['delete']['query'], config?: T | undefined }) =>
                     fetch<Methods11['delete']['resBody'], BasicHeaders, Methods11['delete']['status']>(prefix, prefix4, DELETE, option).json().then(r => r.body),
                   $path: (option?: { method: 'delete'; query: Methods11['delete']['query'] } | undefined) =>
-                    `${prefix}${prefix4}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
-                }
+                    `${prefix}${prefix4}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
+                };
               },
               /**
                * <h2 id="">概要</h2>
@@ -832,7 +832,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                */
               $post: (option: { body: Methods10['post']['reqBody'], config?: T | undefined }) =>
                 fetch<Methods10['post']['resBody'], BasicHeaders, Methods10['post']['status']>(prefix, `${prefix2}${PATH5}`, POST, option, 'URLSearchParams').json().then(r => r.body),
-              $path: () => `${prefix}${prefix2}${PATH5}`
+              $path: () => `${prefix}${prefix2}${PATH5}`,
             },
             /**
              * <h2 id="">概要</h2>
@@ -1077,8 +1077,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
             $delete: (option: { query: Methods7['delete']['query'], config?: T | undefined }) =>
               fetch<void, BasicHeaders, Methods7['delete']['status']>(prefix, prefix2, DELETE, option).send().then(r => r.body),
             $path: (option?: { method?: 'get' | undefined; query: Methods7['get']['query'] } | { method: 'delete'; query: Methods7['delete']['query'] } | undefined) =>
-              `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
-          }
+              `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
+          };
         },
         /**
          * <h2 id="">概要</h2>
@@ -1331,11 +1331,11 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         $post: (option?: { body?: Methods6['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
           fetch<Methods6['post']['resBody'], BasicHeaders, Methods6['post']['status']>(prefix, PATH3, POST, option, 'URLSearchParams').json().then(r => r.body),
         $path: (option?: { method?: 'get' | undefined; query: Methods6['get']['query'] } | undefined) =>
-          `${prefix}${PATH3}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
+          `${prefix}${PATH3}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
       },
       expense_application_line_templates: {
         _id: (val2: number) => {
-          const prefix2 = `${PATH6}/${val2}`
+          const prefix2 = `${PATH6}/${val2}`;
 
           return {
             get: (option: { query: Methods13['get']['query'], config?: T | undefined }) =>
@@ -1357,8 +1357,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
             $delete: (option: { query: Methods13['delete']['query'], config?: T | undefined }) =>
               fetch<void, BasicHeaders, Methods13['delete']['status']>(prefix, prefix2, DELETE, option).send().then(r => r.body),
             $path: (option?: { method?: 'get' | undefined; query: Methods13['get']['query'] } | { method: 'delete'; query: Methods13['delete']['query'] } | undefined) =>
-              `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
-          }
+              `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
+          };
         },
         /**
          * <h2 id="">概要</h2>
@@ -1385,11 +1385,11 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         $post: (option: { body: Methods12['post']['reqBody'], config?: T | undefined }) =>
           fetch<Methods12['post']['resBody'], BasicHeaders, Methods12['post']['status']>(prefix, PATH6, POST, option, 'URLSearchParams').json().then(r => r.body),
         $path: (option?: { method?: 'get' | undefined; query: Methods12['get']['query'] } | undefined) =>
-          `${prefix}${PATH6}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
+          `${prefix}${PATH6}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
       },
       expense_applications: {
         _id: (val2: number) => {
-          const prefix2 = `${PATH7}/${val2}`
+          const prefix2 = `${PATH7}/${val2}`;
 
           return {
             get: (option: { query: Methods15['get']['query'], config?: T | undefined }) =>
@@ -1457,8 +1457,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
             $delete: (option: { query: Methods15['delete']['query'], config?: T | undefined }) =>
               fetch<void, BasicHeaders, Methods15['delete']['status']>(prefix, prefix2, DELETE, option).send().then(r => r.body),
             $path: (option?: { method?: 'get' | undefined; query: Methods15['get']['query'] } | { method: 'delete'; query: Methods15['delete']['query'] } | undefined) =>
-              `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
-          }
+              `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
+          };
         },
         get: (option: { query: Methods14['get']['query'], config?: T | undefined }) =>
           fetch<Methods14['get']['resBody'], BasicHeaders, Methods14['get']['status']>(prefix, PATH7, GET, option).json(),
@@ -1499,7 +1499,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         $post: (option?: { body?: Methods14['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
           fetch<Methods14['post']['resBody'], BasicHeaders, Methods14['post']['status']>(prefix, PATH7, POST, option, 'URLSearchParams').json().then(r => r.body),
         $path: (option?: { method?: 'get' | undefined; query: Methods14['get']['query'] } | undefined) =>
-          `${prefix}${PATH7}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
+          `${prefix}${PATH7}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
       },
       forms: {
         selectables: {
@@ -1518,12 +1518,12 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           $get: (option: { query: Methods16['get']['query'], config?: T | undefined }) =>
             fetch<Methods16['get']['resBody'], BasicHeaders, Methods16['get']['status']>(prefix, PATH8, GET, option).json().then(r => r.body),
           $path: (option?: { method?: 'get' | undefined; query: Methods16['get']['query'] } | undefined) =>
-            `${prefix}${PATH8}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
-        }
+            `${prefix}${PATH8}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
+        },
       },
       invoices: {
         _id: (val2: number) => {
-          const prefix2 = `${PATH9}/${val2}`
+          const prefix2 = `${PATH9}/${val2}`;
 
           return {
             /**
@@ -1591,8 +1591,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
             $delete: (option: { query: Methods18['delete']['query'], config?: T | undefined }) =>
               fetch<void, BasicHeaders, Methods18['delete']['status']>(prefix, prefix2, DELETE, option).send().then(r => r.body),
             $path: (option?: { method?: 'get' | undefined; query: Methods18['get']['query'] } | { method: 'delete'; query: Methods18['delete']['query'] } | undefined) =>
-              `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
-          }
+              `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
+          };
         },
         /**
          * <h2 id="">概要</h2>
@@ -1639,11 +1639,11 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         $post: (option?: { body?: Methods17['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
           fetch<Methods17['post']['resBody'], BasicHeaders, Methods17['post']['status']>(prefix, PATH9, POST, option, 'URLSearchParams').json().then(r => r.body),
         $path: (option?: { method?: 'get' | undefined; query: Methods17['get']['query'] } | undefined) =>
-          `${prefix}${PATH9}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
+          `${prefix}${PATH9}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
       },
       items: {
         _id: (val2: number) => {
-          const prefix2 = `${PATH10}/${val2}`
+          const prefix2 = `${PATH10}/${val2}`;
 
           return {
             /**
@@ -1691,8 +1691,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
             $delete: (option: { query: Methods20['delete']['query'], config?: T | undefined }) =>
               fetch<void, BasicHeaders, Methods20['delete']['status']>(prefix, prefix2, DELETE, option).send().then(r => r.body),
             $path: (option?: { method?: 'get' | undefined; query: Methods20['get']['query'] } | { method: 'delete'; query: Methods20['delete']['query'] } | undefined) =>
-              `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
-          }
+              `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
+          };
         },
         /**
          * <h2 id="">概要</h2>
@@ -1725,12 +1725,12 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         $post: (option?: { body?: Methods19['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
           fetch<Methods19['post']['resBody'], BasicHeaders, Methods19['post']['status']>(prefix, PATH10, POST, option, 'URLSearchParams').json().then(r => r.body),
         $path: (option?: { method?: 'get' | undefined; query: Methods19['get']['query'] } | undefined) =>
-          `${prefix}${PATH10}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
+          `${prefix}${PATH10}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
       },
       journals: {
         reports: {
           _id: (val3: number) => {
-            const prefix3 = `${PATH12}/${val3}`
+            const prefix3 = `${PATH12}/${val3}`;
 
             return {
               download: {
@@ -1765,7 +1765,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                 $get: (option: { query: Methods22['get']['query'], config?: T | undefined }) =>
                   fetch<Methods22['get']['resBody'], BasicHeaders, Methods22['get']['status']>(prefix, `${prefix3}${PATH13}`, GET, option).blob().then(r => r.body),
                 $path: (option?: { method?: 'get' | undefined; query: Methods22['get']['query'] } | undefined) =>
-                  `${prefix}${prefix3}${PATH13}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
+                  `${prefix}${prefix3}${PATH13}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
               },
               status: {
                 /**
@@ -1827,10 +1827,10 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                 $get: (option: { query: Methods23['get']['query'], config?: T | undefined }) =>
                   fetch<Methods23['get']['resBody'], BasicHeaders, Methods23['get']['status']>(prefix, `${prefix3}${PATH14}`, GET, option).json().then(r => r.body),
                 $path: (option?: { method?: 'get' | undefined; query: Methods23['get']['query'] } | undefined) =>
-                  `${prefix}${prefix3}${PATH14}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
-              }
-            }
-          }
+                  `${prefix}${prefix3}${PATH14}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
+              },
+            };
+          },
         },
         /**
          * <h2 id="">概要</h2>
@@ -1919,11 +1919,11 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         $get: (option: { query: Methods21['get']['query'], config?: T | undefined }) =>
           fetch<Methods21['get']['resBody'], BasicHeaders, Methods21['get']['status']>(prefix, PATH11, GET, option).json().then(r => r.body),
         $path: (option?: { method?: 'get' | undefined; query: Methods21['get']['query'] } | undefined) =>
-          `${prefix}${PATH11}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
+          `${prefix}${PATH11}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
       },
       manual_journals: {
         _id: (val2: number) => {
-          const prefix2 = `${PATH15}/${val2}`
+          const prefix2 = `${PATH15}/${val2}`;
 
           return {
             /**
@@ -2109,8 +2109,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
             $delete: (option: { query: Methods25['delete']['query'], config?: T | undefined }) =>
               fetch<void, BasicHeaders, Methods25['delete']['status']>(prefix, prefix2, DELETE, option).send().then(r => r.body),
             $path: (option?: { method?: 'get' | undefined; query: Methods25['get']['query'] } | { method: 'delete'; query: Methods25['delete']['query'] } | undefined) =>
-              `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
-          }
+              `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
+          };
         },
         /**
          * <h2 id="">概要</h2>
@@ -2313,11 +2313,11 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         $post: (option?: { body?: Methods24['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
           fetch<Methods24['post']['resBody'], BasicHeaders, Methods24['post']['status']>(prefix, PATH15, POST, option, 'URLSearchParams').json().then(r => r.body),
         $path: (option?: { method?: 'get' | undefined; query: Methods24['get']['query'] } | undefined) =>
-          `${prefix}${PATH15}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
+          `${prefix}${PATH15}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
       },
       partners: {
         _id: (val2: number) => {
-          const prefix2 = `${PATH16}/${val2}`
+          const prefix2 = `${PATH16}/${val2}`;
 
           return {
             /**
@@ -2375,12 +2375,12 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
             $delete: (option: { query: Methods27['delete']['query'], config?: T | undefined }) =>
               fetch<void, BasicHeaders, Methods27['delete']['status']>(prefix, prefix2, DELETE, option).send().then(r => r.body),
             $path: (option?: { method?: 'get' | undefined; query: Methods27['get']['query'] } | { method: 'delete'; query: Methods27['delete']['query'] } | undefined) =>
-              `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
-          }
+              `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
+          };
         },
         code: {
           _code: (val3: string) => {
-            const prefix3 = `${PATH17}/${val3}`
+            const prefix3 = `${PATH17}/${val3}`;
 
             return {
               /**
@@ -2407,9 +2407,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                */
               $put: (option: { body: Methods28['put']['reqBody'], config?: T | undefined }) =>
                 fetch<Methods28['put']['resBody'], BasicHeaders, Methods28['put']['status']>(prefix, prefix3, PUT, option, 'URLSearchParams').json().then(r => r.body),
-              $path: () => `${prefix}${prefix3}`
-            }
-          }
+              $path: () => `${prefix}${prefix3}`,
+            };
+          },
         },
         /**
          * <h2 id="">概要</h2>
@@ -2454,11 +2454,11 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         $post: (option: { body: Methods26['post']['reqBody'], config?: T | undefined }) =>
           fetch<Methods26['post']['resBody'], BasicHeaders, Methods26['post']['status']>(prefix, PATH16, POST, option, 'URLSearchParams').json().then(r => r.body),
         $path: (option?: { method?: 'get' | undefined; query: Methods26['get']['query'] } | undefined) =>
-          `${prefix}${PATH16}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
+          `${prefix}${PATH16}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
       },
       quotations: {
         _id: (val2: number) => {
-          const prefix2 = `${PATH18}/${val2}`
+          const prefix2 = `${PATH18}/${val2}`;
 
           return {
             /**
@@ -2518,8 +2518,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
             $delete: (option: { query: Methods30['delete']['query'], config?: T | undefined }) =>
               fetch<void, BasicHeaders, Methods30['delete']['status']>(prefix, prefix2, DELETE, option).send().then(r => r.body),
             $path: (option?: { method?: 'get' | undefined; query: Methods30['get']['query'] } | { method: 'delete'; query: Methods30['delete']['query'] } | undefined) =>
-              `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
-          }
+              `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
+          };
         },
         /**
          * <h2 id="">概要</h2>
@@ -2564,11 +2564,11 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         $post: (option?: { body?: Methods29['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
           fetch<Methods29['post']['resBody'], BasicHeaders, Methods29['post']['status']>(prefix, PATH18, POST, option, 'URLSearchParams').json().then(r => r.body),
         $path: (option?: { method?: 'get' | undefined; query: Methods29['get']['query'] } | undefined) =>
-          `${prefix}${PATH18}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
+          `${prefix}${PATH18}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
       },
       receipts: {
         _id: (val2: number) => {
-          const prefix2 = `${PATH19}/${val2}`
+          const prefix2 = `${PATH19}/${val2}`;
 
           return {
             /**
@@ -2624,8 +2624,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
             $delete: (option: { query: Methods32['delete']['query'], config?: T | undefined }) =>
               fetch<void, BasicHeaders, Methods32['delete']['status']>(prefix, prefix2, DELETE, option).send().then(r => r.body),
             $path: (option?: { method?: 'get' | undefined; query: Methods32['get']['query'] } | { method: 'delete'; query: Methods32['delete']['query'] } | undefined) =>
-              `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
-          }
+              `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
+          };
         },
         /**
          * <h2 id="">概要</h2>
@@ -2656,7 +2656,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         $post: (option: { body: Methods31['post']['reqBody'], config?: T | undefined }) =>
           fetch<Methods31['post']['resBody'], BasicHeaders, Methods31['post']['status']>(prefix, PATH19, POST, option, 'FormData').json().then(r => r.body),
         $path: (option?: { method?: 'get' | undefined; query: Methods31['get']['query'] } | undefined) =>
-          `${prefix}${PATH19}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
+          `${prefix}${PATH19}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
       },
       reports: {
         trial_bs: {
@@ -2833,7 +2833,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           $get: (option: { query: Methods33['get']['query'], config?: T | undefined }) =>
             fetch<Methods33['get']['resBody'], BasicHeaders, Methods33['get']['status']>(prefix, PATH20, GET, option).json().then(r => r.body),
           $path: (option?: { method?: 'get' | undefined; query: Methods33['get']['query'] } | undefined) =>
-            `${prefix}${PATH20}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
+            `${prefix}${PATH20}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
         },
         trial_bs_three_years: {
           /**
@@ -2973,7 +2973,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           $get: (option: { query: Methods34['get']['query'], config?: T | undefined }) =>
             fetch<Methods34['get']['resBody'], BasicHeaders, Methods34['get']['status']>(prefix, PATH21, GET, option).json().then(r => r.body),
           $path: (option?: { method?: 'get' | undefined; query: Methods34['get']['query'] } | undefined) =>
-            `${prefix}${PATH21}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
+            `${prefix}${PATH21}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
         },
         trial_bs_two_years: {
           /**
@@ -3103,7 +3103,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           $get: (option: { query: Methods35['get']['query'], config?: T | undefined }) =>
             fetch<Methods35['get']['resBody'], BasicHeaders, Methods35['get']['status']>(prefix, PATH22, GET, option).json().then(r => r.body),
           $path: (option?: { method?: 'get' | undefined; query: Methods35['get']['query'] } | undefined) =>
-            `${prefix}${PATH22}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
+            `${prefix}${PATH22}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
         },
         trial_pl: {
           /**
@@ -3279,7 +3279,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           $get: (option: { query: Methods36['get']['query'], config?: T | undefined }) =>
             fetch<Methods36['get']['resBody'], BasicHeaders, Methods36['get']['status']>(prefix, PATH23, GET, option).json().then(r => r.body),
           $path: (option?: { method?: 'get' | undefined; query: Methods36['get']['query'] } | undefined) =>
-            `${prefix}${PATH23}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
+            `${prefix}${PATH23}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
         },
         trial_pl_sections: {
           /**
@@ -3431,7 +3431,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           $get: (option: { query: Methods37['get']['query'], config?: T | undefined }) =>
             fetch<Methods37['get']['resBody'], BasicHeaders, Methods37['get']['status']>(prefix, PATH24, GET, option).json().then(r => r.body),
           $path: (option?: { method?: 'get' | undefined; query: Methods37['get']['query'] } | undefined) =>
-            `${prefix}${PATH24}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
+            `${prefix}${PATH24}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
         },
         trial_pl_three_years: {
           /**
@@ -3571,7 +3571,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           $get: (option: { query: Methods38['get']['query'], config?: T | undefined }) =>
             fetch<Methods38['get']['resBody'], BasicHeaders, Methods38['get']['status']>(prefix, PATH25, GET, option).json().then(r => r.body),
           $path: (option?: { method?: 'get' | undefined; query: Methods38['get']['query'] } | undefined) =>
-            `${prefix}${PATH25}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
+            `${prefix}${PATH25}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
         },
         trial_pl_two_years: {
           /**
@@ -3707,12 +3707,12 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           $get: (option: { query: Methods39['get']['query'], config?: T | undefined }) =>
             fetch<Methods39['get']['resBody'], BasicHeaders, Methods39['get']['status']>(prefix, PATH26, GET, option).json().then(r => r.body),
           $path: (option?: { method?: 'get' | undefined; query: Methods39['get']['query'] } | undefined) =>
-            `${prefix}${PATH26}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
-        }
+            `${prefix}${PATH26}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
+        },
       },
       sections: {
         _id: (val2: number) => {
-          const prefix2 = `${PATH27}/${val2}`
+          const prefix2 = `${PATH27}/${val2}`;
 
           return {
             /**
@@ -3860,8 +3860,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
             $delete: (option: { query: Methods41['delete']['query'], config?: T | undefined }) =>
               fetch<void, BasicHeaders, Methods41['delete']['status']>(prefix, prefix2, DELETE, option).send().then(r => r.body),
             $path: (option?: { method?: 'get' | undefined; query: Methods41['get']['query'] } | { method: 'delete'; query: Methods41['delete']['query'] } | undefined) =>
-              `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
-          }
+              `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
+          };
         },
         /**
          * <h2 id="">概要</h2>
@@ -4018,16 +4018,16 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         $post: (option?: { body?: Methods40['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
           fetch<Methods40['post']['resBody'], BasicHeaders, Methods40['post']['status']>(prefix, PATH27, POST, option, 'URLSearchParams').json().then(r => r.body),
         $path: (option?: { method?: 'get' | undefined; query: Methods40['get']['query'] } | undefined) =>
-          `${prefix}${PATH27}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
+          `${prefix}${PATH27}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
       },
       segments: {
         _segment_id: (val2: number) => {
-          const prefix2 = `${PATH28}/${val2}`
+          const prefix2 = `${PATH28}/${val2}`;
 
           return {
             tags: {
               _id: (val4: number) => {
-                const prefix4 = `${prefix2}${PATH29}/${val4}`
+                const prefix4 = `${prefix2}${PATH29}/${val4}`;
 
                 return {
                   /**
@@ -4093,8 +4093,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                   $delete: (option: { query: Methods43['delete']['query'], config?: T | undefined }) =>
                     fetch<void, BasicHeaders, Methods43['delete']['status']>(prefix, prefix4, DELETE, option).send().then(r => r.body),
                   $path: (option?: { method: 'delete'; query: Methods43['delete']['query'] } | undefined) =>
-                    `${prefix}${prefix4}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
-                }
+                    `${prefix}${prefix4}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
+                };
               },
               /**
                * <h2 id="">概要</h2>
@@ -4159,14 +4159,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
               $post: (option: { body: Methods42['post']['reqBody'], config?: T | undefined }) =>
                 fetch<Methods42['post']['resBody'], BasicHeaders, Methods42['post']['status']>(prefix, `${prefix2}${PATH29}`, POST, option, 'URLSearchParams').json().then(r => r.body),
               $path: (option?: { method?: 'get' | undefined; query: Methods42['get']['query'] } | undefined) =>
-                `${prefix}${prefix2}${PATH29}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
-            }
-          }
-        }
+                `${prefix}${prefix2}${PATH29}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
+            },
+          };
+        },
       },
       tags: {
         _id: (val2: number) => {
-          const prefix2 = `${PATH30}/${val2}`
+          const prefix2 = `${PATH30}/${val2}`;
 
           return {
             /**
@@ -4214,8 +4214,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
             $delete: (option: { query: Methods45['delete']['query'], config?: T | undefined }) =>
               fetch<void, BasicHeaders, Methods45['delete']['status']>(prefix, prefix2, DELETE, option).send().then(r => r.body),
             $path: (option?: { method?: 'get' | undefined; query: Methods45['get']['query'] } | { method: 'delete'; query: Methods45['delete']['query'] } | undefined) =>
-              `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
-          }
+              `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
+          };
         },
         /**
          * <h2 id="">概要</h2>
@@ -4248,12 +4248,12 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         $post: (option: { body: Methods44['post']['reqBody'], config?: T | undefined }) =>
           fetch<Methods44['post']['resBody'], BasicHeaders, Methods44['post']['status']>(prefix, PATH30, POST, option, 'URLSearchParams').json().then(r => r.body),
         $path: (option?: { method?: 'get' | undefined; query: Methods44['get']['query'] } | undefined) =>
-          `${prefix}${PATH30}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
+          `${prefix}${PATH30}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
       },
       taxes: {
         codes: {
           _code: (val3: number) => {
-            const prefix3 = `${PATH31}/${val3}`
+            const prefix3 = `${PATH31}/${val3}`;
 
             return {
               /**
@@ -4270,8 +4270,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                */
               $get: (option?: { config?: T | undefined } | undefined) =>
                 fetch<Methods47['get']['resBody'], BasicHeaders, Methods47['get']['status']>(prefix, prefix3, GET, option).json().then(r => r.body),
-              $path: () => `${prefix}${prefix3}`
-            }
+              $path: () => `${prefix}${prefix3}`,
+            };
           },
           /**
            * <h2 id="">概要</h2>
@@ -4287,25 +4287,25 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            */
           $get: (option?: { config?: T | undefined } | undefined) =>
             fetch<Methods46['get']['resBody'], BasicHeaders, Methods46['get']['status']>(prefix, PATH31, GET, option).json().then(r => r.body),
-          $path: () => `${prefix}${PATH31}`
+          $path: () => `${prefix}${PATH31}`,
         },
         companies: {
           _company_id: (val3: number) => {
-            const prefix3 = `${PATH32}/${val3}`
+            const prefix3 = `${PATH32}/${val3}`;
 
             return {
               get: (option?: { config?: T | undefined } | undefined) =>
                 fetch<Methods48['get']['resBody'], BasicHeaders, Methods48['get']['status']>(prefix, prefix3, GET, option).json(),
               $get: (option?: { config?: T | undefined } | undefined) =>
                 fetch<Methods48['get']['resBody'], BasicHeaders, Methods48['get']['status']>(prefix, prefix3, GET, option).json().then(r => r.body),
-              $path: () => `${prefix}${prefix3}`
-            }
-          }
-        }
+              $path: () => `${prefix}${prefix3}`,
+            };
+          },
+        },
       },
       transfers: {
         _id: (val2: number) => {
-          const prefix2 = `${PATH33}/${val2}`
+          const prefix2 = `${PATH33}/${val2}`;
 
           return {
             /**
@@ -4433,8 +4433,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
             $delete: (option: { query: Methods50['delete']['query'], config?: T | undefined }) =>
               fetch<void, BasicHeaders, Methods50['delete']['status']>(prefix, prefix2, DELETE, option).send().then(r => r.body),
             $path: (option?: { method?: 'get' | undefined; query: Methods50['get']['query'] } | { method: 'delete'; query: Methods50['delete']['query'] } | undefined) =>
-              `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
-          }
+              `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
+          };
         },
         /**
          * <h2 id="">概要</h2>
@@ -4547,7 +4547,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         $post: (option?: { body?: Methods49['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
           fetch<Methods49['post']['resBody'], BasicHeaders, Methods49['post']['status']>(prefix, PATH33, POST, option, 'URLSearchParams').json().then(r => r.body),
         $path: (option?: { method?: 'get' | undefined; query: Methods49['get']['query'] } | undefined) =>
-          `${prefix}${PATH33}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
+          `${prefix}${PATH33}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
       },
       users: {
         capabilities: {
@@ -4566,7 +4566,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           $get: (option: { query: Methods52['get']['query'], config?: T | undefined }) =>
             fetch<Methods52['get']['resBody'], BasicHeaders, Methods52['get']['status']>(prefix, PATH35, GET, option).json().then(r => r.body),
           $path: (option?: { method?: 'get' | undefined; query: Methods52['get']['query'] } | undefined) =>
-            `${prefix}${PATH35}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
+            `${prefix}${PATH35}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
         },
         me: {
           /**
@@ -4600,7 +4600,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           $put: (option?: { body?: Methods53['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
             fetch<Methods53['put']['resBody'], BasicHeaders, Methods53['put']['status']>(prefix, PATH36, PUT, option, 'URLSearchParams').json().then(r => r.body),
           $path: (option?: { method?: 'get' | undefined; query: Methods53['get']['query'] } | undefined) =>
-            `${prefix}${PATH36}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
+            `${prefix}${PATH36}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
         },
         /**
          * <h2 id="">概要</h2>
@@ -4617,11 +4617,11 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         $get: (option: { query: Methods51['get']['query'], config?: T | undefined }) =>
           fetch<Methods51['get']['resBody'], BasicHeaders, Methods51['get']['status']>(prefix, PATH34, GET, option).json().then(r => r.body),
         $path: (option?: { method?: 'get' | undefined; query: Methods51['get']['query'] } | undefined) =>
-          `${prefix}${PATH34}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
+          `${prefix}${PATH34}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
       },
       wallet_txns: {
         _id: (val2: number) => {
-          const prefix2 = `${PATH37}/${val2}`
+          const prefix2 = `${PATH37}/${val2}`;
 
           return {
             /**
@@ -4729,8 +4729,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
             $delete: (option: { query: Methods55['delete']['query'], config?: T | undefined }) =>
               fetch<void, BasicHeaders, Methods55['delete']['status']>(prefix, prefix2, DELETE, option).send().then(r => r.body),
             $path: (option?: { method?: 'get' | undefined; query: Methods55['get']['query'] } | { method: 'delete'; query: Methods55['delete']['query'] } | undefined) =>
-              `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
-          }
+              `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
+          };
         },
         /**
          * <h2 id="">概要</h2>
@@ -4915,15 +4915,15 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         $post: (option?: { body?: Methods54['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
           fetch<Methods54['post']['resBody'], BasicHeaders, Methods54['post']['status']>(prefix, PATH37, POST, option, 'URLSearchParams').json().then(r => r.body),
         $path: (option?: { method?: 'get' | undefined; query: Methods54['get']['query'] } | undefined) =>
-          `${prefix}${PATH37}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
+          `${prefix}${PATH37}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
       },
       walletables: {
         _type: (val2: number | string) => {
-          const prefix2 = `${PATH38}/${val2}`
+          const prefix2 = `${PATH38}/${val2}`;
 
           return {
             _id: (val3: number) => {
-              const prefix3 = `${prefix2}/${val3}`
+              const prefix3 = `${prefix2}/${val3}`;
 
               return {
                 /**
@@ -5021,10 +5021,10 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                 $delete: (option: { query: Methods57['delete']['query'], config?: T | undefined }) =>
                   fetch<void, BasicHeaders, Methods57['delete']['status']>(prefix, prefix3, DELETE, option).send().then(r => r.body),
                 $path: (option?: { method?: 'get' | undefined; query: Methods57['get']['query'] } | { method: 'put'; query: Methods57['put']['query'] } | { method: 'delete'; query: Methods57['delete']['query'] } | undefined) =>
-                  `${prefix}${prefix3}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
-              }
-            }
-          }
+                  `${prefix}${prefix3}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
+              };
+            },
+          };
         },
         /**
          * <h2 id="">概要</h2>
@@ -5155,11 +5155,11 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         $post: (option?: { body?: Methods56['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
           fetch<Methods56['post']['resBody'], BasicHeaders, Methods56['post']['status']>(prefix, PATH38, POST, option, 'URLSearchParams').json().then(r => r.body),
         $path: (option?: { method?: 'get' | undefined; query: Methods56['get']['query'] } | undefined) =>
-          `${prefix}${PATH38}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
-      }
-    }
-  }
-}
+          `${prefix}${PATH38}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
+      },
+    },
+  };
+};
 
-export type ApiInstance = ReturnType<typeof api>
-export default api
+export type ApiInstance = ReturnType<typeof api>;
+export default api;

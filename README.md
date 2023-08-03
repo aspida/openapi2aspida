@@ -1,4 +1,5 @@
 # OpenAPI / Swagger to aspida
+
 <br />
 <img src="https://aspida.github.io/aspida/logos/png/logo.png" alt="aspida" title="aspida" />
 <div align="center">
@@ -7,15 +8,6 @@
   </a>
   <a href="https://www.npmjs.com/package/openapi2aspida">
     <img src="https://img.shields.io/npm/dm/openapi2aspida" alt="npm download" />
-  </a>
-  <a href="https://github.com/aspida/openapi2aspida/actions?query=workflow%3A%22Node.js+CI%22">
-    <img src="https://github.com/aspida/openapi2aspida/workflows/Node.js%20CI/badge.svg" alt="Node.js CI" />
-  </a>
-  <a href="https://codecov.io/gh/aspida/aspida">
-    <img src="https://img.shields.io/codecov/c/github/aspida/openapi2aspida.svg" alt="Codecov" />
-  </a>
-  <a href="https://lgtm.com/projects/g/aspida/openapi2aspida/context:javascript">
-    <img src="https://img.shields.io/lgtm/grade/javascript/g/aspida/openapi2aspida.svg" alt="Language grade: JavaScript" />
   </a>
 </div>
 <br />
@@ -26,15 +18,19 @@
 ## Breaking change :warning:
 
 ### 2022/03/07
+
 Since openapi2aspida >= `0.18.0` , decision whether to be required follows the OpenAPI spec correctly. Dropping the support for original implementation, that was defaulting to required.
 
 ### 2021/03/15
+
 Since openapi2aspida >= `0.16.0` , requires TypeSciprt 3.8 or higher for Type-Only Imports.
 
 ### 2020/11/26
+
 Since openapi2aspida >= `0.14.0` , request headers are forced to be optional.
 
 ### 2020/11/14
+
 Since openapi2aspida >= `0.13.0` , optional for aspida only if the 'required' property of OpenAPI is set to `false`.
 
 ## Getting Started
@@ -52,19 +48,19 @@ $ npm install @aspida/axios axios typescript ts-node @types/node
 ```
 
 `index.ts`
-```ts
-import axiosClient from '@aspida/axios'
-import api from "./api/$api"
-import type { Pet } from './api/@types'
 
+```ts
+import axiosClient from "@aspida/axios"
+import api from "./api/$api"
+import type { Pet } from "./api/@types"
 ;(async () => {
   const client = api(axiosClient())
   const petId = 100
   const body: Pet = {
     id: petId,
-    name: 'hoge',
+    name: "hoge",
     photoUrls: [],
-    status: 'available'
+    status: "available"
   }
 
   await client.pet.$post({ body })
@@ -74,6 +70,7 @@ import type { Pet } from './api/@types'
 ```
 
 `package.json`
+
 ```json
 {
   "scripts": {
@@ -104,6 +101,7 @@ module.exports = {
 ```sh
 $ npx openapi2aspida
 ```
+
 ## Cli options
 
 ### `-i`, `--input`

@@ -1,18 +1,18 @@
-import type { AspidaClient, BasicHeaders } from 'aspida'
-import type { Methods as Methods0 } from '.'
-import type { Methods as Methods1 } from './_id@string'
-import type { Methods as Methods2 } from './count'
+import type { AspidaClient, BasicHeaders } from 'aspida';
+import type { Methods as Methods0 } from '.';
+import type { Methods as Methods1 } from './_id@string';
+import type { Methods as Methods2 } from './count';
 
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
-  const prefix = (baseURL === undefined ? 'http://localhost:1337' : baseURL).replace(/\/$/, '')
-  const PATH0 = '/upload/files'
-  const PATH1 = '/upload/files/count'
-  const GET = 'GET'
-  const DELETE = 'DELETE'
+  const prefix = (baseURL === undefined ? 'http://localhost:1337' : baseURL).replace(/\/$/, '');
+  const PATH0 = '/upload/files';
+  const PATH1 = '/upload/files/count';
+  const GET = 'GET';
+  const DELETE = 'DELETE';
 
   return {
     _id: (val0: string) => {
-      const prefix0 = `${PATH0}/${val0}`
+      const prefix0 = `${PATH0}/${val0}`;
 
       return {
         /**
@@ -39,8 +39,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          */
         $delete: (option?: { config?: T | undefined } | undefined) =>
           fetch<Methods1['delete']['resBody'], BasicHeaders, Methods1['delete']['status']>(prefix, prefix0, DELETE, option).json().then(r => r.body),
-        $path: () => `${prefix}${prefix0}`
-      }
+        $path: () => `${prefix}${prefix0}`,
+      };
     },
     count: {
       /**
@@ -55,7 +55,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        */
       $get: (option?: { config?: T | undefined } | undefined) =>
         fetch<Methods2['get']['resBody'], BasicHeaders, Methods2['get']['status']>(prefix, PATH1, GET, option).json().then(r => r.body),
-      $path: () => `${prefix}${PATH1}`
+      $path: () => `${prefix}${PATH1}`,
     },
     /**
      * Retrieve all file documents
@@ -69,9 +69,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
      */
     $get: (option?: { config?: T | undefined } | undefined) =>
       fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json().then(r => r.body),
-    $path: () => `${prefix}${PATH0}`
-  }
-}
+    $path: () => `${prefix}${PATH0}`,
+  };
+};
 
-export type ApiInstance = ReturnType<typeof api>
-export default api
+export type ApiInstance = ReturnType<typeof api>;
+export default api;

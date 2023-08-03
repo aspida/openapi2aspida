@@ -1,19 +1,19 @@
-import type { AspidaClient, BasicHeaders } from 'aspida'
-import { dataToURLString } from 'aspida'
-import type { Methods as Methods0 } from './init'
-import type { Methods as Methods1 } from './roles'
-import type { Methods as Methods2 } from './roles/_id@string'
-import type { Methods as Methods3 } from './roles/_role@string'
-import type { Methods as Methods4 } from './search/_id@string'
+import type { AspidaClient, BasicHeaders } from 'aspida';
+import { dataToURLString } from 'aspida';
+import type { Methods as Methods0 } from './init';
+import type { Methods as Methods1 } from './roles';
+import type { Methods as Methods2 } from './roles/_id@string';
+import type { Methods as Methods3 } from './roles/_role@string';
+import type { Methods as Methods4 } from './search/_id@string';
 
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
-  const prefix = (baseURL === undefined ? 'http://localhost:1337' : baseURL).replace(/\/$/, '')
-  const PATH0 = '/users-permissions/init'
-  const PATH1 = '/users-permissions/roles'
-  const PATH2 = '/users-permissions/search'
-  const GET = 'GET'
-  const PUT = 'PUT'
-  const DELETE = 'DELETE'
+  const prefix = (baseURL === undefined ? 'http://localhost:1337' : baseURL).replace(/\/$/, '');
+  const PATH0 = '/users-permissions/init';
+  const PATH1 = '/users-permissions/roles';
+  const PATH2 = '/users-permissions/search';
+  const GET = 'GET';
+  const PUT = 'PUT';
+  const DELETE = 'DELETE';
 
   return {
     init: {
@@ -29,11 +29,11 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        */
       $get: (option?: { config?: T | undefined } | undefined) =>
         fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json().then(r => r.body),
-      $path: () => `${prefix}${PATH0}`
+      $path: () => `${prefix}${PATH0}`,
     },
     roles: {
       _id: (val1: string) => {
-        const prefix1 = `${PATH1}/${val1}`
+        const prefix1 = `${PATH1}/${val1}`;
 
         return {
           /**
@@ -48,11 +48,11 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            */
           $get: (option?: { config?: T | undefined } | undefined) =>
             fetch<Methods2['get']['resBody'], BasicHeaders, Methods2['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
-          $path: () => `${prefix}${prefix1}`
-        }
+          $path: () => `${prefix}${prefix1}`,
+        };
       },
       _role: (val1: string) => {
-        const prefix1 = `${PATH1}/${val1}`
+        const prefix1 = `${PATH1}/${val1}`;
 
         return {
           /**
@@ -79,8 +79,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            */
           $delete: (option?: { config?: T | undefined } | undefined) =>
             fetch<Methods3['delete']['resBody'], BasicHeaders, Methods3['delete']['status']>(prefix, prefix1, DELETE, option).json().then(r => r.body),
-          $path: () => `${prefix}${prefix1}`
-        }
+          $path: () => `${prefix}${prefix1}`,
+        };
       },
       /**
        * Retrieve all role documents
@@ -93,11 +93,11 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       $get: (option?: { query?: Methods1['get']['query'] | undefined, config?: T | undefined } | undefined) =>
         fetch(prefix, PATH1, GET, option).send().then(r => r.body),
       $path: (option?: { method?: 'get' | undefined; query: Methods1['get']['query'] } | undefined) =>
-        `${prefix}${PATH1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
+        `${prefix}${PATH1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
     },
     search: {
       _id: (val1: string) => {
-        const prefix1 = `${PATH2}/${val1}`
+        const prefix1 = `${PATH2}/${val1}`;
 
         return {
           /**
@@ -111,12 +111,12 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           $get: (option?: { query?: Methods4['get']['query'] | undefined, config?: T | undefined } | undefined) =>
             fetch(prefix, prefix1, GET, option).send().then(r => r.body),
           $path: (option?: { method?: 'get' | undefined; query: Methods4['get']['query'] } | undefined) =>
-            `${prefix}${prefix1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
-        }
-      }
-    }
-  }
-}
+            `${prefix}${prefix1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
+        };
+      },
+    },
+  };
+};
 
-export type ApiInstance = ReturnType<typeof api>
-export default api
+export type ApiInstance = ReturnType<typeof api>;
+export default api;

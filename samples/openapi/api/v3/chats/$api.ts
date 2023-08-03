@@ -1,31 +1,31 @@
-import type { AspidaClient, BasicHeaders } from 'aspida'
-import { dataToURLString } from 'aspida'
-import type { Methods as Methods0 } from './_chatId@number/items/_itemId@number'
-import type { Methods as Methods1 } from './_chatId@string/items'
-import type { Methods as Methods2 } from './_chatId@string/items/audio'
-import type { Methods as Methods3 } from './_chatId@string/items/image'
-import type { Methods as Methods4 } from './_chatId@string/items/video'
-import type { Methods as Methods5 } from './keys'
+import type { AspidaClient, BasicHeaders } from 'aspida';
+import { dataToURLString } from 'aspida';
+import type { Methods as Methods0 } from './_chatId@number/items/_itemId@number';
+import type { Methods as Methods1 } from './_chatId@string/items';
+import type { Methods as Methods2 } from './_chatId@string/items/audio';
+import type { Methods as Methods3 } from './_chatId@string/items/image';
+import type { Methods as Methods4 } from './_chatId@string/items/video';
+import type { Methods as Methods5 } from './keys';
 
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
-  const prefix = (baseURL === undefined ? '' : baseURL).replace(/\/$/, '')
-  const PATH0 = '/api/v3/chats'
-  const PATH1 = '/items'
-  const PATH2 = '/items/audio'
-  const PATH3 = '/items/image'
-  const PATH4 = '/items/video'
-  const PATH5 = '/api/v3/chats/keys'
-  const GET = 'GET'
-  const POST = 'POST'
+  const prefix = (baseURL === undefined ? '' : baseURL).replace(/\/$/, '');
+  const PATH0 = '/api/v3/chats';
+  const PATH1 = '/items';
+  const PATH2 = '/items/audio';
+  const PATH3 = '/items/image';
+  const PATH4 = '/items/video';
+  const PATH5 = '/api/v3/chats/keys';
+  const GET = 'GET';
+  const POST = 'POST';
 
   return {
     _chatId_number: (val0: number) => {
-      const prefix0 = `${PATH0}/${val0}`
+      const prefix0 = `${PATH0}/${val0}`;
 
       return {
         items: {
           _itemId: (val2: number) => {
-            const prefix2 = `${prefix0}${PATH1}/${val2}`
+            const prefix2 = `${prefix0}${PATH1}/${val2}`;
 
             return {
               /**
@@ -48,14 +48,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                */
               $get: (option?: { headers?: Methods0['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
                 fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, prefix2, GET, option).json().then(r => r.body),
-              $path: () => `${prefix}${prefix2}`
-            }
-          }
-        }
-      }
+              $path: () => `${prefix}${prefix2}`,
+            };
+          },
+        },
+      };
     },
     _chatId_string: (val0: string) => {
-      const prefix0 = `${PATH0}/${val0}`
+      const prefix0 = `${PATH0}/${val0}`;
 
       return {
         items: {
@@ -72,7 +72,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
              */
             $post: (option: { body: Methods2['post']['reqBody'], headers?: Methods2['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
               fetch<Methods2['post']['resBody'], BasicHeaders, Methods2['post']['status']>(prefix, `${prefix0}${PATH2}`, POST, option, 'FormData').json().then(r => r.body),
-            $path: () => `${prefix}${prefix0}${PATH2}`
+            $path: () => `${prefix}${prefix0}${PATH2}`,
           },
           image: {
             /**
@@ -87,7 +87,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
              */
             $post: (option: { body: Methods3['post']['reqBody'], headers?: Methods3['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
               fetch<Methods3['post']['resBody'], BasicHeaders, Methods3['post']['status']>(prefix, `${prefix0}${PATH3}`, POST, option, 'FormData').json().then(r => r.body),
-            $path: () => `${prefix}${prefix0}${PATH3}`
+            $path: () => `${prefix}${prefix0}${PATH3}`,
           },
           video: {
             /**
@@ -102,7 +102,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
              */
             $post: (option: { body: Methods4['post']['reqBody'], headers?: Methods4['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
               fetch<Methods4['post']['resBody'], BasicHeaders, Methods4['post']['status']>(prefix, `${prefix0}${PATH4}`, POST, option, 'FormData').json().then(r => r.body),
-            $path: () => `${prefix}${prefix0}${PATH4}`
+            $path: () => `${prefix}${prefix0}${PATH4}`,
           },
           /**
            * Returns a list of items of chat shared content
@@ -131,9 +131,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           $post: (option: { body: Methods1['post']['reqBody'], headers?: Methods1['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
             fetch<Methods1['post']['resBody'], BasicHeaders, Methods1['post']['status']>(prefix, `${prefix0}${PATH1}`, POST, option).json().then(r => r.body),
           $path: (option?: { method?: 'get' | undefined; query: Methods1['get']['query'] } | undefined) =>
-            `${prefix}${prefix0}${PATH1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
-        }
-      }
+            `${prefix}${prefix0}${PATH1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
+        },
+      };
     },
     keys: {
       /**
@@ -148,10 +148,10 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        */
       $get: (option?: { headers?: Methods5['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
         fetch<Methods5['get']['resBody'], BasicHeaders, Methods5['get']['status']>(prefix, PATH5, GET, option).json().then(r => r.body),
-      $path: () => `${prefix}${PATH5}`
-    }
-  }
-}
+      $path: () => `${prefix}${PATH5}`,
+    },
+  };
+};
 
-export type ApiInstance = ReturnType<typeof api>
-export default api
+export type ApiInstance = ReturnType<typeof api>;
+export default api;
