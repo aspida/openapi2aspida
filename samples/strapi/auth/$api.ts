@@ -1,28 +1,28 @@
-import type { AspidaClient, BasicHeaders } from 'aspida'
-import type { Methods as Methods0 } from './_provider@string/callback'
-import type { Methods as Methods1 } from './email-confirmation'
-import type { Methods as Methods2 } from './forgot-password'
-import type { Methods as Methods3 } from './local'
-import type { Methods as Methods4 } from './local/register'
-import type { Methods as Methods5 } from './reset-password'
-import type { Methods as Methods6 } from './send-email-confirmation'
+import type { AspidaClient, BasicHeaders } from 'aspida';
+import type { Methods as Methods0 } from './_provider@string/callback';
+import type { Methods as Methods1 } from './email-confirmation';
+import type { Methods as Methods2 } from './forgot-password';
+import type { Methods as Methods3 } from './local';
+import type { Methods as Methods4 } from './local/register';
+import type { Methods as Methods5 } from './reset-password';
+import type { Methods as Methods6 } from './send-email-confirmation';
 
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
-  const prefix = (baseURL === undefined ? 'http://localhost:1337' : baseURL).replace(/\/$/, '')
-  const PATH0 = '/auth'
-  const PATH1 = '/callback'
-  const PATH2 = '/auth/email-confirmation'
-  const PATH3 = '/auth/forgot-password'
-  const PATH4 = '/auth/local'
-  const PATH5 = '/auth/local/register'
-  const PATH6 = '/auth/reset-password'
-  const PATH7 = '/auth/send-email-confirmation'
-  const GET = 'GET'
-  const POST = 'POST'
+  const prefix = (baseURL === undefined ? 'http://localhost:1337' : baseURL).replace(/\/$/, '');
+  const PATH0 = '/auth';
+  const PATH1 = '/callback';
+  const PATH2 = '/auth/email-confirmation';
+  const PATH3 = '/auth/forgot-password';
+  const PATH4 = '/auth/local';
+  const PATH5 = '/auth/local/register';
+  const PATH6 = '/auth/reset-password';
+  const PATH7 = '/auth/send-email-confirmation';
+  const GET = 'GET';
+  const POST = 'POST';
 
   return {
     _provider: (val0: string) => {
-      const prefix0 = `${PATH0}/${val0}`
+      const prefix0 = `${PATH0}/${val0}`;
 
       return {
         callback: {
@@ -38,9 +38,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            */
           $get: (option?: { config?: T | undefined } | undefined) =>
             fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, `${prefix0}${PATH1}`, GET, option).json().then(r => r.body),
-          $path: () => `${prefix}${prefix0}${PATH1}`
-        }
-      }
+          $path: () => `${prefix}${prefix0}${PATH1}`,
+        },
+      };
     },
     email_confirmation: {
       /**
@@ -55,7 +55,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        */
       $get: (option?: { config?: T | undefined } | undefined) =>
         fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, PATH2, GET, option).json().then(r => r.body),
-      $path: () => `${prefix}${PATH2}`
+      $path: () => `${prefix}${PATH2}`,
     },
     forgot_password: {
       /**
@@ -70,7 +70,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        */
       $post: (option: { body: Methods2['post']['reqBody'], config?: T | undefined }) =>
         fetch<Methods2['post']['resBody'], BasicHeaders, Methods2['post']['status']>(prefix, PATH3, POST, option).json().then(r => r.body),
-      $path: () => `${prefix}${PATH3}`
+      $path: () => `${prefix}${PATH3}`,
     },
     local: {
       register: {
@@ -86,7 +86,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          */
         $post: (option: { body: Methods4['post']['reqBody'], config?: T | undefined }) =>
           fetch<Methods4['post']['resBody'], BasicHeaders, Methods4['post']['status']>(prefix, PATH5, POST, option).json().then(r => r.body),
-        $path: () => `${prefix}${PATH5}`
+        $path: () => `${prefix}${PATH5}`,
       },
       /**
        * Login a user using the identifiers email and password
@@ -100,7 +100,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        */
       $post: (option: { body: Methods3['post']['reqBody'], config?: T | undefined }) =>
         fetch<Methods3['post']['resBody'], BasicHeaders, Methods3['post']['status']>(prefix, PATH4, POST, option).json().then(r => r.body),
-      $path: () => `${prefix}${PATH4}`
+      $path: () => `${prefix}${PATH4}`,
     },
     reset_password: {
       /**
@@ -115,7 +115,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        */
       $post: (option: { body: Methods5['post']['reqBody'], config?: T | undefined }) =>
         fetch<Methods5['post']['resBody'], BasicHeaders, Methods5['post']['status']>(prefix, PATH6, POST, option).json().then(r => r.body),
-      $path: () => `${prefix}${PATH6}`
+      $path: () => `${prefix}${PATH6}`,
     },
     send_email_confirmation: {
       /**
@@ -130,10 +130,10 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        */
       $post: (option: { body: Methods6['post']['reqBody'], config?: T | undefined }) =>
         fetch<Methods6['post']['resBody'], BasicHeaders, Methods6['post']['status']>(prefix, PATH7, POST, option).json().then(r => r.body),
-      $path: () => `${prefix}${PATH7}`
-    }
-  }
-}
+      $path: () => `${prefix}${PATH7}`,
+    },
+  };
+};
 
-export type ApiInstance = ReturnType<typeof api>
-export default api
+export type ApiInstance = ReturnType<typeof api>;
+export default api;

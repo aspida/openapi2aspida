@@ -1,23 +1,23 @@
-import type { AspidaClient, BasicHeaders } from 'aspida'
-import { dataToURLString } from 'aspida'
-import type { Methods as Methods0 } from '.'
-import type { Methods as Methods1 } from './_petId@number'
-import type { Methods as Methods2 } from './_petId@number/uploadImage'
-import type { Methods as Methods3 } from './findByStatus'
+import type { AspidaClient, BasicHeaders } from 'aspida';
+import { dataToURLString } from 'aspida';
+import type { Methods as Methods0 } from '.';
+import type { Methods as Methods1 } from './_petId@number';
+import type { Methods as Methods2 } from './_petId@number/uploadImage';
+import type { Methods as Methods3 } from './findByStatus';
 
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
-  const prefix = (baseURL === undefined ? 'https://petstore.swagger.io/v2' : baseURL).replace(/\/$/, '')
-  const PATH0 = '/pet'
-  const PATH1 = '/uploadImage'
-  const PATH2 = '/pet/findByStatus'
-  const GET = 'GET'
-  const POST = 'POST'
-  const PUT = 'PUT'
-  const DELETE = 'DELETE'
+  const prefix = (baseURL === undefined ? 'https://petstore.swagger.io/v2' : baseURL).replace(/\/$/, '');
+  const PATH0 = '/pet';
+  const PATH1 = '/uploadImage';
+  const PATH2 = '/pet/findByStatus';
+  const GET = 'GET';
+  const POST = 'POST';
+  const PUT = 'PUT';
+  const DELETE = 'DELETE';
 
   return {
     _petId: (val0: number) => {
-      const prefix0 = `${PATH0}/${val0}`
+      const prefix0 = `${PATH0}/${val0}`;
 
       return {
         uploadImage: {
@@ -31,7 +31,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            */
           $post: (option: { body: Methods2['post']['reqBody'], config?: T | undefined }) =>
             fetch<Methods2['post']['resBody'], BasicHeaders, Methods2['post']['status']>(prefix, `${prefix0}${PATH1}`, POST, option, 'FormData').json().then(r => r.body),
-          $path: () => `${prefix}${prefix0}${PATH1}`
+          $path: () => `${prefix}${prefix0}${PATH1}`,
         },
         /**
          * Returns a single pet
@@ -53,8 +53,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           fetch(prefix, prefix0, DELETE, option).send(),
         $delete: (option?: { headers?: Methods1['delete']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
           fetch(prefix, prefix0, DELETE, option).send().then(r => r.body),
-        $path: () => `${prefix}${prefix0}`
-      }
+        $path: () => `${prefix}${prefix0}`,
+      };
     },
     findByStatus: {
       /**
@@ -70,7 +70,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       $get: (option: { query: Methods3['get']['query'], config?: T | undefined }) =>
         fetch<Methods3['get']['resBody'], BasicHeaders, Methods3['get']['status']>(prefix, PATH2, GET, option).json().then(r => r.body),
       $path: (option?: { method?: 'get' | undefined; query: Methods3['get']['query'] } | undefined) =>
-        `${prefix}${PATH2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
+        `${prefix}${PATH2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
     },
     /**
      * @param option.body - Pet object that needs to be added to the store
@@ -92,9 +92,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
      */
     $put: (option: { body: Methods0['put']['reqBody'], config?: T | undefined }) =>
       fetch(prefix, PATH0, PUT, option).send().then(r => r.body),
-    $path: () => `${prefix}${PATH0}`
-  }
-}
+    $path: () => `${prefix}${PATH0}`,
+  };
+};
 
-export type ApiInstance = ReturnType<typeof api>
-export default api
+export type ApiInstance = ReturnType<typeof api>;
+export default api;

@@ -1,5 +1,5 @@
 import { OpenAPI } from 'openapi-types'
-import { AspidaConfig, getConfigs } from 'aspida/dist/commands'
+import { AspidaConfig, getConfigs } from 'aspida/dist/cjs/commands'
 
 export type Config = Pick<AspidaConfig, 'outputEachDir' | 'outputMode' | 'trailingSlash'> & {
   input: string | OpenAPI.Document

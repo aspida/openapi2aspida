@@ -1,18 +1,18 @@
-import type { AspidaClient, BasicHeaders } from 'aspida'
-import { dataToURLString } from 'aspida'
-import type { Methods as Methods0 } from './_id@number/download'
-import type { Methods as Methods1 } from './_id@number/status'
+import type { AspidaClient, BasicHeaders } from 'aspida';
+import { dataToURLString } from 'aspida';
+import type { Methods as Methods0 } from './_id@number/download';
+import type { Methods as Methods1 } from './_id@number/status';
 
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
-  const prefix = (baseURL === undefined ? 'https://api.freee.co.jp' : baseURL).replace(/\/$/, '')
-  const PATH0 = '/api/1/journals/reports'
-  const PATH1 = '/download'
-  const PATH2 = '/status'
-  const GET = 'GET'
+  const prefix = (baseURL === undefined ? 'https://api.freee.co.jp' : baseURL).replace(/\/$/, '');
+  const PATH0 = '/api/1/journals/reports';
+  const PATH1 = '/download';
+  const PATH2 = '/status';
+  const GET = 'GET';
 
   return {
     _id: (val0: number) => {
-      const prefix0 = `${PATH0}/${val0}`
+      const prefix0 = `${PATH0}/${val0}`;
 
       return {
         download: {
@@ -47,7 +47,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           $get: (option: { query: Methods0['get']['query'], config?: T | undefined }) =>
             fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, `${prefix0}${PATH1}`, GET, option).blob().then(r => r.body),
           $path: (option?: { method?: 'get' | undefined; query: Methods0['get']['query'] } | undefined) =>
-            `${prefix}${prefix0}${PATH1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
+            `${prefix}${prefix0}${PATH1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
         },
         status: {
           /**
@@ -109,12 +109,12 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           $get: (option: { query: Methods1['get']['query'], config?: T | undefined }) =>
             fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, `${prefix0}${PATH2}`, GET, option).json().then(r => r.body),
           $path: (option?: { method?: 'get' | undefined; query: Methods1['get']['query'] } | undefined) =>
-            `${prefix}${prefix0}${PATH2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
-        }
-      }
-    }
-  }
-}
+            `${prefix}${prefix0}${PATH2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
+        },
+      };
+    },
+  };
+};
 
-export type ApiInstance = ReturnType<typeof api>
-export default api
+export type ApiInstance = ReturnType<typeof api>;
+export default api;

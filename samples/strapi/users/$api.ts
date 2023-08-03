@@ -1,20 +1,20 @@
-import type { AspidaClient, BasicHeaders } from 'aspida'
-import { dataToURLString } from 'aspida'
-import type { Methods as Methods0 } from '.'
-import type { Methods as Methods1 } from './_id@string'
-import type { Methods as Methods2 } from './me'
+import type { AspidaClient, BasicHeaders } from 'aspida';
+import { dataToURLString } from 'aspida';
+import type { Methods as Methods0 } from '.';
+import type { Methods as Methods1 } from './_id@string';
+import type { Methods as Methods2 } from './me';
 
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
-  const prefix = (baseURL === undefined ? 'http://localhost:1337' : baseURL).replace(/\/$/, '')
-  const PATH0 = '/users'
-  const PATH1 = '/users/me'
-  const GET = 'GET'
-  const PUT = 'PUT'
-  const DELETE = 'DELETE'
+  const prefix = (baseURL === undefined ? 'http://localhost:1337' : baseURL).replace(/\/$/, '');
+  const PATH0 = '/users';
+  const PATH1 = '/users/me';
+  const GET = 'GET';
+  const PUT = 'PUT';
+  const DELETE = 'DELETE';
 
   return {
     _id: (val0: string) => {
-      const prefix0 = `${PATH0}/${val0}`
+      const prefix0 = `${PATH0}/${val0}`;
 
       return {
         /**
@@ -53,8 +53,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          */
         $delete: (option?: { config?: T | undefined } | undefined) =>
           fetch<Methods1['delete']['resBody'], BasicHeaders, Methods1['delete']['status']>(prefix, prefix0, DELETE, option).json().then(r => r.body),
-        $path: () => `${prefix}${prefix0}`
-      }
+        $path: () => `${prefix}${prefix0}`,
+      };
     },
     me: {
       /**
@@ -69,7 +69,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        */
       $get: (option?: { config?: T | undefined } | undefined) =>
         fetch<Methods2['get']['resBody'], BasicHeaders, Methods2['get']['status']>(prefix, PATH1, GET, option).json().then(r => r.body),
-      $path: () => `${prefix}${PATH1}`
+      $path: () => `${prefix}${PATH1}`,
     },
     /**
      * Retrieve all user documents
@@ -82,9 +82,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
     $get: (option?: { query?: Methods0['get']['query'] | undefined, config?: T | undefined } | undefined) =>
       fetch(prefix, PATH0, GET, option).send().then(r => r.body),
     $path: (option?: { method?: 'get' | undefined; query: Methods0['get']['query'] } | undefined) =>
-      `${prefix}${PATH0}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`
-  }
-}
+      `${prefix}${PATH0}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
+  };
+};
 
-export type ApiInstance = ReturnType<typeof api>
-export default api
+export type ApiInstance = ReturnType<typeof api>;
+export default api;
