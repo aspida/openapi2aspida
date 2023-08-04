@@ -60,8 +60,7 @@ export default (openapi: OpenAPIV3.Document) => {
                     [] as OpenAPIV3.ParameterObject[]
                   ),
                 ],
-                openapi,
-                false
+                openapi
               )
             ),
           'index',

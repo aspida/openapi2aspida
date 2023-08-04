@@ -57,7 +57,7 @@ import type { Methods as Methods53 } from './users/me';
 import type { Methods as Methods54 } from './wallet_txns';
 import type { Methods as Methods55 } from './wallet_txns/_id@number';
 import type { Methods as Methods56 } from './walletables';
-import type { Methods as Methods57 } from './walletables/_type/_id@number';
+import type { Methods as Methods57 } from './walletables/_type@string/_id@number';
 
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? 'https://api.freee.co.jp' : baseURL).replace(/\/$/, '');
@@ -4917,7 +4917,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         `${prefix}${PATH37}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
     },
     walletables: {
-      _type: (val1: number | string) => {
+      _type: (val1: string) => {
         const prefix1 = `${PATH38}/${val1}`;
 
         return {

@@ -1,7 +1,7 @@
 import type { AspidaClient, BasicHeaders } from 'aspida';
 import { dataToURLString } from 'aspida';
 import type { Methods as Methods0 } from '.';
-import type { Methods as Methods1 } from './_type/_id@number';
+import type { Methods as Methods1 } from './_type@string/_id@number';
 
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? 'https://api.freee.co.jp' : baseURL).replace(/\/$/, '');
@@ -12,7 +12,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const DELETE = 'DELETE';
 
   return {
-    _type: (val0: number | string) => {
+    _type: (val0: string) => {
       const prefix0 = `${PATH0}/${val0}`;
 
       return {

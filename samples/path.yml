@@ -1,0 +1,18 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Sample
+paths:
+  "/invoices/{invoiceCategory}":
+    get:
+      parameters:
+      - name: invoiceCategory
+        in: path
+        required: true
+        schema:
+          "$ref": "#/components/schemas/InvoiceCategory"
+components:
+  schemas:
+    InvoiceCategory:
+      type: string
+      enum: ["category-1", "category-2"]
