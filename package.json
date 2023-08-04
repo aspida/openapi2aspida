@@ -7,7 +7,7 @@
   "main": "dist/index.js",
   "bin": "bin/index.js",
   "scripts": {
-    "dev": "npm run build && node samples/rimraf.js && node bin/index.js --build",
+    "dev": "npm run build && node samples/rimraf.js && node bin/index.js",
     "build": "npm run rimraf && tsc",
     "rimraf": "node -e \"require('fs').existsSync('dist') && require('fs').rmdirSync('dist', { recursive: true })\"",
     "lint": "eslint --ext .ts . && prettier --check \"./**/*.ts\"",
@@ -82,13 +82,11 @@
   "dependencies": {
     "@apidevtools/swagger-parser": "^10.1.0",
     "aspida": "^1.13.3",
-    "fs-extra": "^11.1.1",
     "js-yaml": "^4.1.0",
     "openapi-types": "^12.1.3",
     "swagger2openapi": "^7.0.8"
   },
   "devDependencies": {
-    "@types/fs-extra": "^11.0.1",
     "@types/jest": "^29.5.3",
     "@types/js-yaml": "^4.0.5",
     "@types/minimist": "^1.2.2",

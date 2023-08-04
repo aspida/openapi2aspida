@@ -23,10 +23,7 @@ describe('cli test', () => {
 
     return Promise.all(
       configs.map(async config => {
-        await build({
-          ...config,
-          input: `_${config.input}`,
-        })[0];
+        await build({ ...config, input: `_${config.input}` })[0];
 
         for (const filePath of readDirRecursive(config.input)) {
           expect(fs.readFileSync(`_${filePath}`, 'utf8')).toBe(

@@ -1,30 +1,17 @@
 import fs from 'fs';
-import fse from 'fs-extra';
 import buildTemplate from './buildTemplate';
+import type { PartialConfig } from './getConfig';
 import getConfig from './getConfig';
-import outputFilePath from './outputFilePath';
 import writeRouteFile from './writeRouteFile';
 
-/**
- * @param {string} outputdir 出力するディレクトリー
- * @param {Array<Object>} configs コンフィグ
- * */
-export default (configs?: Parameters<typeof getConfig>[0], outputdir?: string) => {
+export default (configs?: PartialConfig) => {
   return getConfig(configs).map(async config => {
-    const oustPutFilePath = outputFilePath({
-      cliOutputPath: outputdir,
-      InputFilePath: config.output,
-    });
+    const outputDir = config.output;
 
-    if (!fs.existsSync(oustPutFilePath)) {
-      // フォルダが存在しない
-
-      fse.ensureDirSync(oustPutFilePath);
+    if (!fs.existsSync(outputDir)) {
+      fs.mkdirSync(outputDir, { recursive: true });
     } else if (fs.readdirSync(config.output).length) {
-      // フォルダが存在する
-      console.log(
-        `fatal: destination path '${oustPutFilePath}' already exists and is not an empty directory.`
-      );
+      console.log(`fatal: destination path '${outputDir}' is not an empty directory.`);
       return;
     }
 
@@ -40,7 +27,7 @@ export default (configs?: Parameters<typeof getConfig>[0], outputdir?: string) =
       },
       types,
       files,
-      outputDir: oustPutFilePath,
+      outputDir,
     });
   });
 };

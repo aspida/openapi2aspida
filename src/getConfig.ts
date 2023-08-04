@@ -28,12 +28,12 @@ const createConfig = (config: ConfigFile): Config => {
   };
 };
 
-type PartialConfig = Partial<ConfigFile> | Partial<ConfigFile>[];
+export type PartialConfig = Partial<ConfigFile> | Partial<ConfigFile>[];
 
 export default (config?: PartialConfig): Config[] => {
   const ReturnValue = getConfigs(config)
     .filter((c: ConfigFile) => c.openapi)
-    .map(c => createConfig(c));
+    .map(createConfig);
 
   return ReturnValue;
 };
