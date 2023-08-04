@@ -1,6 +1,6 @@
-import { OpenAPIV3 } from 'openapi-types';
-import { isRefObject, defKey2defName, $ref2Type, schema2value } from './converters';
-import { PropValue } from './props2String';
+import type { OpenAPIV3 } from 'openapi-types';
+import { $ref2Type, defKey2defName, isRefObject, schema2value } from './converters';
+import type { PropValue } from './props2String';
 
 export type Response = { name: string; value: string | PropValue };
 

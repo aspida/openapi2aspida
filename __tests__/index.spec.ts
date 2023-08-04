@@ -1,7 +1,7 @@
 import fs from 'fs';
-import { ConfigFile } from '../src/getConfig';
-import build from '../src';
 import path from 'path';
+import build from '../src';
+import type { ConfigFile } from '../src/getConfig';
 
 function readDirRecursive(dirPath: string): string[] {
   return fs

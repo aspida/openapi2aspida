@@ -1,9 +1,9 @@
 import fs from 'fs';
 import fse from 'fs-extra';
-import getConfig from './getConfig';
 import buildTemplate from './buildTemplate';
-import writeRouteFile from './writeRouteFile';
+import getConfig from './getConfig';
 import outputFilePath from './outputFilePath';
+import writeRouteFile from './writeRouteFile';
 
 /**
  * @param {string} outputdir 出力するディレクトリー

@@ -1,5 +1,6 @@
+import type { AspidaConfig } from 'aspida/dist/cjs/commands';
+import { build } from 'aspida/dist/cjs/commands';
 import fs from 'fs';
-import { build, AspidaConfig } from 'aspida/dist/cjs/commands';
 
 export default ({
   config,

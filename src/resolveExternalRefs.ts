@@ -1,9 +1,9 @@
-import https from 'https';
-import http from 'http';
 import fs from 'fs';
-import path from 'path';
+import http from 'http';
+import https from 'https';
 import yaml from 'js-yaml';
-import { OpenAPIV3 } from 'openapi-types';
+import type { OpenAPIV3 } from 'openapi-types';
+import path from 'path';
 
 const getText = (url: string) =>
   new Promise<string>(resolve => {

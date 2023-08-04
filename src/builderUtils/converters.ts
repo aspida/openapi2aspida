@@ -1,5 +1,5 @@
-import { OpenAPIV3 } from 'openapi-types';
-import { Prop, PropValue } from './props2String';
+import type { OpenAPIV3 } from 'openapi-types';
+import type { Prop, PropValue } from './props2String';
 
 export const defKey2defName = (key: string) =>
   `${key[0].replace(/^([^a-zA-Z$_])$/, '$$$1').toUpperCase()}${key

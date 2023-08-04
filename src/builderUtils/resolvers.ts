@@ -1,5 +1,5 @@
-import { OpenAPIV3 } from 'openapi-types';
-import { isRefObject, $ref2TypeName } from './converters';
+import type { OpenAPIV3 } from 'openapi-types';
+import { $ref2TypeName, isRefObject } from './converters';
 
 export const resolveParamsRef = (
   openapi: OpenAPIV3.Document,

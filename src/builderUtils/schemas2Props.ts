@@ -1,6 +1,6 @@
-import { OpenAPIV3 } from 'openapi-types';
-import { isRefObject, defKey2defName, schema2value } from './converters';
-import { PropValue } from './props2String';
+import type { OpenAPIV3 } from 'openapi-types';
+import { defKey2defName, isRefObject, schema2value } from './converters';
+import type { PropValue } from './props2String';
 import { resolveSchemasRef } from './resolvers';
 
 export type Schema = { name: string; value: PropValue };

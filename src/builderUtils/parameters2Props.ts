@@ -1,12 +1,12 @@
-import { OpenAPIV3 } from 'openapi-types';
+import type { OpenAPIV3 } from 'openapi-types';
 import {
-  isRefObject,
-  defKey2defName,
   $ref2Type,
+  defKey2defName,
   getPropertyName,
+  isRefObject,
   schema2value,
 } from './converters';
-import { Prop } from './props2String';
+import type { Prop } from './props2String';
 import { resolveParamsRef } from './resolvers';
 
 export type Parameter = { name: string; prop: string | Prop };

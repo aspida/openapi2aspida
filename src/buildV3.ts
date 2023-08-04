@@ -1,24 +1,19 @@
-import { OpenAPIV3 } from 'openapi-types';
+import type { OpenAPIV3 } from 'openapi-types';
 import {
-  isRefObject,
   $ref2Type,
-  getPropertyName,
-  schema2value,
   BINARY_TYPE,
+  getPropertyName,
+  isRefObject,
+  schema2value,
 } from './builderUtils/converters';
-import {
-  props2String,
-  Prop,
-  PropValue,
-  value2String,
-  description2Doc,
-} from './builderUtils/props2String';
-import { resolveParamsRef, resolveResRef, resolveReqRef } from './builderUtils/resolvers';
 import getDirName from './builderUtils/getDirName';
-import schemas2Props from './builderUtils/schemas2Props';
 import parameters2Props from './builderUtils/parameters2Props';
+import type { Prop, PropValue } from './builderUtils/props2String';
+import { description2Doc, props2String, value2String } from './builderUtils/props2String';
 import requestBodies2Props from './builderUtils/requestBodies2Props';
+import { resolveParamsRef, resolveReqRef, resolveResRef } from './builderUtils/resolvers';
 import responses2Props from './builderUtils/responses2Props';
+import schemas2Props from './builderUtils/schemas2Props';
 
 const methodNames = ['get', 'post', 'put', 'delete', 'head', 'options', 'patch'] as const;
 
