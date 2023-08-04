@@ -1,0 +1,33 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Sample
+paths:
+  /ping:
+    get:
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Simple:
+              $ref: '#/components/headers/X-Simple'
+            X-Description:
+              $ref: '#/components/headers/X-Description'
+            X-Ref:
+              $ref: '#/components/headers/X-Ref'
+          content:
+            application/json:
+              schema:
+                type: string
+                example: pong
+components:
+  headers:
+    X-Simple:
+      schema:
+        type: string
+    X-Description:
+      schema:
+        type: integer
+      description: This header has a description.
+    X-Ref:
+      $ref: '#/components/headers/X-Simple'
