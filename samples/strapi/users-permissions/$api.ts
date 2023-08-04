@@ -12,6 +12,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const PATH1 = '/users-permissions/roles';
   const PATH2 = '/users-permissions/search';
   const GET = 'GET';
+  const POST = 'POST';
   const PUT = 'PUT';
   const DELETE = 'DELETE';
 
@@ -84,14 +85,28 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       },
       /**
        * Retrieve all role documents
+       * @returns response
        */
       get: (option?: { query?: Methods1['get']['query'] | undefined, config?: T | undefined } | undefined) =>
-        fetch(prefix, PATH1, GET, option).send(),
+        fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, PATH1, GET, option).json(),
       /**
        * Retrieve all role documents
+       * @returns response
        */
       $get: (option?: { query?: Methods1['get']['query'] | undefined, config?: T | undefined } | undefined) =>
-        fetch(prefix, PATH1, GET, option).send().then(r => r.body),
+        fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, PATH1, GET, option).json().then(r => r.body),
+      /**
+       * Create a new role
+       * @returns response
+       */
+      post: (option: { body: Methods1['post']['reqBody'], config?: T | undefined }) =>
+        fetch<Methods1['post']['resBody'], BasicHeaders, Methods1['post']['status']>(prefix, PATH1, POST, option).json(),
+      /**
+       * Create a new role
+       * @returns response
+       */
+      $post: (option: { body: Methods1['post']['reqBody'], config?: T | undefined }) =>
+        fetch<Methods1['post']['resBody'], BasicHeaders, Methods1['post']['status']>(prefix, PATH1, POST, option).json().then(r => r.body),
       $path: (option?: { method?: 'get' | undefined; query: Methods1['get']['query'] } | undefined) =>
         `${prefix}${PATH1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
     },
@@ -102,14 +117,16 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         return {
           /**
            * Search for users
+           * @returns response
            */
           get: (option?: { query?: Methods4['get']['query'] | undefined, config?: T | undefined } | undefined) =>
-            fetch(prefix, prefix1, GET, option).send(),
+            fetch<Methods4['get']['resBody'], BasicHeaders, Methods4['get']['status']>(prefix, prefix1, GET, option).json(),
           /**
            * Search for users
+           * @returns response
            */
           $get: (option?: { query?: Methods4['get']['query'] | undefined, config?: T | undefined } | undefined) =>
-            fetch(prefix, prefix1, GET, option).send().then(r => r.body),
+            fetch<Methods4['get']['resBody'], BasicHeaders, Methods4['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
           $path: (option?: { method?: 'get' | undefined; query: Methods4['get']['query'] } | undefined) =>
             `${prefix}${prefix1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
         };

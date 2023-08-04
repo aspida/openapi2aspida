@@ -357,14 +357,16 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       },
       /**
        * Retrieve all user documents
+       * @returns response
        */
       get: (option?: { query?: Methods14['get']['query'] | undefined, config?: T | undefined } | undefined) =>
-        fetch(prefix, PATH14, GET, option).send(),
+        fetch<Methods14['get']['resBody'], BasicHeaders, Methods14['get']['status']>(prefix, PATH14, GET, option).json(),
       /**
        * Retrieve all user documents
+       * @returns response
        */
       $get: (option?: { query?: Methods14['get']['query'] | undefined, config?: T | undefined } | undefined) =>
-        fetch(prefix, PATH14, GET, option).send().then(r => r.body),
+        fetch<Methods14['get']['resBody'], BasicHeaders, Methods14['get']['status']>(prefix, PATH14, GET, option).json().then(r => r.body),
       $path: (option?: { method?: 'get' | undefined; query: Methods14['get']['query'] } | undefined) =>
         `${prefix}${PATH14}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
     },
@@ -437,14 +439,28 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         },
         /**
          * Retrieve all role documents
+         * @returns response
          */
         get: (option?: { query?: Methods18['get']['query'] | undefined, config?: T | undefined } | undefined) =>
-          fetch(prefix, PATH17, GET, option).send(),
+          fetch<Methods18['get']['resBody'], BasicHeaders, Methods18['get']['status']>(prefix, PATH17, GET, option).json(),
         /**
          * Retrieve all role documents
+         * @returns response
          */
         $get: (option?: { query?: Methods18['get']['query'] | undefined, config?: T | undefined } | undefined) =>
-          fetch(prefix, PATH17, GET, option).send().then(r => r.body),
+          fetch<Methods18['get']['resBody'], BasicHeaders, Methods18['get']['status']>(prefix, PATH17, GET, option).json().then(r => r.body),
+        /**
+         * Create a new role
+         * @returns response
+         */
+        post: (option: { body: Methods18['post']['reqBody'], config?: T | undefined }) =>
+          fetch<Methods18['post']['resBody'], BasicHeaders, Methods18['post']['status']>(prefix, PATH17, POST, option).json(),
+        /**
+         * Create a new role
+         * @returns response
+         */
+        $post: (option: { body: Methods18['post']['reqBody'], config?: T | undefined }) =>
+          fetch<Methods18['post']['resBody'], BasicHeaders, Methods18['post']['status']>(prefix, PATH17, POST, option).json().then(r => r.body),
         $path: (option?: { method?: 'get' | undefined; query: Methods18['get']['query'] } | undefined) =>
           `${prefix}${PATH17}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
       },
@@ -455,14 +471,16 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           return {
             /**
              * Search for users
+             * @returns response
              */
             get: (option?: { query?: Methods21['get']['query'] | undefined, config?: T | undefined } | undefined) =>
-              fetch(prefix, prefix2, GET, option).send(),
+              fetch<Methods21['get']['resBody'], BasicHeaders, Methods21['get']['status']>(prefix, prefix2, GET, option).json(),
             /**
              * Search for users
+             * @returns response
              */
             $get: (option?: { query?: Methods21['get']['query'] | undefined, config?: T | undefined } | undefined) =>
-              fetch(prefix, prefix2, GET, option).send().then(r => r.body),
+              fetch<Methods21['get']['resBody'], BasicHeaders, Methods21['get']['status']>(prefix, prefix2, GET, option).json().then(r => r.body),
             $path: (option?: { method?: 'get' | undefined; query: Methods21['get']['query'] } | undefined) =>
               `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
           };

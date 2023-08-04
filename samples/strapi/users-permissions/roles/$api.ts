@@ -8,6 +8,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? 'http://localhost:1337' : baseURL).replace(/\/$/, '');
   const PATH0 = '/users-permissions/roles';
   const GET = 'GET';
+  const POST = 'POST';
   const PUT = 'PUT';
   const DELETE = 'DELETE';
 
@@ -64,14 +65,28 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
     },
     /**
      * Retrieve all role documents
+     * @returns response
      */
     get: (option?: { query?: Methods0['get']['query'] | undefined, config?: T | undefined } | undefined) =>
-      fetch(prefix, PATH0, GET, option).send(),
+      fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json(),
     /**
      * Retrieve all role documents
+     * @returns response
      */
     $get: (option?: { query?: Methods0['get']['query'] | undefined, config?: T | undefined } | undefined) =>
-      fetch(prefix, PATH0, GET, option).send().then(r => r.body),
+      fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json().then(r => r.body),
+    /**
+     * Create a new role
+     * @returns response
+     */
+    post: (option: { body: Methods0['post']['reqBody'], config?: T | undefined }) =>
+      fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option).json(),
+    /**
+     * Create a new role
+     * @returns response
+     */
+    $post: (option: { body: Methods0['post']['reqBody'], config?: T | undefined }) =>
+      fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option).json().then(r => r.body),
     $path: (option?: { method?: 'get' | undefined; query: Methods0['get']['query'] } | undefined) =>
       `${prefix}${PATH0}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
   };

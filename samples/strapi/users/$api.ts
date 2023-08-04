@@ -73,14 +73,16 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
     },
     /**
      * Retrieve all user documents
+     * @returns response
      */
     get: (option?: { query?: Methods0['get']['query'] | undefined, config?: T | undefined } | undefined) =>
-      fetch(prefix, PATH0, GET, option).send(),
+      fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json(),
     /**
      * Retrieve all user documents
+     * @returns response
      */
     $get: (option?: { query?: Methods0['get']['query'] | undefined, config?: T | undefined } | undefined) =>
-      fetch(prefix, PATH0, GET, option).send().then(r => r.body),
+      fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json().then(r => r.body),
     $path: (option?: { method?: 'get' | undefined; query: Methods0['get']['query'] } | undefined) =>
       `${prefix}${PATH0}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
   };

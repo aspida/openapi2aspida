@@ -81,7 +81,7 @@
   },
   "dependencies": {
     "@apidevtools/swagger-parser": "^10.1.0",
-    "aspida": "^1.13.1",
+    "aspida": "^1.13.3",
     "fs-extra": "^11.1.1",
     "js-yaml": "^4.1.0",
     "openapi-types": "^12.1.3",
