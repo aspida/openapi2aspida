@@ -23,7 +23,7 @@ export type Methods = {
 
     /** response */
     resBody: {
-      foo: string
+      foo?: string | undefined
     }
   }
 }

@@ -8,13 +8,13 @@ export type Methods = {
     status: 200
     /** OK */
     resBody: {
-      id: number
-      email: string
-      screenName: string
-      access: 'admin' | 'r' | 'rw' | 'banned'
-      isDeleted: number
-      imageUrl: string
-      initials: string
+      id?: number | undefined
+      email?: string | undefined
+      screenName?: string | undefined
+      access?: 'admin' | 'r' | 'rw' | 'banned' | undefined
+      isDeleted?: number | undefined
+      imageUrl?: string | undefined
+      initials?: string | undefined
     }[]
   }
 
@@ -25,11 +25,11 @@ export type Methods = {
 
     reqBody: {
       /** List of user IDs to add */
-      users: number[]
+      users?: number[] | undefined
       /** List of users IDs. Disables sending add-service-message about users with these IDs. */
-      bannedUsers: number[]
+      bannedUsers?: number[] | undefined
       /** If true: will add user to public chat */
-      self: boolean
+      self?: boolean | undefined
     }
   }
 

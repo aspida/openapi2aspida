@@ -8,14 +8,14 @@ export type Methods = {
 
     /** OK */
     resBody: {
-      action: 'add' | 'remove' | 'replace'
+      action?: 'add' | 'remove' | 'replace' | undefined
 
-      reactions: Types.ReactionCountModel & {
-        myReaction: Types.ReactionEnumModel
-      }
+      reactions?: Types.ReactionCountModel & {
+        myReaction?: Types.ReactionEnumModel | undefined
+      } | undefined
 
-      previousStatus: Types.ReactionEnumModel
-      userType: 'anonymous' | 'unique'
+      previousStatus?: Types.ReactionEnumModel | undefined
+      userType?: 'anonymous' | 'unique' | undefined
     }
 
     reqBody: {

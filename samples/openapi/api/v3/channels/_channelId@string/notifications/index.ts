@@ -14,9 +14,9 @@ export type Methods = {
 
     /** OK */
     resBody: {
-      count: number
-      limit: number
-      data: {
+      count?: number | undefined
+      limit?: number | undefined
+      data?: {
         id: number
         message: string
         title: string
@@ -27,7 +27,7 @@ export type Methods = {
         deliveringTime: string
         expirationTime: string
         created: string
-      }[]
+      }[] | undefined
     }
   }
 }

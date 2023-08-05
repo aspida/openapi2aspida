@@ -14,9 +14,9 @@ export type Methods = {
 
     reqBody: {
       /** Updated name of the pet */
-      name: string
+      name?: string | undefined
       /** Updated status of the pet */
-      status: string
+      status?: string | undefined
     }
   }
 

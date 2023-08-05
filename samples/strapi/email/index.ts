@@ -6,11 +6,11 @@ export type Methods = {
 
     /** response */
     resBody: {
-      foo: string
+      foo?: string | undefined
     }
 
     reqBody: {
-      foo: string
+      foo?: string | undefined
     }
   }
 }

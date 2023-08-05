@@ -9,11 +9,11 @@ export type Methods = {
     reqFormat: FormData
 
     reqBody: {
-      screenName: string
-      url: string
+      screenName?: string | undefined
+      url?: string | undefined
       /** Profile picture to upload. */
-      image: (File | ReadStream)
-      imageId: string
+      image?: (File | ReadStream) | undefined
+      imageId?: string | undefined
     }
   }
 }

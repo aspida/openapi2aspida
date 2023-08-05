@@ -26,7 +26,7 @@ const getParamsList = (
 export default (openapi: OpenAPIV3.Document) => {
   const files: { file: string[]; methods: string }[] = [];
   const schemas = schemas2Props(openapi.components?.schemas, openapi) || [];
-  const parameters = parameters2Props(openapi.components?.parameters, openapi, false) || [];
+  const parameters = parameters2Props(openapi.components?.parameters, openapi) || [];
   const requestBodies = requestBodies2Props(openapi.components?.requestBodies) || [];
   const responses = responses2Props(openapi.components?.responses) || [];
   const headers = headers2Props(openapi.components?.headers) || [];
@@ -102,7 +102,7 @@ export default (openapi: OpenAPIV3.Document) => {
                         break;
                     }
                   } else {
-                    const value = schema2value(p.schema, false);
+                    const value = schema2value(p.schema);
                     if (!value) return;
 
                     const prop = {
@@ -200,7 +200,7 @@ export default (openapi: OpenAPIV3.Document) => {
                   ref.content?.[Object.keys(ref.content)[0]];
 
                 if (content?.schema) {
-                  const val = schema2value(content.schema, true, true);
+                  const val = schema2value(content.schema, true);
                   val &&
                     params.push({
                       name: 'resBody',
@@ -231,7 +231,7 @@ export default (openapi: OpenAPIV3.Document) => {
                                   description: null,
                                   value: $ref2Type(headerData.$ref),
                                 }
-                              : schema2value(headerData.schema, true);
+                              : schema2value(headerData.schema);
 
                             return (
                               val && {
@@ -283,17 +283,13 @@ export default (openapi: OpenAPIV3.Document) => {
 
                 if (target.requestBody.content['multipart/form-data']?.schema) {
                   reqFormat = 'FormData';
-                  reqBody = schema2value(
-                    target.requestBody.content['multipart/form-data'].schema,
-                    true
-                  );
+                  reqBody = schema2value(target.requestBody.content['multipart/form-data'].schema);
                 } else if (
                   target.requestBody.content['application/x-www-form-urlencoded']?.schema
                 ) {
                   reqFormat = 'URLSearchParams';
                   reqBody = schema2value(
-                    target.requestBody.content['application/x-www-form-urlencoded'].schema,
-                    true
+                    target.requestBody.content['application/x-www-form-urlencoded'].schema
                   );
                 } else {
                   const content =
@@ -302,7 +298,7 @@ export default (openapi: OpenAPIV3.Document) => {
                       key.startsWith('application/')
                     )?.[1];
 
-                  if (content?.schema) reqBody = schema2value(content.schema, true);
+                  if (content?.schema) reqBody = schema2value(content.schema);
                 }
               }
 

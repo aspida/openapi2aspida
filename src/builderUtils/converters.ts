@@ -40,14 +40,14 @@ export const isObjectSchema = (
 export const getPropertyName = (name: string) =>
   /^[a-zA-Z_$][0-9a-zA-Z_$]*$/.test(name) ? name : `'${name}'`;
 
-const of2Values = (obj: OpenAPIV3.SchemaObject, required: boolean): PropValue[] | null => {
+const of2Values = (obj: OpenAPIV3.SchemaObject): PropValue[] | null => {
   const values = (obj.oneOf || obj.allOf || obj.anyOf || [])
-    .map(p => schema2value(p, required))
+    .map(p => schema2value(p))
     .filter(v => v) as PropValue[];
   return values.length ? values : null;
 };
 
-const object2value = (obj: OpenAPIV3.NonArraySchemaObject, required: boolean): Prop[] => {
+const object2value = (obj: OpenAPIV3.NonArraySchemaObject): Prop[] => {
   const properties = obj.properties ?? {};
 
   const value = Object.keys(properties)
@@ -56,12 +56,12 @@ const object2value = (obj: OpenAPIV3.NonArraySchemaObject, required: boolean): P
       return isRefObject(target) || !target.deprecated;
     })
     .map<Prop | null>(name => {
-      const val = schema2value(properties[name], required);
+      const val = schema2value(properties[name]);
       if (!val) return null;
 
       return {
         name: getPropertyName(name),
-        required: obj.required?.includes(name) ?? required,
+        required: obj.required?.includes(name) ?? false,
         description: val.description,
         values: [val],
       };
@@ -79,12 +79,12 @@ const object2value = (obj: OpenAPIV3.NonArraySchemaObject, required: boolean): P
             description: null,
             value: 'any',
           }
-        : schema2value(additionalProps, required);
+        : schema2value(additionalProps);
 
     if (val)
       value.push({
         name: '[key: string]',
-        required,
+        required: true,
         description: val.description,
         values: [val],
       });
@@ -97,7 +97,6 @@ export const BINARY_TYPE = '(File | ReadStream)';
 
 export const schema2value = (
   schema: OpenAPIV3.ReferenceObject | OpenAPIV3.SchemaObject | undefined,
-  required: boolean,
   isResponse?: true
 ): PropValue | null => {
   if (!schema) return null;
@@ -117,15 +116,15 @@ export const schema2value = (
 
     if (schema.oneOf || schema.allOf || schema.anyOf) {
       hasOf = schema.oneOf ? 'oneOf' : schema.allOf ? 'allOf' : 'anyOf';
-      value = of2Values(schema, required);
+      value = of2Values(schema);
     } else if (schema.enum) {
       isEnum = true;
       value = schema.type === 'string' ? schema.enum.map(e => `'${e}'`) : schema.enum;
     } else if (isArraySchema(schema)) {
       isArray = true;
-      value = schema2value(schema.items, required);
+      value = schema2value(schema.items);
     } else if (schema.properties || schema.additionalProperties) {
-      value = object2value(schema, required);
+      value = object2value(schema);
     } else if (schema.format === 'binary') {
       value = isResponse ? 'Blob' : BINARY_TYPE;
     } else if (schema.type !== 'object') {

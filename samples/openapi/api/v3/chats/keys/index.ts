@@ -10,16 +10,16 @@ export type Methods = {
     /** OK */
     resBody: {
       /** Should be used as authKey when initializing pubnub instance */
-      token: string
-      publishKey: string
-      subscribeKey: string
-      cipherKey: string
+      token?: string | undefined
+      publishKey?: string | undefined
+      subscribeKey?: string | undefined
+      cipherKey?: string | undefined
 
       /** should be used with sending message to prevent self pushes */
-      senderDevice: {
-        ios: string[]
-        android: string[]
-      }
+      senderDevice?: {
+        ios?: string[] | undefined
+        android?: string[] | undefined
+      } | undefined
     }
   }
 }

@@ -6,7 +6,7 @@ export type Methods = {
 
     /** response */
     resBody: {
-      foo: string
+      foo?: string | undefined
     }
   }
 
@@ -16,7 +16,7 @@ export type Methods = {
 
     /** response */
     resBody: {
-      foo: string
+      foo?: string | undefined
     }
   }
 }

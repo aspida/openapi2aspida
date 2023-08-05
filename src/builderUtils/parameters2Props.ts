@@ -11,11 +11,7 @@ import { resolveParamsRef } from './resolvers';
 
 export type Parameter = { name: string; prop: string | Prop };
 
-export default (
-  params: OpenAPIV3.ComponentsObject['parameters'],
-  openapi: OpenAPIV3.Document,
-  required: boolean
-) =>
+export default (params: OpenAPIV3.ComponentsObject['parameters'], openapi: OpenAPIV3.Document) =>
   params &&
   Object.keys(params)
     .filter(defKey => {
@@ -29,12 +25,12 @@ export default (
       if (isRefObject(target)) {
         prop = $ref2Type(target.$ref);
       } else {
-        const value = schema2value(target.schema, required);
+        const value = schema2value(target.schema);
         if (!value) return null;
 
         prop = {
           name: getPropertyName(target.name),
-          required: target.required ?? required,
+          required: target.required ?? false,
           description: target.description ?? null,
           values: [value],
         };

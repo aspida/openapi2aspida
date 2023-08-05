@@ -19,11 +19,11 @@ export type Methods = {
     resBody: {
       count: number
       data: (Types.ModelCard & {
-        storyId: number
+        storyId?: number | undefined
 
-        reactions: Types.ReactionCountModel & {
-          myReaction: Types.ReactionEnumModel
-        }
+        reactions?: Types.ReactionCountModel & {
+          myReaction?: Types.ReactionEnumModel | undefined
+        } | undefined
       })[]
     }
   }

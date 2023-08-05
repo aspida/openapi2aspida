@@ -19,7 +19,7 @@ export default (bodies: OpenAPIV3.ComponentsObject['responses']) =>
           Object.entries(target.content).find(([key]) => key.startsWith('application/'))?.[1];
         if (!content) return null;
 
-        const result = schema2value(content.schema, false);
+        const result = schema2value(content.schema);
         if (!result) return null;
 
         value = result;

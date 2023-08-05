@@ -7,8 +7,8 @@ export type Methods = {
     status: 204
 
     reqBody: {
-      fcmToken: string
-      deviceToken: string
+      fcmToken?: string | undefined
+      deviceToken?: string | undefined
     }
   }
 }

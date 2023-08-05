@@ -8,9 +8,9 @@ export type Methods = {
 
     /** OK */
     resBody: {
-      dataUrl: string
-      otpURL: string
-      secret: string
+      dataUrl?: string | undefined
+      otpURL?: string | undefined
+      secret?: string | undefined
     }
 
     reqBody: {

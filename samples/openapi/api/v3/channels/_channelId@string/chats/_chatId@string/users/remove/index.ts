@@ -9,9 +9,9 @@ export type Methods = {
 
     reqBody: {
       /** List of user IDs to remove */
-      users: number[]
+      users?: number[] | undefined
       /** If true: will remove user from chat */
-      self: boolean
+      self?: boolean | undefined
     }
   }
 }

@@ -10,49 +10,49 @@ export type Methods = {
     /** OK */
     resBody: {
       /** array of chats */
-      chats: {
-        access: 'admin' | 'r' | 'w' | 'banned'
-        chatId: number
-        chatDescriptor: string
-        channelId: number
-        organisationId: number
-        name: string
-        payload: string
-        type: 'group' | 'p2p'
-        accessType: 'private' | 'publicWrite' | 'publicRead'
+      chats?: {
+        access?: 'admin' | 'r' | 'w' | 'banned' | undefined
+        chatId?: number | undefined
+        chatDescriptor?: string | undefined
+        channelId?: number | undefined
+        organisationId?: number | undefined
+        name?: string | undefined
+        payload?: string | undefined
+        type?: 'group' | 'p2p' | undefined
+        accessType?: 'private' | 'publicWrite' | 'publicRead' | undefined
         /** pinned mix ID */
-        storyId: number
+        storyId?: number | undefined
         /** pinned card ID */
-        itemId: number
+        itemId?: number | undefined
         /** ID of mix of shared cards */
-        storyIdPinned: number
+        storyIdPinned?: number | undefined
         /** if there are no pinned content in hidden mix */
-        storyPinnedEmpty: boolean
-        usersCount: number
+        storyPinnedEmpty?: boolean | undefined
+        usersCount?: number | undefined
         /** true if chat is public and user can join, false if user has already joined chat */
-        publicToJoin: boolean
+        publicToJoin?: boolean | undefined
         /** Array of available members images or initials */
-        thumbnails: {
-          image: string
-          initials: string
-        }[]
-        level: 'channel' | 'organisation'
+        thumbnails?: {
+          image?: string | undefined
+          initials?: string | undefined
+        }[] | undefined
+        level?: 'channel' | 'organisation' | undefined
         /** Id of recipient user if p2p */
-        recipientId: number
-        created: string
-        updated: string
-      }[]
+        recipientId?: number | undefined
+        created?: string | undefined
+        updated?: string | undefined
+      }[] | undefined
       /** Should be used as authKey when initializing pubnub instance */
-      token: string
-      publishKey: string
-      subscribeKey: string
-      cipherKey: string
+      token?: string | undefined
+      publishKey?: string | undefined
+      subscribeKey?: string | undefined
+      cipherKey?: string | undefined
 
       /** should be used with sending message to prevent self pushes */
-      senderDevice: {
-        ios: string[]
-        android: string[]
-      }
+      senderDevice?: {
+        ios?: string[] | undefined
+        android?: string[] | undefined
+      } | undefined
     }
   }
 
@@ -63,36 +63,36 @@ export type Methods = {
 
     /** OK */
     resBody: {
-      chatId: number
-      chatDescriptor: string
-      channelId: number
-      organisationId: number
+      chatId?: number | undefined
+      chatDescriptor?: string | undefined
+      channelId?: number | undefined
+      organisationId?: number | undefined
       /** Pinned mix ID */
-      storyId: number
+      storyId?: number | undefined
       /** Pinned card ID */
-      itemId: number
+      itemId?: number | undefined
 
-      pinnedContent: {
-        pinType: 'mix' | 'card'
-      }
+      pinnedContent?: {
+        pinType?: 'mix' | 'card' | undefined
+      } | undefined
 
-      type: 'group' | 'p2p'
-      accessType: 'private' | 'publicRead' | 'publicWrite'
-      usersCount: number
-      name: string
-      payload: string
+      type?: 'group' | 'p2p' | undefined
+      accessType?: 'private' | 'publicRead' | 'publicWrite' | undefined
+      usersCount?: number | undefined
+      name?: string | undefined
+      payload?: string | undefined
       /** User access to chat */
-      access: 'admin' | 'banned' | 'r' | 'rw'
+      access?: 'admin' | 'banned' | 'r' | 'rw' | undefined
       /** Array of available members images or initials */
-      thumbnails: {
-        image: string
-        initials: string
-      }[]
-      level: 'channel' | 'organisation'
+      thumbnails?: {
+        image?: string | undefined
+        initials?: string | undefined
+      }[] | undefined
+      level?: 'channel' | 'organisation' | undefined
       /** Id of recipient user if p2p */
-      recipientId: number
-      created: string
-      updated: string
+      recipientId?: number | undefined
+      created?: string | undefined
+      updated?: string | undefined
     }
 
     reqBody: {

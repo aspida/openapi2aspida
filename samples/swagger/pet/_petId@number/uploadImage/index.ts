@@ -11,9 +11,9 @@ export type Methods = {
 
     reqBody: {
       /** Additional data to pass to server */
-      additionalMetadata: string
+      additionalMetadata?: string | undefined
       /** file to upload */
-      file: (File | ReadStream)
+      file?: (File | ReadStream) | undefined
     }
   }
 }

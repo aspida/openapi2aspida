@@ -14,7 +14,7 @@ export default (headers: OpenAPIV3.ComponentsObject['headers']) =>
       if (isRefObject(target)) {
         value = $ref2Type(target.$ref);
       } else {
-        const result = schema2value(target.schema, false);
+        const result = schema2value(target.schema);
         if (!result) return null;
         value = { ...result, description: target.description ?? null };
       }

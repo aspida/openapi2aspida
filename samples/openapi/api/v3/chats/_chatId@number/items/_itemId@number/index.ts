@@ -12,7 +12,7 @@ export type Methods = {
     }
 
     reqBody: {
-      formattedText: string
+      formattedText?: string | undefined
     }
   }
 

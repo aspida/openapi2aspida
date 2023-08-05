@@ -42,7 +42,7 @@ export type Methods = {
 
       meta?: {
         /** 集計結果が最新かどうか */
-        up_to_date: boolean
+        up_to_date?: boolean | undefined
       } | undefined
     }
   }

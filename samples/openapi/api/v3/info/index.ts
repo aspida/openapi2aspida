@@ -9,8 +9,8 @@ export type Methods = {
 
     /** OK */
     resBody: {
-      state: 'no_update' | 'force_update'
-      link: string
+      state?: 'no_update' | 'force_update' | undefined
+      link?: string | undefined
     }
   }
 }

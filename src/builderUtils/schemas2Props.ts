@@ -13,7 +13,7 @@ export default (schemas: OpenAPIV3.ComponentsObject['schemas'], openapi: OpenAPI
       return !(isRefObject(target) ? resolveSchemasRef(openapi, target.$ref) : target).deprecated;
     })
     .map(defKey => {
-      const value = schema2value(schemas[defKey], false);
+      const value = schema2value(schemas[defKey]);
       return value ? { name: defKey2defName(defKey), value } : null;
     })
     .filter((v): v is Schema => !!v);
