@@ -14,13 +14,6 @@ export const run = (args: string[]) => {
     return;
   }
 
-  if (!argv.config) {
-    build(
-      argv.input ? { openapi: { inputFile: argv.input, outputDir: argv.outputDir } } : undefined
-    );
-    return;
-  }
-
   const configs: ConfigFile[] = getConfigs(argv.config);
 
   if (configs.length > 1) {
