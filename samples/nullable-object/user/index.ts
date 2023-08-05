@@ -7,7 +7,7 @@ export type Methods = {
 
     /** sample */
     resBody: {
-      user?: Partial<Types.User> | null | undefined
+      user?: Types.User | null | undefined
     }
   }
 }

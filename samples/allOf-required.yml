@@ -1,0 +1,33 @@
+openapi: 3.0.3
+info:
+  title: allOf-required
+  version: 0.1.0
+servers:
+- url: https://example.com/v1
+paths:
+  /path:
+    get:
+      summary: 
+      responses:
+        '200':
+          description: 取得成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseSchema'
+components:
+  schemas:
+    ResponseSchema:
+      allOf:
+        - required:
+            - req_property
+        - $ref: '#/components/schemas/BaseSchema'
+    BaseSchema:
+      type: object
+      properties:
+        req_property:
+          type: string
+          description: required property in response
+        unreq_property:
+          type: string
+          description: unrequired property in response

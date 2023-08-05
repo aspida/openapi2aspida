@@ -35,9 +35,9 @@ export const value2String = (v: PropValue, indent: string): string =>
   }${v.nullable ? ' | null' : ''}`;
 
 const values2String = (values: PropValue[], hasOf: PropValue['hasOf'], indent: string) =>
-  `${hasOf === 'anyOf' ? 'Partial<' : ''}${values
+  values
     .map(a => value2String(a, indent))
-    .join(hasOf === 'oneOf' ? ' | ' : ' & ')}${hasOf === 'anyOf' ? '>' : ''}`;
+    .join(hasOf === 'oneOf' || hasOf === 'anyOf' ? ' | ' : ' & ');
 
 const isMultiLine = (values: PropValue[]) => values.find(v => !v.isEnum && Array.isArray(v.value));
 

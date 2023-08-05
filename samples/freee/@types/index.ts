@@ -2019,7 +2019,7 @@ export type ForbiddenError = {
 export type BadRequestError = {
   status_code?: number | undefined
   errors?: {
-    messages: Partial<string[] & string>
+    messages: string[] | string
 
     type: 'status' | 'validation' | 'error'
   }[] | undefined
@@ -2028,7 +2028,7 @@ export type BadRequestError = {
 export type BadRequestNotFoundError = {
   status_code?: number | undefined
   errors?: {
-    messages: Partial<string[] & string>
+    messages: string[] | string
 
     type: 'status' | 'validation' | 'error'
   }[] | undefined
@@ -2052,7 +2052,7 @@ export type TooManyRequestsError = {
 export type InternalServerError = {
   status_code?: number | undefined
   errors?: {
-    messages: Partial<string[] & string>
+    messages: string[] | string
 
     type: 'status' | 'validation' | 'error'
   }[] | undefined

@@ -43,7 +43,7 @@ export const getPropertyName = (name: string) =>
 const of2Values = (obj: OpenAPIV3.SchemaObject): PropValue[] | null => {
   const values = (obj.oneOf || obj.allOf || obj.anyOf || [])
     .map(p => schema2value(p))
-    .filter(v => v) as PropValue[];
+    .filter(Boolean) as PropValue[];
   return values.length ? values : null;
 };
 
@@ -128,13 +128,15 @@ export const schema2value = (
     } else if (schema.format === 'binary') {
       value = isResponse ? 'Blob' : BINARY_TYPE;
     } else if (schema.type !== 'object') {
-      value = {
-        integer: 'number',
-        number: 'number',
-        null: 'null',
-        string: 'string',
-        boolean: 'boolean',
-      }[schema.type ?? 'string'];
+      value = schema.type
+        ? {
+            integer: 'number',
+            number: 'number',
+            null: 'null',
+            string: 'string',
+            boolean: 'boolean',
+          }[schema.type]
+        : null;
     }
   }
 

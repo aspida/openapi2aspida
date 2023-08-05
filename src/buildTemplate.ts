@@ -12,5 +12,5 @@ export default async ({ input, isYaml }: Config) => {
     ? openapi
     : await require('swagger2openapi').convertObj(openapi, { direct: true, resolveInternal: true });
 
-  return buildV3(await resolveExternalRefs(docs, typeof input === 'string' ? input : ''));
+  return resolveExternalRefs(docs, typeof input === 'string' ? input : '').then(buildV3);
 };

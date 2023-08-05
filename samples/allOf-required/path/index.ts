@@ -4,10 +4,7 @@ import type * as Types from '../@types'
 export type Methods = {
   get: {
     status: 200
-
-    /** sample */
-    resBody: {
-      user?: Types.User | null | undefined
-    }
+    /** 取得成功 */
+    resBody: Types.ResponseSchema
   }
 }
