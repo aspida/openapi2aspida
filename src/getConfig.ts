@@ -20,7 +20,7 @@ const createConfig = (config: ConfigFile): Config => {
   const openapi = config.openapi!;
   return {
     input: openapi.inputFile,
-    output: config.input,
+    output: openapi.outputDir ?? config.input,
     trailingSlash: config.trailingSlash,
     outputEachDir: config.outputEachDir,
     outputMode: config.outputMode,
