@@ -38,10 +38,16 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       $path: () => `${prefix}${PATH1}`,
     },
     without_additional_properties: {
+      /**
+       * @returns OK
+       */
       delete: (option?: { config?: T | undefined } | undefined) =>
-        fetch<void, BasicHeaders, Methods2['delete']['status']>(prefix, PATH2, DELETE, option).send(),
+        fetch<Methods2['delete']['resBody'], BasicHeaders, Methods2['delete']['status']>(prefix, PATH2, DELETE, option).json(),
+      /**
+       * @returns OK
+       */
       $delete: (option?: { config?: T | undefined } | undefined) =>
-        fetch<void, BasicHeaders, Methods2['delete']['status']>(prefix, PATH2, DELETE, option).send().then(r => r.body),
+        fetch<Methods2['delete']['resBody'], BasicHeaders, Methods2['delete']['status']>(prefix, PATH2, DELETE, option).json().then(r => r.body),
       $path: () => `${prefix}${PATH2}`,
     },
   };

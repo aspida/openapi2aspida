@@ -16,6 +16,8 @@ export type Methods = {
     resBody: {
       limit: number
       offset: number
+      data: {
+      }[]
     }
   }
 

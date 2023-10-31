@@ -123,11 +123,11 @@ export const schema2value = (
     } else if (isArraySchema(schema)) {
       isArray = true;
       value = schema2value(schema.items);
-    } else if (schema.properties || 'additionalProperties' in schema) {
+    } else if (schema.type === 'object' || schema.properties || 'additionalProperties' in schema) {
       value = object2value(schema);
     } else if (schema.format === 'binary') {
       value = isResponse ? 'Blob' : BINARY_TYPE;
-    } else if (schema.type !== 'object') {
+    } else {
       value = schema.type
         ? {
             integer: 'number',
