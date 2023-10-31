@@ -64,6 +64,11 @@ module.exports = [
     outputEachDir: true,
     openapi: { inputFile: 'samples/allOf-required.yml' },
   },
+  {
+    input: 'samples/empty-object-response-body',
+    outputEachDir: true,
+    openapi: { inputFile: 'samples/empty-object-response-body.yml' },
+  },
   // {
   //   input: 'samples/path-at-mark',
   //   outputEachDir: true,
