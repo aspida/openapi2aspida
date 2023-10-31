@@ -123,7 +123,7 @@ export const schema2value = (
     } else if (isArraySchema(schema)) {
       isArray = true;
       value = schema2value(schema.items);
-    } else if (schema.properties || schema.additionalProperties) {
+    } else if (schema.properties || 'additionalProperties' in schema) {
       value = object2value(schema);
     } else if (schema.format === 'binary') {
       value = isResponse ? 'Blob' : BINARY_TYPE;
