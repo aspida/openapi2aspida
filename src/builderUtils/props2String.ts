@@ -26,20 +26,21 @@ export const value2String = (v: PropValue, indent: string): string =>
     v.hasOf
       ? values2String(v.value as PropValue[], v.hasOf, indent)
       : v.isArray
-      ? array2String(v.value as PropValue, indent)
-      : v.isEnum
-      ? (v.value as string[]).join(' | ')
-      : Array.isArray(v.value)
-      ? props2String(v.value as Prop[], `  ${indent}`)
-      : v.value
+        ? array2String(v.value as PropValue, indent)
+        : v.isEnum
+          ? (v.value as string[]).join(' | ')
+          : Array.isArray(v.value)
+            ? props2String(v.value as Prop[], `  ${indent}`)
+            : v.value
   }${v.nullable ? ' | null' : ''}`;
 
 const values2String = (values: PropValue[], hasOf: PropValue['hasOf'], indent: string) =>
   values
-    .map(a => value2String(a, indent))
+    .map((a) => value2String(a, indent))
     .join(hasOf === 'oneOf' || hasOf === 'anyOf' ? ' | ' : ' & ');
 
-const isMultiLine = (values: PropValue[]) => values.find(v => !v.isEnum && Array.isArray(v.value));
+const isMultiLine = (values: PropValue[]) =>
+  values.find((v) => !v.isEnum && Array.isArray(v.value));
 
 const escapeDecription = (desc: string): string => {
   return desc.replace(/\*\//g, '* /');
@@ -57,13 +58,13 @@ export const description2Doc = (desc: string | null, indent: string) => {
 export const props2String = (props: Prop[], indent: string) =>
   `{\n${props
     .map((p, i) =>
-      (opt =>
+      ((opt) =>
         `${description2Doc(p.description, `  ${indent}`)}  ${indent}${p.name}${
           opt ? '?' : ''
         }: ${values2String(p.values, undefined, indent)}${opt ? ' | undefined' : ''}${
           props.length - 1 === i || isMultiLine(p.values) || isMultiLine(props[i + 1].values)
             ? '\n'
             : ''
-        }`)(!p.required)
+        }`)(!p.required),
     )
     .join('\n')}${indent}}`;

@@ -16,7 +16,7 @@ export const $ref2Type = (ref: string) => {
   const { typeName, propName } = $ref2TypeName(ref);
   return `Types.${defKey2defName(typeName)}${propName ? `['${propName}']` : ''}`.replace(
     /Array$/,
-    '[]'
+    '[]',
   );
 };
 
@@ -27,14 +27,14 @@ export const isRefObject = (
     | OpenAPIV3.RequestBodyObject
     | OpenAPIV3.HeaderObject
     | OpenAPIV3.ParameterObject
-    | OpenAPIV3.SchemaObject
+    | OpenAPIV3.SchemaObject,
 ): params is OpenAPIV3.ReferenceObject => '$ref' in params;
 
 const isArraySchema = (schema: OpenAPIV3.SchemaObject): schema is OpenAPIV3.ArraySchemaObject =>
   schema.type === 'array';
 
 export const isObjectSchema = (
-  schema: OpenAPIV3.ReferenceObject | OpenAPIV3.SchemaObject
+  schema: OpenAPIV3.ReferenceObject | OpenAPIV3.SchemaObject,
 ): schema is OpenAPIV3.NonArraySchemaObject => !isRefObject(schema) && schema.type !== 'array';
 
 export const getPropertyName = (name: string) =>
@@ -42,7 +42,7 @@ export const getPropertyName = (name: string) =>
 
 const of2Values = (obj: OpenAPIV3.SchemaObject): PropValue[] | null => {
   const values = (obj.oneOf || obj.allOf || obj.anyOf || [])
-    .map(p => schema2value(p))
+    .map((p) => schema2value(p))
     .filter(Boolean) as PropValue[];
   return values.length ? values : null;
 };
@@ -51,11 +51,11 @@ const object2value = (obj: OpenAPIV3.NonArraySchemaObject): Prop[] => {
   const properties = obj.properties ?? {};
 
   const value = Object.keys(properties)
-    .filter(name => {
+    .filter((name) => {
       const target = properties[name];
       return isRefObject(target) || !target.deprecated;
     })
-    .map<Prop | null>(name => {
+    .map<Prop | null>((name) => {
       const val = schema2value(properties[name]);
       if (!val) return null;
 
@@ -66,7 +66,7 @@ const object2value = (obj: OpenAPIV3.NonArraySchemaObject): Prop[] => {
         values: [val],
       };
     })
-    .filter(v => v) as Prop[];
+    .filter((v) => v) as Prop[];
 
   const additionalProps = obj.additionalProperties;
   if (additionalProps) {
@@ -97,7 +97,7 @@ export const BINARY_TYPE = '(File | ReadStream)';
 
 export const schema2value = (
   schema: OpenAPIV3.ReferenceObject | OpenAPIV3.SchemaObject | undefined,
-  isResponse?: true
+  isResponse?: true,
 ): PropValue | null => {
   if (!schema) return null;
 
@@ -119,7 +119,7 @@ export const schema2value = (
       value = of2Values(schema);
     } else if (schema.enum) {
       isEnum = true;
-      value = schema.type === 'string' ? schema.enum.map(e => `'${e}'`) : schema.enum;
+      value = schema.type === 'string' ? schema.enum.map((e) => `'${e}'`) : schema.enum;
     } else if (isArraySchema(schema)) {
       isArray = true;
       value = schema2value(schema.items);

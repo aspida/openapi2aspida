@@ -7,7 +7,7 @@ export type Header = { name: string; value: string | PropValue };
 export default (headers: OpenAPIV3.ComponentsObject['headers']) =>
   headers &&
   Object.keys(headers)
-    .map(defKey => {
+    .map((defKey) => {
       const target = headers[defKey];
       let value: Header['value'];
 

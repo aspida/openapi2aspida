@@ -5,7 +5,7 @@ import getConfig from './getConfig';
 import writeRouteFile from './writeRouteFile';
 
 export default (configs?: PartialConfig) => {
-  return getConfig(configs).map(async config => {
+  return getConfig(configs).map(async (config) => {
     const outputDir = config.output;
 
     if (!fs.existsSync(outputDir)) {

@@ -14,11 +14,11 @@ export type Parameter = { name: string; prop: string | Prop };
 export default (params: OpenAPIV3.ComponentsObject['parameters'], openapi: OpenAPIV3.Document) =>
   params &&
   Object.keys(params)
-    .filter(defKey => {
+    .filter((defKey) => {
       const target = params[defKey];
       return !(isRefObject(target) ? resolveParamsRef(openapi, target.$ref) : target).deprecated;
     })
-    .map(defKey => {
+    .map((defKey) => {
       const target = params[defKey];
       let prop: Parameter['prop'];
 

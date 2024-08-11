@@ -21,7 +21,7 @@ export default ({
     fs.writeFileSync(`${outputDir}/@types/index.ts`, types, 'utf8');
   }
 
-  files.forEach(p => {
+  files.forEach((p) => {
     const fileName = p.file.pop();
     p.file.forEach((_d, i, dirList) => {
       const dirPath = `${outputDir}/${dirList.slice(0, i + 1).join('/')}`;

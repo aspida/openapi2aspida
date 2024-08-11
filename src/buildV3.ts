@@ -20,8 +20,8 @@ const methodNames = ['get', 'post', 'put', 'delete', 'head', 'options', 'patch']
 
 const getParamsList = (
   openapi: OpenAPIV3.Document,
-  params?: (OpenAPIV3.ReferenceObject | OpenAPIV3.ParameterObject)[]
-) => params?.map(p => (isRefObject(p) ? resolveParamsRef(openapi, p.$ref) : p)) || [];
+  params?: (OpenAPIV3.ReferenceObject | OpenAPIV3.ParameterObject)[],
+) => params?.map((p) => (isRefObject(p) ? resolveParamsRef(openapi, p.$ref) : p)) || [];
 
 export default (openapi: OpenAPIV3.Document) => {
   const files: { file: string[]; methods: string }[] = [];
@@ -33,10 +33,10 @@ export default (openapi: OpenAPIV3.Document) => {
 
   files.push(
     ...Object.keys(openapi.paths)
-      .map(path => {
+      .map((path) => {
         const methodProps = Object.keys(openapi.paths[path]!).filter(
           (method): method is (typeof methodNames)[number] =>
-            methodNames.includes(method as (typeof methodNames)[number])
+            methodNames.includes(method as (typeof methodNames)[number]),
         );
 
         const file = [
@@ -44,7 +44,7 @@ export default (openapi: OpenAPIV3.Document) => {
             .replace(/\/$/, '')
             .split('/')
             .slice(1)
-            .map(p =>
+            .map((p) =>
               getDirName(
                 p,
                 [
@@ -54,17 +54,17 @@ export default (openapi: OpenAPIV3.Document) => {
                       ...prev,
                       ...getParamsList(openapi, openapi.paths[path]![c]?.parameters),
                     ],
-                    [] as OpenAPIV3.ParameterObject[]
+                    [] as OpenAPIV3.ParameterObject[],
                   ),
                 ],
-                openapi
-              )
+                openapi,
+              ),
             ),
           'index',
         ];
 
         const methods = methodProps
-          .map<Prop | null>(method => {
+          .map<Prop | null>((method) => {
             const target = openapi.paths[path]![method]!;
 
             if (target.deprecated) return null;
@@ -79,7 +79,7 @@ export default (openapi: OpenAPIV3.Document) => {
               let queryRequired = false;
 
               [...(openapi.paths[path]!.parameters || []), ...(target.parameters || [])].forEach(
-                p => {
+                (p) => {
                   if (isRefObject(p)) {
                     const ref = resolveParamsRef(openapi, p.$ref);
                     const val = {
@@ -124,7 +124,7 @@ export default (openapi: OpenAPIV3.Document) => {
                         break;
                     }
                   }
-                }
+                },
               );
 
               if (reqHeaders.length || reqRefHeaders.length) {
@@ -173,7 +173,9 @@ export default (openapi: OpenAPIV3.Document) => {
             }
 
             if (target.responses) {
-              const code = Object.keys(target.responses).find(code => code.match(/^(20\d|30\d)$/));
+              const code = Object.keys(target.responses).find((code) =>
+                code.match(/^(20\d|30\d)$/),
+              );
               if (code) {
                 params.push({
                   name: 'status',
@@ -195,7 +197,7 @@ export default (openapi: OpenAPIV3.Document) => {
                 const content =
                   (ref.content &&
                     Object.entries(ref.content).find(([key]) =>
-                      key.startsWith('application/')
+                      key.startsWith('application/'),
                     )?.[1]) ??
                   ref.content?.[Object.keys(ref.content)[0]];
 
@@ -222,7 +224,7 @@ export default (openapi: OpenAPIV3.Document) => {
                         nullable: false,
                         description: null,
                         value: Object.keys(ref.headers)
-                          .map(header => {
+                          .map((header) => {
                             const headerData = ref.headers![header];
                             const val = isRefObject(headerData)
                               ? {
@@ -238,7 +240,7 @@ export default (openapi: OpenAPIV3.Document) => {
                                 name: getPropertyName(header),
                                 required: isRefObject(headerData)
                                   ? true
-                                  : headerData.required ?? true,
+                                  : (headerData.required ?? true),
                                 description: isRefObject(headerData)
                                   ? null
                                   : headerData.description,
@@ -289,13 +291,13 @@ export default (openapi: OpenAPIV3.Document) => {
                 ) {
                   reqFormat = 'URLSearchParams';
                   reqBody = schema2value(
-                    target.requestBody.content['application/x-www-form-urlencoded'].schema
+                    target.requestBody.content['application/x-www-form-urlencoded'].schema,
                   );
                 } else {
                   const content =
                     target.requestBody.content &&
                     Object.entries(target.requestBody.content).find(([key]) =>
-                      key.startsWith('application/')
+                      key.startsWith('application/'),
                     )?.[1];
 
                   if (content?.schema) reqBody = schema2value(content.schema);
@@ -365,23 +367,23 @@ export default (openapi: OpenAPIV3.Document) => {
           return { file, methods: '' };
         }
       })
-      .filter(file => file.methods)
+      .filter((file) => file.methods),
   );
 
   const typesText =
     parameters.length + schemas.length + requestBodies.length + responses.length + headers.length
       ? [
-          ...parameters.map(p => ({
+          ...parameters.map((p) => ({
             name: p.name,
             description: null,
             text: typeof p.prop === 'string' ? p.prop : props2String([p.prop], ''),
           })),
-          ...schemas.map(s => ({
+          ...schemas.map((s) => ({
             name: s.name,
             description: s.value.description,
             text: value2String(s.value, '').replace(/\n {2}/g, '\n'),
           })),
-          ...requestBodies.map(r => ({
+          ...requestBodies.map((r) => ({
             name: r.name,
             description: null,
             text:
@@ -389,7 +391,7 @@ export default (openapi: OpenAPIV3.Document) => {
                 ? r.value
                 : value2String(r.value, '').replace(/\n {2}/g, '\n'),
           })),
-          ...responses.map(r => ({
+          ...responses.map((r) => ({
             name: r.name,
             description: null,
             text:
@@ -397,7 +399,7 @@ export default (openapi: OpenAPIV3.Document) => {
                 ? r.value
                 : value2String(r.value, '').replace(/\n {2}/g, '\n'),
           })),
-          ...headers.map(h => ({
+          ...headers.map((h) => ({
             name: h.name,
             description: typeof h.value === 'string' ? null : h.value.description,
             text:
@@ -406,7 +408,7 @@ export default (openapi: OpenAPIV3.Document) => {
                 : value2String(h.value, '').replace(/\n {2}/g, '\n'),
           })),
         ]
-          .map(p => `\n${description2Doc(p.description, '')}export type ${p.name} = ${p.text}\n`)
+          .map((p) => `\n${description2Doc(p.description, '')}export type ${p.name} = ${p.text}\n`)
           .join('')
           .replace(/(\W)Types\./g, '$1')
           .replace(/\]\?:/g, ']:')

@@ -9,7 +9,7 @@ export default (text: string, params: OpenAPIV3.ParameterObject[], openapi: Open
   const valName = text.slice(1, -1);
   const prefix = `_${getPropertyName(valName)}`;
 
-  const schema = params.find(p => p.in === 'path' && p.name === valName)?.schema;
+  const schema = params.find((p) => p.in === 'path' && p.name === valName)?.schema;
 
   if (!schema) return prefix;
 
@@ -29,7 +29,7 @@ export default (text: string, params: OpenAPIV3.ParameterObject[], openapi: Open
     schema.type === 'string'
       ? '@string'
       : schema.type === 'number' || schema.type === 'integer'
-      ? '@number'
-      : ''
+        ? '@number'
+        : ''
   }`;
 };

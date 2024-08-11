@@ -3,7 +3,7 @@ import { $ref2TypeName, isRefObject } from './converters';
 
 export const resolveParamsRef = (
   openapi: OpenAPIV3.Document,
-  ref: string
+  ref: string,
 ): OpenAPIV3.ParameterObject => {
   const target = openapi.components!.parameters![$ref2TypeName(ref).typeName];
   return isRefObject(target) ? resolveParamsRef(openapi, target.$ref) : target;
@@ -11,7 +11,7 @@ export const resolveParamsRef = (
 
 export const resolveSchemasRef = (
   openapi: OpenAPIV3.Document,
-  ref: string
+  ref: string,
 ): OpenAPIV3.SchemaObject => {
   const { typeName, propName } = $ref2TypeName(ref);
   let target = openapi.components!.schemas![typeName];
@@ -21,7 +21,7 @@ export const resolveSchemasRef = (
 
 export const resolveResRef = (
   openapi: OpenAPIV3.Document,
-  ref: string
+  ref: string,
 ): OpenAPIV3.ResponseObject => {
   const target = openapi.components!.responses![$ref2TypeName(ref).typeName];
   return isRefObject(target) ? resolveResRef(openapi, target.$ref) : target;
@@ -29,7 +29,7 @@ export const resolveResRef = (
 
 export const resolveReqRef = (
   openapi: OpenAPIV3.Document,
-  ref: string
+  ref: string,
 ): OpenAPIV3.RequestBodyObject => {
   const target = openapi.components!.requestBodies![$ref2TypeName(ref).typeName];
   return isRefObject(target) ? resolveReqRef(openapi, target.$ref) : target;

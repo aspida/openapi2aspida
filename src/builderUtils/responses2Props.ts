@@ -7,7 +7,7 @@ export type Response = { name: string; value: string | PropValue };
 export default (bodies: OpenAPIV3.ComponentsObject['responses']) =>
   bodies &&
   Object.keys(bodies)
-    .map(defKey => {
+    .map((defKey) => {
       const target = bodies[defKey];
       let value: Response['value'];
 
