@@ -1,5 +1,5 @@
 import type { AspidaClient, BasicHeaders } from 'aspida';
-import type { Methods as Methods0 } from '.';
+import type { Methods as Methods_by08hd } from '.';
 
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? 'http://localhost:1337' : baseURL).replace(/\/$/, '');
@@ -11,14 +11,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
      * Send a confirmation email to user
      * @returns response
      */
-    post: (option: { body: Methods0['post']['reqBody'], config?: T | undefined }) =>
-      fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option).json(),
+    post: (option: { body: Methods_by08hd['post']['reqBody'], config?: T | undefined }) =>
+      fetch<Methods_by08hd['post']['resBody'], BasicHeaders, Methods_by08hd['post']['status']>(prefix, PATH0, POST, option).json(),
     /**
      * Send a confirmation email to user
      * @returns response
      */
-    $post: (option: { body: Methods0['post']['reqBody'], config?: T | undefined }) =>
-      fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option).json().then(r => r.body),
+    $post: (option: { body: Methods_by08hd['post']['reqBody'], config?: T | undefined }) =>
+      fetch<Methods_by08hd['post']['resBody'], BasicHeaders, Methods_by08hd['post']['status']>(prefix, PATH0, POST, option).json().then(r => r.body),
     $path: () => `${prefix}${PATH0}`,
   };
 };

@@ -1,10 +1,10 @@
 import type { AspidaClient, BasicHeaders } from 'aspida';
 import { dataToURLString } from 'aspida';
-import type { Methods as Methods0 } from './2';
-import type { Methods as Methods1 } from './_a_1@number/simple';
-import type { Methods as Methods2 } from './_id@number/content';
-import type { Methods as Methods3 } from './_id@number/query';
-import type { Methods as Methods4 } from './_id@number/simple';
+import type { Methods as Methods_17hqmag } from './2';
+import type { Methods as Methods_13xnwam } from './_a_1@number/simple';
+import type { Methods as Methods_11pby5t } from './_id@number/content';
+import type { Methods as Methods_1uf18g0 } from './_id@number/query';
+import type { Methods as Methods_28h2o6 } from './_id@number/simple';
 
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? '' : baseURL).replace(/\/$/, '');
@@ -18,9 +18,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   return {
     $2: {
       put: (option?: { config?: T | undefined } | undefined) =>
-        fetch<void, BasicHeaders, Methods0['put']['status']>(prefix, PATH0, PUT, option).send(),
+        fetch<void, BasicHeaders, Methods_17hqmag['put']['status']>(prefix, PATH0, PUT, option).send(),
       $put: (option?: { config?: T | undefined } | undefined) =>
-        fetch<void, BasicHeaders, Methods0['put']['status']>(prefix, PATH0, PUT, option).send().then(r => r.body),
+        fetch<void, BasicHeaders, Methods_17hqmag['put']['status']>(prefix, PATH0, PUT, option).send().then(r => r.body),
       $path: () => `${prefix}${PATH0}`,
     },
     _a_1: (val0: number) => {
@@ -29,9 +29,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       return {
         simple: {
           put: (option?: { config?: T | undefined } | undefined) =>
-            fetch<void, BasicHeaders, Methods1['put']['status']>(prefix, `${prefix0}${PATH2}`, PUT, option).send(),
+            fetch<void, BasicHeaders, Methods_13xnwam['put']['status']>(prefix, `${prefix0}${PATH2}`, PUT, option).send(),
           $put: (option?: { config?: T | undefined } | undefined) =>
-            fetch<void, BasicHeaders, Methods1['put']['status']>(prefix, `${prefix0}${PATH2}`, PUT, option).send().then(r => r.body),
+            fetch<void, BasicHeaders, Methods_13xnwam['put']['status']>(prefix, `${prefix0}${PATH2}`, PUT, option).send().then(r => r.body),
           $path: () => `${prefix}${prefix0}${PATH2}`,
         },
       };
@@ -45,27 +45,27 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * @returns accept
            */
           put: (option?: { config?: T | undefined } | undefined) =>
-            fetch<Methods2['put']['resBody'], BasicHeaders, Methods2['put']['status']>(prefix, `${prefix0}${PATH3}`, PUT, option).text(),
+            fetch<Methods_11pby5t['put']['resBody'], BasicHeaders, Methods_11pby5t['put']['status']>(prefix, `${prefix0}${PATH3}`, PUT, option).text(),
           /**
            * @returns accept
            */
           $put: (option?: { config?: T | undefined } | undefined) =>
-            fetch<Methods2['put']['resBody'], BasicHeaders, Methods2['put']['status']>(prefix, `${prefix0}${PATH3}`, PUT, option).text().then(r => r.body),
+            fetch<Methods_11pby5t['put']['resBody'], BasicHeaders, Methods_11pby5t['put']['status']>(prefix, `${prefix0}${PATH3}`, PUT, option).text().then(r => r.body),
           $path: () => `${prefix}${prefix0}${PATH3}`,
         },
         query: {
-          put: (option?: { query?: Methods3['put']['query'] | undefined, config?: T | undefined } | undefined) =>
-            fetch<void, BasicHeaders, Methods3['put']['status']>(prefix, `${prefix0}${PATH4}`, PUT, option).send(),
-          $put: (option?: { query?: Methods3['put']['query'] | undefined, config?: T | undefined } | undefined) =>
-            fetch<void, BasicHeaders, Methods3['put']['status']>(prefix, `${prefix0}${PATH4}`, PUT, option).send().then(r => r.body),
-          $path: (option?: { method: 'put'; query: Methods3['put']['query'] } | undefined) =>
+          put: (option?: { query?: Methods_1uf18g0['put']['query'] | undefined, config?: T | undefined } | undefined) =>
+            fetch<void, BasicHeaders, Methods_1uf18g0['put']['status']>(prefix, `${prefix0}${PATH4}`, PUT, option).send(),
+          $put: (option?: { query?: Methods_1uf18g0['put']['query'] | undefined, config?: T | undefined } | undefined) =>
+            fetch<void, BasicHeaders, Methods_1uf18g0['put']['status']>(prefix, `${prefix0}${PATH4}`, PUT, option).send().then(r => r.body),
+          $path: (option?: { method: 'put'; query: Methods_1uf18g0['put']['query'] } | undefined) =>
             `${prefix}${prefix0}${PATH4}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
         },
         simple: {
           put: (option?: { config?: T | undefined } | undefined) =>
-            fetch<void, BasicHeaders, Methods4['put']['status']>(prefix, `${prefix0}${PATH2}`, PUT, option).send(),
+            fetch<void, BasicHeaders, Methods_28h2o6['put']['status']>(prefix, `${prefix0}${PATH2}`, PUT, option).send(),
           $put: (option?: { config?: T | undefined } | undefined) =>
-            fetch<void, BasicHeaders, Methods4['put']['status']>(prefix, `${prefix0}${PATH2}`, PUT, option).send().then(r => r.body),
+            fetch<void, BasicHeaders, Methods_28h2o6['put']['status']>(prefix, `${prefix0}${PATH2}`, PUT, option).send().then(r => r.body),
           $path: () => `${prefix}${prefix0}${PATH2}`,
         },
       };

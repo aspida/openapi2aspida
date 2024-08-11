@@ -1,5 +1,5 @@
 import type { AspidaClient, BasicHeaders } from 'aspida';
-import type { Methods as Methods0 } from '.';
+import type { Methods as Methods_by08hd } from '.';
 
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? '' : baseURL).replace(/\/$/, '');
@@ -11,14 +11,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
      * Returns valid pubnub keys and auth token, refreshes tokens and access if needed
      * @returns OK
      */
-    get: (option?: { headers?: Methods0['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-      fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json(),
+    get: (option?: { headers?: Methods_by08hd['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+      fetch<Methods_by08hd['get']['resBody'], BasicHeaders, Methods_by08hd['get']['status']>(prefix, PATH0, GET, option).json(),
     /**
      * Returns valid pubnub keys and auth token, refreshes tokens and access if needed
      * @returns OK
      */
-    $get: (option?: { headers?: Methods0['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-      fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json().then(r => r.body),
+    $get: (option?: { headers?: Methods_by08hd['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+      fetch<Methods_by08hd['get']['resBody'], BasicHeaders, Methods_by08hd['get']['status']>(prefix, PATH0, GET, option).json().then(r => r.body),
     $path: () => `${prefix}${PATH0}`,
   };
 };

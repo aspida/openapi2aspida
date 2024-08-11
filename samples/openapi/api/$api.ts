@@ -1,57 +1,57 @@
 import type { AspidaClient, BasicHeaders } from 'aspida';
 import { dataToURLString } from 'aspida';
-import type { Methods as Methods0 } from './stream/v1/stories';
-import type { Methods as Methods1 } from './stream/v1/stories/_storyId@number';
-import type { Methods as Methods2 } from './v1/me';
-import type { Methods as Methods3 } from './v1/mixes';
-import type { Methods as Methods4 } from './v1/mixes/_id@string';
-import type { Methods as Methods5 } from './v1/mixes/_mixId@string/cards';
-import type { Methods as Methods6 } from './v1/mixes/_mixId@string/url';
-import type { Methods as Methods7 } from './v1/parse';
-import type { Methods as Methods8 } from './v1/parse/image';
-import type { Methods as Methods9 } from './v1/token';
-import type { Methods as Methods10 } from './v3/2fa';
-import type { Methods as Methods11 } from './v3/channels';
-import type { Methods as Methods12 } from './v3/channels/_channelId@number/chats/_chatId@number/items/_itemId@number';
-import type { Methods as Methods13 } from './v3/channels/_channelId@number/news-feed';
-import type { Methods as Methods14 } from './v3/channels/_channelId@string';
-import type { Methods as Methods15 } from './v3/channels/_channelId@string/chats';
-import type { Methods as Methods16 } from './v3/channels/_channelId@string/chats/_chatId@string';
-import type { Methods as Methods17 } from './v3/channels/_channelId@string/chats/_chatId@string/items';
-import type { Methods as Methods18 } from './v3/channels/_channelId@string/chats/_chatId@string/items/audio';
-import type { Methods as Methods19 } from './v3/channels/_channelId@string/chats/_chatId@string/items/image';
-import type { Methods as Methods20 } from './v3/channels/_channelId@string/chats/_chatId@string/items/video';
-import type { Methods as Methods21 } from './v3/channels/_channelId@string/chats/_chatId@string/itemslist';
-import type { Methods as Methods22 } from './v3/channels/_channelId@string/chats/_chatId@string/users';
-import type { Methods as Methods23 } from './v3/channels/_channelId@string/chats/_chatId@string/users/remove';
-import type { Methods as Methods24 } from './v3/channels/_channelId@string/notifications';
-import type { Methods as Methods25 } from './v3/chats/_chatId@number/items/_itemId@number';
-import type { Methods as Methods26 } from './v3/chats/_chatId@string/items';
-import type { Methods as Methods27 } from './v3/chats/_chatId@string/items/audio';
-import type { Methods as Methods28 } from './v3/chats/_chatId@string/items/image';
-import type { Methods as Methods29 } from './v3/chats/_chatId@string/items/video';
-import type { Methods as Methods30 } from './v3/chats/keys';
-import type { Methods as Methods31 } from './v3/extension/audio';
-import type { Methods as Methods32 } from './v3/extension/image';
-import type { Methods as Methods33 } from './v3/extension/parse';
-import type { Methods as Methods34 } from './v3/extension/story/_storyId@string';
-import type { Methods as Methods35 } from './v3/extension/story/_storyId@string/audio';
-import type { Methods as Methods36 } from './v3/extension/story/_storyId@string/image';
-import type { Methods as Methods37 } from './v3/extension/story/_storyId@string/video';
-import type { Methods as Methods38 } from './v3/extension/video';
-import type { Methods as Methods39 } from './v3/fcm_token';
-import type { Methods as Methods40 } from './v3/info';
-import type { Methods as Methods41 } from './v3/login';
-import type { Methods as Methods42 } from './v3/logout';
-import type { Methods as Methods43 } from './v3/me';
-import type { Methods as Methods44 } from './v3/organisation';
-import type { Methods as Methods45 } from './v3/organisation/users';
-import type { Methods as Methods46 } from './v3/stories/_storyId@number/items';
-import type { Methods as Methods47 } from './v3/stories/_storyId@number/items/_itemId@number';
-import type { Methods as Methods48 } from './v3/stories/_storyId@number/items/_itemId@number/reaction';
-import type { Methods as Methods49 } from './v3/user';
-import type { Methods as Methods50 } from './v3/user/_userId@string';
-import type { Methods as Methods51 } from './v3/user/profile';
+import type { Methods as Methods_fmtkis } from './stream/v1/stories';
+import type { Methods as Methods_1k5hjkj } from './stream/v1/stories/_storyId@number';
+import type { Methods as Methods_fqs2dy } from './v1/me';
+import type { Methods as Methods_104hlq6 } from './v1/mixes';
+import type { Methods as Methods_1wn175q } from './v1/mixes/_id@string';
+import type { Methods as Methods_lqy9sk } from './v1/mixes/_mixId@string/cards';
+import type { Methods as Methods_izwwa6 } from './v1/mixes/_mixId@string/url';
+import type { Methods as Methods_1r05bpr } from './v1/parse';
+import type { Methods as Methods_19hr5a5 } from './v1/parse/image';
+import type { Methods as Methods_16una0l } from './v1/token';
+import type { Methods as Methods_jv19rp } from './v3/2fa';
+import type { Methods as Methods_tp7932 } from './v3/channels';
+import type { Methods as Methods_rm4mk1 } from './v3/channels/_channelId@number/chats/_chatId@number/items/_itemId@number';
+import type { Methods as Methods_rccnsa } from './v3/channels/_channelId@number/news-feed';
+import type { Methods as Methods_1uv2men } from './v3/channels/_channelId@string';
+import type { Methods as Methods_ymb9fj } from './v3/channels/_channelId@string/chats';
+import type { Methods as Methods_19j21wz } from './v3/channels/_channelId@string/chats/_chatId@string';
+import type { Methods as Methods_1qvo5ig } from './v3/channels/_channelId@string/chats/_chatId@string/items';
+import type { Methods as Methods_1ex96vt } from './v3/channels/_channelId@string/chats/_chatId@string/items/audio';
+import type { Methods as Methods_12f4yuy } from './v3/channels/_channelId@string/chats/_chatId@string/items/image';
+import type { Methods as Methods_1a3dr70 } from './v3/channels/_channelId@string/chats/_chatId@string/items/video';
+import type { Methods as Methods_tpsds } from './v3/channels/_channelId@string/chats/_chatId@string/itemslist';
+import type { Methods as Methods_1dg9cek } from './v3/channels/_channelId@string/chats/_chatId@string/users';
+import type { Methods as Methods_d8mvmx } from './v3/channels/_channelId@string/chats/_chatId@string/users/remove';
+import type { Methods as Methods_409h2c } from './v3/channels/_channelId@string/notifications';
+import type { Methods as Methods_i0dmtv } from './v3/chats/_chatId@number/items/_itemId@number';
+import type { Methods as Methods_1r5qtp6 } from './v3/chats/_chatId@string/items';
+import type { Methods as Methods_b00ynf } from './v3/chats/_chatId@string/items/audio';
+import type { Methods as Methods_ruzilw } from './v3/chats/_chatId@string/items/image';
+import type { Methods as Methods_135ed02 } from './v3/chats/_chatId@string/items/video';
+import type { Methods as Methods_jppfu6 } from './v3/chats/keys';
+import type { Methods as Methods_10l1tgy } from './v3/extension/audio';
+import type { Methods as Methods_apwzud } from './v3/extension/image';
+import type { Methods as Methods_r8snev } from './v3/extension/parse';
+import type { Methods as Methods_17ff7fm } from './v3/extension/story/_storyId@string';
+import type { Methods as Methods_1g8zorn } from './v3/extension/story/_storyId@string/audio';
+import type { Methods as Methods_124ffvw } from './v3/extension/story/_storyId@string/image';
+import type { Methods as Methods_1gkh6x6 } from './v3/extension/story/_storyId@string/video';
+import type { Methods as Methods_kgp5q3 } from './v3/extension/video';
+import type { Methods as Methods_lhsd86 } from './v3/fcm_token';
+import type { Methods as Methods_1io5ejy } from './v3/info';
+import type { Methods as Methods_hqmsuz } from './v3/login';
+import type { Methods as Methods_1eeieyw } from './v3/logout';
+import type { Methods as Methods_bzst0 } from './v3/me';
+import type { Methods as Methods_aojh78 } from './v3/organisation';
+import type { Methods as Methods_ba24fb } from './v3/organisation/users';
+import type { Methods as Methods_xz7bfv } from './v3/stories/_storyId@number/items';
+import type { Methods as Methods_17x0as8 } from './v3/stories/_storyId@number/items/_itemId@number';
+import type { Methods as Methods_1rhlc3e } from './v3/stories/_storyId@number/items/_itemId@number/reaction';
+import type { Methods as Methods_1vihjgh } from './v3/user';
+import type { Methods as Methods_mh6ds6 } from './v3/user/_userId@string';
+import type { Methods as Methods_1fhjqav } from './v3/user/profile';
 
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? '' : baseURL).replace(/\/$/, '');
@@ -112,14 +112,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
               /**
                * @returns OK
                */
-              get: (option: { query: Methods1['get']['query'], config?: T | undefined }) =>
-                fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix3, GET, option).json(),
+              get: (option: { query: Methods_1k5hjkj['get']['query'], config?: T | undefined }) =>
+                fetch<Methods_1k5hjkj['get']['resBody'], BasicHeaders, Methods_1k5hjkj['get']['status']>(prefix, prefix3, GET, option).json(),
               /**
                * @returns OK
                */
-              $get: (option: { query: Methods1['get']['query'], config?: T | undefined }) =>
-                fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix3, GET, option).json().then(r => r.body),
-              $path: (option?: { method?: 'get' | undefined; query: Methods1['get']['query'] } | undefined) =>
+              $get: (option: { query: Methods_1k5hjkj['get']['query'], config?: T | undefined }) =>
+                fetch<Methods_1k5hjkj['get']['resBody'], BasicHeaders, Methods_1k5hjkj['get']['status']>(prefix, prefix3, GET, option).json().then(r => r.body),
+              $path: (option?: { method?: 'get' | undefined; query: Methods_1k5hjkj['get']['query'] } | undefined) =>
                 `${prefix}${prefix3}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
             };
           },
@@ -127,15 +127,15 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * It returns all stories with first 75 cards
            * @returns OK
            */
-          get: (option: { query: Methods0['get']['query'], config?: T | undefined }) =>
-            fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json(),
+          get: (option: { query: Methods_fmtkis['get']['query'], config?: T | undefined }) =>
+            fetch<Methods_fmtkis['get']['resBody'], BasicHeaders, Methods_fmtkis['get']['status']>(prefix, PATH0, GET, option).json(),
           /**
            * It returns all stories with first 75 cards
            * @returns OK
            */
-          $get: (option: { query: Methods0['get']['query'], config?: T | undefined }) =>
-            fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json().then(r => r.body),
-          $path: (option?: { method?: 'get' | undefined; query: Methods0['get']['query'] } | undefined) =>
+          $get: (option: { query: Methods_fmtkis['get']['query'], config?: T | undefined }) =>
+            fetch<Methods_fmtkis['get']['resBody'], BasicHeaders, Methods_fmtkis['get']['status']>(prefix, PATH0, GET, option).json().then(r => r.body),
+          $path: (option?: { method?: 'get' | undefined; query: Methods_fmtkis['get']['query'] } | undefined) =>
             `${prefix}${PATH0}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
         },
       },
@@ -146,12 +146,12 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          * @returns OK
          */
         get: (option?: { config?: T | undefined } | undefined) =>
-          fetch<Methods2['get']['resBody'], BasicHeaders, Methods2['get']['status']>(prefix, PATH1, GET, option).json(),
+          fetch<Methods_fqs2dy['get']['resBody'], BasicHeaders, Methods_fqs2dy['get']['status']>(prefix, PATH1, GET, option).json(),
         /**
          * @returns OK
          */
         $get: (option?: { config?: T | undefined } | undefined) =>
-          fetch<Methods2['get']['resBody'], BasicHeaders, Methods2['get']['status']>(prefix, PATH1, GET, option).json().then(r => r.body),
+          fetch<Methods_fqs2dy['get']['resBody'], BasicHeaders, Methods_fqs2dy['get']['status']>(prefix, PATH1, GET, option).json().then(r => r.body),
         $path: () => `${prefix}${PATH1}`,
       },
       mixes: {
@@ -159,10 +159,10 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           const prefix2 = `${PATH2}/${val2}`;
 
           return {
-            put: (option: { body: Methods4['put']['reqBody'], config?: T | undefined }) =>
-              fetch<void, BasicHeaders, Methods4['put']['status']>(prefix, prefix2, PUT, option).send(),
-            $put: (option: { body: Methods4['put']['reqBody'], config?: T | undefined }) =>
-              fetch<void, BasicHeaders, Methods4['put']['status']>(prefix, prefix2, PUT, option).send().then(r => r.body),
+            put: (option: { body: Methods_1wn175q['put']['reqBody'], config?: T | undefined }) =>
+              fetch<void, BasicHeaders, Methods_1wn175q['put']['status']>(prefix, prefix2, PUT, option).send(),
+            $put: (option: { body: Methods_1wn175q['put']['reqBody'], config?: T | undefined }) =>
+              fetch<void, BasicHeaders, Methods_1wn175q['put']['status']>(prefix, prefix2, PUT, option).send().then(r => r.body),
             $path: () => `${prefix}${prefix2}`,
           };
         },
@@ -171,17 +171,17 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
 
           return {
             cards: {
-              post: (option: { body: Methods5['post']['reqBody'], config?: T | undefined }) =>
-                fetch<void, BasicHeaders, Methods5['post']['status']>(prefix, `${prefix2}${PATH3}`, POST, option).send(),
-              $post: (option: { body: Methods5['post']['reqBody'], config?: T | undefined }) =>
-                fetch<void, BasicHeaders, Methods5['post']['status']>(prefix, `${prefix2}${PATH3}`, POST, option).send().then(r => r.body),
+              post: (option: { body: Methods_lqy9sk['post']['reqBody'], config?: T | undefined }) =>
+                fetch<void, BasicHeaders, Methods_lqy9sk['post']['status']>(prefix, `${prefix2}${PATH3}`, POST, option).send(),
+              $post: (option: { body: Methods_lqy9sk['post']['reqBody'], config?: T | undefined }) =>
+                fetch<void, BasicHeaders, Methods_lqy9sk['post']['status']>(prefix, `${prefix2}${PATH3}`, POST, option).send().then(r => r.body),
               $path: () => `${prefix}${prefix2}${PATH3}`,
             },
             url: {
-              post: (option: { body: Methods6['post']['reqBody'], config?: T | undefined }) =>
-                fetch<void, BasicHeaders, Methods6['post']['status']>(prefix, `${prefix2}${PATH4}`, POST, option).send(),
-              $post: (option: { body: Methods6['post']['reqBody'], config?: T | undefined }) =>
-                fetch<void, BasicHeaders, Methods6['post']['status']>(prefix, `${prefix2}${PATH4}`, POST, option).send().then(r => r.body),
+              post: (option: { body: Methods_izwwa6['post']['reqBody'], config?: T | undefined }) =>
+                fetch<void, BasicHeaders, Methods_izwwa6['post']['status']>(prefix, `${prefix2}${PATH4}`, POST, option).send(),
+              $post: (option: { body: Methods_izwwa6['post']['reqBody'], config?: T | undefined }) =>
+                fetch<void, BasicHeaders, Methods_izwwa6['post']['status']>(prefix, `${prefix2}${PATH4}`, POST, option).send().then(r => r.body),
               $path: () => `${prefix}${prefix2}${PATH4}`,
             },
           };
@@ -190,22 +190,22 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          * @returns OK
          */
         get: (option?: { config?: T | undefined } | undefined) =>
-          fetch<Methods3['get']['resBody'], BasicHeaders, Methods3['get']['status']>(prefix, PATH2, GET, option).json(),
+          fetch<Methods_104hlq6['get']['resBody'], BasicHeaders, Methods_104hlq6['get']['status']>(prefix, PATH2, GET, option).json(),
         /**
          * @returns OK
          */
         $get: (option?: { config?: T | undefined } | undefined) =>
-          fetch<Methods3['get']['resBody'], BasicHeaders, Methods3['get']['status']>(prefix, PATH2, GET, option).json().then(r => r.body),
+          fetch<Methods_104hlq6['get']['resBody'], BasicHeaders, Methods_104hlq6['get']['status']>(prefix, PATH2, GET, option).json().then(r => r.body),
         /**
          * @returns OK
          */
-        post: (option: { body: Methods3['post']['reqBody'], config?: T | undefined }) =>
-          fetch<Methods3['post']['resBody'], BasicHeaders, Methods3['post']['status']>(prefix, PATH2, POST, option).json(),
+        post: (option: { body: Methods_104hlq6['post']['reqBody'], config?: T | undefined }) =>
+          fetch<Methods_104hlq6['post']['resBody'], BasicHeaders, Methods_104hlq6['post']['status']>(prefix, PATH2, POST, option).json(),
         /**
          * @returns OK
          */
-        $post: (option: { body: Methods3['post']['reqBody'], config?: T | undefined }) =>
-          fetch<Methods3['post']['resBody'], BasicHeaders, Methods3['post']['status']>(prefix, PATH2, POST, option).json().then(r => r.body),
+        $post: (option: { body: Methods_104hlq6['post']['reqBody'], config?: T | undefined }) =>
+          fetch<Methods_104hlq6['post']['resBody'], BasicHeaders, Methods_104hlq6['post']['status']>(prefix, PATH2, POST, option).json().then(r => r.body),
         $path: () => `${prefix}${PATH2}`,
       },
       parse: {
@@ -213,38 +213,38 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           /**
            * @returns OK
            */
-          post: (option: { body: Methods8['post']['reqBody'], config?: T | undefined }) =>
-            fetch<Methods8['post']['resBody'], BasicHeaders, Methods8['post']['status']>(prefix, PATH6, POST, option, 'FormData').json(),
+          post: (option: { body: Methods_19hr5a5['post']['reqBody'], config?: T | undefined }) =>
+            fetch<Methods_19hr5a5['post']['resBody'], BasicHeaders, Methods_19hr5a5['post']['status']>(prefix, PATH6, POST, option, 'FormData').json(),
           /**
            * @returns OK
            */
-          $post: (option: { body: Methods8['post']['reqBody'], config?: T | undefined }) =>
-            fetch<Methods8['post']['resBody'], BasicHeaders, Methods8['post']['status']>(prefix, PATH6, POST, option, 'FormData').json().then(r => r.body),
+          $post: (option: { body: Methods_19hr5a5['post']['reqBody'], config?: T | undefined }) =>
+            fetch<Methods_19hr5a5['post']['resBody'], BasicHeaders, Methods_19hr5a5['post']['status']>(prefix, PATH6, POST, option, 'FormData').json().then(r => r.body),
           $path: () => `${prefix}${PATH6}`,
         },
         /**
          * @returns OK
          */
-        post: (option: { body: Methods7['post']['reqBody'], config?: T | undefined }) =>
-          fetch<Methods7['post']['resBody'], BasicHeaders, Methods7['post']['status']>(prefix, PATH5, POST, option).json(),
+        post: (option: { body: Methods_1r05bpr['post']['reqBody'], config?: T | undefined }) =>
+          fetch<Methods_1r05bpr['post']['resBody'], BasicHeaders, Methods_1r05bpr['post']['status']>(prefix, PATH5, POST, option).json(),
         /**
          * @returns OK
          */
-        $post: (option: { body: Methods7['post']['reqBody'], config?: T | undefined }) =>
-          fetch<Methods7['post']['resBody'], BasicHeaders, Methods7['post']['status']>(prefix, PATH5, POST, option).json().then(r => r.body),
+        $post: (option: { body: Methods_1r05bpr['post']['reqBody'], config?: T | undefined }) =>
+          fetch<Methods_1r05bpr['post']['resBody'], BasicHeaders, Methods_1r05bpr['post']['status']>(prefix, PATH5, POST, option).json().then(r => r.body),
         $path: () => `${prefix}${PATH5}`,
       },
       token: {
         /**
          * @returns OK
          */
-        post: (option: { body: Methods9['post']['reqBody'], config?: T | undefined }) =>
-          fetch<Methods9['post']['resBody'], BasicHeaders, Methods9['post']['status']>(prefix, PATH7, POST, option).json(),
+        post: (option: { body: Methods_16una0l['post']['reqBody'], config?: T | undefined }) =>
+          fetch<Methods_16una0l['post']['resBody'], BasicHeaders, Methods_16una0l['post']['status']>(prefix, PATH7, POST, option).json(),
         /**
          * @returns OK
          */
-        $post: (option: { body: Methods9['post']['reqBody'], config?: T | undefined }) =>
-          fetch<Methods9['post']['resBody'], BasicHeaders, Methods9['post']['status']>(prefix, PATH7, POST, option).json().then(r => r.body),
+        $post: (option: { body: Methods_16una0l['post']['reqBody'], config?: T | undefined }) =>
+          fetch<Methods_16una0l['post']['resBody'], BasicHeaders, Methods_16una0l['post']['status']>(prefix, PATH7, POST, option).json().then(r => r.body),
         $path: () => `${prefix}${PATH7}`,
       },
     },
@@ -253,13 +253,13 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         /**
          * @returns OK
          */
-        post: (option: { body: Methods10['post']['reqBody'], headers?: Methods10['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-          fetch<Methods10['post']['resBody'], BasicHeaders, Methods10['post']['status']>(prefix, PATH8, POST, option).json(),
+        post: (option: { body: Methods_jv19rp['post']['reqBody'], headers?: Methods_jv19rp['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+          fetch<Methods_jv19rp['post']['resBody'], BasicHeaders, Methods_jv19rp['post']['status']>(prefix, PATH8, POST, option).json(),
         /**
          * @returns OK
          */
-        $post: (option: { body: Methods10['post']['reqBody'], headers?: Methods10['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-          fetch<Methods10['post']['resBody'], BasicHeaders, Methods10['post']['status']>(prefix, PATH8, POST, option).json().then(r => r.body),
+        $post: (option: { body: Methods_jv19rp['post']['reqBody'], headers?: Methods_jv19rp['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+          fetch<Methods_jv19rp['post']['resBody'], BasicHeaders, Methods_jv19rp['post']['status']>(prefix, PATH8, POST, option).json().then(r => r.body),
         $path: () => `${prefix}${PATH8}`,
       },
       channels: {
@@ -280,13 +280,13 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                         /**
                          * @returns OK
                          */
-                        post: (option: { body: Methods12['post']['reqBody'], headers?: Methods12['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                          fetch<Methods12['post']['resBody'], BasicHeaders, Methods12['post']['status']>(prefix, prefix6, POST, option).json(),
+                        post: (option: { body: Methods_rm4mk1['post']['reqBody'], headers?: Methods_rm4mk1['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                          fetch<Methods_rm4mk1['post']['resBody'], BasicHeaders, Methods_rm4mk1['post']['status']>(prefix, prefix6, POST, option).json(),
                         /**
                          * @returns OK
                          */
-                        $post: (option: { body: Methods12['post']['reqBody'], headers?: Methods12['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                          fetch<Methods12['post']['resBody'], BasicHeaders, Methods12['post']['status']>(prefix, prefix6, POST, option).json().then(r => r.body),
+                        $post: (option: { body: Methods_rm4mk1['post']['reqBody'], headers?: Methods_rm4mk1['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                          fetch<Methods_rm4mk1['post']['resBody'], BasicHeaders, Methods_rm4mk1['post']['status']>(prefix, prefix6, POST, option).json().then(r => r.body),
                         $path: () => `${prefix}${prefix6}`,
                       };
                     },
@@ -298,14 +298,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
               /**
                * @returns OK
                */
-              get: (option?: { query?: Methods13['get']['query'] | undefined, headers?: Methods13['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-                fetch<Methods13['get']['resBody'], BasicHeaders, Methods13['get']['status']>(prefix, `${prefix2}${PATH12}`, GET, option).json(),
+              get: (option?: { query?: Methods_rccnsa['get']['query'] | undefined, headers?: Methods_rccnsa['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+                fetch<Methods_rccnsa['get']['resBody'], BasicHeaders, Methods_rccnsa['get']['status']>(prefix, `${prefix2}${PATH12}`, GET, option).json(),
               /**
                * @returns OK
                */
-              $get: (option?: { query?: Methods13['get']['query'] | undefined, headers?: Methods13['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-                fetch<Methods13['get']['resBody'], BasicHeaders, Methods13['get']['status']>(prefix, `${prefix2}${PATH12}`, GET, option).json().then(r => r.body),
-              $path: (option?: { method?: 'get' | undefined; query: Methods13['get']['query'] } | undefined) =>
+              $get: (option?: { query?: Methods_rccnsa['get']['query'] | undefined, headers?: Methods_rccnsa['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+                fetch<Methods_rccnsa['get']['resBody'], BasicHeaders, Methods_rccnsa['get']['status']>(prefix, `${prefix2}${PATH12}`, GET, option).json().then(r => r.body),
+              $path: (option?: { method?: 'get' | undefined; query: Methods_rccnsa['get']['query'] } | undefined) =>
                 `${prefix}${prefix2}${PATH12}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
             },
           };
@@ -325,14 +325,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                        * Create shared audio item in chat
                        * @returns OK
                        */
-                      post: (option: { body: Methods18['post']['reqBody'], headers?: Methods18['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                        fetch<Methods18['post']['resBody'], BasicHeaders, Methods18['post']['status']>(prefix, `${prefix4}${PATH13}`, POST, option, 'FormData').json(),
+                      post: (option: { body: Methods_1ex96vt['post']['reqBody'], headers?: Methods_1ex96vt['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                        fetch<Methods_1ex96vt['post']['resBody'], BasicHeaders, Methods_1ex96vt['post']['status']>(prefix, `${prefix4}${PATH13}`, POST, option, 'FormData').json(),
                       /**
                        * Create shared audio item in chat
                        * @returns OK
                        */
-                      $post: (option: { body: Methods18['post']['reqBody'], headers?: Methods18['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                        fetch<Methods18['post']['resBody'], BasicHeaders, Methods18['post']['status']>(prefix, `${prefix4}${PATH13}`, POST, option, 'FormData').json().then(r => r.body),
+                      $post: (option: { body: Methods_1ex96vt['post']['reqBody'], headers?: Methods_1ex96vt['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                        fetch<Methods_1ex96vt['post']['resBody'], BasicHeaders, Methods_1ex96vt['post']['status']>(prefix, `${prefix4}${PATH13}`, POST, option, 'FormData').json().then(r => r.body),
                       $path: () => `${prefix}${prefix4}${PATH13}`,
                     },
                     image: {
@@ -340,14 +340,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                        * Create shared image item in chat
                        * @returns OK
                        */
-                      post: (option: { body: Methods19['post']['reqBody'], headers?: Methods19['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                        fetch<Methods19['post']['resBody'], BasicHeaders, Methods19['post']['status']>(prefix, `${prefix4}${PATH14}`, POST, option, 'FormData').json(),
+                      post: (option: { body: Methods_12f4yuy['post']['reqBody'], headers?: Methods_12f4yuy['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                        fetch<Methods_12f4yuy['post']['resBody'], BasicHeaders, Methods_12f4yuy['post']['status']>(prefix, `${prefix4}${PATH14}`, POST, option, 'FormData').json(),
                       /**
                        * Create shared image item in chat
                        * @returns OK
                        */
-                      $post: (option: { body: Methods19['post']['reqBody'], headers?: Methods19['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                        fetch<Methods19['post']['resBody'], BasicHeaders, Methods19['post']['status']>(prefix, `${prefix4}${PATH14}`, POST, option, 'FormData').json().then(r => r.body),
+                      $post: (option: { body: Methods_12f4yuy['post']['reqBody'], headers?: Methods_12f4yuy['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                        fetch<Methods_12f4yuy['post']['resBody'], BasicHeaders, Methods_12f4yuy['post']['status']>(prefix, `${prefix4}${PATH14}`, POST, option, 'FormData').json().then(r => r.body),
                       $path: () => `${prefix}${prefix4}${PATH14}`,
                     },
                     video: {
@@ -355,43 +355,43 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                        * Create shared video item in chat
                        * @returns OK
                        */
-                      post: (option: { body: Methods20['post']['reqBody'], headers?: Methods20['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                        fetch<Methods20['post']['resBody'], BasicHeaders, Methods20['post']['status']>(prefix, `${prefix4}${PATH15}`, POST, option, 'FormData').json(),
+                      post: (option: { body: Methods_1a3dr70['post']['reqBody'], headers?: Methods_1a3dr70['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                        fetch<Methods_1a3dr70['post']['resBody'], BasicHeaders, Methods_1a3dr70['post']['status']>(prefix, `${prefix4}${PATH15}`, POST, option, 'FormData').json(),
                       /**
                        * Create shared video item in chat
                        * @returns OK
                        */
-                      $post: (option: { body: Methods20['post']['reqBody'], headers?: Methods20['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                        fetch<Methods20['post']['resBody'], BasicHeaders, Methods20['post']['status']>(prefix, `${prefix4}${PATH15}`, POST, option, 'FormData').json().then(r => r.body),
+                      $post: (option: { body: Methods_1a3dr70['post']['reqBody'], headers?: Methods_1a3dr70['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                        fetch<Methods_1a3dr70['post']['resBody'], BasicHeaders, Methods_1a3dr70['post']['status']>(prefix, `${prefix4}${PATH15}`, POST, option, 'FormData').json().then(r => r.body),
                       $path: () => `${prefix}${prefix4}${PATH15}`,
                     },
                     /**
                      * Returns a list of items of chat shared content
                      * @returns OK
                      */
-                    get: (option?: { query?: Methods17['get']['query'] | undefined, headers?: Methods17['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-                      fetch<Methods17['get']['resBody'], BasicHeaders, Methods17['get']['status']>(prefix, `${prefix4}${PATH11}`, GET, option).json(),
+                    get: (option?: { query?: Methods_1qvo5ig['get']['query'] | undefined, headers?: Methods_1qvo5ig['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+                      fetch<Methods_1qvo5ig['get']['resBody'], BasicHeaders, Methods_1qvo5ig['get']['status']>(prefix, `${prefix4}${PATH11}`, GET, option).json(),
                     /**
                      * Returns a list of items of chat shared content
                      * @returns OK
                      */
-                    $get: (option?: { query?: Methods17['get']['query'] | undefined, headers?: Methods17['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-                      fetch<Methods17['get']['resBody'], BasicHeaders, Methods17['get']['status']>(prefix, `${prefix4}${PATH11}`, GET, option).json().then(r => r.body),
+                    $get: (option?: { query?: Methods_1qvo5ig['get']['query'] | undefined, headers?: Methods_1qvo5ig['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+                      fetch<Methods_1qvo5ig['get']['resBody'], BasicHeaders, Methods_1qvo5ig['get']['status']>(prefix, `${prefix4}${PATH11}`, GET, option).json().then(r => r.body),
                     /**
                      * Create shared item in chat
                      * @param option.body - item to create
                      * @returns OK
                      */
-                    post: (option: { body: Methods17['post']['reqBody'], headers?: Methods17['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                      fetch<Methods17['post']['resBody'], BasicHeaders, Methods17['post']['status']>(prefix, `${prefix4}${PATH11}`, POST, option).json(),
+                    post: (option: { body: Methods_1qvo5ig['post']['reqBody'], headers?: Methods_1qvo5ig['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                      fetch<Methods_1qvo5ig['post']['resBody'], BasicHeaders, Methods_1qvo5ig['post']['status']>(prefix, `${prefix4}${PATH11}`, POST, option).json(),
                     /**
                      * Create shared item in chat
                      * @param option.body - item to create
                      * @returns OK
                      */
-                    $post: (option: { body: Methods17['post']['reqBody'], headers?: Methods17['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                      fetch<Methods17['post']['resBody'], BasicHeaders, Methods17['post']['status']>(prefix, `${prefix4}${PATH11}`, POST, option).json().then(r => r.body),
-                    $path: (option?: { method?: 'get' | undefined; query: Methods17['get']['query'] } | undefined) =>
+                    $post: (option: { body: Methods_1qvo5ig['post']['reqBody'], headers?: Methods_1qvo5ig['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                      fetch<Methods_1qvo5ig['post']['resBody'], BasicHeaders, Methods_1qvo5ig['post']['status']>(prefix, `${prefix4}${PATH11}`, POST, option).json().then(r => r.body),
+                    $path: (option?: { method?: 'get' | undefined; query: Methods_1qvo5ig['get']['query'] } | undefined) =>
                       `${prefix}${prefix4}${PATH11}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
                   },
                   itemslist: {
@@ -399,15 +399,15 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                      * Returns chat items by list of ids
                      * @returns OK
                      */
-                    get: (option: { query: Methods21['get']['query'], headers?: Methods21['get']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                      fetch<Methods21['get']['resBody'], BasicHeaders, Methods21['get']['status']>(prefix, `${prefix4}${PATH16}`, GET, option).json(),
+                    get: (option: { query: Methods_tpsds['get']['query'], headers?: Methods_tpsds['get']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                      fetch<Methods_tpsds['get']['resBody'], BasicHeaders, Methods_tpsds['get']['status']>(prefix, `${prefix4}${PATH16}`, GET, option).json(),
                     /**
                      * Returns chat items by list of ids
                      * @returns OK
                      */
-                    $get: (option: { query: Methods21['get']['query'], headers?: Methods21['get']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                      fetch<Methods21['get']['resBody'], BasicHeaders, Methods21['get']['status']>(prefix, `${prefix4}${PATH16}`, GET, option).json().then(r => r.body),
-                    $path: (option?: { method?: 'get' | undefined; query: Methods21['get']['query'] } | undefined) =>
+                    $get: (option: { query: Methods_tpsds['get']['query'], headers?: Methods_tpsds['get']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                      fetch<Methods_tpsds['get']['resBody'], BasicHeaders, Methods_tpsds['get']['status']>(prefix, `${prefix4}${PATH16}`, GET, option).json().then(r => r.body),
+                    $path: (option?: { method?: 'get' | undefined; query: Methods_tpsds['get']['query'] } | undefined) =>
                       `${prefix}${prefix4}${PATH16}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
                   },
                   users: {
@@ -415,81 +415,81 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                       /**
                        * Removes members from chat
                        */
-                      post: (option: { body: Methods23['post']['reqBody'], headers?: Methods23['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                        fetch<void, BasicHeaders, Methods23['post']['status']>(prefix, `${prefix4}${PATH18}`, POST, option).send(),
+                      post: (option: { body: Methods_d8mvmx['post']['reqBody'], headers?: Methods_d8mvmx['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                        fetch<void, BasicHeaders, Methods_d8mvmx['post']['status']>(prefix, `${prefix4}${PATH18}`, POST, option).send(),
                       /**
                        * Removes members from chat
                        */
-                      $post: (option: { body: Methods23['post']['reqBody'], headers?: Methods23['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                        fetch<void, BasicHeaders, Methods23['post']['status']>(prefix, `${prefix4}${PATH18}`, POST, option).send().then(r => r.body),
+                      $post: (option: { body: Methods_d8mvmx['post']['reqBody'], headers?: Methods_d8mvmx['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                        fetch<void, BasicHeaders, Methods_d8mvmx['post']['status']>(prefix, `${prefix4}${PATH18}`, POST, option).send().then(r => r.body),
                       $path: () => `${prefix}${prefix4}${PATH18}`,
                     },
                     /**
                      * Returns chat members with deleted
                      * @returns OK
                      */
-                    get: (option?: { headers?: Methods22['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-                      fetch<Methods22['get']['resBody'], BasicHeaders, Methods22['get']['status']>(prefix, `${prefix4}${PATH17}`, GET, option).json(),
+                    get: (option?: { headers?: Methods_1dg9cek['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+                      fetch<Methods_1dg9cek['get']['resBody'], BasicHeaders, Methods_1dg9cek['get']['status']>(prefix, `${prefix4}${PATH17}`, GET, option).json(),
                     /**
                      * Returns chat members with deleted
                      * @returns OK
                      */
-                    $get: (option?: { headers?: Methods22['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-                      fetch<Methods22['get']['resBody'], BasicHeaders, Methods22['get']['status']>(prefix, `${prefix4}${PATH17}`, GET, option).json().then(r => r.body),
+                    $get: (option?: { headers?: Methods_1dg9cek['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+                      fetch<Methods_1dg9cek['get']['resBody'], BasicHeaders, Methods_1dg9cek['get']['status']>(prefix, `${prefix4}${PATH17}`, GET, option).json().then(r => r.body),
                     /**
                      * Adds members to chat
                      */
-                    post: (option: { body: Methods22['post']['reqBody'], headers?: Methods22['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                      fetch<void, BasicHeaders, Methods22['post']['status']>(prefix, `${prefix4}${PATH17}`, POST, option).send(),
+                    post: (option: { body: Methods_1dg9cek['post']['reqBody'], headers?: Methods_1dg9cek['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                      fetch<void, BasicHeaders, Methods_1dg9cek['post']['status']>(prefix, `${prefix4}${PATH17}`, POST, option).send(),
                     /**
                      * Adds members to chat
                      */
-                    $post: (option: { body: Methods22['post']['reqBody'], headers?: Methods22['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                      fetch<void, BasicHeaders, Methods22['post']['status']>(prefix, `${prefix4}${PATH17}`, POST, option).send().then(r => r.body),
+                    $post: (option: { body: Methods_1dg9cek['post']['reqBody'], headers?: Methods_1dg9cek['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                      fetch<void, BasicHeaders, Methods_1dg9cek['post']['status']>(prefix, `${prefix4}${PATH17}`, POST, option).send().then(r => r.body),
                     /**
                      * Updates chat members
                      */
-                    put: (option: { body: Methods22['put']['reqBody'], headers?: Methods22['put']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                      fetch<void, BasicHeaders, Methods22['put']['status']>(prefix, `${prefix4}${PATH17}`, PUT, option).send(),
+                    put: (option: { body: Methods_1dg9cek['put']['reqBody'], headers?: Methods_1dg9cek['put']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                      fetch<void, BasicHeaders, Methods_1dg9cek['put']['status']>(prefix, `${prefix4}${PATH17}`, PUT, option).send(),
                     /**
                      * Updates chat members
                      */
-                    $put: (option: { body: Methods22['put']['reqBody'], headers?: Methods22['put']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                      fetch<void, BasicHeaders, Methods22['put']['status']>(prefix, `${prefix4}${PATH17}`, PUT, option).send().then(r => r.body),
+                    $put: (option: { body: Methods_1dg9cek['put']['reqBody'], headers?: Methods_1dg9cek['put']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                      fetch<void, BasicHeaders, Methods_1dg9cek['put']['status']>(prefix, `${prefix4}${PATH17}`, PUT, option).send().then(r => r.body),
                     $path: () => `${prefix}${prefix4}${PATH17}`,
                   },
                   /**
                    * Returns users chats in channel
                    * @returns OK
                    */
-                  get: (option?: { headers?: Methods16['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-                    fetch<Methods16['get']['resBody'], BasicHeaders, Methods16['get']['status']>(prefix, prefix4, GET, option).json(),
+                  get: (option?: { headers?: Methods_19j21wz['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+                    fetch<Methods_19j21wz['get']['resBody'], BasicHeaders, Methods_19j21wz['get']['status']>(prefix, prefix4, GET, option).json(),
                   /**
                    * Returns users chats in channel
                    * @returns OK
                    */
-                  $get: (option?: { headers?: Methods16['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-                    fetch<Methods16['get']['resBody'], BasicHeaders, Methods16['get']['status']>(prefix, prefix4, GET, option).json().then(r => r.body),
+                  $get: (option?: { headers?: Methods_19j21wz['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+                    fetch<Methods_19j21wz['get']['resBody'], BasicHeaders, Methods_19j21wz['get']['status']>(prefix, prefix4, GET, option).json().then(r => r.body),
                   /**
                    * Updates chat
                    */
-                  put: (option: { body: Methods16['put']['reqBody'], headers?: Methods16['put']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                    fetch<void, BasicHeaders, Methods16['put']['status']>(prefix, prefix4, PUT, option).send(),
+                  put: (option: { body: Methods_19j21wz['put']['reqBody'], headers?: Methods_19j21wz['put']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                    fetch<void, BasicHeaders, Methods_19j21wz['put']['status']>(prefix, prefix4, PUT, option).send(),
                   /**
                    * Updates chat
                    */
-                  $put: (option: { body: Methods16['put']['reqBody'], headers?: Methods16['put']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                    fetch<void, BasicHeaders, Methods16['put']['status']>(prefix, prefix4, PUT, option).send().then(r => r.body),
+                  $put: (option: { body: Methods_19j21wz['put']['reqBody'], headers?: Methods_19j21wz['put']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                    fetch<void, BasicHeaders, Methods_19j21wz['put']['status']>(prefix, prefix4, PUT, option).send().then(r => r.body),
                   /**
                    * Deletes chat
                    */
-                  delete: (option?: { headers?: Methods16['delete']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-                    fetch<void, BasicHeaders, Methods16['delete']['status']>(prefix, prefix4, DELETE, option).send(),
+                  delete: (option?: { headers?: Methods_19j21wz['delete']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+                    fetch<void, BasicHeaders, Methods_19j21wz['delete']['status']>(prefix, prefix4, DELETE, option).send(),
                   /**
                    * Deletes chat
                    */
-                  $delete: (option?: { headers?: Methods16['delete']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-                    fetch<void, BasicHeaders, Methods16['delete']['status']>(prefix, prefix4, DELETE, option).send().then(r => r.body),
+                  $delete: (option?: { headers?: Methods_19j21wz['delete']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+                    fetch<void, BasicHeaders, Methods_19j21wz['delete']['status']>(prefix, prefix4, DELETE, option).send().then(r => r.body),
                   $path: () => `${prefix}${prefix4}`,
                 };
               },
@@ -497,67 +497,67 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                * Returns users chats in channel
                * @returns OK
                */
-              get: (option?: { headers?: Methods15['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-                fetch<Methods15['get']['resBody'], BasicHeaders, Methods15['get']['status']>(prefix, `${prefix2}${PATH10}`, GET, option).json(),
+              get: (option?: { headers?: Methods_ymb9fj['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+                fetch<Methods_ymb9fj['get']['resBody'], BasicHeaders, Methods_ymb9fj['get']['status']>(prefix, `${prefix2}${PATH10}`, GET, option).json(),
               /**
                * Returns users chats in channel
                * @returns OK
                */
-              $get: (option?: { headers?: Methods15['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-                fetch<Methods15['get']['resBody'], BasicHeaders, Methods15['get']['status']>(prefix, `${prefix2}${PATH10}`, GET, option).json().then(r => r.body),
+              $get: (option?: { headers?: Methods_ymb9fj['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+                fetch<Methods_ymb9fj['get']['resBody'], BasicHeaders, Methods_ymb9fj['get']['status']>(prefix, `${prefix2}${PATH10}`, GET, option).json().then(r => r.body),
               /**
                * Creates chat
                * @returns OK
                */
-              post: (option: { body: Methods15['post']['reqBody'], headers?: Methods15['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                fetch<Methods15['post']['resBody'], BasicHeaders, Methods15['post']['status']>(prefix, `${prefix2}${PATH10}`, POST, option).json(),
+              post: (option: { body: Methods_ymb9fj['post']['reqBody'], headers?: Methods_ymb9fj['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                fetch<Methods_ymb9fj['post']['resBody'], BasicHeaders, Methods_ymb9fj['post']['status']>(prefix, `${prefix2}${PATH10}`, POST, option).json(),
               /**
                * Creates chat
                * @returns OK
                */
-              $post: (option: { body: Methods15['post']['reqBody'], headers?: Methods15['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                fetch<Methods15['post']['resBody'], BasicHeaders, Methods15['post']['status']>(prefix, `${prefix2}${PATH10}`, POST, option).json().then(r => r.body),
+              $post: (option: { body: Methods_ymb9fj['post']['reqBody'], headers?: Methods_ymb9fj['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                fetch<Methods_ymb9fj['post']['resBody'], BasicHeaders, Methods_ymb9fj['post']['status']>(prefix, `${prefix2}${PATH10}`, POST, option).json().then(r => r.body),
               $path: () => `${prefix}${prefix2}${PATH10}`,
             },
             notifications: {
               /**
                * @returns OK
                */
-              get: (option?: { query?: Methods24['get']['query'] | undefined, headers?: Methods24['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-                fetch<Methods24['get']['resBody'], BasicHeaders, Methods24['get']['status']>(prefix, `${prefix2}${PATH19}`, GET, option).json(),
+              get: (option?: { query?: Methods_409h2c['get']['query'] | undefined, headers?: Methods_409h2c['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+                fetch<Methods_409h2c['get']['resBody'], BasicHeaders, Methods_409h2c['get']['status']>(prefix, `${prefix2}${PATH19}`, GET, option).json(),
               /**
                * @returns OK
                */
-              $get: (option?: { query?: Methods24['get']['query'] | undefined, headers?: Methods24['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-                fetch<Methods24['get']['resBody'], BasicHeaders, Methods24['get']['status']>(prefix, `${prefix2}${PATH19}`, GET, option).json().then(r => r.body),
-              $path: (option?: { method?: 'get' | undefined; query: Methods24['get']['query'] } | undefined) =>
+              $get: (option?: { query?: Methods_409h2c['get']['query'] | undefined, headers?: Methods_409h2c['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+                fetch<Methods_409h2c['get']['resBody'], BasicHeaders, Methods_409h2c['get']['status']>(prefix, `${prefix2}${PATH19}`, GET, option).json().then(r => r.body),
+              $path: (option?: { method?: 'get' | undefined; query: Methods_409h2c['get']['query'] } | undefined) =>
                 `${prefix}${prefix2}${PATH19}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
             },
             /**
              * Returns a list of channel mixes with pre-fetching their contents
              */
-            get: (option?: { query?: Methods14['get']['query'] | undefined, headers?: Methods14['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-              fetch<void, BasicHeaders, Methods14['get']['status']>(prefix, prefix2, GET, option).send(),
+            get: (option?: { query?: Methods_1uv2men['get']['query'] | undefined, headers?: Methods_1uv2men['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+              fetch<void, BasicHeaders, Methods_1uv2men['get']['status']>(prefix, prefix2, GET, option).send(),
             /**
              * Returns a list of channel mixes with pre-fetching their contents
              */
-            $get: (option?: { query?: Methods14['get']['query'] | undefined, headers?: Methods14['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-              fetch<void, BasicHeaders, Methods14['get']['status']>(prefix, prefix2, GET, option).send().then(r => r.body),
-            $path: (option?: { method?: 'get' | undefined; query: Methods14['get']['query'] } | undefined) =>
+            $get: (option?: { query?: Methods_1uv2men['get']['query'] | undefined, headers?: Methods_1uv2men['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+              fetch<void, BasicHeaders, Methods_1uv2men['get']['status']>(prefix, prefix2, GET, option).send().then(r => r.body),
+            $path: (option?: { method?: 'get' | undefined; query: Methods_1uv2men['get']['query'] } | undefined) =>
               `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
           };
         },
         /**
          * @returns OK
          */
-        get: (option?: { query?: Methods11['get']['query'] | undefined, headers?: Methods11['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-          fetch<Methods11['get']['resBody'], BasicHeaders, Methods11['get']['status']>(prefix, PATH9, GET, option).json(),
+        get: (option?: { query?: Methods_tp7932['get']['query'] | undefined, headers?: Methods_tp7932['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+          fetch<Methods_tp7932['get']['resBody'], BasicHeaders, Methods_tp7932['get']['status']>(prefix, PATH9, GET, option).json(),
         /**
          * @returns OK
          */
-        $get: (option?: { query?: Methods11['get']['query'] | undefined, headers?: Methods11['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-          fetch<Methods11['get']['resBody'], BasicHeaders, Methods11['get']['status']>(prefix, PATH9, GET, option).json().then(r => r.body),
-        $path: (option?: { method?: 'get' | undefined; query: Methods11['get']['query'] } | undefined) =>
+        $get: (option?: { query?: Methods_tp7932['get']['query'] | undefined, headers?: Methods_tp7932['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+          fetch<Methods_tp7932['get']['resBody'], BasicHeaders, Methods_tp7932['get']['status']>(prefix, PATH9, GET, option).json().then(r => r.body),
+        $path: (option?: { method?: 'get' | undefined; query: Methods_tp7932['get']['query'] } | undefined) =>
           `${prefix}${PATH9}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
       },
       chats: {
@@ -573,23 +573,23 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                   /**
                    * @returns OK
                    */
-                  post: (option: { body: Methods25['post']['reqBody'], headers?: Methods25['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                    fetch<Methods25['post']['resBody'], BasicHeaders, Methods25['post']['status']>(prefix, prefix4, POST, option).json(),
+                  post: (option: { body: Methods_i0dmtv['post']['reqBody'], headers?: Methods_i0dmtv['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                    fetch<Methods_i0dmtv['post']['resBody'], BasicHeaders, Methods_i0dmtv['post']['status']>(prefix, prefix4, POST, option).json(),
                   /**
                    * @returns OK
                    */
-                  $post: (option: { body: Methods25['post']['reqBody'], headers?: Methods25['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                    fetch<Methods25['post']['resBody'], BasicHeaders, Methods25['post']['status']>(prefix, prefix4, POST, option).json().then(r => r.body),
+                  $post: (option: { body: Methods_i0dmtv['post']['reqBody'], headers?: Methods_i0dmtv['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                    fetch<Methods_i0dmtv['post']['resBody'], BasicHeaders, Methods_i0dmtv['post']['status']>(prefix, prefix4, POST, option).json().then(r => r.body),
                   /**
                    * @returns OK
                    */
-                  get: (option?: { headers?: Methods25['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-                    fetch<Methods25['get']['resBody'], BasicHeaders, Methods25['get']['status']>(prefix, prefix4, GET, option).json(),
+                  get: (option?: { headers?: Methods_i0dmtv['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+                    fetch<Methods_i0dmtv['get']['resBody'], BasicHeaders, Methods_i0dmtv['get']['status']>(prefix, prefix4, GET, option).json(),
                   /**
                    * @returns OK
                    */
-                  $get: (option?: { headers?: Methods25['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-                    fetch<Methods25['get']['resBody'], BasicHeaders, Methods25['get']['status']>(prefix, prefix4, GET, option).json().then(r => r.body),
+                  $get: (option?: { headers?: Methods_i0dmtv['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+                    fetch<Methods_i0dmtv['get']['resBody'], BasicHeaders, Methods_i0dmtv['get']['status']>(prefix, prefix4, GET, option).json().then(r => r.body),
                   $path: () => `${prefix}${prefix4}`,
                 };
               },
@@ -606,14 +606,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                  * Create shared audio item in chat
                  * @returns OK
                  */
-                post: (option: { body: Methods27['post']['reqBody'], headers?: Methods27['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                  fetch<Methods27['post']['resBody'], BasicHeaders, Methods27['post']['status']>(prefix, `${prefix2}${PATH13}`, POST, option, 'FormData').json(),
+                post: (option: { body: Methods_b00ynf['post']['reqBody'], headers?: Methods_b00ynf['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                  fetch<Methods_b00ynf['post']['resBody'], BasicHeaders, Methods_b00ynf['post']['status']>(prefix, `${prefix2}${PATH13}`, POST, option, 'FormData').json(),
                 /**
                  * Create shared audio item in chat
                  * @returns OK
                  */
-                $post: (option: { body: Methods27['post']['reqBody'], headers?: Methods27['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                  fetch<Methods27['post']['resBody'], BasicHeaders, Methods27['post']['status']>(prefix, `${prefix2}${PATH13}`, POST, option, 'FormData').json().then(r => r.body),
+                $post: (option: { body: Methods_b00ynf['post']['reqBody'], headers?: Methods_b00ynf['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                  fetch<Methods_b00ynf['post']['resBody'], BasicHeaders, Methods_b00ynf['post']['status']>(prefix, `${prefix2}${PATH13}`, POST, option, 'FormData').json().then(r => r.body),
                 $path: () => `${prefix}${prefix2}${PATH13}`,
               },
               image: {
@@ -621,14 +621,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                  * Create shared image item in chat
                  * @returns OK
                  */
-                post: (option: { body: Methods28['post']['reqBody'], headers?: Methods28['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                  fetch<Methods28['post']['resBody'], BasicHeaders, Methods28['post']['status']>(prefix, `${prefix2}${PATH14}`, POST, option, 'FormData').json(),
+                post: (option: { body: Methods_ruzilw['post']['reqBody'], headers?: Methods_ruzilw['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                  fetch<Methods_ruzilw['post']['resBody'], BasicHeaders, Methods_ruzilw['post']['status']>(prefix, `${prefix2}${PATH14}`, POST, option, 'FormData').json(),
                 /**
                  * Create shared image item in chat
                  * @returns OK
                  */
-                $post: (option: { body: Methods28['post']['reqBody'], headers?: Methods28['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                  fetch<Methods28['post']['resBody'], BasicHeaders, Methods28['post']['status']>(prefix, `${prefix2}${PATH14}`, POST, option, 'FormData').json().then(r => r.body),
+                $post: (option: { body: Methods_ruzilw['post']['reqBody'], headers?: Methods_ruzilw['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                  fetch<Methods_ruzilw['post']['resBody'], BasicHeaders, Methods_ruzilw['post']['status']>(prefix, `${prefix2}${PATH14}`, POST, option, 'FormData').json().then(r => r.body),
                 $path: () => `${prefix}${prefix2}${PATH14}`,
               },
               video: {
@@ -636,43 +636,43 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                  * Create shared video item in chat
                  * @returns OK
                  */
-                post: (option: { body: Methods29['post']['reqBody'], headers?: Methods29['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                  fetch<Methods29['post']['resBody'], BasicHeaders, Methods29['post']['status']>(prefix, `${prefix2}${PATH15}`, POST, option, 'FormData').json(),
+                post: (option: { body: Methods_135ed02['post']['reqBody'], headers?: Methods_135ed02['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                  fetch<Methods_135ed02['post']['resBody'], BasicHeaders, Methods_135ed02['post']['status']>(prefix, `${prefix2}${PATH15}`, POST, option, 'FormData').json(),
                 /**
                  * Create shared video item in chat
                  * @returns OK
                  */
-                $post: (option: { body: Methods29['post']['reqBody'], headers?: Methods29['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                  fetch<Methods29['post']['resBody'], BasicHeaders, Methods29['post']['status']>(prefix, `${prefix2}${PATH15}`, POST, option, 'FormData').json().then(r => r.body),
+                $post: (option: { body: Methods_135ed02['post']['reqBody'], headers?: Methods_135ed02['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                  fetch<Methods_135ed02['post']['resBody'], BasicHeaders, Methods_135ed02['post']['status']>(prefix, `${prefix2}${PATH15}`, POST, option, 'FormData').json().then(r => r.body),
                 $path: () => `${prefix}${prefix2}${PATH15}`,
               },
               /**
                * Returns a list of items of chat shared content
                * @returns OK
                */
-              get: (option?: { query?: Methods26['get']['query'] | undefined, headers?: Methods26['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-                fetch<Methods26['get']['resBody'], BasicHeaders, Methods26['get']['status']>(prefix, `${prefix2}${PATH11}`, GET, option).json(),
+              get: (option?: { query?: Methods_1r5qtp6['get']['query'] | undefined, headers?: Methods_1r5qtp6['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+                fetch<Methods_1r5qtp6['get']['resBody'], BasicHeaders, Methods_1r5qtp6['get']['status']>(prefix, `${prefix2}${PATH11}`, GET, option).json(),
               /**
                * Returns a list of items of chat shared content
                * @returns OK
                */
-              $get: (option?: { query?: Methods26['get']['query'] | undefined, headers?: Methods26['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-                fetch<Methods26['get']['resBody'], BasicHeaders, Methods26['get']['status']>(prefix, `${prefix2}${PATH11}`, GET, option).json().then(r => r.body),
+              $get: (option?: { query?: Methods_1r5qtp6['get']['query'] | undefined, headers?: Methods_1r5qtp6['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+                fetch<Methods_1r5qtp6['get']['resBody'], BasicHeaders, Methods_1r5qtp6['get']['status']>(prefix, `${prefix2}${PATH11}`, GET, option).json().then(r => r.body),
               /**
                * Create shared item in chat
                * @param option.body - item to create
                * @returns OK
                */
-              post: (option: { body: Methods26['post']['reqBody'], headers?: Methods26['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                fetch<Methods26['post']['resBody'], BasicHeaders, Methods26['post']['status']>(prefix, `${prefix2}${PATH11}`, POST, option).json(),
+              post: (option: { body: Methods_1r5qtp6['post']['reqBody'], headers?: Methods_1r5qtp6['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                fetch<Methods_1r5qtp6['post']['resBody'], BasicHeaders, Methods_1r5qtp6['post']['status']>(prefix, `${prefix2}${PATH11}`, POST, option).json(),
               /**
                * Create shared item in chat
                * @param option.body - item to create
                * @returns OK
                */
-              $post: (option: { body: Methods26['post']['reqBody'], headers?: Methods26['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                fetch<Methods26['post']['resBody'], BasicHeaders, Methods26['post']['status']>(prefix, `${prefix2}${PATH11}`, POST, option).json().then(r => r.body),
-              $path: (option?: { method?: 'get' | undefined; query: Methods26['get']['query'] } | undefined) =>
+              $post: (option: { body: Methods_1r5qtp6['post']['reqBody'], headers?: Methods_1r5qtp6['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                fetch<Methods_1r5qtp6['post']['resBody'], BasicHeaders, Methods_1r5qtp6['post']['status']>(prefix, `${prefix2}${PATH11}`, POST, option).json().then(r => r.body),
+              $path: (option?: { method?: 'get' | undefined; query: Methods_1r5qtp6['get']['query'] } | undefined) =>
                 `${prefix}${prefix2}${PATH11}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
             },
           };
@@ -682,14 +682,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * Returns valid pubnub keys and auth token, refreshes tokens and access if needed
            * @returns OK
            */
-          get: (option?: { headers?: Methods30['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-            fetch<Methods30['get']['resBody'], BasicHeaders, Methods30['get']['status']>(prefix, PATH21, GET, option).json(),
+          get: (option?: { headers?: Methods_jppfu6['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+            fetch<Methods_jppfu6['get']['resBody'], BasicHeaders, Methods_jppfu6['get']['status']>(prefix, PATH21, GET, option).json(),
           /**
            * Returns valid pubnub keys and auth token, refreshes tokens and access if needed
            * @returns OK
            */
-          $get: (option?: { headers?: Methods30['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-            fetch<Methods30['get']['resBody'], BasicHeaders, Methods30['get']['status']>(prefix, PATH21, GET, option).json().then(r => r.body),
+          $get: (option?: { headers?: Methods_jppfu6['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+            fetch<Methods_jppfu6['get']['resBody'], BasicHeaders, Methods_jppfu6['get']['status']>(prefix, PATH21, GET, option).json().then(r => r.body),
           $path: () => `${prefix}${PATH21}`,
         },
       },
@@ -698,39 +698,39 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           /**
            * @returns OK
            */
-          post: (option: { body: Methods31['post']['reqBody'], headers?: Methods31['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-            fetch<Methods31['post']['resBody'], BasicHeaders, Methods31['post']['status']>(prefix, PATH22, POST, option, 'FormData').json(),
+          post: (option: { body: Methods_10l1tgy['post']['reqBody'], headers?: Methods_10l1tgy['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+            fetch<Methods_10l1tgy['post']['resBody'], BasicHeaders, Methods_10l1tgy['post']['status']>(prefix, PATH22, POST, option, 'FormData').json(),
           /**
            * @returns OK
            */
-          $post: (option: { body: Methods31['post']['reqBody'], headers?: Methods31['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-            fetch<Methods31['post']['resBody'], BasicHeaders, Methods31['post']['status']>(prefix, PATH22, POST, option, 'FormData').json().then(r => r.body),
+          $post: (option: { body: Methods_10l1tgy['post']['reqBody'], headers?: Methods_10l1tgy['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+            fetch<Methods_10l1tgy['post']['resBody'], BasicHeaders, Methods_10l1tgy['post']['status']>(prefix, PATH22, POST, option, 'FormData').json().then(r => r.body),
           $path: () => `${prefix}${PATH22}`,
         },
         image: {
           /**
            * @returns OK
            */
-          post: (option: { body: Methods32['post']['reqBody'], headers?: Methods32['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-            fetch<Methods32['post']['resBody'], BasicHeaders, Methods32['post']['status']>(prefix, PATH23, POST, option, 'FormData').json(),
+          post: (option: { body: Methods_apwzud['post']['reqBody'], headers?: Methods_apwzud['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+            fetch<Methods_apwzud['post']['resBody'], BasicHeaders, Methods_apwzud['post']['status']>(prefix, PATH23, POST, option, 'FormData').json(),
           /**
            * @returns OK
            */
-          $post: (option: { body: Methods32['post']['reqBody'], headers?: Methods32['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-            fetch<Methods32['post']['resBody'], BasicHeaders, Methods32['post']['status']>(prefix, PATH23, POST, option, 'FormData').json().then(r => r.body),
+          $post: (option: { body: Methods_apwzud['post']['reqBody'], headers?: Methods_apwzud['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+            fetch<Methods_apwzud['post']['resBody'], BasicHeaders, Methods_apwzud['post']['status']>(prefix, PATH23, POST, option, 'FormData').json().then(r => r.body),
           $path: () => `${prefix}${PATH23}`,
         },
         parse: {
           /**
            * @returns OK
            */
-          post: (option: { body: Methods33['post']['reqBody'], headers?: Methods33['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-            fetch<Methods33['post']['resBody'], BasicHeaders, Methods33['post']['status']>(prefix, PATH24, POST, option).json(),
+          post: (option: { body: Methods_r8snev['post']['reqBody'], headers?: Methods_r8snev['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+            fetch<Methods_r8snev['post']['resBody'], BasicHeaders, Methods_r8snev['post']['status']>(prefix, PATH24, POST, option).json(),
           /**
            * @returns OK
            */
-          $post: (option: { body: Methods33['post']['reqBody'], headers?: Methods33['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-            fetch<Methods33['post']['resBody'], BasicHeaders, Methods33['post']['status']>(prefix, PATH24, POST, option).json().then(r => r.body),
+          $post: (option: { body: Methods_r8snev['post']['reqBody'], headers?: Methods_r8snev['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+            fetch<Methods_r8snev['post']['resBody'], BasicHeaders, Methods_r8snev['post']['status']>(prefix, PATH24, POST, option).json().then(r => r.body),
           $path: () => `${prefix}${PATH24}`,
         },
         story: {
@@ -742,51 +742,51 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                 /**
                  * @returns OK
                  */
-                post: (option: { body: Methods35['post']['reqBody'], headers?: Methods35['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                  fetch<Methods35['post']['resBody'], BasicHeaders, Methods35['post']['status']>(prefix, `${prefix3}${PATH26}`, POST, option, 'FormData').json(),
+                post: (option: { body: Methods_1g8zorn['post']['reqBody'], headers?: Methods_1g8zorn['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                  fetch<Methods_1g8zorn['post']['resBody'], BasicHeaders, Methods_1g8zorn['post']['status']>(prefix, `${prefix3}${PATH26}`, POST, option, 'FormData').json(),
                 /**
                  * @returns OK
                  */
-                $post: (option: { body: Methods35['post']['reqBody'], headers?: Methods35['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                  fetch<Methods35['post']['resBody'], BasicHeaders, Methods35['post']['status']>(prefix, `${prefix3}${PATH26}`, POST, option, 'FormData').json().then(r => r.body),
+                $post: (option: { body: Methods_1g8zorn['post']['reqBody'], headers?: Methods_1g8zorn['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                  fetch<Methods_1g8zorn['post']['resBody'], BasicHeaders, Methods_1g8zorn['post']['status']>(prefix, `${prefix3}${PATH26}`, POST, option, 'FormData').json().then(r => r.body),
                 $path: () => `${prefix}${prefix3}${PATH26}`,
               },
               image: {
                 /**
                  * @returns OK
                  */
-                post: (option: { body: Methods36['post']['reqBody'], headers?: Methods36['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                  fetch<Methods36['post']['resBody'], BasicHeaders, Methods36['post']['status']>(prefix, `${prefix3}${PATH27}`, POST, option, 'FormData').json(),
+                post: (option: { body: Methods_124ffvw['post']['reqBody'], headers?: Methods_124ffvw['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                  fetch<Methods_124ffvw['post']['resBody'], BasicHeaders, Methods_124ffvw['post']['status']>(prefix, `${prefix3}${PATH27}`, POST, option, 'FormData').json(),
                 /**
                  * @returns OK
                  */
-                $post: (option: { body: Methods36['post']['reqBody'], headers?: Methods36['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                  fetch<Methods36['post']['resBody'], BasicHeaders, Methods36['post']['status']>(prefix, `${prefix3}${PATH27}`, POST, option, 'FormData').json().then(r => r.body),
+                $post: (option: { body: Methods_124ffvw['post']['reqBody'], headers?: Methods_124ffvw['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                  fetch<Methods_124ffvw['post']['resBody'], BasicHeaders, Methods_124ffvw['post']['status']>(prefix, `${prefix3}${PATH27}`, POST, option, 'FormData').json().then(r => r.body),
                 $path: () => `${prefix}${prefix3}${PATH27}`,
               },
               video: {
                 /**
                  * @returns OK
                  */
-                post: (option: { body: Methods37['post']['reqBody'], headers?: Methods37['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                  fetch<Methods37['post']['resBody'], BasicHeaders, Methods37['post']['status']>(prefix, `${prefix3}${PATH28}`, POST, option, 'FormData').json(),
+                post: (option: { body: Methods_1gkh6x6['post']['reqBody'], headers?: Methods_1gkh6x6['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                  fetch<Methods_1gkh6x6['post']['resBody'], BasicHeaders, Methods_1gkh6x6['post']['status']>(prefix, `${prefix3}${PATH28}`, POST, option, 'FormData').json(),
                 /**
                  * @returns OK
                  */
-                $post: (option: { body: Methods37['post']['reqBody'], headers?: Methods37['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                  fetch<Methods37['post']['resBody'], BasicHeaders, Methods37['post']['status']>(prefix, `${prefix3}${PATH28}`, POST, option, 'FormData').json().then(r => r.body),
+                $post: (option: { body: Methods_1gkh6x6['post']['reqBody'], headers?: Methods_1gkh6x6['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                  fetch<Methods_1gkh6x6['post']['resBody'], BasicHeaders, Methods_1gkh6x6['post']['status']>(prefix, `${prefix3}${PATH28}`, POST, option, 'FormData').json().then(r => r.body),
                 $path: () => `${prefix}${prefix3}${PATH28}`,
               },
               /**
                * @returns OK
                */
-              post: (option: { body: Methods34['post']['reqBody'], headers?: Methods34['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                fetch<Methods34['post']['resBody'], BasicHeaders, Methods34['post']['status']>(prefix, prefix3, POST, option, 'FormData').json(),
+              post: (option: { body: Methods_17ff7fm['post']['reqBody'], headers?: Methods_17ff7fm['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                fetch<Methods_17ff7fm['post']['resBody'], BasicHeaders, Methods_17ff7fm['post']['status']>(prefix, prefix3, POST, option, 'FormData').json(),
               /**
                * @returns OK
                */
-              $post: (option: { body: Methods34['post']['reqBody'], headers?: Methods34['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                fetch<Methods34['post']['resBody'], BasicHeaders, Methods34['post']['status']>(prefix, prefix3, POST, option, 'FormData').json().then(r => r.body),
+              $post: (option: { body: Methods_17ff7fm['post']['reqBody'], headers?: Methods_17ff7fm['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                fetch<Methods_17ff7fm['post']['resBody'], BasicHeaders, Methods_17ff7fm['post']['status']>(prefix, prefix3, POST, option, 'FormData').json().then(r => r.body),
               $path: () => `${prefix}${prefix3}`,
             };
           },
@@ -795,13 +795,13 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           /**
            * @returns OK
            */
-          post: (option: { body: Methods38['post']['reqBody'], headers?: Methods38['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-            fetch<Methods38['post']['resBody'], BasicHeaders, Methods38['post']['status']>(prefix, PATH29, POST, option, 'FormData').json(),
+          post: (option: { body: Methods_kgp5q3['post']['reqBody'], headers?: Methods_kgp5q3['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+            fetch<Methods_kgp5q3['post']['resBody'], BasicHeaders, Methods_kgp5q3['post']['status']>(prefix, PATH29, POST, option, 'FormData').json(),
           /**
            * @returns OK
            */
-          $post: (option: { body: Methods38['post']['reqBody'], headers?: Methods38['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-            fetch<Methods38['post']['resBody'], BasicHeaders, Methods38['post']['status']>(prefix, PATH29, POST, option, 'FormData').json().then(r => r.body),
+          $post: (option: { body: Methods_kgp5q3['post']['reqBody'], headers?: Methods_kgp5q3['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+            fetch<Methods_kgp5q3['post']['resBody'], BasicHeaders, Methods_kgp5q3['post']['status']>(prefix, PATH29, POST, option, 'FormData').json().then(r => r.body),
           $path: () => `${prefix}${PATH29}`,
         },
       },
@@ -809,13 +809,13 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         /**
          * Save newly updated firebase cloud messaging device token
          */
-        post: (option: { body: Methods39['post']['reqBody'], headers?: Methods39['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-          fetch<void, BasicHeaders, Methods39['post']['status']>(prefix, PATH30, POST, option).send(),
+        post: (option: { body: Methods_lhsd86['post']['reqBody'], headers?: Methods_lhsd86['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+          fetch<void, BasicHeaders, Methods_lhsd86['post']['status']>(prefix, PATH30, POST, option).send(),
         /**
          * Save newly updated firebase cloud messaging device token
          */
-        $post: (option: { body: Methods39['post']['reqBody'], headers?: Methods39['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-          fetch<void, BasicHeaders, Methods39['post']['status']>(prefix, PATH30, POST, option).send().then(r => r.body),
+        $post: (option: { body: Methods_lhsd86['post']['reqBody'], headers?: Methods_lhsd86['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+          fetch<void, BasicHeaders, Methods_lhsd86['post']['status']>(prefix, PATH30, POST, option).send().then(r => r.body),
         $path: () => `${prefix}${PATH30}`,
       },
       info: {
@@ -823,47 +823,47 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          * Send in to about app to server. If app is to old and need be force updated in responce you have link to new app
          * @returns OK
          */
-        get: (option?: { headers?: Methods40['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-          fetch<Methods40['get']['resBody'], BasicHeaders, Methods40['get']['status']>(prefix, PATH31, GET, option).json(),
+        get: (option?: { headers?: Methods_1io5ejy['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+          fetch<Methods_1io5ejy['get']['resBody'], BasicHeaders, Methods_1io5ejy['get']['status']>(prefix, PATH31, GET, option).json(),
         /**
          * Send in to about app to server. If app is to old and need be force updated in responce you have link to new app
          * @returns OK
          */
-        $get: (option?: { headers?: Methods40['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-          fetch<Methods40['get']['resBody'], BasicHeaders, Methods40['get']['status']>(prefix, PATH31, GET, option).json().then(r => r.body),
+        $get: (option?: { headers?: Methods_1io5ejy['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+          fetch<Methods_1io5ejy['get']['resBody'], BasicHeaders, Methods_1io5ejy['get']['status']>(prefix, PATH31, GET, option).json().then(r => r.body),
         $path: () => `${prefix}${PATH31}`,
       },
       login: {
         /**
          * @returns OK
          */
-        post: (option: { body: Methods41['post']['reqBody'], headers?: Methods41['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-          fetch<Methods41['post']['resBody'], BasicHeaders, Methods41['post']['status']>(prefix, PATH32, POST, option).json(),
+        post: (option: { body: Methods_hqmsuz['post']['reqBody'], headers?: Methods_hqmsuz['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+          fetch<Methods_hqmsuz['post']['resBody'], BasicHeaders, Methods_hqmsuz['post']['status']>(prefix, PATH32, POST, option).json(),
         /**
          * @returns OK
          */
-        $post: (option: { body: Methods41['post']['reqBody'], headers?: Methods41['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-          fetch<Methods41['post']['resBody'], BasicHeaders, Methods41['post']['status']>(prefix, PATH32, POST, option).json().then(r => r.body),
+        $post: (option: { body: Methods_hqmsuz['post']['reqBody'], headers?: Methods_hqmsuz['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+          fetch<Methods_hqmsuz['post']['resBody'], BasicHeaders, Methods_hqmsuz['post']['status']>(prefix, PATH32, POST, option).json().then(r => r.body),
         $path: () => `${prefix}${PATH32}`,
       },
       logout: {
-        post: (option: { body: Methods42['post']['reqBody'], headers?: Methods42['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-          fetch<void, BasicHeaders, Methods42['post']['status']>(prefix, PATH33, POST, option).send(),
-        $post: (option: { body: Methods42['post']['reqBody'], headers?: Methods42['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-          fetch<void, BasicHeaders, Methods42['post']['status']>(prefix, PATH33, POST, option).send().then(r => r.body),
+        post: (option: { body: Methods_1eeieyw['post']['reqBody'], headers?: Methods_1eeieyw['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+          fetch<void, BasicHeaders, Methods_1eeieyw['post']['status']>(prefix, PATH33, POST, option).send(),
+        $post: (option: { body: Methods_1eeieyw['post']['reqBody'], headers?: Methods_1eeieyw['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+          fetch<void, BasicHeaders, Methods_1eeieyw['post']['status']>(prefix, PATH33, POST, option).send().then(r => r.body),
         $path: () => `${prefix}${PATH33}`,
       },
       me: {
         /**
          * @returns OK
          */
-        get: (option?: { headers?: Methods43['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-          fetch<Methods43['get']['resBody'], BasicHeaders, Methods43['get']['status']>(prefix, PATH34, GET, option).json(),
+        get: (option?: { headers?: Methods_bzst0['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+          fetch<Methods_bzst0['get']['resBody'], BasicHeaders, Methods_bzst0['get']['status']>(prefix, PATH34, GET, option).json(),
         /**
          * @returns OK
          */
-        $get: (option?: { headers?: Methods43['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-          fetch<Methods43['get']['resBody'], BasicHeaders, Methods43['get']['status']>(prefix, PATH34, GET, option).json().then(r => r.body),
+        $get: (option?: { headers?: Methods_bzst0['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+          fetch<Methods_bzst0['get']['resBody'], BasicHeaders, Methods_bzst0['get']['status']>(prefix, PATH34, GET, option).json().then(r => r.body),
         $path: () => `${prefix}${PATH34}`,
       },
       organisation: {
@@ -871,26 +871,26 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           /**
            * @returns OK
            */
-          get: (option: { query: Methods45['get']['query'], headers?: Methods45['get']['reqHeaders'] | undefined, config?: T | undefined }) =>
-            fetch<Methods45['get']['resBody'], BasicHeaders, Methods45['get']['status']>(prefix, PATH36, GET, option).json(),
+          get: (option: { query: Methods_ba24fb['get']['query'], headers?: Methods_ba24fb['get']['reqHeaders'] | undefined, config?: T | undefined }) =>
+            fetch<Methods_ba24fb['get']['resBody'], BasicHeaders, Methods_ba24fb['get']['status']>(prefix, PATH36, GET, option).json(),
           /**
            * @returns OK
            */
-          $get: (option: { query: Methods45['get']['query'], headers?: Methods45['get']['reqHeaders'] | undefined, config?: T | undefined }) =>
-            fetch<Methods45['get']['resBody'], BasicHeaders, Methods45['get']['status']>(prefix, PATH36, GET, option).json().then(r => r.body),
-          $path: (option?: { method?: 'get' | undefined; query: Methods45['get']['query'] } | undefined) =>
+          $get: (option: { query: Methods_ba24fb['get']['query'], headers?: Methods_ba24fb['get']['reqHeaders'] | undefined, config?: T | undefined }) =>
+            fetch<Methods_ba24fb['get']['resBody'], BasicHeaders, Methods_ba24fb['get']['status']>(prefix, PATH36, GET, option).json().then(r => r.body),
+          $path: (option?: { method?: 'get' | undefined; query: Methods_ba24fb['get']['query'] } | undefined) =>
             `${prefix}${PATH36}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
         },
         /**
          * @returns OK
          */
-        get: (option?: { headers?: Methods44['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-          fetch<Methods44['get']['resBody'], BasicHeaders, Methods44['get']['status']>(prefix, PATH35, GET, option).json(),
+        get: (option?: { headers?: Methods_aojh78['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+          fetch<Methods_aojh78['get']['resBody'], BasicHeaders, Methods_aojh78['get']['status']>(prefix, PATH35, GET, option).json(),
         /**
          * @returns OK
          */
-        $get: (option?: { headers?: Methods44['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-          fetch<Methods44['get']['resBody'], BasicHeaders, Methods44['get']['status']>(prefix, PATH35, GET, option).json().then(r => r.body),
+        $get: (option?: { headers?: Methods_aojh78['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+          fetch<Methods_aojh78['get']['resBody'], BasicHeaders, Methods_aojh78['get']['status']>(prefix, PATH35, GET, option).json().then(r => r.body),
         $path: () => `${prefix}${PATH35}`,
       },
       stories: {
@@ -907,25 +907,25 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                     /**
                      * @returns OK
                      */
-                    post: (option: { body: Methods48['post']['reqBody'], headers?: Methods48['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                      fetch<Methods48['post']['resBody'], BasicHeaders, Methods48['post']['status']>(prefix, `${prefix4}${PATH38}`, POST, option).json(),
+                    post: (option: { body: Methods_1rhlc3e['post']['reqBody'], headers?: Methods_1rhlc3e['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                      fetch<Methods_1rhlc3e['post']['resBody'], BasicHeaders, Methods_1rhlc3e['post']['status']>(prefix, `${prefix4}${PATH38}`, POST, option).json(),
                     /**
                      * @returns OK
                      */
-                    $post: (option: { body: Methods48['post']['reqBody'], headers?: Methods48['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
-                      fetch<Methods48['post']['resBody'], BasicHeaders, Methods48['post']['status']>(prefix, `${prefix4}${PATH38}`, POST, option).json().then(r => r.body),
+                    $post: (option: { body: Methods_1rhlc3e['post']['reqBody'], headers?: Methods_1rhlc3e['post']['reqHeaders'] | undefined, config?: T | undefined }) =>
+                      fetch<Methods_1rhlc3e['post']['resBody'], BasicHeaders, Methods_1rhlc3e['post']['status']>(prefix, `${prefix4}${PATH38}`, POST, option).json().then(r => r.body),
                     $path: () => `${prefix}${prefix4}${PATH38}`,
                   },
                   /**
                    * @returns OK
                    */
-                  get: (option?: { headers?: Methods47['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-                    fetch<Methods47['get']['resBody'], BasicHeaders, Methods47['get']['status']>(prefix, prefix4, GET, option).json(),
+                  get: (option?: { headers?: Methods_17x0as8['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+                    fetch<Methods_17x0as8['get']['resBody'], BasicHeaders, Methods_17x0as8['get']['status']>(prefix, prefix4, GET, option).json(),
                   /**
                    * @returns OK
                    */
-                  $get: (option?: { headers?: Methods47['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-                    fetch<Methods47['get']['resBody'], BasicHeaders, Methods47['get']['status']>(prefix, prefix4, GET, option).json().then(r => r.body),
+                  $get: (option?: { headers?: Methods_17x0as8['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+                    fetch<Methods_17x0as8['get']['resBody'], BasicHeaders, Methods_17x0as8['get']['status']>(prefix, prefix4, GET, option).json().then(r => r.body),
                   $path: () => `${prefix}${prefix4}`,
                 };
               },
@@ -933,15 +933,15 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                * Returns a story content with support pagination
                * @returns OK
                */
-              get: (option?: { query?: Methods46['get']['query'] | undefined, headers?: Methods46['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-                fetch<Methods46['get']['resBody'], BasicHeaders, Methods46['get']['status']>(prefix, `${prefix2}${PATH11}`, GET, option).json(),
+              get: (option?: { query?: Methods_xz7bfv['get']['query'] | undefined, headers?: Methods_xz7bfv['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+                fetch<Methods_xz7bfv['get']['resBody'], BasicHeaders, Methods_xz7bfv['get']['status']>(prefix, `${prefix2}${PATH11}`, GET, option).json(),
               /**
                * Returns a story content with support pagination
                * @returns OK
                */
-              $get: (option?: { query?: Methods46['get']['query'] | undefined, headers?: Methods46['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-                fetch<Methods46['get']['resBody'], BasicHeaders, Methods46['get']['status']>(prefix, `${prefix2}${PATH11}`, GET, option).json().then(r => r.body),
-              $path: (option?: { method?: 'get' | undefined; query: Methods46['get']['query'] } | undefined) =>
+              $get: (option?: { query?: Methods_xz7bfv['get']['query'] | undefined, headers?: Methods_xz7bfv['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+                fetch<Methods_xz7bfv['get']['resBody'], BasicHeaders, Methods_xz7bfv['get']['status']>(prefix, `${prefix2}${PATH11}`, GET, option).json().then(r => r.body),
+              $path: (option?: { method?: 'get' | undefined; query: Methods_xz7bfv['get']['query'] } | undefined) =>
                 `${prefix}${prefix2}${PATH11}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
             },
           };
@@ -955,33 +955,33 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
             /**
              * @returns OK
              */
-            get: (option?: { headers?: Methods50['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-              fetch<Methods50['get']['resBody'], BasicHeaders, Methods50['get']['status']>(prefix, prefix2, GET, option).json(),
+            get: (option?: { headers?: Methods_mh6ds6['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+              fetch<Methods_mh6ds6['get']['resBody'], BasicHeaders, Methods_mh6ds6['get']['status']>(prefix, prefix2, GET, option).json(),
             /**
              * @returns OK
              */
-            $get: (option?: { headers?: Methods50['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-              fetch<Methods50['get']['resBody'], BasicHeaders, Methods50['get']['status']>(prefix, prefix2, GET, option).json().then(r => r.body),
+            $get: (option?: { headers?: Methods_mh6ds6['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+              fetch<Methods_mh6ds6['get']['resBody'], BasicHeaders, Methods_mh6ds6['get']['status']>(prefix, prefix2, GET, option).json().then(r => r.body),
             $path: () => `${prefix}${prefix2}`,
           };
         },
         profile: {
-          put: (option: { body: Methods51['put']['reqBody'], headers?: Methods51['put']['reqHeaders'] | undefined, config?: T | undefined }) =>
-            fetch<void, BasicHeaders, Methods51['put']['status']>(prefix, PATH40, PUT, option, 'FormData').send(),
-          $put: (option: { body: Methods51['put']['reqBody'], headers?: Methods51['put']['reqHeaders'] | undefined, config?: T | undefined }) =>
-            fetch<void, BasicHeaders, Methods51['put']['status']>(prefix, PATH40, PUT, option, 'FormData').send().then(r => r.body),
+          put: (option: { body: Methods_1fhjqav['put']['reqBody'], headers?: Methods_1fhjqav['put']['reqHeaders'] | undefined, config?: T | undefined }) =>
+            fetch<void, BasicHeaders, Methods_1fhjqav['put']['status']>(prefix, PATH40, PUT, option, 'FormData').send(),
+          $put: (option: { body: Methods_1fhjqav['put']['reqBody'], headers?: Methods_1fhjqav['put']['reqHeaders'] | undefined, config?: T | undefined }) =>
+            fetch<void, BasicHeaders, Methods_1fhjqav['put']['status']>(prefix, PATH40, PUT, option, 'FormData').send().then(r => r.body),
           $path: () => `${prefix}${PATH40}`,
         },
         /**
          * @returns OK
          */
-        get: (option?: { headers?: Methods49['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-          fetch<Methods49['get']['resBody'], BasicHeaders, Methods49['get']['status']>(prefix, PATH39, GET, option).json(),
+        get: (option?: { headers?: Methods_1vihjgh['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+          fetch<Methods_1vihjgh['get']['resBody'], BasicHeaders, Methods_1vihjgh['get']['status']>(prefix, PATH39, GET, option).json(),
         /**
          * @returns OK
          */
-        $get: (option?: { headers?: Methods49['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-          fetch<Methods49['get']['resBody'], BasicHeaders, Methods49['get']['status']>(prefix, PATH39, GET, option).json().then(r => r.body),
+        $get: (option?: { headers?: Methods_1vihjgh['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+          fetch<Methods_1vihjgh['get']['resBody'], BasicHeaders, Methods_1vihjgh['get']['status']>(prefix, PATH39, GET, option).json().then(r => r.body),
         $path: () => `${prefix}${PATH39}`,
       },
     },

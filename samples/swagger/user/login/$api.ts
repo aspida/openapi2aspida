@@ -1,6 +1,6 @@
 import type { AspidaClient } from 'aspida';
 import { dataToURLString } from 'aspida';
-import type { Methods as Methods0 } from '.';
+import type { Methods as Methods_by08hd } from '.';
 
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? 'https://petstore.swagger.io/v2' : baseURL).replace(/\/$/, '');
@@ -11,14 +11,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
     /**
      * @returns successful operation
      */
-    get: (option: { query: Methods0['get']['query'], config?: T | undefined }) =>
-      fetch<Methods0['get']['resBody'], Methods0['get']['resHeaders'], Methods0['get']['status']>(prefix, PATH0, GET, option).text(),
+    get: (option: { query: Methods_by08hd['get']['query'], config?: T | undefined }) =>
+      fetch<Methods_by08hd['get']['resBody'], Methods_by08hd['get']['resHeaders'], Methods_by08hd['get']['status']>(prefix, PATH0, GET, option).text(),
     /**
      * @returns successful operation
      */
-    $get: (option: { query: Methods0['get']['query'], config?: T | undefined }) =>
-      fetch<Methods0['get']['resBody'], Methods0['get']['resHeaders'], Methods0['get']['status']>(prefix, PATH0, GET, option).text().then(r => r.body),
-    $path: (option?: { method?: 'get' | undefined; query: Methods0['get']['query'] } | undefined) =>
+    $get: (option: { query: Methods_by08hd['get']['query'], config?: T | undefined }) =>
+      fetch<Methods_by08hd['get']['resBody'], Methods_by08hd['get']['resHeaders'], Methods_by08hd['get']['status']>(prefix, PATH0, GET, option).text().then(r => r.body),
+    $path: (option?: { method?: 'get' | undefined; query: Methods_by08hd['get']['query'] } | undefined) =>
       `${prefix}${PATH0}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
   };
 };

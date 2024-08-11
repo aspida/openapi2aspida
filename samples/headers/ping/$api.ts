@@ -1,5 +1,5 @@
 import type { AspidaClient } from 'aspida';
-import type { Methods as Methods0 } from '.';
+import type { Methods as Methods_by08hd } from '.';
 
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? '' : baseURL).replace(/\/$/, '');
@@ -11,12 +11,12 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
      * @returns OK
      */
     get: (option?: { config?: T | undefined } | undefined) =>
-      fetch<Methods0['get']['resBody'], Methods0['get']['resHeaders'], Methods0['get']['status']>(prefix, PATH0, GET, option).text(),
+      fetch<Methods_by08hd['get']['resBody'], Methods_by08hd['get']['resHeaders'], Methods_by08hd['get']['status']>(prefix, PATH0, GET, option).text(),
     /**
      * @returns OK
      */
     $get: (option?: { config?: T | undefined } | undefined) =>
-      fetch<Methods0['get']['resBody'], Methods0['get']['resHeaders'], Methods0['get']['status']>(prefix, PATH0, GET, option).text().then(r => r.body),
+      fetch<Methods_by08hd['get']['resBody'], Methods_by08hd['get']['resHeaders'], Methods_by08hd['get']['status']>(prefix, PATH0, GET, option).text().then(r => r.body),
     $path: () => `${prefix}${PATH0}`,
   };
 };

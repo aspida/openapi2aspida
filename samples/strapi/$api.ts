@@ -1,27 +1,27 @@
 import type { AspidaClient, BasicHeaders } from 'aspida';
 import { dataToURLString } from 'aspida';
-import type { Methods as Methods0 } from './auth/_provider@string/callback';
-import type { Methods as Methods1 } from './auth/email-confirmation';
-import type { Methods as Methods2 } from './auth/forgot-password';
-import type { Methods as Methods3 } from './auth/local';
-import type { Methods as Methods4 } from './auth/local/register';
-import type { Methods as Methods5 } from './auth/reset-password';
-import type { Methods as Methods6 } from './auth/send-email-confirmation';
-import type { Methods as Methods7 } from './connect/_any';
-import type { Methods as Methods8 } from './email';
-import type { Methods as Methods9 } from './upload';
-import type { Methods as Methods10 } from './upload/files';
-import type { Methods as Methods11 } from './upload/files/_id@string';
-import type { Methods as Methods12 } from './upload/files/count';
-import type { Methods as Methods13 } from './upload/search/_id@string';
-import type { Methods as Methods14 } from './users';
-import type { Methods as Methods15 } from './users/_id@string';
-import type { Methods as Methods16 } from './users/me';
-import type { Methods as Methods17 } from './users-permissions/init';
-import type { Methods as Methods18 } from './users-permissions/roles';
-import type { Methods as Methods19 } from './users-permissions/roles/_id@string';
-import type { Methods as Methods20 } from './users-permissions/roles/_role@string';
-import type { Methods as Methods21 } from './users-permissions/search/_id@string';
+import type { Methods as Methods_oskioi } from './auth/_provider@string/callback';
+import type { Methods as Methods_1czo3dj } from './auth/email-confirmation';
+import type { Methods as Methods_12s39ek } from './auth/forgot-password';
+import type { Methods as Methods_x2viz4 } from './auth/local';
+import type { Methods as Methods_8dynko } from './auth/local/register';
+import type { Methods as Methods_ybowiu } from './auth/reset-password';
+import type { Methods as Methods_b2dto4 } from './auth/send-email-confirmation';
+import type { Methods as Methods_jnsfwg } from './connect/_any';
+import type { Methods as Methods_rcx9ae } from './email';
+import type { Methods as Methods_7qh2rz } from './upload';
+import type { Methods as Methods_9wfvdr } from './upload/files';
+import type { Methods as Methods_6cgm9t } from './upload/files/_id@string';
+import type { Methods as Methods_wm57r3 } from './upload/files/count';
+import type { Methods as Methods_1trluxc } from './upload/search/_id@string';
+import type { Methods as Methods_1xhiioa } from './users';
+import type { Methods as Methods_1is6fjm } from './users/_id@string';
+import type { Methods as Methods_jzr18p } from './users/me';
+import type { Methods as Methods_1b3roee } from './users-permissions/init';
+import type { Methods as Methods_dxhgx9 } from './users-permissions/roles';
+import type { Methods as Methods_1q2k7i3 } from './users-permissions/roles/_id@string';
+import type { Methods as Methods_vdjfk0 } from './users-permissions/roles/_role@string';
+import type { Methods as Methods_9yavck } from './users-permissions/search/_id@string';
 
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? 'http://localhost:1337' : baseURL).replace(/\/$/, '');
@@ -61,13 +61,13 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
              * @returns response
              */
             get: (option?: { config?: T | undefined } | undefined) =>
-              fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, `${prefix1}${PATH1}`, GET, option).json(),
+              fetch<Methods_oskioi['get']['resBody'], BasicHeaders, Methods_oskioi['get']['status']>(prefix, `${prefix1}${PATH1}`, GET, option).json(),
             /**
              * Successfull redirection after approving a provider
              * @returns response
              */
             $get: (option?: { config?: T | undefined } | undefined) =>
-              fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, `${prefix1}${PATH1}`, GET, option).json().then(r => r.body),
+              fetch<Methods_oskioi['get']['resBody'], BasicHeaders, Methods_oskioi['get']['status']>(prefix, `${prefix1}${PATH1}`, GET, option).json().then(r => r.body),
             $path: () => `${prefix}${prefix1}${PATH1}`,
           },
         };
@@ -78,13 +78,13 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          * @returns response
          */
         get: (option?: { config?: T | undefined } | undefined) =>
-          fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, PATH2, GET, option).json(),
+          fetch<Methods_1czo3dj['get']['resBody'], BasicHeaders, Methods_1czo3dj['get']['status']>(prefix, PATH2, GET, option).json(),
         /**
          * Validate a user account
          * @returns response
          */
         $get: (option?: { config?: T | undefined } | undefined) =>
-          fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, PATH2, GET, option).json().then(r => r.body),
+          fetch<Methods_1czo3dj['get']['resBody'], BasicHeaders, Methods_1czo3dj['get']['status']>(prefix, PATH2, GET, option).json().then(r => r.body),
         $path: () => `${prefix}${PATH2}`,
       },
       forgot_password: {
@@ -92,14 +92,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          * Send the reset password email link
          * @returns response
          */
-        post: (option: { body: Methods2['post']['reqBody'], config?: T | undefined }) =>
-          fetch<Methods2['post']['resBody'], BasicHeaders, Methods2['post']['status']>(prefix, PATH3, POST, option).json(),
+        post: (option: { body: Methods_12s39ek['post']['reqBody'], config?: T | undefined }) =>
+          fetch<Methods_12s39ek['post']['resBody'], BasicHeaders, Methods_12s39ek['post']['status']>(prefix, PATH3, POST, option).json(),
         /**
          * Send the reset password email link
          * @returns response
          */
-        $post: (option: { body: Methods2['post']['reqBody'], config?: T | undefined }) =>
-          fetch<Methods2['post']['resBody'], BasicHeaders, Methods2['post']['status']>(prefix, PATH3, POST, option).json().then(r => r.body),
+        $post: (option: { body: Methods_12s39ek['post']['reqBody'], config?: T | undefined }) =>
+          fetch<Methods_12s39ek['post']['resBody'], BasicHeaders, Methods_12s39ek['post']['status']>(prefix, PATH3, POST, option).json().then(r => r.body),
         $path: () => `${prefix}${PATH3}`,
       },
       local: {
@@ -108,28 +108,28 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * Register a new user with the default role
            * @returns response
            */
-          post: (option: { body: Methods4['post']['reqBody'], config?: T | undefined }) =>
-            fetch<Methods4['post']['resBody'], BasicHeaders, Methods4['post']['status']>(prefix, PATH5, POST, option).json(),
+          post: (option: { body: Methods_8dynko['post']['reqBody'], config?: T | undefined }) =>
+            fetch<Methods_8dynko['post']['resBody'], BasicHeaders, Methods_8dynko['post']['status']>(prefix, PATH5, POST, option).json(),
           /**
            * Register a new user with the default role
            * @returns response
            */
-          $post: (option: { body: Methods4['post']['reqBody'], config?: T | undefined }) =>
-            fetch<Methods4['post']['resBody'], BasicHeaders, Methods4['post']['status']>(prefix, PATH5, POST, option).json().then(r => r.body),
+          $post: (option: { body: Methods_8dynko['post']['reqBody'], config?: T | undefined }) =>
+            fetch<Methods_8dynko['post']['resBody'], BasicHeaders, Methods_8dynko['post']['status']>(prefix, PATH5, POST, option).json().then(r => r.body),
           $path: () => `${prefix}${PATH5}`,
         },
         /**
          * Login a user using the identifiers email and password
          * @returns response
          */
-        post: (option: { body: Methods3['post']['reqBody'], config?: T | undefined }) =>
-          fetch<Methods3['post']['resBody'], BasicHeaders, Methods3['post']['status']>(prefix, PATH4, POST, option).json(),
+        post: (option: { body: Methods_x2viz4['post']['reqBody'], config?: T | undefined }) =>
+          fetch<Methods_x2viz4['post']['resBody'], BasicHeaders, Methods_x2viz4['post']['status']>(prefix, PATH4, POST, option).json(),
         /**
          * Login a user using the identifiers email and password
          * @returns response
          */
-        $post: (option: { body: Methods3['post']['reqBody'], config?: T | undefined }) =>
-          fetch<Methods3['post']['resBody'], BasicHeaders, Methods3['post']['status']>(prefix, PATH4, POST, option).json().then(r => r.body),
+        $post: (option: { body: Methods_x2viz4['post']['reqBody'], config?: T | undefined }) =>
+          fetch<Methods_x2viz4['post']['resBody'], BasicHeaders, Methods_x2viz4['post']['status']>(prefix, PATH4, POST, option).json().then(r => r.body),
         $path: () => `${prefix}${PATH4}`,
       },
       reset_password: {
@@ -137,14 +137,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          * Change a user's password
          * @returns response
          */
-        post: (option: { body: Methods5['post']['reqBody'], config?: T | undefined }) =>
-          fetch<Methods5['post']['resBody'], BasicHeaders, Methods5['post']['status']>(prefix, PATH6, POST, option).json(),
+        post: (option: { body: Methods_ybowiu['post']['reqBody'], config?: T | undefined }) =>
+          fetch<Methods_ybowiu['post']['resBody'], BasicHeaders, Methods_ybowiu['post']['status']>(prefix, PATH6, POST, option).json(),
         /**
          * Change a user's password
          * @returns response
          */
-        $post: (option: { body: Methods5['post']['reqBody'], config?: T | undefined }) =>
-          fetch<Methods5['post']['resBody'], BasicHeaders, Methods5['post']['status']>(prefix, PATH6, POST, option).json().then(r => r.body),
+        $post: (option: { body: Methods_ybowiu['post']['reqBody'], config?: T | undefined }) =>
+          fetch<Methods_ybowiu['post']['resBody'], BasicHeaders, Methods_ybowiu['post']['status']>(prefix, PATH6, POST, option).json().then(r => r.body),
         $path: () => `${prefix}${PATH6}`,
       },
       send_email_confirmation: {
@@ -152,14 +152,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          * Send a confirmation email to user
          * @returns response
          */
-        post: (option: { body: Methods6['post']['reqBody'], config?: T | undefined }) =>
-          fetch<Methods6['post']['resBody'], BasicHeaders, Methods6['post']['status']>(prefix, PATH7, POST, option).json(),
+        post: (option: { body: Methods_b2dto4['post']['reqBody'], config?: T | undefined }) =>
+          fetch<Methods_b2dto4['post']['resBody'], BasicHeaders, Methods_b2dto4['post']['status']>(prefix, PATH7, POST, option).json(),
         /**
          * Send a confirmation email to user
          * @returns response
          */
-        $post: (option: { body: Methods6['post']['reqBody'], config?: T | undefined }) =>
-          fetch<Methods6['post']['resBody'], BasicHeaders, Methods6['post']['status']>(prefix, PATH7, POST, option).json().then(r => r.body),
+        $post: (option: { body: Methods_b2dto4['post']['reqBody'], config?: T | undefined }) =>
+          fetch<Methods_b2dto4['post']['resBody'], BasicHeaders, Methods_b2dto4['post']['status']>(prefix, PATH7, POST, option).json().then(r => r.body),
         $path: () => `${prefix}${PATH7}`,
       },
     },
@@ -173,13 +173,13 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * @returns response
            */
           get: (option?: { config?: T | undefined } | undefined) =>
-            fetch<Methods7['get']['resBody'], BasicHeaders, Methods7['get']['status']>(prefix, prefix1, GET, option).json(),
+            fetch<Methods_jnsfwg['get']['resBody'], BasicHeaders, Methods_jnsfwg['get']['status']>(prefix, prefix1, GET, option).json(),
           /**
            * Connect a provider
            * @returns response
            */
           $get: (option?: { config?: T | undefined } | undefined) =>
-            fetch<Methods7['get']['resBody'], BasicHeaders, Methods7['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
+            fetch<Methods_jnsfwg['get']['resBody'], BasicHeaders, Methods_jnsfwg['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
           $path: () => `${prefix}${prefix1}`,
         };
       },
@@ -189,14 +189,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * Send an email
        * @returns response
        */
-      post: (option: { body: Methods8['post']['reqBody'], config?: T | undefined }) =>
-        fetch<Methods8['post']['resBody'], BasicHeaders, Methods8['post']['status']>(prefix, PATH9, POST, option).json(),
+      post: (option: { body: Methods_rcx9ae['post']['reqBody'], config?: T | undefined }) =>
+        fetch<Methods_rcx9ae['post']['resBody'], BasicHeaders, Methods_rcx9ae['post']['status']>(prefix, PATH9, POST, option).json(),
       /**
        * Send an email
        * @returns response
        */
-      $post: (option: { body: Methods8['post']['reqBody'], config?: T | undefined }) =>
-        fetch<Methods8['post']['resBody'], BasicHeaders, Methods8['post']['status']>(prefix, PATH9, POST, option).json().then(r => r.body),
+      $post: (option: { body: Methods_rcx9ae['post']['reqBody'], config?: T | undefined }) =>
+        fetch<Methods_rcx9ae['post']['resBody'], BasicHeaders, Methods_rcx9ae['post']['status']>(prefix, PATH9, POST, option).json().then(r => r.body),
       $path: () => `${prefix}${PATH9}`,
     },
     upload: {
@@ -210,25 +210,25 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
              * @returns response
              */
             get: (option?: { config?: T | undefined } | undefined) =>
-              fetch<Methods11['get']['resBody'], BasicHeaders, Methods11['get']['status']>(prefix, prefix2, GET, option).json(),
+              fetch<Methods_6cgm9t['get']['resBody'], BasicHeaders, Methods_6cgm9t['get']['status']>(prefix, prefix2, GET, option).json(),
             /**
              * Retrieve a single file depending on its id
              * @returns response
              */
             $get: (option?: { config?: T | undefined } | undefined) =>
-              fetch<Methods11['get']['resBody'], BasicHeaders, Methods11['get']['status']>(prefix, prefix2, GET, option).json().then(r => r.body),
+              fetch<Methods_6cgm9t['get']['resBody'], BasicHeaders, Methods_6cgm9t['get']['status']>(prefix, prefix2, GET, option).json().then(r => r.body),
             /**
              * Delete an uploaded file
              * @returns response
              */
             delete: (option?: { config?: T | undefined } | undefined) =>
-              fetch<Methods11['delete']['resBody'], BasicHeaders, Methods11['delete']['status']>(prefix, prefix2, DELETE, option).json(),
+              fetch<Methods_6cgm9t['delete']['resBody'], BasicHeaders, Methods_6cgm9t['delete']['status']>(prefix, prefix2, DELETE, option).json(),
             /**
              * Delete an uploaded file
              * @returns response
              */
             $delete: (option?: { config?: T | undefined } | undefined) =>
-              fetch<Methods11['delete']['resBody'], BasicHeaders, Methods11['delete']['status']>(prefix, prefix2, DELETE, option).json().then(r => r.body),
+              fetch<Methods_6cgm9t['delete']['resBody'], BasicHeaders, Methods_6cgm9t['delete']['status']>(prefix, prefix2, DELETE, option).json().then(r => r.body),
             $path: () => `${prefix}${prefix2}`,
           };
         },
@@ -238,13 +238,13 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * @returns response
            */
           get: (option?: { config?: T | undefined } | undefined) =>
-            fetch<Methods12['get']['resBody'], BasicHeaders, Methods12['get']['status']>(prefix, PATH12, GET, option).json(),
+            fetch<Methods_wm57r3['get']['resBody'], BasicHeaders, Methods_wm57r3['get']['status']>(prefix, PATH12, GET, option).json(),
           /**
            * Retrieve the total number of uploaded files
            * @returns response
            */
           $get: (option?: { config?: T | undefined } | undefined) =>
-            fetch<Methods12['get']['resBody'], BasicHeaders, Methods12['get']['status']>(prefix, PATH12, GET, option).json().then(r => r.body),
+            fetch<Methods_wm57r3['get']['resBody'], BasicHeaders, Methods_wm57r3['get']['status']>(prefix, PATH12, GET, option).json().then(r => r.body),
           $path: () => `${prefix}${PATH12}`,
         },
         /**
@@ -252,13 +252,13 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          * @returns response
          */
         get: (option?: { config?: T | undefined } | undefined) =>
-          fetch<Methods10['get']['resBody'], BasicHeaders, Methods10['get']['status']>(prefix, PATH11, GET, option).json(),
+          fetch<Methods_9wfvdr['get']['resBody'], BasicHeaders, Methods_9wfvdr['get']['status']>(prefix, PATH11, GET, option).json(),
         /**
          * Retrieve all file documents
          * @returns response
          */
         $get: (option?: { config?: T | undefined } | undefined) =>
-          fetch<Methods10['get']['resBody'], BasicHeaders, Methods10['get']['status']>(prefix, PATH11, GET, option).json().then(r => r.body),
+          fetch<Methods_9wfvdr['get']['resBody'], BasicHeaders, Methods_9wfvdr['get']['status']>(prefix, PATH11, GET, option).json().then(r => r.body),
         $path: () => `${prefix}${PATH11}`,
       },
       search: {
@@ -271,13 +271,13 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
              * @returns response
              */
             get: (option?: { config?: T | undefined } | undefined) =>
-              fetch<Methods13['get']['resBody'], BasicHeaders, Methods13['get']['status']>(prefix, prefix2, GET, option).json(),
+              fetch<Methods_1trluxc['get']['resBody'], BasicHeaders, Methods_1trluxc['get']['status']>(prefix, prefix2, GET, option).json(),
             /**
              * Search for an uploaded file
              * @returns response
              */
             $get: (option?: { config?: T | undefined } | undefined) =>
-              fetch<Methods13['get']['resBody'], BasicHeaders, Methods13['get']['status']>(prefix, prefix2, GET, option).json().then(r => r.body),
+              fetch<Methods_1trluxc['get']['resBody'], BasicHeaders, Methods_1trluxc['get']['status']>(prefix, prefix2, GET, option).json().then(r => r.body),
             $path: () => `${prefix}${prefix2}`,
           };
         },
@@ -286,14 +286,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * Upload a file
        * @returns response
        */
-      post: (option: { body: Methods9['post']['reqBody'], config?: T | undefined }) =>
-        fetch<Methods9['post']['resBody'], BasicHeaders, Methods9['post']['status']>(prefix, PATH10, POST, option).json(),
+      post: (option: { body: Methods_7qh2rz['post']['reqBody'], config?: T | undefined }) =>
+        fetch<Methods_7qh2rz['post']['resBody'], BasicHeaders, Methods_7qh2rz['post']['status']>(prefix, PATH10, POST, option).json(),
       /**
        * Upload a file
        * @returns response
        */
-      $post: (option: { body: Methods9['post']['reqBody'], config?: T | undefined }) =>
-        fetch<Methods9['post']['resBody'], BasicHeaders, Methods9['post']['status']>(prefix, PATH10, POST, option).json().then(r => r.body),
+      $post: (option: { body: Methods_7qh2rz['post']['reqBody'], config?: T | undefined }) =>
+        fetch<Methods_7qh2rz['post']['resBody'], BasicHeaders, Methods_7qh2rz['post']['status']>(prefix, PATH10, POST, option).json().then(r => r.body),
       $path: () => `${prefix}${PATH10}`,
     },
     users: {
@@ -306,37 +306,37 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * @returns response
            */
           get: (option?: { config?: T | undefined } | undefined) =>
-            fetch<Methods15['get']['resBody'], BasicHeaders, Methods15['get']['status']>(prefix, prefix1, GET, option).json(),
+            fetch<Methods_1is6fjm['get']['resBody'], BasicHeaders, Methods_1is6fjm['get']['status']>(prefix, prefix1, GET, option).json(),
           /**
            * Retrieve a single user depending on his id
            * @returns response
            */
           $get: (option?: { config?: T | undefined } | undefined) =>
-            fetch<Methods15['get']['resBody'], BasicHeaders, Methods15['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
+            fetch<Methods_1is6fjm['get']['resBody'], BasicHeaders, Methods_1is6fjm['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
           /**
            * Update an existing user
            * @returns response
            */
-          put: (option: { body: Methods15['put']['reqBody'], config?: T | undefined }) =>
-            fetch<Methods15['put']['resBody'], BasicHeaders, Methods15['put']['status']>(prefix, prefix1, PUT, option).json(),
+          put: (option: { body: Methods_1is6fjm['put']['reqBody'], config?: T | undefined }) =>
+            fetch<Methods_1is6fjm['put']['resBody'], BasicHeaders, Methods_1is6fjm['put']['status']>(prefix, prefix1, PUT, option).json(),
           /**
            * Update an existing user
            * @returns response
            */
-          $put: (option: { body: Methods15['put']['reqBody'], config?: T | undefined }) =>
-            fetch<Methods15['put']['resBody'], BasicHeaders, Methods15['put']['status']>(prefix, prefix1, PUT, option).json().then(r => r.body),
+          $put: (option: { body: Methods_1is6fjm['put']['reqBody'], config?: T | undefined }) =>
+            fetch<Methods_1is6fjm['put']['resBody'], BasicHeaders, Methods_1is6fjm['put']['status']>(prefix, prefix1, PUT, option).json().then(r => r.body),
           /**
            * Delete an existing user
            * @returns response
            */
           delete: (option?: { config?: T | undefined } | undefined) =>
-            fetch<Methods15['delete']['resBody'], BasicHeaders, Methods15['delete']['status']>(prefix, prefix1, DELETE, option).json(),
+            fetch<Methods_1is6fjm['delete']['resBody'], BasicHeaders, Methods_1is6fjm['delete']['status']>(prefix, prefix1, DELETE, option).json(),
           /**
            * Delete an existing user
            * @returns response
            */
           $delete: (option?: { config?: T | undefined } | undefined) =>
-            fetch<Methods15['delete']['resBody'], BasicHeaders, Methods15['delete']['status']>(prefix, prefix1, DELETE, option).json().then(r => r.body),
+            fetch<Methods_1is6fjm['delete']['resBody'], BasicHeaders, Methods_1is6fjm['delete']['status']>(prefix, prefix1, DELETE, option).json().then(r => r.body),
           $path: () => `${prefix}${prefix1}`,
         };
       },
@@ -346,28 +346,28 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          * @returns response
          */
         get: (option?: { config?: T | undefined } | undefined) =>
-          fetch<Methods16['get']['resBody'], BasicHeaders, Methods16['get']['status']>(prefix, PATH15, GET, option).json(),
+          fetch<Methods_jzr18p['get']['resBody'], BasicHeaders, Methods_jzr18p['get']['status']>(prefix, PATH15, GET, option).json(),
         /**
          * Retrieve the logged in user information
          * @returns response
          */
         $get: (option?: { config?: T | undefined } | undefined) =>
-          fetch<Methods16['get']['resBody'], BasicHeaders, Methods16['get']['status']>(prefix, PATH15, GET, option).json().then(r => r.body),
+          fetch<Methods_jzr18p['get']['resBody'], BasicHeaders, Methods_jzr18p['get']['status']>(prefix, PATH15, GET, option).json().then(r => r.body),
         $path: () => `${prefix}${PATH15}`,
       },
       /**
        * Retrieve all user documents
        * @returns response
        */
-      get: (option?: { query?: Methods14['get']['query'] | undefined, config?: T | undefined } | undefined) =>
-        fetch<Methods14['get']['resBody'], BasicHeaders, Methods14['get']['status']>(prefix, PATH14, GET, option).json(),
+      get: (option?: { query?: Methods_1xhiioa['get']['query'] | undefined, config?: T | undefined } | undefined) =>
+        fetch<Methods_1xhiioa['get']['resBody'], BasicHeaders, Methods_1xhiioa['get']['status']>(prefix, PATH14, GET, option).json(),
       /**
        * Retrieve all user documents
        * @returns response
        */
-      $get: (option?: { query?: Methods14['get']['query'] | undefined, config?: T | undefined } | undefined) =>
-        fetch<Methods14['get']['resBody'], BasicHeaders, Methods14['get']['status']>(prefix, PATH14, GET, option).json().then(r => r.body),
-      $path: (option?: { method?: 'get' | undefined; query: Methods14['get']['query'] } | undefined) =>
+      $get: (option?: { query?: Methods_1xhiioa['get']['query'] | undefined, config?: T | undefined } | undefined) =>
+        fetch<Methods_1xhiioa['get']['resBody'], BasicHeaders, Methods_1xhiioa['get']['status']>(prefix, PATH14, GET, option).json().then(r => r.body),
+      $path: (option?: { method?: 'get' | undefined; query: Methods_1xhiioa['get']['query'] } | undefined) =>
         `${prefix}${PATH14}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
     },
     users_permissions: {
@@ -377,13 +377,13 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          * @returns response
          */
         get: (option?: { config?: T | undefined } | undefined) =>
-          fetch<Methods17['get']['resBody'], BasicHeaders, Methods17['get']['status']>(prefix, PATH16, GET, option).json(),
+          fetch<Methods_1b3roee['get']['resBody'], BasicHeaders, Methods_1b3roee['get']['status']>(prefix, PATH16, GET, option).json(),
         /**
          * Check if the first admin user has already been registered
          * @returns response
          */
         $get: (option?: { config?: T | undefined } | undefined) =>
-          fetch<Methods17['get']['resBody'], BasicHeaders, Methods17['get']['status']>(prefix, PATH16, GET, option).json().then(r => r.body),
+          fetch<Methods_1b3roee['get']['resBody'], BasicHeaders, Methods_1b3roee['get']['status']>(prefix, PATH16, GET, option).json().then(r => r.body),
         $path: () => `${prefix}${PATH16}`,
       },
       roles: {
@@ -396,13 +396,13 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
              * @returns response
              */
             get: (option?: { config?: T | undefined } | undefined) =>
-              fetch<Methods19['get']['resBody'], BasicHeaders, Methods19['get']['status']>(prefix, prefix2, GET, option).json(),
+              fetch<Methods_1q2k7i3['get']['resBody'], BasicHeaders, Methods_1q2k7i3['get']['status']>(prefix, prefix2, GET, option).json(),
             /**
              * Retrieve a role depending on its id
              * @returns response
              */
             $get: (option?: { config?: T | undefined } | undefined) =>
-              fetch<Methods19['get']['resBody'], BasicHeaders, Methods19['get']['status']>(prefix, prefix2, GET, option).json().then(r => r.body),
+              fetch<Methods_1q2k7i3['get']['resBody'], BasicHeaders, Methods_1q2k7i3['get']['status']>(prefix, prefix2, GET, option).json().then(r => r.body),
             $path: () => `${prefix}${prefix2}`,
           };
         },
@@ -414,26 +414,26 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
              * Update a role
              * @returns response
              */
-            put: (option: { body: Methods20['put']['reqBody'], config?: T | undefined }) =>
-              fetch<Methods20['put']['resBody'], BasicHeaders, Methods20['put']['status']>(prefix, prefix2, PUT, option).json(),
+            put: (option: { body: Methods_vdjfk0['put']['reqBody'], config?: T | undefined }) =>
+              fetch<Methods_vdjfk0['put']['resBody'], BasicHeaders, Methods_vdjfk0['put']['status']>(prefix, prefix2, PUT, option).json(),
             /**
              * Update a role
              * @returns response
              */
-            $put: (option: { body: Methods20['put']['reqBody'], config?: T | undefined }) =>
-              fetch<Methods20['put']['resBody'], BasicHeaders, Methods20['put']['status']>(prefix, prefix2, PUT, option).json().then(r => r.body),
+            $put: (option: { body: Methods_vdjfk0['put']['reqBody'], config?: T | undefined }) =>
+              fetch<Methods_vdjfk0['put']['resBody'], BasicHeaders, Methods_vdjfk0['put']['status']>(prefix, prefix2, PUT, option).json().then(r => r.body),
             /**
              * Delete a role
              * @returns response
              */
             delete: (option?: { config?: T | undefined } | undefined) =>
-              fetch<Methods20['delete']['resBody'], BasicHeaders, Methods20['delete']['status']>(prefix, prefix2, DELETE, option).json(),
+              fetch<Methods_vdjfk0['delete']['resBody'], BasicHeaders, Methods_vdjfk0['delete']['status']>(prefix, prefix2, DELETE, option).json(),
             /**
              * Delete a role
              * @returns response
              */
             $delete: (option?: { config?: T | undefined } | undefined) =>
-              fetch<Methods20['delete']['resBody'], BasicHeaders, Methods20['delete']['status']>(prefix, prefix2, DELETE, option).json().then(r => r.body),
+              fetch<Methods_vdjfk0['delete']['resBody'], BasicHeaders, Methods_vdjfk0['delete']['status']>(prefix, prefix2, DELETE, option).json().then(r => r.body),
             $path: () => `${prefix}${prefix2}`,
           };
         },
@@ -441,27 +441,27 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          * Retrieve all role documents
          * @returns response
          */
-        get: (option?: { query?: Methods18['get']['query'] | undefined, config?: T | undefined } | undefined) =>
-          fetch<Methods18['get']['resBody'], BasicHeaders, Methods18['get']['status']>(prefix, PATH17, GET, option).json(),
+        get: (option?: { query?: Methods_dxhgx9['get']['query'] | undefined, config?: T | undefined } | undefined) =>
+          fetch<Methods_dxhgx9['get']['resBody'], BasicHeaders, Methods_dxhgx9['get']['status']>(prefix, PATH17, GET, option).json(),
         /**
          * Retrieve all role documents
          * @returns response
          */
-        $get: (option?: { query?: Methods18['get']['query'] | undefined, config?: T | undefined } | undefined) =>
-          fetch<Methods18['get']['resBody'], BasicHeaders, Methods18['get']['status']>(prefix, PATH17, GET, option).json().then(r => r.body),
+        $get: (option?: { query?: Methods_dxhgx9['get']['query'] | undefined, config?: T | undefined } | undefined) =>
+          fetch<Methods_dxhgx9['get']['resBody'], BasicHeaders, Methods_dxhgx9['get']['status']>(prefix, PATH17, GET, option).json().then(r => r.body),
         /**
          * Create a new role
          * @returns response
          */
-        post: (option: { body: Methods18['post']['reqBody'], config?: T | undefined }) =>
-          fetch<Methods18['post']['resBody'], BasicHeaders, Methods18['post']['status']>(prefix, PATH17, POST, option).json(),
+        post: (option: { body: Methods_dxhgx9['post']['reqBody'], config?: T | undefined }) =>
+          fetch<Methods_dxhgx9['post']['resBody'], BasicHeaders, Methods_dxhgx9['post']['status']>(prefix, PATH17, POST, option).json(),
         /**
          * Create a new role
          * @returns response
          */
-        $post: (option: { body: Methods18['post']['reqBody'], config?: T | undefined }) =>
-          fetch<Methods18['post']['resBody'], BasicHeaders, Methods18['post']['status']>(prefix, PATH17, POST, option).json().then(r => r.body),
-        $path: (option?: { method?: 'get' | undefined; query: Methods18['get']['query'] } | undefined) =>
+        $post: (option: { body: Methods_dxhgx9['post']['reqBody'], config?: T | undefined }) =>
+          fetch<Methods_dxhgx9['post']['resBody'], BasicHeaders, Methods_dxhgx9['post']['status']>(prefix, PATH17, POST, option).json().then(r => r.body),
+        $path: (option?: { method?: 'get' | undefined; query: Methods_dxhgx9['get']['query'] } | undefined) =>
           `${prefix}${PATH17}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
       },
       search: {
@@ -473,15 +473,15 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
              * Search for users
              * @returns response
              */
-            get: (option?: { query?: Methods21['get']['query'] | undefined, config?: T | undefined } | undefined) =>
-              fetch<Methods21['get']['resBody'], BasicHeaders, Methods21['get']['status']>(prefix, prefix2, GET, option).json(),
+            get: (option?: { query?: Methods_9yavck['get']['query'] | undefined, config?: T | undefined } | undefined) =>
+              fetch<Methods_9yavck['get']['resBody'], BasicHeaders, Methods_9yavck['get']['status']>(prefix, prefix2, GET, option).json(),
             /**
              * Search for users
              * @returns response
              */
-            $get: (option?: { query?: Methods21['get']['query'] | undefined, config?: T | undefined } | undefined) =>
-              fetch<Methods21['get']['resBody'], BasicHeaders, Methods21['get']['status']>(prefix, prefix2, GET, option).json().then(r => r.body),
-            $path: (option?: { method?: 'get' | undefined; query: Methods21['get']['query'] } | undefined) =>
+            $get: (option?: { query?: Methods_9yavck['get']['query'] | undefined, config?: T | undefined } | undefined) =>
+              fetch<Methods_9yavck['get']['resBody'], BasicHeaders, Methods_9yavck['get']['status']>(prefix, prefix2, GET, option).json().then(r => r.body),
+            $path: (option?: { method?: 'get' | undefined; query: Methods_9yavck['get']['query'] } | undefined) =>
               `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
           };
         },

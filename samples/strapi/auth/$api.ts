@@ -1,11 +1,11 @@
 import type { AspidaClient, BasicHeaders } from 'aspida';
-import type { Methods as Methods0 } from './_provider@string/callback';
-import type { Methods as Methods1 } from './email-confirmation';
-import type { Methods as Methods2 } from './forgot-password';
-import type { Methods as Methods3 } from './local';
-import type { Methods as Methods4 } from './local/register';
-import type { Methods as Methods5 } from './reset-password';
-import type { Methods as Methods6 } from './send-email-confirmation';
+import type { Methods as Methods_1jnqk3z } from './_provider@string/callback';
+import type { Methods as Methods_6dpbx4 } from './email-confirmation';
+import type { Methods as Methods_1r7pmad } from './forgot-password';
+import type { Methods as Methods_1o7ifv5 } from './local';
+import type { Methods as Methods_6urz2b } from './local/register';
+import type { Methods as Methods_1i354bd } from './reset-password';
+import type { Methods as Methods_p34g6l } from './send-email-confirmation';
 
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? 'http://localhost:1337' : baseURL).replace(/\/$/, '');
@@ -31,13 +31,13 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * @returns response
            */
           get: (option?: { config?: T | undefined } | undefined) =>
-            fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, `${prefix0}${PATH1}`, GET, option).json(),
+            fetch<Methods_1jnqk3z['get']['resBody'], BasicHeaders, Methods_1jnqk3z['get']['status']>(prefix, `${prefix0}${PATH1}`, GET, option).json(),
           /**
            * Successfull redirection after approving a provider
            * @returns response
            */
           $get: (option?: { config?: T | undefined } | undefined) =>
-            fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, `${prefix0}${PATH1}`, GET, option).json().then(r => r.body),
+            fetch<Methods_1jnqk3z['get']['resBody'], BasicHeaders, Methods_1jnqk3z['get']['status']>(prefix, `${prefix0}${PATH1}`, GET, option).json().then(r => r.body),
           $path: () => `${prefix}${prefix0}${PATH1}`,
         },
       };
@@ -48,13 +48,13 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * @returns response
        */
       get: (option?: { config?: T | undefined } | undefined) =>
-        fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, PATH2, GET, option).json(),
+        fetch<Methods_6dpbx4['get']['resBody'], BasicHeaders, Methods_6dpbx4['get']['status']>(prefix, PATH2, GET, option).json(),
       /**
        * Validate a user account
        * @returns response
        */
       $get: (option?: { config?: T | undefined } | undefined) =>
-        fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, PATH2, GET, option).json().then(r => r.body),
+        fetch<Methods_6dpbx4['get']['resBody'], BasicHeaders, Methods_6dpbx4['get']['status']>(prefix, PATH2, GET, option).json().then(r => r.body),
       $path: () => `${prefix}${PATH2}`,
     },
     forgot_password: {
@@ -62,14 +62,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * Send the reset password email link
        * @returns response
        */
-      post: (option: { body: Methods2['post']['reqBody'], config?: T | undefined }) =>
-        fetch<Methods2['post']['resBody'], BasicHeaders, Methods2['post']['status']>(prefix, PATH3, POST, option).json(),
+      post: (option: { body: Methods_1r7pmad['post']['reqBody'], config?: T | undefined }) =>
+        fetch<Methods_1r7pmad['post']['resBody'], BasicHeaders, Methods_1r7pmad['post']['status']>(prefix, PATH3, POST, option).json(),
       /**
        * Send the reset password email link
        * @returns response
        */
-      $post: (option: { body: Methods2['post']['reqBody'], config?: T | undefined }) =>
-        fetch<Methods2['post']['resBody'], BasicHeaders, Methods2['post']['status']>(prefix, PATH3, POST, option).json().then(r => r.body),
+      $post: (option: { body: Methods_1r7pmad['post']['reqBody'], config?: T | undefined }) =>
+        fetch<Methods_1r7pmad['post']['resBody'], BasicHeaders, Methods_1r7pmad['post']['status']>(prefix, PATH3, POST, option).json().then(r => r.body),
       $path: () => `${prefix}${PATH3}`,
     },
     local: {
@@ -78,28 +78,28 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          * Register a new user with the default role
          * @returns response
          */
-        post: (option: { body: Methods4['post']['reqBody'], config?: T | undefined }) =>
-          fetch<Methods4['post']['resBody'], BasicHeaders, Methods4['post']['status']>(prefix, PATH5, POST, option).json(),
+        post: (option: { body: Methods_6urz2b['post']['reqBody'], config?: T | undefined }) =>
+          fetch<Methods_6urz2b['post']['resBody'], BasicHeaders, Methods_6urz2b['post']['status']>(prefix, PATH5, POST, option).json(),
         /**
          * Register a new user with the default role
          * @returns response
          */
-        $post: (option: { body: Methods4['post']['reqBody'], config?: T | undefined }) =>
-          fetch<Methods4['post']['resBody'], BasicHeaders, Methods4['post']['status']>(prefix, PATH5, POST, option).json().then(r => r.body),
+        $post: (option: { body: Methods_6urz2b['post']['reqBody'], config?: T | undefined }) =>
+          fetch<Methods_6urz2b['post']['resBody'], BasicHeaders, Methods_6urz2b['post']['status']>(prefix, PATH5, POST, option).json().then(r => r.body),
         $path: () => `${prefix}${PATH5}`,
       },
       /**
        * Login a user using the identifiers email and password
        * @returns response
        */
-      post: (option: { body: Methods3['post']['reqBody'], config?: T | undefined }) =>
-        fetch<Methods3['post']['resBody'], BasicHeaders, Methods3['post']['status']>(prefix, PATH4, POST, option).json(),
+      post: (option: { body: Methods_1o7ifv5['post']['reqBody'], config?: T | undefined }) =>
+        fetch<Methods_1o7ifv5['post']['resBody'], BasicHeaders, Methods_1o7ifv5['post']['status']>(prefix, PATH4, POST, option).json(),
       /**
        * Login a user using the identifiers email and password
        * @returns response
        */
-      $post: (option: { body: Methods3['post']['reqBody'], config?: T | undefined }) =>
-        fetch<Methods3['post']['resBody'], BasicHeaders, Methods3['post']['status']>(prefix, PATH4, POST, option).json().then(r => r.body),
+      $post: (option: { body: Methods_1o7ifv5['post']['reqBody'], config?: T | undefined }) =>
+        fetch<Methods_1o7ifv5['post']['resBody'], BasicHeaders, Methods_1o7ifv5['post']['status']>(prefix, PATH4, POST, option).json().then(r => r.body),
       $path: () => `${prefix}${PATH4}`,
     },
     reset_password: {
@@ -107,14 +107,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * Change a user's password
        * @returns response
        */
-      post: (option: { body: Methods5['post']['reqBody'], config?: T | undefined }) =>
-        fetch<Methods5['post']['resBody'], BasicHeaders, Methods5['post']['status']>(prefix, PATH6, POST, option).json(),
+      post: (option: { body: Methods_1i354bd['post']['reqBody'], config?: T | undefined }) =>
+        fetch<Methods_1i354bd['post']['resBody'], BasicHeaders, Methods_1i354bd['post']['status']>(prefix, PATH6, POST, option).json(),
       /**
        * Change a user's password
        * @returns response
        */
-      $post: (option: { body: Methods5['post']['reqBody'], config?: T | undefined }) =>
-        fetch<Methods5['post']['resBody'], BasicHeaders, Methods5['post']['status']>(prefix, PATH6, POST, option).json().then(r => r.body),
+      $post: (option: { body: Methods_1i354bd['post']['reqBody'], config?: T | undefined }) =>
+        fetch<Methods_1i354bd['post']['resBody'], BasicHeaders, Methods_1i354bd['post']['status']>(prefix, PATH6, POST, option).json().then(r => r.body),
       $path: () => `${prefix}${PATH6}`,
     },
     send_email_confirmation: {
@@ -122,14 +122,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * Send a confirmation email to user
        * @returns response
        */
-      post: (option: { body: Methods6['post']['reqBody'], config?: T | undefined }) =>
-        fetch<Methods6['post']['resBody'], BasicHeaders, Methods6['post']['status']>(prefix, PATH7, POST, option).json(),
+      post: (option: { body: Methods_p34g6l['post']['reqBody'], config?: T | undefined }) =>
+        fetch<Methods_p34g6l['post']['resBody'], BasicHeaders, Methods_p34g6l['post']['status']>(prefix, PATH7, POST, option).json(),
       /**
        * Send a confirmation email to user
        * @returns response
        */
-      $post: (option: { body: Methods6['post']['reqBody'], config?: T | undefined }) =>
-        fetch<Methods6['post']['resBody'], BasicHeaders, Methods6['post']['status']>(prefix, PATH7, POST, option).json().then(r => r.body),
+      $post: (option: { body: Methods_p34g6l['post']['reqBody'], config?: T | undefined }) =>
+        fetch<Methods_p34g6l['post']['resBody'], BasicHeaders, Methods_p34g6l['post']['status']>(prefix, PATH7, POST, option).json().then(r => r.body),
       $path: () => `${prefix}${PATH7}`,
     },
   };

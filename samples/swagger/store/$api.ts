@@ -1,7 +1,7 @@
 import type { AspidaClient, BasicHeaders } from 'aspida';
-import type { Methods as Methods0 } from './inventory';
-import type { Methods as Methods1 } from './order';
-import type { Methods as Methods2 } from './order/_orderId@number';
+import type { Methods as Methods_kw9y6m } from './inventory';
+import type { Methods as Methods_1lpj73m } from './order';
+import type { Methods as Methods_go1usm } from './order/_orderId@number';
 
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? 'https://petstore.swagger.io/v2' : baseURL).replace(/\/$/, '');
@@ -18,13 +18,13 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * @returns successful operation
        */
       get: (option?: { config?: T | undefined } | undefined) =>
-        fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json(),
+        fetch<Methods_kw9y6m['get']['resBody'], BasicHeaders, Methods_kw9y6m['get']['status']>(prefix, PATH0, GET, option).json(),
       /**
        * Returns a map of status codes to quantities
        * @returns successful operation
        */
       $get: (option?: { config?: T | undefined } | undefined) =>
-        fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json().then(r => r.body),
+        fetch<Methods_kw9y6m['get']['resBody'], BasicHeaders, Methods_kw9y6m['get']['status']>(prefix, PATH0, GET, option).json().then(r => r.body),
       $path: () => `${prefix}${PATH0}`,
     },
     order: {
@@ -37,13 +37,13 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * @returns successful operation
            */
           get: (option?: { config?: T | undefined } | undefined) =>
-            fetch<Methods2['get']['resBody'], BasicHeaders, Methods2['get']['status']>(prefix, prefix1, GET, option).json(),
+            fetch<Methods_go1usm['get']['resBody'], BasicHeaders, Methods_go1usm['get']['status']>(prefix, prefix1, GET, option).json(),
           /**
            * For valid response try integer IDs with value >= 1 and <= 10. Other values will generated exceptions
            * @returns successful operation
            */
           $get: (option?: { config?: T | undefined } | undefined) =>
-            fetch<Methods2['get']['resBody'], BasicHeaders, Methods2['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
+            fetch<Methods_go1usm['get']['resBody'], BasicHeaders, Methods_go1usm['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
           /**
            * For valid response try integer IDs with positive integer value. Negative or non-integer values will generate API errors
            */
@@ -61,14 +61,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * @param option.body - order placed for purchasing the pet
        * @returns successful operation
        */
-      post: (option: { body: Methods1['post']['reqBody'], config?: T | undefined }) =>
-        fetch<Methods1['post']['resBody'], BasicHeaders, Methods1['post']['status']>(prefix, PATH1, POST, option).json(),
+      post: (option: { body: Methods_1lpj73m['post']['reqBody'], config?: T | undefined }) =>
+        fetch<Methods_1lpj73m['post']['resBody'], BasicHeaders, Methods_1lpj73m['post']['status']>(prefix, PATH1, POST, option).json(),
       /**
        * @param option.body - order placed for purchasing the pet
        * @returns successful operation
        */
-      $post: (option: { body: Methods1['post']['reqBody'], config?: T | undefined }) =>
-        fetch<Methods1['post']['resBody'], BasicHeaders, Methods1['post']['status']>(prefix, PATH1, POST, option).json().then(r => r.body),
+      $post: (option: { body: Methods_1lpj73m['post']['reqBody'], config?: T | undefined }) =>
+        fetch<Methods_1lpj73m['post']['resBody'], BasicHeaders, Methods_1lpj73m['post']['status']>(prefix, PATH1, POST, option).json().then(r => r.body),
       $path: () => `${prefix}${PATH1}`,
     },
   };

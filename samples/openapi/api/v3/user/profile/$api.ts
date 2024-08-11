@@ -1,5 +1,5 @@
 import type { AspidaClient, BasicHeaders } from 'aspida';
-import type { Methods as Methods0 } from '.';
+import type { Methods as Methods_by08hd } from '.';
 
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? '' : baseURL).replace(/\/$/, '');
@@ -7,10 +7,10 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const PUT = 'PUT';
 
   return {
-    put: (option: { body: Methods0['put']['reqBody'], headers?: Methods0['put']['reqHeaders'] | undefined, config?: T | undefined }) =>
-      fetch<void, BasicHeaders, Methods0['put']['status']>(prefix, PATH0, PUT, option, 'FormData').send(),
-    $put: (option: { body: Methods0['put']['reqBody'], headers?: Methods0['put']['reqHeaders'] | undefined, config?: T | undefined }) =>
-      fetch<void, BasicHeaders, Methods0['put']['status']>(prefix, PATH0, PUT, option, 'FormData').send().then(r => r.body),
+    put: (option: { body: Methods_by08hd['put']['reqBody'], headers?: Methods_by08hd['put']['reqHeaders'] | undefined, config?: T | undefined }) =>
+      fetch<void, BasicHeaders, Methods_by08hd['put']['status']>(prefix, PATH0, PUT, option, 'FormData').send(),
+    $put: (option: { body: Methods_by08hd['put']['reqBody'], headers?: Methods_by08hd['put']['reqHeaders'] | undefined, config?: T | undefined }) =>
+      fetch<void, BasicHeaders, Methods_by08hd['put']['status']>(prefix, PATH0, PUT, option, 'FormData').send().then(r => r.body),
     $path: () => `${prefix}${PATH0}`,
   };
 };

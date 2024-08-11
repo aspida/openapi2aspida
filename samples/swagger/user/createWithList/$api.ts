@@ -1,5 +1,5 @@
 import type { AspidaClient } from 'aspida';
-import type { Methods as Methods0 } from '.';
+import type { Methods as Methods_by08hd } from '.';
 
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? 'https://petstore.swagger.io/v2' : baseURL).replace(/\/$/, '');
@@ -10,12 +10,12 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
     /**
      * @param option.body - List of user object
      */
-    post: (option: { body: Methods0['post']['reqBody'], config?: T | undefined }) =>
+    post: (option: { body: Methods_by08hd['post']['reqBody'], config?: T | undefined }) =>
       fetch(prefix, PATH0, POST, option).send(),
     /**
      * @param option.body - List of user object
      */
-    $post: (option: { body: Methods0['post']['reqBody'], config?: T | undefined }) =>
+    $post: (option: { body: Methods_by08hd['post']['reqBody'], config?: T | undefined }) =>
       fetch(prefix, PATH0, POST, option).send().then(r => r.body),
     $path: () => `${prefix}${PATH0}`,
   };

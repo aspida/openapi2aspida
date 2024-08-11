@@ -1,63 +1,63 @@
 import type { AspidaClient, BasicHeaders } from 'aspida';
 import { dataToURLString } from 'aspida';
-import type { Methods as Methods0 } from './account_items';
-import type { Methods as Methods1 } from './account_items/_id@number';
-import type { Methods as Methods2 } from './banks';
-import type { Methods as Methods3 } from './banks/_id@number';
-import type { Methods as Methods4 } from './companies';
-import type { Methods as Methods5 } from './companies/_id@number';
-import type { Methods as Methods6 } from './deals';
-import type { Methods as Methods7 } from './deals/_id@number';
-import type { Methods as Methods8 } from './deals/_id@number/payments';
-import type { Methods as Methods9 } from './deals/_id@number/payments/_payment_id@number';
-import type { Methods as Methods10 } from './deals/_id@number/renews';
-import type { Methods as Methods11 } from './deals/_id@number/renews/_renew_id@number';
-import type { Methods as Methods12 } from './expense_application_line_templates';
-import type { Methods as Methods13 } from './expense_application_line_templates/_id@number';
-import type { Methods as Methods14 } from './expense_applications';
-import type { Methods as Methods15 } from './expense_applications/_id@number';
-import type { Methods as Methods16 } from './forms/selectables';
-import type { Methods as Methods17 } from './invoices';
-import type { Methods as Methods18 } from './invoices/_id@number';
-import type { Methods as Methods19 } from './items';
-import type { Methods as Methods20 } from './items/_id@number';
-import type { Methods as Methods21 } from './journals';
-import type { Methods as Methods22 } from './journals/reports/_id@number/download';
-import type { Methods as Methods23 } from './journals/reports/_id@number/status';
-import type { Methods as Methods24 } from './manual_journals';
-import type { Methods as Methods25 } from './manual_journals/_id@number';
-import type { Methods as Methods26 } from './partners';
-import type { Methods as Methods27 } from './partners/_id@number';
-import type { Methods as Methods28 } from './partners/code/_code@string';
-import type { Methods as Methods29 } from './quotations';
-import type { Methods as Methods30 } from './quotations/_id@number';
-import type { Methods as Methods31 } from './receipts';
-import type { Methods as Methods32 } from './receipts/_id@number';
-import type { Methods as Methods33 } from './reports/trial_bs';
-import type { Methods as Methods34 } from './reports/trial_bs_three_years';
-import type { Methods as Methods35 } from './reports/trial_bs_two_years';
-import type { Methods as Methods36 } from './reports/trial_pl';
-import type { Methods as Methods37 } from './reports/trial_pl_sections';
-import type { Methods as Methods38 } from './reports/trial_pl_three_years';
-import type { Methods as Methods39 } from './reports/trial_pl_two_years';
-import type { Methods as Methods40 } from './sections';
-import type { Methods as Methods41 } from './sections/_id@number';
-import type { Methods as Methods42 } from './segments/_segment_id@number/tags';
-import type { Methods as Methods43 } from './segments/_segment_id@number/tags/_id@number';
-import type { Methods as Methods44 } from './tags';
-import type { Methods as Methods45 } from './tags/_id@number';
-import type { Methods as Methods46 } from './taxes/codes';
-import type { Methods as Methods47 } from './taxes/codes/_code@number';
-import type { Methods as Methods48 } from './taxes/companies/_company_id@number';
-import type { Methods as Methods49 } from './transfers';
-import type { Methods as Methods50 } from './transfers/_id@number';
-import type { Methods as Methods51 } from './users';
-import type { Methods as Methods52 } from './users/capabilities';
-import type { Methods as Methods53 } from './users/me';
-import type { Methods as Methods54 } from './wallet_txns';
-import type { Methods as Methods55 } from './wallet_txns/_id@number';
-import type { Methods as Methods56 } from './walletables';
-import type { Methods as Methods57 } from './walletables/_type@string/_id@number';
+import type { Methods as Methods_1797yi2 } from './account_items';
+import type { Methods as Methods_8qk0na } from './account_items/_id@number';
+import type { Methods as Methods_pk8yl9 } from './banks';
+import type { Methods as Methods_j8hc1r } from './banks/_id@number';
+import type { Methods as Methods_xi4crh } from './companies';
+import type { Methods as Methods_asyhtr } from './companies/_id@number';
+import type { Methods as Methods_1j0wxe9 } from './deals';
+import type { Methods as Methods_s42tfn } from './deals/_id@number';
+import type { Methods as Methods_ydimfv } from './deals/_id@number/payments';
+import type { Methods as Methods_119chy4 } from './deals/_id@number/payments/_payment_id@number';
+import type { Methods as Methods_15d7fae } from './deals/_id@number/renews';
+import type { Methods as Methods_1fsj8c8 } from './deals/_id@number/renews/_renew_id@number';
+import type { Methods as Methods_om0dga } from './expense_application_line_templates';
+import type { Methods as Methods_1nkkdy } from './expense_application_line_templates/_id@number';
+import type { Methods as Methods_1watu38 } from './expense_applications';
+import type { Methods as Methods_1ata4r4 } from './expense_applications/_id@number';
+import type { Methods as Methods_dub6pf } from './forms/selectables';
+import type { Methods as Methods_1im2cji } from './invoices';
+import type { Methods as Methods_1hf812y } from './invoices/_id@number';
+import type { Methods as Methods_1sl9ty } from './items';
+import type { Methods as Methods_lcuria } from './items/_id@number';
+import type { Methods as Methods_bpgo2i } from './journals';
+import type { Methods as Methods_vrr9vn } from './journals/reports/_id@number/download';
+import type { Methods as Methods_14rp4qp } from './journals/reports/_id@number/status';
+import type { Methods as Methods_7xsoh1 } from './manual_journals';
+import type { Methods as Methods_2ki4h3 } from './manual_journals/_id@number';
+import type { Methods as Methods_13sbgxh } from './partners';
+import type { Methods as Methods_zyy0xj } from './partners/_id@number';
+import type { Methods as Methods_17ohx2p } from './partners/code/_code@string';
+import type { Methods as Methods_1hbeo59 } from './quotations';
+import type { Methods as Methods_xp60db } from './quotations/_id@number';
+import type { Methods as Methods_lcgnb7 } from './receipts';
+import type { Methods as Methods_gwls3x } from './receipts/_id@number';
+import type { Methods as Methods_8z6ya0 } from './reports/trial_bs';
+import type { Methods as Methods_1q45gpe } from './reports/trial_bs_three_years';
+import type { Methods as Methods_1lqa25w } from './reports/trial_bs_two_years';
+import type { Methods as Methods_376oif } from './reports/trial_pl';
+import type { Methods as Methods_wf8kc4 } from './reports/trial_pl_sections';
+import type { Methods as Methods_u62eat } from './reports/trial_pl_three_years';
+import type { Methods as Methods_2kakxf } from './reports/trial_pl_two_years';
+import type { Methods as Methods_bg6t02 } from './sections';
+import type { Methods as Methods_13j4n1q } from './sections/_id@number';
+import type { Methods as Methods_caj7ye } from './segments/_segment_id@number/tags';
+import type { Methods as Methods_2j04oy } from './segments/_segment_id@number/tags/_id@number';
+import type { Methods as Methods_rxnz0j } from './tags';
+import type { Methods as Methods_1skf2bx } from './tags/_id@number';
+import type { Methods as Methods_x92uhq } from './taxes/codes';
+import type { Methods as Methods_agxjle } from './taxes/codes/_code@number';
+import type { Methods as Methods_89r781 } from './taxes/companies/_company_id@number';
+import type { Methods as Methods_uvjcbq } from './transfers';
+import type { Methods as Methods_14ohnqa } from './transfers/_id@number';
+import type { Methods as Methods_1xhiioa } from './users';
+import type { Methods as Methods_su8bid } from './users/capabilities';
+import type { Methods as Methods_jzr18p } from './users/me';
+import type { Methods as Methods_1rv49ab } from './wallet_txns';
+import type { Methods as Methods_h90hal } from './wallet_txns/_id@number';
+import type { Methods as Methods_1nphqfo } from './walletables';
+import type { Methods as Methods_xx015 } from './walletables/_type@string/_id@number';
 
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? 'https://api.freee.co.jp' : baseURL).replace(/\/$/, '');
@@ -116,31 +116,31 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            *
            * <p>指定した勘定科目の詳細を取得する</p>
            */
-          get: (option: { query: Methods1['get']['query'], config?: T | undefined }) =>
-            fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix1, GET, option).json(),
+          get: (option: { query: Methods_8qk0na['get']['query'], config?: T | undefined }) =>
+            fetch<Methods_8qk0na['get']['resBody'], BasicHeaders, Methods_8qk0na['get']['status']>(prefix, prefix1, GET, option).json(),
           /**
            * <h2 id="">概要</h2>
            *
            * <p>指定した勘定科目の詳細を取得する</p>
            */
-          $get: (option: { query: Methods1['get']['query'], config?: T | undefined }) =>
-            fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
+          $get: (option: { query: Methods_8qk0na['get']['query'], config?: T | undefined }) =>
+            fetch<Methods_8qk0na['get']['resBody'], BasicHeaders, Methods_8qk0na['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
           /**
            * <h2 id="">概要</h2>
            *
            * <p>勘定科目を更新する</p>
            * @param option.body - 勘定科目の更新
            */
-          put: (option: { body: Methods1['put']['reqBody'], config?: T | undefined }) =>
-            fetch<Methods1['put']['resBody'], BasicHeaders, Methods1['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json(),
+          put: (option: { body: Methods_8qk0na['put']['reqBody'], config?: T | undefined }) =>
+            fetch<Methods_8qk0na['put']['resBody'], BasicHeaders, Methods_8qk0na['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json(),
           /**
            * <h2 id="">概要</h2>
            *
            * <p>勘定科目を更新する</p>
            * @param option.body - 勘定科目の更新
            */
-          $put: (option: { body: Methods1['put']['reqBody'], config?: T | undefined }) =>
-            fetch<Methods1['put']['resBody'], BasicHeaders, Methods1['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json().then(r => r.body),
+          $put: (option: { body: Methods_8qk0na['put']['reqBody'], config?: T | undefined }) =>
+            fetch<Methods_8qk0na['put']['resBody'], BasicHeaders, Methods_8qk0na['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json().then(r => r.body),
           /**
            * <h2 id="">概要</h2>
            *
@@ -150,8 +150,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * <li>削除できる勘定科目は、追加で作成したカスタム勘定項目のみです。</li>
            * <li>デフォルトで存在する勘定科目や口座の勘定科目は削除できません。</li></ul>
            */
-          delete: (option: { query: Methods1['delete']['query'], config?: T | undefined }) =>
-            fetch<void, BasicHeaders, Methods1['delete']['status']>(prefix, prefix1, DELETE, option).send(),
+          delete: (option: { query: Methods_8qk0na['delete']['query'], config?: T | undefined }) =>
+            fetch<void, BasicHeaders, Methods_8qk0na['delete']['status']>(prefix, prefix1, DELETE, option).send(),
           /**
            * <h2 id="">概要</h2>
            *
@@ -161,9 +161,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * <li>削除できる勘定科目は、追加で作成したカスタム勘定項目のみです。</li>
            * <li>デフォルトで存在する勘定科目や口座の勘定科目は削除できません。</li></ul>
            */
-          $delete: (option: { query: Methods1['delete']['query'], config?: T | undefined }) =>
-            fetch<void, BasicHeaders, Methods1['delete']['status']>(prefix, prefix1, DELETE, option).send().then(r => r.body),
-          $path: (option?: { method?: 'get' | undefined; query: Methods1['get']['query'] } | { method: 'delete'; query: Methods1['delete']['query'] } | undefined) =>
+          $delete: (option: { query: Methods_8qk0na['delete']['query'], config?: T | undefined }) =>
+            fetch<void, BasicHeaders, Methods_8qk0na['delete']['status']>(prefix, prefix1, DELETE, option).send().then(r => r.body),
+          $path: (option?: { method?: 'get' | undefined; query: Methods_8qk0na['get']['query'] } | { method: 'delete'; query: Methods_8qk0na['delete']['query'] } | undefined) =>
             `${prefix}${prefix1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
         };
       },
@@ -180,8 +180,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * <li>default_tax_code : リクエストした日時を基準とした税区分コード</li>
        * </ul>
        */
-      get: (option: { query: Methods0['get']['query'], config?: T | undefined }) =>
-        fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json(),
+      get: (option: { query: Methods_1797yi2['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_1797yi2['get']['resBody'], BasicHeaders, Methods_1797yi2['get']['status']>(prefix, PATH0, GET, option).json(),
       /**
        * <h2 id="">概要</h2>
        *
@@ -195,25 +195,25 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * <li>default_tax_code : リクエストした日時を基準とした税区分コード</li>
        * </ul>
        */
-      $get: (option: { query: Methods0['get']['query'], config?: T | undefined }) =>
-        fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json().then(r => r.body),
+      $get: (option: { query: Methods_1797yi2['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_1797yi2['get']['resBody'], BasicHeaders, Methods_1797yi2['get']['status']>(prefix, PATH0, GET, option).json().then(r => r.body),
       /**
        * <h2 id="">概要</h2>
        *
        * <p>指定した事業所の勘定科目を作成する</p>
        * @param option.body - 勘定科目の作成
        */
-      post: (option: { body: Methods0['post']['reqBody'], config?: T | undefined }) =>
-        fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option, 'URLSearchParams').json(),
+      post: (option: { body: Methods_1797yi2['post']['reqBody'], config?: T | undefined }) =>
+        fetch<Methods_1797yi2['post']['resBody'], BasicHeaders, Methods_1797yi2['post']['status']>(prefix, PATH0, POST, option, 'URLSearchParams').json(),
       /**
        * <h2 id="">概要</h2>
        *
        * <p>指定した事業所の勘定科目を作成する</p>
        * @param option.body - 勘定科目の作成
        */
-      $post: (option: { body: Methods0['post']['reqBody'], config?: T | undefined }) =>
-        fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option, 'URLSearchParams').json().then(r => r.body),
-      $path: (option?: { method?: 'get' | undefined; query: Methods0['get']['query'] } | undefined) =>
+      $post: (option: { body: Methods_1797yi2['post']['reqBody'], config?: T | undefined }) =>
+        fetch<Methods_1797yi2['post']['resBody'], BasicHeaders, Methods_1797yi2['post']['status']>(prefix, PATH0, POST, option, 'URLSearchParams').json().then(r => r.body),
+      $path: (option?: { method?: 'get' | undefined; query: Methods_1797yi2['get']['query'] } | undefined) =>
         `${prefix}${PATH0}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
     },
     banks: {
@@ -241,7 +241,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * </ul>
            */
           get: (option?: { config?: T | undefined } | undefined) =>
-            fetch<Methods3['get']['resBody'], BasicHeaders, Methods3['get']['status']>(prefix, prefix1, GET, option).json(),
+            fetch<Methods_j8hc1r['get']['resBody'], BasicHeaders, Methods_j8hc1r['get']['status']>(prefix, prefix1, GET, option).json(),
           /**
            * <h2 id="">概要</h2>
            *
@@ -262,7 +262,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * </ul>
            */
           $get: (option?: { config?: T | undefined } | undefined) =>
-            fetch<Methods3['get']['resBody'], BasicHeaders, Methods3['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
+            fetch<Methods_j8hc1r['get']['resBody'], BasicHeaders, Methods_j8hc1r['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
           $path: () => `${prefix}${prefix1}`,
         };
       },
@@ -285,8 +285,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * </li>
        * </ul>
        */
-      get: (option?: { query?: Methods2['get']['query'] | undefined, config?: T | undefined } | undefined) =>
-        fetch<Methods2['get']['resBody'], BasicHeaders, Methods2['get']['status']>(prefix, PATH1, GET, option).json(),
+      get: (option?: { query?: Methods_pk8yl9['get']['query'] | undefined, config?: T | undefined } | undefined) =>
+        fetch<Methods_pk8yl9['get']['resBody'], BasicHeaders, Methods_pk8yl9['get']['status']>(prefix, PATH1, GET, option).json(),
       /**
        * <h2 id="">概要</h2>
        *
@@ -306,9 +306,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * </li>
        * </ul>
        */
-      $get: (option?: { query?: Methods2['get']['query'] | undefined, config?: T | undefined } | undefined) =>
-        fetch<Methods2['get']['resBody'], BasicHeaders, Methods2['get']['status']>(prefix, PATH1, GET, option).json().then(r => r.body),
-      $path: (option?: { method?: 'get' | undefined; query: Methods2['get']['query'] } | undefined) =>
+      $get: (option?: { query?: Methods_pk8yl9['get']['query'] | undefined, config?: T | undefined } | undefined) =>
+        fetch<Methods_pk8yl9['get']['resBody'], BasicHeaders, Methods_pk8yl9['get']['status']>(prefix, PATH1, GET, option).json().then(r => r.body),
+      $path: (option?: { method?: 'get' | undefined; query: Methods_pk8yl9['get']['query'] } | undefined) =>
         `${prefix}${PATH1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
     },
     companies: {
@@ -339,8 +339,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            *
            * <h2 id="_3">
            */
-          get: (option?: { query?: Methods5['get']['query'] | undefined, config?: T | undefined } | undefined) =>
-            fetch<Methods5['get']['resBody'], BasicHeaders, Methods5['get']['status']>(prefix, prefix1, GET, option).json(),
+          get: (option?: { query?: Methods_asyhtr['get']['query'] | undefined, config?: T | undefined } | undefined) =>
+            fetch<Methods_asyhtr['get']['resBody'], BasicHeaders, Methods_asyhtr['get']['status']>(prefix, prefix1, GET, option).json(),
           /**
            * <h2 id="">概要</h2>
            *
@@ -364,8 +364,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            *
            * <h2 id="_3">
            */
-          $get: (option?: { query?: Methods5['get']['query'] | undefined, config?: T | undefined } | undefined) =>
-            fetch<Methods5['get']['resBody'], BasicHeaders, Methods5['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
+          $get: (option?: { query?: Methods_asyhtr['get']['query'] | undefined, config?: T | undefined } | undefined) =>
+            fetch<Methods_asyhtr['get']['resBody'], BasicHeaders, Methods_asyhtr['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
           /**
            * <h2 id="">概要</h2>
            *
@@ -373,8 +373,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            *
            * <p>※同時に複数のリクエストを受け付けない</p>
            */
-          put: (option?: { body?: Methods5['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-            fetch<Methods5['put']['resBody'], BasicHeaders, Methods5['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json(),
+          put: (option?: { body?: Methods_asyhtr['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+            fetch<Methods_asyhtr['put']['resBody'], BasicHeaders, Methods_asyhtr['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json(),
           /**
            * <h2 id="">概要</h2>
            *
@@ -382,9 +382,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            *
            * <p>※同時に複数のリクエストを受け付けない</p>
            */
-          $put: (option?: { body?: Methods5['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-            fetch<Methods5['put']['resBody'], BasicHeaders, Methods5['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json().then(r => r.body),
-          $path: (option?: { method?: 'get' | undefined; query: Methods5['get']['query'] } | undefined) =>
+          $put: (option?: { body?: Methods_asyhtr['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+            fetch<Methods_asyhtr['put']['resBody'], BasicHeaders, Methods_asyhtr['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json().then(r => r.body),
+          $path: (option?: { method?: 'get' | undefined; query: Methods_asyhtr['get']['query'] } | undefined) =>
             `${prefix}${prefix1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
         };
       },
@@ -410,7 +410,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * </ul>
        */
       get: (option?: { config?: T | undefined } | undefined) =>
-        fetch<Methods4['get']['resBody'], BasicHeaders, Methods4['get']['status']>(prefix, PATH2, GET, option).json(),
+        fetch<Methods_xi4crh['get']['resBody'], BasicHeaders, Methods_xi4crh['get']['status']>(prefix, PATH2, GET, option).json(),
       /**
        * <h2 id="">概要</h2>
        *
@@ -433,7 +433,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * </ul>
        */
       $get: (option?: { config?: T | undefined } | undefined) =>
-        fetch<Methods4['get']['resBody'], BasicHeaders, Methods4['get']['status']>(prefix, PATH2, GET, option).json().then(r => r.body),
+        fetch<Methods_xi4crh['get']['resBody'], BasicHeaders, Methods_xi4crh['get']['status']>(prefix, PATH2, GET, option).json().then(r => r.body),
       $path: () => `${prefix}${PATH2}`,
     },
     deals: {
@@ -491,8 +491,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                  * </ul>
                  * @param option.body - 取引（収入／支出）の支払行更新
                  */
-                put: (option: { body: Methods9['put']['reqBody'], config?: T | undefined }) =>
-                  fetch<Methods9['put']['resBody'], BasicHeaders, Methods9['put']['status']>(prefix, prefix3, PUT, option, 'URLSearchParams').json(),
+                put: (option: { body: Methods_119chy4['put']['reqBody'], config?: T | undefined }) =>
+                  fetch<Methods_119chy4['put']['resBody'], BasicHeaders, Methods_119chy4['put']['status']>(prefix, prefix3, PUT, option, 'URLSearchParams').json(),
                 /**
                  * <h2 id="">概要</h2>
                  * <p>指定した事業所の取引（収入／支出）の支払行を更新する</p>
@@ -538,8 +538,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                  * </ul>
                  * @param option.body - 取引（収入／支出）の支払行更新
                  */
-                $put: (option: { body: Methods9['put']['reqBody'], config?: T | undefined }) =>
-                  fetch<Methods9['put']['resBody'], BasicHeaders, Methods9['put']['status']>(prefix, prefix3, PUT, option, 'URLSearchParams').json().then(r => r.body),
+                $put: (option: { body: Methods_119chy4['put']['reqBody'], config?: T | undefined }) =>
+                  fetch<Methods_119chy4['put']['resBody'], BasicHeaders, Methods_119chy4['put']['status']>(prefix, prefix3, PUT, option, 'URLSearchParams').json().then(r => r.body),
                 /**
                  * <h2 id="">概要</h2>
                  * <p>指定した事業所の取引（収入／支出）の支払行を削除する</p>
@@ -569,8 +569,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                  * </li>
                  * </ul>
                  */
-                delete: (option: { query: Methods9['delete']['query'], config?: T | undefined }) =>
-                  fetch<void, BasicHeaders, Methods9['delete']['status']>(prefix, prefix3, DELETE, option).send(),
+                delete: (option: { query: Methods_119chy4['delete']['query'], config?: T | undefined }) =>
+                  fetch<void, BasicHeaders, Methods_119chy4['delete']['status']>(prefix, prefix3, DELETE, option).send(),
                 /**
                  * <h2 id="">概要</h2>
                  * <p>指定した事業所の取引（収入／支出）の支払行を削除する</p>
@@ -600,9 +600,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                  * </li>
                  * </ul>
                  */
-                $delete: (option: { query: Methods9['delete']['query'], config?: T | undefined }) =>
-                  fetch<void, BasicHeaders, Methods9['delete']['status']>(prefix, prefix3, DELETE, option).send().then(r => r.body),
-                $path: (option?: { method: 'delete'; query: Methods9['delete']['query'] } | undefined) =>
+                $delete: (option: { query: Methods_119chy4['delete']['query'], config?: T | undefined }) =>
+                  fetch<void, BasicHeaders, Methods_119chy4['delete']['status']>(prefix, prefix3, DELETE, option).send().then(r => r.body),
+                $path: (option?: { method: 'delete'; query: Methods_119chy4['delete']['query'] } | undefined) =>
                   `${prefix}${prefix3}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
               };
             },
@@ -645,8 +645,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
              * </ul>
              * @param option.body - 取引（収入／支出）の支払行作成
              */
-            post: (option: { body: Methods8['post']['reqBody'], config?: T | undefined }) =>
-              fetch<Methods8['post']['resBody'], BasicHeaders, Methods8['post']['status']>(prefix, `${prefix1}${PATH4}`, POST, option, 'URLSearchParams').json(),
+            post: (option: { body: Methods_ydimfv['post']['reqBody'], config?: T | undefined }) =>
+              fetch<Methods_ydimfv['post']['resBody'], BasicHeaders, Methods_ydimfv['post']['status']>(prefix, `${prefix1}${PATH4}`, POST, option, 'URLSearchParams').json(),
             /**
              * <h2 id="">概要</h2>
              * <p>指定した事業所の取引（収入／支出）の支払行を作成する</p>
@@ -686,8 +686,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
              * </ul>
              * @param option.body - 取引（収入／支出）の支払行作成
              */
-            $post: (option: { body: Methods8['post']['reqBody'], config?: T | undefined }) =>
-              fetch<Methods8['post']['resBody'], BasicHeaders, Methods8['post']['status']>(prefix, `${prefix1}${PATH4}`, POST, option, 'URLSearchParams').json().then(r => r.body),
+            $post: (option: { body: Methods_ydimfv['post']['reqBody'], config?: T | undefined }) =>
+              fetch<Methods_ydimfv['post']['resBody'], BasicHeaders, Methods_ydimfv['post']['status']>(prefix, `${prefix1}${PATH4}`, POST, option, 'URLSearchParams').json().then(r => r.body),
             $path: () => `${prefix}${prefix1}${PATH4}`,
           },
           renews: {
@@ -721,8 +721,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                  * <li>本APIで取引を更新すると、消費税の計算方法は必ず内税方式が選択されます。</li> </ul>
                  * @param option.body - +更新の更新情報
                  */
-                put: (option: { body: Methods11['put']['reqBody'], config?: T | undefined }) =>
-                  fetch<Methods11['put']['resBody'], BasicHeaders, Methods11['put']['status']>(prefix, prefix3, PUT, option, 'URLSearchParams').json(),
+                put: (option: { body: Methods_1fsj8c8['put']['reqBody'], config?: T | undefined }) =>
+                  fetch<Methods_1fsj8c8['put']['resBody'], BasicHeaders, Methods_1fsj8c8['put']['status']>(prefix, prefix3, PUT, option, 'URLSearchParams').json(),
                 /**
                  * <h2 id="">概要</h2>
                  * <p>指定した事業所の取引（収入／支出）の+更新を更新する</p>
@@ -749,8 +749,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                  * <li>本APIで取引を更新すると、消費税の計算方法は必ず内税方式が選択されます。</li> </ul>
                  * @param option.body - +更新の更新情報
                  */
-                $put: (option: { body: Methods11['put']['reqBody'], config?: T | undefined }) =>
-                  fetch<Methods11['put']['resBody'], BasicHeaders, Methods11['put']['status']>(prefix, prefix3, PUT, option, 'URLSearchParams').json().then(r => r.body),
+                $put: (option: { body: Methods_1fsj8c8['put']['reqBody'], config?: T | undefined }) =>
+                  fetch<Methods_1fsj8c8['put']['resBody'], BasicHeaders, Methods_1fsj8c8['put']['status']>(prefix, prefix3, PUT, option, 'URLSearchParams').json().then(r => r.body),
                 /**
                  * <h2 id="">概要</h2>
                  * <p>指定した事業所の取引（収入／支出）の+更新を削除する</p>
@@ -759,8 +759,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                  * <li>月締めされている仕訳に紐づく＋更新行の編集・削除はできません。</li> <li>承認済み仕訳に紐づく＋更新行の編集・削除は管理者権限のユーザーのみ可能です。</li>
                  * <li>本APIで取引を更新すると、消費税の計算方法は必ず内税方式が選択されます。</li> </ul>
                  */
-                delete: (option: { query: Methods11['delete']['query'], config?: T | undefined }) =>
-                  fetch<Methods11['delete']['resBody'], BasicHeaders, Methods11['delete']['status']>(prefix, prefix3, DELETE, option).json(),
+                delete: (option: { query: Methods_1fsj8c8['delete']['query'], config?: T | undefined }) =>
+                  fetch<Methods_1fsj8c8['delete']['resBody'], BasicHeaders, Methods_1fsj8c8['delete']['status']>(prefix, prefix3, DELETE, option).json(),
                 /**
                  * <h2 id="">概要</h2>
                  * <p>指定した事業所の取引（収入／支出）の+更新を削除する</p>
@@ -769,9 +769,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                  * <li>月締めされている仕訳に紐づく＋更新行の編集・削除はできません。</li> <li>承認済み仕訳に紐づく＋更新行の編集・削除は管理者権限のユーザーのみ可能です。</li>
                  * <li>本APIで取引を更新すると、消費税の計算方法は必ず内税方式が選択されます。</li> </ul>
                  */
-                $delete: (option: { query: Methods11['delete']['query'], config?: T | undefined }) =>
-                  fetch<Methods11['delete']['resBody'], BasicHeaders, Methods11['delete']['status']>(prefix, prefix3, DELETE, option).json().then(r => r.body),
-                $path: (option?: { method: 'delete'; query: Methods11['delete']['query'] } | undefined) =>
+                $delete: (option: { query: Methods_1fsj8c8['delete']['query'], config?: T | undefined }) =>
+                  fetch<Methods_1fsj8c8['delete']['resBody'], BasicHeaders, Methods_1fsj8c8['delete']['status']>(prefix, prefix3, DELETE, option).json().then(r => r.body),
+                $path: (option?: { method: 'delete'; query: Methods_1fsj8c8['delete']['query'] } | undefined) =>
                   `${prefix}${prefix3}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
               };
             },
@@ -801,8 +801,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
              * <li>本APIで取引を更新すると、消費税の計算方法は必ず内税方式が選択されます。</li> </ul>
              * @param option.body - 取引（収入／支出）に対する+更新の情報
              */
-            post: (option: { body: Methods10['post']['reqBody'], config?: T | undefined }) =>
-              fetch<Methods10['post']['resBody'], BasicHeaders, Methods10['post']['status']>(prefix, `${prefix1}${PATH5}`, POST, option, 'URLSearchParams').json(),
+            post: (option: { body: Methods_15d7fae['post']['reqBody'], config?: T | undefined }) =>
+              fetch<Methods_15d7fae['post']['resBody'], BasicHeaders, Methods_15d7fae['post']['status']>(prefix, `${prefix1}${PATH5}`, POST, option, 'URLSearchParams').json(),
             /**
              * <h2 id="">概要</h2>
              * <p>指定した事業所の取引（収入／支出）の+更新を作成する</p>
@@ -829,8 +829,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
              * <li>本APIで取引を更新すると、消費税の計算方法は必ず内税方式が選択されます。</li> </ul>
              * @param option.body - 取引（収入／支出）に対する+更新の情報
              */
-            $post: (option: { body: Methods10['post']['reqBody'], config?: T | undefined }) =>
-              fetch<Methods10['post']['resBody'], BasicHeaders, Methods10['post']['status']>(prefix, `${prefix1}${PATH5}`, POST, option, 'URLSearchParams').json().then(r => r.body),
+            $post: (option: { body: Methods_15d7fae['post']['reqBody'], config?: T | undefined }) =>
+              fetch<Methods_15d7fae['post']['resBody'], BasicHeaders, Methods_15d7fae['post']['status']>(prefix, `${prefix1}${PATH5}`, POST, option, 'URLSearchParams').json().then(r => r.body),
             $path: () => `${prefix}${prefix1}${PATH5}`,
           },
           /**
@@ -892,8 +892,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * <li>セグメントタグ情報は法人向けのプロフェッショナルプラン以上で利用可能です。利用可能なセグメントの数は、法人向けのプロフェッショナルプランの場合は1つ、エンタープライズプランの場合は3つです。</li>
            * </ul>
            */
-          get: (option: { query: Methods7['get']['query'], config?: T | undefined }) =>
-            fetch<Methods7['get']['resBody'], BasicHeaders, Methods7['get']['status']>(prefix, prefix1, GET, option).json(),
+          get: (option: { query: Methods_s42tfn['get']['query'], config?: T | undefined }) =>
+            fetch<Methods_s42tfn['get']['resBody'], BasicHeaders, Methods_s42tfn['get']['status']>(prefix, prefix1, GET, option).json(),
           /**
            * <h2 id="">概要</h2>
            * <p>指定した事業所の取引（収入／支出）を取得する</p>
@@ -953,8 +953,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * <li>セグメントタグ情報は法人向けのプロフェッショナルプラン以上で利用可能です。利用可能なセグメントの数は、法人向けのプロフェッショナルプランの場合は1つ、エンタープライズプランの場合は3つです。</li>
            * </ul>
            */
-          $get: (option: { query: Methods7['get']['query'], config?: T | undefined }) =>
-            fetch<Methods7['get']['resBody'], BasicHeaders, Methods7['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
+          $get: (option: { query: Methods_s42tfn['get']['query'], config?: T | undefined }) =>
+            fetch<Methods_s42tfn['get']['resBody'], BasicHeaders, Methods_s42tfn['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
           /**
            * <h2 id="">概要</h2>
            * <p>指定した事業所の取引（収入／支出）を更新する</p>
@@ -1011,8 +1011,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * <li>partner_codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。またpartner_codeとpartner_idは同時に指定することはできません。</ul>
            * @param option.body - 取引（収入／支出）の更新
            */
-          put: (option?: { body?: Methods7['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-            fetch<Methods7['put']['resBody'], BasicHeaders, Methods7['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json(),
+          put: (option?: { body?: Methods_s42tfn['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+            fetch<Methods_s42tfn['put']['resBody'], BasicHeaders, Methods_s42tfn['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json(),
           /**
            * <h2 id="">概要</h2>
            * <p>指定した事業所の取引（収入／支出）を更新する</p>
@@ -1069,13 +1069,13 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * <li>partner_codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。またpartner_codeとpartner_idは同時に指定することはできません。</ul>
            * @param option.body - 取引（収入／支出）の更新
            */
-          $put: (option?: { body?: Methods7['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-            fetch<Methods7['put']['resBody'], BasicHeaders, Methods7['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json().then(r => r.body),
-          delete: (option: { query: Methods7['delete']['query'], config?: T | undefined }) =>
-            fetch<void, BasicHeaders, Methods7['delete']['status']>(prefix, prefix1, DELETE, option).send(),
-          $delete: (option: { query: Methods7['delete']['query'], config?: T | undefined }) =>
-            fetch<void, BasicHeaders, Methods7['delete']['status']>(prefix, prefix1, DELETE, option).send().then(r => r.body),
-          $path: (option?: { method?: 'get' | undefined; query: Methods7['get']['query'] } | { method: 'delete'; query: Methods7['delete']['query'] } | undefined) =>
+          $put: (option?: { body?: Methods_s42tfn['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+            fetch<Methods_s42tfn['put']['resBody'], BasicHeaders, Methods_s42tfn['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json().then(r => r.body),
+          delete: (option: { query: Methods_s42tfn['delete']['query'], config?: T | undefined }) =>
+            fetch<void, BasicHeaders, Methods_s42tfn['delete']['status']>(prefix, prefix1, DELETE, option).send(),
+          $delete: (option: { query: Methods_s42tfn['delete']['query'], config?: T | undefined }) =>
+            fetch<void, BasicHeaders, Methods_s42tfn['delete']['status']>(prefix, prefix1, DELETE, option).send().then(r => r.body),
+          $path: (option?: { method?: 'get' | undefined; query: Methods_s42tfn['get']['query'] } | { method: 'delete'; query: Methods_s42tfn['delete']['query'] } | undefined) =>
             `${prefix}${prefix1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
         };
       },
@@ -1139,8 +1139,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * <li>partner_codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。またpartner_codeとpartner_idは同時に指定することはできません。</li>
        * </ul>
        */
-      get: (option: { query: Methods6['get']['query'], config?: T | undefined }) =>
-        fetch<Methods6['get']['resBody'], BasicHeaders, Methods6['get']['status']>(prefix, PATH3, GET, option).json(),
+      get: (option: { query: Methods_1j0wxe9['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_1j0wxe9['get']['resBody'], BasicHeaders, Methods_1j0wxe9['get']['status']>(prefix, PATH3, GET, option).json(),
       /**
        * <h2 id="">概要</h2>
        * <p>指定した事業所の取引一覧（収入／支出）を取得する</p>
@@ -1201,8 +1201,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * <li>partner_codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。またpartner_codeとpartner_idは同時に指定することはできません。</li>
        * </ul>
        */
-      $get: (option: { query: Methods6['get']['query'], config?: T | undefined }) =>
-        fetch<Methods6['get']['resBody'], BasicHeaders, Methods6['get']['status']>(prefix, PATH3, GET, option).json().then(r => r.body),
+      $get: (option: { query: Methods_1j0wxe9['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_1j0wxe9['get']['resBody'], BasicHeaders, Methods_1j0wxe9['get']['status']>(prefix, PATH3, GET, option).json().then(r => r.body),
       /**
        * <h2 id="">概要</h2>
        * <p>指定した事業所の取引（収入／支出）を作成する</p>
@@ -1264,8 +1264,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * </ul>
        * @param option.body - 取引（収入／支出）の作成
        */
-      post: (option?: { body?: Methods6['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-        fetch<Methods6['post']['resBody'], BasicHeaders, Methods6['post']['status']>(prefix, PATH3, POST, option, 'URLSearchParams').json(),
+      post: (option?: { body?: Methods_1j0wxe9['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+        fetch<Methods_1j0wxe9['post']['resBody'], BasicHeaders, Methods_1j0wxe9['post']['status']>(prefix, PATH3, POST, option, 'URLSearchParams').json(),
       /**
        * <h2 id="">概要</h2>
        * <p>指定した事業所の取引（収入／支出）を作成する</p>
@@ -1327,9 +1327,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * </ul>
        * @param option.body - 取引（収入／支出）の作成
        */
-      $post: (option?: { body?: Methods6['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-        fetch<Methods6['post']['resBody'], BasicHeaders, Methods6['post']['status']>(prefix, PATH3, POST, option, 'URLSearchParams').json().then(r => r.body),
-      $path: (option?: { method?: 'get' | undefined; query: Methods6['get']['query'] } | undefined) =>
+      $post: (option?: { body?: Methods_1j0wxe9['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+        fetch<Methods_1j0wxe9['post']['resBody'], BasicHeaders, Methods_1j0wxe9['post']['status']>(prefix, PATH3, POST, option, 'URLSearchParams').json().then(r => r.body),
+      $path: (option?: { method?: 'get' | undefined; query: Methods_1j0wxe9['get']['query'] } | undefined) =>
         `${prefix}${PATH3}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
     },
     expense_application_line_templates: {
@@ -1337,25 +1337,25 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         const prefix1 = `${PATH6}/${val1}`;
 
         return {
-          get: (option: { query: Methods13['get']['query'], config?: T | undefined }) =>
-            fetch<Methods13['get']['resBody'], BasicHeaders, Methods13['get']['status']>(prefix, prefix1, GET, option).json(),
-          $get: (option: { query: Methods13['get']['query'], config?: T | undefined }) =>
-            fetch<Methods13['get']['resBody'], BasicHeaders, Methods13['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
+          get: (option: { query: Methods_1nkkdy['get']['query'], config?: T | undefined }) =>
+            fetch<Methods_1nkkdy['get']['resBody'], BasicHeaders, Methods_1nkkdy['get']['status']>(prefix, prefix1, GET, option).json(),
+          $get: (option: { query: Methods_1nkkdy['get']['query'], config?: T | undefined }) =>
+            fetch<Methods_1nkkdy['get']['resBody'], BasicHeaders, Methods_1nkkdy['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
           /**
            * @param option.body - 経費科目の更新
            */
-          put: (option: { body: Methods13['put']['reqBody'], config?: T | undefined }) =>
-            fetch<Methods13['put']['resBody'], BasicHeaders, Methods13['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json(),
+          put: (option: { body: Methods_1nkkdy['put']['reqBody'], config?: T | undefined }) =>
+            fetch<Methods_1nkkdy['put']['resBody'], BasicHeaders, Methods_1nkkdy['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json(),
           /**
            * @param option.body - 経費科目の更新
            */
-          $put: (option: { body: Methods13['put']['reqBody'], config?: T | undefined }) =>
-            fetch<Methods13['put']['resBody'], BasicHeaders, Methods13['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json().then(r => r.body),
-          delete: (option: { query: Methods13['delete']['query'], config?: T | undefined }) =>
-            fetch<void, BasicHeaders, Methods13['delete']['status']>(prefix, prefix1, DELETE, option).send(),
-          $delete: (option: { query: Methods13['delete']['query'], config?: T | undefined }) =>
-            fetch<void, BasicHeaders, Methods13['delete']['status']>(prefix, prefix1, DELETE, option).send().then(r => r.body),
-          $path: (option?: { method?: 'get' | undefined; query: Methods13['get']['query'] } | { method: 'delete'; query: Methods13['delete']['query'] } | undefined) =>
+          $put: (option: { body: Methods_1nkkdy['put']['reqBody'], config?: T | undefined }) =>
+            fetch<Methods_1nkkdy['put']['resBody'], BasicHeaders, Methods_1nkkdy['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json().then(r => r.body),
+          delete: (option: { query: Methods_1nkkdy['delete']['query'], config?: T | undefined }) =>
+            fetch<void, BasicHeaders, Methods_1nkkdy['delete']['status']>(prefix, prefix1, DELETE, option).send(),
+          $delete: (option: { query: Methods_1nkkdy['delete']['query'], config?: T | undefined }) =>
+            fetch<void, BasicHeaders, Methods_1nkkdy['delete']['status']>(prefix, prefix1, DELETE, option).send().then(r => r.body),
+          $path: (option?: { method?: 'get' | undefined; query: Methods_1nkkdy['get']['query'] } | { method: 'delete'; query: Methods_1nkkdy['delete']['query'] } | undefined) =>
             `${prefix}${prefix1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
         };
       },
@@ -1364,26 +1364,26 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        *
        * <p>指定した事業所の経費科目一覧を取得する</p>
        */
-      get: (option: { query: Methods12['get']['query'], config?: T | undefined }) =>
-        fetch<Methods12['get']['resBody'], BasicHeaders, Methods12['get']['status']>(prefix, PATH6, GET, option).json(),
+      get: (option: { query: Methods_om0dga['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_om0dga['get']['resBody'], BasicHeaders, Methods_om0dga['get']['status']>(prefix, PATH6, GET, option).json(),
       /**
        * <h2 id="">概要</h2>
        *
        * <p>指定した事業所の経費科目一覧を取得する</p>
        */
-      $get: (option: { query: Methods12['get']['query'], config?: T | undefined }) =>
-        fetch<Methods12['get']['resBody'], BasicHeaders, Methods12['get']['status']>(prefix, PATH6, GET, option).json().then(r => r.body),
+      $get: (option: { query: Methods_om0dga['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_om0dga['get']['resBody'], BasicHeaders, Methods_om0dga['get']['status']>(prefix, PATH6, GET, option).json().then(r => r.body),
       /**
        * @param option.body - 経費科目の作成
        */
-      post: (option: { body: Methods12['post']['reqBody'], config?: T | undefined }) =>
-        fetch<Methods12['post']['resBody'], BasicHeaders, Methods12['post']['status']>(prefix, PATH6, POST, option, 'URLSearchParams').json(),
+      post: (option: { body: Methods_om0dga['post']['reqBody'], config?: T | undefined }) =>
+        fetch<Methods_om0dga['post']['resBody'], BasicHeaders, Methods_om0dga['post']['status']>(prefix, PATH6, POST, option, 'URLSearchParams').json(),
       /**
        * @param option.body - 経費科目の作成
        */
-      $post: (option: { body: Methods12['post']['reqBody'], config?: T | undefined }) =>
-        fetch<Methods12['post']['resBody'], BasicHeaders, Methods12['post']['status']>(prefix, PATH6, POST, option, 'URLSearchParams').json().then(r => r.body),
-      $path: (option?: { method?: 'get' | undefined; query: Methods12['get']['query'] } | undefined) =>
+      $post: (option: { body: Methods_om0dga['post']['reqBody'], config?: T | undefined }) =>
+        fetch<Methods_om0dga['post']['resBody'], BasicHeaders, Methods_om0dga['post']['status']>(prefix, PATH6, POST, option, 'URLSearchParams').json().then(r => r.body),
+      $path: (option?: { method?: 'get' | undefined; query: Methods_om0dga['get']['query'] } | undefined) =>
         `${prefix}${PATH6}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
     },
     expense_applications: {
@@ -1391,10 +1391,10 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         const prefix1 = `${PATH7}/${val1}`;
 
         return {
-          get: (option: { query: Methods15['get']['query'], config?: T | undefined }) =>
-            fetch<Methods15['get']['resBody'], BasicHeaders, Methods15['get']['status']>(prefix, prefix1, GET, option).json(),
-          $get: (option: { query: Methods15['get']['query'], config?: T | undefined }) =>
-            fetch<Methods15['get']['resBody'], BasicHeaders, Methods15['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
+          get: (option: { query: Methods_1ata4r4['get']['query'], config?: T | undefined }) =>
+            fetch<Methods_1ata4r4['get']['resBody'], BasicHeaders, Methods_1ata4r4['get']['status']>(prefix, prefix1, GET, option).json(),
+          $get: (option: { query: Methods_1ata4r4['get']['query'], config?: T | undefined }) =>
+            fetch<Methods_1ata4r4['get']['resBody'], BasicHeaders, Methods_1ata4r4['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
           /**
            * <h2 id="">概要</h2>
            *
@@ -1410,8 +1410,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * </ul>
            * @param option.body - 経費申請の更新
            */
-          put: (option?: { body?: Methods15['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-            fetch<Methods15['put']['resBody'], BasicHeaders, Methods15['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json(),
+          put: (option?: { body?: Methods_1ata4r4['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+            fetch<Methods_1ata4r4['put']['resBody'], BasicHeaders, Methods_1ata4r4['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json(),
           /**
            * <h2 id="">概要</h2>
            *
@@ -1427,8 +1427,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * </ul>
            * @param option.body - 経費申請の更新
            */
-          $put: (option?: { body?: Methods15['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-            fetch<Methods15['put']['resBody'], BasicHeaders, Methods15['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json().then(r => r.body),
+          $put: (option?: { body?: Methods_1ata4r4['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+            fetch<Methods_1ata4r4['put']['resBody'], BasicHeaders, Methods_1ata4r4['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json().then(r => r.body),
           /**
            * <h2 id="">概要</h2>
            *
@@ -1440,8 +1440,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            *   <li>法人アカウントの場合は、ベーシックプラン、プロフェッショナルプラン、エンタープライズプランでご利用できます。</li>
            * </ul>
            */
-          delete: (option: { query: Methods15['delete']['query'], config?: T | undefined }) =>
-            fetch<void, BasicHeaders, Methods15['delete']['status']>(prefix, prefix1, DELETE, option).send(),
+          delete: (option: { query: Methods_1ata4r4['delete']['query'], config?: T | undefined }) =>
+            fetch<void, BasicHeaders, Methods_1ata4r4['delete']['status']>(prefix, prefix1, DELETE, option).send(),
           /**
            * <h2 id="">概要</h2>
            *
@@ -1453,16 +1453,16 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            *   <li>法人アカウントの場合は、ベーシックプラン、プロフェッショナルプラン、エンタープライズプランでご利用できます。</li>
            * </ul>
            */
-          $delete: (option: { query: Methods15['delete']['query'], config?: T | undefined }) =>
-            fetch<void, BasicHeaders, Methods15['delete']['status']>(prefix, prefix1, DELETE, option).send().then(r => r.body),
-          $path: (option?: { method?: 'get' | undefined; query: Methods15['get']['query'] } | { method: 'delete'; query: Methods15['delete']['query'] } | undefined) =>
+          $delete: (option: { query: Methods_1ata4r4['delete']['query'], config?: T | undefined }) =>
+            fetch<void, BasicHeaders, Methods_1ata4r4['delete']['status']>(prefix, prefix1, DELETE, option).send().then(r => r.body),
+          $path: (option?: { method?: 'get' | undefined; query: Methods_1ata4r4['get']['query'] } | { method: 'delete'; query: Methods_1ata4r4['delete']['query'] } | undefined) =>
             `${prefix}${prefix1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
         };
       },
-      get: (option: { query: Methods14['get']['query'], config?: T | undefined }) =>
-        fetch<Methods14['get']['resBody'], BasicHeaders, Methods14['get']['status']>(prefix, PATH7, GET, option).json(),
-      $get: (option: { query: Methods14['get']['query'], config?: T | undefined }) =>
-        fetch<Methods14['get']['resBody'], BasicHeaders, Methods14['get']['status']>(prefix, PATH7, GET, option).json().then(r => r.body),
+      get: (option: { query: Methods_1watu38['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_1watu38['get']['resBody'], BasicHeaders, Methods_1watu38['get']['status']>(prefix, PATH7, GET, option).json(),
+      $get: (option: { query: Methods_1watu38['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_1watu38['get']['resBody'], BasicHeaders, Methods_1watu38['get']['status']>(prefix, PATH7, GET, option).json().then(r => r.body),
       /**
        * <h2 id="_1">概要</h2>
        *
@@ -1478,8 +1478,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * </ul>
        * @param option.body - 経費申請の作成
        */
-      post: (option?: { body?: Methods14['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-        fetch<Methods14['post']['resBody'], BasicHeaders, Methods14['post']['status']>(prefix, PATH7, POST, option, 'URLSearchParams').json(),
+      post: (option?: { body?: Methods_1watu38['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+        fetch<Methods_1watu38['post']['resBody'], BasicHeaders, Methods_1watu38['post']['status']>(prefix, PATH7, POST, option, 'URLSearchParams').json(),
       /**
        * <h2 id="_1">概要</h2>
        *
@@ -1495,9 +1495,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * </ul>
        * @param option.body - 経費申請の作成
        */
-      $post: (option?: { body?: Methods14['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-        fetch<Methods14['post']['resBody'], BasicHeaders, Methods14['post']['status']>(prefix, PATH7, POST, option, 'URLSearchParams').json().then(r => r.body),
-      $path: (option?: { method?: 'get' | undefined; query: Methods14['get']['query'] } | undefined) =>
+      $post: (option?: { body?: Methods_1watu38['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+        fetch<Methods_1watu38['post']['resBody'], BasicHeaders, Methods_1watu38['post']['status']>(prefix, PATH7, POST, option, 'URLSearchParams').json().then(r => r.body),
+      $path: (option?: { method?: 'get' | undefined; query: Methods_1watu38['get']['query'] } | undefined) =>
         `${prefix}${PATH7}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
     },
     forms: {
@@ -1507,16 +1507,16 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          *
          * <p>指定した事業所のフォーム用選択項目情報を取得する</p>
          */
-        get: (option: { query: Methods16['get']['query'], config?: T | undefined }) =>
-          fetch<Methods16['get']['resBody'], BasicHeaders, Methods16['get']['status']>(prefix, PATH8, GET, option).json(),
+        get: (option: { query: Methods_dub6pf['get']['query'], config?: T | undefined }) =>
+          fetch<Methods_dub6pf['get']['resBody'], BasicHeaders, Methods_dub6pf['get']['status']>(prefix, PATH8, GET, option).json(),
         /**
          * <h2 id="">概要</h2>
          *
          * <p>指定した事業所のフォーム用選択項目情報を取得する</p>
          */
-        $get: (option: { query: Methods16['get']['query'], config?: T | undefined }) =>
-          fetch<Methods16['get']['resBody'], BasicHeaders, Methods16['get']['status']>(prefix, PATH8, GET, option).json().then(r => r.body),
-        $path: (option?: { method?: 'get' | undefined; query: Methods16['get']['query'] } | undefined) =>
+        $get: (option: { query: Methods_dub6pf['get']['query'], config?: T | undefined }) =>
+          fetch<Methods_dub6pf['get']['resBody'], BasicHeaders, Methods_dub6pf['get']['status']>(prefix, PATH8, GET, option).json().then(r => r.body),
+        $path: (option?: { method?: 'get' | undefined; query: Methods_dub6pf['get']['query'] } | undefined) =>
           `${prefix}${PATH8}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
       },
     },
@@ -1530,15 +1530,15 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            *
            * <p>指定した事業所の請求書詳細を取得する</p>
            */
-          get: (option: { query: Methods18['get']['query'], config?: T | undefined }) =>
-            fetch<Methods18['get']['resBody'], BasicHeaders, Methods18['get']['status']>(prefix, prefix1, GET, option).json(),
+          get: (option: { query: Methods_1hf812y['get']['query'], config?: T | undefined }) =>
+            fetch<Methods_1hf812y['get']['resBody'], BasicHeaders, Methods_1hf812y['get']['status']>(prefix, prefix1, GET, option).json(),
           /**
            * <h2 id="">概要</h2>
            *
            * <p>指定した事業所の請求書詳細を取得する</p>
            */
-          $get: (option: { query: Methods18['get']['query'], config?: T | undefined }) =>
-            fetch<Methods18['get']['resBody'], BasicHeaders, Methods18['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
+          $get: (option: { query: Methods_1hf812y['get']['query'], config?: T | undefined }) =>
+            fetch<Methods_1hf812y['get']['resBody'], BasicHeaders, Methods_1hf812y['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
           /**
            * <h2 id="">概要</h2>
            *
@@ -1555,8 +1555,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * </ul>
            * @param option.body - 請求書の更新
            */
-          put: (option?: { body?: Methods18['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-            fetch<Methods18['put']['resBody'], BasicHeaders, Methods18['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json(),
+          put: (option?: { body?: Methods_1hf812y['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+            fetch<Methods_1hf812y['put']['resBody'], BasicHeaders, Methods_1hf812y['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json(),
           /**
            * <h2 id="">概要</h2>
            *
@@ -1573,23 +1573,23 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * </ul>
            * @param option.body - 請求書の更新
            */
-          $put: (option?: { body?: Methods18['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-            fetch<Methods18['put']['resBody'], BasicHeaders, Methods18['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json().then(r => r.body),
+          $put: (option?: { body?: Methods_1hf812y['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+            fetch<Methods_1hf812y['put']['resBody'], BasicHeaders, Methods_1hf812y['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json().then(r => r.body),
           /**
            * <h2 id="">概要</h2>
            *
            * <p>指定した事業所の請求書を削除する</p>
            */
-          delete: (option: { query: Methods18['delete']['query'], config?: T | undefined }) =>
-            fetch<void, BasicHeaders, Methods18['delete']['status']>(prefix, prefix1, DELETE, option).send(),
+          delete: (option: { query: Methods_1hf812y['delete']['query'], config?: T | undefined }) =>
+            fetch<void, BasicHeaders, Methods_1hf812y['delete']['status']>(prefix, prefix1, DELETE, option).send(),
           /**
            * <h2 id="">概要</h2>
            *
            * <p>指定した事業所の請求書を削除する</p>
            */
-          $delete: (option: { query: Methods18['delete']['query'], config?: T | undefined }) =>
-            fetch<void, BasicHeaders, Methods18['delete']['status']>(prefix, prefix1, DELETE, option).send().then(r => r.body),
-          $path: (option?: { method?: 'get' | undefined; query: Methods18['get']['query'] } | { method: 'delete'; query: Methods18['delete']['query'] } | undefined) =>
+          $delete: (option: { query: Methods_1hf812y['delete']['query'], config?: T | undefined }) =>
+            fetch<void, BasicHeaders, Methods_1hf812y['delete']['status']>(prefix, prefix1, DELETE, option).send().then(r => r.body),
+          $path: (option?: { method?: 'get' | undefined; query: Methods_1hf812y['get']['query'] } | { method: 'delete'; query: Methods_1hf812y['delete']['query'] } | undefined) =>
             `${prefix}${prefix1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
         };
       },
@@ -1598,15 +1598,15 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        *
        * <p>指定した事業所の請求書一覧を取得する</p>
        */
-      get: (option: { query: Methods17['get']['query'], config?: T | undefined }) =>
-        fetch<Methods17['get']['resBody'], BasicHeaders, Methods17['get']['status']>(prefix, PATH9, GET, option).json(),
+      get: (option: { query: Methods_1im2cji['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_1im2cji['get']['resBody'], BasicHeaders, Methods_1im2cji['get']['status']>(prefix, PATH9, GET, option).json(),
       /**
        * <h2 id="">概要</h2>
        *
        * <p>指定した事業所の請求書一覧を取得する</p>
        */
-      $get: (option: { query: Methods17['get']['query'], config?: T | undefined }) =>
-        fetch<Methods17['get']['resBody'], BasicHeaders, Methods17['get']['status']>(prefix, PATH9, GET, option).json().then(r => r.body),
+      $get: (option: { query: Methods_1im2cji['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_1im2cji['get']['resBody'], BasicHeaders, Methods_1im2cji['get']['status']>(prefix, PATH9, GET, option).json().then(r => r.body),
       /**
        * <h2 id="">概要</h2>
        *
@@ -1620,8 +1620,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * </ul>
        * @param option.body - 請求書の作成
        */
-      post: (option?: { body?: Methods17['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-        fetch<Methods17['post']['resBody'], BasicHeaders, Methods17['post']['status']>(prefix, PATH9, POST, option, 'URLSearchParams').json(),
+      post: (option?: { body?: Methods_1im2cji['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+        fetch<Methods_1im2cji['post']['resBody'], BasicHeaders, Methods_1im2cji['post']['status']>(prefix, PATH9, POST, option, 'URLSearchParams').json(),
       /**
        * <h2 id="">概要</h2>
        *
@@ -1635,9 +1635,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * </ul>
        * @param option.body - 請求書の作成
        */
-      $post: (option?: { body?: Methods17['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-        fetch<Methods17['post']['resBody'], BasicHeaders, Methods17['post']['status']>(prefix, PATH9, POST, option, 'URLSearchParams').json().then(r => r.body),
-      $path: (option?: { method?: 'get' | undefined; query: Methods17['get']['query'] } | undefined) =>
+      $post: (option?: { body?: Methods_1im2cji['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+        fetch<Methods_1im2cji['post']['resBody'], BasicHeaders, Methods_1im2cji['post']['status']>(prefix, PATH9, POST, option, 'URLSearchParams').json().then(r => r.body),
+      $path: (option?: { method?: 'get' | undefined; query: Methods_1im2cji['get']['query'] } | undefined) =>
         `${prefix}${PATH9}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
     },
     items: {
@@ -1650,46 +1650,46 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            *
            * <p>指定した事業所の品目を取得する</p>
            */
-          get: (option: { query: Methods20['get']['query'], config?: T | undefined }) =>
-            fetch<Methods20['get']['resBody'], BasicHeaders, Methods20['get']['status']>(prefix, prefix1, GET, option).json(),
+          get: (option: { query: Methods_lcuria['get']['query'], config?: T | undefined }) =>
+            fetch<Methods_lcuria['get']['resBody'], BasicHeaders, Methods_lcuria['get']['status']>(prefix, prefix1, GET, option).json(),
           /**
            * <h2 id="">概要</h2>
            *
            * <p>指定した事業所の品目を取得する</p>
            */
-          $get: (option: { query: Methods20['get']['query'], config?: T | undefined }) =>
-            fetch<Methods20['get']['resBody'], BasicHeaders, Methods20['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
+          $get: (option: { query: Methods_lcuria['get']['query'], config?: T | undefined }) =>
+            fetch<Methods_lcuria['get']['resBody'], BasicHeaders, Methods_lcuria['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
           /**
            * <h2 id="">概要</h2>
            *
            * <p>指定した事業所の品目を更新する</p>
            * @param option.body - 品目の更新
            */
-          put: (option?: { body?: Methods20['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-            fetch<Methods20['put']['resBody'], BasicHeaders, Methods20['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json(),
+          put: (option?: { body?: Methods_lcuria['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+            fetch<Methods_lcuria['put']['resBody'], BasicHeaders, Methods_lcuria['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json(),
           /**
            * <h2 id="">概要</h2>
            *
            * <p>指定した事業所の品目を更新する</p>
            * @param option.body - 品目の更新
            */
-          $put: (option?: { body?: Methods20['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-            fetch<Methods20['put']['resBody'], BasicHeaders, Methods20['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json().then(r => r.body),
+          $put: (option?: { body?: Methods_lcuria['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+            fetch<Methods_lcuria['put']['resBody'], BasicHeaders, Methods_lcuria['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json().then(r => r.body),
           /**
            * <h2 id="">概要</h2>
            *
            * <p>指定した事業所の品目を削除する</p>
            */
-          delete: (option: { query: Methods20['delete']['query'], config?: T | undefined }) =>
-            fetch<void, BasicHeaders, Methods20['delete']['status']>(prefix, prefix1, DELETE, option).send(),
+          delete: (option: { query: Methods_lcuria['delete']['query'], config?: T | undefined }) =>
+            fetch<void, BasicHeaders, Methods_lcuria['delete']['status']>(prefix, prefix1, DELETE, option).send(),
           /**
            * <h2 id="">概要</h2>
            *
            * <p>指定した事業所の品目を削除する</p>
            */
-          $delete: (option: { query: Methods20['delete']['query'], config?: T | undefined }) =>
-            fetch<void, BasicHeaders, Methods20['delete']['status']>(prefix, prefix1, DELETE, option).send().then(r => r.body),
-          $path: (option?: { method?: 'get' | undefined; query: Methods20['get']['query'] } | { method: 'delete'; query: Methods20['delete']['query'] } | undefined) =>
+          $delete: (option: { query: Methods_lcuria['delete']['query'], config?: T | undefined }) =>
+            fetch<void, BasicHeaders, Methods_lcuria['delete']['status']>(prefix, prefix1, DELETE, option).send().then(r => r.body),
+          $path: (option?: { method?: 'get' | undefined; query: Methods_lcuria['get']['query'] } | { method: 'delete'; query: Methods_lcuria['delete']['query'] } | undefined) =>
             `${prefix}${prefix1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
         };
       },
@@ -1698,32 +1698,32 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        *
        * <p>指定した事業所の品目一覧を取得する</p>
        */
-      get: (option: { query: Methods19['get']['query'], config?: T | undefined }) =>
-        fetch<Methods19['get']['resBody'], BasicHeaders, Methods19['get']['status']>(prefix, PATH10, GET, option).json(),
+      get: (option: { query: Methods_1sl9ty['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_1sl9ty['get']['resBody'], BasicHeaders, Methods_1sl9ty['get']['status']>(prefix, PATH10, GET, option).json(),
       /**
        * <h2 id="">概要</h2>
        *
        * <p>指定した事業所の品目一覧を取得する</p>
        */
-      $get: (option: { query: Methods19['get']['query'], config?: T | undefined }) =>
-        fetch<Methods19['get']['resBody'], BasicHeaders, Methods19['get']['status']>(prefix, PATH10, GET, option).json().then(r => r.body),
+      $get: (option: { query: Methods_1sl9ty['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_1sl9ty['get']['resBody'], BasicHeaders, Methods_1sl9ty['get']['status']>(prefix, PATH10, GET, option).json().then(r => r.body),
       /**
        * <h2 id="">概要</h2>
        *
        * <p>指定した事業所の品目を作成する</p>
        * @param option.body - 品目の作成
        */
-      post: (option?: { body?: Methods19['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-        fetch<Methods19['post']['resBody'], BasicHeaders, Methods19['post']['status']>(prefix, PATH10, POST, option, 'URLSearchParams').json(),
+      post: (option?: { body?: Methods_1sl9ty['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+        fetch<Methods_1sl9ty['post']['resBody'], BasicHeaders, Methods_1sl9ty['post']['status']>(prefix, PATH10, POST, option, 'URLSearchParams').json(),
       /**
        * <h2 id="">概要</h2>
        *
        * <p>指定した事業所の品目を作成する</p>
        * @param option.body - 品目の作成
        */
-      $post: (option?: { body?: Methods19['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-        fetch<Methods19['post']['resBody'], BasicHeaders, Methods19['post']['status']>(prefix, PATH10, POST, option, 'URLSearchParams').json().then(r => r.body),
-      $path: (option?: { method?: 'get' | undefined; query: Methods19['get']['query'] } | undefined) =>
+      $post: (option?: { body?: Methods_1sl9ty['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+        fetch<Methods_1sl9ty['post']['resBody'], BasicHeaders, Methods_1sl9ty['post']['status']>(prefix, PATH10, POST, option, 'URLSearchParams').json().then(r => r.body),
+      $path: (option?: { method?: 'get' | undefined; query: Methods_1sl9ty['get']['query'] } | undefined) =>
         `${prefix}${PATH10}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
     },
     journals: {
@@ -1746,8 +1746,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                * <li>id : 受け付けID</li>
                * </ul>
                */
-              get: (option: { query: Methods22['get']['query'], config?: T | undefined }) =>
-                fetch<Methods22['get']['resBody'], BasicHeaders, Methods22['get']['status']>(prefix, `${prefix2}${PATH13}`, GET, option).blob(),
+              get: (option: { query: Methods_vrr9vn['get']['query'], config?: T | undefined }) =>
+                fetch<Methods_vrr9vn['get']['resBody'], BasicHeaders, Methods_vrr9vn['get']['status']>(prefix, `${prefix2}${PATH13}`, GET, option).blob(),
               /**
                * <h2 id="">概要</h2>
                *
@@ -1761,9 +1761,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                * <li>id : 受け付けID</li>
                * </ul>
                */
-              $get: (option: { query: Methods22['get']['query'], config?: T | undefined }) =>
-                fetch<Methods22['get']['resBody'], BasicHeaders, Methods22['get']['status']>(prefix, `${prefix2}${PATH13}`, GET, option).blob().then(r => r.body),
-              $path: (option?: { method?: 'get' | undefined; query: Methods22['get']['query'] } | undefined) =>
+              $get: (option: { query: Methods_vrr9vn['get']['query'], config?: T | undefined }) =>
+                fetch<Methods_vrr9vn['get']['resBody'], BasicHeaders, Methods_vrr9vn['get']['status']>(prefix, `${prefix2}${PATH13}`, GET, option).blob().then(r => r.body),
+              $path: (option?: { method?: 'get' | undefined; query: Methods_vrr9vn['get']['query'] } | undefined) =>
                 `${prefix}${prefix2}${PATH13}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
             },
             status: {
@@ -1794,8 +1794,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                * </li>
                * </ul>
                */
-              get: (option: { query: Methods23['get']['query'], config?: T | undefined }) =>
-                fetch<Methods23['get']['resBody'], BasicHeaders, Methods23['get']['status']>(prefix, `${prefix2}${PATH14}`, GET, option).json(),
+              get: (option: { query: Methods_14rp4qp['get']['query'], config?: T | undefined }) =>
+                fetch<Methods_14rp4qp['get']['resBody'], BasicHeaders, Methods_14rp4qp['get']['status']>(prefix, `${prefix2}${PATH14}`, GET, option).json(),
               /**
                * <h2 id="">概要</h2>
                *
@@ -1823,9 +1823,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                * </li>
                * </ul>
                */
-              $get: (option: { query: Methods23['get']['query'], config?: T | undefined }) =>
-                fetch<Methods23['get']['resBody'], BasicHeaders, Methods23['get']['status']>(prefix, `${prefix2}${PATH14}`, GET, option).json().then(r => r.body),
-              $path: (option?: { method?: 'get' | undefined; query: Methods23['get']['query'] } | undefined) =>
+              $get: (option: { query: Methods_14rp4qp['get']['query'], config?: T | undefined }) =>
+                fetch<Methods_14rp4qp['get']['resBody'], BasicHeaders, Methods_14rp4qp['get']['status']>(prefix, `${prefix2}${PATH14}`, GET, option).json().then(r => r.body),
+              $path: (option?: { method?: 'get' | undefined; query: Methods_14rp4qp['get']['query'] } | undefined) =>
                 `${prefix}${prefix2}${PATH14}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
             },
           };
@@ -1872,8 +1872,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * <li>id : 受け付けID</li>
        * </ul>
        */
-      get: (option: { query: Methods21['get']['query'], config?: T | undefined }) =>
-        fetch<Methods21['get']['resBody'], BasicHeaders, Methods21['get']['status']>(prefix, PATH11, GET, option).json(),
+      get: (option: { query: Methods_bpgo2i['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_bpgo2i['get']['resBody'], BasicHeaders, Methods_bpgo2i['get']['status']>(prefix, PATH11, GET, option).json(),
       /**
        * <h2 id="">概要</h2>
        *
@@ -1915,9 +1915,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * <li>id : 受け付けID</li>
        * </ul>
        */
-      $get: (option: { query: Methods21['get']['query'], config?: T | undefined }) =>
-        fetch<Methods21['get']['resBody'], BasicHeaders, Methods21['get']['status']>(prefix, PATH11, GET, option).json().then(r => r.body),
-      $path: (option?: { method?: 'get' | undefined; query: Methods21['get']['query'] } | undefined) =>
+      $get: (option: { query: Methods_bpgo2i['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_bpgo2i['get']['resBody'], BasicHeaders, Methods_bpgo2i['get']['status']>(prefix, PATH11, GET, option).json().then(r => r.body),
+      $path: (option?: { method?: 'get' | undefined; query: Methods_bpgo2i['get']['query'] } | undefined) =>
         `${prefix}${PATH11}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
     },
     manual_journals: {
@@ -1949,8 +1949,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * <li>セグメントタグ情報は法人向けのプロフェッショナルプラン以上で利用可能です。利用可能なセグメントの数は、法人向けのプロフェッショナルプランの場合は1つ、エンタープライズプランの場合は3つです。</li>
            * </ul>
            */
-          get: (option: { query: Methods25['get']['query'], config?: T | undefined }) =>
-            fetch<Methods25['get']['resBody'], BasicHeaders, Methods25['get']['status']>(prefix, prefix1, GET, option).json(),
+          get: (option: { query: Methods_2ki4h3['get']['query'], config?: T | undefined }) =>
+            fetch<Methods_2ki4h3['get']['resBody'], BasicHeaders, Methods_2ki4h3['get']['status']>(prefix, prefix1, GET, option).json(),
           /**
            * <h2 id="">概要</h2>
            *
@@ -1975,8 +1975,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * <li>セグメントタグ情報は法人向けのプロフェッショナルプラン以上で利用可能です。利用可能なセグメントの数は、法人向けのプロフェッショナルプランの場合は1つ、エンタープライズプランの場合は3つです。</li>
            * </ul>
            */
-          $get: (option: { query: Methods25['get']['query'], config?: T | undefined }) =>
-            fetch<Methods25['get']['resBody'], BasicHeaders, Methods25['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
+          $get: (option: { query: Methods_2ki4h3['get']['query'], config?: T | undefined }) =>
+            fetch<Methods_2ki4h3['get']['resBody'], BasicHeaders, Methods_2ki4h3['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
           /**
            * <h2 id="">概要</h2>
            *
@@ -2033,8 +2033,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * <li>partner_codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。またpartner_codeとpartner_idは同時に指定することはできません。</li></ul>
            * @param option.body - 振替伝票の更新
            */
-          put: (option?: { body?: Methods25['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-            fetch<Methods25['put']['resBody'], BasicHeaders, Methods25['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json(),
+          put: (option?: { body?: Methods_2ki4h3['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+            fetch<Methods_2ki4h3['put']['resBody'], BasicHeaders, Methods_2ki4h3['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json(),
           /**
            * <h2 id="">概要</h2>
            *
@@ -2091,23 +2091,23 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * <li>partner_codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。またpartner_codeとpartner_idは同時に指定することはできません。</li></ul>
            * @param option.body - 振替伝票の更新
            */
-          $put: (option?: { body?: Methods25['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-            fetch<Methods25['put']['resBody'], BasicHeaders, Methods25['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json().then(r => r.body),
+          $put: (option?: { body?: Methods_2ki4h3['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+            fetch<Methods_2ki4h3['put']['resBody'], BasicHeaders, Methods_2ki4h3['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json().then(r => r.body),
           /**
            * <h2 id="">概要</h2>
            *
            * <p>指定した事業所の振替伝票を削除する</p>
            */
-          delete: (option: { query: Methods25['delete']['query'], config?: T | undefined }) =>
-            fetch<void, BasicHeaders, Methods25['delete']['status']>(prefix, prefix1, DELETE, option).send(),
+          delete: (option: { query: Methods_2ki4h3['delete']['query'], config?: T | undefined }) =>
+            fetch<void, BasicHeaders, Methods_2ki4h3['delete']['status']>(prefix, prefix1, DELETE, option).send(),
           /**
            * <h2 id="">概要</h2>
            *
            * <p>指定した事業所の振替伝票を削除する</p>
            */
-          $delete: (option: { query: Methods25['delete']['query'], config?: T | undefined }) =>
-            fetch<void, BasicHeaders, Methods25['delete']['status']>(prefix, prefix1, DELETE, option).send().then(r => r.body),
-          $path: (option?: { method?: 'get' | undefined; query: Methods25['get']['query'] } | { method: 'delete'; query: Methods25['delete']['query'] } | undefined) =>
+          $delete: (option: { query: Methods_2ki4h3['delete']['query'], config?: T | undefined }) =>
+            fetch<void, BasicHeaders, Methods_2ki4h3['delete']['status']>(prefix, prefix1, DELETE, option).send().then(r => r.body),
+          $path: (option?: { method?: 'get' | undefined; query: Methods_2ki4h3['get']['query'] } | { method: 'delete'; query: Methods_2ki4h3['delete']['query'] } | undefined) =>
             `${prefix}${prefix1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
         };
       },
@@ -2158,8 +2158,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * <li>セグメントタグ情報は法人向けのプロフェッショナルプラン以上で利用可能です。利用可能なセグメントの数は、法人向けのプロフェッショナルプランの場合は1つ、エンタープライズプランの場合は3つです。</li>
        * <li>partner_codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。またpartner_codeとpartner_idは同時に指定することはできません。</li></ul>
        */
-      get: (option: { query: Methods24['get']['query'], config?: T | undefined }) =>
-        fetch<Methods24['get']['resBody'], BasicHeaders, Methods24['get']['status']>(prefix, PATH15, GET, option).json(),
+      get: (option: { query: Methods_7xsoh1['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_7xsoh1['get']['resBody'], BasicHeaders, Methods_7xsoh1['get']['status']>(prefix, PATH15, GET, option).json(),
       /**
        * <h2 id="">概要</h2>
        *
@@ -2207,8 +2207,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * <li>セグメントタグ情報は法人向けのプロフェッショナルプラン以上で利用可能です。利用可能なセグメントの数は、法人向けのプロフェッショナルプランの場合は1つ、エンタープライズプランの場合は3つです。</li>
        * <li>partner_codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。またpartner_codeとpartner_idは同時に指定することはできません。</li></ul>
        */
-      $get: (option: { query: Methods24['get']['query'], config?: T | undefined }) =>
-        fetch<Methods24['get']['resBody'], BasicHeaders, Methods24['get']['status']>(prefix, PATH15, GET, option).json().then(r => r.body),
+      $get: (option: { query: Methods_7xsoh1['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_7xsoh1['get']['resBody'], BasicHeaders, Methods_7xsoh1['get']['status']>(prefix, PATH15, GET, option).json().then(r => r.body),
       /**
        * <h2 id="">概要</h2>
        *
@@ -2258,8 +2258,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * <li>partner_codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。またpartner_codeとpartner_idは同時に指定することはできません。</li></ul>
        * @param option.body - 振替伝票の作成
        */
-      post: (option?: { body?: Methods24['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-        fetch<Methods24['post']['resBody'], BasicHeaders, Methods24['post']['status']>(prefix, PATH15, POST, option, 'URLSearchParams').json(),
+      post: (option?: { body?: Methods_7xsoh1['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+        fetch<Methods_7xsoh1['post']['resBody'], BasicHeaders, Methods_7xsoh1['post']['status']>(prefix, PATH15, POST, option, 'URLSearchParams').json(),
       /**
        * <h2 id="">概要</h2>
        *
@@ -2309,9 +2309,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * <li>partner_codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。またpartner_codeとpartner_idは同時に指定することはできません。</li></ul>
        * @param option.body - 振替伝票の作成
        */
-      $post: (option?: { body?: Methods24['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-        fetch<Methods24['post']['resBody'], BasicHeaders, Methods24['post']['status']>(prefix, PATH15, POST, option, 'URLSearchParams').json().then(r => r.body),
-      $path: (option?: { method?: 'get' | undefined; query: Methods24['get']['query'] } | undefined) =>
+      $post: (option?: { body?: Methods_7xsoh1['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+        fetch<Methods_7xsoh1['post']['resBody'], BasicHeaders, Methods_7xsoh1['post']['status']>(prefix, PATH15, POST, option, 'URLSearchParams').json().then(r => r.body),
+      $path: (option?: { method?: 'get' | undefined; query: Methods_7xsoh1['get']['query'] } | undefined) =>
         `${prefix}${PATH15}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
     },
     partners: {
@@ -2326,8 +2326,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * <ul>
            * <li>振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）, 支払期日設定（payment_term_attributes, 請求の入金期日設定（invoice_payment_term_attributes）は法人向けのプロフェッショナルプラン以上で利用可能です。</li></ul>
            */
-          get: (option: { query: Methods27['get']['query'], config?: T | undefined }) =>
-            fetch<Methods27['get']['resBody'], BasicHeaders, Methods27['get']['status']>(prefix, prefix1, GET, option).json(),
+          get: (option: { query: Methods_zyy0xj['get']['query'], config?: T | undefined }) =>
+            fetch<Methods_zyy0xj['get']['resBody'], BasicHeaders, Methods_zyy0xj['get']['status']>(prefix, prefix1, GET, option).json(),
           /**
            * <h2 id="">概要</h2>
            *
@@ -2335,8 +2335,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * <ul>
            * <li>振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）, 支払期日設定（payment_term_attributes, 請求の入金期日設定（invoice_payment_term_attributes）は法人向けのプロフェッショナルプラン以上で利用可能です。</li></ul>
            */
-          $get: (option: { query: Methods27['get']['query'], config?: T | undefined }) =>
-            fetch<Methods27['get']['resBody'], BasicHeaders, Methods27['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
+          $get: (option: { query: Methods_zyy0xj['get']['query'], config?: T | undefined }) =>
+            fetch<Methods_zyy0xj['get']['resBody'], BasicHeaders, Methods_zyy0xj['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
           /**
            * <h2 id="">概要</h2>
            *
@@ -2346,8 +2346,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * <li>振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）, 支払期日設定（payment_term_attributes, 請求の入金期日設定（invoice_payment_term_attributes）は法人向けのプロフェッショナルプラン以上で利用可能です。</li></ul>
            * @param option.body - 取引先の更新
            */
-          put: (option: { body: Methods27['put']['reqBody'], config?: T | undefined }) =>
-            fetch<Methods27['put']['resBody'], BasicHeaders, Methods27['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json(),
+          put: (option: { body: Methods_zyy0xj['put']['reqBody'], config?: T | undefined }) =>
+            fetch<Methods_zyy0xj['put']['resBody'], BasicHeaders, Methods_zyy0xj['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json(),
           /**
            * <h2 id="">概要</h2>
            *
@@ -2357,23 +2357,23 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * <li>振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）, 支払期日設定（payment_term_attributes, 請求の入金期日設定（invoice_payment_term_attributes）は法人向けのプロフェッショナルプラン以上で利用可能です。</li></ul>
            * @param option.body - 取引先の更新
            */
-          $put: (option: { body: Methods27['put']['reqBody'], config?: T | undefined }) =>
-            fetch<Methods27['put']['resBody'], BasicHeaders, Methods27['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json().then(r => r.body),
+          $put: (option: { body: Methods_zyy0xj['put']['reqBody'], config?: T | undefined }) =>
+            fetch<Methods_zyy0xj['put']['resBody'], BasicHeaders, Methods_zyy0xj['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json().then(r => r.body),
           /**
            * <h2 id="">概要</h2>
            *
            * <p>指定した事業所の取引先を削除する</p>
            */
-          delete: (option: { query: Methods27['delete']['query'], config?: T | undefined }) =>
-            fetch<void, BasicHeaders, Methods27['delete']['status']>(prefix, prefix1, DELETE, option).send(),
+          delete: (option: { query: Methods_zyy0xj['delete']['query'], config?: T | undefined }) =>
+            fetch<void, BasicHeaders, Methods_zyy0xj['delete']['status']>(prefix, prefix1, DELETE, option).send(),
           /**
            * <h2 id="">概要</h2>
            *
            * <p>指定した事業所の取引先を削除する</p>
            */
-          $delete: (option: { query: Methods27['delete']['query'], config?: T | undefined }) =>
-            fetch<void, BasicHeaders, Methods27['delete']['status']>(prefix, prefix1, DELETE, option).send().then(r => r.body),
-          $path: (option?: { method?: 'get' | undefined; query: Methods27['get']['query'] } | { method: 'delete'; query: Methods27['delete']['query'] } | undefined) =>
+          $delete: (option: { query: Methods_zyy0xj['delete']['query'], config?: T | undefined }) =>
+            fetch<void, BasicHeaders, Methods_zyy0xj['delete']['status']>(prefix, prefix1, DELETE, option).send().then(r => r.body),
+          $path: (option?: { method?: 'get' | undefined; query: Methods_zyy0xj['get']['query'] } | { method: 'delete'; query: Methods_zyy0xj['delete']['query'] } | undefined) =>
             `${prefix}${prefix1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
         };
       },
@@ -2392,8 +2392,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
              * <li>振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）, 支払期日設定（payment_term_attributes, 請求の入金期日設定（invoice_payment_term_attributes）は法人向けのプロフェッショナルプラン以上で利用可能です。</li></ul>
              * @param option.body - 取引先の更新
              */
-            put: (option: { body: Methods28['put']['reqBody'], config?: T | undefined }) =>
-              fetch<Methods28['put']['resBody'], BasicHeaders, Methods28['put']['status']>(prefix, prefix2, PUT, option, 'URLSearchParams').json(),
+            put: (option: { body: Methods_17ohx2p['put']['reqBody'], config?: T | undefined }) =>
+              fetch<Methods_17ohx2p['put']['resBody'], BasicHeaders, Methods_17ohx2p['put']['status']>(prefix, prefix2, PUT, option, 'URLSearchParams').json(),
             /**
              * <h2 id="">概要</h2>
              *
@@ -2404,8 +2404,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
              * <li>振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）, 支払期日設定（payment_term_attributes, 請求の入金期日設定（invoice_payment_term_attributes）は法人向けのプロフェッショナルプラン以上で利用可能です。</li></ul>
              * @param option.body - 取引先の更新
              */
-            $put: (option: { body: Methods28['put']['reqBody'], config?: T | undefined }) =>
-              fetch<Methods28['put']['resBody'], BasicHeaders, Methods28['put']['status']>(prefix, prefix2, PUT, option, 'URLSearchParams').json().then(r => r.body),
+            $put: (option: { body: Methods_17ohx2p['put']['reqBody'], config?: T | undefined }) =>
+              fetch<Methods_17ohx2p['put']['resBody'], BasicHeaders, Methods_17ohx2p['put']['status']>(prefix, prefix2, PUT, option, 'URLSearchParams').json().then(r => r.body),
             $path: () => `${prefix}${prefix2}`,
           };
         },
@@ -2417,8 +2417,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * <ul>
        * <li>振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）は法人向けのプロフェッショナルプラン以上で利用可能です。</li></ul>
        */
-      get: (option: { query: Methods26['get']['query'], config?: T | undefined }) =>
-        fetch<Methods26['get']['resBody'], BasicHeaders, Methods26['get']['status']>(prefix, PATH16, GET, option).json(),
+      get: (option: { query: Methods_13sbgxh['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_13sbgxh['get']['resBody'], BasicHeaders, Methods_13sbgxh['get']['status']>(prefix, PATH16, GET, option).json(),
       /**
        * <h2 id="">概要</h2>
        *
@@ -2426,8 +2426,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * <ul>
        * <li>振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）は法人向けのプロフェッショナルプラン以上で利用可能です。</li></ul>
        */
-      $get: (option: { query: Methods26['get']['query'], config?: T | undefined }) =>
-        fetch<Methods26['get']['resBody'], BasicHeaders, Methods26['get']['status']>(prefix, PATH16, GET, option).json().then(r => r.body),
+      $get: (option: { query: Methods_13sbgxh['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_13sbgxh['get']['resBody'], BasicHeaders, Methods_13sbgxh['get']['status']>(prefix, PATH16, GET, option).json().then(r => r.body),
       /**
        * <h2 id="">概要</h2>
        *
@@ -2438,8 +2438,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * <li>振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）, 支払期日設定（payment_term_attributes, 請求の入金期日設定（invoice_payment_term_attributes）は法人向けのプロフェッショナルプラン以上で利用可能です。</li></ul>
        * @param option.body - 取引先の作成
        */
-      post: (option: { body: Methods26['post']['reqBody'], config?: T | undefined }) =>
-        fetch<Methods26['post']['resBody'], BasicHeaders, Methods26['post']['status']>(prefix, PATH16, POST, option, 'URLSearchParams').json(),
+      post: (option: { body: Methods_13sbgxh['post']['reqBody'], config?: T | undefined }) =>
+        fetch<Methods_13sbgxh['post']['resBody'], BasicHeaders, Methods_13sbgxh['post']['status']>(prefix, PATH16, POST, option, 'URLSearchParams').json(),
       /**
        * <h2 id="">概要</h2>
        *
@@ -2450,9 +2450,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * <li>振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）, 支払期日設定（payment_term_attributes, 請求の入金期日設定（invoice_payment_term_attributes）は法人向けのプロフェッショナルプラン以上で利用可能です。</li></ul>
        * @param option.body - 取引先の作成
        */
-      $post: (option: { body: Methods26['post']['reqBody'], config?: T | undefined }) =>
-        fetch<Methods26['post']['resBody'], BasicHeaders, Methods26['post']['status']>(prefix, PATH16, POST, option, 'URLSearchParams').json().then(r => r.body),
-      $path: (option?: { method?: 'get' | undefined; query: Methods26['get']['query'] } | undefined) =>
+      $post: (option: { body: Methods_13sbgxh['post']['reqBody'], config?: T | undefined }) =>
+        fetch<Methods_13sbgxh['post']['resBody'], BasicHeaders, Methods_13sbgxh['post']['status']>(prefix, PATH16, POST, option, 'URLSearchParams').json().then(r => r.body),
+      $path: (option?: { method?: 'get' | undefined; query: Methods_13sbgxh['get']['query'] } | undefined) =>
         `${prefix}${PATH16}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
     },
     quotations: {
@@ -2465,15 +2465,15 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            *
            * <p>指定した事業所の見積書詳細を取得する</p>
            */
-          get: (option: { query: Methods30['get']['query'], config?: T | undefined }) =>
-            fetch<Methods30['get']['resBody'], BasicHeaders, Methods30['get']['status']>(prefix, prefix1, GET, option).json(),
+          get: (option: { query: Methods_xp60db['get']['query'], config?: T | undefined }) =>
+            fetch<Methods_xp60db['get']['resBody'], BasicHeaders, Methods_xp60db['get']['status']>(prefix, prefix1, GET, option).json(),
           /**
            * <h2 id="">概要</h2>
            *
            * <p>指定した事業所の見積書詳細を取得する</p>
            */
-          $get: (option: { query: Methods30['get']['query'], config?: T | undefined }) =>
-            fetch<Methods30['get']['resBody'], BasicHeaders, Methods30['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
+          $get: (option: { query: Methods_xp60db['get']['query'], config?: T | undefined }) =>
+            fetch<Methods_xp60db['get']['resBody'], BasicHeaders, Methods_xp60db['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
           /**
            * <h2 id="">概要</h2>
            *
@@ -2486,8 +2486,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * </ul>
            * @param option.body - 見積書の更新
            */
-          put: (option?: { body?: Methods30['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-            fetch<Methods30['put']['resBody'], BasicHeaders, Methods30['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json(),
+          put: (option?: { body?: Methods_xp60db['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+            fetch<Methods_xp60db['put']['resBody'], BasicHeaders, Methods_xp60db['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json(),
           /**
            * <h2 id="">概要</h2>
            *
@@ -2500,23 +2500,23 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * </ul>
            * @param option.body - 見積書の更新
            */
-          $put: (option?: { body?: Methods30['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-            fetch<Methods30['put']['resBody'], BasicHeaders, Methods30['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json().then(r => r.body),
+          $put: (option?: { body?: Methods_xp60db['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+            fetch<Methods_xp60db['put']['resBody'], BasicHeaders, Methods_xp60db['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json().then(r => r.body),
           /**
            * <h2 id="">概要</h2>
            *
            * <p>指定した事業所の見積書を削除する</p>
            */
-          delete: (option: { query: Methods30['delete']['query'], config?: T | undefined }) =>
-            fetch<void, BasicHeaders, Methods30['delete']['status']>(prefix, prefix1, DELETE, option).send(),
+          delete: (option: { query: Methods_xp60db['delete']['query'], config?: T | undefined }) =>
+            fetch<void, BasicHeaders, Methods_xp60db['delete']['status']>(prefix, prefix1, DELETE, option).send(),
           /**
            * <h2 id="">概要</h2>
            *
            * <p>指定した事業所の見積書を削除する</p>
            */
-          $delete: (option: { query: Methods30['delete']['query'], config?: T | undefined }) =>
-            fetch<void, BasicHeaders, Methods30['delete']['status']>(prefix, prefix1, DELETE, option).send().then(r => r.body),
-          $path: (option?: { method?: 'get' | undefined; query: Methods30['get']['query'] } | { method: 'delete'; query: Methods30['delete']['query'] } | undefined) =>
+          $delete: (option: { query: Methods_xp60db['delete']['query'], config?: T | undefined }) =>
+            fetch<void, BasicHeaders, Methods_xp60db['delete']['status']>(prefix, prefix1, DELETE, option).send().then(r => r.body),
+          $path: (option?: { method?: 'get' | undefined; query: Methods_xp60db['get']['query'] } | { method: 'delete'; query: Methods_xp60db['delete']['query'] } | undefined) =>
             `${prefix}${prefix1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
         };
       },
@@ -2525,15 +2525,15 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        *
        * <p>指定した事業所の見積書一覧を取得する</p>
        */
-      get: (option: { query: Methods29['get']['query'], config?: T | undefined }) =>
-        fetch<Methods29['get']['resBody'], BasicHeaders, Methods29['get']['status']>(prefix, PATH18, GET, option).json(),
+      get: (option: { query: Methods_1hbeo59['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_1hbeo59['get']['resBody'], BasicHeaders, Methods_1hbeo59['get']['status']>(prefix, PATH18, GET, option).json(),
       /**
        * <h2 id="">概要</h2>
        *
        * <p>指定した事業所の見積書一覧を取得する</p>
        */
-      $get: (option: { query: Methods29['get']['query'], config?: T | undefined }) =>
-        fetch<Methods29['get']['resBody'], BasicHeaders, Methods29['get']['status']>(prefix, PATH18, GET, option).json().then(r => r.body),
+      $get: (option: { query: Methods_1hbeo59['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_1hbeo59['get']['resBody'], BasicHeaders, Methods_1hbeo59['get']['status']>(prefix, PATH18, GET, option).json().then(r => r.body),
       /**
        * <h2 id="">概要</h2>
        *
@@ -2546,8 +2546,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * </ul>
        * @param option.body - 見積書の作成
        */
-      post: (option?: { body?: Methods29['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-        fetch<Methods29['post']['resBody'], BasicHeaders, Methods29['post']['status']>(prefix, PATH18, POST, option, 'URLSearchParams').json(),
+      post: (option?: { body?: Methods_1hbeo59['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+        fetch<Methods_1hbeo59['post']['resBody'], BasicHeaders, Methods_1hbeo59['post']['status']>(prefix, PATH18, POST, option, 'URLSearchParams').json(),
       /**
        * <h2 id="">概要</h2>
        *
@@ -2560,9 +2560,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * </ul>
        * @param option.body - 見積書の作成
        */
-      $post: (option?: { body?: Methods29['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-        fetch<Methods29['post']['resBody'], BasicHeaders, Methods29['post']['status']>(prefix, PATH18, POST, option, 'URLSearchParams').json().then(r => r.body),
-      $path: (option?: { method?: 'get' | undefined; query: Methods29['get']['query'] } | undefined) =>
+      $post: (option?: { body?: Methods_1hbeo59['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+        fetch<Methods_1hbeo59['post']['resBody'], BasicHeaders, Methods_1hbeo59['post']['status']>(prefix, PATH18, POST, option, 'URLSearchParams').json().then(r => r.body),
+      $path: (option?: { method?: 'get' | undefined; query: Methods_1hbeo59['get']['query'] } | undefined) =>
         `${prefix}${PATH18}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
     },
     receipts: {
@@ -2575,15 +2575,15 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            *
            * <p>指定した事業所のファイルボックス 証憑ファイルを取得する</p>
            */
-          get: (option: { query: Methods32['get']['query'], config?: T | undefined }) =>
-            fetch<Methods32['get']['resBody'], BasicHeaders, Methods32['get']['status']>(prefix, prefix1, GET, option).json(),
+          get: (option: { query: Methods_gwls3x['get']['query'], config?: T | undefined }) =>
+            fetch<Methods_gwls3x['get']['resBody'], BasicHeaders, Methods_gwls3x['get']['status']>(prefix, prefix1, GET, option).json(),
           /**
            * <h2 id="">概要</h2>
            *
            * <p>指定した事業所のファイルボックス 証憑ファイルを取得する</p>
            */
-          $get: (option: { query: Methods32['get']['query'], config?: T | undefined }) =>
-            fetch<Methods32['get']['resBody'], BasicHeaders, Methods32['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
+          $get: (option: { query: Methods_gwls3x['get']['query'], config?: T | undefined }) =>
+            fetch<Methods_gwls3x['get']['resBody'], BasicHeaders, Methods_gwls3x['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
           /**
            * <h2 id="">概要</h2>
            *
@@ -2594,8 +2594,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * </ul>
            * @param option.body - 経費申請の更新
            */
-          put: (option: { body: Methods32['put']['reqBody'], config?: T | undefined }) =>
-            fetch<Methods32['put']['resBody'], BasicHeaders, Methods32['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json(),
+          put: (option: { body: Methods_gwls3x['put']['reqBody'], config?: T | undefined }) =>
+            fetch<Methods_gwls3x['put']['resBody'], BasicHeaders, Methods_gwls3x['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json(),
           /**
            * <h2 id="">概要</h2>
            *
@@ -2606,23 +2606,23 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * </ul>
            * @param option.body - 経費申請の更新
            */
-          $put: (option: { body: Methods32['put']['reqBody'], config?: T | undefined }) =>
-            fetch<Methods32['put']['resBody'], BasicHeaders, Methods32['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json().then(r => r.body),
+          $put: (option: { body: Methods_gwls3x['put']['reqBody'], config?: T | undefined }) =>
+            fetch<Methods_gwls3x['put']['resBody'], BasicHeaders, Methods_gwls3x['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json().then(r => r.body),
           /**
            * <h2 id="">概要</h2>
            *
            * <p>ファイルボックスの証憑ファイルを削除する</p>
            */
-          delete: (option: { query: Methods32['delete']['query'], config?: T | undefined }) =>
-            fetch<void, BasicHeaders, Methods32['delete']['status']>(prefix, prefix1, DELETE, option).send(),
+          delete: (option: { query: Methods_gwls3x['delete']['query'], config?: T | undefined }) =>
+            fetch<void, BasicHeaders, Methods_gwls3x['delete']['status']>(prefix, prefix1, DELETE, option).send(),
           /**
            * <h2 id="">概要</h2>
            *
            * <p>ファイルボックスの証憑ファイルを削除する</p>
            */
-          $delete: (option: { query: Methods32['delete']['query'], config?: T | undefined }) =>
-            fetch<void, BasicHeaders, Methods32['delete']['status']>(prefix, prefix1, DELETE, option).send().then(r => r.body),
-          $path: (option?: { method?: 'get' | undefined; query: Methods32['get']['query'] } | { method: 'delete'; query: Methods32['delete']['query'] } | undefined) =>
+          $delete: (option: { query: Methods_gwls3x['delete']['query'], config?: T | undefined }) =>
+            fetch<void, BasicHeaders, Methods_gwls3x['delete']['status']>(prefix, prefix1, DELETE, option).send().then(r => r.body),
+          $path: (option?: { method?: 'get' | undefined; query: Methods_gwls3x['get']['query'] } | { method: 'delete'; query: Methods_gwls3x['delete']['query'] } | undefined) =>
             `${prefix}${prefix1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
         };
       },
@@ -2631,30 +2631,30 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        *
        * <p>指定した事業所のファイルボックス 証憑ファイル一覧を取得する</p>
        */
-      get: (option: { query: Methods31['get']['query'], config?: T | undefined }) =>
-        fetch<Methods31['get']['resBody'], BasicHeaders, Methods31['get']['status']>(prefix, PATH19, GET, option).json(),
+      get: (option: { query: Methods_lcgnb7['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_lcgnb7['get']['resBody'], BasicHeaders, Methods_lcgnb7['get']['status']>(prefix, PATH19, GET, option).json(),
       /**
        * <h2 id="">概要</h2>
        *
        * <p>指定した事業所のファイルボックス 証憑ファイル一覧を取得する</p>
        */
-      $get: (option: { query: Methods31['get']['query'], config?: T | undefined }) =>
-        fetch<Methods31['get']['resBody'], BasicHeaders, Methods31['get']['status']>(prefix, PATH19, GET, option).json().then(r => r.body),
+      $get: (option: { query: Methods_lcgnb7['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_lcgnb7['get']['resBody'], BasicHeaders, Methods_lcgnb7['get']['status']>(prefix, PATH19, GET, option).json().then(r => r.body),
       /**
        * <h2 id="">概要</h2>
        *
        * <p>ファイルボックスに証憑ファイルをアップロードする</p>
        */
-      post: (option: { body: Methods31['post']['reqBody'], config?: T | undefined }) =>
-        fetch<Methods31['post']['resBody'], BasicHeaders, Methods31['post']['status']>(prefix, PATH19, POST, option, 'FormData').json(),
+      post: (option: { body: Methods_lcgnb7['post']['reqBody'], config?: T | undefined }) =>
+        fetch<Methods_lcgnb7['post']['resBody'], BasicHeaders, Methods_lcgnb7['post']['status']>(prefix, PATH19, POST, option, 'FormData').json(),
       /**
        * <h2 id="">概要</h2>
        *
        * <p>ファイルボックスに証憑ファイルをアップロードする</p>
        */
-      $post: (option: { body: Methods31['post']['reqBody'], config?: T | undefined }) =>
-        fetch<Methods31['post']['resBody'], BasicHeaders, Methods31['post']['status']>(prefix, PATH19, POST, option, 'FormData').json().then(r => r.body),
-      $path: (option?: { method?: 'get' | undefined; query: Methods31['get']['query'] } | undefined) =>
+      $post: (option: { body: Methods_lcgnb7['post']['reqBody'], config?: T | undefined }) =>
+        fetch<Methods_lcgnb7['post']['resBody'], BasicHeaders, Methods_lcgnb7['post']['status']>(prefix, PATH19, POST, option, 'FormData').json().then(r => r.body),
+      $path: (option?: { method?: 'get' | undefined; query: Methods_lcgnb7['get']['query'] } | undefined) =>
         `${prefix}${PATH19}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
     },
     reports: {
@@ -2743,8 +2743,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          *     }
          * }</code></pre>
          */
-        get: (option: { query: Methods33['get']['query'], config?: T | undefined }) =>
-          fetch<Methods33['get']['resBody'], BasicHeaders, Methods33['get']['status']>(prefix, PATH20, GET, option).json(),
+        get: (option: { query: Methods_8z6ya0['get']['query'], config?: T | undefined }) =>
+          fetch<Methods_8z6ya0['get']['resBody'], BasicHeaders, Methods_8z6ya0['get']['status']>(prefix, PATH20, GET, option).json(),
         /**
          * <h2 id="">概要</h2>
          *
@@ -2829,9 +2829,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          *     }
          * }</code></pre>
          */
-        $get: (option: { query: Methods33['get']['query'], config?: T | undefined }) =>
-          fetch<Methods33['get']['resBody'], BasicHeaders, Methods33['get']['status']>(prefix, PATH20, GET, option).json().then(r => r.body),
-        $path: (option?: { method?: 'get' | undefined; query: Methods33['get']['query'] } | undefined) =>
+        $get: (option: { query: Methods_8z6ya0['get']['query'], config?: T | undefined }) =>
+          fetch<Methods_8z6ya0['get']['resBody'], BasicHeaders, Methods_8z6ya0['get']['status']>(prefix, PATH20, GET, option).json().then(r => r.body),
+        $path: (option?: { method?: 'get' | undefined; query: Methods_8z6ya0['get']['query'] } | undefined) =>
           `${prefix}${PATH20}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
       },
       trial_bs_three_years: {
@@ -2901,8 +2901,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          *     }
          * }</code></pre>
          */
-        get: (option: { query: Methods34['get']['query'], config?: T | undefined }) =>
-          fetch<Methods34['get']['resBody'], BasicHeaders, Methods34['get']['status']>(prefix, PATH21, GET, option).json(),
+        get: (option: { query: Methods_1q45gpe['get']['query'], config?: T | undefined }) =>
+          fetch<Methods_1q45gpe['get']['resBody'], BasicHeaders, Methods_1q45gpe['get']['status']>(prefix, PATH21, GET, option).json(),
         /**
          * <h2 id="">概要</h2>
          *
@@ -2969,9 +2969,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          *     }
          * }</code></pre>
          */
-        $get: (option: { query: Methods34['get']['query'], config?: T | undefined }) =>
-          fetch<Methods34['get']['resBody'], BasicHeaders, Methods34['get']['status']>(prefix, PATH21, GET, option).json().then(r => r.body),
-        $path: (option?: { method?: 'get' | undefined; query: Methods34['get']['query'] } | undefined) =>
+        $get: (option: { query: Methods_1q45gpe['get']['query'], config?: T | undefined }) =>
+          fetch<Methods_1q45gpe['get']['resBody'], BasicHeaders, Methods_1q45gpe['get']['status']>(prefix, PATH21, GET, option).json().then(r => r.body),
+        $path: (option?: { method?: 'get' | undefined; query: Methods_1q45gpe['get']['query'] } | undefined) =>
           `${prefix}${PATH21}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
       },
       trial_bs_two_years: {
@@ -3036,8 +3036,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          *     }
          * }</code></pre>
          */
-        get: (option: { query: Methods35['get']['query'], config?: T | undefined }) =>
-          fetch<Methods35['get']['resBody'], BasicHeaders, Methods35['get']['status']>(prefix, PATH22, GET, option).json(),
+        get: (option: { query: Methods_1lqa25w['get']['query'], config?: T | undefined }) =>
+          fetch<Methods_1lqa25w['get']['resBody'], BasicHeaders, Methods_1lqa25w['get']['status']>(prefix, PATH22, GET, option).json(),
         /**
          * <h2 id="">概要</h2>
          *
@@ -3099,9 +3099,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          *     }
          * }</code></pre>
          */
-        $get: (option: { query: Methods35['get']['query'], config?: T | undefined }) =>
-          fetch<Methods35['get']['resBody'], BasicHeaders, Methods35['get']['status']>(prefix, PATH22, GET, option).json().then(r => r.body),
-        $path: (option?: { method?: 'get' | undefined; query: Methods35['get']['query'] } | undefined) =>
+        $get: (option: { query: Methods_1lqa25w['get']['query'], config?: T | undefined }) =>
+          fetch<Methods_1lqa25w['get']['resBody'], BasicHeaders, Methods_1lqa25w['get']['status']>(prefix, PATH22, GET, option).json().then(r => r.body),
+        $path: (option?: { method?: 'get' | undefined; query: Methods_1lqa25w['get']['query'] } | undefined) =>
           `${prefix}${PATH22}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
       },
       trial_pl: {
@@ -3189,8 +3189,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          *     }
          * }</code></pre>
          */
-        get: (option: { query: Methods36['get']['query'], config?: T | undefined }) =>
-          fetch<Methods36['get']['resBody'], BasicHeaders, Methods36['get']['status']>(prefix, PATH23, GET, option).json(),
+        get: (option: { query: Methods_376oif['get']['query'], config?: T | undefined }) =>
+          fetch<Methods_376oif['get']['resBody'], BasicHeaders, Methods_376oif['get']['status']>(prefix, PATH23, GET, option).json(),
         /**
          * <h2 id="">概要</h2>
          *
@@ -3275,9 +3275,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          *     }
          * }</code></pre>
          */
-        $get: (option: { query: Methods36['get']['query'], config?: T | undefined }) =>
-          fetch<Methods36['get']['resBody'], BasicHeaders, Methods36['get']['status']>(prefix, PATH23, GET, option).json().then(r => r.body),
-        $path: (option?: { method?: 'get' | undefined; query: Methods36['get']['query'] } | undefined) =>
+        $get: (option: { query: Methods_376oif['get']['query'], config?: T | undefined }) =>
+          fetch<Methods_376oif['get']['resBody'], BasicHeaders, Methods_376oif['get']['status']>(prefix, PATH23, GET, option).json().then(r => r.body),
+        $path: (option?: { method?: 'get' | undefined; query: Methods_376oif['get']['query'] } | undefined) =>
           `${prefix}${PATH23}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
       },
       trial_pl_sections: {
@@ -3353,8 +3353,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          *     }
          * }</code></pre>
          */
-        get: (option: { query: Methods37['get']['query'], config?: T | undefined }) =>
-          fetch<Methods37['get']['resBody'], BasicHeaders, Methods37['get']['status']>(prefix, PATH24, GET, option).json(),
+        get: (option: { query: Methods_wf8kc4['get']['query'], config?: T | undefined }) =>
+          fetch<Methods_wf8kc4['get']['resBody'], BasicHeaders, Methods_wf8kc4['get']['status']>(prefix, PATH24, GET, option).json(),
         /**
          * <h2 id="">概要</h2>
          *
@@ -3427,9 +3427,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          *     }
          * }</code></pre>
          */
-        $get: (option: { query: Methods37['get']['query'], config?: T | undefined }) =>
-          fetch<Methods37['get']['resBody'], BasicHeaders, Methods37['get']['status']>(prefix, PATH24, GET, option).json().then(r => r.body),
-        $path: (option?: { method?: 'get' | undefined; query: Methods37['get']['query'] } | undefined) =>
+        $get: (option: { query: Methods_wf8kc4['get']['query'], config?: T | undefined }) =>
+          fetch<Methods_wf8kc4['get']['resBody'], BasicHeaders, Methods_wf8kc4['get']['status']>(prefix, PATH24, GET, option).json().then(r => r.body),
+        $path: (option?: { method?: 'get' | undefined; query: Methods_wf8kc4['get']['query'] } | undefined) =>
           `${prefix}${PATH24}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
       },
       trial_pl_three_years: {
@@ -3499,8 +3499,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          *     }
          * }</code></pre>
          */
-        get: (option: { query: Methods38['get']['query'], config?: T | undefined }) =>
-          fetch<Methods38['get']['resBody'], BasicHeaders, Methods38['get']['status']>(prefix, PATH25, GET, option).json(),
+        get: (option: { query: Methods_u62eat['get']['query'], config?: T | undefined }) =>
+          fetch<Methods_u62eat['get']['resBody'], BasicHeaders, Methods_u62eat['get']['status']>(prefix, PATH25, GET, option).json(),
         /**
          * <h2 id="">概要</h2>
          *
@@ -3567,9 +3567,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          *     }
          * }</code></pre>
          */
-        $get: (option: { query: Methods38['get']['query'], config?: T | undefined }) =>
-          fetch<Methods38['get']['resBody'], BasicHeaders, Methods38['get']['status']>(prefix, PATH25, GET, option).json().then(r => r.body),
-        $path: (option?: { method?: 'get' | undefined; query: Methods38['get']['query'] } | undefined) =>
+        $get: (option: { query: Methods_u62eat['get']['query'], config?: T | undefined }) =>
+          fetch<Methods_u62eat['get']['resBody'], BasicHeaders, Methods_u62eat['get']['status']>(prefix, PATH25, GET, option).json().then(r => r.body),
+        $path: (option?: { method?: 'get' | undefined; query: Methods_u62eat['get']['query'] } | undefined) =>
           `${prefix}${PATH25}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
       },
       trial_pl_two_years: {
@@ -3637,8 +3637,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          *     }
          * }</code></pre>
          */
-        get: (option: { query: Methods39['get']['query'], config?: T | undefined }) =>
-          fetch<Methods39['get']['resBody'], BasicHeaders, Methods39['get']['status']>(prefix, PATH26, GET, option).json(),
+        get: (option: { query: Methods_2kakxf['get']['query'], config?: T | undefined }) =>
+          fetch<Methods_2kakxf['get']['resBody'], BasicHeaders, Methods_2kakxf['get']['status']>(prefix, PATH26, GET, option).json(),
         /**
          * <h2 id="">概要</h2>
          *
@@ -3703,9 +3703,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          *     }
          * }</code></pre>
          */
-        $get: (option: { query: Methods39['get']['query'], config?: T | undefined }) =>
-          fetch<Methods39['get']['resBody'], BasicHeaders, Methods39['get']['status']>(prefix, PATH26, GET, option).json().then(r => r.body),
-        $path: (option?: { method?: 'get' | undefined; query: Methods39['get']['query'] } | undefined) =>
+        $get: (option: { query: Methods_2kakxf['get']['query'], config?: T | undefined }) =>
+          fetch<Methods_2kakxf['get']['resBody'], BasicHeaders, Methods_2kakxf['get']['status']>(prefix, PATH26, GET, option).json().then(r => r.body),
+        $path: (option?: { method?: 'get' | undefined; query: Methods_2kakxf['get']['query'] } | undefined) =>
           `${prefix}${PATH26}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
       },
     },
@@ -3744,8 +3744,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            *   }
            * }</code></pre>
            */
-          get: (option: { query: Methods41['get']['query'], config?: T | undefined }) =>
-            fetch<Methods41['get']['resBody'], BasicHeaders, Methods41['get']['status']>(prefix, prefix1, GET, option).json(),
+          get: (option: { query: Methods_13j4n1q['get']['query'], config?: T | undefined }) =>
+            fetch<Methods_13j4n1q['get']['resBody'], BasicHeaders, Methods_13j4n1q['get']['status']>(prefix, prefix1, GET, option).json(),
           /**
            * <h2 id="">概要</h2>
            *
@@ -3776,8 +3776,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            *   }
            * }</code></pre>
            */
-          $get: (option: { query: Methods41['get']['query'], config?: T | undefined }) =>
-            fetch<Methods41['get']['resBody'], BasicHeaders, Methods41['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
+          $get: (option: { query: Methods_13j4n1q['get']['query'], config?: T | undefined }) =>
+            fetch<Methods_13j4n1q['get']['resBody'], BasicHeaders, Methods_13j4n1q['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
           /**
            * <h2 id="">概要</h2>
            *
@@ -3809,8 +3809,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * }</code></pre>
            * @param option.body - 部門の更新
            */
-          put: (option?: { body?: Methods41['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-            fetch<Methods41['put']['resBody'], BasicHeaders, Methods41['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json(),
+          put: (option?: { body?: Methods_13j4n1q['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+            fetch<Methods_13j4n1q['put']['resBody'], BasicHeaders, Methods_13j4n1q['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json(),
           /**
            * <h2 id="">概要</h2>
            *
@@ -3842,23 +3842,23 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * }</code></pre>
            * @param option.body - 部門の更新
            */
-          $put: (option?: { body?: Methods41['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-            fetch<Methods41['put']['resBody'], BasicHeaders, Methods41['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json().then(r => r.body),
+          $put: (option?: { body?: Methods_13j4n1q['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+            fetch<Methods_13j4n1q['put']['resBody'], BasicHeaders, Methods_13j4n1q['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json().then(r => r.body),
           /**
            * <h2 id="">概要</h2>
            *
            * <p>指定した事業所の部門を削除する</p>
            */
-          delete: (option: { query: Methods41['delete']['query'], config?: T | undefined }) =>
-            fetch<void, BasicHeaders, Methods41['delete']['status']>(prefix, prefix1, DELETE, option).send(),
+          delete: (option: { query: Methods_13j4n1q['delete']['query'], config?: T | undefined }) =>
+            fetch<void, BasicHeaders, Methods_13j4n1q['delete']['status']>(prefix, prefix1, DELETE, option).send(),
           /**
            * <h2 id="">概要</h2>
            *
            * <p>指定した事業所の部門を削除する</p>
            */
-          $delete: (option: { query: Methods41['delete']['query'], config?: T | undefined }) =>
-            fetch<void, BasicHeaders, Methods41['delete']['status']>(prefix, prefix1, DELETE, option).send().then(r => r.body),
-          $path: (option?: { method?: 'get' | undefined; query: Methods41['get']['query'] } | { method: 'delete'; query: Methods41['delete']['query'] } | undefined) =>
+          $delete: (option: { query: Methods_13j4n1q['delete']['query'], config?: T | undefined }) =>
+            fetch<void, BasicHeaders, Methods_13j4n1q['delete']['status']>(prefix, prefix1, DELETE, option).send().then(r => r.body),
+          $path: (option?: { method?: 'get' | undefined; query: Methods_13j4n1q['get']['query'] } | { method: 'delete'; query: Methods_13j4n1q['delete']['query'] } | undefined) =>
             `${prefix}${prefix1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
         };
       },
@@ -3904,8 +3904,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        *   ]
        * }</code></pre>
        */
-      get: (option: { query: Methods40['get']['query'], config?: T | undefined }) =>
-        fetch<Methods40['get']['resBody'], BasicHeaders, Methods40['get']['status']>(prefix, PATH27, GET, option).json(),
+      get: (option: { query: Methods_bg6t02['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_bg6t02['get']['resBody'], BasicHeaders, Methods_bg6t02['get']['status']>(prefix, PATH27, GET, option).json(),
       /**
        * <h2 id="">概要</h2>
        *
@@ -3948,8 +3948,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        *   ]
        * }</code></pre>
        */
-      $get: (option: { query: Methods40['get']['query'], config?: T | undefined }) =>
-        fetch<Methods40['get']['resBody'], BasicHeaders, Methods40['get']['status']>(prefix, PATH27, GET, option).json().then(r => r.body),
+      $get: (option: { query: Methods_bg6t02['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_bg6t02['get']['resBody'], BasicHeaders, Methods_bg6t02['get']['status']>(prefix, PATH27, GET, option).json().then(r => r.body),
       /**
        * <h2 id="">概要</h2>
        *
@@ -3981,8 +3981,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * }</code></pre>
        * @param option.body - 部門の作成
        */
-      post: (option?: { body?: Methods40['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-        fetch<Methods40['post']['resBody'], BasicHeaders, Methods40['post']['status']>(prefix, PATH27, POST, option, 'URLSearchParams').json(),
+      post: (option?: { body?: Methods_bg6t02['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+        fetch<Methods_bg6t02['post']['resBody'], BasicHeaders, Methods_bg6t02['post']['status']>(prefix, PATH27, POST, option, 'URLSearchParams').json(),
       /**
        * <h2 id="">概要</h2>
        *
@@ -4014,9 +4014,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * }</code></pre>
        * @param option.body - 部門の作成
        */
-      $post: (option?: { body?: Methods40['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-        fetch<Methods40['post']['resBody'], BasicHeaders, Methods40['post']['status']>(prefix, PATH27, POST, option, 'URLSearchParams').json().then(r => r.body),
-      $path: (option?: { method?: 'get' | undefined; query: Methods40['get']['query'] } | undefined) =>
+      $post: (option?: { body?: Methods_bg6t02['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+        fetch<Methods_bg6t02['post']['resBody'], BasicHeaders, Methods_bg6t02['post']['status']>(prefix, PATH27, POST, option, 'URLSearchParams').json().then(r => r.body),
+      $path: (option?: { method?: 'get' | undefined; query: Methods_bg6t02['get']['query'] } | undefined) =>
         `${prefix}${PATH27}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
     },
     segments: {
@@ -4043,8 +4043,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                  * </ul>
                  * @param option.body - セグメントタグの作成
                  */
-                put: (option: { body: Methods43['put']['reqBody'], config?: T | undefined }) =>
-                  fetch<Methods43['put']['resBody'], BasicHeaders, Methods43['put']['status']>(prefix, prefix3, PUT, option, 'URLSearchParams').json(),
+                put: (option: { body: Methods_2j04oy['put']['reqBody'], config?: T | undefined }) =>
+                  fetch<Methods_2j04oy['put']['resBody'], BasicHeaders, Methods_2j04oy['put']['status']>(prefix, prefix3, PUT, option, 'URLSearchParams').json(),
                 /**
                  * <h2 id="">概要</h2>
                  *
@@ -4059,8 +4059,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                  * </ul>
                  * @param option.body - セグメントタグの作成
                  */
-                $put: (option: { body: Methods43['put']['reqBody'], config?: T | undefined }) =>
-                  fetch<Methods43['put']['resBody'], BasicHeaders, Methods43['put']['status']>(prefix, prefix3, PUT, option, 'URLSearchParams').json().then(r => r.body),
+                $put: (option: { body: Methods_2j04oy['put']['reqBody'], config?: T | undefined }) =>
+                  fetch<Methods_2j04oy['put']['resBody'], BasicHeaders, Methods_2j04oy['put']['status']>(prefix, prefix3, PUT, option, 'URLSearchParams').json().then(r => r.body),
                 /**
                  * <h2 id="">概要</h2>
                  *
@@ -4074,8 +4074,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                  *
                  * </ul>
                  */
-                delete: (option: { query: Methods43['delete']['query'], config?: T | undefined }) =>
-                  fetch<void, BasicHeaders, Methods43['delete']['status']>(prefix, prefix3, DELETE, option).send(),
+                delete: (option: { query: Methods_2j04oy['delete']['query'], config?: T | undefined }) =>
+                  fetch<void, BasicHeaders, Methods_2j04oy['delete']['status']>(prefix, prefix3, DELETE, option).send(),
                 /**
                  * <h2 id="">概要</h2>
                  *
@@ -4089,9 +4089,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                  *
                  * </ul>
                  */
-                $delete: (option: { query: Methods43['delete']['query'], config?: T | undefined }) =>
-                  fetch<void, BasicHeaders, Methods43['delete']['status']>(prefix, prefix3, DELETE, option).send().then(r => r.body),
-                $path: (option?: { method: 'delete'; query: Methods43['delete']['query'] } | undefined) =>
+                $delete: (option: { query: Methods_2j04oy['delete']['query'], config?: T | undefined }) =>
+                  fetch<void, BasicHeaders, Methods_2j04oy['delete']['status']>(prefix, prefix3, DELETE, option).send().then(r => r.body),
+                $path: (option?: { method: 'delete'; query: Methods_2j04oy['delete']['query'] } | undefined) =>
                   `${prefix}${prefix3}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
               };
             },
@@ -4108,8 +4108,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
              *
              * </ul>
              */
-            get: (option: { query: Methods42['get']['query'], config?: T | undefined }) =>
-              fetch<Methods42['get']['resBody'], BasicHeaders, Methods42['get']['status']>(prefix, `${prefix1}${PATH29}`, GET, option).json(),
+            get: (option: { query: Methods_caj7ye['get']['query'], config?: T | undefined }) =>
+              fetch<Methods_caj7ye['get']['resBody'], BasicHeaders, Methods_caj7ye['get']['status']>(prefix, `${prefix1}${PATH29}`, GET, option).json(),
             /**
              * <h2 id="">概要</h2>
              *
@@ -4123,8 +4123,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
              *
              * </ul>
              */
-            $get: (option: { query: Methods42['get']['query'], config?: T | undefined }) =>
-              fetch<Methods42['get']['resBody'], BasicHeaders, Methods42['get']['status']>(prefix, `${prefix1}${PATH29}`, GET, option).json().then(r => r.body),
+            $get: (option: { query: Methods_caj7ye['get']['query'], config?: T | undefined }) =>
+              fetch<Methods_caj7ye['get']['resBody'], BasicHeaders, Methods_caj7ye['get']['status']>(prefix, `${prefix1}${PATH29}`, GET, option).json().then(r => r.body),
             /**
              * <h2 id="">概要</h2>
              *
@@ -4139,8 +4139,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
              * </ul>
              * @param option.body - セグメントタグの作成
              */
-            post: (option: { body: Methods42['post']['reqBody'], config?: T | undefined }) =>
-              fetch<Methods42['post']['resBody'], BasicHeaders, Methods42['post']['status']>(prefix, `${prefix1}${PATH29}`, POST, option, 'URLSearchParams').json(),
+            post: (option: { body: Methods_caj7ye['post']['reqBody'], config?: T | undefined }) =>
+              fetch<Methods_caj7ye['post']['resBody'], BasicHeaders, Methods_caj7ye['post']['status']>(prefix, `${prefix1}${PATH29}`, POST, option, 'URLSearchParams').json(),
             /**
              * <h2 id="">概要</h2>
              *
@@ -4155,9 +4155,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
              * </ul>
              * @param option.body - セグメントタグの作成
              */
-            $post: (option: { body: Methods42['post']['reqBody'], config?: T | undefined }) =>
-              fetch<Methods42['post']['resBody'], BasicHeaders, Methods42['post']['status']>(prefix, `${prefix1}${PATH29}`, POST, option, 'URLSearchParams').json().then(r => r.body),
-            $path: (option?: { method?: 'get' | undefined; query: Methods42['get']['query'] } | undefined) =>
+            $post: (option: { body: Methods_caj7ye['post']['reqBody'], config?: T | undefined }) =>
+              fetch<Methods_caj7ye['post']['resBody'], BasicHeaders, Methods_caj7ye['post']['status']>(prefix, `${prefix1}${PATH29}`, POST, option, 'URLSearchParams').json().then(r => r.body),
+            $path: (option?: { method?: 'get' | undefined; query: Methods_caj7ye['get']['query'] } | undefined) =>
               `${prefix}${prefix1}${PATH29}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
           },
         };
@@ -4173,46 +4173,46 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            *
            * <p>指定した事業所のメモタグを取得する</p>
            */
-          get: (option: { query: Methods45['get']['query'], config?: T | undefined }) =>
-            fetch<Methods45['get']['resBody'], BasicHeaders, Methods45['get']['status']>(prefix, prefix1, GET, option).json(),
+          get: (option: { query: Methods_1skf2bx['get']['query'], config?: T | undefined }) =>
+            fetch<Methods_1skf2bx['get']['resBody'], BasicHeaders, Methods_1skf2bx['get']['status']>(prefix, prefix1, GET, option).json(),
           /**
            * <h2 id="">概要</h2>
            *
            * <p>指定した事業所のメモタグを取得する</p>
            */
-          $get: (option: { query: Methods45['get']['query'], config?: T | undefined }) =>
-            fetch<Methods45['get']['resBody'], BasicHeaders, Methods45['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
+          $get: (option: { query: Methods_1skf2bx['get']['query'], config?: T | undefined }) =>
+            fetch<Methods_1skf2bx['get']['resBody'], BasicHeaders, Methods_1skf2bx['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
           /**
            * <h2 id="">概要</h2>
            *
            * <p>指定した事業所のメモタグを更新する</p>
            * @param option.body - メモタグの更新
            */
-          put: (option?: { body?: Methods45['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-            fetch<Methods45['put']['resBody'], BasicHeaders, Methods45['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json(),
+          put: (option?: { body?: Methods_1skf2bx['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+            fetch<Methods_1skf2bx['put']['resBody'], BasicHeaders, Methods_1skf2bx['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json(),
           /**
            * <h2 id="">概要</h2>
            *
            * <p>指定した事業所のメモタグを更新する</p>
            * @param option.body - メモタグの更新
            */
-          $put: (option?: { body?: Methods45['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-            fetch<Methods45['put']['resBody'], BasicHeaders, Methods45['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json().then(r => r.body),
+          $put: (option?: { body?: Methods_1skf2bx['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+            fetch<Methods_1skf2bx['put']['resBody'], BasicHeaders, Methods_1skf2bx['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json().then(r => r.body),
           /**
            * <h2 id="">概要</h2>
            *
            * <p>指定した事業所のメモタグを削除する</p>
            */
-          delete: (option: { query: Methods45['delete']['query'], config?: T | undefined }) =>
-            fetch<void, BasicHeaders, Methods45['delete']['status']>(prefix, prefix1, DELETE, option).send(),
+          delete: (option: { query: Methods_1skf2bx['delete']['query'], config?: T | undefined }) =>
+            fetch<void, BasicHeaders, Methods_1skf2bx['delete']['status']>(prefix, prefix1, DELETE, option).send(),
           /**
            * <h2 id="">概要</h2>
            *
            * <p>指定した事業所のメモタグを削除する</p>
            */
-          $delete: (option: { query: Methods45['delete']['query'], config?: T | undefined }) =>
-            fetch<void, BasicHeaders, Methods45['delete']['status']>(prefix, prefix1, DELETE, option).send().then(r => r.body),
-          $path: (option?: { method?: 'get' | undefined; query: Methods45['get']['query'] } | { method: 'delete'; query: Methods45['delete']['query'] } | undefined) =>
+          $delete: (option: { query: Methods_1skf2bx['delete']['query'], config?: T | undefined }) =>
+            fetch<void, BasicHeaders, Methods_1skf2bx['delete']['status']>(prefix, prefix1, DELETE, option).send().then(r => r.body),
+          $path: (option?: { method?: 'get' | undefined; query: Methods_1skf2bx['get']['query'] } | { method: 'delete'; query: Methods_1skf2bx['delete']['query'] } | undefined) =>
             `${prefix}${prefix1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
         };
       },
@@ -4221,32 +4221,32 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        *
        * <p>指定した事業所のメモタグ一覧を取得する</p>
        */
-      get: (option: { query: Methods44['get']['query'], config?: T | undefined }) =>
-        fetch<Methods44['get']['resBody'], BasicHeaders, Methods44['get']['status']>(prefix, PATH30, GET, option).json(),
+      get: (option: { query: Methods_rxnz0j['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_rxnz0j['get']['resBody'], BasicHeaders, Methods_rxnz0j['get']['status']>(prefix, PATH30, GET, option).json(),
       /**
        * <h2 id="">概要</h2>
        *
        * <p>指定した事業所のメモタグ一覧を取得する</p>
        */
-      $get: (option: { query: Methods44['get']['query'], config?: T | undefined }) =>
-        fetch<Methods44['get']['resBody'], BasicHeaders, Methods44['get']['status']>(prefix, PATH30, GET, option).json().then(r => r.body),
+      $get: (option: { query: Methods_rxnz0j['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_rxnz0j['get']['resBody'], BasicHeaders, Methods_rxnz0j['get']['status']>(prefix, PATH30, GET, option).json().then(r => r.body),
       /**
        * <h2 id="">概要</h2>
        *
        * <p>指定した事業所のメモタグを作成する</p>
        * @param option.body - メモタグの作成
        */
-      post: (option: { body: Methods44['post']['reqBody'], config?: T | undefined }) =>
-        fetch<Methods44['post']['resBody'], BasicHeaders, Methods44['post']['status']>(prefix, PATH30, POST, option, 'URLSearchParams').json(),
+      post: (option: { body: Methods_rxnz0j['post']['reqBody'], config?: T | undefined }) =>
+        fetch<Methods_rxnz0j['post']['resBody'], BasicHeaders, Methods_rxnz0j['post']['status']>(prefix, PATH30, POST, option, 'URLSearchParams').json(),
       /**
        * <h2 id="">概要</h2>
        *
        * <p>指定した事業所のメモタグを作成する</p>
        * @param option.body - メモタグの作成
        */
-      $post: (option: { body: Methods44['post']['reqBody'], config?: T | undefined }) =>
-        fetch<Methods44['post']['resBody'], BasicHeaders, Methods44['post']['status']>(prefix, PATH30, POST, option, 'URLSearchParams').json().then(r => r.body),
-      $path: (option?: { method?: 'get' | undefined; query: Methods44['get']['query'] } | undefined) =>
+      $post: (option: { body: Methods_rxnz0j['post']['reqBody'], config?: T | undefined }) =>
+        fetch<Methods_rxnz0j['post']['resBody'], BasicHeaders, Methods_rxnz0j['post']['status']>(prefix, PATH30, POST, option, 'URLSearchParams').json().then(r => r.body),
+      $path: (option?: { method?: 'get' | undefined; query: Methods_rxnz0j['get']['query'] } | undefined) =>
         `${prefix}${PATH30}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
     },
     taxes: {
@@ -4261,14 +4261,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
              * <p>税区分コードを取得する</p>
              */
             get: (option?: { config?: T | undefined } | undefined) =>
-              fetch<Methods47['get']['resBody'], BasicHeaders, Methods47['get']['status']>(prefix, prefix2, GET, option).json(),
+              fetch<Methods_agxjle['get']['resBody'], BasicHeaders, Methods_agxjle['get']['status']>(prefix, prefix2, GET, option).json(),
             /**
              * <h2 id="">概要</h2>
              *
              * <p>税区分コードを取得する</p>
              */
             $get: (option?: { config?: T | undefined } | undefined) =>
-              fetch<Methods47['get']['resBody'], BasicHeaders, Methods47['get']['status']>(prefix, prefix2, GET, option).json().then(r => r.body),
+              fetch<Methods_agxjle['get']['resBody'], BasicHeaders, Methods_agxjle['get']['status']>(prefix, prefix2, GET, option).json().then(r => r.body),
             $path: () => `${prefix}${prefix2}`,
           };
         },
@@ -4278,14 +4278,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          * <p>税区分コード一覧を取得する</p>
          */
         get: (option?: { config?: T | undefined } | undefined) =>
-          fetch<Methods46['get']['resBody'], BasicHeaders, Methods46['get']['status']>(prefix, PATH31, GET, option).json(),
+          fetch<Methods_x92uhq['get']['resBody'], BasicHeaders, Methods_x92uhq['get']['status']>(prefix, PATH31, GET, option).json(),
         /**
          * <h2 id="">概要</h2>
          *
          * <p>税区分コード一覧を取得する</p>
          */
         $get: (option?: { config?: T | undefined } | undefined) =>
-          fetch<Methods46['get']['resBody'], BasicHeaders, Methods46['get']['status']>(prefix, PATH31, GET, option).json().then(r => r.body),
+          fetch<Methods_x92uhq['get']['resBody'], BasicHeaders, Methods_x92uhq['get']['status']>(prefix, PATH31, GET, option).json().then(r => r.body),
         $path: () => `${prefix}${PATH31}`,
       },
       companies: {
@@ -4294,9 +4294,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
 
           return {
             get: (option?: { config?: T | undefined } | undefined) =>
-              fetch<Methods48['get']['resBody'], BasicHeaders, Methods48['get']['status']>(prefix, prefix2, GET, option).json(),
+              fetch<Methods_89r781['get']['resBody'], BasicHeaders, Methods_89r781['get']['status']>(prefix, prefix2, GET, option).json(),
             $get: (option?: { config?: T | undefined } | undefined) =>
-              fetch<Methods48['get']['resBody'], BasicHeaders, Methods48['get']['status']>(prefix, prefix2, GET, option).json().then(r => r.body),
+              fetch<Methods_89r781['get']['resBody'], BasicHeaders, Methods_89r781['get']['status']>(prefix, prefix2, GET, option).json().then(r => r.body),
             $path: () => `${prefix}${prefix2}`,
           };
         },
@@ -4332,8 +4332,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * </li>
            * </ul>
            */
-          get: (option: { query: Methods50['get']['query'], config?: T | undefined }) =>
-            fetch<Methods50['get']['resBody'], BasicHeaders, Methods50['get']['status']>(prefix, prefix1, GET, option).json(),
+          get: (option: { query: Methods_14ohnqa['get']['query'], config?: T | undefined }) =>
+            fetch<Methods_14ohnqa['get']['resBody'], BasicHeaders, Methods_14ohnqa['get']['status']>(prefix, prefix1, GET, option).json(),
           /**
            * <h2 id="">概要</h2>
            *
@@ -4359,8 +4359,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * </li>
            * </ul>
            */
-          $get: (option: { query: Methods50['get']['query'], config?: T | undefined }) =>
-            fetch<Methods50['get']['resBody'], BasicHeaders, Methods50['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
+          $get: (option: { query: Methods_14ohnqa['get']['query'], config?: T | undefined }) =>
+            fetch<Methods_14ohnqa['get']['resBody'], BasicHeaders, Methods_14ohnqa['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
           /**
            * <h2 id="">概要</h2>
            *
@@ -4387,8 +4387,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * </ul>
            * @param option.body - 取引（振替）の更新
            */
-          put: (option: { body: Methods50['put']['reqBody'], config?: T | undefined }) =>
-            fetch<Methods50['put']['resBody'], BasicHeaders, Methods50['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json(),
+          put: (option: { body: Methods_14ohnqa['put']['reqBody'], config?: T | undefined }) =>
+            fetch<Methods_14ohnqa['put']['resBody'], BasicHeaders, Methods_14ohnqa['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json(),
           /**
            * <h2 id="">概要</h2>
            *
@@ -4415,23 +4415,23 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * </ul>
            * @param option.body - 取引（振替）の更新
            */
-          $put: (option: { body: Methods50['put']['reqBody'], config?: T | undefined }) =>
-            fetch<Methods50['put']['resBody'], BasicHeaders, Methods50['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json().then(r => r.body),
+          $put: (option: { body: Methods_14ohnqa['put']['reqBody'], config?: T | undefined }) =>
+            fetch<Methods_14ohnqa['put']['resBody'], BasicHeaders, Methods_14ohnqa['put']['status']>(prefix, prefix1, PUT, option, 'URLSearchParams').json().then(r => r.body),
           /**
            * <h2 id="">概要</h2>
            *
            * <p>指定した事業所の取引（振替）を削除する</p>
            */
-          delete: (option: { query: Methods50['delete']['query'], config?: T | undefined }) =>
-            fetch<void, BasicHeaders, Methods50['delete']['status']>(prefix, prefix1, DELETE, option).send(),
+          delete: (option: { query: Methods_14ohnqa['delete']['query'], config?: T | undefined }) =>
+            fetch<void, BasicHeaders, Methods_14ohnqa['delete']['status']>(prefix, prefix1, DELETE, option).send(),
           /**
            * <h2 id="">概要</h2>
            *
            * <p>指定した事業所の取引（振替）を削除する</p>
            */
-          $delete: (option: { query: Methods50['delete']['query'], config?: T | undefined }) =>
-            fetch<void, BasicHeaders, Methods50['delete']['status']>(prefix, prefix1, DELETE, option).send().then(r => r.body),
-          $path: (option?: { method?: 'get' | undefined; query: Methods50['get']['query'] } | { method: 'delete'; query: Methods50['delete']['query'] } | undefined) =>
+          $delete: (option: { query: Methods_14ohnqa['delete']['query'], config?: T | undefined }) =>
+            fetch<void, BasicHeaders, Methods_14ohnqa['delete']['status']>(prefix, prefix1, DELETE, option).send().then(r => r.body),
+          $path: (option?: { method?: 'get' | undefined; query: Methods_14ohnqa['get']['query'] } | { method: 'delete'; query: Methods_14ohnqa['delete']['query'] } | undefined) =>
             `${prefix}${prefix1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
         };
       },
@@ -4460,8 +4460,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * </li>
        * </ul>
        */
-      get: (option: { query: Methods49['get']['query'], config?: T | undefined }) =>
-        fetch<Methods49['get']['resBody'], BasicHeaders, Methods49['get']['status']>(prefix, PATH33, GET, option).json(),
+      get: (option: { query: Methods_uvjcbq['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_uvjcbq['get']['resBody'], BasicHeaders, Methods_uvjcbq['get']['status']>(prefix, PATH33, GET, option).json(),
       /**
        * <h2 id="">概要</h2>
        *
@@ -4487,8 +4487,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * </li>
        * </ul>
        */
-      $get: (option: { query: Methods49['get']['query'], config?: T | undefined }) =>
-        fetch<Methods49['get']['resBody'], BasicHeaders, Methods49['get']['status']>(prefix, PATH33, GET, option).json().then(r => r.body),
+      $get: (option: { query: Methods_uvjcbq['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_uvjcbq['get']['resBody'], BasicHeaders, Methods_uvjcbq['get']['status']>(prefix, PATH33, GET, option).json().then(r => r.body),
       /**
        * <h2 id="">概要</h2>
        *
@@ -4515,8 +4515,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * </ul>
        * @param option.body - 取引（振替）の作成
        */
-      post: (option?: { body?: Methods49['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-        fetch<Methods49['post']['resBody'], BasicHeaders, Methods49['post']['status']>(prefix, PATH33, POST, option, 'URLSearchParams').json(),
+      post: (option?: { body?: Methods_uvjcbq['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+        fetch<Methods_uvjcbq['post']['resBody'], BasicHeaders, Methods_uvjcbq['post']['status']>(prefix, PATH33, POST, option, 'URLSearchParams').json(),
       /**
        * <h2 id="">概要</h2>
        *
@@ -4543,9 +4543,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * </ul>
        * @param option.body - 取引（振替）の作成
        */
-      $post: (option?: { body?: Methods49['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-        fetch<Methods49['post']['resBody'], BasicHeaders, Methods49['post']['status']>(prefix, PATH33, POST, option, 'URLSearchParams').json().then(r => r.body),
-      $path: (option?: { method?: 'get' | undefined; query: Methods49['get']['query'] } | undefined) =>
+      $post: (option?: { body?: Methods_uvjcbq['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+        fetch<Methods_uvjcbq['post']['resBody'], BasicHeaders, Methods_uvjcbq['post']['status']>(prefix, PATH33, POST, option, 'URLSearchParams').json().then(r => r.body),
+      $path: (option?: { method?: 'get' | undefined; query: Methods_uvjcbq['get']['query'] } | undefined) =>
         `${prefix}${PATH33}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
     },
     users: {
@@ -4555,16 +4555,16 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          *
          * <p>ユーザの権限情報を取得する</p>
          */
-        get: (option: { query: Methods52['get']['query'], config?: T | undefined }) =>
-          fetch<Methods52['get']['resBody'], BasicHeaders, Methods52['get']['status']>(prefix, PATH35, GET, option).json(),
+        get: (option: { query: Methods_su8bid['get']['query'], config?: T | undefined }) =>
+          fetch<Methods_su8bid['get']['resBody'], BasicHeaders, Methods_su8bid['get']['status']>(prefix, PATH35, GET, option).json(),
         /**
          * <h2 id="">概要</h2>
          *
          * <p>ユーザの権限情報を取得する</p>
          */
-        $get: (option: { query: Methods52['get']['query'], config?: T | undefined }) =>
-          fetch<Methods52['get']['resBody'], BasicHeaders, Methods52['get']['status']>(prefix, PATH35, GET, option).json().then(r => r.body),
-        $path: (option?: { method?: 'get' | undefined; query: Methods52['get']['query'] } | undefined) =>
+        $get: (option: { query: Methods_su8bid['get']['query'], config?: T | undefined }) =>
+          fetch<Methods_su8bid['get']['resBody'], BasicHeaders, Methods_su8bid['get']['status']>(prefix, PATH35, GET, option).json().then(r => r.body),
+        $path: (option?: { method?: 'get' | undefined; query: Methods_su8bid['get']['query'] } | undefined) =>
           `${prefix}${PATH35}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
       },
       me: {
@@ -4573,32 +4573,32 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          *
          * <p>ユーザの情報を取得する</p>
          */
-        get: (option?: { query?: Methods53['get']['query'] | undefined, config?: T | undefined } | undefined) =>
-          fetch<Methods53['get']['resBody'], BasicHeaders, Methods53['get']['status']>(prefix, PATH36, GET, option).json(),
+        get: (option?: { query?: Methods_jzr18p['get']['query'] | undefined, config?: T | undefined } | undefined) =>
+          fetch<Methods_jzr18p['get']['resBody'], BasicHeaders, Methods_jzr18p['get']['status']>(prefix, PATH36, GET, option).json(),
         /**
          * <h2 id="">概要</h2>
          *
          * <p>ユーザの情報を取得する</p>
          */
-        $get: (option?: { query?: Methods53['get']['query'] | undefined, config?: T | undefined } | undefined) =>
-          fetch<Methods53['get']['resBody'], BasicHeaders, Methods53['get']['status']>(prefix, PATH36, GET, option).json().then(r => r.body),
+        $get: (option?: { query?: Methods_jzr18p['get']['query'] | undefined, config?: T | undefined } | undefined) =>
+          fetch<Methods_jzr18p['get']['resBody'], BasicHeaders, Methods_jzr18p['get']['status']>(prefix, PATH36, GET, option).json().then(r => r.body),
         /**
          * <h2 id="">概要</h2>
          *
          * <p>ユーザー情報を更新する</p>
          * @param option.body - ユーザー情報の更新
          */
-        put: (option?: { body?: Methods53['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-          fetch<Methods53['put']['resBody'], BasicHeaders, Methods53['put']['status']>(prefix, PATH36, PUT, option, 'URLSearchParams').json(),
+        put: (option?: { body?: Methods_jzr18p['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+          fetch<Methods_jzr18p['put']['resBody'], BasicHeaders, Methods_jzr18p['put']['status']>(prefix, PATH36, PUT, option, 'URLSearchParams').json(),
         /**
          * <h2 id="">概要</h2>
          *
          * <p>ユーザー情報を更新する</p>
          * @param option.body - ユーザー情報の更新
          */
-        $put: (option?: { body?: Methods53['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-          fetch<Methods53['put']['resBody'], BasicHeaders, Methods53['put']['status']>(prefix, PATH36, PUT, option, 'URLSearchParams').json().then(r => r.body),
-        $path: (option?: { method?: 'get' | undefined; query: Methods53['get']['query'] } | undefined) =>
+        $put: (option?: { body?: Methods_jzr18p['put']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+          fetch<Methods_jzr18p['put']['resBody'], BasicHeaders, Methods_jzr18p['put']['status']>(prefix, PATH36, PUT, option, 'URLSearchParams').json().then(r => r.body),
+        $path: (option?: { method?: 'get' | undefined; query: Methods_jzr18p['get']['query'] } | undefined) =>
           `${prefix}${PATH36}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
       },
       /**
@@ -4606,16 +4606,16 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        *
        * <p>事業所に所属するユーザーの一覧を取得する</p>
        */
-      get: (option: { query: Methods51['get']['query'], config?: T | undefined }) =>
-        fetch<Methods51['get']['resBody'], BasicHeaders, Methods51['get']['status']>(prefix, PATH34, GET, option).json(),
+      get: (option: { query: Methods_1xhiioa['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_1xhiioa['get']['resBody'], BasicHeaders, Methods_1xhiioa['get']['status']>(prefix, PATH34, GET, option).json(),
       /**
        * <h2 id="">概要</h2>
        *
        * <p>事業所に所属するユーザーの一覧を取得する</p>
        */
-      $get: (option: { query: Methods51['get']['query'], config?: T | undefined }) =>
-        fetch<Methods51['get']['resBody'], BasicHeaders, Methods51['get']['status']>(prefix, PATH34, GET, option).json().then(r => r.body),
-      $path: (option?: { method?: 'get' | undefined; query: Methods51['get']['query'] } | undefined) =>
+      $get: (option: { query: Methods_1xhiioa['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_1xhiioa['get']['resBody'], BasicHeaders, Methods_1xhiioa['get']['status']>(prefix, PATH34, GET, option).json().then(r => r.body),
+      $path: (option?: { method?: 'get' | undefined; query: Methods_1xhiioa['get']['query'] } | undefined) =>
         `${prefix}${PATH34}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
     },
     wallet_txns: {
@@ -4666,8 +4666,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * </li>
            * </ul>
            */
-          get: (option: { query: Methods55['get']['query'], config?: T | undefined }) =>
-            fetch<Methods55['get']['resBody'], BasicHeaders, Methods55['get']['status']>(prefix, prefix1, GET, option).json(),
+          get: (option: { query: Methods_h90hal['get']['query'], config?: T | undefined }) =>
+            fetch<Methods_h90hal['get']['resBody'], BasicHeaders, Methods_h90hal['get']['status']>(prefix, prefix1, GET, option).json(),
           /**
            * <h2 id="">概要</h2>
            *
@@ -4711,23 +4711,23 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * </li>
            * </ul>
            */
-          $get: (option: { query: Methods55['get']['query'], config?: T | undefined }) =>
-            fetch<Methods55['get']['resBody'], BasicHeaders, Methods55['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
+          $get: (option: { query: Methods_h90hal['get']['query'], config?: T | undefined }) =>
+            fetch<Methods_h90hal['get']['resBody'], BasicHeaders, Methods_h90hal['get']['status']>(prefix, prefix1, GET, option).json().then(r => r.body),
           /**
            * <h2 id="">概要</h2>
            *
            * <p>指定した事業所の明細を削除する</p>
            */
-          delete: (option: { query: Methods55['delete']['query'], config?: T | undefined }) =>
-            fetch<void, BasicHeaders, Methods55['delete']['status']>(prefix, prefix1, DELETE, option).send(),
+          delete: (option: { query: Methods_h90hal['delete']['query'], config?: T | undefined }) =>
+            fetch<void, BasicHeaders, Methods_h90hal['delete']['status']>(prefix, prefix1, DELETE, option).send(),
           /**
            * <h2 id="">概要</h2>
            *
            * <p>指定した事業所の明細を削除する</p>
            */
-          $delete: (option: { query: Methods55['delete']['query'], config?: T | undefined }) =>
-            fetch<void, BasicHeaders, Methods55['delete']['status']>(prefix, prefix1, DELETE, option).send().then(r => r.body),
-          $path: (option?: { method?: 'get' | undefined; query: Methods55['get']['query'] } | { method: 'delete'; query: Methods55['delete']['query'] } | undefined) =>
+          $delete: (option: { query: Methods_h90hal['delete']['query'], config?: T | undefined }) =>
+            fetch<void, BasicHeaders, Methods_h90hal['delete']['status']>(prefix, prefix1, DELETE, option).send().then(r => r.body),
+          $path: (option?: { method?: 'get' | undefined; query: Methods_h90hal['get']['query'] } | { method: 'delete'; query: Methods_h90hal['delete']['query'] } | undefined) =>
             `${prefix}${prefix1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
         };
       },
@@ -4774,8 +4774,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * </li>
        * </ul>
        */
-      get: (option: { query: Methods54['get']['query'], config?: T | undefined }) =>
-        fetch<Methods54['get']['resBody'], BasicHeaders, Methods54['get']['status']>(prefix, PATH37, GET, option).json(),
+      get: (option: { query: Methods_1rv49ab['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_1rv49ab['get']['resBody'], BasicHeaders, Methods_1rv49ab['get']['status']>(prefix, PATH37, GET, option).json(),
       /**
        * <h2 id="">概要</h2>
        *
@@ -4819,8 +4819,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * </li>
        * </ul>
        */
-      $get: (option: { query: Methods54['get']['query'], config?: T | undefined }) =>
-        fetch<Methods54['get']['resBody'], BasicHeaders, Methods54['get']['status']>(prefix, PATH37, GET, option).json().then(r => r.body),
+      $get: (option: { query: Methods_1rv49ab['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_1rv49ab['get']['resBody'], BasicHeaders, Methods_1rv49ab['get']['status']>(prefix, PATH37, GET, option).json().then(r => r.body),
       /**
        * <h2 id="">概要</h2>
        *
@@ -4865,8 +4865,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * </ul>
        * @param option.body - 明細の作成
        */
-      post: (option?: { body?: Methods54['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-        fetch<Methods54['post']['resBody'], BasicHeaders, Methods54['post']['status']>(prefix, PATH37, POST, option, 'URLSearchParams').json(),
+      post: (option?: { body?: Methods_1rv49ab['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+        fetch<Methods_1rv49ab['post']['resBody'], BasicHeaders, Methods_1rv49ab['post']['status']>(prefix, PATH37, POST, option, 'URLSearchParams').json(),
       /**
        * <h2 id="">概要</h2>
        *
@@ -4911,9 +4911,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * </ul>
        * @param option.body - 明細の作成
        */
-      $post: (option?: { body?: Methods54['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-        fetch<Methods54['post']['resBody'], BasicHeaders, Methods54['post']['status']>(prefix, PATH37, POST, option, 'URLSearchParams').json().then(r => r.body),
-      $path: (option?: { method?: 'get' | undefined; query: Methods54['get']['query'] } | undefined) =>
+      $post: (option?: { body?: Methods_1rv49ab['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+        fetch<Methods_1rv49ab['post']['resBody'], BasicHeaders, Methods_1rv49ab['post']['status']>(prefix, PATH37, POST, option, 'URLSearchParams').json().then(r => r.body),
+      $path: (option?: { method?: 'get' | undefined; query: Methods_1rv49ab['get']['query'] } | undefined) =>
         `${prefix}${PATH37}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
     },
     walletables: {
@@ -4948,8 +4948,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                * <li>last_balance : 同期残高</li>
                * </ul>
                */
-              get: (option: { query: Methods57['get']['query'], config?: T | undefined }) =>
-                fetch<Methods57['get']['resBody'], BasicHeaders, Methods57['get']['status']>(prefix, prefix2, GET, option).json(),
+              get: (option: { query: Methods_xx015['get']['query'], config?: T | undefined }) =>
+                fetch<Methods_xx015['get']['resBody'], BasicHeaders, Methods_xx015['get']['status']>(prefix, prefix2, GET, option).json(),
               /**
                * <h2 id="">概要</h2>
                *
@@ -4973,24 +4973,24 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                * <li>last_balance : 同期残高</li>
                * </ul>
                */
-              $get: (option: { query: Methods57['get']['query'], config?: T | undefined }) =>
-                fetch<Methods57['get']['resBody'], BasicHeaders, Methods57['get']['status']>(prefix, prefix2, GET, option).json().then(r => r.body),
+              $get: (option: { query: Methods_xx015['get']['query'], config?: T | undefined }) =>
+                fetch<Methods_xx015['get']['resBody'], BasicHeaders, Methods_xx015['get']['status']>(prefix, prefix2, GET, option).json().then(r => r.body),
               /**
                * <h2 id="">概要</h2>
                *
                * <p>口座を更新する</p>
                * @param option.body - 口座の作成
                */
-              put: (option: { body?: Methods57['put']['reqBody'] | undefined, query: Methods57['put']['query'], config?: T | undefined }) =>
-                fetch<Methods57['put']['resBody'], BasicHeaders, Methods57['put']['status']>(prefix, prefix2, PUT, option, 'URLSearchParams').json(),
+              put: (option: { body?: Methods_xx015['put']['reqBody'] | undefined, query: Methods_xx015['put']['query'], config?: T | undefined }) =>
+                fetch<Methods_xx015['put']['resBody'], BasicHeaders, Methods_xx015['put']['status']>(prefix, prefix2, PUT, option, 'URLSearchParams').json(),
               /**
                * <h2 id="">概要</h2>
                *
                * <p>口座を更新する</p>
                * @param option.body - 口座の作成
                */
-              $put: (option: { body?: Methods57['put']['reqBody'] | undefined, query: Methods57['put']['query'], config?: T | undefined }) =>
-                fetch<Methods57['put']['resBody'], BasicHeaders, Methods57['put']['status']>(prefix, prefix2, PUT, option, 'URLSearchParams').json().then(r => r.body),
+              $put: (option: { body?: Methods_xx015['put']['reqBody'] | undefined, query: Methods_xx015['put']['query'], config?: T | undefined }) =>
+                fetch<Methods_xx015['put']['resBody'], BasicHeaders, Methods_xx015['put']['status']>(prefix, prefix2, PUT, option, 'URLSearchParams').json().then(r => r.body),
               /**
                * <h2 id="">概要</h2>
                *
@@ -5003,8 +5003,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                *
                * </ul>
                */
-              delete: (option: { query: Methods57['delete']['query'], config?: T | undefined }) =>
-                fetch<void, BasicHeaders, Methods57['delete']['status']>(prefix, prefix2, DELETE, option).send(),
+              delete: (option: { query: Methods_xx015['delete']['query'], config?: T | undefined }) =>
+                fetch<void, BasicHeaders, Methods_xx015['delete']['status']>(prefix, prefix2, DELETE, option).send(),
               /**
                * <h2 id="">概要</h2>
                *
@@ -5017,9 +5017,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                *
                * </ul>
                */
-              $delete: (option: { query: Methods57['delete']['query'], config?: T | undefined }) =>
-                fetch<void, BasicHeaders, Methods57['delete']['status']>(prefix, prefix2, DELETE, option).send().then(r => r.body),
-              $path: (option?: { method?: 'get' | undefined; query: Methods57['get']['query'] } | { method: 'put'; query: Methods57['put']['query'] } | { method: 'delete'; query: Methods57['delete']['query'] } | undefined) =>
+              $delete: (option: { query: Methods_xx015['delete']['query'], config?: T | undefined }) =>
+                fetch<void, BasicHeaders, Methods_xx015['delete']['status']>(prefix, prefix2, DELETE, option).send().then(r => r.body),
+              $path: (option?: { method?: 'get' | undefined; query: Methods_xx015['get']['query'] } | { method: 'put'; query: Methods_xx015['put']['query'] } | { method: 'delete'; query: Methods_xx015['delete']['query'] } | undefined) =>
                 `${prefix}${prefix2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
             };
           },
@@ -5048,8 +5048,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * <li>last_balance : 同期残高</li>
        * </ul>
        */
-      get: (option: { query: Methods56['get']['query'], config?: T | undefined }) =>
-        fetch<Methods56['get']['resBody'], BasicHeaders, Methods56['get']['status']>(prefix, PATH38, GET, option).json(),
+      get: (option: { query: Methods_1nphqfo['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_1nphqfo['get']['resBody'], BasicHeaders, Methods_1nphqfo['get']['status']>(prefix, PATH38, GET, option).json(),
       /**
        * <h2 id="">概要</h2>
        *
@@ -5073,8 +5073,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * <li>last_balance : 同期残高</li>
        * </ul>
        */
-      $get: (option: { query: Methods56['get']['query'], config?: T | undefined }) =>
-        fetch<Methods56['get']['resBody'], BasicHeaders, Methods56['get']['status']>(prefix, PATH38, GET, option).json().then(r => r.body),
+      $get: (option: { query: Methods_1nphqfo['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_1nphqfo['get']['resBody'], BasicHeaders, Methods_1nphqfo['get']['status']>(prefix, PATH38, GET, option).json().then(r => r.body),
       /**
        * <h2 id="">概要</h2>
        *
@@ -5112,8 +5112,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * </ul>
        * @param option.body - 口座の作成
        */
-      post: (option?: { body?: Methods56['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-        fetch<Methods56['post']['resBody'], BasicHeaders, Methods56['post']['status']>(prefix, PATH38, POST, option, 'URLSearchParams').json(),
+      post: (option?: { body?: Methods_1nphqfo['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+        fetch<Methods_1nphqfo['post']['resBody'], BasicHeaders, Methods_1nphqfo['post']['status']>(prefix, PATH38, POST, option, 'URLSearchParams').json(),
       /**
        * <h2 id="">概要</h2>
        *
@@ -5151,9 +5151,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * </ul>
        * @param option.body - 口座の作成
        */
-      $post: (option?: { body?: Methods56['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
-        fetch<Methods56['post']['resBody'], BasicHeaders, Methods56['post']['status']>(prefix, PATH38, POST, option, 'URLSearchParams').json().then(r => r.body),
-      $path: (option?: { method?: 'get' | undefined; query: Methods56['get']['query'] } | undefined) =>
+      $post: (option?: { body?: Methods_1nphqfo['post']['reqBody'] | undefined, config?: T | undefined } | undefined) =>
+        fetch<Methods_1nphqfo['post']['resBody'], BasicHeaders, Methods_1nphqfo['post']['status']>(prefix, PATH38, POST, option, 'URLSearchParams').json().then(r => r.body),
+      $path: (option?: { method?: 'get' | undefined; query: Methods_1nphqfo['get']['query'] } | undefined) =>
         `${prefix}${PATH38}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
     },
   };

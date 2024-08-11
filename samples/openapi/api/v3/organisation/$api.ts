@@ -1,7 +1,7 @@
 import type { AspidaClient, BasicHeaders } from 'aspida';
 import { dataToURLString } from 'aspida';
-import type { Methods as Methods0 } from '.';
-import type { Methods as Methods1 } from './users';
+import type { Methods as Methods_by08hd } from '.';
+import type { Methods as Methods_1xhiioa } from './users';
 
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? '' : baseURL).replace(/\/$/, '');
@@ -14,26 +14,26 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       /**
        * @returns OK
        */
-      get: (option: { query: Methods1['get']['query'], headers?: Methods1['get']['reqHeaders'] | undefined, config?: T | undefined }) =>
-        fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, PATH1, GET, option).json(),
+      get: (option: { query: Methods_1xhiioa['get']['query'], headers?: Methods_1xhiioa['get']['reqHeaders'] | undefined, config?: T | undefined }) =>
+        fetch<Methods_1xhiioa['get']['resBody'], BasicHeaders, Methods_1xhiioa['get']['status']>(prefix, PATH1, GET, option).json(),
       /**
        * @returns OK
        */
-      $get: (option: { query: Methods1['get']['query'], headers?: Methods1['get']['reqHeaders'] | undefined, config?: T | undefined }) =>
-        fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, PATH1, GET, option).json().then(r => r.body),
-      $path: (option?: { method?: 'get' | undefined; query: Methods1['get']['query'] } | undefined) =>
+      $get: (option: { query: Methods_1xhiioa['get']['query'], headers?: Methods_1xhiioa['get']['reqHeaders'] | undefined, config?: T | undefined }) =>
+        fetch<Methods_1xhiioa['get']['resBody'], BasicHeaders, Methods_1xhiioa['get']['status']>(prefix, PATH1, GET, option).json().then(r => r.body),
+      $path: (option?: { method?: 'get' | undefined; query: Methods_1xhiioa['get']['query'] } | undefined) =>
         `${prefix}${PATH1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
     },
     /**
      * @returns OK
      */
-    get: (option?: { headers?: Methods0['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-      fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json(),
+    get: (option?: { headers?: Methods_by08hd['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+      fetch<Methods_by08hd['get']['resBody'], BasicHeaders, Methods_by08hd['get']['status']>(prefix, PATH0, GET, option).json(),
     /**
      * @returns OK
      */
-    $get: (option?: { headers?: Methods0['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
-      fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json().then(r => r.body),
+    $get: (option?: { headers?: Methods_by08hd['get']['reqHeaders'] | undefined, config?: T | undefined } | undefined) =>
+      fetch<Methods_by08hd['get']['resBody'], BasicHeaders, Methods_by08hd['get']['status']>(prefix, PATH0, GET, option).json().then(r => r.body),
     $path: () => `${prefix}${PATH0}`,
   };
 };

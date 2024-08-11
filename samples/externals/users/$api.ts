@@ -1,14 +1,14 @@
 import type { AspidaClient } from 'aspida';
 import { dataToURLString } from 'aspida';
-import type { Methods as Methods0 } from './_user_id@string/orders';
-import type { Methods as Methods1 } from './_user_id@string/orders/_order_id@string';
-import type { Methods as Methods2 } from './_user_id@string/orders/purchase/invoice';
-import type { Methods as Methods3 } from './_user_id@string/orders/purchase/wallet';
-import type { Methods as Methods4 } from './_user_id@string/orders/unsubscribe';
-import type { Methods as Methods5 } from './_user_id@string/orders/update/renew';
-import type { Methods as Methods6 } from './_user_id@string/phone-numbers/_phone_number@string/orders';
-import type { Methods as Methods7 } from './_user_id@string/phone-numbers/_phone_number@string/orders/purchase/invoice';
-import type { Methods as Methods8 } from './_user_id@string/phone-numbers/_phone_number@string/orders/purchase/wallet';
+import type { Methods as Methods_1kza667 } from './_user_id@string/orders';
+import type { Methods as Methods_1672ig2 } from './_user_id@string/orders/_order_id@string';
+import type { Methods as Methods_t1y347 } from './_user_id@string/orders/purchase/invoice';
+import type { Methods as Methods_hpr32h } from './_user_id@string/orders/purchase/wallet';
+import type { Methods as Methods_fb4oql } from './_user_id@string/orders/unsubscribe';
+import type { Methods as Methods_1so4353 } from './_user_id@string/orders/update/renew';
+import type { Methods as Methods_v5ivnw } from './_user_id@string/phone-numbers/_phone_number@string/orders';
+import type { Methods as Methods_1xcq70y } from './_user_id@string/phone-numbers/_phone_number@string/orders/purchase/invoice';
+import type { Methods as Methods_i3b7bi } from './_user_id@string/phone-numbers/_phone_number@string/orders/purchase/wallet';
 
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? 'https://api.baikalplatform.com/product-management/v1' : baseURL).replace(/\/$/, '');
@@ -37,13 +37,13 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                * @returns Ok
                */
               get: (option?: { config?: T | undefined } | undefined) =>
-                fetch<Methods1['get']['resBody'], Methods1['get']['resHeaders'], Methods1['get']['status']>(prefix, prefix2, GET, option).json(),
+                fetch<Methods_1672ig2['get']['resBody'], Methods_1672ig2['get']['resHeaders'], Methods_1672ig2['get']['status']>(prefix, prefix2, GET, option).json(),
               /**
                * Get info of an order by order_id
                * @returns Ok
                */
               $get: (option?: { config?: T | undefined } | undefined) =>
-                fetch<Methods1['get']['resBody'], Methods1['get']['resHeaders'], Methods1['get']['status']>(prefix, prefix2, GET, option).json().then(r => r.body),
+                fetch<Methods_1672ig2['get']['resBody'], Methods_1672ig2['get']['resHeaders'], Methods_1672ig2['get']['status']>(prefix, prefix2, GET, option).json().then(r => r.body),
               $path: () => `${prefix}${prefix2}`,
             };
           },
@@ -54,15 +54,15 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                * @param option.body - Body to create a purchase order
                * @returns Created
                */
-              post: (option: { body: Methods2['post']['reqBody'], config?: T | undefined }) =>
-                fetch<Methods2['post']['resBody'], Methods2['post']['resHeaders'], Methods2['post']['status']>(prefix, `${prefix0}${PATH2}`, POST, option).json(),
+              post: (option: { body: Methods_t1y347['post']['reqBody'], config?: T | undefined }) =>
+                fetch<Methods_t1y347['post']['resBody'], Methods_t1y347['post']['resHeaders'], Methods_t1y347['post']['status']>(prefix, `${prefix0}${PATH2}`, POST, option).json(),
               /**
                * Creates an purchase order for an offer by its offer_id and using invoice as payment method
                * @param option.body - Body to create a purchase order
                * @returns Created
                */
-              $post: (option: { body: Methods2['post']['reqBody'], config?: T | undefined }) =>
-                fetch<Methods2['post']['resBody'], Methods2['post']['resHeaders'], Methods2['post']['status']>(prefix, `${prefix0}${PATH2}`, POST, option).json().then(r => r.body),
+              $post: (option: { body: Methods_t1y347['post']['reqBody'], config?: T | undefined }) =>
+                fetch<Methods_t1y347['post']['resBody'], Methods_t1y347['post']['resHeaders'], Methods_t1y347['post']['status']>(prefix, `${prefix0}${PATH2}`, POST, option).json().then(r => r.body),
               $path: () => `${prefix}${prefix0}${PATH2}`,
             },
             wallet: {
@@ -71,15 +71,15 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                * @param option.body - Body to create a purchase order
                * @returns Created
                */
-              post: (option: { body: Methods3['post']['reqBody'], config?: T | undefined }) =>
-                fetch<Methods3['post']['resBody'], Methods3['post']['resHeaders'], Methods3['post']['status']>(prefix, `${prefix0}${PATH3}`, POST, option).json(),
+              post: (option: { body: Methods_hpr32h['post']['reqBody'], config?: T | undefined }) =>
+                fetch<Methods_hpr32h['post']['resBody'], Methods_hpr32h['post']['resHeaders'], Methods_hpr32h['post']['status']>(prefix, `${prefix0}${PATH3}`, POST, option).json(),
               /**
                * Creates an purchase order for an offer by its offer_id using wallet as payment method
                * @param option.body - Body to create a purchase order
                * @returns Created
                */
-              $post: (option: { body: Methods3['post']['reqBody'], config?: T | undefined }) =>
-                fetch<Methods3['post']['resBody'], Methods3['post']['resHeaders'], Methods3['post']['status']>(prefix, `${prefix0}${PATH3}`, POST, option).json().then(r => r.body),
+              $post: (option: { body: Methods_hpr32h['post']['reqBody'], config?: T | undefined }) =>
+                fetch<Methods_hpr32h['post']['resBody'], Methods_hpr32h['post']['resHeaders'], Methods_hpr32h['post']['status']>(prefix, `${prefix0}${PATH3}`, POST, option).json().then(r => r.body),
               $path: () => `${prefix}${prefix0}${PATH3}`,
             },
           },
@@ -89,15 +89,15 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
              * @param option.body - Body to create a purchase order
              * @returns Created
              */
-            post: (option: { body: Methods4['post']['reqBody'], config?: T | undefined }) =>
-              fetch<Methods4['post']['resBody'], Methods4['post']['resHeaders'], Methods4['post']['status']>(prefix, `${prefix0}${PATH4}`, POST, option).json(),
+            post: (option: { body: Methods_fb4oql['post']['reqBody'], config?: T | undefined }) =>
+              fetch<Methods_fb4oql['post']['resBody'], Methods_fb4oql['post']['resHeaders'], Methods_fb4oql['post']['status']>(prefix, `${prefix0}${PATH4}`, POST, option).json(),
             /**
              * Creates an unsubscribe order for a product_id
              * @param option.body - Body to create a purchase order
              * @returns Created
              */
-            $post: (option: { body: Methods4['post']['reqBody'], config?: T | undefined }) =>
-              fetch<Methods4['post']['resBody'], Methods4['post']['resHeaders'], Methods4['post']['status']>(prefix, `${prefix0}${PATH4}`, POST, option).json().then(r => r.body),
+            $post: (option: { body: Methods_fb4oql['post']['reqBody'], config?: T | undefined }) =>
+              fetch<Methods_fb4oql['post']['resBody'], Methods_fb4oql['post']['resHeaders'], Methods_fb4oql['post']['status']>(prefix, `${prefix0}${PATH4}`, POST, option).json().then(r => r.body),
             $path: () => `${prefix}${prefix0}${PATH4}`,
           },
           update: {
@@ -107,15 +107,15 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                * @param option.body - Body to create a update order
                * @returns Created
                */
-              post: (option: { body: Methods5['post']['reqBody'], config?: T | undefined }) =>
-                fetch<Methods5['post']['resBody'], Methods5['post']['resHeaders'], Methods5['post']['status']>(prefix, `${prefix0}${PATH5}`, POST, option).json(),
+              post: (option: { body: Methods_1so4353['post']['reqBody'], config?: T | undefined }) =>
+                fetch<Methods_1so4353['post']['resBody'], Methods_1so4353['post']['resHeaders'], Methods_1so4353['post']['status']>(prefix, `${prefix0}${PATH5}`, POST, option).json(),
               /**
                * Creates an update order for a product_id
                * @param option.body - Body to create a update order
                * @returns Created
                */
-              $post: (option: { body: Methods5['post']['reqBody'], config?: T | undefined }) =>
-                fetch<Methods5['post']['resBody'], Methods5['post']['resHeaders'], Methods5['post']['status']>(prefix, `${prefix0}${PATH5}`, POST, option).json().then(r => r.body),
+              $post: (option: { body: Methods_1so4353['post']['reqBody'], config?: T | undefined }) =>
+                fetch<Methods_1so4353['post']['resBody'], Methods_1so4353['post']['resHeaders'], Methods_1so4353['post']['status']>(prefix, `${prefix0}${PATH5}`, POST, option).json().then(r => r.body),
               $path: () => `${prefix}${prefix0}${PATH5}`,
             },
           },
@@ -123,15 +123,15 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * List orders for a user
            * @returns Ok
            */
-          get: (option?: { query?: Methods0['get']['query'] | undefined, config?: T | undefined } | undefined) =>
-            fetch<Methods0['get']['resBody'], Methods0['get']['resHeaders'], Methods0['get']['status']>(prefix, `${prefix0}${PATH1}`, GET, option).json(),
+          get: (option?: { query?: Methods_1kza667['get']['query'] | undefined, config?: T | undefined } | undefined) =>
+            fetch<Methods_1kza667['get']['resBody'], Methods_1kza667['get']['resHeaders'], Methods_1kza667['get']['status']>(prefix, `${prefix0}${PATH1}`, GET, option).json(),
           /**
            * List orders for a user
            * @returns Ok
            */
-          $get: (option?: { query?: Methods0['get']['query'] | undefined, config?: T | undefined } | undefined) =>
-            fetch<Methods0['get']['resBody'], Methods0['get']['resHeaders'], Methods0['get']['status']>(prefix, `${prefix0}${PATH1}`, GET, option).json().then(r => r.body),
-          $path: (option?: { method?: 'get' | undefined; query: Methods0['get']['query'] } | undefined) =>
+          $get: (option?: { query?: Methods_1kza667['get']['query'] | undefined, config?: T | undefined } | undefined) =>
+            fetch<Methods_1kza667['get']['resBody'], Methods_1kza667['get']['resHeaders'], Methods_1kza667['get']['status']>(prefix, `${prefix0}${PATH1}`, GET, option).json().then(r => r.body),
+          $path: (option?: { method?: 'get' | undefined; query: Methods_1kza667['get']['query'] } | undefined) =>
             `${prefix}${prefix0}${PATH1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
         },
         phone_numbers: {
@@ -147,15 +147,15 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                      * @param option.body - Body to create a purchase order
                      * @returns Created
                      */
-                    post: (option: { body: Methods7['post']['reqBody'], config?: T | undefined }) =>
-                      fetch<Methods7['post']['resBody'], Methods7['post']['resHeaders'], Methods7['post']['status']>(prefix, `${prefix2}${PATH2}`, POST, option).json(),
+                    post: (option: { body: Methods_1xcq70y['post']['reqBody'], config?: T | undefined }) =>
+                      fetch<Methods_1xcq70y['post']['resBody'], Methods_1xcq70y['post']['resHeaders'], Methods_1xcq70y['post']['status']>(prefix, `${prefix2}${PATH2}`, POST, option).json(),
                     /**
                      * Creates an purchase order for an offer by its offer_id using invoice has payment method
                      * @param option.body - Body to create a purchase order
                      * @returns Created
                      */
-                    $post: (option: { body: Methods7['post']['reqBody'], config?: T | undefined }) =>
-                      fetch<Methods7['post']['resBody'], Methods7['post']['resHeaders'], Methods7['post']['status']>(prefix, `${prefix2}${PATH2}`, POST, option).json().then(r => r.body),
+                    $post: (option: { body: Methods_1xcq70y['post']['reqBody'], config?: T | undefined }) =>
+                      fetch<Methods_1xcq70y['post']['resBody'], Methods_1xcq70y['post']['resHeaders'], Methods_1xcq70y['post']['status']>(prefix, `${prefix2}${PATH2}`, POST, option).json().then(r => r.body),
                     $path: () => `${prefix}${prefix2}${PATH2}`,
                   },
                   wallet: {
@@ -164,15 +164,15 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                      * @param option.body - Body to create a purchase order
                      * @returns Created
                      */
-                    post: (option: { body: Methods8['post']['reqBody'], config?: T | undefined }) =>
-                      fetch<Methods8['post']['resBody'], Methods8['post']['resHeaders'], Methods8['post']['status']>(prefix, `${prefix2}${PATH3}`, POST, option).json(),
+                    post: (option: { body: Methods_i3b7bi['post']['reqBody'], config?: T | undefined }) =>
+                      fetch<Methods_i3b7bi['post']['resBody'], Methods_i3b7bi['post']['resHeaders'], Methods_i3b7bi['post']['status']>(prefix, `${prefix2}${PATH3}`, POST, option).json(),
                     /**
                      * Creates an purchase order for an offer by its offer_id using a wallet has payment method
                      * @param option.body - Body to create a purchase order
                      * @returns Created
                      */
-                    $post: (option: { body: Methods8['post']['reqBody'], config?: T | undefined }) =>
-                      fetch<Methods8['post']['resBody'], Methods8['post']['resHeaders'], Methods8['post']['status']>(prefix, `${prefix2}${PATH3}`, POST, option).json().then(r => r.body),
+                    $post: (option: { body: Methods_i3b7bi['post']['reqBody'], config?: T | undefined }) =>
+                      fetch<Methods_i3b7bi['post']['resBody'], Methods_i3b7bi['post']['resHeaders'], Methods_i3b7bi['post']['status']>(prefix, `${prefix2}${PATH3}`, POST, option).json().then(r => r.body),
                     $path: () => `${prefix}${prefix2}${PATH3}`,
                   },
                 },
@@ -181,13 +181,13 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                  * @returns Ok
                  */
                 get: (option?: { config?: T | undefined } | undefined) =>
-                  fetch<Methods6['get']['resBody'], Methods6['get']['resHeaders'], Methods6['get']['status']>(prefix, `${prefix2}${PATH1}`, GET, option).json(),
+                  fetch<Methods_v5ivnw['get']['resBody'], Methods_v5ivnw['get']['resHeaders'], Methods_v5ivnw['get']['status']>(prefix, `${prefix2}${PATH1}`, GET, option).json(),
                 /**
                  * List orders for a phone number
                  * @returns Ok
                  */
                 $get: (option?: { config?: T | undefined } | undefined) =>
-                  fetch<Methods6['get']['resBody'], Methods6['get']['resHeaders'], Methods6['get']['status']>(prefix, `${prefix2}${PATH1}`, GET, option).json().then(r => r.body),
+                  fetch<Methods_v5ivnw['get']['resBody'], Methods_v5ivnw['get']['resHeaders'], Methods_v5ivnw['get']['status']>(prefix, `${prefix2}${PATH1}`, GET, option).json().then(r => r.body),
                 $path: () => `${prefix}${prefix2}${PATH1}`,
               },
             };

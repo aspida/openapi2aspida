@@ -1,8 +1,8 @@
 import type { AspidaClient, BasicHeaders } from 'aspida';
 import { dataToURLString } from 'aspida';
-import type { Methods as Methods0 } from '.';
-import type { Methods as Methods1 } from './_id@string';
-import type { Methods as Methods2 } from './_role@string';
+import type { Methods as Methods_by08hd } from '.';
+import type { Methods as Methods_2yw7dz } from './_id@string';
+import type { Methods as Methods_8khxqk } from './_role@string';
 
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? 'http://localhost:1337' : baseURL).replace(/\/$/, '');
@@ -22,13 +22,13 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          * @returns response
          */
         get: (option?: { config?: T | undefined } | undefined) =>
-          fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix0, GET, option).json(),
+          fetch<Methods_2yw7dz['get']['resBody'], BasicHeaders, Methods_2yw7dz['get']['status']>(prefix, prefix0, GET, option).json(),
         /**
          * Retrieve a role depending on its id
          * @returns response
          */
         $get: (option?: { config?: T | undefined } | undefined) =>
-          fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix0, GET, option).json().then(r => r.body),
+          fetch<Methods_2yw7dz['get']['resBody'], BasicHeaders, Methods_2yw7dz['get']['status']>(prefix, prefix0, GET, option).json().then(r => r.body),
         $path: () => `${prefix}${prefix0}`,
       };
     },
@@ -40,26 +40,26 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          * Update a role
          * @returns response
          */
-        put: (option: { body: Methods2['put']['reqBody'], config?: T | undefined }) =>
-          fetch<Methods2['put']['resBody'], BasicHeaders, Methods2['put']['status']>(prefix, prefix0, PUT, option).json(),
+        put: (option: { body: Methods_8khxqk['put']['reqBody'], config?: T | undefined }) =>
+          fetch<Methods_8khxqk['put']['resBody'], BasicHeaders, Methods_8khxqk['put']['status']>(prefix, prefix0, PUT, option).json(),
         /**
          * Update a role
          * @returns response
          */
-        $put: (option: { body: Methods2['put']['reqBody'], config?: T | undefined }) =>
-          fetch<Methods2['put']['resBody'], BasicHeaders, Methods2['put']['status']>(prefix, prefix0, PUT, option).json().then(r => r.body),
+        $put: (option: { body: Methods_8khxqk['put']['reqBody'], config?: T | undefined }) =>
+          fetch<Methods_8khxqk['put']['resBody'], BasicHeaders, Methods_8khxqk['put']['status']>(prefix, prefix0, PUT, option).json().then(r => r.body),
         /**
          * Delete a role
          * @returns response
          */
         delete: (option?: { config?: T | undefined } | undefined) =>
-          fetch<Methods2['delete']['resBody'], BasicHeaders, Methods2['delete']['status']>(prefix, prefix0, DELETE, option).json(),
+          fetch<Methods_8khxqk['delete']['resBody'], BasicHeaders, Methods_8khxqk['delete']['status']>(prefix, prefix0, DELETE, option).json(),
         /**
          * Delete a role
          * @returns response
          */
         $delete: (option?: { config?: T | undefined } | undefined) =>
-          fetch<Methods2['delete']['resBody'], BasicHeaders, Methods2['delete']['status']>(prefix, prefix0, DELETE, option).json().then(r => r.body),
+          fetch<Methods_8khxqk['delete']['resBody'], BasicHeaders, Methods_8khxqk['delete']['status']>(prefix, prefix0, DELETE, option).json().then(r => r.body),
         $path: () => `${prefix}${prefix0}`,
       };
     },
@@ -67,27 +67,27 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
      * Retrieve all role documents
      * @returns response
      */
-    get: (option?: { query?: Methods0['get']['query'] | undefined, config?: T | undefined } | undefined) =>
-      fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json(),
+    get: (option?: { query?: Methods_by08hd['get']['query'] | undefined, config?: T | undefined } | undefined) =>
+      fetch<Methods_by08hd['get']['resBody'], BasicHeaders, Methods_by08hd['get']['status']>(prefix, PATH0, GET, option).json(),
     /**
      * Retrieve all role documents
      * @returns response
      */
-    $get: (option?: { query?: Methods0['get']['query'] | undefined, config?: T | undefined } | undefined) =>
-      fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json().then(r => r.body),
+    $get: (option?: { query?: Methods_by08hd['get']['query'] | undefined, config?: T | undefined } | undefined) =>
+      fetch<Methods_by08hd['get']['resBody'], BasicHeaders, Methods_by08hd['get']['status']>(prefix, PATH0, GET, option).json().then(r => r.body),
     /**
      * Create a new role
      * @returns response
      */
-    post: (option: { body: Methods0['post']['reqBody'], config?: T | undefined }) =>
-      fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option).json(),
+    post: (option: { body: Methods_by08hd['post']['reqBody'], config?: T | undefined }) =>
+      fetch<Methods_by08hd['post']['resBody'], BasicHeaders, Methods_by08hd['post']['status']>(prefix, PATH0, POST, option).json(),
     /**
      * Create a new role
      * @returns response
      */
-    $post: (option: { body: Methods0['post']['reqBody'], config?: T | undefined }) =>
-      fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option).json().then(r => r.body),
-    $path: (option?: { method?: 'get' | undefined; query: Methods0['get']['query'] } | undefined) =>
+    $post: (option: { body: Methods_by08hd['post']['reqBody'], config?: T | undefined }) =>
+      fetch<Methods_by08hd['post']['resBody'], BasicHeaders, Methods_by08hd['post']['status']>(prefix, PATH0, POST, option).json().then(r => r.body),
+    $path: (option?: { method?: 'get' | undefined; query: Methods_by08hd['get']['query'] } | undefined) =>
       `${prefix}${PATH0}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
   };
 };

@@ -1,12 +1,12 @@
 import type { AspidaClient, BasicHeaders } from 'aspida';
 import { dataToURLString } from 'aspida';
-import type { Methods as Methods0 } from './trial_bs';
-import type { Methods as Methods1 } from './trial_bs_three_years';
-import type { Methods as Methods2 } from './trial_bs_two_years';
-import type { Methods as Methods3 } from './trial_pl';
-import type { Methods as Methods4 } from './trial_pl_sections';
-import type { Methods as Methods5 } from './trial_pl_three_years';
-import type { Methods as Methods6 } from './trial_pl_two_years';
+import type { Methods as Methods_bj1b6o } from './trial_bs';
+import type { Methods as Methods_wmtdii } from './trial_bs_three_years';
+import type { Methods as Methods_2z7lt8 } from './trial_bs_two_years';
+import type { Methods as Methods_a6uoin } from './trial_pl';
+import type { Methods as Methods_1aezkng } from './trial_pl_sections';
+import type { Methods as Methods_n5e4lp } from './trial_pl_three_years';
+import type { Methods as Methods_10w8y9n } from './trial_pl_two_years';
 
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? 'https://api.freee.co.jp' : baseURL).replace(/\/$/, '');
@@ -105,8 +105,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        *     }
        * }</code></pre>
        */
-      get: (option: { query: Methods0['get']['query'], config?: T | undefined }) =>
-        fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json(),
+      get: (option: { query: Methods_bj1b6o['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_bj1b6o['get']['resBody'], BasicHeaders, Methods_bj1b6o['get']['status']>(prefix, PATH0, GET, option).json(),
       /**
        * <h2 id="">概要</h2>
        *
@@ -191,9 +191,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        *     }
        * }</code></pre>
        */
-      $get: (option: { query: Methods0['get']['query'], config?: T | undefined }) =>
-        fetch<Methods0['get']['resBody'], BasicHeaders, Methods0['get']['status']>(prefix, PATH0, GET, option).json().then(r => r.body),
-      $path: (option?: { method?: 'get' | undefined; query: Methods0['get']['query'] } | undefined) =>
+      $get: (option: { query: Methods_bj1b6o['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_bj1b6o['get']['resBody'], BasicHeaders, Methods_bj1b6o['get']['status']>(prefix, PATH0, GET, option).json().then(r => r.body),
+      $path: (option?: { method?: 'get' | undefined; query: Methods_bj1b6o['get']['query'] } | undefined) =>
         `${prefix}${PATH0}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
     },
     trial_bs_three_years: {
@@ -263,8 +263,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        *     }
        * }</code></pre>
        */
-      get: (option: { query: Methods1['get']['query'], config?: T | undefined }) =>
-        fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, PATH1, GET, option).json(),
+      get: (option: { query: Methods_wmtdii['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_wmtdii['get']['resBody'], BasicHeaders, Methods_wmtdii['get']['status']>(prefix, PATH1, GET, option).json(),
       /**
        * <h2 id="">概要</h2>
        *
@@ -331,9 +331,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        *     }
        * }</code></pre>
        */
-      $get: (option: { query: Methods1['get']['query'], config?: T | undefined }) =>
-        fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, PATH1, GET, option).json().then(r => r.body),
-      $path: (option?: { method?: 'get' | undefined; query: Methods1['get']['query'] } | undefined) =>
+      $get: (option: { query: Methods_wmtdii['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_wmtdii['get']['resBody'], BasicHeaders, Methods_wmtdii['get']['status']>(prefix, PATH1, GET, option).json().then(r => r.body),
+      $path: (option?: { method?: 'get' | undefined; query: Methods_wmtdii['get']['query'] } | undefined) =>
         `${prefix}${PATH1}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
     },
     trial_bs_two_years: {
@@ -398,8 +398,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        *     }
        * }</code></pre>
        */
-      get: (option: { query: Methods2['get']['query'], config?: T | undefined }) =>
-        fetch<Methods2['get']['resBody'], BasicHeaders, Methods2['get']['status']>(prefix, PATH2, GET, option).json(),
+      get: (option: { query: Methods_2z7lt8['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_2z7lt8['get']['resBody'], BasicHeaders, Methods_2z7lt8['get']['status']>(prefix, PATH2, GET, option).json(),
       /**
        * <h2 id="">概要</h2>
        *
@@ -461,9 +461,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        *     }
        * }</code></pre>
        */
-      $get: (option: { query: Methods2['get']['query'], config?: T | undefined }) =>
-        fetch<Methods2['get']['resBody'], BasicHeaders, Methods2['get']['status']>(prefix, PATH2, GET, option).json().then(r => r.body),
-      $path: (option?: { method?: 'get' | undefined; query: Methods2['get']['query'] } | undefined) =>
+      $get: (option: { query: Methods_2z7lt8['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_2z7lt8['get']['resBody'], BasicHeaders, Methods_2z7lt8['get']['status']>(prefix, PATH2, GET, option).json().then(r => r.body),
+      $path: (option?: { method?: 'get' | undefined; query: Methods_2z7lt8['get']['query'] } | undefined) =>
         `${prefix}${PATH2}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
     },
     trial_pl: {
@@ -551,8 +551,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        *     }
        * }</code></pre>
        */
-      get: (option: { query: Methods3['get']['query'], config?: T | undefined }) =>
-        fetch<Methods3['get']['resBody'], BasicHeaders, Methods3['get']['status']>(prefix, PATH3, GET, option).json(),
+      get: (option: { query: Methods_a6uoin['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_a6uoin['get']['resBody'], BasicHeaders, Methods_a6uoin['get']['status']>(prefix, PATH3, GET, option).json(),
       /**
        * <h2 id="">概要</h2>
        *
@@ -637,9 +637,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        *     }
        * }</code></pre>
        */
-      $get: (option: { query: Methods3['get']['query'], config?: T | undefined }) =>
-        fetch<Methods3['get']['resBody'], BasicHeaders, Methods3['get']['status']>(prefix, PATH3, GET, option).json().then(r => r.body),
-      $path: (option?: { method?: 'get' | undefined; query: Methods3['get']['query'] } | undefined) =>
+      $get: (option: { query: Methods_a6uoin['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_a6uoin['get']['resBody'], BasicHeaders, Methods_a6uoin['get']['status']>(prefix, PATH3, GET, option).json().then(r => r.body),
+      $path: (option?: { method?: 'get' | undefined; query: Methods_a6uoin['get']['query'] } | undefined) =>
         `${prefix}${PATH3}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
     },
     trial_pl_sections: {
@@ -715,8 +715,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        *     }
        * }</code></pre>
        */
-      get: (option: { query: Methods4['get']['query'], config?: T | undefined }) =>
-        fetch<Methods4['get']['resBody'], BasicHeaders, Methods4['get']['status']>(prefix, PATH4, GET, option).json(),
+      get: (option: { query: Methods_1aezkng['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_1aezkng['get']['resBody'], BasicHeaders, Methods_1aezkng['get']['status']>(prefix, PATH4, GET, option).json(),
       /**
        * <h2 id="">概要</h2>
        *
@@ -789,9 +789,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        *     }
        * }</code></pre>
        */
-      $get: (option: { query: Methods4['get']['query'], config?: T | undefined }) =>
-        fetch<Methods4['get']['resBody'], BasicHeaders, Methods4['get']['status']>(prefix, PATH4, GET, option).json().then(r => r.body),
-      $path: (option?: { method?: 'get' | undefined; query: Methods4['get']['query'] } | undefined) =>
+      $get: (option: { query: Methods_1aezkng['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_1aezkng['get']['resBody'], BasicHeaders, Methods_1aezkng['get']['status']>(prefix, PATH4, GET, option).json().then(r => r.body),
+      $path: (option?: { method?: 'get' | undefined; query: Methods_1aezkng['get']['query'] } | undefined) =>
         `${prefix}${PATH4}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
     },
     trial_pl_three_years: {
@@ -861,8 +861,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        *     }
        * }</code></pre>
        */
-      get: (option: { query: Methods5['get']['query'], config?: T | undefined }) =>
-        fetch<Methods5['get']['resBody'], BasicHeaders, Methods5['get']['status']>(prefix, PATH5, GET, option).json(),
+      get: (option: { query: Methods_n5e4lp['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_n5e4lp['get']['resBody'], BasicHeaders, Methods_n5e4lp['get']['status']>(prefix, PATH5, GET, option).json(),
       /**
        * <h2 id="">概要</h2>
        *
@@ -929,9 +929,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        *     }
        * }</code></pre>
        */
-      $get: (option: { query: Methods5['get']['query'], config?: T | undefined }) =>
-        fetch<Methods5['get']['resBody'], BasicHeaders, Methods5['get']['status']>(prefix, PATH5, GET, option).json().then(r => r.body),
-      $path: (option?: { method?: 'get' | undefined; query: Methods5['get']['query'] } | undefined) =>
+      $get: (option: { query: Methods_n5e4lp['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_n5e4lp['get']['resBody'], BasicHeaders, Methods_n5e4lp['get']['status']>(prefix, PATH5, GET, option).json().then(r => r.body),
+      $path: (option?: { method?: 'get' | undefined; query: Methods_n5e4lp['get']['query'] } | undefined) =>
         `${prefix}${PATH5}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
     },
     trial_pl_two_years: {
@@ -999,8 +999,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        *     }
        * }</code></pre>
        */
-      get: (option: { query: Methods6['get']['query'], config?: T | undefined }) =>
-        fetch<Methods6['get']['resBody'], BasicHeaders, Methods6['get']['status']>(prefix, PATH6, GET, option).json(),
+      get: (option: { query: Methods_10w8y9n['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_10w8y9n['get']['resBody'], BasicHeaders, Methods_10w8y9n['get']['status']>(prefix, PATH6, GET, option).json(),
       /**
        * <h2 id="">概要</h2>
        *
@@ -1065,9 +1065,9 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        *     }
        * }</code></pre>
        */
-      $get: (option: { query: Methods6['get']['query'], config?: T | undefined }) =>
-        fetch<Methods6['get']['resBody'], BasicHeaders, Methods6['get']['status']>(prefix, PATH6, GET, option).json().then(r => r.body),
-      $path: (option?: { method?: 'get' | undefined; query: Methods6['get']['query'] } | undefined) =>
+      $get: (option: { query: Methods_10w8y9n['get']['query'], config?: T | undefined }) =>
+        fetch<Methods_10w8y9n['get']['resBody'], BasicHeaders, Methods_10w8y9n['get']['status']>(prefix, PATH6, GET, option).json().then(r => r.body),
+      $path: (option?: { method?: 'get' | undefined; query: Methods_10w8y9n['get']['query'] } | undefined) =>
         `${prefix}${PATH6}${option && option.query ? `?${dataToURLString(option.query)}` : ''}`,
     },
   };

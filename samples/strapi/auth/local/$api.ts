@@ -1,6 +1,6 @@
 import type { AspidaClient, BasicHeaders } from 'aspida';
-import type { Methods as Methods0 } from '.';
-import type { Methods as Methods1 } from './register';
+import type { Methods as Methods_by08hd } from '.';
+import type { Methods as Methods_1pbnd9f } from './register';
 
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? 'http://localhost:1337' : baseURL).replace(/\/$/, '');
@@ -14,28 +14,28 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * Register a new user with the default role
        * @returns response
        */
-      post: (option: { body: Methods1['post']['reqBody'], config?: T | undefined }) =>
-        fetch<Methods1['post']['resBody'], BasicHeaders, Methods1['post']['status']>(prefix, PATH1, POST, option).json(),
+      post: (option: { body: Methods_1pbnd9f['post']['reqBody'], config?: T | undefined }) =>
+        fetch<Methods_1pbnd9f['post']['resBody'], BasicHeaders, Methods_1pbnd9f['post']['status']>(prefix, PATH1, POST, option).json(),
       /**
        * Register a new user with the default role
        * @returns response
        */
-      $post: (option: { body: Methods1['post']['reqBody'], config?: T | undefined }) =>
-        fetch<Methods1['post']['resBody'], BasicHeaders, Methods1['post']['status']>(prefix, PATH1, POST, option).json().then(r => r.body),
+      $post: (option: { body: Methods_1pbnd9f['post']['reqBody'], config?: T | undefined }) =>
+        fetch<Methods_1pbnd9f['post']['resBody'], BasicHeaders, Methods_1pbnd9f['post']['status']>(prefix, PATH1, POST, option).json().then(r => r.body),
       $path: () => `${prefix}${PATH1}`,
     },
     /**
      * Login a user using the identifiers email and password
      * @returns response
      */
-    post: (option: { body: Methods0['post']['reqBody'], config?: T | undefined }) =>
-      fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option).json(),
+    post: (option: { body: Methods_by08hd['post']['reqBody'], config?: T | undefined }) =>
+      fetch<Methods_by08hd['post']['resBody'], BasicHeaders, Methods_by08hd['post']['status']>(prefix, PATH0, POST, option).json(),
     /**
      * Login a user using the identifiers email and password
      * @returns response
      */
-    $post: (option: { body: Methods0['post']['reqBody'], config?: T | undefined }) =>
-      fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option).json().then(r => r.body),
+    $post: (option: { body: Methods_by08hd['post']['reqBody'], config?: T | undefined }) =>
+      fetch<Methods_by08hd['post']['resBody'], BasicHeaders, Methods_by08hd['post']['status']>(prefix, PATH0, POST, option).json().then(r => r.body),
     $path: () => `${prefix}${PATH0}`,
   };
 };

@@ -1,5 +1,5 @@
 import type { AspidaClient, BasicHeaders } from 'aspida';
-import type { Methods as Methods0 } from './_code@string';
+import type { Methods as Methods_10euwdf } from './_code@string';
 
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? 'https://api.freee.co.jp' : baseURL).replace(/\/$/, '');
@@ -21,8 +21,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          * <li>振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）, 支払期日設定（payment_term_attributes, 請求の入金期日設定（invoice_payment_term_attributes）は法人向けのプロフェッショナルプラン以上で利用可能です。</li></ul>
          * @param option.body - 取引先の更新
          */
-        put: (option: { body: Methods0['put']['reqBody'], config?: T | undefined }) =>
-          fetch<Methods0['put']['resBody'], BasicHeaders, Methods0['put']['status']>(prefix, prefix0, PUT, option, 'URLSearchParams').json(),
+        put: (option: { body: Methods_10euwdf['put']['reqBody'], config?: T | undefined }) =>
+          fetch<Methods_10euwdf['put']['resBody'], BasicHeaders, Methods_10euwdf['put']['status']>(prefix, prefix0, PUT, option, 'URLSearchParams').json(),
         /**
          * <h2 id="">概要</h2>
          *
@@ -33,8 +33,8 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          * <li>振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）, 支払期日設定（payment_term_attributes, 請求の入金期日設定（invoice_payment_term_attributes）は法人向けのプロフェッショナルプラン以上で利用可能です。</li></ul>
          * @param option.body - 取引先の更新
          */
-        $put: (option: { body: Methods0['put']['reqBody'], config?: T | undefined }) =>
-          fetch<Methods0['put']['resBody'], BasicHeaders, Methods0['put']['status']>(prefix, prefix0, PUT, option, 'URLSearchParams').json().then(r => r.body),
+        $put: (option: { body: Methods_10euwdf['put']['reqBody'], config?: T | undefined }) =>
+          fetch<Methods_10euwdf['put']['resBody'], BasicHeaders, Methods_10euwdf['put']['status']>(prefix, prefix0, PUT, option, 'URLSearchParams').json().then(r => r.body),
         $path: () => `${prefix}${prefix0}`,
       };
     },

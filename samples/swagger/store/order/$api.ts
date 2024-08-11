@@ -1,6 +1,6 @@
 import type { AspidaClient, BasicHeaders } from 'aspida';
-import type { Methods as Methods0 } from '.';
-import type { Methods as Methods1 } from './_orderId@number';
+import type { Methods as Methods_by08hd } from '.';
+import type { Methods as Methods_8hee5 } from './_orderId@number';
 
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? 'https://petstore.swagger.io/v2' : baseURL).replace(/\/$/, '');
@@ -19,13 +19,13 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          * @returns successful operation
          */
         get: (option?: { config?: T | undefined } | undefined) =>
-          fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix0, GET, option).json(),
+          fetch<Methods_8hee5['get']['resBody'], BasicHeaders, Methods_8hee5['get']['status']>(prefix, prefix0, GET, option).json(),
         /**
          * For valid response try integer IDs with value >= 1 and <= 10. Other values will generated exceptions
          * @returns successful operation
          */
         $get: (option?: { config?: T | undefined } | undefined) =>
-          fetch<Methods1['get']['resBody'], BasicHeaders, Methods1['get']['status']>(prefix, prefix0, GET, option).json().then(r => r.body),
+          fetch<Methods_8hee5['get']['resBody'], BasicHeaders, Methods_8hee5['get']['status']>(prefix, prefix0, GET, option).json().then(r => r.body),
         /**
          * For valid response try integer IDs with positive integer value. Negative or non-integer values will generate API errors
          */
@@ -43,14 +43,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
      * @param option.body - order placed for purchasing the pet
      * @returns successful operation
      */
-    post: (option: { body: Methods0['post']['reqBody'], config?: T | undefined }) =>
-      fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option).json(),
+    post: (option: { body: Methods_by08hd['post']['reqBody'], config?: T | undefined }) =>
+      fetch<Methods_by08hd['post']['resBody'], BasicHeaders, Methods_by08hd['post']['status']>(prefix, PATH0, POST, option).json(),
     /**
      * @param option.body - order placed for purchasing the pet
      * @returns successful operation
      */
-    $post: (option: { body: Methods0['post']['reqBody'], config?: T | undefined }) =>
-      fetch<Methods0['post']['resBody'], BasicHeaders, Methods0['post']['status']>(prefix, PATH0, POST, option).json().then(r => r.body),
+    $post: (option: { body: Methods_by08hd['post']['reqBody'], config?: T | undefined }) =>
+      fetch<Methods_by08hd['post']['resBody'], BasicHeaders, Methods_by08hd['post']['status']>(prefix, PATH0, POST, option).json().then(r => r.body),
     $path: () => `${prefix}${PATH0}`,
   };
 };
