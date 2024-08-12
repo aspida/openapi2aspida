@@ -1,7 +1,8 @@
 /* eslint-disable */
-import type * as Types from '../../../../../../@types'
+import type { DefineMethods } from 'aspida';
+import type * as Types from '../../../../../../@types';
 
-export type Methods = {
+export type Methods = DefineMethods<{
   /**
    * <h2 id="">概要</h2>
    * <p>指定した事業所の取引（収入／支出）の支払行を更新する</p>
@@ -47,12 +48,12 @@ export type Methods = {
    * </ul>
    */
   put: {
-    status: 200
-    resBody: Types.DealResponse
-    reqFormat: URLSearchParams
+    status: 200;
+    resBody: Types.DealResponse;
+    reqFormat: URLSearchParams;
     /** 取引（収入／支出）の支払行更新 */
-    reqBody: Types.PaymentParams
-  }
+    reqBody: Types.PaymentParams;
+  };
 
   /**
    * <h2 id="">概要</h2>
@@ -86,9 +87,9 @@ export type Methods = {
   delete: {
     query: {
       /** 事業所ID */
-      company_id: number
-    }
+      company_id: number;
+    };
 
-    status: 204
-  }
-}
+    status: 204;
+  };
+}>;

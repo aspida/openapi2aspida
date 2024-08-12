@@ -1,4 +1,4 @@
 /* eslint-disable */
 export type User = {
-  id?: string | undefined
+  id?: string | undefined;
 }

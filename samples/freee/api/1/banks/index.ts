@@ -1,7 +1,8 @@
 /* eslint-disable */
-import type * as Types from '../../../@types'
+import type { DefineMethods } from 'aspida';
+import type * as Types from '../../../@types';
 
-export type Methods = {
+export type Methods = DefineMethods<{
   /**
    * <h2 id="">概要</h2>
    * 
@@ -24,17 +25,17 @@ export type Methods = {
   get: {
     query?: {
       /** 取得レコードのオフセット (デフォルト: 0) */
-      offset?: number | undefined
+      offset?: number | undefined;
       /** 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500) */
-      limit?: number | undefined
+      limit?: number | undefined;
       /** サービス種別 */
-      type?: 'bank' | 'credit_card' | 'wallet' | undefined
-    } | undefined
+      type?: 'bank' | 'credit_card' | 'wallet' | undefined;
+    } | undefined;
 
-    status: 200
+    status: 200;
 
     resBody: {
-      banks: Types.BankResponse['bank'][]
-    }
-  }
-}
+      banks: Types.BankResponse['bank'][];
+    };
+  };
+}>;

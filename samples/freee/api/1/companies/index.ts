@@ -1,7 +1,8 @@
 /* eslint-disable */
-import type * as Types from '../../../@types'
+import type { DefineMethods } from 'aspida';
+import type * as Types from '../../../@types';
 
-export type Methods = {
+export type Methods = DefineMethods<{
   /**
    * <h2 id="">概要</h2>
    * 
@@ -24,7 +25,7 @@ export type Methods = {
    * </ul>
    */
   get: {
-    status: 200
-    resBody: Types.CompanyIndexResponse
-  }
-}
+    status: 200;
+    resBody: Types.CompanyIndexResponse;
+  };
+}>;

@@ -1,16 +1,17 @@
 /* eslint-disable */
-import type * as Types from '../../../@types'
+import type { DefineMethods } from 'aspida';
+import type * as Types from '../../../@types';
 
-export type Methods = {
+export type Methods = DefineMethods<{
   /** Send in to about app to server. If app is to old and need be force updated in responce you have link to new app */
   get: {
-    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader | undefined
-    status: 200
+    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader | undefined;
+    status: 200;
 
     /** OK */
     resBody: {
-      state?: 'no_update' | 'force_update' | undefined
-      link?: string | undefined
-    }
-  }
-}
+      state?: 'no_update' | 'force_update' | undefined;
+      link?: string | undefined;
+    };
+  };
+}>;

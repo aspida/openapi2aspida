@@ -1,7 +1,8 @@
 /* eslint-disable */
-import type * as Types from '../../../../../@types'
+import type { DefineMethods } from 'aspida';
+import type * as Types from '../../../../../@types';
 
-export type Methods = {
+export type Methods = DefineMethods<{
   /**
    * <h2 id="">概要</h2>
    * 
@@ -18,19 +19,19 @@ export type Methods = {
   get: {
     query: {
       /** 事業所ID */
-      company_id: number
+      company_id: number;
       /** 取得レコードのオフセット (デフォルト: 0) */
-      offset?: number | undefined
+      offset?: number | undefined;
       /** 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500) */
-      limit?: number | undefined
-    }
+      limit?: number | undefined;
+    };
 
-    status: 200
+    status: 200;
 
     resBody: {
-      segment_tags: Types.SegmentTagResponse['segment_tag'][]
-    }
-  }
+      segment_tags: Types.SegmentTagResponse['segment_tag'][];
+    };
+  };
 
   /**
    * <h2 id="">概要</h2>
@@ -46,10 +47,10 @@ export type Methods = {
    * </ul>
    */
   post: {
-    status: 201
-    resBody: Types.SegmentTagResponse
-    reqFormat: URLSearchParams
+    status: 201;
+    resBody: Types.SegmentTagResponse;
+    reqFormat: URLSearchParams;
     /** セグメントタグの作成 */
-    reqBody: Types.SegmentTagParams
-  }
-}
+    reqBody: Types.SegmentTagParams;
+  };
+}>;

@@ -1,7 +1,8 @@
 /* eslint-disable */
-import type * as Types from '../../../../../@types'
+import type { DefineMethods } from 'aspida';
+import type * as Types from '../../../../../@types';
 
-export type Methods = {
+export type Methods = DefineMethods<{
   /**
    * <h2 id="">概要</h2>
    * <p>指定した事業所の取引（収入／支出）の支払行を作成する</p>
@@ -41,10 +42,10 @@ export type Methods = {
    * </ul>
    */
   post: {
-    status: 201
-    resBody: Types.DealResponse
-    reqFormat: URLSearchParams
+    status: 201;
+    resBody: Types.DealResponse;
+    reqFormat: URLSearchParams;
     /** 取引（収入／支出）の支払行作成 */
-    reqBody: Types.PaymentParams
-  }
-}
+    reqBody: Types.PaymentParams;
+  };
+}>;

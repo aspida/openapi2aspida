@@ -1,16 +1,18 @@
 /* eslint-disable */
-export type Methods = {
+import type { DefineMethods } from 'aspida';
+
+export type Methods = DefineMethods<{
   /** Login a user using the identifiers email and password */
   post: {
-    status: 200
+    status: 200;
 
     /** response */
     resBody: {
-      foo?: string | undefined
-    }
+      foo?: string | undefined;
+    };
 
     reqBody: {
-      foo?: string | undefined
-    }
-  }
-}
+      foo?: string | undefined;
+    };
+  };
+}>;

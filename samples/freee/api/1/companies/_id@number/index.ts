@@ -1,7 +1,8 @@
 /* eslint-disable */
-import type * as Types from '../../../../@types'
+import type { DefineMethods } from 'aspida';
+import type * as Types from '../../../../@types';
 
-export type Methods = {
+export type Methods = DefineMethods<{
   /**
    * <h2 id="">概要</h2>
    * 
@@ -28,26 +29,26 @@ export type Methods = {
   get: {
     query?: {
       /** 取得情報に勘定科目・税区分コード・税区分・品目・取引先・部門・メモタグ・口座の一覧を含める */
-      details?: true | undefined
+      details?: true | undefined;
       /** 取得情報に勘定科目一覧を含める */
-      account_items?: true | undefined
+      account_items?: true | undefined;
       /** 取得情報に税区分コード・税区分一覧を含める */
-      taxes?: true | undefined
+      taxes?: true | undefined;
       /** 取得情報に品目一覧を含める */
-      items?: true | undefined
+      items?: true | undefined;
       /** 取得情報に取引先一覧を含める */
-      partners?: true | undefined
+      partners?: true | undefined;
       /** 取得情報に部門一覧を含める */
-      sections?: true | undefined
+      sections?: true | undefined;
       /** 取得情報にメモタグ一覧を含める */
-      tags?: true | undefined
+      tags?: true | undefined;
       /** 取得情報に口座一覧を含める */
-      walletables?: true | undefined
-    } | undefined
+      walletables?: true | undefined;
+    } | undefined;
 
-    status: 200
-    resBody: Types.CompanyResponse
-  }
+    status: 200;
+    resBody: Types.CompanyResponse;
+  };
 
   /**
    * <h2 id="">概要</h2>
@@ -57,9 +58,9 @@ export type Methods = {
    * <p>※同時に複数のリクエストを受け付けない</p>
    */
   put: {
-    status: 200
-    resBody: Types.CompanyUpdateResponse
-    reqFormat: URLSearchParams
-    reqBody?: Types.CompanyParams | undefined
-  }
-}
+    status: 200;
+    resBody: Types.CompanyUpdateResponse;
+    reqFormat: URLSearchParams;
+    reqBody?: Types.CompanyParams | undefined;
+  };
+}>;

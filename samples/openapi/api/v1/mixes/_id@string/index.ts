@@ -1,11 +1,13 @@
 /* eslint-disable */
-export type Methods = {
+import type { DefineMethods } from 'aspida';
+
+export type Methods = DefineMethods<{
   put: {
-    status: 200
+    status: 200;
 
     reqBody: {
-      name: string
-      title?: string | undefined
-    }
-  }
-}
+      name: string;
+      title?: string | undefined;
+    };
+  };
+}>;

@@ -1,58 +1,59 @@
 /* eslint-disable */
-import type * as Types from '../../../../../@types'
+import type { DefineMethods } from 'aspida';
+import type * as Types from '../../../../../@types';
 
-export type Methods = {
+export type Methods = DefineMethods<{
   /** Returns a list of items of chat shared content */
   get: {
-    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken & Types.UserInstanceIdHeader | undefined
+    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken & Types.UserInstanceIdHeader | undefined;
 
     query?: {
-      offset?: number | undefined
+      offset?: number | undefined;
       /** coma separated ids of requested cards */
-      ids?: string | undefined
-    } | undefined
+      ids?: string | undefined;
+    } | undefined;
 
-    status: 200
+    status: 200;
 
     /** OK */
     resBody: {
-      limit: number
-      offset: number
-    }
-  }
+      limit: number;
+      offset: number;
+    };
+  };
 
   /** Create shared item in chat */
   post: {
-    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken | undefined
-    status: 200
+    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken | undefined;
+    status: 200;
 
     /** OK */
     resBody: {
-      id: string
-    }
+      id: string;
+    };
 
     /** item to create */
     reqBody: {
-      type: Types.CardEnumModel
-      title?: string | undefined
-      abstract?: string | undefined
-      sourceName?: string | undefined
-      image?: string | undefined
-      imageId?: string | undefined
-      quotePerson?: string | undefined
-      quote?: string | undefined
-      url?: string | undefined
-      quotePersonImageId?: string | undefined
-      quotePersonImage?: string | undefined
-      quoteSource?: string | undefined
-      quotePersonHandle?: string | undefined
-      videoId?: string | undefined
-      text?: string | undefined
-      headline?: string | undefined
-      quoteCreated?: string | undefined
-      published?: boolean | undefined
+      type: Types.CardEnumModel;
+      title?: string | undefined;
+      abstract?: string | undefined;
+      sourceName?: string | undefined;
+      image?: string | undefined;
+      imageId?: string | undefined;
+      quotePerson?: string | undefined;
+      quote?: string | undefined;
+      url?: string | undefined;
+      quotePersonImageId?: string | undefined;
+      quotePersonImage?: string | undefined;
+      quoteSource?: string | undefined;
+      quotePersonHandle?: string | undefined;
+      videoId?: string | undefined;
+      text?: string | undefined;
+      headline?: string | undefined;
+      quoteCreated?: string | undefined;
+      published?: boolean | undefined;
       /** text message to send to pubnub */
-      formattedText?: string | undefined
-    }
-  }
-}
+      formattedText?: string | undefined;
+    };
+  };
+}>;

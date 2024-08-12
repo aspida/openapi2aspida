@@ -1,14 +1,15 @@
 /* eslint-disable */
-import type * as Types from '../../../@types'
+import type { DefineMethods } from 'aspida';
+import type * as Types from '../../../@types';
 
-export type Methods = {
+export type Methods = DefineMethods<{
   post: {
-    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken | undefined
-    status: 204
+    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken | undefined;
+    status: 204;
 
     reqBody: {
-      fcmToken?: string | undefined
-      deviceToken?: string | undefined
-    }
-  }
-}
+      fcmToken?: string | undefined;
+      deviceToken?: string | undefined;
+    };
+  };
+}>;

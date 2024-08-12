@@ -1,7 +1,8 @@
 /* eslint-disable */
-import type * as Types from '../../../@types'
+import type { DefineMethods } from 'aspida';
+import type * as Types from '../../../@types';
 
-export type Methods = {
+export type Methods = DefineMethods<{
   /**
    * <h2 id="">概要</h2>
    * 
@@ -28,24 +29,24 @@ export type Methods = {
   get: {
     query: {
       /** 事業所ID */
-      company_id: number
+      company_id: number;
       /** 残高情報を含める */
-      with_balance?: boolean | undefined
+      with_balance?: boolean | undefined;
       /** 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） */
-      type?: 'bank_account' | 'credit_card' | 'wallet' | undefined
-    }
+      type?: 'bank_account' | 'credit_card' | 'wallet' | undefined;
+    };
 
-    status: 200
+    status: 200;
 
     resBody: {
-      walletables: Types.WalletableResponse['walletable'][]
+      walletables: Types.WalletableResponse['walletable'][];
 
       meta?: {
         /** 集計結果が最新かどうか */
-        up_to_date?: boolean | undefined
-      } | undefined
-    }
-  }
+        up_to_date?: boolean | undefined;
+      } | undefined;
+    };
+  };
 
   /**
    * <h2 id="">概要</h2>
@@ -84,10 +85,10 @@ export type Methods = {
    * </ul>
    */
   post: {
-    status: 201
-    resBody: Types.WalletableCreateResponse
-    reqFormat: URLSearchParams
+    status: 201;
+    resBody: Types.WalletableCreateResponse;
+    reqFormat: URLSearchParams;
     /** 口座の作成 */
-    reqBody?: Types.WalletableCreateParams | undefined
-  }
-}
+    reqBody?: Types.WalletableCreateParams | undefined;
+  };
+}>;

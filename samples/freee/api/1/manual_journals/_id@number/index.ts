@@ -1,7 +1,8 @@
 /* eslint-disable */
-import type * as Types from '../../../../@types'
+import type { DefineMethods } from 'aspida';
+import type * as Types from '../../../../@types';
 
-export type Methods = {
+export type Methods = DefineMethods<{
   /**
    * <h2 id="">概要</h2>
    * 
@@ -29,12 +30,12 @@ export type Methods = {
   get: {
     query: {
       /** 事業所ID */
-      company_id: number
-    }
+      company_id: number;
+    };
 
-    status: 200
-    resBody: Types.ManualJournalResponse
-  }
+    status: 200;
+    resBody: Types.ManualJournalResponse;
+  };
 
   /**
    * <h2 id="">概要</h2>
@@ -92,12 +93,12 @@ export type Methods = {
    * <li>partner_codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。またpartner_codeとpartner_idは同時に指定することはできません。</li></ul>
    */
   put: {
-    status: 200
-    resBody: Types.ManualJournalResponse
-    reqFormat: URLSearchParams
+    status: 200;
+    resBody: Types.ManualJournalResponse;
+    reqFormat: URLSearchParams;
     /** 振替伝票の更新 */
-    reqBody?: Types.ManualJournalUpdateParams | undefined
-  }
+    reqBody?: Types.ManualJournalUpdateParams | undefined;
+  };
 
   /**
    * <h2 id="">概要</h2>
@@ -107,9 +108,9 @@ export type Methods = {
   delete: {
     query: {
       /** 事業所ID */
-      company_id: number
-    }
+      company_id: number;
+    };
 
-    status: 204
-  }
-}
+    status: 204;
+  };
+}>;

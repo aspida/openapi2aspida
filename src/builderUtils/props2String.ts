@@ -57,14 +57,15 @@ export const description2Doc = (desc: string | null, indent: string) => {
 
 export const props2String = (props: Prop[], indent: string) =>
   `{\n${props
-    .map((p, i) =>
-      ((opt) =>
-        `${description2Doc(p.description, `  ${indent}`)}  ${indent}${p.name}${
-          opt ? '?' : ''
-        }: ${values2String(p.values, undefined, indent)}${opt ? ' | undefined' : ''}${
-          props.length - 1 === i || isMultiLine(p.values) || isMultiLine(props[i + 1].values)
-            ? '\n'
-            : ''
-        }`)(!p.required),
-    )
+    .map((p, i) => {
+      const opt = !p.required;
+
+      return `${description2Doc(p.description, `  ${indent}`)}  ${indent}${p.name}${
+        opt ? '?' : ''
+      }: ${values2String(p.values, undefined, indent)}${opt ? ' | undefined' : ''};${
+        props.length - 1 === i || isMultiLine(p.values) || isMultiLine(props[i + 1].values)
+          ? '\n'
+          : ''
+      }`;
+    })
     .join('\n')}${indent}}`;

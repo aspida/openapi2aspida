@@ -1,7 +1,8 @@
 /* eslint-disable */
-import type * as Types from '../../../../../@types'
+import type { DefineMethods } from 'aspida';
+import type * as Types from '../../../../../@types';
 
-export type Methods = {
+export type Methods = DefineMethods<{
   /**
    * <h2 id="">概要</h2>
    * <p>指定した事業所の取引（収入／支出）の+更新を作成する</p>
@@ -28,10 +29,10 @@ export type Methods = {
    * <li>本APIで取引を更新すると、消費税の計算方法は必ず内税方式が選択されます。</li> </ul>
    */
   post: {
-    status: 201
-    resBody: Types.DealResponse
-    reqFormat: URLSearchParams
+    status: 201;
+    resBody: Types.DealResponse;
+    reqFormat: URLSearchParams;
     /** 取引（収入／支出）に対する+更新の情報 */
-    reqBody: Types.RenewCreateParams
-  }
-}
+    reqBody: Types.RenewCreateParams;
+  };
+}>;

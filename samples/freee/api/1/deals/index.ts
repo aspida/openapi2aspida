@@ -1,7 +1,8 @@
 /* eslint-disable */
-import type * as Types from '../../../@types'
+import type { DefineMethods } from 'aspida';
+import type * as Types from '../../../@types';
 
-export type Methods = {
+export type Methods = DefineMethods<{
   /**
    * <h2 id="">概要</h2>
    * <p>指定した事業所の取引一覧（収入／支出）を取得する</p>
@@ -65,50 +66,50 @@ export type Methods = {
   get: {
     query: {
       /** 事業所ID */
-      company_id: number
+      company_id: number;
       /** 取引先IDで絞込 */
-      partner_id?: number | undefined
+      partner_id?: number | undefined;
       /** 勘定科目IDで絞込 */
-      account_item_id?: number | undefined
+      account_item_id?: number | undefined;
       /** 取引先コードで絞込 */
-      partner_code?: string | undefined
+      partner_code?: string | undefined;
       /** 決済状況で絞込 (未決済: unsettled, 完了: settled) */
-      status?: 'unsettled' | 'settled' | undefined
+      status?: 'unsettled' | 'settled' | undefined;
       /** 収支区分 (収入: income, 支出: expense) */
-      type?: 'income' | 'expense' | undefined
+      type?: 'income' | 'expense' | undefined;
       /** 発生日で絞込：開始日(yyyy-mm-dd) */
-      start_issue_date?: string | undefined
+      start_issue_date?: string | undefined;
       /** 発生日で絞込：終了日(yyyy-mm-dd) */
-      end_issue_date?: string | undefined
+      end_issue_date?: string | undefined;
       /** 支払期日で絞込：開始日(yyyy-mm-dd) */
-      start_due_date?: string | undefined
+      start_due_date?: string | undefined;
       /** 支払期日で絞込：終了日(yyyy-mm-dd) */
-      end_due_date?: string | undefined
+      end_due_date?: string | undefined;
       /** +更新日で絞込：開始日(yyyy-mm-dd) */
-      start_renew_date?: string | undefined
+      start_renew_date?: string | undefined;
       /** +更新日で絞込：終了日(yyyy-mm-dd) */
-      end_renew_date?: string | undefined
+      end_renew_date?: string | undefined;
       /** 取得レコードのオフセット (デフォルト: 0) */
-      offset?: number | undefined
+      offset?: number | undefined;
       /** 取得レコードの件数 (デフォルト: 20, 最大: 100) */
-      limit?: number | undefined
+      limit?: number | undefined;
       /** 取引登録元アプリで絞込（me: 本APIを叩くアプリ自身から登録した取引のみ） */
-      registered_from?: 'me' | undefined
+      registered_from?: 'me' | undefined;
       /** 取引の債権債務行の表示（without: 表示しない(デフォルト), with: 表示する） */
-      accruals?: 'without' | 'with' | undefined
-    }
+      accruals?: 'without' | 'with' | undefined;
+    };
 
-    status: 200
+    status: 200;
 
     resBody: {
-      deals: Types.DealResponse['deal'][]
+      deals: Types.DealResponse['deal'][];
 
       meta: {
         /** 検索条件に合致する取引の総数 */
-        total_count: number
-      }
-    }
-  }
+        total_count: number;
+      };
+    };
+  };
 
   /**
    * <h2 id="">概要</h2>
@@ -171,10 +172,10 @@ export type Methods = {
    * </ul>
    */
   post: {
-    status: 201
-    resBody: Types.DealCreateResponse
-    reqFormat: URLSearchParams
+    status: 201;
+    resBody: Types.DealCreateResponse;
+    reqFormat: URLSearchParams;
     /** 取引（収入／支出）の作成 */
-    reqBody?: Types.DealCreateParams | undefined
-  }
-}
+    reqBody?: Types.DealCreateParams | undefined;
+  };
+}>;

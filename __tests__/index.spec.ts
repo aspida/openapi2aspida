@@ -27,7 +27,10 @@ describe('cli test', () => {
 
         for (const filePath of readDirRecursive(config.input)) {
           expect(fs.readFileSync(`_${filePath}`, 'utf8')).toBe(
-            fs.readFileSync(filePath, 'utf8').replace(/\r/g, ''),
+            fs
+              .readFileSync(filePath, 'utf8')
+              .replace(/\r/g, '')
+              .replace(/\n\/\/ @ts-expect-error/g, ''),
           );
         }
       }),

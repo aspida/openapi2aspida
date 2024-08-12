@@ -355,13 +355,13 @@ export default (openapi: OpenAPIV3.Document) => {
 
           return {
             file,
-            methods: `/* eslint-disable */\n${
-              hasBinary ? "import type { ReadStream } from 'fs'\n" : ''
-            }${hasBinary && !hasTypes ? '\n' : ''}${
+            methods: `/* eslint-disable */\nimport type { DefineMethods } from 'aspida';\n${
+              hasBinary ? "import type { ReadStream } from 'fs';\n" : ''
+            }${
               hasTypes
-                ? `import type * as Types from '${file.map(() => '').join('../')}@types'\n\n`
+                ? `import type * as Types from '${file.map(() => '').join('../')}@types';\n`
                 : ''
-            }export type Methods = ${methodsText}\n`,
+            }\nexport type Methods = DefineMethods<${methodsText}>;\n`,
           };
         } else {
           return { file, methods: '' };

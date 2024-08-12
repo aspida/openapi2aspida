@@ -1,7 +1,8 @@
 /* eslint-disable */
-import type * as Types from '../../../@types'
+import type { DefineMethods } from 'aspida';
+import type * as Types from '../../../@types';
 
-export type Methods = {
+export type Methods = DefineMethods<{
   /**
    * <h2 id="">概要</h2>
    * 
@@ -18,14 +19,14 @@ export type Methods = {
   get: {
     query: {
       /** 事業所ID */
-      company_id: number
+      company_id: number;
       /** 基準日:指定した場合、勘定科目に紐づく税区分(default_tax_code)が、基準日の税率に基づいて返ります。 */
-      base_date?: string | undefined
-    }
+      base_date?: string | undefined;
+    };
 
-    status: 200
-    resBody: Types.AccountItemsResponse
-  }
+    status: 200;
+    resBody: Types.AccountItemsResponse;
+  };
 
   /**
    * <h2 id="">概要</h2>
@@ -33,10 +34,10 @@ export type Methods = {
    * <p>指定した事業所の勘定科目を作成する</p>
    */
   post: {
-    status: 201
-    resBody: Types.AccountItemResponse
-    reqFormat: URLSearchParams
+    status: 201;
+    resBody: Types.AccountItemResponse;
+    reqFormat: URLSearchParams;
     /** 勘定科目の作成 */
-    reqBody: Types.AccountItemParams
-  }
-}
+    reqBody: Types.AccountItemParams;
+  };
+}>;

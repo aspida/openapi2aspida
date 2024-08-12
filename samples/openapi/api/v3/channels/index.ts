@@ -1,37 +1,38 @@
 /* eslint-disable */
-import type * as Types from '../../../@types'
+import type { DefineMethods } from 'aspida';
+import type * as Types from '../../../@types';
 
-export type Methods = {
+export type Methods = DefineMethods<{
   get: {
-    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken | undefined
+    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken | undefined;
 
     query?: {
-      unpublished?: boolean | undefined
-      'read-only'?: boolean | undefined
-    } | undefined
+      unpublished?: boolean | undefined;
+      'read-only'?: boolean | undefined;
+    } | undefined;
 
-    status: 200
+    status: 200;
     /** OK */
     resBody: {
-      id: number
-      name: string
-      role: string
-      created: string
-      subdomain: string
-      url: string
-      ownerEmail: string
-      ownerName: string
-      organisationName?: string | undefined
-      ownerId: number
-      organisationId: number
-      pinnedStoryId?: number | undefined
+      id: number;
+      name: string;
+      role: string;
+      created: string;
+      subdomain: string;
+      url: string;
+      ownerEmail: string;
+      ownerName: string;
+      organisationName?: string | undefined;
+      ownerId: number;
+      organisationId: number;
+      pinnedStoryId?: number | undefined;
       stories: {
-        id: number
-        title: number
-        status: string
-        ownerId: number
-        allowAccessToEditorLimited: boolean
-      }[]
-    }[]
-  }
-}
+        id: number;
+        title: number;
+        status: string;
+        ownerId: number;
+        allowAccessToEditorLimited: boolean;
+      }[];
+    }[];
+  };
+}>;

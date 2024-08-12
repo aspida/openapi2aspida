@@ -1,36 +1,38 @@
 /* eslint-disable */
-export type Methods = {
+import type { DefineMethods } from 'aspida';
+
+export type Methods = DefineMethods<{
   get: {
     query: {
-      path: string
-      '123456789123456789123456789123456789'?: string | undefined
-    }
+      path: string;
+      '123456789123456789123456789123456789'?: string | undefined;
+    };
 
-    status: 200
+    status: 200;
 
     /** accept */
     resBody: {
       /** ID */
-      id: number
+      id: number;
       /** NAME */
-      name: string
-    }
-  }
+      name: string;
+    };
+  };
 
   post: {
     query: {
-      path: string
-      '123456789123456789123456789123456789'?: string | undefined
-    }
+      path: string;
+      '123456789123456789123456789123456789'?: string | undefined;
+    };
 
-    status: 200
+    status: 200;
 
     /** accept */
     resBody: {
       /** ID */
-      id: number
+      id: number;
       /** NAME */
-      name?: string | undefined
-    }
-  }
-}
+      name?: string | undefined;
+    };
+  };
+}>;

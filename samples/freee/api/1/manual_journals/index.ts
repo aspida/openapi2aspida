@@ -1,7 +1,8 @@
 /* eslint-disable */
-import type * as Types from '../../../@types'
+import type { DefineMethods } from 'aspida';
+import type * as Types from '../../../@types';
 
-export type Methods = {
+export type Methods = DefineMethods<{
   /**
    * <h2 id="">概要</h2>
    * 
@@ -52,53 +53,53 @@ export type Methods = {
   get: {
     query: {
       /** 事業所ID */
-      company_id: number
+      company_id: number;
       /** 発生日で絞込：開始日(yyyy-mm-dd) */
-      start_issue_date?: string | undefined
+      start_issue_date?: string | undefined;
       /** 発生日で絞込：終了日(yyyy-mm-dd) */
-      end_issue_date?: string | undefined
+      end_issue_date?: string | undefined;
       /** 貸借で絞込 (貸方: credit, 借方: debit) */
-      entry_side?: 'credit' | 'debit' | undefined
+      entry_side?: 'credit' | 'debit' | undefined;
       /** 勘定科目IDで絞込 */
-      account_item_id?: number | undefined
+      account_item_id?: number | undefined;
       /** 金額で絞込：下限 */
-      min_amount?: number | undefined
+      min_amount?: number | undefined;
       /** 金額で絞込：上限 */
-      max_amount?: number | undefined
+      max_amount?: number | undefined;
       /** 取引先IDで絞込（0を指定すると、取引先が未選択の貸借行を絞り込めます） */
-      partner_id?: number | undefined
+      partner_id?: number | undefined;
       /** 取引先コードで絞込 */
-      partner_code?: string | undefined
+      partner_code?: string | undefined;
       /** 品目IDで絞込（0を指定すると、品目が未選択の貸借行を絞り込めます） */
-      item_id?: number | undefined
+      item_id?: number | undefined;
       /** 部門IDで絞込（0を指定すると、部門が未選択の貸借行を絞り込めます） */
-      section_id?: number | undefined
+      section_id?: number | undefined;
       /** セグメント１IDで絞り込み（0を指定すると、セグメント１が未選択の貸借行を絞り込めます） */
-      segment_1_tag_id?: number | undefined
+      segment_1_tag_id?: number | undefined;
       /** セグメント２IDで絞り込み（0を指定すると、セグメント２が未選択の貸借行を絞り込めます） */
-      segment_2_tag_id?: number | undefined
+      segment_2_tag_id?: number | undefined;
       /** セグメント３IDで絞り込み（0を指定すると、セグメント３が未選択の貸借行を絞り込めます） */
-      segment_3_tag_id?: number | undefined
+      segment_3_tag_id?: number | undefined;
       /** コメント状態で絞込（自分宛のコメント: posted_with_mention, 自分宛のコメント-未解決: raised_with_mention, 自分宛のコメント-解決済: resolved_with_mention, コメントあり: posted, 未解決: raised, 解決済: resolved, コメントなし: none） */
-      comment_status?: 'posted_with_mention' | 'raised_with_mention' | 'resolved_with_mention' | 'posted' | 'raised' | 'resolved' | 'none' | undefined
+      comment_status?: 'posted_with_mention' | 'raised_with_mention' | 'resolved_with_mention' | 'posted' | 'raised' | 'resolved' | 'none' | undefined;
       /** 重要コメント付きの振替伝票を絞込 */
-      comment_important?: boolean | undefined
+      comment_important?: boolean | undefined;
       /** 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） */
-      adjustment?: 'only' | 'without' | undefined
+      adjustment?: 'only' | 'without' | undefined;
       /** 仕訳番号で絞込（事業所の仕訳番号形式が有効な場合のみ） */
-      txn_number?: string | undefined
+      txn_number?: string | undefined;
       /** 取得レコードのオフセット (デフォルト: 0) */
-      offset?: number | undefined
+      offset?: number | undefined;
       /** 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500) */
-      limit?: number | undefined
-    }
+      limit?: number | undefined;
+    };
 
-    status: 200
+    status: 200;
 
     resBody: {
-      manual_journals: Types.ManualJournalResponse['manual_journal'][]
-    }
-  }
+      manual_journals: Types.ManualJournalResponse['manual_journal'][];
+    };
+  };
 
   /**
    * <h2 id="">概要</h2>
@@ -149,10 +150,10 @@ export type Methods = {
    * <li>partner_codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。またpartner_codeとpartner_idは同時に指定することはできません。</li></ul>
    */
   post: {
-    status: 201
-    resBody: Types.ManualJournalResponse
-    reqFormat: URLSearchParams
+    status: 201;
+    resBody: Types.ManualJournalResponse;
+    reqFormat: URLSearchParams;
     /** 振替伝票の作成 */
-    reqBody?: Types.ManualJournalCreateParams | undefined
-  }
-}
+    reqBody?: Types.ManualJournalCreateParams | undefined;
+  };
+}>;

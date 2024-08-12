@@ -1,22 +1,23 @@
 /* eslint-disable */
-import type { ReadStream } from 'fs'
+import type { DefineMethods } from 'aspida';
+import type { ReadStream } from 'fs';
 
-export type Methods = {
+export type Methods = DefineMethods<{
   post: {
-    status: 200
+    status: 200;
 
     /** OK */
     resBody: {
-      imageId: number
-    }
+      imageId: number;
+    };
 
-    reqFormat: FormData
+    reqFormat: FormData;
 
     reqBody: {
       /** Image to upload. */
-      file: (File | ReadStream)
-      rightholder?: string | undefined
-      statusCopyright?: 'unknown' | 'cc' | 'licensed' | 'sublicensed' | undefined
-    }
-  }
-}
+      file: (File | ReadStream);
+      rightholder?: string | undefined;
+      statusCopyright?: 'unknown' | 'cc' | 'licensed' | 'sublicensed' | undefined;
+    };
+  };
+}>;

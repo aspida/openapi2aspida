@@ -1,7 +1,8 @@
 /* eslint-disable */
-import type * as Types from '../../../@types'
+import type { DefineMethods } from 'aspida';
+import type * as Types from '../../../@types';
 
-export type Methods = {
+export type Methods = DefineMethods<{
   /**
    * <h2 id="">概要</h2>
    * 
@@ -10,33 +11,33 @@ export type Methods = {
   get: {
     query: {
       /** 事業所ID */
-      company_id: number
+      company_id: number;
       /** アップロード日 (yyyy-mm-dd) */
-      start_date: string
+      start_date: string;
       /** アップロード日 (yyyy-mm-dd) */
-      end_date: string
+      end_date: string;
       /** アップロードしたユーザー名、メールアドレス */
-      user_name?: string | undefined
+      user_name?: string | undefined;
       /** アップロードファイルNo */
-      number?: number | undefined
+      number?: number | undefined;
       /** posted:コメントあり, raised:未解決, resolved:解決済 */
-      comment_type?: 'posted' | 'raised' | 'resolved' | undefined
+      comment_type?: 'posted' | 'raised' | 'resolved' | undefined;
       /** trueの時、重要コメント付きが対象 */
-      comment_important?: boolean | undefined
+      comment_important?: boolean | undefined;
       /** all:すべて、without_deal:未登録、with_expense_application_line:経費申請中, with_deal:登録済み、ignored:無視 */
-      category?: 'all' | 'without_deal' | 'with_expense_application_line' | 'with_deal' | 'ignored' | undefined
+      category?: 'all' | 'without_deal' | 'with_expense_application_line' | 'with_deal' | 'ignored' | undefined;
       /** 取得レコードのオフセット (デフォルト: 0) */
-      offset?: number | undefined
+      offset?: number | undefined;
       /** 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) */
-      limit?: number | undefined
-    }
+      limit?: number | undefined;
+    };
 
-    status: 200
+    status: 200;
 
     resBody: {
-      receipts: Types.ReceiptResponse['receipt'][]
-    }
-  }
+      receipts: Types.ReceiptResponse['receipt'][];
+    };
+  };
 
   /**
    * <h2 id="">概要</h2>
@@ -44,9 +45,9 @@ export type Methods = {
    * <p>ファイルボックスに証憑ファイルをアップロードする</p>
    */
   post: {
-    status: 201
-    resBody: Types.ReceiptResponse
-    reqFormat: FormData
-    reqBody: Types.ReceiptCreateParams
-  }
-}
+    status: 201;
+    resBody: Types.ReceiptResponse;
+    reqFormat: FormData;
+    reqBody: Types.ReceiptCreateParams;
+  };
+}>;

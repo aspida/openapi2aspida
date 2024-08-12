@@ -1,7 +1,8 @@
 /* eslint-disable */
-import type * as Types from '../../../../../@types'
+import type { DefineMethods } from 'aspida';
+import type * as Types from '../../../../../@types';
 
-export type Methods = {
+export type Methods = DefineMethods<{
   /**
    * <h2 id="">概要</h2>
    * 
@@ -28,12 +29,12 @@ export type Methods = {
   get: {
     query: {
       /** 事業所ID */
-      company_id: number
-    }
+      company_id: number;
+    };
 
-    status: 200
-    resBody: Types.WalletableResponse
-  }
+    status: 200;
+    resBody: Types.WalletableResponse;
+  };
 
   /**
    * <h2 id="">概要</h2>
@@ -43,15 +44,15 @@ export type Methods = {
   put: {
     query: {
       /** 事業所ID */
-      company_id: number
-    }
+      company_id: number;
+    };
 
-    status: 200
-    resBody: Types.WalletableResponse
-    reqFormat: URLSearchParams
+    status: 200;
+    resBody: Types.WalletableResponse;
+    reqFormat: URLSearchParams;
     /** 口座の作成 */
-    reqBody?: Types.WalletableUpdateParams | undefined
-  }
+    reqBody?: Types.WalletableUpdateParams | undefined;
+  };
 
   /**
    * <h2 id="">概要</h2>
@@ -68,9 +69,9 @@ export type Methods = {
   delete: {
     query: {
       /** 事業所ID */
-      company_id: number
-    }
+      company_id: number;
+    };
 
-    status: 204
-  }
-}
+    status: 204;
+  };
+}>;

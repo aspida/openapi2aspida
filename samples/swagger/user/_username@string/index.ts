@@ -1,20 +1,21 @@
 /* eslint-disable */
-import type * as Types from '../../@types'
+import type { DefineMethods } from 'aspida';
+import type * as Types from '../../@types';
 
-export type Methods = {
+export type Methods = DefineMethods<{
   get: {
-    status: 200
+    status: 200;
     /** successful operation */
-    resBody: Types.User
-  }
+    resBody: Types.User;
+  };
 
   /** This can only be done by the logged in user. */
   put: {
     /** Updated user object */
-    reqBody: Types.User
-  }
+    reqBody: Types.User;
+  };
 
   /** This can only be done by the logged in user. */
   delete: {
-  }
-}
+  };
+}>;

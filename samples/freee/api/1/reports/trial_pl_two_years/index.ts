@@ -1,7 +1,8 @@
 /* eslint-disable */
-import type * as Types from '../../../../@types'
+import type { DefineMethods } from 'aspida';
+import type * as Types from '../../../../@types';
 
-export type Methods = {
+export type Methods = DefineMethods<{
   /**
    * <h2 id="">概要</h2>
    * 
@@ -69,36 +70,36 @@ export type Methods = {
   get: {
     query: {
       /** 事業所ID */
-      company_id: number
+      company_id: number;
       /** 会計年度 */
-      fiscal_year?: number | undefined
+      fiscal_year?: number | undefined;
       /** 発生月で絞込：開始会計月(mm) */
-      start_month?: number | undefined
+      start_month?: number | undefined;
       /** 発生月で絞込：終了会計月(mm) */
-      end_month?: number | undefined
+      end_month?: number | undefined;
       /** 発生日で絞込：開始日(yyyy-mm-dd) */
-      start_date?: string | undefined
+      start_date?: string | undefined;
       /** 発生日で絞込：終了日(yyyy-mm-dd) */
-      end_date?: string | undefined
+      end_date?: string | undefined;
       /** 勘定科目の表示（勘定科目: account_item, 決算書表示:group） */
-      account_item_display_type?: 'account_item' | 'group' | undefined
+      account_item_display_type?: 'account_item' | 'group' | undefined;
       /** 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます */
-      breakdown_display_type?: 'partner' | 'item' | 'section' | 'account_item' | undefined
+      breakdown_display_type?: 'partner' | 'item' | 'section' | 'account_item' | undefined;
       /** 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） */
-      partner_id?: number | undefined
+      partner_id?: number | undefined;
       /** 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） */
-      partner_code?: string | undefined
+      partner_code?: string | undefined;
       /** 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） */
-      item_id?: number | undefined
+      item_id?: number | undefined;
       /** 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） */
-      section_id?: number | undefined
+      section_id?: number | undefined;
       /** 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） */
-      adjustment?: 'only' | 'without' | undefined
+      adjustment?: 'only' | 'without' | undefined;
       /** 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） */
-      cost_allocation?: 'only' | 'not_include' | undefined
-    }
+      cost_allocation?: 'only' | 'not_include' | undefined;
+    };
 
-    status: 200
-    resBody: Types.TrialPlTwoYearsResponse
-  }
-}
+    status: 200;
+    resBody: Types.TrialPlTwoYearsResponse;
+  };
+}>;

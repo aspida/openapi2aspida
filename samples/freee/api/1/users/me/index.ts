@@ -1,7 +1,8 @@
 /* eslint-disable */
-import type * as Types from '../../../../@types'
+import type { DefineMethods } from 'aspida';
+import type * as Types from '../../../../@types';
 
-export type Methods = {
+export type Methods = DefineMethods<{
   /**
    * <h2 id="">概要</h2>
    * 
@@ -10,12 +11,12 @@ export type Methods = {
   get: {
     query?: {
       /** 取得情報にユーザが所属する事業所一覧を含める */
-      companies?: true | undefined
-    } | undefined
+      companies?: true | undefined;
+    } | undefined;
 
-    status: 200
-    resBody: Types.MeResponse
-  }
+    status: 200;
+    resBody: Types.MeResponse;
+  };
 
   /**
    * <h2 id="">概要</h2>
@@ -23,10 +24,10 @@ export type Methods = {
    * <p>ユーザー情報を更新する</p>
    */
   put: {
-    status: 200
-    resBody: Types.UserResponse
-    reqFormat: URLSearchParams
+    status: 200;
+    resBody: Types.UserResponse;
+    reqFormat: URLSearchParams;
     /** ユーザー情報の更新 */
-    reqBody?: Types.UserParams | undefined
-  }
-}
+    reqBody?: Types.UserParams | undefined;
+  };
+}>;

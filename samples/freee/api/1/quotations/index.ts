@@ -1,7 +1,8 @@
 /* eslint-disable */
-import type * as Types from '../../../@types'
+import type { DefineMethods } from 'aspida';
+import type * as Types from '../../../@types';
 
-export type Methods = {
+export type Methods = DefineMethods<{
   /**
    * <h2 id="">概要</h2>
    * 
@@ -10,33 +11,33 @@ export type Methods = {
   get: {
     query: {
       /** 事業所ID */
-      company_id: number
+      company_id: number;
       /** 取引先IDで絞込 */
-      partner_id?: number | undefined
+      partner_id?: number | undefined;
       /** 取引先コードで絞込 */
-      partner_code?: string | undefined
+      partner_code?: string | undefined;
       /** 見積日の開始日(yyyy-mm-dd) */
-      start_issue_date?: string | undefined
+      start_issue_date?: string | undefined;
       /** 見積日の終了日(yyyy-mm-dd) */
-      end_issue_date?: string | undefined
+      end_issue_date?: string | undefined;
       /** 見積書番号 */
-      quotation_number?: string | undefined
+      quotation_number?: string | undefined;
       /** 概要 */
-      description?: string | undefined
+      description?: string | undefined;
       /** 見積書ステータス  (unsubmitted: 送付待ち, submitted: 送付済み, all: 全て) */
-      quotation_status?: 'all' | 'unsubmitted' | 'submitted' | undefined
+      quotation_status?: 'all' | 'unsubmitted' | 'submitted' | undefined;
       /** 取得レコードのオフセット (デフォルト: 0) */
-      offset?: number | undefined
+      offset?: number | undefined;
       /** 取得レコードの件数 (デフォルト: 20, 最大: 100) */
-      limit?: number | undefined
-    }
+      limit?: number | undefined;
+    };
 
-    status: 200
+    status: 200;
 
     resBody: {
-      quotations: Types.QuotationResponse['quotation'][]
-    }
-  }
+      quotations: Types.QuotationResponse['quotation'][];
+    };
+  };
 
   /**
    * <h2 id="">概要</h2>
@@ -50,10 +51,10 @@ export type Methods = {
    * </ul>
    */
   post: {
-    status: 201
-    resBody: Types.QuotationResponse
-    reqFormat: URLSearchParams
+    status: 201;
+    resBody: Types.QuotationResponse;
+    reqFormat: URLSearchParams;
     /** 見積書の作成 */
-    reqBody?: Types.QuotationCreateParams | undefined
-  }
-}
+    reqBody?: Types.QuotationCreateParams | undefined;
+  };
+}>;

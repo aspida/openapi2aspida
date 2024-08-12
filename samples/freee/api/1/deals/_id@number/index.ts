@@ -1,7 +1,8 @@
 /* eslint-disable */
-import type * as Types from '../../../../@types'
+import type { DefineMethods } from 'aspida';
+import type * as Types from '../../../../@types';
 
-export type Methods = {
+export type Methods = DefineMethods<{
   /**
    * <h2 id="">概要</h2>
    * <p>指定した事業所の取引（収入／支出）を取得する</p>
@@ -64,14 +65,14 @@ export type Methods = {
   get: {
     query: {
       /** 事業所ID */
-      company_id: number
+      company_id: number;
       /** 取引の債権債務行の表示（without: 表示しない(デフォルト), with: 表示する） */
-      accruals?: 'without' | 'with' | undefined
-    }
+      accruals?: 'without' | 'with' | undefined;
+    };
 
-    status: 200
-    resBody: Types.DealResponse
-  }
+    status: 200;
+    resBody: Types.DealResponse;
+  };
 
   /**
    * <h2 id="">概要</h2>
@@ -129,19 +130,19 @@ export type Methods = {
    * <li>partner_codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。またpartner_codeとpartner_idは同時に指定することはできません。</ul>
    */
   put: {
-    status: 200
-    resBody: Types.DealResponse
-    reqFormat: URLSearchParams
+    status: 200;
+    resBody: Types.DealResponse;
+    reqFormat: URLSearchParams;
     /** 取引（収入／支出）の更新 */
-    reqBody?: Types.DealUpdateParams | undefined
-  }
+    reqBody?: Types.DealUpdateParams | undefined;
+  };
 
   delete: {
     query: {
       /** 事業所ID */
-      company_id: number
-    }
+      company_id: number;
+    };
 
-    status: 204
-  }
-}
+    status: 204;
+  };
+}>;

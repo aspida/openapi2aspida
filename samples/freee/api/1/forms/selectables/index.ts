@@ -1,7 +1,8 @@
 /* eslint-disable */
-import type * as Types from '../../../../@types'
+import type { DefineMethods } from 'aspida';
+import type * as Types from '../../../../@types';
 
-export type Methods = {
+export type Methods = DefineMethods<{
   /**
    * <h2 id="">概要</h2>
    * 
@@ -10,12 +11,12 @@ export type Methods = {
   get: {
     query: {
       /** 事業所ID */
-      company_id: number
+      company_id: number;
       /** 取得する項目(項目: account_item) */
-      includes?: 'account_item' | undefined
-    }
+      includes?: 'account_item' | undefined;
+    };
 
-    status: 200
-    resBody: Types.SelectablesIndexResponse
-  }
-}
+    status: 200;
+    resBody: Types.SelectablesIndexResponse;
+  };
+}>;

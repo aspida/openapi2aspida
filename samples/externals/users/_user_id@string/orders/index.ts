@@ -1,17 +1,18 @@
 /* eslint-disable */
-import type * as Types from '../../../@types'
+import type { DefineMethods } from 'aspida';
+import type * as Types from '../../../@types';
 
-export type Methods = {
+export type Methods = DefineMethods<{
   /** List orders for a user */
   get: {
-    query?: Types.Identifier | undefined
-    status: 200
+    query?: Types.Identifier | undefined;
+    status: 200;
     /** Ok */
-    resBody: Types.Orders
+    resBody: Types.Orders;
 
     resHeaders: {
       /** Correlation id for the different services */
-      'x-correlator': string
-    }
-  }
-}
+      'x-correlator': string;
+    };
+  };
+}>;

@@ -1,28 +1,29 @@
 /* eslint-disable */
-import type { ReadStream } from 'fs'
-import type * as Types from '../../../../../../../../@types'
+import type { DefineMethods } from 'aspida';
+import type { ReadStream } from 'fs';
+import type * as Types from '../../../../../../../../@types';
 
-export type Methods = {
+export type Methods = DefineMethods<{
   /** Create shared image item in chat */
   post: {
-    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken | undefined
-    status: 200
+    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken | undefined;
+    status: 200;
 
     /** OK */
     resBody: {
-      id: string
-    }
+      id: string;
+    };
 
-    reqFormat: FormData
+    reqFormat: FormData;
 
     reqBody: {
       /** Image to upload. */
-      file: (File | ReadStream)
-      caption?: string | undefined
-      headline?: string | undefined
-      published?: boolean | undefined
+      file: (File | ReadStream);
+      caption?: string | undefined;
+      headline?: string | undefined;
+      published?: boolean | undefined;
       /** text message to send to pubnub */
-      formattedText?: string | undefined
-    }
-  }
-}
+      formattedText?: string | undefined;
+    };
+  };
+}>;

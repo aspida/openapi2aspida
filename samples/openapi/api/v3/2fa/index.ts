@@ -1,20 +1,21 @@
 /* eslint-disable */
-import type * as Types from '../../../@types'
+import type { DefineMethods } from 'aspida';
+import type * as Types from '../../../@types';
 
-export type Methods = {
+export type Methods = DefineMethods<{
   post: {
-    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationTokenRequired | undefined
-    status: 200
+    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationTokenRequired | undefined;
+    status: 200;
 
     /** OK */
     resBody: {
-      dataUrl?: string | undefined
-      otpURL?: string | undefined
-      secret?: string | undefined
-    }
+      dataUrl?: string | undefined;
+      otpURL?: string | undefined;
+      secret?: string | undefined;
+    };
 
     reqBody: {
-      email: string
-    }
-  }
-}
+      email: string;
+    };
+  };
+}>;

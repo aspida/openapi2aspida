@@ -1,10 +1,12 @@
 /* eslint-disable */
-export type Methods = {
+import type { DefineMethods } from 'aspida';
+
+export type Methods = DefineMethods<{
   get: {
     query?: {
-      q?: string | undefined
-    } | undefined
+      q?: string | undefined;
+    } | undefined;
 
-    status: 202
-  }
-}
+    status: 202;
+  };
+}>;

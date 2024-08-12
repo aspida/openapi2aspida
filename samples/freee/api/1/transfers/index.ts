@@ -1,7 +1,8 @@
 /* eslint-disable */
-import type * as Types from '../../../@types'
+import type { DefineMethods } from 'aspida';
+import type * as Types from '../../../@types';
 
-export type Methods = {
+export type Methods = DefineMethods<{
   /**
    * <h2 id="">概要</h2>
    * 
@@ -30,23 +31,23 @@ export type Methods = {
   get: {
     query: {
       /** 事業所ID */
-      company_id: number
+      company_id: number;
       /** 振替日で絞込：開始日 (yyyy-mm-dd) */
-      start_date?: string | undefined
+      start_date?: string | undefined;
       /** 振替日で絞込：終了日 (yyyy-mm-dd) */
-      end_date?: string | undefined
+      end_date?: string | undefined;
       /** 取得レコードのオフセット (デフォルト: 0) */
-      offset?: number | undefined
+      offset?: number | undefined;
       /** 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100) */
-      limit?: number | undefined
-    }
+      limit?: number | undefined;
+    };
 
-    status: 200
+    status: 200;
 
     resBody: {
-      transfers: Types.TransferResponse['transfer'][]
-    }
-  }
+      transfers: Types.TransferResponse['transfer'][];
+    };
+  };
 
   /**
    * <h2 id="">概要</h2>
@@ -74,10 +75,10 @@ export type Methods = {
    * </ul>
    */
   post: {
-    status: 201
-    resBody: Types.TransferResponse
-    reqFormat: URLSearchParams
+    status: 201;
+    resBody: Types.TransferResponse;
+    reqFormat: URLSearchParams;
     /** 取引（振替）の作成 */
-    reqBody?: Types.TransferParams | undefined
-  }
-}
+    reqBody?: Types.TransferParams | undefined;
+  };
+}>;

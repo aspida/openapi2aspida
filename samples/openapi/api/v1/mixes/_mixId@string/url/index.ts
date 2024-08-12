@@ -1,12 +1,14 @@
 /* eslint-disable */
-export type Methods = {
+import type { DefineMethods } from 'aspida';
+
+export type Methods = DefineMethods<{
   post: {
-    status: 204
+    status: 204;
 
     reqBody: {
-      url: string
-      published?: boolean | undefined
-      enableImage?: boolean | undefined
-    }
-  }
-}
+      url: string;
+      published?: boolean | undefined;
+      enableImage?: boolean | undefined;
+    };
+  };
+}>;

@@ -4,37 +4,37 @@ export type UserId = {
    * id of the user for which the methods apply.
    * This value should be changed to the special keyword 'me' to simplify calls when access using OAuth2 with three-legged authentication
    */
-  user_id: string
+  user_id: string;
 }
 
 export type PhoneNumber = {
   /** The phone number to which the order refers to. 'E164 with +'' format. */
-  phone_number: string
+  phone_number: string;
 }
 
 export type Identifier = {
   /** The user identifier (e.g. phone number) to filter the results */
-  identifier?: string | undefined
+  identifier?: string | undefined;
 }
 
 export type OfferId = {
   /** Id of the offer */
-  offer_id: string
+  offer_id: string;
 }
 
 export type OrderId = {
   /** Id of the purchase order */
-  order_id: string
+  order_id: string;
 }
 
 export type CategoriesId = {
   /** List of wanted category ids separated by commas */
-  'categories.id'?: string | undefined
+  'categories.id'?: string | undefined;
 }
 
 export type Status = {
   /** The status of the subscribed product used to filter the results */
-  status?: string | undefined
+  status?: string | undefined;
 }
 
 export type Offers = Offer[]
@@ -42,45 +42,45 @@ export type Offers = Offer[]
 /** Offer object */
 export type Offer = {
   /** Unique id of the offer */
-  id: string
+  id: string;
   /** Name of the offer. User Friendly field. */
-  name: string
+  name: string;
   /** List of user identifiers (e.g. phone_numbers) that can be used to subscribe to the offer */
-  identifiers?: string[] | undefined
+  identifiers?: string[] | undefined;
   /** Description of the offer. User Friendly field. */
-  description: string
+  description: string;
   /** List of categories for which the offer applies */
-  categories: OfferCategory[]
+  categories: OfferCategory[];
   /** Time when the offer will be available to the user, in ISO-8601 extended local date format. Time-offset from UTC may be used to match local OB time. */
-  start_date?: string | undefined
+  start_date?: string | undefined;
   /** Time when the offer will expire for the user, in ISO-8601 extended local date format. Time-offset from UTC may be used to match local OB time. */
-  end_date?: string | undefined
+  end_date?: string | undefined;
   /** List of prices for this offer */
-  prices: Price[]
-  product: OfferedProduct
+  prices: Price[];
+  product: OfferedProduct;
 }
 
 /** category of offer */
 export type OfferCategory = {
   /** Name of the category. */
-  name: string
+  name: string;
   /** short description of the category. User Friendly field. */
-  description?: string | undefined
-  id: 'promotion' | 'bundle' | 'sms' | 'voice' | 'data' | 'value_added_service' | 'app' | 'iptv' | 'device' | 'recurring' | 'bolt-on' | 'dth'
+  description?: string | undefined;
+  id: 'promotion' | 'bundle' | 'sms' | 'voice' | 'data' | 'value_added_service' | 'app' | 'iptv' | 'device' | 'recurring' | 'bolt-on' | 'dth';
 }
 
 /** Object that model a product definition */
 export type Product = {
   /** Name to be displayed when referring to this product. User Friendly field. */
-  display_name: string
-  product_type: ProductType
-  descriptions?: Descriptions | undefined
-  subscription_type?: SubscriptionType | undefined
-  quota?: Quotas | undefined
-  connection?: Connection | undefined
-  packages?: Packages | undefined
+  display_name: string;
+  product_type: ProductType;
+  descriptions?: Descriptions | undefined;
+  subscription_type?: SubscriptionType | undefined;
+  quota?: Quotas | undefined;
+  connection?: Connection | undefined;
+  packages?: Packages | undefined;
   /** list of freely defined strings that tag the product based on some criteria */
-  tags?: string[] | undefined
+  tags?: string[] | undefined;
 }
 
 /** Specifies how the service is paid (prepaid, postpaid, etc) */
@@ -92,62 +92,62 @@ export type ProductType = 'mobile' | 'landline' | 'internet' | 'iptv' | 'bundle'
 /** Object that models an offered product */
 export type OfferedProduct = Product & {
   /** Array of products objects. Only applies for product bundle */
-  sub_products?: OfferedProduct[] | undefined
+  sub_products?: OfferedProduct[] | undefined;
 }
 
 /** Object that models a subscribed product */
 export type SubscribedProduct = Product & {
   /** Unique identifier of the product */
-  id: string
+  id: string;
   /** Process state of the product */
-  status: 'active' | 'activating' | 'suspended'
+  status: 'active' | 'activating' | 'suspended';
   /** List of user identifiers (e.g. phone_numbers) associated to this specific product instance. */
-  identifiers: string[]
+  identifiers: string[];
   /** Time when the product was subscribed, in ISO-8601 extended local date format. Time-offset from UTC may be used to match local OB time. */
-  start_date: string
+  start_date: string;
   /** Time when the product will finalize, in ISO-8601 extended local date format. Time-offset from UTC may be used to match local OB time. */
-  end_date?: string | undefined
+  end_date?: string | undefined;
   /** List of prices for this subscribed product */
-  prices?: Price[] | undefined
+  prices?: Price[] | undefined;
   /** Array of products objects. Only applies for product bundle */
-  sub_products?: SubscribedProduct[] | undefined
+  sub_products?: SubscribedProduct[] | undefined;
 }
 
 /** It applies for product_type mobile, value_added_service and bolt-on, and provides information on available data, voice and sms quota */
 export type Quotas = {
   /** list of data quotas associated to this product */
-  data?: DataQuota[] | undefined
+  data?: DataQuota[] | undefined;
   /** list of voice quotas associated to this product */
-  voice?: VoiceQuota[] | undefined
+  voice?: VoiceQuota[] | undefined;
   /** list of SMS quotas associated to this product */
-  sms?: SmsQuota[] | undefined
+  sms?: SmsQuota[] | undefined;
 }
 
 export type CommonQuota = {
   /** max units allowed by current quota. -1 is interpreted as there is no limit */
-  max: number
-  time_bands?: TimeBand[] | undefined
-  origins?: Origin[] | undefined
+  max: number;
+  time_bands?: TimeBand[] | undefined;
+  origins?: Origin[] | undefined;
 }
 
 /** Data quota information */
 export type DataQuota = CommonQuota & {
   /** Unit used on the quota */
-  unit: 'byte' | 'kilobyte' | 'megabyte' | 'gigabyte'
+  unit: 'byte' | 'kilobyte' | 'megabyte' | 'gigabyte';
 }
 
 /** Voice quota information */
 export type VoiceQuota = CommonQuota & {
   /** Unit used on the quota */
-  unit: 'second' | 'minute' | 'hour'
-  destinations?: Destination[] | undefined
+  unit: 'second' | 'minute' | 'hour';
+  destinations?: Destination[] | undefined;
 }
 
 /** SMS quota information */
 export type SmsQuota = CommonQuota & {
   /** Unit used on the quota */
-  unit: 'message'
-  destinations?: Destination[] | undefined
+  unit: 'message';
+  destinations?: Destination[] | undefined;
 }
 
 /** Timebands when the quota applies */
@@ -162,19 +162,19 @@ export type Origin = 'home' | 'roaming' | 'EU'
 /** It applies only for product_type internet and provides information on connections characteristics */
 export type Connection = {
   /** Connection type */
-  type: 'fiber' | 'dsl' | 'unknown'
+  type: 'fiber' | 'dsl' | 'unknown';
   /** Uplink speed in megabits per second */
-  uplink_mbps: number
+  uplink_mbps: number;
   /** Downlink speed in megabits per second */
-  downlink_mbps: number
+  downlink_mbps: number;
 }
 
 /** Package information */
 export type Package = {
   /** Name of the package. User Friendly field. */
-  name: string
+  name: string;
   /** Unique package identifier */
-  package_id: string
+  package_id: string;
 }
 
 /** It applies only for product_type iptv and dth; provides information on available TV packages */
@@ -183,16 +183,16 @@ export type Packages = Package[]
 /** Information about the product for displaying purposes. */
 export type Description = {
   /** Text with information about the product. User Friendly field. */
-  text: string
+  text: string;
   /** HTTPS URL */
-  url?: string | undefined
+  url?: string | undefined;
   /**
    * Category of the description. This field is used to provide further info about displaying of the description text:
    *  - 'general': Default value for any description without specific category.
    *  - 'dates': Information about dates, related with the life-cycle of the product (e.g: contractual information about renowation conditions)
    *  - 'promotion': Information about product acquisition conditions, such as if special price is being applied and for how long, or if data quota is duplicated during first three months.
    */
-  category?: 'general' | 'dates' | 'promotion' | undefined
+  category?: 'general' | 'dates' | 'promotion' | undefined;
 }
 
 export type Descriptions = Description[]
@@ -200,22 +200,22 @@ export type Descriptions = Description[]
 /** Price information */
 export type Price = {
   /** Description of the price. User Friendly field. */
-  description: string
+  description: string;
   /** Type of the price */
-  type: 'recurring' | 'usage' | 'one-off'
+  type: 'recurring' | 'usage' | 'one-off';
   /**
    * Period between charge of the price. Applies when type equals recurring.
    *  Additional to pre-defined values of daily, weekly, monthly, yearly, any indication of number of days or hours is possible, with format {x}-days or {x}-hours (e.g.: 7-days or 24-hours).
    */
-  recurring_period?: string | undefined
+  recurring_period?: string | undefined;
   /**
    * Period for which the product will be subscribed. It does not mean that offer is available for indicated period, it means that the product will be acquired and will last for indicated period. Applies when type equals one-off or usage. For backwards compatibility, in case of recurring prices, recurring_period param is used instead.
    *  Additional to pre-defined values of day, week, month, year, any indication of number of days or hours is possible, with format {x}-days or {x}-hours (e.g.: 7-days or 24-hours).
    */
-  period_duration?: string | undefined
-  amount: External1_MoneyAmount
+  period_duration?: string | undefined;
+  amount: External1_MoneyAmount;
   /** porcentage factor of the taxes applied */
-  tax: number
+  tax: number;
 }
 
 /** List of orders */
@@ -224,19 +224,19 @@ export type Orders = Order[]
 /** Information related to an order */
 export type Order = {
   /** Unique id of the order */
-  id: string
+  id: string;
   /** Id of the purchased offer */
-  offer_id?: string | undefined
+  offer_id?: string | undefined;
   /** Id of the subscribed product this order relates to */
-  product_id?: string | undefined
+  product_id?: string | undefined;
   /** user identifer (e.g. phone number) associated to the order */
-  identifier?: string | undefined
+  identifier?: string | undefined;
   /** Time when the order was created, in ISO-8601 extended local date format. Time-offset from UTC may be used to match local OB time. */
-  creation_date: string
+  creation_date: string;
   /** type of the order */
-  type: 'purchase' | 'unsubscription' | 'update'
-  status: OrderStatus
-  error?: OrderError | undefined
+  type: 'purchase' | 'unsubscription' | 'update';
+  status: OrderStatus;
+  error?: OrderError | undefined;
 }
 
 export type OrderStatus = 'pending' | 'confirmed' | 'rejected'
@@ -244,39 +244,39 @@ export type OrderStatus = 'pending' | 'confirmed' | 'rejected'
 /** Information related to an error when trying to purchase an offer */
 export type OrderError = {
   /** Error code produces when trying to purchase an offer */
-  code: string
+  code: string;
   /** Message information related to the error when trying to purchase an offer. User Friendly field. */
-  description: string
+  description: string;
 }
 
 /** Information of what offer has to be used to create the order */
 export type CreatePurchaseOrderInvoice = {
   /** Id of the offer related to the new order */
-  offer_id: string
+  offer_id: string;
   /** user identifer (e.g. phone number) associated to the order */
-  identifier?: string | undefined
+  identifier?: string | undefined;
 }
 
 /** Information of what offer has to be used to create the order */
 export type CreatePurchaseOrderWallet = {
   /** Id of the offer related to the new order */
-  offer_id: string
+  offer_id: string;
   /** user identifer (e.g. phone number) associated to the order */
-  identifier?: string | undefined
-  wallet_type: WalletType
+  identifier?: string | undefined;
+  wallet_type: WalletType;
 }
 
 /** Information of what offer has to be used to create the order using invoice has payment method */
 export type CreatePurchaseOrderByPhoneNumberInvoice = {
   /** Id of the offer related to the new order */
-  offer_id: string
+  offer_id: string;
 }
 
 /** Information of what offer has to be used to create the order using wallet as payment method */
 export type CreatePurchaseOrderByPhoneNumberWallet = {
   /** Id of the offer related to the new order */
-  offer_id: string
-  wallet_type: WalletType
+  offer_id: string;
+  wallet_type: WalletType;
 }
 
 /** type of the wallet */
@@ -285,60 +285,60 @@ export type WalletType = 'general' | 'communications' | 'additional_services'
 /** Information to create a product unsubscribe order */
 export type CreateUnsubscribeOrder = {
   /** Id of the product to be unsubscribed */
-  product_id: string
+  product_id: string;
 }
 
 /** Information to create an order to set renew config of a product. */
 export type CreateUpdateRenewOrder = {
   /** Id of the product to be updated */
-  product_id: string
+  product_id: string;
   /** True to indicate that product renovation config should be activated, false to do the opposite */
-  renew: boolean
+  renew: boolean;
 }
 
 export type External0_ModelError = {
   /** A human readable description of what the event represent */
-  message: string
+  message: string;
 }
 
 export type External1_QuotaCategory = 'general' | 'promotion' | 'voucher' | 'application' | 'pay_per_use'
 
 export type External0_InvalidArgument = {
   /** Client specified an invalid argument, request body or query param. */
-  code: 'INVALID_ARGUMENT'
+  code: 'INVALID_ARGUMENT';
 } & External0_ModelError
 
 export type External0_PermissionDenied = {
   /** Client does not have sufficient permissions to perform this action. */
-  code: 'PERMISSION_DENIED'
+  code: 'PERMISSION_DENIED';
 } & External0_ModelError
 
 export type External0_NotFound = {
   /** The specified resource is not found */
-  code: 'NOT_FOUND'
+  code: 'NOT_FOUND';
 } & External0_ModelError
 
 export type External0_AlreadyExists = {
   /** The resource that a client tried to create already exists. */
-  code: 'ALREADY_EXISTS'
+  code: 'ALREADY_EXISTS';
 } & External0_ModelError
 
 export type External0_Internal = {
   /** Unknown server error.Typically a server bug. */
-  code: 'INTERNAL'
+  code: 'INTERNAL';
 } & External0_ModelError
 
 export type External0_Timeout = {
   /** Request timeout exceeded */
-  code: 'TIMEOUT'
+  code: 'TIMEOUT';
 } & External0_ModelError
 
 /** Money amount */
 export type External1_MoneyAmount = {
   /** Amount value */
-  value: number
+  value: number;
   /** Currency code in which the amount is expressed. ISO 4217 */
-  currency: string
+  currency: string;
   /** true if the amount includes government taxes */
-  tax_included?: boolean | undefined
+  tax_included?: boolean | undefined;
 }

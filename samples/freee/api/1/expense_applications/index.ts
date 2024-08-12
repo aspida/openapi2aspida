@@ -1,23 +1,24 @@
 /* eslint-disable */
-import type * as Types from '../../../@types'
+import type { DefineMethods } from 'aspida';
+import type * as Types from '../../../@types';
 
-export type Methods = {
+export type Methods = DefineMethods<{
   get: {
     query: {
       /** 事業所ID */
-      company_id: number
+      company_id: number;
       /** 取得レコードのオフセット (デフォルト: 0) */
-      offset?: number | undefined
+      offset?: number | undefined;
       /** 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) */
-      limit?: number | undefined
-    }
+      limit?: number | undefined;
+    };
 
-    status: 200
+    status: 200;
 
     resBody: {
-      expense_applications: Types.ExpenseApplicationResponse['expense_application'][]
-    }
-  }
+      expense_applications: Types.ExpenseApplicationResponse['expense_application'][];
+    };
+  };
 
   /**
    * <h2 id="_1">概要</h2>
@@ -34,10 +35,10 @@ export type Methods = {
    * </ul>
    */
   post: {
-    status: 201
-    resBody: Types.ExpenseApplicationResponse
-    reqFormat: URLSearchParams
+    status: 201;
+    resBody: Types.ExpenseApplicationResponse;
+    reqFormat: URLSearchParams;
     /** 経費申請の作成 */
-    reqBody?: Types.ExpenseApplicationCreateParams | undefined
-  }
-}
+    reqBody?: Types.ExpenseApplicationCreateParams | undefined;
+  };
+}>;

@@ -1,9 +1,10 @@
 /* eslint-disable */
-import type * as Types from '../@types'
+import type { DefineMethods } from 'aspida';
+import type * as Types from '../@types';
 
-export type Methods = {
+export type Methods = DefineMethods<{
   get: {
-    status: 200
-    resBody: Types.User[]
-  }
-}
+    status: 200;
+    resBody: Types.User[];
+  };
+}>;

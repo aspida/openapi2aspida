@@ -1,5 +1,7 @@
 /* eslint-disable */
-export type Methods = {
+import type { DefineMethods } from 'aspida';
+
+export type Methods = DefineMethods<{
   /**
    * <h2 id="">概要</h2>
    * 
@@ -16,10 +18,10 @@ export type Methods = {
   get: {
     query: {
       /** 事業所ID */
-      company_id: number
-    }
+      company_id: number;
+    };
 
-    status: 200
-    resBody: Blob
-  }
-}
+    status: 200;
+    resBody: Blob;
+  };
+}>;

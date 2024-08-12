@@ -1,13 +1,14 @@
 /* eslint-disable */
-import type { ReadStream } from 'fs'
+import type { DefineMethods } from 'aspida';
+import type { ReadStream } from 'fs';
 
-export type Methods = {
+export type Methods = DefineMethods<{
   post: {
     query?: {
-      path?: string | undefined
-    } | undefined
+      path?: string | undefined;
+    } | undefined;
 
-    status: 204
-    reqBody: (File | ReadStream)
-  }
-}
+    status: 204;
+    reqBody: (File | ReadStream);
+  };
+}>;

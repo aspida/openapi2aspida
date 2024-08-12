@@ -1,7 +1,8 @@
 /* eslint-disable */
-import type * as Types from '../../../@types'
+import type { DefineMethods } from 'aspida';
+import type * as Types from '../../../@types';
 
-export type Methods = {
+export type Methods = DefineMethods<{
   /**
    * <h2 id="">概要</h2>
    * 
@@ -10,39 +11,39 @@ export type Methods = {
   get: {
     query: {
       /** 事業所ID */
-      company_id: number
+      company_id: number;
       /** 取引先IDで絞込 */
-      partner_id?: number | undefined
+      partner_id?: number | undefined;
       /** 取引先コードで絞込 */
-      partner_code?: string | undefined
+      partner_code?: string | undefined;
       /** 請求日の開始日(yyyy-mm-dd) */
-      issue_date_start?: string | undefined
+      issue_date_start?: string | undefined;
       /** 請求日の終了日(yyyy-mm-dd) */
-      issue_date_end?: string | undefined
+      issue_date_end?: string | undefined;
       /** 期日の開始日(yyyy-mm-dd) */
-      due_date_start?: string | undefined
+      due_date_start?: string | undefined;
       /** 期日の終了日(yyyy-mm-dd) */
-      due_date_end?: string | undefined
+      due_date_end?: string | undefined;
       /** 請求書番号 */
-      invoice_number?: string | undefined
+      invoice_number?: string | undefined;
       /** 概要 */
-      description?: string | undefined
+      description?: string | undefined;
       /** 請求書ステータス  (draft: 下書き, applying: 申請中, remanded: 差し戻し, rejected: 却下, approved: 承認済み, issued: 発行済み, unsubmitted: 送付待ち) */
-      invoice_status?: 'draft' | 'applying' | 'remanded' | 'rejected' | 'approved' | 'issued' | 'unsubmitted' | undefined
+      invoice_status?: 'draft' | 'applying' | 'remanded' | 'rejected' | 'approved' | 'issued' | 'unsubmitted' | undefined;
       /** 入金ステータス  (unsettled: 入金待ち, settled: 入金済み) */
-      payment_status?: 'unsettled' | 'settled' | undefined
+      payment_status?: 'unsettled' | 'settled' | undefined;
       /** 取得レコードのオフセット (デフォルト: 0) */
-      offset?: number | undefined
+      offset?: number | undefined;
       /** 取得レコードの件数 (デフォルト: 20, 最大: 100) */
-      limit?: number | undefined
-    }
+      limit?: number | undefined;
+    };
 
-    status: 200
+    status: 200;
 
     resBody: {
-      invoices: Types.InvoiceResponse['invoice'][]
-    }
-  }
+      invoices: Types.InvoiceResponse['invoice'][];
+    };
+  };
 
   /**
    * <h2 id="">概要</h2>
@@ -57,10 +58,10 @@ export type Methods = {
    * </ul>
    */
   post: {
-    status: 201
-    resBody: Types.InvoiceResponse
-    reqFormat: URLSearchParams
+    status: 201;
+    resBody: Types.InvoiceResponse;
+    reqFormat: URLSearchParams;
     /** 請求書の作成 */
-    reqBody?: Types.InvoiceCreateParams | undefined
-  }
-}
+    reqBody?: Types.InvoiceCreateParams | undefined;
+  };
+}>;

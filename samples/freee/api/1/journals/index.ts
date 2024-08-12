@@ -1,7 +1,8 @@
 /* eslint-disable */
-import type * as Types from '../../../@types'
+import type { DefineMethods } from 'aspida';
+import type * as Types from '../../../@types';
 
-export type Methods = {
+export type Methods = DefineMethods<{
   /**
    * <h2 id="">概要</h2>
    * 
@@ -46,18 +47,18 @@ export type Methods = {
   get: {
     query: {
       /** ダウンロード形式 */
-      download_type: 'csv' | 'pdf' | 'yayoi' | 'generic'
+      download_type: 'csv' | 'pdf' | 'yayoi' | 'generic';
       /** 事業所ID */
-      company_id: number
+      company_id: number;
       /** 補助科目やコメントとして出力する項目 */
-      visible_tags?: ('partner' | 'item' | 'tag' | 'section' | 'description' | 'wallet_txn_description' | 'all')[] | undefined
+      visible_tags?: ('partner' | 'item' | 'tag' | 'section' | 'description' | 'wallet_txn_description' | 'all')[] | undefined;
       /** 取得開始日 (yyyy-mm-dd) */
-      start_date?: string | undefined
+      start_date?: string | undefined;
       /** 取得終了日 (yyyy-mm-dd) */
-      end_date?: string | undefined
-    }
+      end_date?: string | undefined;
+    };
 
-    status: 202
-    resBody: Types.JournalsResponse
-  }
-}
+    status: 202;
+    resBody: Types.JournalsResponse;
+  };
+}>;

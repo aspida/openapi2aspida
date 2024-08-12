@@ -1,22 +1,23 @@
 /* eslint-disable */
-import type * as Types from '../../../../../@types'
+import type { DefineMethods } from 'aspida';
+import type * as Types from '../../../../../@types';
 
-export type Methods = {
+export type Methods = DefineMethods<{
   /** Returns a story content with support pagination */
   get: {
-    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken & Types.UserInstanceIdHeader | undefined
+    reqHeaders?: Types.AppIdHeader & Types.AppPlatformHeader & Types.AppVersionHeader & Types.AppOrganisationToken & Types.UserInstanceIdHeader | undefined;
 
     query?: {
-      offset?: number | undefined
-    } | undefined
+      offset?: number | undefined;
+    } | undefined;
 
-    status: 200
+    status: 200;
 
     /** OK */
     resBody: {
-      limit: number
-      offset: number
-      data: Types.ModelCard[]
-    }
-  }
-}
+      limit: number;
+      offset: number;
+      data: Types.ModelCard[];
+    };
+  };
+}>;

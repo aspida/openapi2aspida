@@ -1,7 +1,8 @@
 /* eslint-disable */
-import type * as Types from '../../../../@types'
+import type { DefineMethods } from 'aspida';
+import type * as Types from '../../../../@types';
 
-export type Methods = {
+export type Methods = DefineMethods<{
   /**
    * <h2 id="">概要</h2>
    * 
@@ -10,12 +11,12 @@ export type Methods = {
   get: {
     query: {
       /** 事業所ID */
-      company_id: number
-    }
+      company_id: number;
+    };
 
-    status: 200
-    resBody: Types.QuotationResponse
-  }
+    status: 200;
+    resBody: Types.QuotationResponse;
+  };
 
   /**
    * <h2 id="">概要</h2>
@@ -29,12 +30,12 @@ export type Methods = {
    * </ul>
    */
   put: {
-    status: 200
-    resBody: Types.QuotationResponse
-    reqFormat: URLSearchParams
+    status: 200;
+    resBody: Types.QuotationResponse;
+    reqFormat: URLSearchParams;
     /** 見積書の更新 */
-    reqBody?: Types.QuotationUpdateParams | undefined
-  }
+    reqBody?: Types.QuotationUpdateParams | undefined;
+  };
 
   /**
    * <h2 id="">概要</h2>
@@ -44,9 +45,9 @@ export type Methods = {
   delete: {
     query: {
       /** 事業所ID */
-      company_id: number
-    }
+      company_id: number;
+    };
 
-    status: 204
-  }
-}
+    status: 204;
+  };
+}>;

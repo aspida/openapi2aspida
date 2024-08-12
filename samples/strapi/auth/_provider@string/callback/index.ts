@@ -1,12 +1,14 @@
 /* eslint-disable */
-export type Methods = {
+import type { DefineMethods } from 'aspida';
+
+export type Methods = DefineMethods<{
   /** Successfull redirection after approving a provider */
   get: {
-    status: 200
+    status: 200;
 
     /** response */
     resBody: {
-      foo?: string | undefined
-    }
-  }
-}
+      foo?: string | undefined;
+    };
+  };
+}>;
