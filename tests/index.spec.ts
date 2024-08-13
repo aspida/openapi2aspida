@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { afterAll, beforeAll, describe, expect, test } from 'vitest';
 import build from '../src';
 import type { ConfigFile } from '../src/getConfig';
 
