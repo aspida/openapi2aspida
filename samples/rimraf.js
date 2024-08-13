@@ -1,9 +1,9 @@
-// for $ npm run dev:openapi
+// for $ npm run dev
 require('fs')
   .readdirSync(__dirname)
   .filter(n => require('fs').statSync(`${__dirname}/${n}`).isDirectory() && n !== 'docs.baikalplatform.com')
   .forEach(n =>
-    require('fs').rmdir(`${__dirname}/${n}`, { recursive: true }, err => {
+    require('fs').rm(`${__dirname}/${n}`, { recursive: true }, err => {
       if (err) console.log(err)
     })
   )
