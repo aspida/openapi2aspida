@@ -4,7 +4,6 @@ export type PropValue = {
   nullable: boolean;
   hasOf?: 'oneOf' | 'allOf' | 'anyOf';
   description: string | null;
-  // eslint-disable-next-line no-use-before-define
   value: Prop[] | string | string[] | PropValue | PropValue[];
 };
 

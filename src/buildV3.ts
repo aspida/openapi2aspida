@@ -203,13 +203,15 @@ export default (openapi: OpenAPIV3.Document) => {
 
                 if (content?.schema) {
                   const val = schema2value(content.schema, true);
-                  val &&
+
+                  if (val !== null) {
                     params.push({
                       name: 'resBody',
                       required: true,
                       description: ref.description,
                       values: [val],
                     });
+                  }
                 }
 
                 if (ref.headers) {
