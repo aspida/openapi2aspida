@@ -1,4 +1,5 @@
 import type { OpenAPIV3 } from 'openapi-types';
+import { setIncludeDeprecated } from './builderUtils/conversionContext';
 import {
   $ref2Type,
   BINARY_TYPE,
@@ -15,6 +16,7 @@ import requestBodies2Props from './builderUtils/requestBodies2Props';
 import { resolveParamsRef, resolveReqRef, resolveResRef } from './builderUtils/resolvers';
 import responses2Props from './builderUtils/responses2Props';
 import schemas2Props from './builderUtils/schemas2Props';
+import type { Config } from './getConfig';
 
 const methodNames = ['get', 'post', 'put', 'delete', 'head', 'options', 'patch'] as const;
 
@@ -23,10 +25,14 @@ const getParamsList = (
   params?: (OpenAPIV3.ReferenceObject | OpenAPIV3.ParameterObject)[],
 ) => params?.map((p) => (isRefObject(p) ? resolveParamsRef(openapi, p.$ref) : p)) || [];
 
-export default (openapi: OpenAPIV3.Document) => {
+export default (openapi: OpenAPIV3.Document, config: Config) => {
+  setIncludeDeprecated(config.includeDeprecated || false);
+
   const files: { file: string[]; methods: string }[] = [];
-  const schemas = schemas2Props(openapi.components?.schemas, openapi) || [];
-  const parameters = parameters2Props(openapi.components?.parameters, openapi) || [];
+  const schemas =
+    schemas2Props(openapi.components?.schemas, openapi, config.includeDeprecated) || [];
+  const parameters =
+    parameters2Props(openapi.components?.parameters, openapi, config.includeDeprecated) || [];
   const requestBodies = requestBodies2Props(openapi.components?.requestBodies) || [];
   const responses = responses2Props(openapi.components?.responses) || [];
   const headers = headers2Props(openapi.components?.headers) || [];
@@ -67,7 +73,7 @@ export default (openapi: OpenAPIV3.Document) => {
           .map<Prop | null>((method) => {
             const target = openapi.paths[path]![method]!;
 
-            if (target.deprecated) return null;
+            if (target.deprecated && !config.includeDeprecated) return null;
 
             const params: Prop[] = [];
 
@@ -82,6 +88,9 @@ export default (openapi: OpenAPIV3.Document) => {
                 (p) => {
                   if (isRefObject(p)) {
                     const ref = resolveParamsRef(openapi, p.$ref);
+
+                    if (ref.deprecated && !config.includeDeprecated) return;
+
                     const val = {
                       isArray: false,
                       isEnum: false,
@@ -102,6 +111,8 @@ export default (openapi: OpenAPIV3.Document) => {
                         break;
                     }
                   } else {
+                    if (p.deprecated && !config.includeDeprecated) return;
+
                     const value = schema2value(p.schema);
                     if (!value) return;
 

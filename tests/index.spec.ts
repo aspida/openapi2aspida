@@ -37,4 +37,51 @@ describe('cli test', () => {
       }),
     );
   });
+
+  describe('includeDeprecated configuration', () => {
+    beforeAll(async () => {
+      const configExclude = {
+        input: '_test-deprecated-exclude',
+        outputEachDir: true,
+        openapi: { inputFile: 'samples/deprecated-test.yml', includeDeprecated: false },
+      };
+
+      const configInclude = {
+        input: '_test-deprecated-include',
+        outputEachDir: true,
+        openapi: { inputFile: 'samples/deprecated-test.yml', includeDeprecated: true },
+      };
+
+      await Promise.all([build(configExclude)[0], build(configInclude)[0]]);
+    });
+
+    afterAll(() => {
+      fs.rmSync('_test-deprecated-exclude', { recursive: true });
+      fs.rmSync('_test-deprecated-include', { recursive: true });
+    });
+
+    test('main', async () => {
+      const excludeIndexContent = fs.readFileSync('_test-deprecated-exclude/test/index.ts', 'utf8');
+      expect(excludeIndexContent).not.toContain('get:');
+      expect(excludeIndexContent).toContain('post:');
+
+      const includeIndexContent = fs.readFileSync('_test-deprecated-include/test/index.ts', 'utf8');
+      expect(includeIndexContent).toContain('get:');
+      expect(includeIndexContent).toContain('post:');
+
+      const excludeTypesContent = fs.readFileSync(
+        '_test-deprecated-exclude/@types/index.ts',
+        'utf8',
+      );
+      expect(excludeTypesContent).not.toContain('deprecated_field');
+      expect(excludeTypesContent).toContain('active_field');
+
+      const includeTypesContent = fs.readFileSync(
+        '_test-deprecated-include/@types/index.ts',
+        'utf8',
+      );
+      expect(includeTypesContent).toContain('deprecated_field');
+      expect(includeTypesContent).toContain('active_field');
+    });
+  });
 });

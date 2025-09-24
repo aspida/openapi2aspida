@@ -11,12 +11,17 @@ import { resolveParamsRef } from './resolvers';
 
 export type Parameter = { name: string; prop: string | Prop };
 
-export default (params: OpenAPIV3.ComponentsObject['parameters'], openapi: OpenAPIV3.Document) =>
+export default (
+  params: OpenAPIV3.ComponentsObject['parameters'],
+  openapi: OpenAPIV3.Document,
+  includeDeprecated = false,
+) =>
   params &&
   Object.keys(params)
     .filter((defKey) => {
       const target = params[defKey];
-      return !(isRefObject(target) ? resolveParamsRef(openapi, target.$ref) : target).deprecated;
+      const resolved = isRefObject(target) ? resolveParamsRef(openapi, target.$ref) : target;
+      return includeDeprecated || !resolved.deprecated;
     })
     .map((defKey) => {
       const target = params[defKey];

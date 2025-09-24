@@ -1,4 +1,5 @@
 import type { OpenAPIV3 } from 'openapi-types';
+import { getIncludeDeprecated } from './conversionContext';
 import type { Prop, PropValue } from './props2String';
 
 export const defKey2defName = (key: string) =>
@@ -53,7 +54,8 @@ const object2value = (obj: OpenAPIV3.NonArraySchemaObject): Prop[] => {
   const value = Object.keys(properties)
     .filter((name) => {
       const target = properties[name];
-      return isRefObject(target) || !target.deprecated;
+      if (isRefObject(target)) return true;
+      return getIncludeDeprecated() || !target.deprecated;
     })
     .map<Prop | null>((name) => {
       const val = schema2value(properties[name]);
