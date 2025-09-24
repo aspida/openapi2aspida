@@ -5,12 +5,17 @@ import { resolveSchemasRef } from './resolvers';
 
 export type Schema = { name: string; value: PropValue };
 
-export default (schemas: OpenAPIV3.ComponentsObject['schemas'], openapi: OpenAPIV3.Document) =>
+export default (
+  schemas: OpenAPIV3.ComponentsObject['schemas'],
+  openapi: OpenAPIV3.Document,
+  includeDeprecated = false,
+) =>
   schemas &&
   Object.keys(schemas)
     .filter((defKey) => {
       const target = schemas[defKey];
-      return !(isRefObject(target) ? resolveSchemasRef(openapi, target.$ref) : target).deprecated;
+      const resolved = isRefObject(target) ? resolveSchemasRef(openapi, target.$ref) : target;
+      return includeDeprecated || !resolved.deprecated;
     })
     .map((defKey) => {
       const value = schema2value(schemas[defKey]);

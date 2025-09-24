@@ -6,6 +6,7 @@ export type Config = Pick<AspidaConfig, 'outputEachDir' | 'outputMode' | 'traili
   input: string | OpenAPI.Document;
   output: string;
   isYaml: boolean;
+  includeDeprecated?: boolean;
 };
 
 export type ConfigFile = AspidaConfig & {
@@ -13,6 +14,7 @@ export type ConfigFile = AspidaConfig & {
     inputFile: string;
     yaml?: boolean;
     outputDir?: string;
+    includeDeprecated?: boolean;
   };
 };
 
@@ -25,6 +27,7 @@ const createConfig = (config: ConfigFile): Config => {
     outputEachDir: config.outputEachDir,
     outputMode: config.outputMode,
     isYaml: openapi.yaml ?? !openapi.inputFile.endsWith('.json'),
+    includeDeprecated: openapi.includeDeprecated ?? false,
   };
 };
 
